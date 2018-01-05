@@ -1,0 +1,9 @@
+# Rename an AWS CodeDeploy Application<a name="applications-rename"></a>
+
+You can use the AWS CLI or the AWS CodeDeploy APIs to change the name of an application\.
+
+To view a list of application names, use the AWS CLI to call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+
+For information about using the AWS CLI to change an application name, see [update\-application](http://docs.aws.amazon.com/cli/latest/reference/deploy/update-application.html)\.
+
+For information about using the AWS CodeDeploy APIs to change an application name, see [API\_UpdateApplication](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateApplication.html)\.
