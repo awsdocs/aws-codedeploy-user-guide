@@ -83,7 +83,7 @@ If you rely on an IAM instance profile or a service role that was created as par
 
 As a best practice, you should avoid situations that would result in more than one attempted deployment to an Amazon EC2 instance at the same time\. In cases where commands from different deployments compete to run on a single instance, the deployments can time out and fail for the following reasons:
 
-+ AWS CodeDeploy's timeout logic expects all of the steps in a deployment process to be completed in five minutes or less\. 
++ AWS CodeDeploy's timeout logic expects any deployment to start processing lifecycle events on the instance within five minutes of having been started\.
 
 + The AWS CodeDeploy agent can process only one deployment command at a time\. 
 

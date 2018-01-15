@@ -71,7 +71,7 @@ To address this issue:
 
 As a best practice, you should associate only one deployment group with each Auto Scaling group\. 
 
-This is because if Auto Scaling scales up an instance that has hooks associated with multiple deployment groups, it sends notifications for all of the hooks at once\. This causes multiple deployments to each instance to begin at the same time\. When multiple deployments send commands to the AWS CodeDeploy agent at the same time, the five\-minute limit in the AWS CodeDeploy timeout logic may be exceeded\. \(AWS CodeDeploy logic considers a deployment to have failed if its steps are not complete within five minutes, even if a deployment process is otherwise running as expected\.\) 
+This is because if Auto Scaling scales up an instance that has hooks associated with multiple deployment groups, it sends notifications for all of the hooks at once\. This causes multiple deployments to each instance to begin at the same time\. When multiple deployments send commands to the AWS CodeDeploy agent at the same time, the five\-minute limit in the AWS CodeDeploy timeout logic may be exceeded\. \(AWS CodeDeploy's timeout logic expects any deployment to start processing lifecycle events on the instance within five minutes of having been started\.\) 
 
 It's not possible to control the order in which deployments occur if more than one deployment attempts to run at the same time\. 
 
