@@ -13,11 +13,11 @@ These links are provided for informational purposes only, and should not be cons
 
   *Published January 2016*
 
-+ [AWS Toolkit for Eclipse Integration with AWS CodeDeploy \(Part 1\)](https://aws.amazon.com/blogs/developer/aws-toolkit-for-eclipse-integration-with-aws-codedeploy-part-1/)
++ [AWS Toolkit for Eclipse Integration with AWS CodeDeploy \(Part 1\)](http://aws.amazon.com/blogs/developer/aws-toolkit-for-eclipse-integration-with-aws-codedeploy-part-1/)
 
-  [AWS Toolkit for Eclipse Integration with AWS CodeDeploy \(Part 2\)](https://aws.amazon.com/blogs/developer/aws-toolkit-for-eclipse-integration-with-aws-codedeploy-part-2/)
+  [AWS Toolkit for Eclipse Integration with AWS CodeDeploy \(Part 2\)](http://aws.amazon.com/blogs/developer/aws-toolkit-for-eclipse-integration-with-aws-codedeploy-part-2/)
 
-  [AWS Toolkit for Eclipse Integration with AWS CodeDeploy \(Part 3\)](https://aws.amazon.com/blogs/developer/aws-toolkit-for-eclipse-integration-with-aws-codedeploy-part-3/)
+  [AWS Toolkit for Eclipse Integration with AWS CodeDeploy \(Part 3\)](http://aws.amazon.com/blogs/developer/aws-toolkit-for-eclipse-integration-with-aws-codedeploy-part-3/)
 
   Learn how Java developers can use the AWS CodeDeploy plugin for Eclipse to deploy web applications to AWS directly from Eclipse development environments\.
 

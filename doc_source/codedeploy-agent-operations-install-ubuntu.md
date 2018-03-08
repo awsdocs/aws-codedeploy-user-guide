@@ -45,7 +45,7 @@ chmod +x ./install
 sudo ./install auto
 ```
 
-*bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+*bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
 To check that the service is running, run the following command:
 

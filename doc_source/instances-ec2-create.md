@@ -18,7 +18,7 @@ If you have not done so already, follow the instructions in [Getting Started wit
 
 1. On the **Step 2: Choose an Instance Type** page, choose any available Amazon EC2 instance type, and then choose **Next: Configure Instance Details**\.
 
-1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance profile you created in [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
+1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance role you created in [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.  If you used the suggested role name, then you will choose **CodeDeployDemo\-EC2\-Instance\-Profile**\. If you created your own role name, select that\.
 **Note**  
 If neither **Launch into EC2\-Classic** nor a default virtual private cloud \(VPC\) is displayed in the **Network** list, and you are not able to select a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose an Amazon VPC and subnet, or choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and Subnets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html)\.
 
@@ -38,7 +38,7 @@ If neither **Launch into EC2\-Classic** nor a default virtual private cloud \(VP
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Ubuntu Server**
 **Important**  
@@ -56,7 +56,7 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server**
 
@@ -68,15 +68,19 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
    </powershell>
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
 1. Leave the rest of the items on this page unchanged, and choose **Next: Add Storage**\.
 
 1. Leave the **Step 4: Add Storage** page unchanged, and choose **Next: Add Tags**\.
 
-1. On the **Step 5: Add Tags** page, with **Name** displayed in the **Key** box, type **CodeDeployDemo** in the **Value** box, and then choose **Next: Configure Security Group**\.
+1. On the **Step 5: Add Tags** page, choose **Add Tag**\. 
+
+1.  In the **Key** box, type **Name**\. In the **Value** box type **CodeDeployDemo**\. 
 **Important**  
 The contents of the **Key** and **Value** boxes are case\-sensitive\.
+
+1. Choose **Next: Configure Security Group**\.
 
 1. On the **Step 6: Configure Security Group** page, leave the **Create a new security group** option selected\.
 
@@ -84,7 +88,7 @@ The contents of the **Key** and **Value** boxes are case\-sensitive\.
 
 1. If you want to open the HTTP port, choose the **Add Rule** button, and from the **Type** drop\-down list, choose **HTTP**\. Accept the default **Source** value of **Anywhere 0\.0\.0\.0/0**, and then choose **Review and Launch**\.
 **Note**  
-In a production environment, we recommend restricting access to the SSH, RDP, and HTTP ports, instead of specifying **Anywhere 0\.0\.0\.0/0**\. AWS CodeDeploy does not require unrestricted port access and does not require HTTP access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com//articles/1233)\.
+In a production environment, we recommend restricting access to the SSH, RDP, and HTTP ports, instead of specifying **Anywhere 0\.0\.0\.0/0**\. AWS CodeDeploy does not require unrestricted port access and does not require HTTP access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com/articles/1233)\.
 
    If a **Boot from General Purpose \(SSD\)** dialog box appears, follow the instructions, and then choose **Next**\.
 
@@ -120,7 +124,7 @@ If you have not done so already, follow the instructions in [Getting Started wit
    aws ec2 authorize-security-group-ingress --group-name CodeDeployDemo-Windows-Security-Group --to-port 80 --ip-protocol tcp --cidr-ip 0.0.0.0/0 --from-port 80
    ```
 **Note**  
-For demonstration purposes, these commands create a security group that allows unrestricted access for RDP through port 3389 and, alternatively, HTTP through port 80\. As a best practice, we recommend restricting access to the RDP and HTTP ports\. AWS CodeDeploy does not require unrestricted port access and does not require HTTP access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com//articles/1233)\.
+For demonstration purposes, these commands create a security group that allows unrestricted access for RDP through port 3389 and, alternatively, HTTP through port 80\. As a best practice, we recommend restricting access to the RDP and HTTP ports\. AWS CodeDeploy does not require unrestricted port access and does not require HTTP access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com/articles/1233)\.
 
 1. On your development machine, create a file named `instance-setup.sh` \(for Amazon EC2 instances running Amazon Linux, Ubuntu Server, or RHEL\) or `instance-setup.txt` \(for Amazon EC2 instances running Windows Server\) that contains the following contents\. 
 
@@ -140,7 +144,7 @@ For demonstration purposes, these commands create a security group that allows u
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Ubuntu Server**
 
@@ -160,7 +164,7 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server**
 
@@ -174,7 +178,7 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
    </powershell>
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
 1. From the same directory where you created the `instance-setup.sh` or `instance-setup.txt` file, you will call the run\-instances command to create and launch the Amazon EC2 instance\.
 
@@ -182,7 +186,7 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
 
    + The ID of an Amazon Machine Image \(AMI\) \(*ami\-id*\) you will use for the instance\. To get the ID, see [Finding a Suitable AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)\.
 
-   + The name of the type of Amazon EC2 instance \(*instance\-type*\) you will create, such as `t1.micro`\. For a list, see [Amazon EC2 Instance Types](https://aws.amazon.com//ec2/instance-types/)\.
+   + The name of the type of Amazon EC2 instance \(*instance\-type*\) you will create, such as `t1.micro`\. For a list, see [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)\.
 
    + The name of an IAM instance profile with permission to access the Amazon S3 bucket where the AWS CodeDeploy agent installation files for your region are stored\. 
 
@@ -212,7 +216,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
      --iam-instance-profile Name=iam-instance-profile
    ```
 **Note**  
-This command creates a default security group for the Amazon EC2 instance that allows access to several ports, including unrestricted access for SSH through port 22 and, alternatively, HTTP through port 80\. As a best practice, we recommend restricting access to the SSH and HTTP ports only\. AWS CodeDeploy does not require unrestricted port access and does not require HTTP port access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com//articles/1233)\.
+This command creates a default security group for the Amazon EC2 instance that allows access to several ports, including unrestricted access for SSH through port 22 and, alternatively, HTTP through port 80\. As a best practice, we recommend restricting access to the SSH and HTTP ports only\. AWS CodeDeploy does not require unrestricted port access and does not require HTTP port access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com/articles/1233)\.
 
    **For Windows Server**
 

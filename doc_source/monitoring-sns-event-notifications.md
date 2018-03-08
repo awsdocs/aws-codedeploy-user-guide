@@ -20,3 +20,9 @@ You can create up to 10 triggers for each AWS CodeDeploy deployment group, for a
 |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications.html)  |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-sns-event-notifications.html)  | 
 | ¹Applies to blue/green deployments only\. Indicates that the latest application revision has been installed on instances in a replacement environment and traffic from the original environment can now be rerouted behind a load balancer\. For more information see [Working with Deployments in AWS CodeDeploy](deployments.md)\. | 
 
+
++ [Grant Amazon SNS Permissions to a Service Role](monitoring-sns-event-notifications-permisssions.md)
++ [Create a Trigger for an AWS CodeDeploy Event](monitoring-sns-event-notifications-create-trigger.md)
++ [Edit a Trigger in a Deployment Group](monitoring-sns-event-notifications-edit-trigger.md)
++ [Delete a Trigger from a Deployment Group](monitoring-sns-event-notifications-delete-trigger.md)
++ [JSON Data Formats for Triggers](monitoring-sns-event-notifications-json-format.md)

@@ -30,13 +30,13 @@ AWS provides various tools that you can use to monitor AWS CodeDeploy\. You can 
 
 You can use the following automated monitoring tools to watch AWS CodeDeploy and report when something is wrong:
 
-+ **Amazon CloudWatch Alarms** – Watch a single metric over a time period that you specify, and perform one or more actions based on the value of the metric relative to a given threshold over a number of time periods\. The action is a notification sent to an Amazon Simple Notification Service \(Amazon SNS\) topic or Auto Scaling policy\. CloudWatch alarms do not invoke actions simply because they are in a particular state; the state must have changed and been maintained for a specified number of periods\. For more information, see [Monitoring Deployments with Amazon CloudWatch Tools](monitoring-cloudwatch.md)\.
++ **Amazon CloudWatch Alarms** – Watch a single metric over a time period that you specify, and perform one or more actions based on the value of the metric relative to a given threshold over a number of time periods\. The action is a notification sent to an Amazon Simple Notification Service \(Amazon SNS\) topic or Amazon EC2 Auto Scaling policy\. CloudWatch alarms do not invoke actions simply because they are in a particular state; the state must have changed and been maintained for a specified number of periods\. For more information, see [Monitoring Deployments with Amazon CloudWatch Tools](monitoring-cloudwatch.md)\.
 
   For information about updating your service role to work with CloudWatch alarm monitoring, see [Grant CloudWatch Permissions to an AWS CodeDeploy Service Role](monitoring-create-alarms-grant-permissions.md)\. For information about adding CloudWatch alarm monitoring to your AWS CodeDeploy operations, see [Create an Application with AWS CodeDeploy](applications-create.md), [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md), or [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md)\.
 
 + **Amazon CloudWatch Logs** – Monitor, store, and access your log files from AWS CloudTrail or other sources\. For more information, see [Monitoring Log Files](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html) in the *Amazon CloudWatch User Guide*\.
 
-  For information about using the CloudWatch console to view AWS CodeDeploy logs, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](https://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
+  For information about using the CloudWatch console to view AWS CodeDeploy logs, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
 + **Amazon CloudWatch Events** – Match events and route them to one or more target functions or streams to make changes, capture state information, and take corrective action\. For more information, see [What is Amazon CloudWatch Events](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchEvents.html) in the *Amazon CloudWatch User Guide*\.
 

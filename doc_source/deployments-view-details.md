@@ -22,7 +22,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the AWS CodeDeploy menu, choose **Deployments** to view a list of deployments and their details\.
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy supports these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. To see more details for a single deployment, in **Deployments**, choose the deployment ID\.
 

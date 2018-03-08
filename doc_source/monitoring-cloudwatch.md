@@ -4,7 +4,7 @@ You can monitor AWS CodeDeploy deployments using the following CloudWatch tools:
 
 Reviewing the logs created by the AWS CodeDeploy agent and deployments can help you troubleshoot the causes of deployment failures\. As an alternative to reviewing AWS CodeDeploy logs on one instance at a time, you can use CloudWatch Logs to monitor all logs in a central location\. 
 
-For information about using the CloudWatch console to view AWS CodeDeploy logs, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](https://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
+For information about using the CloudWatch console to view AWS CodeDeploy logs, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
 For information about using CloudWatch alarms and CloudWatch Events to monitor your AWS CodeDeploy deployments, see the following topics\. 
 

@@ -30,7 +30,7 @@ An AppSpec file can be YAML\-formatted or JSON\-formatted\. You can also enter t
 
 + Which lifecycle event hooks to run in response to deployment lifecycle events\.
 
-An AppSpec file must be a YAML\-formatted file named `appspec.yml` and it must be placed in the root of an application's source code's directory structure\. Otherwise, deployments will fail\.
+An AppSpec file must be a YAML\-formatted file named `appspec.yml` and it must be placed in the root of the directory structure of an application's source code\. Otherwise, deployments fail\.
 
 After you have a completed AppSpec file, you bundle it, along with the content to deploy, into an archive file \(zip, tar, or compressed tar\)\. For more information, see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
 
@@ -38,6 +38,8 @@ After you have a completed AppSpec file, you bundle it, along with the content t
 The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not supported for Windows Server instances\.
 
 After you have a bundled archive file \(known in AWS CodeDeploy as a *revision*\), you upload it to an Amazon S3 bucket or Git repository\. Then you use AWS CodeDeploy to deploy the revision\. For instructions, see [Create a Deployment with AWS CodeDeploy](deployments-create.md)\.
+
+The appspec\.yml for an EC2/On\-Premises compute platform deployment is saved in the root directory of your revision\. For more information, see [Add an AppSpec File for an EC2/On\-Premises Deployment](application-revisions-appspec-file.md#add-appspec-file-server) and [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md)\. 
 
 ## AppSpec File Spacing<a name="reference-appspec-file-spacing"></a>
 
@@ -71,7 +73,7 @@ hooks:
 [6]runas:[1]user-name
 ```
 
-Here is an example of a correctly spacedAppSpec file:
+Here is an example of a correctly spaced AppSpec file:
 
 ```
 version: 0.0
@@ -90,6 +92,7 @@ hooks:
       runas: root
   ApplicationStart:
     - location: scripts/start_server.sh
+    - location: scripts/create_test_db.sh
       timeout: 300
       runas: root
   ApplicationStop:

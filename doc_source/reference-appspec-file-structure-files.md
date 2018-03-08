@@ -1,6 +1,6 @@
 # AppSpec 'files' Section \(EC2/On\-Premises Deployments Only\)<a name="reference-appspec-file-structure-files"></a>
 
-Provides information to AWS CodeDeploy about which files from your application revision should be installed on the instance during the deployment's **Install** event\. This section is required only if you will be copying files from your revision to locations on the instance during deployment\. 
+Provides information to AWS CodeDeploy about which files from your application revision should be installed on the instance during the deployment's **Install** event\. This section is required only if you are copying files from your revision to locations on the instance during deployment\. 
 
 This section has the following structure:
 
@@ -14,11 +14,11 @@ Multiple **source** and **destination** pairs can be set\.
 
 The **source** instruction identifies a file or directory from your revision to copy to the instance:
 
-+ If **source** refers to a file, only the specified files will be copied to the instance\.
++ If **source** refers to a file, only the specified files are copied to the instance\.
 
-+ If **source** refers to a directory, then all files in the directory will be copied to the instance\.
++ If **source** refers to a directory, then all files in the directory are copied to the instance\.
 
-+ If **source** is a single slash \("/" for Amazon Linux, RHEL, and Ubuntu Server instances, or "\\" for Windows Server instances\), then all of the files from your revision will be copied to the instance\.
++ If **source** is a single slash \("/" for Amazon Linux, RHEL, and Ubuntu Server instances, or "\\" for Windows Server instances\), then all of the files from your revision are copied to the instance\.
 
 The paths used in **source** are relative paths, starting from the root of your revision\.
 
@@ -34,7 +34,7 @@ files:
     destination: /webapps/myApp
 ```
 
-In this example, the following two operations will be performed during the **Install** event:
+In this example, the following two operations are performed during the **Install** event:
 
 1. Copy the `Config/config.txt` file in your revision to the `/webapps/Config/config.txt` path on the instance\.
 

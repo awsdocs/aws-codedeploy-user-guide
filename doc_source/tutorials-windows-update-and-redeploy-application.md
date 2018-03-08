@@ -35,7 +35,7 @@ Now that you've successfully deployed your application revision, on the developm
      <div align="center"><h1>Hello Again, World!</h1></div>
      <div align="center"><h2>You have successfully deployed a revision of an application using AWS CodeDeploy</h2></div>
      <div align="center">
-       <p>What to do next? Take a look through the <a href="http://docs.aws.amazon.com/codedeploy">AWS CodeDeploy Documentation</a>.</p>
+       <p>What to do next? Take a look through the <a href="https://aws.amazon.com/codedeploy">AWS CodeDeploy Documentation</a>.</p>
      </div>
    </body>
    </html>

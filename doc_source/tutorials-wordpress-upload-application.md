@@ -118,8 +118,9 @@ Make sure the WordPress application files, the AppSpec file, and the scripts are
   |--WordPress/
       |-- appspec.yml  
       |-- scripts/
-      |    |-- install_dependencies.sh
       |    |-- change_permissions.sh
+      |    |-- create_test_db.sh
+      |    |-- install_dependencies.sh
       |    |-- start_server.sh
       |    |-- stop_server.sh
       |-- wp-admin/
@@ -139,7 +140,7 @@ Make sure the WordPress application files, the AppSpec file, and the scripts are
 Bundle the WordPress application files and the AppSpec file into an archive file \(known as an application *revision*\)\.
 
 **Note**  
-You may be charged for storing objects in a bucket and for transferring application revisions into and out of a bucket\. For more information, see [Amazon S3 Pricing](http://aws.amazon.com/s3/pricing/)\. 
+You may be charged for storing objects in a bucket and for transferring application revisions into and out of a bucket\. For more information, see [Amazon S3 Pricing](https://aws.amazon.com/s3/pricing/)\. 
 
 1. On the development machine, switch to the folder where the files are stored: 
 

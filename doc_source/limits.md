@@ -47,6 +47,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | Maximum number of seconds until a deployment lifecycle event fails if not completed | 3600 | 
 | Maximum number of characters in a deployment description | 256 | 
 | Maximum number of deployments that can be passed to the [BatchGetDeployments](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html) API action | 100 | 
+|  Maximum number of minutes until a deployment fails if a lifecycle event doesn't start after: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html)  | 5 | 
 |  ¹ This limit is intended to prevent accidental, concurrent deployments of the same application to the same deployment group\. ² Each deployment to a scaled\-up Amazon EC2 instance in an Auto Scaling group counts as a single concurrent deployment\. If the scaled\-up Amazon EC2 instance is associated with multiple applications, then additional concurrent deployment for each application would be generated\. For example, an Auto Scaling group that scales up by five Amazon EC2 instances and is associated with a single application would generate five concurrent deployments\. If the same five scaled\-up Amazon EC2 instances are associated with two additional applications, this would generate ten additional concurrent deployments\.   | 
 
 ## Deployment Configurations<a name="limits-deployment-configurations"></a>

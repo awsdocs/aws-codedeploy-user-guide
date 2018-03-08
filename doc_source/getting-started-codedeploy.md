@@ -2,7 +2,7 @@
 
 Before you use AWS CodeDeploy for the first time, you must complete setup steps\.
 
-To begin, you must sign up for an AWS account\. To sign up, go to [http://aws\.amazon\.com/](http://aws.amazon.com/) and choose **Create an AWS Account**\.
+To begin, you must sign up for an AWS account\. To sign up, go to [https://aws\.amazon\.com/](https://aws.amazon.com/) and choose **Create an AWS Account**\.
 
 Then you can continue with the rest of the setup tasks in this section\.
 

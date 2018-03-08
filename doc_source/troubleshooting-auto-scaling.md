@@ -71,7 +71,10 @@ To address this issue:
 
 As a best practice, you should associate only one deployment group with each Auto Scaling group\. 
 
-This is because if Auto Scaling scales up an instance that has hooks associated with multiple deployment groups, it sends notifications for all of the hooks at once\. This causes multiple deployments to each instance to begin at the same time\. When multiple deployments send commands to the AWS CodeDeploy agent at the same time, the five\-minute limit in the AWS CodeDeploy timeout logic may be exceeded\. \(AWS CodeDeploy logic considers a deployment to have failed if its steps are not complete within five minutes, even if a deployment process is otherwise running as expected\.\) 
+This is because if Auto Scaling scales up an instance that has hooks associated with multiple deployment groups, it sends notifications for all of the hooks at once\. This causes multiple deployments to each instance to start at the same time\. When multiple deployments send commands to the AWS CodeDeploy agent at the same time, the five\-minute timeout between a lifecycle event and either the start of the deployment or the end of the previous lifecycle event might be reached\. If this happens, the deployment fails, even if a deployment process is otherwise running as expected\.\) 
+
+**Note**  
+The default timeout for a script in a lifecycle event is 30 minutes\. You can change the timeout to a different value in the AppSpec file\. For more information, see [Add an AppSpec File for an EC2/On\-Premises Deployment](application-revisions-appspec-file.md#add-appspec-file-server)\.
 
 It's not possible to control the order in which deployments occur if more than one deployment attempts to run at the same time\. 
 
@@ -79,7 +82,7 @@ Finally, if deployment to any instance fails, Auto Scaling immediately terminate
 
 For more information about problems with attempting multiple deployments to an instance at the same time, see [Avoid concurrent deployments to the same Amazon EC2 instance](troubleshooting-general.md#troubleshooting-concurrent-deployments)\.
 
-For more information about Auto Scaling, see [Under the Hood: AWS CodeDeploy and Auto Scaling Integration](https://aws.amazon.com/blogs/devops/under-the-hood-aws-codedeploy-and-auto-scaling-integration/)\.
+For more information about Auto Scaling, see [Under the Hood: AWS CodeDeploy and Auto Scaling Integration](http://aws.amazon.com/blogs/devops/under-the-hood-aws-codedeploy-and-auto-scaling-integration/)\.
 
 ## Amazon EC2 instances in an Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"<a name="troubleshooting-auto-scaling-heartbeat"></a>
 
@@ -87,7 +90,11 @@ An Auto Scaling group might fail to launch new Amazon EC2 instances, generating 
 
 `Launching a new Amazon EC2 instance <instance-Id>. Status Reason: Instance failed to complete user's Lifecycle Action: Lifecycle Action with token<token-Id> was abandoned: Heartbeat Timeout`\. 
 
-This message usually indicates that an application in AWS CodeDeploy was deleted before its associated deployment groups were updated or deleted\. 
+This message usually indicates one of the following: 
+
++ The maximum number of concurrent deployments associated with an AWS account was reached\. For more information about deployment limits, see [AWS CodeDeploy Limits](limits.md)\. 
+
++ An application in AWS CodeDeploy was deleted before its associated deployment groups were updated or deleted\. 
 
 When you delete an application or deployment group, AWS CodeDeploy attempts to clean up any Auto Scaling hooks associated with it, but some hooks might remain\. If you run a command to delete a deployment group, the leftover hooks will be returned in the output; however, if you run a command to delete an application, the leftover hooks will not appear in the output\.
 

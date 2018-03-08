@@ -33,7 +33,7 @@ The following shows an example of a permissions policy that allows a user to del
 
 For a user to work with the AWS CodeDeploy console, that user must have a minimum set of permissions that allows the user to describe other AWS resources for their AWS account\. In order to use fully use AWS CodeDeploy in the AWS CodeDeploy console, you must have permissions from the following services:
 
-+ Auto Scaling
++ Amazon EC2 Auto Scaling
 
 + AWS CodeDeploy
 
@@ -81,7 +81,7 @@ Permissions for some aspects of the deployment process are granted to two other 
 
 + **Service role**: An IAM role that grants permissions to an AWS service so it can access AWS resources\. The policies you attach to the service role determine which AWS resources the service can access and the actions it can perform with those resources\. For AWS CodeDeploy, a service role is used for the following:
 
-  + To read either the tags applied to the instances or the Auto Scaling group names associated with the instances\. This enables AWS CodeDeploy to identify instances to which it can deploy applications\.
+  + To read either the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. This enables AWS CodeDeploy to identify instances to which it can deploy applications\.
 
   + To perform operations on instances, Auto Scaling groups, and Elastic Load Balancing load balancers\.
 

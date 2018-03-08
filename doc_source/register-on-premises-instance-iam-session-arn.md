@@ -84,7 +84,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
 
    For more information about creating IAM roles, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in *IAM User Guide*\.
 
-   For information about assigning permissions to an existing role, see [put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) in [AWS Command Line Interface Reference](http://docs.aws.amazon.com/cli/latest/reference/)\.
+   For information about assigning permissions to an existing role, see [put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) in [AWS CLI Command Reference](http://docs.aws.amazon.com/cli/latest/reference/)\.
 
 ## Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS<a name="register-on-premises-instance-iam-session-arn-2"></a>
 
@@ -181,7 +181,7 @@ Where *supported\-region* is the region identifier \(for example, `us-west-2`\)\
 
 + For an Ubuntu Server on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Ubuntu Server](codedeploy-agent-operations-install-ubuntu.md), and then return to this page\.
 
-+ For a RHEL on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Amazon Linux or RHEL ](codedeploy-agent-operations-install-linux.md), and then return to this page\.
++ For a RHEL on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Amazon Linux or RHEL](codedeploy-agent-operations-install-linux.md), and then return to this page\.
 
 + For a Windows Server on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md), and then return to this page\.
 

@@ -14,3 +14,7 @@ If you don't want an on\-premises instance to be used in deployments anymore, yo
 
 The instructions in this section show you how to configure an on\-premises instance and then register and tag it with AWS CodeDeploy so it can be used in deployments\. This section also describes how to use AWS CodeDeploy to get information about on\-premises instances and deregister an on\-premises instance after you're no longer planning to deploy to it\.
 
+
++ [Prerequisites for Configuring an On\-Premises Instance](instances-on-premises-prerequisites.md)
++ [Register an On\-Premises Instance](on-premises-instances-register.md)
++ [Managing On\-Premises Instances Operations](on-premises-instances-operations.md)

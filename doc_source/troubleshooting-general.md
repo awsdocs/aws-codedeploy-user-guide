@@ -6,7 +6,7 @@
 + [Required IAM roles are not available](#troubleshooting-iam-cloudformation)
 + [Avoid concurrent deployments to the same Amazon EC2 instance](#troubleshooting-concurrent-deployments)
 + [Using some text editors to create AppSpec files and shell scripts can cause deployments to fail](#troubleshooting-text-editors)
-+ [Using Finder in Mac OS to bundle an application revision can cause deployments to fail](#troubleshooting-bundle-with-finder)
++ [Using Finder in macOS to bundle an application revision can cause deployments to fail](#troubleshooting-bundle-with-finder)
 
 ## General Troubleshooting Checklist<a name="troubleshooting-checklist"></a>
 
@@ -83,11 +83,16 @@ If you rely on an IAM instance profile or a service role that was created as par
 
 As a best practice, you should avoid situations that would result in more than one attempted deployment to an Amazon EC2 instance at the same time\. In cases where commands from different deployments compete to run on a single instance, the deployments can time out and fail for the following reasons:
 
-+ AWS CodeDeploy's timeout logic expects all of the steps in a deployment process to be completed in five minutes or less\. 
++ AWS CodeDeploy fails a deployment if its first lifecycle event doesn't start within five minutes of the triggering of the deployment\. You can use the console or the AWS CLI [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to trigger a deployment\.
+
++ AWS CodeDeploy fails a deployment if a lifecycle event does not start within five minutes of the end of the previous lifecycle event\.
 
 + The AWS CodeDeploy agent can process only one deployment command at a time\. 
 
 + It's not possible to control the order in which deployments occur if more than one deployment attempts to run at the same time\. 
+
+**Note**  
+The default timeout for a script in a lifecycle event is 30 minutes\. You can change the timeout to a different value in the AppSpec file\. For more information, see [Add an AppSpec File for an EC2/On\-Premises Deployment](application-revisions-appspec-file.md#add-appspec-file-server)\.
 
 AWS CodeDeploy logic considers a deployment to have failed if its steps are not complete within five minutes, even if a deployment process is otherwise running as expected\. The five\-minute limit can be exceeded if commands from multiple deployments are being sent to the AWS CodeDeploy agent at the same time\.
 
@@ -109,7 +114,7 @@ To address this issue, we recommend the following:
 
 + If you must use a text editor in Windows or Mac OS to create shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, use a program or utility that converts text in Windows or Mac OS format to Unix format\. For examples of these programs and utilities, search the Internet for "DOS to UNIX" or "Mac to UNIX\." Be sure to test the converted shell script files on the target operating systems\.
 
-## Using Finder in Mac OS to bundle an application revision can cause deployments to fail<a name="troubleshooting-bundle-with-finder"></a>
+## Using Finder in macOS to bundle an application revision can cause deployments to fail<a name="troubleshooting-bundle-with-finder"></a>
 
 Deployments might fail if you use the Finder graphical user interface \(GUI\) application on a Mac to bundle \(zip\) an AppSpec file and related files and scripts into an application revision archive \(\.zip\) file\. This is because Finder creates an intermediate `__MACOSX` folder in the \.zip file and places component files into it\. AWS CodeDeploy cannot find the component files, so the deployment fails\.
 

@@ -15,7 +15,7 @@ To see if the AWS CodeDeploy agent is installed and running, sign in to the inst
 sudo service codedeploy-agent status
 ```
 
-If the command returns an error, the AWS CodeDeploy agent is not installed\. Install it as described in [Install or reinstall the AWS CodeDeploy agent for Amazon Linux or RHEL ](codedeploy-agent-operations-install-linux.md)\.
+If the command returns an error, the AWS CodeDeploy agent is not installed\. Install it as described in [Install or reinstall the AWS CodeDeploy agent for Amazon Linux or RHEL](codedeploy-agent-operations-install-linux.md)\.
 
 If the AWS CodeDeploy agent is installed and running, you should see a message like `The AWS CodeDeploy agent is running`\.
 

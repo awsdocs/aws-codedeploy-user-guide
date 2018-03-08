@@ -10,7 +10,7 @@
 + [Long\-running processes can cause deployments to fail](#troubleshooting-long-running-processes)
 
 **Note**  
-The causes of many deployment failures can be identified by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](https://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
+The causes of many deployment failures can be identified by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
 ## Deployment fails with the message “Validation of PKCS7 signed message failed”<a name="troubleshooting-deployments-agent-SHA-256"></a>
 

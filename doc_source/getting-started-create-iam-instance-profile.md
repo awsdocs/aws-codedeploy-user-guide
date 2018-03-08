@@ -122,11 +122,7 @@ You've now created an IAM instance profile to attach to your Amazon EC2 instance
 
 1. In the IAM console, in the navigation pane, choose **Policies**, and then choose **Create policy**\. \(If a **Get Started** button appears, choose it, and then choose **Create Policy**\.\)
 
-1. Next to **Create Your Own Policy**, choose **Select**\.
-
-1. In the **Policy Name** box, type **CodeDeployDemo\-EC2\-Permissions**\.
-
-1. In the **Policy Document** box, paste the following:
+1. On the **Create policy** page, paste the following in the **JSON** tab:
 
    ```
    {
@@ -179,17 +175,23 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
    }
    ```
 
+1.  Choose **Review policy**\. 
+
+1. On the **Create policy** page, type **CodeDeployDemo\-EC2\-Permissions** in the **Policy Name** box\.
+
+1.  \(Optional\) For **Description**, type a description for the policy\. 
+
 1. Choose **Create Policy**\.
 
 1. In the navigation pane, choose **Roles**, and then choose **Create role**\.
 
-1. On the **Select role type** page, choose **AWS service**, and from the **Choose the service that will use this role** list, choose **EC2**\.
+1. On the **Create role** page, choose **AWS service**, and from the **Choose the service that will use this role** list, choose **EC2**\.
 
 1. From the **Select your use case** list, choose **EC2**\.
 
 1. Choose **Next: Permissions**\.
 
-1. On the **Attached permissions policy** page, if there is a box next to **CodeDeployDemo\-EC2\-Permissions**, select it, and then choose **Next: Review**\.
+1.  On the **Attached permissions policy** page, if there is a box next to **CodeDeployDemo\-EC2\-Permissions**, select it, and then choose **Next: Review**\.
 
 1. On the **Review** page, in **Role name**, type a name for the service role \(for example **CodeDeployDemo\-EC2\-Instance\-Profile**\), and then choose **Create role**\.
 

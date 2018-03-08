@@ -5,7 +5,7 @@ The following is the high\-level structure for an AppSpec file used for deployme
 ## AppSpec File Structure for AWS LambdaDeployments<a name="lambda-appspec-structure"></a>
 
 **Note**  
-This structure is written in YAML\. An AppSpec file for a Lambda deployment can also be written in JSON using the same structure\.
+This AppSpec file is written in YAML, but you can also write an AppSpec file for a Lambda deployment in JSON using the same structure\.
 
 ```
 version: 0.0
@@ -25,10 +25,10 @@ This section specifies information about the Lambda function to deploy\.
 For more information, see [AppSpec 'resources' Section \(AWS Lambda Deployments Only\)](reference-appspec-file-structure-resources.md)\.
 
 ** **hooks** **  
-This section specifies Lambda fuctions to run at specific deployment lifecycle events to validate the deployment\.  
+This section specifies Lambda functions to run at specific deployment lifecycle events to validate the deployment\.  
 For more information, see [AppSpec 'hooks' Section](reference-appspec-file-structure-hooks.md)\.
 
-## AppSpec File Structure for EC2/On\-Premises Delployments<a name="server-appspec-structure"></a>
+## AppSpec File Structure for EC2/On\-Premises Deployments<a name="server-appspec-structure"></a>
 
 ```
 version: 0.0
@@ -47,7 +47,7 @@ In this structure:
 This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by AWS CodeDeploy for future use\.
 
 ** **os** **  
-This section specifies the operating system value of the instance to which you will deploy\. It is required\. The following values can be specified:  
+This section specifies the operating system value of the instance to which you deploy\. It is required\. The following values can be specified:  
 
 + **linux** – The instance is an Amazon Linux, Ubuntu Server, or RHEL instance\.
 
@@ -67,7 +67,7 @@ For more information, see [AppSpec 'hooks' Section](reference-appspec-file-struc
 
 
 + [AppSpec File Structure for AWS LambdaDeployments](#lambda-appspec-structure)
-+ [AppSpec File Structure for EC2/On\-Premises Delployments](#server-appspec-structure)
++ [AppSpec File Structure for EC2/On\-Premises Deployments](#server-appspec-structure)
 + [AppSpec 'files' Section \(EC2/On\-Premises Deployments Only\)](reference-appspec-file-structure-files.md)
 + [AppSpec 'resources' Section \(AWS Lambda Deployments Only\)](reference-appspec-file-structure-resources.md)
 + [AppSpec 'permissions' Section \(EC2/On\-Premises Deployments Only\)](reference-appspec-file-structure-permissions.md)

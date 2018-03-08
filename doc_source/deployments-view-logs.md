@@ -8,7 +8,7 @@ You can view the log data created by an AWS CodeDeploy deployment by setting up 
 
 ## View Log File Data in the Amazon CloudWatch Console<a name="deployments-view-logs-cloudwatch"></a>
 
-When the Amazon CloudWatch Logs agent is installed on an instance, deployment log data for all deployments to that instance becomes available for viewing in the CloudWatch console\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information about setting up the Amazon CloudWatch Logs agent, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](https://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
+When the Amazon CloudWatch Logs agent is installed on an instance, deployment log data for all deployments to that instance becomes available for viewing in the CloudWatch console\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information about setting up the Amazon CloudWatch Logs agent, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
 ## View Log Files on an Instance<a name="deployments-view-logs-instance"></a>
 

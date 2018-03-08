@@ -22,17 +22,13 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
 
 1. In the navigation pane, choose **Roles**, and then choose **Create role**\.
 
-1. On the **Select role type** page, choose **AWS service**, and from the **Choose the service that will use this role** list, choose the compute platform for the deployment\.
+1. On the **Create role** page, choose **AWS service**, and from the **Choose the service that will use this role** list, choose **CodeDeploy**\.
 
-1. From **Select your use case**, choose the role for the compute platform:
-
-   + For EC2/On\-Premises, choose **CodeDeploy**\.
-
-   + For AWS Lambda, choose **CodeDeployRoleForLambda**\.
+1. From **Select your use case**, choose **CodeDeploy**\.
 
 1. Choose **Next: Permissions**\.
 
-1. On the **Attached permissions policy** page, if there is a box next to **AWSCodeDeployRole** , select it, and then choose **Next: Review**\.
+1. On the **Attached permissions policy** page, if there is a box next to **AWSCodeDeployRole**, select it, and then choose **Next: Review**\.
 
    The **AWSCodeDeployRole** policy provides the permissions required for your service role to:
 

@@ -8,9 +8,9 @@ Before you start working with the service, you should familiarize yourself with 
 
 + **EC2/On\-Premises**: Describes instances of physical servers that can be Amazon EC2 cloud instances, on\-premises servers, or both\. Applications created using the EC2/On\-Premises compute platform can be composed of executable files, configuration files, images, and more\.
 
-  Delpoyments that use the EC2/On\-Premises compute platform manage the way in which traffic is directed to instances by using an in\-place or blue/green deployment type\. For more information, see [Overview of AWS CodeDeploy Deployment Types](welcome.md#welcome-deployment-overview)\.
+  Deployments that use the EC2/On\-Premises compute platform manage the way in which traffic is directed to instances by using an in\-place or blue/green deployment type\. For more information, see [Overview of AWS CodeDeploy Deployment Types](welcome.md#welcome-deployment-overview)\.
 
-+ **AWS Lambda**: Used to deploy applications that consist of updated versions of Lambda functions\. AWS Lambda manages the Lambda functions in a serverless compute environment made up of a high\-availability compute structure\. All administration of the compute resources is performed by AWS Lambda\. For more information, see [Serverless Computing and Applications](aws.amazon.comserverless/)\. For more information about AWS Lambda and Lambda functions, see [AWS Lambda](aws.amazon.com/lambda/)\.
++ **AWS Lambda**: Used to deploy applications that consist of updated versions of Lambda functions\. AWS Lambda manages the Lambda functions in a serverless compute environment made up of a high\-availability compute structure\. All administration of the compute resources is performed by AWS Lambda\. For more information, see [Serverless Computing and Applications](https://aws.amazon.com/serverless/)\. For more information about AWS Lambda and Lambda functions, see [AWS Lambda](https://aws.amazon.com/lambda/)\.
 
   Applications created using the AWS Lambda compute platform can manage the way in which traffic is directed to the updated Lambda function versions during a deployment by choosing a canary, linear, or all\-at\-once configuration\. 
 
@@ -26,7 +26,7 @@ These are the deployment configurations that specify how traffic is routed durin
 
 + **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version at once\.
 
-**Deployment group**: A set of individual instances\. A deployment group contains individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both\. For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Auto Scaling, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
+**Deployment group**: A set of individual instances\. A deployment group contains individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both\. For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](http://docs.aws.amazon.com//AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Auto Scaling, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 **Deployment type**: The method used to make the latest application revision available on instances in a deployment group\.
 
@@ -56,7 +56,7 @@ When using an EC2/On\-Premises compute platform, blue/green deployments work wit
 
 **Service role**: An IAM role that grants permissions to an AWS service so it can access AWS resources\. The policies you attach to the service role determine which AWS resources the service can access and the actions it can perform with those resources\. For AWS CodeDeploy, a service role is used for the following:
 
-+ To read either the tags applied to the instances or the Auto Scaling group names associated with the instances\. This enables AWS CodeDeploy to identify instances to which it can deploy applications\.
++ To read either the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. This enables AWS CodeDeploy to identify instances to which it can deploy applications\.
 
 + To perform operations on instances, Auto Scaling groups, and Elastic Load Balancing load balancers\.
 

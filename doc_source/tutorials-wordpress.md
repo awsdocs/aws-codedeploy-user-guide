@@ -15,8 +15,8 @@ This tutorial's steps are presented from the perspective of a local development 
 Before you start this tutorial, you must complete the prerequisites in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\. These include configuring your IAM user account, installing or upgrading the AWS CLI, and creating an IAM instance profile and a service role\.
 
 
-+ [Step 1: Launch an Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance](tutorials-wordpress-launch-instance.md)
-+ [Step 2: Configure Your Source Content to Deploy to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance](tutorials-wordpress-configure-content.md)
++ [Step 1: Launch and Configure an Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance](tutorials-wordpress-launch-instance.md)
++ [Step 2: Configure Your Source Content to Be Deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance](tutorials-wordpress-configure-content.md)
 + [Step 3: Upload Your WordPress Application to Amazon S3](tutorials-wordpress-upload-application.md)
 + [Step 4: Deploy Your WordPress Application](tutorials-wordpress-deploy-application.md)
 + [Step 5: Update and Redeploy Your WordPress Application](tutorials-wordpress-update-and-redeploy-application.md)

@@ -22,5 +22,5 @@ aws deploy create-deployment-config --deployment-config-name ThreeQuartersHealth
 The following example creates an AWS Lambda deployment configuration named Canary25Percent45Minutes\. It uses canary traffic shifting to shift 25 percent of traffic in the first increment\. The remaining 75 percent shifted 45 minutes later:
 
 ```
-aws deploy create-deployment-config --deployment-config-name Canary25Percent45Minutes --traffic-routing-config "type="TimeBasedCanary",timeBasedCanary={canaryPercentage=45,canaryInterval=45}" --compute-platform Lambda
+aws deploy create-deployment-config --deployment-config-name Canary25Percent45Minutes --traffic-routing-config "type="TimeBasedCanary",timeBasedCanary={canaryPercentage=25,canaryInterval=45}" --compute-platform Lambda
 ```

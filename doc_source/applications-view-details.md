@@ -16,7 +16,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the AWS CodeDeploy menu, choose **Applications**\. 
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy supports these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. To view additional application details, choose the application name in the list\.
 

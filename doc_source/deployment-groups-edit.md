@@ -21,7 +21,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. In the list of applications, choose the application that is associated with the deployment group you want to change\.
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy supports these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. On the **Application details** page, in **Deployment groups**, choose the button next to the deployment group you want to change\.
 

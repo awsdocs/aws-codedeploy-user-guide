@@ -1,6 +1,6 @@
 # Step 4: Deploy Your WordPress Application<a name="tutorials-wordpress-deploy-application"></a>
 
-Now you will deploy the sample WordPress application revision you uploaded to Amazon S3\. You will use the AWS CLI or the AWS CodeDeploy console to deploy the revision and monitor the deployment's progress\. After the application revision is successfully deployed, you will check the results\.
+Now you deploy the sample WordPress application revision you uploaded to Amazon S3\. You can use the AWS CLI or the AWS CodeDeploy console to deploy the revision and monitor the deployment's progress\. After the application revision is successfully deployed, you check the results\.
 
 
 + [Deploy Your Application Revision with AWS CodeDeploy](#tutorials-wordpress-deploy-application-create-deployment)
@@ -15,11 +15,11 @@ Now you will deploy the sample WordPress application revision you uploaded to Am
 
 ### To deploy your application revision \(CLI\)<a name="tutorials-wordpress-deploy-application-create-deployment-cli"></a>
 
-1. First, the deployment needs a deployment group\. However, before you create the deployment group, you need a service role ARN\. A service role is an IAM role that gives a service permission to act on your behalf\. In this case, the service role gives AWS CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their Amazon EC2 instance tags\.
+1. The deployment needs a deployment group\. However, before you create the deployment group, you need a service role ARN\. A service role is an IAM role that gives a service permission to act on your behalf\. In this case, the service role gives AWS CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their Amazon EC2 instance tags\.
 
    You should have already followed the instructions in [Create a Service Role \(CLI\) ](getting-started-create-service-role.md#getting-started-create-service-role-cli) to create a service role\. To get the ARN of the service role, see [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
 
-1. Now that you have the ARN, call the create\-deployment\-group command to create a deployment group named **WordPress\_DepGroup**, associated with the application named **WordPress\_App**, using the Amazon EC2 tag named **CodeDeployDemo** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the service role ARN:
+1. Now that you have the service role ARN, call the create\-deployment\-group command to create a deployment group named **WordPress\_DepGroup**, associated with the application named **WordPress\_App**, using the Amazon EC2 tag named **CodeDeployDemo** and deployment configuration named **CodeDeployDefault\.OneAtATime**:
 
    ```
    aws deploy create-deployment-group \
@@ -30,7 +30,7 @@ Now you will deploy the sample WordPress application revision you uploaded to Am
      --service-role-arn serviceRoleARN
    ```
 **Note**  
-The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch Alarms are met\. Commands for these actions are excluded from the sample in this tutorial\.
+The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch Alarms are met\. Commands for these actions are not included in this tutorial\.
 
 1. Now call the create\-deployment command to create a deployment associated with the application named **WordPress\_App**, the deployment configuration named **CodeDeployDefault\.OneAtATime**, and the deployment group named **WordPress\_DepGroup**, using the application revision named **WordPressApp\.zip** in the bucket named **codedeploydemobucket**:
 
@@ -90,9 +90,7 @@ After you type **CodeDeployDemo**, a **1** should appear under **Instances** to 
 
    1. In the list of objects, choose **WordPressApp\.zip**\.
 
-   1. Choose the **Properties** tab\.
-
-   1. Copy the value of the **Link** field to your clipboard\.
+   1. On the **Overview** tab, copy the value of the **Link** field to your clipboard\.
 
       It might look something like this:
 
@@ -100,7 +98,7 @@ After you type **CodeDeployDemo**, a **1** should appear under **Instances** to 
 
    1. Return to the AWS CodeDeploy console, and in **Revision location**, paste the **Link** field value\.
 
-1. If a message appears in the **File type** list stating the file type could not be detected, choose **\.zip** in the list of file types\.
+1. If a message appears in the **File type** list stating the file type could not be detected, choose **\.zip**\.
 
 1. \(Optional\) Type a comment in the **Deployment description** box\. 
 
@@ -160,3 +158,9 @@ For example, if the public DNS address of your Amazon EC2 instance is **ec2\-01\
 ```
 http://ec2-01-234-567-890.compute-1.amazonaws.com/WordPress
 ```
+
+When you view the site in your browser, you should see a WordPress welcome page that looks similar to the following:
+
+![\[WordPress welcome page\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/WordPress-Welcome-Page-013118.png)
+
+ If your Amazon EC2 instance does not have an HTTP inbound rule added to its security group, then the WordPress welcome page does not appear\. If you see a message that says the remote server is not responding, make sure the security group for your Amazon EC2 instance has the inbound rule\. For more information, see [ Add Inbound Rule Allowing HTTP Traffic to Your Amazon Linux or RHEL Amazon EC2 Instance](tutorials-wordpress-launch-instance.md#tutorials-wordpress-launch-instance-add-inbound-rule)\. 

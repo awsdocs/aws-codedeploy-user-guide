@@ -230,7 +230,7 @@ hooks:
     - location: 
       timeout:
       runas:
-# During the ApplicationInstall deployment lifecycle event, run the commands 
+# During the ApplicationStart deployment lifecycle event, run the commands 
 #   in the script specified in "location".
   ApplicationStart:
     - location:     

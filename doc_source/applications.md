@@ -14,3 +14,8 @@ Use the information in the following table for next steps:
 | I have already created an application and deployment group, but I haven't created an application revision\. | See [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\. | 
 | I have already created an application and deployment group, and I have already uploaded my application revision\. I'm ready to deploy\. | See [Create a Deployment with AWS CodeDeploy](deployments-create.md)\. | 
 
+
++ [Create an Application](applications-create.md)
++ [View Application Details](applications-view-details.md)
++ [Rename an Application](applications-rename.md)
++ [Delete an Application](applications-delete.md)

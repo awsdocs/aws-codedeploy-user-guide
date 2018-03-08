@@ -40,7 +40,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, y
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **On Ubuntu Server Amazon EC2 instances**
 
@@ -55,7 +55,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, y
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **On Windows Server Amazon EC2 instances**
 
@@ -67,7 +67,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, y
    </powershell>
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    Call the create\-launch\-configuration command\.
 
@@ -173,7 +173,7 @@ If you are using a custom version of an AMI that already has the AWS CodeDeploy 
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Ubuntu Server Amazon EC2 instances**
 
@@ -188,7 +188,7 @@ If you are using a custom version of an AMI that already has the AWS CodeDeploy 
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances**
 
@@ -200,13 +200,13 @@ If you are using a custom version of an AMI that already has the AWS CodeDeploy 
    </powershell>
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    Leave the rest of the defaults, and choose **Skip to review**\.
 
 1. On the **Review** page, choose **Create launch configuration**\.
 **Note**  
-In a production environment, we recommend that you restrict access to Amazon EC2 instances\. For more information, see [Tips for Securing Your EC2 Instance](http://aws.amazon.com/articles/1233)\.
+In a production environment, we recommend that you restrict access to Amazon EC2 instances\. For more information, see [Tips for Securing Your EC2 Instance](https://aws.amazon.com/articles/1233)\.
 
 1. In the **Select an existing key pair or create a new key pair** dialog box, select **Choose an existing key pair**\. In the **Select a key pair** drop\-down list, choose the Amazon EC2 instance key pair you created or used in previous steps\. Select **I acknowledge that I have access to the selected private key file \(*key\-file\-name*\.pem\), and that without this file, I won't be able to log into my instance**, and then choose **Create launch configuration**\. 
 

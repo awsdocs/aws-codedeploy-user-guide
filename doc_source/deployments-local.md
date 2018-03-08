@@ -82,7 +82,7 @@ Before you start a local deployment, complete the following steps:
 
 + Prepare the content \(including an AppSpec file\) that you want to deploy to the instance and place it on the local instance, in your Amazon S3 bucket, or in your GitHub repository\. For information, see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
 
-+ If you want to use values other than the defaults for other configuration options, create the configuration file and place it on the instance \(`/etc/codedeploy-agent/conf/codedeployagent.yml` for Amazon Linux, RHEL, or Ubuntu Server instances or `C:/ProgramData/Amazon/CodeDeploy/conf.yml` for Windows Server instances\)\. For information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
++ If you want to use values other than the defaults for other configuration options, create the configuration file and place it on the instance \(`/etc/codedeploy-agent/conf/codedeployagent.yml` for Amazon Linux, RHEL, or Ubuntu Server instances or `C:\ProgramData\Amazon\CodeDeploy\conf.yml` for Windows Server instances\)\. For information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
 **Note**  
 If you use a configuration file on Amazon Linux, RHEL, or Ubuntu Server instances, you must either:  
 Use the `:root_dir:` and `:log_dir:` variables to specify locations other than the defaults for the deployment root and log directory folders\. 
@@ -91,6 +91,11 @@ Use `sudo` to run AWS CodeDeploy agent commands\.
 ## Create a Local Deployment<a name="deployments-local-deploy"></a>
 
 On the instance where you want to create the local deployment, open a terminal session \(Amazon Linux, RHEL, or Ubuntu Server instances\) or a command prompt \(Windows Server\) to run the tool commands\.
+
+**Note**  
+ The codedeploy\-local command is installed in the following locations:   
+ On Amazon Linux, RHEL, or Ubuntu Server: `/opt/codedeploy-agent/bin`\. 
+ On Windows Server: `C:\ProgramData\Amazon\CodeDeploy\bin`\. 
 
 ** Basic Command Syntax **
 

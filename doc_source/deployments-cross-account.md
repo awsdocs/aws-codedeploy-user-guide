@@ -100,8 +100,8 @@ For instructions about how to use the AWS Management Console to switch roles and
 
 For instructions about how to use the AWS CLI to assume the cross\-account role and initiate deployments, see [Switching to an IAM Role \(AWS Command Line Interface\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-cli.html) and [Create an EC2/On\-Premises Compute Platform Deployment \(CLI\)](deployments-create-cli.md)\.
 
-For more information about assuming a role through AWS STS, see [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) in the [AWS Security Token Service User Guide](http://docs.aws.amazon.com//STS/latest/APIReference/Welcome.html) and [assume\-role](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) in the [AWS CLI Command Reference](http://docs.aws.amazon.com/cli/latest/reference/)\.
+For more information about assuming a role through AWS STS, see [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) in the [AWS Security Token Service User Guide](http://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html) and [assume\-role](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) in the [AWS CLI Command Reference](http://docs.aws.amazon.com/cli/latest/reference/)\.
 
 **Related topic:**
 
-+ [AWS CodeDeploy: Deploying from a Development Account to a Production Account](https://aws.amazon.com/blogs/devops/aws-codedeploy-deploying-from-a-development-account-to-a-production-account/)
++ [AWS CodeDeploy: Deploying from a Development Account to a Production Account](http://aws.amazon.com/blogs/devops/aws-codedeploy-deploying-from-a-development-account-to-a-production-account/)

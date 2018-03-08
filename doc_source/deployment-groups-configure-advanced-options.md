@@ -20,7 +20,7 @@ If your deployment is to an Amazon EC2 instance, you can create notifications fo
 
 For more information, see [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)\.
 
-**Amazon CloudWatch alarms**: You can create a CloudWatch alarm that watches a single metric over a time period you specify and performs one or more actions based on the value of the metric relative to a given threshold over a number of time periods\. For an Amazon EC2 deployment, you can create an alarm for an instance or Auto Scaling group that you are using in your AWS CodeDeploy operations\. For an AWS Lambda deployment, you can create an alarm for errors in a Lambda function\.
+**Amazon CloudWatch alarms**: You can create a CloudWatch alarm that watches a single metric over a time period you specify and performs one or more actions based on the value of the metric relative to a given threshold over a number of time periods\. For an Amazon EC2 deployment, you can create an alarm for an instance or Amazon EC2 Auto Scaling group that you are using in your AWS CodeDeploy operations\. For an AWS Lambda deployment, you can create an alarm for errors in a Lambda function\.
 
 You can configure a deployment to stop when an Amazon CloudWatch alarm detects that a metric has fallen below or exceeded a defined threshold\.
 
@@ -32,7 +32,7 @@ You must have already created the alarm in CloudWatch before you can add it to a
 
    You must enter the CloudWatch alarm exactly as it was created in CloudWatch\. To view a list of alarms, open the CloudWatch console at [https://console.aws.amazon.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/), and then choose **ALARM**\.
 
-Addtional options:
+Additional options:
 
 + If you want deployments to proceed without taking into account alarms you have added, choose **Ignore alarm configuration**\.
 

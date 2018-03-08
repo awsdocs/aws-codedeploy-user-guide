@@ -149,7 +149,7 @@ permissions:
       - directory
 # 6) For the folder /tmp/my-app/my-folder-2/my-folder-3,
 #  group = wheel and mode = 564 (dr-xrw-r--).
-  - object: /tmp/my-app/my-folder-2
+  - object: /tmp/my-app/my-folder-2/my-folder-3
     group: wheel
     mode: 564
     type:

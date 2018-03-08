@@ -18,7 +18,7 @@ In this step, you'll deploy the revision to the single Amazon EC2 instance in th
 
 1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
 **Note**  
-The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch Alarms are met\. Commands for these actions are excluded from the sample in this tutorial\.
+The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch Alarms are met\. Commands for these actions are not included in this tutorial\.
 
    On local Linux, macOS, or Unix machines:
 
@@ -49,7 +49,7 @@ The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/
      --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Linux.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Amazon Linux and RHEL Amazon EC2 instances, calling from local Windows machines**
 
@@ -57,7 +57,7 @@ The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/
    aws deploy create-deployment --application-name SimpleDemoApp --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name SimpleDemoDG --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Linux.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances, calling from local Linux, macOS, or Unix machines**
 
@@ -69,7 +69,7 @@ The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/
      --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Windows.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances, calling from local Windows machines**
 
@@ -77,7 +77,7 @@ The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/
    aws deploy create-deployment --application-name SimpleDemoApp --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name SimpleDemoDG --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Windows.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 **Note**  
 Currently, AWS CodeDeploy does not provide a sample revision to deploy to Ubuntu Server Amazon EC2 instances\. To create a revision on your own, see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
 

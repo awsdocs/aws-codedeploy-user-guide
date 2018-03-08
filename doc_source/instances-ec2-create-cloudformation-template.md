@@ -78,7 +78,7 @@ Sign in to the AWS Management Console with the same account you used in [Getting
 
    + For **SSHLocation**, type the IP address range to use for connecting to the instance with SSH or RDP \(or leave the default of **0\.0\.0\.0/0**\)\.
 **Important**  
-The default of **0\.0\.0\.0/0** is provided for demonstration purposes only\. AWS CodeDeploy does not require Amazon EC2 instances to have unrestricted access to ports\. As a best practice, we recommend restricting access to SSH \(and HTTP\) ports\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com//articles/1233)\.
+The default of **0\.0\.0\.0/0** is provided for demonstration purposes only\. AWS CodeDeploy does not require Amazon EC2 instances to have unrestricted access to ports\. As a best practice, we recommend restricting access to SSH \(and HTTP\) ports\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com/articles/1233)\.
 
    + For **TagKey**, type the instance tag key AWS CodeDeploy will use to identify the instances during deployment \(or leave the default of **Name**\)\.
 

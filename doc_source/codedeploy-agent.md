@@ -15,6 +15,7 @@ For more information about working with the AWS CodeDeploy agent, such as steps 
 + [AWS SDK for Ruby \(aws\-sdk\-core\) Support for the AWS CodeDeploy Agent](#codedeploy-agent-aws-sdk-core-support)
 + [Supported Versions of the AWS CodeDeploy Agent](#codedeploy-agent-supported-versions)
 + [Application Revision and Log File Cleanup](#codedeploy-agent-revisions-logs-cleanup)
++ [Files Installed by the AWS CodeDeploy Agent](#codedeploy-agent-install-files)
 + [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)
 
 ## Operating Systems Supported by the AWS CodeDeploy Agent<a name="codedeploy-agent-supported-operating-systems"></a>
@@ -98,3 +99,101 @@ The AWS CodeDeploy agent archives revisions and log files on instances\. The AWS
 **Application revision deployment logs**: You can use the **:max\_revisions:** option in the agent configuration file to specify the number of application revisions to archive by entering any positive integer\. AWS CodeDeploy also archives the log files for those revisions\. All others are deleted, with the exception of the log file of the last successful deployment\. That log file will always be retained, even if the number of failed deployments exceeds the number of retained revisions\. If no value is specified, AWS CodeDeploy will retain the five most recent revisions in addition to the currently deployed revision\. 
 
 **AWS CodeDeploy logs**: For Amazon Linux, Ubuntu Server, and RHEL instances, the AWS CodeDeploy agent rotates the log files under the `/var/log/aws/codedeploy-agent` folder\. The log file is rotated at 00:00:00 \(instance time\) daily\. Log files are deleted after seven days\. The naming pattern for rotated log files is `codedeploy-agent.YYYYMMDD.log`\.
+
+## Files Installed by the AWS CodeDeploy Agent<a name="codedeploy-agent-install-files"></a>
+
+The AWS CodeDeploy agent stores revisions, deployment history, and deployment scripts in its root directory on an instance\. The default name and location of this directory is:
+
+`'/opt/codedeploy-agent/deployment-root'` for Amazon Linux, Ubuntu Server, and RHEL instances\.
+
+`'C:\ProgramData\Amazon\CodeDeploy'` for Windows Server instances\. 
+
+You can use the **root\_dir** setting in the AWS CodeDeploy agent configuration file to configure the directory's name and location\. For more information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
+
+The following is an example of the file and directory structure under the root directory\. The structure assumes there are N number of deployment groups, and each deployment group contains N number of deployments\. 
+
+```
+|--deployment-root/
+|-- deployment group 1 ID 
+|    |-- deployment 1 ID 
+|    |    |-- Contents and logs of the deployment's revision
+|    |-- deployment 2 ID
+|    |    |-- Contents and logs of the deployment's revision
+|    |-- deployment N ID
+|    |    |-- Contents and logs of the deployment's revision
+|-- deployment group 2 ID
+|    |-- deployment 1 ID
+|    |    |-- bundle.tar
+|    |    |-- deployment-archive
+|    |    |    | -- contents of the deployment's revision
+|    |    |-- logs
+|    |    |    | -- scripts.log     
+|    |-- deployment 2 ID
+|    |    |-- bundle.tar
+|    |    |-- deployment-archive
+|    |    |    | -- contents of the deployment's revision
+|    |    |-- logs
+|    |    |    | -- scripts.log     
+|    |-- deployment N ID
+|    |    |-- bundle.tar
+|    |    |-- deployment-archive
+|    |    |    | -- contents of the deployment's revision
+|    |    |-- logs
+|    |    |    | -- scripts.log     
+|-- deployment group N ID
+|    |-- deployment 1 ID
+|    |    |-- Contents and logs of the deployment's revision
+|    |-- deployment 2 ID
+|    |    |-- Contents and logs of the deployment's revision
+|    |-- deployment N ID
+|    |    |-- Contents and logs of the deployment's revision
+|-- deployment-instructions
+|    |-- [deployment group 1 ID]_cleanup
+|    |-- [deployment group 2 ID]_cleanup
+|    |-- [deployment group N ID]_cleanup
+|    |-- [deployment group 1 ID]_install.json
+|    |-- [deployment group 2 ID]_install.json
+|    |-- [deployment group N ID]_install.json
+|    |-- [deployment group 1 ID]_last_successful_install
+|    |-- [deployment group 2 ID]_last_successful_install
+|    |-- [deployment group N ID]_last_successful_install
+|    |-- [deployment group 1 ID]_most_recent_install
+|    |-- [deployment group 2 ID]_most_recent_install
+|    |-- [deployment group N ID]_most_recent_install
+|-- deployment-logs
+|    |-- codedeploy-agent-deployments.log
+```
+
++  **Deployment Group ID** folders represent each of your deployment groups\. A deployment group directory's name is its ID \(for example, `acde1916-9099-7caf-fd21-012345abcdef`\)\. Each deployment group directory contains one subdirectory for each attempted deployment in that deployment group\. 
+
+   You can use the [batch\-get\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-deployments.html) command to find a deployment group ID\.
+
++  **Deployment ID** folders represent each deployment in a deployment group\. Each deployment directory's name is its ID\. Each folder contains:
+
+  +  **bundle\.tar**, a compressed file with the contents of the deployment's revision\. 
+
+  +  **deployment\-archive**, a directory that contains the contents of the deployment's revision\. 
+
+  +  **logs**, a directory that contains a `scripts.log` file\. This file lists the output of all scripts specified in the deployment's AppSpec file\. 
+
+   If you want to find the folder for a deployment but don't know its deployment ID or deployment group ID, you can use the [AWS CodeDeploy console](https://console.aws.amazon.com/codedeploy) or the AWS CLI to find them\. For more information, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\. 
+
+   The default maximum number of deployments that can be archived in a deployment group is five\. When that number is reached, future deployments are archived and the oldest archive is deleted\. You can use the **max\_revisions** setting in the AWS CodeDeploy agent configuration file to change the default\. For more information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\. 
+**Note**  
+ If you want to recover hard disk space used by archived deployments, update the **max\_revisions** setting to a low number, such as one or two\. The next deployment deletes archived deployments so that the number is equal to the you specified\. 
+
++  **deployment\-instructions** contains four text files for each deployment group: 
+
+  + **\[Deployment Group ID\]\-cleanup**, a text file with an undo verison of each command that is run during a deployment\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef-cleanup`\. 
+
+  + **\[Deployment Group ID\]\-install\.json**, a JSON file created during the most recent deployment\. It contains the commands run during the deployment\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef-install.json`\.
+
+  + **\[Deployment Group ID\]\_last\_successfull\_install**, a text file that lists the archive directory of the last successful deployment\. This file is created when the AWS CodeDeploy agent has copied all files in the deployment application to the instance\. It is used by the AWS CodeDeploy agent during the next deployment to determine which `ApplicationStop` and `BeforeInstall` scripts to run\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef_last_successfull_install`\.
+
+  + **\[Deployment Group ID\]\_most\_recent\_install**, a text file that lists the name of the archive directory of the most recent deployment\. This file is created when the files in the deployment are successfully downloaded\. The \[deployment group ID\]\_last\_successfull\_install file is created after this file, when the downloaded files are copied to their final destination\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef_most_recent_install`\.
+
++  **deployment\-logs** contains the following log files: 
+
+  +  **codedeploy\-agent\.yyyymmdd\.log** files are created for each day there is a deployment\. Each log file contains information about the day's deployments\. These log files might be useful for debugging problems like a permissions issue\. The log file is initially named `codedeploy-agent.log`\. The next day, the date of its deployments is inserted into the file name\. For example, if today is January 3, 2018, you can see information about all of today's deployments in `codedeploy-agent.log`\. Tomorrow, on January 4, 2018, the log file is renamed `codedeploy-agent.20180103.log`\. 
+
+  +  **codedeploy\-agent\-deployments\.log** compiles the contents of `scripts.log` files for each deployment\. The `scripts.log` files are located in the `logs` subfolder under each `Deployment ID` folder\. The entries in this file are preceded by a deployment ID\. For example, "`[d-ABCDEF123]LifecycleEvent - BeforeInstall`" might be written during a deployment with an ID of `d-ABCDEF123`\. When `codedeploy-agent-deployments.log` reaches its maximum size, the AWS CodeDeploy agent continues to write to it while deleting old content\. 

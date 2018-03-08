@@ -297,7 +297,7 @@ Install the AWS CodeDeploy agent on the on\-premises instance:
 
 + For an Ubuntu Server on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Ubuntu Server](codedeploy-agent-operations-install-ubuntu.md), and then return to this page\.
 
-+ For a RHEL on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Amazon Linux or RHEL ](codedeploy-agent-operations-install-linux.md), and then return to this page\.
++ For a RHEL on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Amazon Linux or RHEL](codedeploy-agent-operations-install-linux.md), and then return to this page\.
 
 + For a Windows Server on\-premises instance, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md), and then return to this page\.
 

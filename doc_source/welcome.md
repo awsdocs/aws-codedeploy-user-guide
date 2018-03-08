@@ -56,13 +56,11 @@ AWS CodeDeploy is able to deploy applications to two compute platforms:
 
 + **EC2/On\-Premises**: Describes instances of physical servers that can be Amazon EC2 cloud instances, on\-premises servers, or both\. Applications created using the EC2/On\-Premises compute platform can be composed of executable files, configuration files, images, and more\.
 
-  Delpoyments that use the EC2/On\-Premises compute platform manage the way in which traffic is directed to instances by using an in\-place or blue/green deployment type\. For more information, see [Overview of AWS CodeDeploy Deployment Types](#welcome-deployment-overview)\.
+  Deployments that use the EC2/On\-Premises compute platform manage the way in which traffic is directed to instances by using an in\-place or blue/green deployment type\. For more information, see [Overview of AWS CodeDeploy Deployment Types](#welcome-deployment-overview)\.
 
-+ **AWS Lambda**: Used to deploy applications that consist of updated versions of Lambda functions\. AWS Lambda manages the Lambda functions in a serverless compute environment made up of a high\-availability compute structure\. All administration of the compute resources is performed by AWS Lambda\. For more information, see [Serverless Computing and Applications](aws.amazon.comserverless/)\. For more information about AWS Lambda and Lambda functions, see [AWS Lambda](aws.amazon.com/lambda/)\.
++ **AWS Lambda**: Used to deploy applications that consist of updated versions of Lambda functions\. AWS Lambda manages the Lambda functions in a serverless compute environment made up of a high\-availability compute structure\. All administration of the compute resources is performed by AWS Lambda\. For more information, see [Serverless Computing and Applications](https://aws.amazon.com/serverless/)\. For more information about AWS Lambda and Lambda functions, see [AWS Lambda](https://aws.amazon.com/lambda/)\.
 
   Applications created using the AWS Lambda compute platform can manage the way in which traffic is directed to the updated Lambda function versions during a deployment by choosing a canary, linear, or all\-at\-once configuration\. 
-**Important**  
- AWS CodeDeploy currently cannot deploy to the AWS Lambda compute platform in the EU \(Paris\) Region \(eu\-west\-3\)\.
 
 The following table describes how AWS CodeDeploy components are used with each compute platform\. 
 
@@ -139,7 +137,7 @@ A blue/green deployment, in which traffic is rerouted from one set of instances 
 
 +  Switching back to the most recent version of an application is faster and more reliable because traffic can be routed back to the original instances as long as they have not been terminated\. With an in\-place deployment, versions must be rolled back by redeploying the previous version of the application\.
 
-+ If you're using the EC2/On\-Premises compute platform,new instances are provisioned for a blue/green deployment and reflect the most up\-to\-date server configurations\. This helps you avoid the types of problems that sometimes occur on long\-running instances\.
++ If you're using the EC2/On\-Premises compute platform, new instances are provisioned for a blue/green deployment and reflect the most up\-to\-date server configurations\. This helps you avoid the types of problems that sometimes occur on long\-running instances\.
 
 + If you're using the AWS Lambda compute platform,you control how traffic is shifted from your original AWS Lambda function versions to your new AWS Lambda function versions\.
 

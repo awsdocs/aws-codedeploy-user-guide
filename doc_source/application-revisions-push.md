@@ -78,7 +78,7 @@ In Windows:
 aws deploy push --application-name WordPress_App --description "This is a revision for the application WordPress_App" --ignore-hidden-files --s3-location s3://codedeploydemobucket/WordPressApp.zip --source .
 ```
 
-## Push a Revision for an Amazon EC2 Deployment<a name="push-lambda-revision"></a>
+## Push a Revision for an AWS Lambda Deployment<a name="push-lambda-revision"></a>
 
 To push the revision, which, for an Lambda deployment is the same as the AppSpec file, call the push command as follows:
 

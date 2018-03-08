@@ -26,12 +26,12 @@ For information about Amazon EC2 instance tags, see [Working with Tags Using the
 
 **Topics**
 
-+ [[ERROR] BAD/MISSING LINK TEXT](deployment-groups-create.md)
++ [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](deployment-groups-view-details.md)
++ [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](deployment-groups-edit.md)
++ [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](deployment-groups-configure-advanced-options.md)
++ [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](deployment-groups-delete.md)
++ [Delete a Deployment Group with AWS CodeDeploy](deployment-groups-delete.md)
