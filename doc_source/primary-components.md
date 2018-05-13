@@ -14,7 +14,7 @@ Before you start working with the service, you should familiarize yourself with 
 
   Applications created using the AWS Lambda compute platform can manage the way in which traffic is directed to the updated Lambda function versions during a deployment by choosing a canary, linear, or all\-at\-once configuration\. 
 
-**Deployment configuration**: A set of deployment rules and deployment success and failure conditions used by AWS CodeDeploy during a deployment\. If your deployment uses the EC2/On\-Premises compute platform, you can specify the minimum number of healthy instances instances for the deployment\. If your deployment uses the AWS Lambda compute platform, you can specify how traffic is routed to your updated Lambda function versions\.
+**Deployment configuration**: A set of deployment rules and deployment success and failure conditions used by AWS CodeDeploy during a deployment\. If your deployment uses the EC2/On\-Premises compute platform, you can specify the minimum number of healthy instances for the deployment\. If your deployment uses the AWS Lambda compute platform, you can specify how traffic is routed to your updated Lambda function versions\.
 
 For more information about specifying the minimum number of healthy hosts for a deployment that uses the EC2/On\-Premises compute platform, see [Minimum Healthy Instances and Deployments](instances-health.md#minimum-healthy-hosts)\.
 
