@@ -18,19 +18,18 @@ resources:
 JSON:
 
 ```
-{
-	"resources": [{
-		"name-of-function-to-deploy": {
-			"type": "AWS::Lambda::Function",
-			"properties": {
-				"name": "name-of-function-to-deploy",
-				"alias": "alias-of-lambda-function-to-deploy",
-				"currentversion": "version-of-the-lambda-function-traffic-currently-points-to",
-				"targetversion": "version-of-the-lambda-function-to-deploy"
-			}
+"resources": [{
+	"name-of-function-to-deploy": {
+		"type": "AWS::Lambda::Function",
+		"properties": {
+			"name": "name-of-function-to-deploy",
+			"alias": "alias-of-lambda-function-to-deploy",
+			"currentversion": "version-of-the-lambda-function-traffic-currently-points-to",
+			"targetversion": "version-of-the-lambda-function-to-deploy"
 		}
-	}]
-}
+	}
+}]
+
 ```
 
 The instructions are as follows:
