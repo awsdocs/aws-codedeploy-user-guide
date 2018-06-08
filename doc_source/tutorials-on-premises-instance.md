@@ -3,14 +3,12 @@
 This tutorial helps you gain experience with AWS CodeDeploy by guiding you through the deployment of a sample application revision to a single on\-premises instance—that is, a physical device that is not an Amazon EC2 instance—running Windows Server, Ubuntu Server, or Red Hat Enterprise Linux \(RHEL\)\. For information about on\-premises instances and how they work with AWS CodeDeploy, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\.
 
 Not what you're looking for?
-
 + To practice deploying to an Amazon EC2 instance running Amazon Linux or RHEL, see [Tutorial: Deploy WordPress to an Amazon EC2 Instance \(Amazon Linux or Red Hat Enterprise Linux and Linux, macOS, or Unix\)](tutorials-wordpress.md)\.
-
 + To practice deploying to an Amazon EC2 instance running Windows Server, see [Tutorial: Deploy a "Hello, World\!" Application with AWS CodeDeploy \(Windows Server\)](tutorials-windows.md)\.
 
 This tutorial builds on concepts introduced in [Try a Sample In\-Place Deployment in AWS CodeDeploy](getting-started-wizard-in-place.md)\. If you have not yet completed the Sample deployment wizard for an in\-place deployment, you may want to do that first\.
 
-
+**Topics**
 + [Prerequisites](#tutorials-on-premises-instance-prerequisites)
 + [Step 1: Configure the On\-Premises Instance](#tutorials-on-premises-instance-1-configure-instance)
 + [Step 2: Create a Sample Application Revision](#tutorials-on-premises-instance-2-create-sample-revision)
@@ -253,7 +251,6 @@ You can use the AWS CLI or a combination of the AWS CodeDeploy and Amazon S3 con
 ### Clean Up Resources \(CLI\)<a name="tutorials-on-premises-instance-6-clean-up-resources-cli"></a>
 
 **To delete the Amazon S3 bucket**
-
 + Call the [rm](http://docs.aws.amazon.com/cli/latest/reference/s3/rm.html) command along with the `--recursive` switch against the bucket \(for example, `codedeploydemobucket`\)\. The bucket and all objects in the bucket will be deleted\. 
 
   ```
@@ -261,7 +258,6 @@ You can use the AWS CLI or a combination of the AWS CodeDeploy and Amazon S3 con
   ```
 
 **To delete the application and deployment group records in AWS CodeDeploy**
-
 + Call the [delete\-application](http://docs.aws.amazon.com/cli/latest/reference/deploy/delete-application.html) command against the application \(for example, `CodeDeploy-OnPrem-App`\)\. The records for the deployment and deployment group will be deleted\. 
 
   ```
@@ -269,7 +265,6 @@ You can use the AWS CLI or a combination of the AWS CodeDeploy and Amazon S3 con
   ```<a name="tutorials-on-premises-instance-6-clean-up-resources-deregister-cli"></a>
 
 **To deregister the on\-premises instance and delete the IAM user**
-
 + Call the [deregister](http://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command against the on\-premises instance and region:
 
   ```
@@ -279,7 +274,6 @@ You can use the AWS CLI or a combination of the AWS CodeDeploy and Amazon S3 con
 If you do not want to delete the IAM user associated with this on\-premises instance, use the `--no-delete-iam-user` option instead\.
 
 **To uninstall the AWS CodeDeploy agent and remove the configuration file from the on\-premises instance**
-
 + From the on\-premises instance, call the [uninstall](http://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command:
 
   ```

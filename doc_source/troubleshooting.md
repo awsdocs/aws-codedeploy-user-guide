@@ -5,7 +5,7 @@ Use the topics in this section to help solve problems and errors you might encou
 **Note**  
 The causes of many deployment failures can be identified by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
-
+**Topics**
 + [General Troubleshooting Issues](troubleshooting-general.md)
 + [Troubleshoot EC2/On\-PremisesDeployment Issues](troubleshooting-deployments.md)
 + [Troubleshoot AWS Lambda Deployment Issues](troubleshooting-deployments-lambda.md)

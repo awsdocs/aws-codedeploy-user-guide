@@ -2,14 +2,14 @@
 
 Now you will deploy the sample "Hello, World\!" application revision you uploaded to Amazon S3\. You will use the AWS CLI or the AWS CodeDeploy console to deploy the revision and monitor the deployment's progress\. After the application revision is successfully deployed, you will check the results\.
 
-
+**Topics**
 + [Deploy Your Application Revision with AWS CodeDeploy](#tutorials-windows-deploy-application-create-deployment)
 + [Monitor and Troubleshoot Your Deployment](#tutorials-windows-deploy-application-monitor)
 + [Verify Your Deployment](#tutorials-windows-deploy-application-verify)
 
 ## Deploy Your Application Revision with AWS CodeDeploy<a name="tutorials-windows-deploy-application-create-deployment"></a>
 
-
+**Topics**
 + [To deploy your application revision \(CLI\)](#tutorials-windows-deploy-application-create-deployment-cli)
 + [To deploy your application revision \(console\)](#tutorials-windows-deploy-application-create-deployment-console)
 
@@ -103,7 +103,7 @@ To update the deployment's current status, choose the **Refresh** button next to
 
 ## Monitor and Troubleshoot Your Deployment<a name="tutorials-windows-deploy-application-monitor"></a>
 
-
+**Topics**
 + [To monitor and troubleshoot your deployment \(CLI\)](#tutorials-windows-deploy-application-monitor-cli)
 + [To monitor and troubleshoot your deployment \(console\)](#tutorials-windows-deploy-application-monitor-console)
 

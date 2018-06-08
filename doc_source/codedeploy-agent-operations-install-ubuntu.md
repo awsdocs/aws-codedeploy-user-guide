@@ -10,7 +10,6 @@ sudo apt-get update
 ```
 
 On Ubuntu Server 14\.04:
-
 + 
 
   ```
@@ -18,7 +17,6 @@ On Ubuntu Server 14\.04:
   ```
 
 On Ubuntu Server 16\.04:
-
 + 
 
   ```

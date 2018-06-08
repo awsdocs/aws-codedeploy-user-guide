@@ -13,7 +13,7 @@ If you use a single tag group, any instance identified by at least one tag in th
 
 The following examples illustrate how tags and tag groups can be used to select the instances for a deployment group\.
 
-
+**Topics**
 + [Example 1: Single Tag Group, Single Tag](#instances-tagging-example-1)
 + [Example 2: Single Tag Group, Multiple Tags](#instances-tagging-example-2)
 + [Example 3: Multiple Tag Groups, Single Tags](#instances-tagging-example-3)
@@ -182,19 +182,13 @@ When you use multiple tag groups with multiple tags in one or more of the groups
 In this example, to be included in the deployment group, an instance must be tagged with \(1\) `Environment=Beta` or `Environment=Staging`, with \(2\) `Region=North`, `Region=South`, or `Region=East`, and with \(3\) `Type=t2.medium` or `Type=t2.large`\.
 
 To illustrate, instances with the following tag groups *would* be among those included in the deployment group:
-
 + `Environment=Beta`, `Region=North`,`Type=t2.medium`
-
 + `Environment=Staging`,`Region=East`,`Type=t2.large`
-
 + `Environment=Staging`,`Region=South`,`Type=t2.large`
 
 Instances with the following tag groups would *not* be included in the deployment group\. The **highlighted** key values cause the instances to be excluded:
-
 + `Environment=Beta`, `Region=West`,`Type=t2.medium`
-
 + `Environment=Staging`,`Region=East`,`Type=t2.micro`
-
 + `Environment=Production`,`Region=South`,`Type=t2.large`
 
 AWS CodeDeploy console setup view: 

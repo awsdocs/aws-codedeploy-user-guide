@@ -4,7 +4,7 @@ You've now successfully made an update to the "Hello, World\!" code and redeploy
 
 You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and AWS CodeDeploy consoles, or the AWS APIs to clean up resources\.
 
-
+**Topics**
 + [To use clean up resources \(CLI\)](#tutorials-windows-clean-up-cli)
 + [To clean up resources \(console\)](#tutorials-windows-clean-up-console)
 + [What's Next?](#tutorials-windows-clean-up-whats-next)

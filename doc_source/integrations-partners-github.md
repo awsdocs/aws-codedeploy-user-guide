@@ -2,7 +2,7 @@
 
 AWS CodeDeploy supports [GitHub](https://github.com/about), a web\-based code hosting and sharing service\. AWS CodeDeploy can deploy application revisions stored in GitHub repositories or Amazon S3 buckets to instances\. 
 
-
+**Topics**
 + [Video Introduction to AWS CodeDeploy Integration with GitHub](#video-introduction)
 + [Deploying AWS CodeDeploy Revisions from GitHub](#github-deployment-steps)
 + [GitHub Behaviors with AWS CodeDeploy](#github-behaviors)
@@ -39,7 +39,7 @@ For more information, see [Tutorial: Use AWS CodeDeploy to Deploy an Application
 
 ## GitHub Behaviors with AWS CodeDeploy<a name="github-behaviors"></a>
 
-
+**Topics**
 + [GitHub Authentication with Applications in AWS CodeDeploy](#behaviors-authentication)
 + [AWS CodeDeploy Interaction with Private and Public GitHub Repositories](#behaviors-interactions-private-and-public)
 + [AWS CodeDeploy Interaction with Organization\-Managed GitHub Repositories](#behaviors-interactions-organization-managed)
@@ -66,11 +66,8 @@ You don't have to create a new deployment\. This is currently the only way to li
 1. Next to **Repository type**, choose **My application is stored in GitHub**\.
 
 1. In **Connect to GitHub**, do one of the following:
-
    + To create a connection for AWS CodeDeploy applications to a GitHub account, sign out of GitHub in a separate web browser tab\. In **GitHub account**, type a name to identify this connection, and then choose **Connect to GitHub**\. The web page prompts you to authorize AWS CodeDeploy to interact with GitHub for your application\. Continue to step 2\.
-
    + To use a connection you have already created, in **GitHub account**, select its name, and then choose **Connect to GitHub**\. Continue to step 4\.
-
    + To create a connection to a different GitHub account, sign out of GitHub in a separate web browser tab\. Choose **Connect to a different GitHub account**, and then choose **Connect to GitHub**\. Continue to step 2\.
 
 1. If you are not already signed in to GitHub, follow the instructions on the **Sign in** page to sign in with the GitHub account to which you want to link the application\.
@@ -92,13 +89,9 @@ AWS CodeDeploy supports the deployment of applications from private and public G
 ### AWS CodeDeploy Interaction with Organization\-Managed GitHub Repositories<a name="behaviors-interactions-organization-managed"></a>
 
 By default, GitHub repositories that are managed by an organization \(as opposed to your account's own private or public repositories\) do not grant access to third\-party applications, including AWS CodeDeploy\. Your deployment will fail if an organization's third\-party application restrictions are enabled in GitHub and you attempt to deploy code from its GitHub repository\. There are two ways to resolve this issue\. 
-
 + As an organization member, you can ask the organization owner to approve access to AWS CodeDeploy\. The steps for requesting this access depend on whether you have already authorized AWS CodeDeploy for your individual account:
-
   + If you have authorized access to AWS CodeDeploy in your account, see [Requesting Organization Approval for Your Authorized Applications](https://help.github.com/articles/requesting-organization-approval-for-your-authorized-applications/)\.
-
   + If you have not yet authorized access to AWS CodeDeploy in your account, see [Requesting Organization Approval for Third\-Party Applications](https://help.github.com/articles/requesting-organization-approval-for-third-party-applications/)\.
-
 + The organization owner can disable all third\-party application restrictions for the organization\. For information, see [Disabling Third\-Party Application Restrictions for Your Organization](https://help.github.com/articles/disabling-third-party-application-restrictions-for-your-organization/)\.
 
 For more information, see [About Third\-Party Application Restrictions](https://help.github.com/articles/about-third-party-application-restrictions/)\.

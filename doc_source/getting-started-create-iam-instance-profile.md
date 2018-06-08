@@ -10,7 +10,7 @@ You can create an IAM instance profile with the AWS CLI, the IAM console, or the
 **Note**  
 You can attach an IAM instance profile to an Amazon EC2 instance as you launch it or to a previously launched instance\. For more information, see [Instance Profiles](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-instanceprofile.html)\.
 
-
+**Topics**
 + [Create an IAM Instance Profile for Your Amazon EC2 Instances \(CLI\)](#getting-started-create-iam-instance-profile-cli)
 + [Create an IAM Instance Profile for Your Amazon EC2 Instances \(Console\)](#getting-started-create-iam-instance-profile-console)
 
@@ -67,7 +67,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
            "s3:List*"
          ],
          "Resource": [
-           "arn:aws:s3:::codedeploydemobucket/*",
+           "arn:aws:s3:::replace-with-your-s3-bucket-name/*",
            "arn:aws:s3:::aws-codedeploy-us-east-2/*",
            "arn:aws:s3:::aws-codedeploy-us-east-1/*",
            "arn:aws:s3:::aws-codedeploy-us-west-1/*",
@@ -153,7 +153,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
            "s3:List*"
          ],
          "Resource": [
-           "arn:aws:s3:::codedeploydemobucket/*",
+           "arn:aws:s3:::replace-with-your-s3-bucket-name/*",
            "arn:aws:s3:::aws-codedeploy-us-east-2/*",
            "arn:aws:s3:::aws-codedeploy-us-east-1/*",
            "arn:aws:s3:::aws-codedeploy-us-west-1/*",

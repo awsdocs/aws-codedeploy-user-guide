@@ -4,23 +4,15 @@
  The AWS CodeDeploy Sample Deployment Wizard currently does not apply to deployments that use the AWS Lambda compute platform\. 
 
 After you have completed the first four steps in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md), try the Sample deployment wizard\. It guides you through the steps for creating an AWS CodeDeploy deployment\. The Sample deployment wizard lets you try an in\-place deployment and a blue/green deployment\. 
-
 + **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an In\-Place Deployment](welcome.md#welcome-deployment-overview-in-place)\.
-
 + **Blue/green deployment**: The behavior of your deployment depends on which compute platform you use:
-
   + **Blue/green on an EC2/On\-Premises compute platform**: The instances in a deployment group \(the original environment\) are replaced by a different set of instances \(the replacement environment\) using these steps:
-
     + Instances are provisioned for the replacement environment\.
-
     + The latest application revision is installed on the replacement instances\.
-
     + An optional wait time occurs for activities such as application testing and system verification\.
-
     + Instances in the replacement environment are registered with an Elastic Load Balancing load balancer, causing traffic to be rerouted to them\. Instances in the original environment are deregistered and can be terminated or kept running for other uses\.
 **Note**  
 When using an EC2/On\-Premises compute platform, blue/green deployments work with Amazon EC2 instances only\.
-
   + **Blue/green on an AWS Lambda compute platform**: Traffic is shifted from your current serverless environment to one with your updated Lambda function versions\. You can specify Lambda functions that perform validation tests and choose the way in which the traffic shift occurs\. All AWS Lambda compute platform deployments are blue/green deployments\. For this reason, you do not need to specify a deployment type\. 
 
   For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)\.
@@ -98,12 +90,10 @@ The following portion of the policy grants the calling IAM user access to the IA
 ```
 
 Not what you're looking for?
-
 + To create a deployment that uses an existing application, revision, deployment group, or custom deployment configuration in AWS CodeDeploy, follow the instructions in [Create a Deployment with AWS CodeDeploy](deployments-create.md)\.
-
 + To practice deploying to on\-premises instances instead of Amazon EC2 instances, see [Tutorial: Deploy an Application to an On\-Premises Instance with AWS CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md)\.
 
-
+**Topics**
 + [Prerequisites](#getting-started-wizard-prerequisites)
 + [Try a Sample Blue/Green Deployment in AWS CodeDeploy](getting-started-wizard-blue-green.md)
 + [Try a Sample In\-Place Deployment in AWS CodeDeploy](getting-started-wizard-in-place.md)

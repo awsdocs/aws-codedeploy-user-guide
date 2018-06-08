@@ -8,6 +8,6 @@ For information about using the CloudWatch console to view AWS CodeDeploy logs, 
 
 For information about using CloudWatch alarms and CloudWatch Events to monitor your AWS CodeDeploy deployments, see the following topics\. 
 
-
+**Topics**
 + [Monitoring Deployments with CloudWatch Alarms in AWS CodeDeploy](monitoring-create-alarms.md)
 + [Monitoring Deployments with Amazon CloudWatch Events](monitoring-cloudwatch-events.md)

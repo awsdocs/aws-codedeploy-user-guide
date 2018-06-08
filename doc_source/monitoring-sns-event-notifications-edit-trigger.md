@@ -29,13 +29,9 @@ The simplest way to create the JSON file is to run the get\-deployment\-group co
    ```
 
 1. Copy the results of the command into a plain\-text editor and then delete the following:
-
    + At the beginning of the output, delete `{ "deploymentGroupInfo":`\. 
-
    + At the end of the output, delete `}`\. 
-
    + Delete the row containing `deploymentGroupId`\.
-
    + Delete the row containing `deploymentGroupName`\.
 
    The contents of your text file should now look similar to the following:

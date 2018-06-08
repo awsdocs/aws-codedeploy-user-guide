@@ -63,11 +63,7 @@ Follow these instructions to prepare an IAM user to use AWS CodeDeploy:
    ```
 
    For information about other AWS services listed in these statements, see:
-
    + [Overview of AWS IAM Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html)
-
    + [Controlling User Access to Your Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/UsingIAM.html)
-
    + [Controlling Access to Your Auto Scaling Resources](http://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)
-
    + [Controlling AWS CloudFormation Access with AWS Identity and Access Management](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)

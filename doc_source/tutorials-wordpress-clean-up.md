@@ -1,16 +1,13 @@
 # Step 6: Clean Up Your WordPress Application and Related Resources<a name="tutorials-wordpress-clean-up"></a>
 
 You've now successfully made an update to the WordPress code and redeployed the site\. To avoid ongoing charges for resources you created for this tutorial, you should delete:
-
 + Any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you created them outside of AWS CloudFormation\)\.
-
 + Any Amazon S3 buckets\.
-
 + The `WordPress_App` application in AWS CodeDeploy\.
 
 You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and AWS CodeDeploy consoles, or the AWS APIs to perform the cleanup\.
 
-
+**Topics**
 + [To clean up resources \(CLI\)](#tutorials-wordpress-clean-up-cli)
 + [To clean up resources \(console\)](#tutorials-wordpress-clean-up-console)
 + [What's Next?](#tutorials-wordpress-clean-up-whats-next)

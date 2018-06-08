@@ -3,11 +3,8 @@
 If you are follow the steps in [Create an EC2/On\-Premises Compute Platform Deployment \(Console\)](deployments-create-console.md), follow these steps to add details about an application revision stored in a GitHub repository\.
 
 1. In **Connect to GitHub**, do one of the following:
-
    + To create a connection for AWS CodeDeploy applications to a GitHub account, sign out of GitHub in a separate web browser tab\. In **GitHub account**, type a name to identify this connection, and then choose **Connect to GitHub**\. The web page prompts you to authorize AWS CodeDeploy to interact with GitHub for your application\. Continue to step 2\.
-
    + To use a connection you have already created, in **GitHub account**, select its name, and then choose **Connect to GitHub**\. Continue to step 4\.
-
    + To create a connection to a different GitHub account, sign out of GitHub in a separate web browser tab\. Choose **Connect to a different GitHub account**, and then choose **Connect to GitHub**\. Continue to step 2\.
 
 1. If you are prompted to sign in to GitHub, follow the instructions on the **Sign in** page\. Sign in with your GitHub user name or email and password\.

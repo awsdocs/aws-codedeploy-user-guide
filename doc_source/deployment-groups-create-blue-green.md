@@ -26,15 +26,11 @@ If you want to use the same settings used in another deployment group, specify t
 1. Choose **Blue/green deployment**\.
 
 1. In **Environment configuration**, choose the method to use to provide instances for your replacement environment:
-
    + **Automatically copy Auto Scaling group**: AWS CodeDeploy creates an Auto Scaling group by copying one you specify\.
-
    + **Manually provision instances**: You won't specify the instances for your replacement environment until you create a deployment\. You must create the instances before you start the deployment\. Instead, here you specify the instances you want to replace\.
 
 1. Depending on your choice in step 7, do one of the following:
-
    + If you chose **Automatically copy Auto Scaling group**: In **Auto Scaling group**, choose the name of the Auto Scaling group you want to use as a template for the Auto Scaling group that will be created for the instances in your replacement environment\. The number of currently healthy instances in the Auto Scaling group you select will be created in your replacement environment\.
-
    + If you chose **Manually provision instances**: In **Choose the EC2 instances or Auto Scaling groups where the current application revision is deployed**, enter Amazon EC2 tag values or Auto Scaling group names to identify the instances in your original environment \(that is, the instances you want to replace or that are running the current application revision\)\. 
 
 1. In **Load balancer**, choose the Classic Load Balancer, Application Load Balancer, or Network Load Balancer to use in the registration of instances in your replacement environment during the deployment process\. 

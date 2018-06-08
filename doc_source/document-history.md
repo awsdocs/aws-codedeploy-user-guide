@@ -1,9 +1,7 @@
 # Document History<a name="document-history"></a>
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *AWS CodeDeploy User Guide*\.
-
 + **API version:** 2014\-10\-06
-
 + **Latest documentation update:** December 19, 2017
 
 

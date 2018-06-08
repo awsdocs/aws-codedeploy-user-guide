@@ -6,7 +6,7 @@ When you use the AWS CodeDeploy console to create an application, you configure 
 
 As part of creating a deployment group, you must specify a service role\. For more information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
 
-
+**Topics**
 + [Create a Deployment Group for an In\-Place Deployment \(Console\)](deployment-groups-create-in-place.md)
 + [Create a Deployment Group for a Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
 + [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)

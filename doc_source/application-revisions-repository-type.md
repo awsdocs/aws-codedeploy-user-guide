@@ -1,15 +1,10 @@
 # Choose an AWS CodeDeploy Repository Type<a name="application-revisions-repository-type"></a>
 
 The storage location for files required by AWS CodeDeploy is called a *repository*\. Use of a repository depends on which compute platform your deployment uses\.
-
 + **EC2/On\-Premises**: To deploy your application code to one or more instances, your code must be bundled into an archive file and placed in a repository where AWS CodeDeploy can access it during the deployment process\. You bundle your deployable content and an AppSpec file into an archive file, and then upload it to one of the repository types supported by AWS CodeDeploy\.
-
 + **AWS Lambda**: Deployments require an AppSpec file, which can be accessed during a deployment in one of the following ways: 
-
   +  From an Amazon S3 bucket\.  
-
   +  From text typed directly into the AppSpec editor in the console\. For more information, see [Create an AWS Lambda Compute Platform Deployment \(Console\)](deployments-create-console-lambda.md)\. 
-
   +  If you use the AWS CLI, you can reference an AppSpec file that is on your hard drive or on a network drive\. For more information, see [ Create an AWS Lambda Compute Platform Deployment \(CLI\) ](deployments-create-lambda-cli.md)\. 
 
 AWS CodeDeploy currently supports the following repository types: 

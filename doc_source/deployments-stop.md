@@ -5,7 +5,7 @@ You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs 
 **Warning**  
 Stopping an EC2/On\-Premises deployment can leave some or all of the instances in your deployment groups in an indeterminate deployment state\. For more information, see [Stopped and Failed Deployments](deployment-steps.md#deployment-stop-fail)\. 
 
-
+**Topics**
 + [Stop a deployment \(console\)](#deployments-stop-console)
 + [Stop a deployment \(CLI\)](#deployments-stop-cli)
 

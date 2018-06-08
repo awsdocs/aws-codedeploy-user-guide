@@ -7,7 +7,7 @@ When new Amazon EC2 instances are launched as part of an Auto Scaling group, AWS
 **Note**  
 Be aware that you might encounter issues if you associate multiple deployment groups with a single Auto Scaling group\. If one deployment fails, for example, the instance will begin to shut down, but the other deployments that were running can take an hour to time out\. For more information, see [Avoid associating multiple deployment groups with a single Auto Scaling group](troubleshooting-auto-scaling.md#troubleshooting-multiple-depgroups) and [Under the Hood: AWS CodeDeploy and Auto Scaling Integration](http://aws.amazon.com/blogs/devops/under-the-hood-aws-codedeploy-and-auto-scaling-integration/)\.
 
-
+**Topics**
 + [Deploying AWS CodeDeploy Applications to Auto Scaling Groups](#integrations-aws-auto-scaling-deploy)
 + [Auto Scaling Behaviors with AWS CodeDeploy](#integrations-aws-auto-scaling-behaviors)
 + [Using a Custom AMI with AWS CodeDeploy and Auto Scaling](#integrations-aws-auto-scaling-custom-ami)
@@ -45,13 +45,9 @@ If an Auto Scaling scale\-up event occurs while a deployment is underway, the ne
 To resolve this problem after it occurs, you can redeploy the newer application revision to the affected deployment groups\.
 
 To avoid this problem, we recommend suspending the Auto Scaling scale\-up processes while deployments are taking place\. You can do this through a setting in the common\_functions\.sh script that is used for load balancing with AWS CodeDeploy\. If `HANDLE_PROCS=true`, the following Auto Scaling events are suspended automatically during the deployment process:
-
 + AZRebalance
-
 + AlarmNotification
-
 + ScheduledActions
-
 + ReplaceUnhealthy
 
 **Important**  
@@ -76,9 +72,7 @@ That order must be:
 If the order of events is not carefully controlled, the AWS CodeDeploy agent might start a deployment before all the scripts have finished running\. 
 
 To control the order of events, use one of these best practices: 
-
 + Install the AWS CodeDeploy agent through a `cfn-init` script, placing it after all other scripts\.
-
 + Include the AWS CodeDeploy agent in a custom AMI and use a `cfn-init` script to start it, placing it after all other scripts\.
 
 For information about using `cfn-init`, see [cfn\-init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-init.html) in *[AWS CloudFormation User Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)*\.
@@ -86,7 +80,5 @@ For information about using `cfn-init`, see [cfn\-init](http://docs.aws.amazon.c
 ## Using a Custom AMI with AWS CodeDeploy and Auto Scaling<a name="integrations-aws-auto-scaling-custom-ami"></a>
 
 You have two options for specifying the base AMI to use when new Amazon EC2 instances are launched in an Auto Scaling group:
-
 + You can specify a base custom AMI that already has the AWS CodeDeploy agent installed\. Because the agent is already installed, this option launches new Amazon EC2 instances more quickly than the other option\. However, this option provides a greater likelihood that initial deployments of Amazon EC2 instances will fail, especially if the AWS CodeDeploy agent is out of date\. If you choose this option, we recommend you regularly update the AWS CodeDeploy agent in your base custom AMI\.
-
 + You can specify a base AMI that doesn't have the AWS CodeDeploy agent installed and have the agent installed as each new instance is launched in an Auto Scaling group\. Although this option launches new Amazon EC2 instances more slowly than the other option, it provides a greater likelihood that initial deployments of instances will succeed\. This option uses the most recent version of the AWS CodeDeploy agent\.

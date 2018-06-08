@@ -10,7 +10,7 @@ As part of setting up the service role, you also update its trust relationship t
 
 You can create a service role with the IAM console, the AWS CLI, or the IAM APIs\.
 
-
+**Topics**
 + [Create a Service Role \(Console\)](#getting-started-create-service-role-console)
 + [Create a Service Role \(CLI\)](#getting-started-create-service-role-cli)
 + [Get the Service Role ARN \(Console\)](#getting-started-get-service-role-console)
@@ -31,13 +31,9 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
 1. On the **Attached permissions policy** page, if there is a box next to **AWSCodeDeployRole**, select it, and then choose **Next: Review**\.
 
    The **AWSCodeDeployRole** policy provides the permissions required for your service role to:
-
    + Read the tags on your instances or identify your Amazon EC2 instances by Auto Scaling group names\.
-
    + Publish information to Amazon SNS topics\.
-
    + Retrieve information about CloudWatch alarms\.
-
    + Retrieve information about Elastic Load Balancing\.
 
 1. On the **Review** page, in **Role name**, type a name for the service role \(for example **CodeDeployServiceRole**\), and then choose **Create role**\.
@@ -111,7 +107,6 @@ For more information about creating service roles, see [Creating a Role to Deleg
 1. On your development machine, create a text file named, for example, `CodeDeployDemo-Trust.json`\. This file is used to allow AWS CodeDeploy to work on your behalf\.
 
    Do one of the following: 
-
    + To grant access to all supported regions, save the following content in the file:
 
      ```
@@ -131,7 +126,6 @@ For more information about creating service roles, see [Creating a Role to Deleg
          ]
      }
      ```
-
    + To grant access to only some supported regions, type the following content into the file, and remove the lines for the regions to which you want to exclude access:
 
      ```
@@ -179,7 +173,6 @@ Be sure to include `file://` before the file name\. It is required in this comma
    In the command's output, make a note of the value of the `Arn` entry under the `Role` object\. You need it later when you create deployment groups\. If you forget the value, follow the instructions in [Get the Service Role ARN \(CLI\) ](#getting-started-get-service-role-cli)\. 
 
 1. The managed policy you use depends on the compute platform\.
-
    + If your deployment is to an EC2/On\-Premises compute platform:
 
      Call the attach\-role\-policy command to give the service role named **CodeDeployServiceRole** the permissions based on the IAM managed policy named **AWSCodeDeployRole**\. For example:
@@ -187,7 +180,6 @@ Be sure to include `file://` before the file name\. It is required in this comma
      ```
      aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole
      ```
-
    + If your deployment is to an AWS Lambda compute platform:
 
      Call the attach\-role\-policy command to give the service role named **CodeDeployServiceRole** the permissions based on the IAM managed policy named **AWSCodeDeployRoleForLambda**\. For example:

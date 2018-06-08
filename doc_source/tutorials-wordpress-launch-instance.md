@@ -58,7 +58,7 @@ The next step confirms your Amazon EC2 instance has an open HTTP port so you can
 
 1.  Under **Security groups**, choose **view inbound rules**\. 
 
-   You should see a list of rulse in your security group similar to the following:
+   You should see a list of rules in your security group similar to the following:
 
    ```
    Security Groups associated with i-1234567890abcdef0
@@ -69,13 +69,9 @@ The next step confirms your Amazon EC2 instance has an open HTTP port so you can
 1.  Under **Security groups**, choose your Amazon EC2 instance's security group\. It may be called **launch\-wizard\-*N***\. The ***N*** in the name is a number assigned to your security group when your instance was created\. 
 
     Choose the **Inbound** tab\. Your instance's security group is properly configured if you see a rule with the following values: 
-
    + **Type**: HTTP
-
    + **Protocol**: TCP
-
    + **Port Range**: 80
-
    + **Source**: Custom
 
 1.  If you do not see a rule with the values listed in the previous step, use the procedures in [Adding Rules to a Security Group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) to add them to a new security rule\. 

@@ -13,6 +13,6 @@ AWS CodeDeploy is integrated with the following AWS services:
 | AWS Serverless Application Model |  AWS Serverless Application Model \(AWS SAM\) is a model to define serverless applications\. It extends AWS CloudFormation to provide a simplified way of defining AWS Lambda functions, Amazon API Gateway APIs, and Amazon DynamoDB tables required by a serverless application\. If you already use AWS SAM, you can add deployment preferences to start using AWS CodeDeploy to manage the way in which traffic is shifted during an AWS Lambda application deployment\. For more information, see the [AWS Serverless Application Model](https://github.com/awslabs/serverless-application-model)\.  | 
 | Elastic Load Balancing |  AWS CodeDeploy supports [Elastic Load Balancing](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elastic-load-balancing.html), a service that distributes incoming application traffic across multiple Amazon EC2 instances\.  For AWS CodeDeploy deployments, load balancers also prevent traffic from being routed to instances when they are not ready, are currently being deployed to, or are no longer needed as part of an environment\. Learn more: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws.html)  | 
 
-
+**Topics**
 + [Auto Scaling](integrations-aws-auto-scaling.md)
 + [Integrating AWS CodeDeploy with Elastic Load Balancing](integrations-aws-elastic-load-balancing.md)

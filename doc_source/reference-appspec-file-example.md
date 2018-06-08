@@ -2,7 +2,7 @@
 
 This topic provides example AppSpec files for an AWS Lambda and an EC2/On\-Premises deployment\.
 
-
+**Topics**
 + [AppSpec File Example for an AWS Lambda Deployment](#appspec-file-example-lambda)
 + [AppSpec File Example for an EC2/On\-Premises Deployment](#appspec-file-example-server)
 
@@ -43,8 +43,8 @@ Hooks:
  	}],
  	"Hooks": [{
  			"BeforeAllowTraffic": "LambdaFunctionToValidateBeforeTrafficShift"
-                  },
-                  {
+      },
+      {
  			"AfterAllowTraffic": "LambdaFunctionToValidateAfterTrafficShift"
  		}
  	]
@@ -62,6 +62,9 @@ Here is the sequence of events during deployment:
 ## AppSpec File Example for an EC2/On\-Premises Deployment<a name="appspec-file-example-server"></a>
 
 Here is an example of an AppSpec file for an in\-place deployment to an Amazon Linux, Ubuntu Server, or RHEL instance\. 
+
+**Note**  
+ Deployments to Windows Server instances do not support the `runas` element\. If you are deploying to Windows Server instances, do not include it in your AppSpec file\. 
 
 ```
 version: 0.0

@@ -2,7 +2,7 @@
 
 You can view the log data created by an AWS CodeDeploy deployment by setting up the Amazon CloudWatch Logs agent to view aggregated data in the CloudWatch console or by logging into an individual instance to review the log file\.
 
-
+**Topics**
 + [View Log File Data in the Amazon CloudWatch Console](#deployments-view-logs-cloudwatch)
 + [View Log Files on an Instance](#deployments-view-logs-instance)
 
@@ -14,7 +14,7 @@ When the Amazon CloudWatch Logs agent is installed on an instance, deployment lo
 
 To view deployment log data for an individual instance, you can sign in to the instance and browse for information about errors or other deployment events\.
 
-
+**Topics**
 + [To view deployment log files on Amazon Linux, RHEL, and Ubuntu Server instances](#deployments-view-logs-instance-unix)
 + [To view deployment logs files on Windows Server instances](#deployments-view-logs-instance-windows)
 
@@ -83,9 +83,7 @@ To browse the log file for error messages, press CTRL\+F, type **ERROR \[**, and
 `C:\ProgramData\Amazon\CodeDeploy\deployment-group-id\deployment-id\logs\scripts.log`
 
 Where:
-
 + *deployment\-group\-id* is a string such as `examplebf3a9c7a-7c19-4657-8684-b0c68d0cd3c4`
-
 + *deployment\-id* is an identifier such as `d-12EXAMPLE`
 
 Type the following command to open an AWS CodeDeploy scripts log file:

@@ -3,19 +3,15 @@
 This section describes how to configure an on\-premises instance and register and tag it with AWS CodeDeploy with the least amount of effort\. The register command is most useful when you are working with single or small fleets of on\-premises instances\. You can use the register command only when you are using an IAM user ARN to authenticate an instance\. You cannot use the register command with an IAM session ARN for authentication\.
 
 When you use the register command, you can let AWS CodeDeploy do the following:
-
 + Create an IAM user in AWS Identity and Access Management for the on\-premises instance, if you do not specify one with the command\.
-
 + Save the IAM user's credentials to an on\-premises instance configuration file\.
-
 + Register the on\-premises instance with AWS CodeDeploy\.
-
 + Add tags to the on\-premises instance, if you specify them as part of the command\.
 
 **Note**  
 The [register\-on\-premises\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command is an alternative to the [register](http://docs.aws.amazon.com/cli/latest/reference/deploy/register.html) command\. You use the register\-on\-premises\-instance command if you want to configure an on\-premises instance and register and tag it with AWS CodeDeploy mostly on your own\. The register\-on\-premises\-instance command also gives you the option to use an IAM session ARN to register instances instead of an IAM user ARN\. This approach provides a major advantage if you have large fleets of on\-premises instances\. Specifically, you can use a single IAM session ARN to authenticate multiple instances instead of having to create an IAM user for each on\-premises instance one by one\. For more information, see [Use the register\-on\-premises\-instance Command \(IAM User ARN\) to Register an On\-Premises Instance](register-on-premises-instance-iam-user-arn.md) and [Use the register\-on\-premises\-instance Command \(IAM Session ARN\) to Register an On\-Premises Instance ](register-on-premises-instance-iam-session-arn.md)\.
 
-
+**Topics**
 + [Step 1: Install and Configure the AWS CLI on the On\-Premises Instance](#instances-on-premises-register-instance-1-install-cli)
 + [Step 2: Call the register Command](#instances-on-premises-register-instance-2-register-command)
 + [Step 3: Call the install Command](#instances-on-premises-register-instance-3-install-command)
@@ -87,18 +83,14 @@ As you configure the AWS CLI \(for example, by calling the aws configure command
 For this step, we assume you are registering the on\-premises instance from the on\-premises instance itself\. You can also register an on\-premises instance from a separate device or instance that has the AWS CLI installed and configured as described in the preceding step\.
 
 Use the AWS CLI to call the [register](http://docs.aws.amazon.com/cli/latest/reference/deploy/register.html) command, specifying:
-
 + A name that uniquely identifies the on\-premises instance to AWS CodeDeploy \(with the `--instance-name` option\)\. 
 **Important**  
 To help identify the on\-premises instance later, especially for debugging purposes, we strongly recommend that you use a name that maps to some unique characteristic of the on\-premises instance \(for example, the serial number or some unique internal asset identifier, if applicable\)\. If you specify a MAC address for a name, be aware that MAC addresses contain characters that AWS CodeDeploy does not allow, such as colon \(`:`\)\. For a list of allowed characters, see [AWS CodeDeploy Limits](limits.md)\.
-
 + Optionally, the ARN of an existing IAM user that you want to associate with this on\-premises instance \(with the `--iam-user-arn` option\)\. To get the ARN of an IAM user, call the [get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) command, or choose the IAM user name in the **Users** section of the IAM console and then find the **User ARN** value in the **Summary** section\. If this option is not specified, AWS CodeDeploy will create an IAM user on your behalf in your AWS account and associate it with the on\-premises instance\.
 **Important**  
 If you specify the `--iam-user-arn` option, you must also manually create the on\-premises instance configuration file, as described in [Step 4: Add a Configuration File to the On\-Premises Instance](register-on-premises-instance-iam-user-arn.md#register-on-premises-instance-iam-user-arn-4)\.  
  You can associate only one IAM user with only one on\-premises instance\. Trying to associate a single IAM user with multiple on\-premises instances can result in errors, failed deployments to those on\-premises instances, or deployments to those on\-premises instances that are stuck in a perpetual pending state\. 
-
 + Optionally, a set of on\-premises instance tags \(with the `--tags` option\) that AWS CodeDeploy will use to identify the set of Amazon EC2 instances to which to deploy\. Specify each tag with `Key=tag-key,Value=tag-value` \(for example, `Key=Name,Value=Beta Key=Name,Value=WestRegion`\)\. If this option is not specified, no tags will be registered\. To register tags later, call the [add\-tags\-to\-on\-premises\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/add-tags-to-on-premises-instances.html) command\.
-
 + Optionally, the AWS region where the on\-premises instance will be registered with AWS CodeDeploy \(with the `--region` option\)\. This must be one of the supported regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference* \(for example, `us-west-2`\)\. If this option is not specified, the default AWS region associated with the calling IAM user will be used\.
 
 For example:
@@ -122,17 +114,11 @@ If this command encounters any errors, an error message appears, describing how 
 ## Step 3: Call the install Command<a name="instances-on-premises-register-instance-3-install-command"></a>
 
 From the on\-premises instance, use the AWS CLI to call the [install](http://docs.aws.amazon.com/cli/latest/reference/deploy/install.html) command, specifying:
-
 + The path to the configuration file \(with the `--config-file` option\)\.
-
 + Optionally, whether to replace the configuration file that already exists on the on\-premises instance \(with the `--override-config` option\)\. If not specified, the existing configuration file will not be replaced\.
-
 + Optionally, the AWS region where the on\-premises instance will be registered with AWS CodeDeploy \(with the `--region` option\)\. This must be one of the supported regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference* \(for example, `us-west-2`\)\. If this option is not specified, the default AWS region associated with the calling IAM user will be used\.
-
 + Optionally, a custom location from which to install the AWS CodeDeploy agent \(with the `--agent-installer` option\)\. This option is useful for installing a custom version of the AWS CodeDeploy agent that AWS CodeDeploy does not officially support \(such as a custom version based on the [AWS CodeDeploy agent](https://github.com/aws/aws-codedeploy-agent) repository in GitHub\)\. The value must be the path to an Amazon S3 bucket that contains either: 
-
   + An AWS CodeDeploy agent installation script \(for Linux\- or Unix\-based operating systems, similar to the install file in the [AWS CodeDeploy agent](https://github.com/aws/aws-codedeploy-agent/blob/master/bin/install) repository in GitHub\)\.
-
   + An AWS CodeDeploy agent installer package \(\.msi\) file \(for Windows\-based operating systems\)\.
 
    If this option is not specified, AWS CodeDeploy will make its best attempt to install from its own location an officially supported version of the AWS CodeDeploy agent that is compatible with the operating system on the on\-premises instance\.

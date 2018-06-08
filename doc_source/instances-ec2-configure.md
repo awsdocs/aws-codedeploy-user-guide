@@ -6,15 +6,12 @@ These instructions show you how to configure an Amazon EC2 instance running Amaz
 If you do not have an Amazon EC2 instance, you can use the AWS CloudFormation template to launch one running Amazon Linux or Windows Server\. We do not provide a template for Ubuntu Server or RHEL\.
 
 To perform the steps in this topic:
-
 + An IAM instance profile with permissions to participate in AWS CodeDeploy deployments must be attached to your instance\.
 
   For information about how to attach an IAM instance profile when you create an Amazon EC2 instance, see [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md) and [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
 
   For information about how to attach an IAM instance profile to an existing Amazon EC2 instance, see [Attaching an IAM Role to an Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
-
 + Your Amazon EC2 instance must be tagged\.
-
 + The AWS CodeDeploy agent must be installed and running on the Amazon EC2 instance\.
 
   If the agent is not running, deployments will appear to be stalled in a pending state\.
@@ -97,7 +94,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
            "s3:List*"
          ],
          "Resource": [
-           "arn:aws:s3:::codedeploydemobucket/*",
+           "arn:aws:s3:::replace-with-your-s3-bucket-name/*",
            "arn:aws:s3:::aws-codedeploy-us-east-2/*",
            "arn:aws:s3:::aws-codedeploy-us-east-1/*",
            "arn:aws:s3:::aws-codedeploy-us-west-1/*",

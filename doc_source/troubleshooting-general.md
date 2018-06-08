@@ -1,6 +1,6 @@
 # General Troubleshooting Issues<a name="troubleshooting-general"></a>
 
-
+**Topics**
 + [General Troubleshooting Checklist](#troubleshooting-checklist)
 + [AWS CodeDeploy deployment resources are supported in certain regions only](#troubleshooting-supported-regions)
 + [Required IAM roles are not available](#troubleshooting-iam-cloudformation)
@@ -15,41 +15,27 @@ You can use the following checklist to troubleshoot a failed deployment\.
 1. See [View Deployment Details with AWS CodeDeploy](deployments-view-details.md) and [View Instance Details with AWS CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
 
 1. Check whether you have correctly configured the instances:
-
    + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
-
    + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 Instance to Work with AWS CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
-
    + Was the instance tagged? For more information, see [Working with Tags in the Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
-
    + Is the AWS CodeDeploy agent installed and running on the instance? For more information, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.
 
 1. Check the application and deployment group settings:
-
    + To check your application settings, see [View Application Details with AWS CodeDeploy](applications-view-details.md)\.
-
    + To check your deployment group settings, see [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)\.
 
 1. Confirm the application revision is correctly configured:
-
    + Check the format of your AppSpec file\. For more information, see [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md) and [AWS CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
-
    + Check your Amazon S3 bucket or GitHub repository to verify your application revision is in the expected location\.
-
    + Review the details of your AWS CodeDeploy application revision to ensure that it is registered correctly\. For information, see [View Application Revision Details with AWS CodeDeploy](application-revisions-view-details.md)\.
-
    + If you're deploying from Amazon S3, check your Amazon S3 bucket to verify AWS CodeDeploy has been granted permissions to download the application revision\. For information about bucket policies, see [Deployment Prerequisites](deployments-create-prerequisites.md)\.
-
    + If you're deploying from GitHub, check your GitHub repository to verify AWS CodeDeploy has been granted permissions to download the application revision\. For more information, see [Create a Deployment with AWS CodeDeploy](deployments-create.md) and [GitHub Authentication with Applications in AWS CodeDeploy](integrations-partners-github.md#behaviors-authentication)\.
 
 1. Check whether the service role is correctly configured\. For information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
 
 1. Confirm you followed the steps in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md) to: 
-
    + Attach policies to the IAM user\.
-
    + Install or upgrade and configure the AWS CLI\.
-
    + Create an IAM instance profile and a service role\.
 
    For more information, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\.
@@ -73,7 +59,7 @@ To use services in the China \(Beijing\) Region or China \(Ningxia\) Region, you
 Information about some resources for the China Regions, such as AWS CodeDeploy Resource Kit bucket names and AWS CodeDeploy agent installation procedures, are not included in this edition of the *AWS CodeDeploy User Guide*\.  
 For more information:  
 [AWS CodeDeploy](http://docs.amazonaws.cn/en_us/aws/latest/userguide/codedeploy.html) in *[Getting Started with AWS in the China \(Beijing\) Region](http://docs.amazonaws.cn/en_us/aws/latest/userguide/introduction.html) *
-*AWS CodeDeploy User Guide for the China Regions* \([English version](http://docs.amazonaws.cn/en_us/codedeploy/latest/userguide/welcome.html) | [Chinese version](http://docs.amazonaws.cn/codedeploy/latest/userguide/welcome.html)\)
+*AWS CodeDeploy User Guide for the China Regions* \([English version](http://docs.amazonaws.cn/en_us/codedeploy/latest/userguide/welcome.html) \| [Chinese version](http://docs.amazonaws.cn/codedeploy/latest/userguide/welcome.html)\)
 
 ## Required IAM roles are not available<a name="troubleshooting-iam-cloudformation"></a>
 
@@ -82,13 +68,9 @@ If you rely on an IAM instance profile or a service role that was created as par
 ## Avoid concurrent deployments to the same Amazon EC2 instance<a name="troubleshooting-concurrent-deployments"></a>
 
 As a best practice, you should avoid situations that would result in more than one attempted deployment to an Amazon EC2 instance at the same time\. In cases where commands from different deployments compete to run on a single instance, the deployments can time out and fail for the following reasons:
-
 + AWS CodeDeploy fails a deployment if its first lifecycle event doesn't start within five minutes of the triggering of the deployment\. You can use the console or the AWS CLI [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to trigger a deployment\.
-
 + AWS CodeDeploy fails a deployment if a lifecycle event does not start within five minutes of the end of the previous lifecycle event\.
-
 + The AWS CodeDeploy agent can process only one deployment command at a time\. 
-
 + It's not possible to control the order in which deployments occur if more than one deployment attempts to run at the same time\. 
 
 **Note**  
@@ -105,13 +87,9 @@ Some text editors introduce non\-conforming, non\-printing characters into files
 In the AWS CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Alternatively, you use the AWS CLI to call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like "invalid character," "command not found," or "file not found\."
 
 To address this issue, we recommend the following:
-
 + Do not use text editors that automatically introduce non\-printing characters such as carriage returns \(`^M` characters\) into your AppSpec files and shell script files\. 
-
 + Use text editors that display non\-printing characters such as carriage returns in your AppSpec files and shell script files, so you can find and remove any that may be automatically or randomly introduced\. For examples of these types of text editors, search the Internet for "text editor show carriage returns\."
-
 + Use text editors running on Amazon Linux, Ubuntu Server, or RHEL instances to create shell script files that run on Amazon Linux, Ubuntu Server, or RHEL instances\. For examples of these types of text editors, search the Internet for "Linux shell script editor\."
-
 + If you must use a text editor in Windows or Mac OS to create shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, use a program or utility that converts text in Windows or Mac OS format to Unix format\. For examples of these programs and utilities, search the Internet for "DOS to UNIX" or "Mac to UNIX\." Be sure to test the converted shell script files on the target operating systems\.
 
 ## Using Finder in macOS to bundle an application revision can cause deployments to fail<a name="troubleshooting-bundle-with-finder"></a>

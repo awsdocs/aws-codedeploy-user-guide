@@ -28,15 +28,10 @@ If you want to use the same settings used in another deployment group \(includin
 1. Choose **In\-place deployment**\.
 
 1. In **Environment configuration**, choose from the following: 
-
    + On the **Auto Scaling groups** tab: Choose the name of an Auto Scaling group to deploy your application revision to\. When new Amazon EC2 instances are launched as part of an Auto Scaling group, AWS CodeDeploy can deploy your revisions to the new instances automatically\. You can add up to 10 Auto Scaling groups to a deployment group\.
-
    + On the **Amazon EC2 instances** tab or **On\-premises instances** tab: In the **Key** and **Value** fields, type the values of the key\-value pair you used to tag the instances\. You can tag up to 10 key\-value pairs in a single tag group\.
-
      + You can use wildcards in the **Value** field to identify all instances tagged in certain patterns, such as similar Amazon EC2 instance, cost center, and group names, and so on\. For example, if you select **Name** in the **Key** field and type **GRP\-\*a** in the **Value** field, AWS CodeDeploy identifies all instances that fit that pattern, such as **GRP\-1a**, **GRP\-2a**, and **GRP\-XYZ\-a**\.
-
      + The **Value** field is case\-sensitive\. 
-
      + To remove a key\-value pair from the list, choose the remove icon\.
 
      As AWS CodeDeploy finds instances that match each specified key\-value pair or Auto Scaling group name, it displays the number of matching instances\. To see more information about the instances, click the number\.

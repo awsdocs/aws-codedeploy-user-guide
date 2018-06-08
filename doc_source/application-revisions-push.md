@@ -55,11 +55,19 @@ The IAM user who is calling the push command must have, at minimum, permissions 
 
 To learn how to create and attach an IAM policy, see [Working with Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
-## Push a Revision for an Amazon EC2 Deployment<a name="push-server-revision"></a>
+## Push a Revision Using the AWS CLI<a name="push-with-cli"></a>
 
-To bundle and push the revision for a deployment to Amazon EC2 instances in a single command, from the command line, switch to the root directory \(folder\) of the revision, and then call the push command\.
+**Note**  
+ The `push` command bundles application artifacts and an AppSpec file into a revision\. The file format of this revision is a compressed ZIP file\. The command cannot be used with an AWS Lambda deployment because its expects a revision that is a JSON\-formatted or YAML\-formatted AppSpec file\. 
 
-For example, to bundle the component files into a revision starting from the current directory, associated with the application named `WordPress_App`, to an Amazon S3 bucket named `codedeploydemobucket`, with a revision name of `WordPressApp.zip`, call the push command as follows:
+Call the push command to bundle and push the revision for a deployment\. Its parameters are:
++  \-\-application\-name: \(string\) Required\. The name of the AWS CodeDeploy application to be associated with the application revision\. 
++  \-\-s3\-location: \(string\) Required\. Information about the location of the application revision to be uploaded to Amazon S3\. You must specify an Amazon S3 bucket and a key\. The key is the name of the revision\. AWS CodeDeploy zips the content before it is uploaded\. Use the format `s3://your-S3-bucket-name/your-key.zip`\. 
++  \-\-ignore\-hidden\-files or \-\-no\-ignore\-hidden\-files: \(boolean\) Optional\. Use the `--no-ignore-hidden-files` flag \(the default\) to bundle and upload hidden files to Amazon S3\. Use the `--ignore-hidden-files` flag to not bundle and upload hidden files to Amazon S3\. 
++  \-\-source \(string\) Optional\. The location of the content to be deployed and the AppSpec file on the development machine to be zipped and uploaded to Amazon S3\. The location is specified as a path relative to the current directory\. If the relative path is not specified or if a single period is used for the path \("\."\), the current directory is used\. 
++  \-\-description \(string\) Optional\. A comment that summarizes the application revision\. If not specified, the default string "Uploaded by AWS CLI 'time' UTC" is used, where 'time' is the current system time in Coordinated Universal Time \(UTC\)\. 
+
+You can use the AWS CLI to push a revision for an Amazon EC2 deployment\. An example push command looks like this: 
 
 In Linux, macOS, or Unix:
 
@@ -72,34 +80,35 @@ aws deploy push \
   --source .
 ```
 
-In Windows:
+ In Windows: 
 
 ```
 aws deploy push --application-name WordPress_App --description "This is a revision for the application WordPress_App" --ignore-hidden-files --s3-location s3://codedeploydemobucket/WordPressApp.zip --source .
 ```
 
-## Push a Revision for an AWS Lambda Deployment<a name="push-lambda-revision"></a>
+ This command does the following: 
++  Associates the bundled files with an application named `WordPress_App`\. 
++  Attaches a description to the revision\. 
++  Ignores hidden files\. 
++  Names the revision `WordPressApp.zip` and pushes it to a bucket named `codedeploydemobucket`\. 
++  Bundles all files in the root directory into the revision\. 
 
-To push the revision, which, for an Lambda deployment is the same as the AppSpec file, call the push command as follows:
+After the push is successful, you can use the AWS CLI or the AWS CodeDeploy console to deploy the revision from Amazon S3\. To deploy this revision with the AWS CLI: 
 
-**Note**  
-The AppSpec file in the following examples is a YAML file, but it can also be a JSON file\.
-
-In Linux, macOS, or Unix:
-
-```
-aws deploy push \
-  --application-name MyLambdaApplicationName \
-  --description "This is a revision for the application MyLambdaApplicationName" \
-  --ignore-hidden-files \
-  --s3-location s3://codedeploydemobucket/MyAppSpecFile.yaml; \
-  --source .
-```
-
-In Windows:
+ In Linux, macOS, or Unix: 
 
 ```
-aws deploy push --application-name MyLambdaApplicationName --description "This is a revision for the application MyLambdaApplicationName" --ignore-hidden-files --s3-location s3://codedeploydemobucket/MyAppSpecFile.yaml --source .
+aws deploy create-deployment \
+  --application-name WordPress_App \ 
+  --deployment-config-name your-deployment-config-name \ 
+  --your-deployment-group-name your-deployment-group-name \ 
+  --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
 ```
 
-After the push is successful, you can use the AWS CLI or the AWS CodeDeploy console to deploy the revision from Amazon S3\. For Amazon EC2 deployments, the revision is deployed to the instances\. For AWS Lambda deployments, traffic starts to be shifted to the new Lambda function version\. For instructions, see [Create a Deployment with AWS CodeDeploy](deployments-create.md)\.
+ In Windows: 
+
+```
+aws deploy create-deployment --application-name WordPress_App --deployment-config-name your-deployment-config-name --your-deployment-group-name your-deployment-group-name --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
+```
+
+ For more information, see [Create a Deployment with AWS CodeDeploy](deployments-create.md)\. 

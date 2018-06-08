@@ -2,7 +2,7 @@
 
 In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp revision on the new instance in the Auto Scaling group\.
 
-
+**Topics**
 + [To check automatic deployment results \(CLI\)](#tutorials-auto-scaling-group-reverify-cli)
 + [To check automatic deployment results \(console\)](#tutorials-auto-scaling-group-reverify-console)
 

@@ -4,7 +4,7 @@ AWS CodeDeploy rolls back deployments by redeploying a previously deployed revis
 
 Deployments can be rolled back automatically or manually\.
 
-
+**Topics**
 + [Automatic Rollbacks](#deployments-rollback-and-redeploy-automatic-rollbacks)
 + [Manual Rollbacks](#deployments-rollback-and-redeploy-manual-rollbacks)
 + [Rollback and Redeployment Workflow](#deployments-rollback-and-redeploy-workflow)
@@ -74,11 +74,8 @@ As part of this process, AWS CodeDeploy will not try to revert or otherwise reco
 ## Rollback Behavior with Existing Content<a name="deployments-rollback-and-redeploy-content-options"></a>
 
 As part of the deployment process, the AWS CodeDeploy agent removes from each instance all the files installed by the most recent deployment\. If files that weren’t part of a previous deployment appear in target deployment locations, you can choose what AWS CodeDeploy does with them during the next deployment:
-
 + **Fail the deployment** — An error is reported and the deployment status is changed to Failed\.
-
 + **Overwrite the content** — The version of the file from the application revision replaces the version already on the instance\.
-
 + **Retain the content** — The file in the target location is kept and the version in the application revision is not copied to the instance\. 
 
 You might choose to retain files that you want to be part of the next deployment without having to add them to the application revision package\. For example, you might upload files directly to the instance that are required for the deployment but weren’t added to the application revision bundle\. Or you might upload files to the instance if your applications are already in your production environment but you want to use AWS CodeDeploy for the first time to deploy them\.

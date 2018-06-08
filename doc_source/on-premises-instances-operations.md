@@ -2,7 +2,7 @@
 
 Follow the instructions in this section to manage operations on your on\-premises instances after you have registered them with AWS CodeDeploy, such as getting more information about, removing tags from, and uninstalling and deregistering on\-premises instances\.
 
-
+**Topics**
 + [Get Information About a Single On\-Premises Instance](on-premises-instances-operations-view-details-single.md)
 + [Get Information About Multiple On\-Premises Instances](on-premises-instances-operations-view-details-multiple.md)
 + [Manually Remove On\-Premises Instance Tags from an On\-Premises Instance](on-premises-instances-operations-remove-tags.md)

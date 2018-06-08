@@ -1,6 +1,6 @@
 # Troubleshoot Instance Issues<a name="troubleshooting-ec2-instances"></a>
 
-
+**Topics**
 + [Tags must be set correctly](#troubleshooting-ec2-tags)
 + [AWS CodeDeploy agent must be installed and running on instances](#troubleshooting-sds-agent)
 + [Deployments do not fail for up to an hour when an instance is terminated during a deployment](#troubleshooting-one-hour-timeout)
@@ -58,7 +58,5 @@ powershell.exe -Command Restart-Service -Name codedeployagent
 AWS CodeDeploy requires accurate time references in order to perform its operations\. If your instance's date and time are not set correctly, they may not match the signature date of your deployment request, which AWS CodeDeploy will therefore reject\.
 
 To avoid deployment failures related to incorrect time settings, see the following topics: 
-
 +  [Setting the Time for Your Linux Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html)
-
 +  [Setting the Time for a Windows Instance](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-set-time.html)

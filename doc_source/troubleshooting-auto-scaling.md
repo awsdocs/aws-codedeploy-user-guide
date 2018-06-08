@@ -1,6 +1,6 @@
 # Troubleshoot Auto Scaling Issues<a name="troubleshooting-auto-scaling"></a>
 
-
+**Topics**
 + [General Auto Scaling troubleshooting](#troubleshooting-auto-scaling-general)
 + [Instances in an Auto Scaling group are continuously provisioned and terminated before a revision can be deployed](#troubleshooting-auto-scaling-provision-termination-loop)
 + [Terminating or rebooting an Auto Scaling instance may cause deployments to fail](#troubleshooting-auto-scaling-reboot)
@@ -11,21 +11,14 @@
 ## General Auto Scaling troubleshooting<a name="troubleshooting-auto-scaling-general"></a>
 
 Deployments to Amazon EC2 instances in an Auto Scaling group can fail for the following reasons:
-
 + **Auto Scaling continuously launches and terminates Amazon EC2 instances\.** If AWS CodeDeploy cannot automatically deploy your application revision, Auto Scaling will continuously launch and terminate Amazon EC2 instances\. 
 
   Disassociate the Auto Scaling group from the AWS CodeDeploy deployment group or change the configuration of your Auto Scaling group so that the desired number of instances matches the current number of instances \(thus preventing Auto Scaling from launching any more Amazon EC2 instances\)\. For more information, see [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md) or [Configuring Your Auto Scaling Groups](http://docs.aws.amazon.com/autoscaling/latest/userguide/WorkingWithASG.html)\.
-
 + **The AWS CodeDeploy agent is unresponsive\.** The AWS CodeDeploy agent may not be installed if initialization scripts \(for example, cloud\-init scripts\) that run immediately after an Amazon EC2 instance is launched or started take more than one hour to run\. AWS CodeDeploy has a one\-hour timeout for the AWS CodeDeploy agent to respond to pending deployments\. To address this issue, move your initialization scripts into your AWS CodeDeploy application revision\.
-
 + **An Amazon EC2 instance in an Auto Scaling group reboots during a deployment\.** Your deployment can fail if an Amazon EC2 instance is rebooted during a deployment or the AWS CodeDeploy agent is shut down while processing a deployment command\. For more information, see [Terminating or rebooting an Auto Scaling instance may cause deployments to fail](#troubleshooting-auto-scaling-reboot)\.
-
 + **Multiple application revisions are deployed simultaneously to the same Amazon EC2 instance in an Auto Scaling group\.** Deploying multiple application revisions to the same Amazon EC2 instance in an Auto Scaling group at the same time can fail if one of the deployments has scripts that run for more than a few minutes\. Do not deploy multiple application revisions to the same Amazon EC2 instances in an Auto Scaling group\.
-
 + **A deployment fails for new Amazon EC2 instances that are launched as part of an Auto Scaling group\.** Typically in this scenario, running the scripts in a deployment can prevent the launching of Amazon EC2 instances in the Auto Scaling group\. \(Other Amazon EC2 instances in the Auto Scaling group may appear to be running normally\.\) To address this issue, make sure that all other scripts are complete first:
-
   + **AWS CodeDeploy agent is not included in your AMI **: If you use the cfn\-init command to install the AWS CodeDeploy agent while launching a new instance, place the agent installation script at the end of the `cfn-init` section of your AWS CloudFormation template\. 
-
   + **AWS CodeDeploy agent is included in your AMI **: If you include the AWS CodeDeploy agent in your AMI, configure it so that the agent is in a `Stopped` state when the instance is created, and then include a script for starting the agent as the final step in your `cfn-init` script library\. 
 
   \.
@@ -35,9 +28,7 @@ Deployments to Amazon EC2 instances in an Auto Scaling group can fail for the fo
 In some cases, an error can prevent a successful deployment to newly provisioned instances in an Auto Scaling group\. The results are no healthy instances and no successful deployments\. Because the deployment can't run or be completed successfully, the instances are terminated soon after being created\. The Auto Scaling group configuration then causes another batch of instances to be provisioned to try to meet the minimum healthy hosts requirement\. This batch is also terminated, and the cycle continues\.
 
 Possible causes include:
-
 + Failed Auto Scaling group health checks
-
 + An error in the application revision 
 
 To work around this issue, follow these steps:
@@ -56,15 +47,11 @@ After you confirm that deployments are successful, you can delete the instance y
 ## Terminating or rebooting an Auto Scaling instance may cause deployments to fail<a name="troubleshooting-auto-scaling-reboot"></a>
 
 If an Amazon EC2 instance is launched through Auto Scaling, and the instance is then terminated or rebooted, deployments to that instance may fail for the following reasons:
-
 + During an in\-progress deployment, a scale\-in event or any other termination event will cause the instance to detach from the Auto Scaling group and then terminate\. Because the deployment cannot be completed, it fails\.
-
 + The instance is rebooted, but it takes more than five minutes for the instance to start\. AWS CodeDeploy considers this to be a timeout\. The service will fail all current and future deployments to the instance\.
 
 To address this issue:
-
 + In general, make sure all deployments are complete before the instance is terminated or rebooted\. Make sure all deployments start after the instance has started or been rebooted\. 
-
 + If you specify a Windows Server base Amazon Machine Image \(AMI\) for an Auto Scaling configuration, and you use the EC2Config service to set the computer name of the instance, this behavior can cause deployments to fail\. To disable this behavior, in the Windows Server base AMI, on the **General** tab of the **Ec2 Service Properties** dialog box, clear the **Set Computer Name** box\. After you clear this box, this behavior will be disabled for all new Windows Server Auto Scaling instances launched with that Windows Server base AMI\. For Windows Server Auto Scaling instances on which this behavior enabled, you do not need to clear this box\. Simply redeploy failed deployments to those instances after they have been rebooted\.
 
 ## Avoid associating multiple deployment groups with a single Auto Scaling group<a name="troubleshooting-multiple-depgroups"></a>
@@ -91,9 +78,7 @@ An Auto Scaling group might fail to launch new Amazon EC2 instances, generating 
 `Launching a new Amazon EC2 instance <instance-Id>. Status Reason: Instance failed to complete user's Lifecycle Action: Lifecycle Action with token<token-Id> was abandoned: Heartbeat Timeout`\. 
 
 This message usually indicates one of the following: 
-
 + The maximum number of concurrent deployments associated with an AWS account was reached\. For more information about deployment limits, see [AWS CodeDeploy Limits](limits.md)\. 
-
 + An application in AWS CodeDeploy was deleted before its associated deployment groups were updated or deleted\. 
 
 When you delete an application or deployment group, AWS CodeDeploy attempts to clean up any Auto Scaling hooks associated with it, but some hooks might remain\. If you run a command to delete a deployment group, the leftover hooks will be returned in the output; however, if you run a command to delete an application, the leftover hooks will not appear in the output\.

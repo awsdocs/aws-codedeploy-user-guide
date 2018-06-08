@@ -23,19 +23,13 @@ If you want to use the same settings used in another deployment group, specify t
    For more information about deployment configurations, see [ Deployment Configurations on an AWS Lambda Compute Platform ](deployment-configurations.md#deployment-configuration-lambda)\.
 
 1. To create a custom configuration, choose **Create deployment configuration** and do the following:
-
    + For **Deployment configuration name**, type a name for the configuration\.
-
    + \(Optional\) For **Description**, type a description for the configuration\.
-
    + From the **Type** drop\-down list, choose a configuration type\. If you choose **Canary**, traffic is shifted in two increments\. If you choose **Linear**, traffic is shifted in equal increments, with an equal number of minutes between each increment\.
-
    + For **Step**, enter a percentage of traffic, between 1 and 99, to be shifted\. If your configuration type is **Canary**, this is the percentage of traffic that is shifted in the first increment\. The remaining traffic is shifted after the selected interval in the second increment\. If your configuration type is **Linear**, this is the percentage of traffic that is shifted at the start of each interval\.
-
    + In the **Interval** dialog box, enter the number of minutes\. If your configuration type is **Canary**, this is the number of minutes between the first and second traffic shift\. If your configuration typeis **Linear**, this is the number of minutes between each incremental shift\.
 **Note**  
 The maximum length of an AWS Lambda deployment is two days, or 2,880 minutes\. Therefore, the maximum value specified for **Interval** for a canary configuration is 2,800 minutes\. The maximum value for a linear configuration depends on the value for **Step**\. For example, if the step percentage of a linear traffic shift is 25%, then there are four traffic shifts\. The maximum interval value would be 2,880 divided by four, or 720 minutes\.
-
    + Choose **Submit**\.
 
 1. \(Optional\) In **Advanced**, configure any options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.

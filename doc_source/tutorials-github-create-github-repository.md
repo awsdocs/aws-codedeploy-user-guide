@@ -5,21 +5,15 @@ You will need a GitHub repository to store the revision\.
 If you already have a GitHub repository, be sure to substitute its name for **CodeDeployGitHubDemo** throughout this tutorial, and then skip ahead to [Step 3: Upload a Sample Application to Your GitHub Repository](tutorials-github-upload-sample-revision.md)\. 
 
 1. On the [GitHub home page](https://github.com/dashboard), do one of the following:
-
    + In **Your repositories**, choose **New repository**\.
-
    + On the navigation bar, choose **Create new** \(**\+**\), and then choose **New repository**\.
 
 1. In the **Create a new repository** page, do the following:
-
    + In the **Repository name** box, type **CodeDeployGitHubDemo**\.
-
    + Select **Public**\.
 **Note**  
 Selecting the default **Public** option means that anyone can see this repository\. Although you can select the **Private** option to limit who can see and commit to the repository, this option may result in additional charges from GitHub\.
-
    + Clear the **Initialize this repository with a README** check box\. You will create a `README.md` file manually in the next step instead\.
-
    + Choose **Create repository**\.
 
 1. Follow the instructions for your local machine type to use the command line to create the repository\.

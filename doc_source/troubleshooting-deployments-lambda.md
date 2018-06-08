@@ -1,6 +1,6 @@
 # Troubleshoot AWS Lambda Deployment Issues<a name="troubleshooting-deployments-lambda"></a>
 
-
+**Topics**
 + [AWS Lambda deployments fail after manually stopping a Lambda deployment that does not have configured rollbacks](#troubleshooting-manually-stopped-lambda-deployment)
 
 ## AWS Lambda deployments fail after manually stopping a Lambda deployment that does not have configured rollbacks<a name="troubleshooting-manually-stopped-lambda-deployment"></a>

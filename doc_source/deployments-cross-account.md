@@ -11,7 +11,6 @@ After following the cross\-account configuration steps, you can initiate deploym
 ## Step 1: Create an S3 Bucket in Either Account<a name="deployments-cross-account-1-create-s3-bucket"></a>
 
 In either the development account or the production account:
-
 + If you have not already done so, create an Amazon S3 bucket where the application revisions for the production account will be stored\. For information, see [Create a Bucket in Amazon S3](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)\. You can even use the same bucket and application revisions for both accounts, deploying the same files to your production environment that you tested and verified in your development account\.
 
 ## Step 2: Grant Amazon S3 Bucket Permissions to the Production Account's IAM Instance Profile<a name="deployments-cross-account-2-grant-bucket-permissions"></a>
@@ -19,17 +18,13 @@ In either the development account or the production account:
 If the Amazon S3 bucket you created in step 1 is in your production account, this step is not required\. The role you assume later will already have access to this bucket because it is also in the production account\.
 
 If you created the Amazon S3 bucket in the development account, do the following:
-
 + In the production account, create an IAM instance profile\. For information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\. 
 **Note**  
 Make note of the ARN for this IAM instance profile\. You will need to add it to the cross\-bucket policy you create next\.
-
 + In the development account, give access to the Amazon S3 bucket you created in the development account to the IAM instance profile you just created in your production account\. For information, see [ Example 2: Bucket Owner Granting Cross\-Account Bucket Permissions](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html)\. 
 
   Note the following as you complete the process of granting cross\-account bucket permissions:
-
   + In the sample walkthrough, Account A represents your development account and Account B represents your production account\. 
-
   + When you [perform the Account A \(development account\) tasks](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html#access-policies-walkthrough-cross-account-permissions-acctA-tasks), modify the following bucket policy to grant cross\-account permissions instead of using the sample policy provided in the walkthrough\.
 
     ```
@@ -63,15 +58,11 @@ Make note of the ARN for this IAM instance profile\. You will need to add it to 
 ## Step 3: Create Resources and a Cross\-Account Role in the Production Account<a name="deployments-cross-account-3-create-resources-and-role"></a>
 
 In your production account:
-
 + Create your AWS CodeDeploy resources — application, deployment group, deployment configuration, Amazon EC2 instances, Amazon EC2 instance profile, service role, and so on — using the instructions in this guide\.
-
 + Create an additional role, a cross\-account IAM role, that a user in your development account can assume to perform AWS CodeDeploy operations in this production account\. 
 
   Use the [Walkthrough: Delegate Access Across AWS Accounts Using IAM Roles ](http://docs.aws.amazon.com/IAM/latest/UserGuide/walkthru_cross-account-with-roles.html) as a guide to help you create the cross\-account role\. Instead of adding the sample permissions in the walkthrough to your policy document, you should attach, at minimum, the following two AWS\-supplied policies to the role: 
-
   + `AmazonS3FullAccess`: Required only if the S3 bucket is in the development account\. Provides the assumed production account role with full access to the Amazon S3 services and resources in the development account, where the revision is stored\. 
-
   + `AWSCodeDeployDeployerAccess`: Enables an IAM user to register and deploy revisions\. 
 
   If you want to create and manage deployment groups and not just initiate deployments, add the `AWSCodeDeployFullAccess` policy instead of the `AWSCodeDeployDeployerAccess` policy\. For more information about using IAM managed policies to grant permissions for AWS CodeDeploy tasks, see [AWS Managed \(Predefined\) Policies for AWS CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md#managed-policies)\. 
@@ -89,7 +80,6 @@ The ARN of the cross\-account role you will assume\.
 ## Step 4: Upload the Application Revision to Amazon S3 Bucket<a name="deployments-cross-account-4-upload-application-revision"></a>
 
 In the account in which you created the Amazon S3 bucket:
-
 + Upload your application revision to the Amazon S3 bucket\. For information, see [Push a Revision for AWS CodeDeploy to Amazon S3](application-revisions-push.md)\. 
 
 ## Step 5: Assume the Cross\-Account Role and Deploy Applications<a name="deployments-cross-account-5-assume-role-and-deploy"></a>
@@ -103,5 +93,4 @@ For instructions about how to use the AWS CLI to assume the cross\-account role 
 For more information about assuming a role through AWS STS, see [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) in the [AWS Security Token Service User Guide](http://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html) and [assume\-role](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) in the [AWS CLI Command Reference](http://docs.aws.amazon.com/cli/latest/reference/)\.
 
 **Related topic:**
-
 + [AWS CodeDeploy: Deploying from a Development Account to a Production Account](http://aws.amazon.com/blogs/devops/aws-codedeploy-deploying-from-a-development-account-to-a-production-account/)

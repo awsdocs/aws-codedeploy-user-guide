@@ -2,7 +2,7 @@
 
 Now that you've successfully deployed your application revision, update the WordPress code on the development machine, and then use AWS CodeDeploy to redeploy the site\. Afterward, you should see the code changes on the Amazon EC2 instance\.
 
-
+**Topics**
 + [Set Up the WordPress Site](#tutorials-wordpress-update-and-redeploy-application-configure-and-install)
 + [Modify the Site](#tutorials-wordpress-update-and-redeploy-application-modify-code)
 + [Redeploy the Site](#tutorials-wordpress-update-and-redeploy-application-deploy-updates)
@@ -16,15 +16,10 @@ To see the effects of the code change, finish setting up the WordPress site so t
 1. If you haven't set up the site yet, the WordPress default welcome page appears\. Choose **Let's go\!**\.
 
 1. To use the default MySQL database, on the database configuration page, type the following values:
-
    + **Database Name**: **test**
-
    + **User Name**: **root**
-
    + **Password**: Leave blank\.
-
    + **Database Host**: **localhost**
-
    + **Table Prefix**: **wp\_**
 
    Choose **Submit** to set up the database\.
@@ -68,7 +63,7 @@ Bundle and upload the changes to Amazon S3, as described in [Bundle the Applicat
 
 Use the AWS CLI, the AWS CodeDeploy console, or the AWS CodeDeploy APIs to redeploy the site\.
 
-
+**Topics**
 + [To redeploy the site \(CLI\)](#tutorials-wordpress-update-and-redeploy-application-deploy-updates-cli)
 + [To redeploy the site \(console\)](#tutorials-wordpress-update-and-redeploy-application-deploy-updates-console)
 

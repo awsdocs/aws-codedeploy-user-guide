@@ -4,7 +4,7 @@ You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs 
 
 The process for creating a deployment depends on the compute platform used by your deployment\. 
 
-
+**Topics**
 + [Deployment Prerequisites](deployments-create-prerequisites.md)
 + [Create an AWS Lambda Compute Platform Deployment \(Console\)](deployments-create-console-lambda.md)
 + [Create an EC2/On\-Premises Compute Platform Deployment \(Console\)](deployments-create-console.md)

@@ -6,7 +6,7 @@ To begin, you must sign up for an AWS account\. To sign up, go to [https://aws\.
 
 Then you can continue with the rest of the setup tasks in this section\.
 
-
+**Topics**
 + [Step 1: Provision an IAM User](getting-started-provision-user.md)
 + [Step 2: Install or Upgrade and Then Configure the AWS CLI](getting-started-configure-cli.md)
 + [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)

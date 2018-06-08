@@ -2,14 +2,14 @@
 
 Now you deploy the sample WordPress application revision you uploaded to Amazon S3\. You can use the AWS CLI or the AWS CodeDeploy console to deploy the revision and monitor the deployment's progress\. After the application revision is successfully deployed, you check the results\.
 
-
+**Topics**
 + [Deploy Your Application Revision with AWS CodeDeploy](#tutorials-wordpress-deploy-application-create-deployment)
 + [Monitor and Troubleshoot Your Deployment](#tutorials-wordpress-deploy-application-monitor)
 + [Verify Your Deployment](#tutorials-wordpress-deploy-application-verify-deployment)
 
 ## Deploy Your Application Revision with AWS CodeDeploy<a name="tutorials-wordpress-deploy-application-create-deployment"></a>
 
-
+**Topics**
 + [To deploy your application revision \(CLI\)](#tutorials-wordpress-deploy-application-create-deployment-cli)
 + [To deploy your application revision \(console\)](#tutorials-wordpress-deploy-application-create-deployment-console)
 
@@ -110,7 +110,7 @@ To get the current status of the deployment, choose the **Refresh** button next 
 
 ## Monitor and Troubleshoot Your Deployment<a name="tutorials-wordpress-deploy-application-monitor"></a>
 
-
+**Topics**
 + [To monitor and troubleshoot your deployment \(CLI\)](#tutorials-wordpress-deploy-application-monitor-cli)
 + [To monitor and troubleshoot your deployment \(console\)](#tutorials-wordpress-deploy-application-monitor-console)
 

@@ -28,11 +28,8 @@ The following table lists the predefined deployment configurations\.
 When you deploy to an AWS Lambda compute platform, the deployment configuration specifies the way traffic is shifted to the new Lambda function versions in your application\.
 
 There are three ways traffic can shift during a deployment:
-
 + **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
-
 + **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each incrememnt and the number of minutes between each increment\.
-
 + **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version at once\.
 
 You can also create your own custom canary or linear deployment configuration\. 
@@ -59,9 +56,6 @@ The following table lists the predefined configurations available for AWS Lambda
 ## <a name="topiclist-deployment-configurations"></a>
 
 **Topics**
-
 + [Create a Deployment Configuration](deployment-configurations-create.md)
-
 + [View Deployment Configuration Details](deployment-configurations-view-details.md)
-
 + [Delete a Deployment Configuration](deployment-configurations-delete.md)

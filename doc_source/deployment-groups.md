@@ -25,13 +25,8 @@ For information about Amazon EC2 instance tags, see [Working with Tags Using the
 ## <a name="topiclist-deployment-groups"></a>
 
 **Topics**
-
 + [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)
-
 + [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)
-
 + [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md)
-
 + [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)
-
 + [Delete a Deployment Group with AWS CodeDeploy](deployment-groups-delete.md)

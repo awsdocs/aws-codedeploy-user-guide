@@ -25,11 +25,8 @@ Sign in with the same account or IAM user information you used in [Getting Start
 1. In the **Triggers ** area, choose **Create trigger**\.
 
 1. In the **Create trigger** pane, do the following:
-
    + In **Trigger name**, type a name for the trigger that makes it easy to identify its purpose\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.
-
    + In **Events**, choose the event type or types that will trigger the Amazon SNS topic to send notifications\. 
-
    + In **Amazon SNS topic**, choose the name of topic you created for sending notifications for this trigger\.
 
 1. Choose **Create trigger**\.
@@ -92,39 +89,23 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
 1. Provide values for the parameters you want to configure\.
 
    When you use the [create\-deployment\-group](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html) command, you must provide, at a minimum, values for the following parameters:
-
    + `applicationName`: The name of an application already created in your account\. 
-
    + `deploymentGroupName`: A name for the deployment group you are creating\.
-
    + `serviceRoleArn`: The ARN of an existing service role set up for AWS CodeDeploy in your account\. For information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
 
    In the `triggerConfigurations` section, provide values for the following parameters: 
-
    + `triggerName`: The name you want to give the trigger so you can easily identify it\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.
-
    + `triggerTargetArn`: The ARN of the Amazon SNS topic you created to associate with your trigger, in this format: `arn:aws:sns:us-east-2:80398EXAMPLE:NewTestTopic`\.
-
    + `triggerEvents`: The type of event or events for which you want to trigger notifications\. You can specify one or more event types, separating multiple event type names with commas \(for example, `"triggerEvents":["DeploymentSuccess","DeploymentFailure","InstanceFailure"]`\)\. When you add more than one event type, notifications for all those types are sent to the topic you specified, rather than to a different topic for each one\. You can choose from the following event types:
-
      + DeploymentStart
-
      + DeploymentSuccess
-
      + DeploymentFailure
-
      + DeploymentStop
-
      + DeploymentRollback
-
      + DeploymentReady \(Applies only to replacement instances in a blue/green deployment\)
-
      + InstanceStart
-
      + InstanceSuccess
-
      + InstanceFailure
-
      + InstanceReady \(Applies only to replacement instances in a blue/green deployment\)
 
    The following configuration example creates a deployment group named `dep-group-ghi-789-2` for an application named `TestApp-us-east-2` and a trigger that will prompt the sending of notifications wheneve2 a deployment starts, succeeds, or fails:
@@ -179,13 +160,9 @@ The simplest way to create the JSON file is to run the get\-deployment\-group co
    ```
 
 1. Delete the following from the output:
-
    + At the beginning of the output, delete `{ "deploymentGroupInfo":`\.
-
    + At the end of the output, delete `}`\. 
-
    + Delete the row containing `deploymentGroupId`\.
-
    + Delete the row containing `deploymentGroupName`\.
 
    The contents of your text file should now look similar to the following:

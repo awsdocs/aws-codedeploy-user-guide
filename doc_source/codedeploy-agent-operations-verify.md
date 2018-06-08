@@ -2,7 +2,7 @@
 
 This section describes commands to run if you suspect the AWS CodeDeploy agent has stopped running on an instance\.
 
-
+**Topics**
 + [Verify the AWS CodeDeploy agent for Amazon Linux or RHEL is running](#codedeploy-agent-operations-verify-linux)
 + [Verify the AWS CodeDeploy agent for Ubuntu Server is running](#codedeploy-agent-operations-verify-ubuntu)
 + [Verify the AWS CodeDeploy agent for Windows Server is running](#codedeploy-agent-operations-verify-windows)

@@ -5,7 +5,7 @@ You can use the AWS CodeDeploy console, the AWS CLI, or an AWS CodeDeploy API ac
 **Warning**  
 Deleting an application removes information about the application from the AWS CodeDeploy system, including all related deployment group information and deployment details\. Deleting an application created for an EC2/On\-Premises deployment does not remove any application revisions from instances nor does it delete revisions from Amazon S3 buckets\. Deleting an application created for an EC2/On\-Premises deployment does not terminate any Amazon EC2 instances or deregister any on\-premises instances\. This action cannot be undone\.
 
-
+**Topics**
 + [Delete an Application \(Console\)](#applications-delete-console)
 + [Delete an Application \(AWS CLI\)](#applications-delete-cli)
 

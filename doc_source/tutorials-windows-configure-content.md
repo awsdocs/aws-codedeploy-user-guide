@@ -2,7 +2,7 @@
 
 Now it's time to configure your application's source content so you have something you can deploy to the Amazon EC2 instance\. For this tutorial, you'll deploy a single web page to the Amazon EC2 instance running Windows Server, which will run Internet Information Services \(IIS\) as its web server\. This web page will display a simple "Hello, World\!" message\.
 
-
+**Topics**
 + [Create the Web Page](#tutorials-windows-configure-content-download-code)
 + [Create a Script to Run Your Application](#tutorials-windows-configure-content-create-scripts)
 + [Add an Application Specification File](#tutorials-windows-configure-content-add-appspec-file)
@@ -71,9 +71,7 @@ Next, you will create a script that AWS CodeDeploy will use to set up the web se
 ## Add an Application Specification File<a name="tutorials-windows-configure-content-add-appspec-file"></a>
 
 Next, you will add an application specification file \(AppSpec file\) in addition to the web page and batch script file\. The AppSpec file is a [YAML](http://www.yaml.org)\-formatted file used by AWS CodeDeploy to: 
-
 + Map the source files in your application revision to their destinations on the instance\.
-
 + Specify scripts to be run on the instance during the deployment\.
 
 The AppSpec file must be named `appspec.yml`\. It must be placed in the application source code's root folder\.

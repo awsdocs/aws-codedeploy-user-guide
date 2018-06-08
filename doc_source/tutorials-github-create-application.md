@@ -33,15 +33,10 @@ If you haven't created any applications yet and the AWS CodeDeploy start page is
    ```
 
 1. Call the create\-deployment\-group command to create a deployment group named `CodeDeployGitHubDemo-DepGrp`:
-
    + If you're deploying to an Amazon EC2 instance, *ec2\-tag\-key* is the Amazon EC2 instance tag key that was applied to your Amazon EC2 instance as part of [Step 4: Provision an Instance](tutorials-github-provision-instance.md)\.
-
    + If you're deploying to an Amazon EC2 instance, *ec2\-tag\-value* is the Amazon EC2 instance tag value that was applied to your Amazon EC2 instance as part of [Step 4: Provision an Instance](tutorials-github-provision-instance.md)\.
-
    + If you're deploying to an on\-premises instance, *on\-premises\-tag\-key* is the on\-premises instance tag key that was applied to your on\-premises instance as part of [Step 4: Provision an Instance](tutorials-github-provision-instance.md)\.
-
    + If you're deploying to an on\-premises instance, *on\-premises\-tag\-value* is the on\-premises instance tag value that was applied to your on\-premises instance as part of [Step 4: Provision an Instance](tutorials-github-provision-instance.md)\.
-
    + *service\-role\-arn* is a service role ARN\. \(Follow the instructions in [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli) to find the service role ARN\.\)
 
    ```

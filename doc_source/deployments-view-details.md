@@ -8,7 +8,7 @@ Amazon Linux, RHEL, and Ubuntu Server: `/opt/codedeploy-agent/deployment-root/de
 Windows Server: C:\\ProgramData\\Amazon\\CodeDeploy<DEPLOYMENT\-GROUP\-ID><DEPLOYMENT\-ID>\\logs\\scripts\.log
 For more information, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
 
-
+**Topics**
 + [View Deployment Details \(Console\)](#deployments-view-details-console)
 + [View Deployment Details \(CLI\)](#deployments-view-details-cli)
 
@@ -35,11 +35,7 @@ To view details about a single deployment, call the [get\-deployment](http://doc
 To view details about multiple deployments, call the [batch\-get\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-deployments.html) command, specifying multiple unique deployment identifiers\. To get the deployment IDs, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
 
 To view a list of deployment IDs, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command, specifying:
-
 + The name of the application associated with the deployment\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-
 + The name of the deployment group associated with the deployment\. To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
-
 + Optionally, whether to include details about deployments by their deployment status\. \(If not specified, all matching deployments will be listed, regardless of their deployment status\.\)
-
 + Optionally, whether to include details about deployments by their deployment creation start times or end times, or both\. \(If not specified, all matching deployments will be listed, regardless of their creation times\.\)

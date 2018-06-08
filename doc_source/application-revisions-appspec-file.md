@@ -5,13 +5,9 @@ This topic shows how to add an AppSpec file to your deployment\. It also include
 ## Add an AppSpec File for an AWS Lambda Deployment<a name="add-appspec-file-lambda"></a>
 
 For a deployment to an AWS Lambda compute platform:
-
 + The AppSpec file contains instructions about the Lambda functions to be deployed and used for deployment validation\.
-
 + A revision is the same as an AppSpec file\.
-
 + An AppSpec file can be written using JSON or YAML\.
-
 + An AppSpec file can be saved as a text file or entered directly into a console AppSpec editor when creating a deployment\. For more information, see [Create an AWS Lambda Compute Platform Deployment \(Console\)](deployments-create-console-lambda.md)\.
 
 To create an AppSpec file:
@@ -100,7 +96,6 @@ To add an AppSpec file to a revision:
 1. Save the file as `appspec.yml` in the root directory of the revision\.
 
 1. Run one of the following commands to verify that you have placed your AppSpec file in the root directory:
-
    + For Linux, macOS, or Unix:
 
      ```
@@ -108,7 +103,6 @@ To add an AppSpec file to a revision:
      ```
 
      There will be no output if the AppSpec file is not found there\.
-
    + For Windows:
 
      ```
@@ -122,6 +116,9 @@ To add an AppSpec file to a revision:
    For instructions, see [Push a Revision for AWS CodeDeploy to Amazon S3](application-revisions-push.md)\.
 
 ### AppSpec File Template with Instructions<a name="app-spec-template-server"></a>
+
+**Note**  
+ Deployments to Windows Server instances do not support the `runas` element\. If you are deploying to Windows Server instances, do not include it in your AppSpec file\. 
 
 ```
 # This is an appspec.yml template file for use with an EC2/On-Premises deployment in AWS CodeDeploy.

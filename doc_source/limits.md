@@ -5,7 +5,7 @@ The following tables describe limits in AWS CodeDeploy\.
 **Note**  
 You can [request a limit increase](https://console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase) for the AWS CodeDeploy limits listed in [AWS Service Limits](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_codedeploy) in the *Amazon Web Services General Reference* \. You cannot increase the limit on the number of hours a deployment can run\.
 
-
+**Topics**
 + [Applications](#limits-applications)
 + [Application Revisions](#limits-revisions)
 + [Deployments](#limits-deployments)
@@ -38,8 +38,8 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  |  | 
 | --- |--- |
 |  Maximum number of concurrent deployments to a deployment group¹  |  1  | 
-| Maximum number of concurrent deployments associated with an AWS account²  | 10 | 
-|  Maximum number of hours an EC2/On\-Premises in\-place deployment can run  |  13  | 
+| Maximum number of concurrent deployments associated with an AWS account²  | 100 | 
+|  Maximum number of hours an EC2/On\-Premises in\-place deployment can run  |  8  | 
 | Maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an EC2/On\-Premises blue/green deployment | 48 | 
 | Maximum number of hours between the completion of a deployment and the termination of the original environment during an EC2/On\-Premises blue/green deployment | 48 | 
 | Maximum number of hours an EC2/On\-Premises blue/green deployment can run | 109 \(48 for each of the above two limits\) plus one hour for each of 13 possible lifecycle events | 
@@ -48,6 +48,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | Maximum number of characters in a deployment description | 256 | 
 | Maximum number of deployments that can be passed to the [BatchGetDeployments](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html) API action | 100 | 
 |  Maximum number of minutes until a deployment fails if a lifecycle event doesn't start after: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html)  | 5 | 
+| Maximum number of minutes a blue/green deployment can wait after a successful deployment before terminating instances from the original deployment | 2800 | 
 |  ¹ This limit is intended to prevent accidental, concurrent deployments of the same application to the same deployment group\. ² Each deployment to a scaled\-up Amazon EC2 instance in an Auto Scaling group counts as a single concurrent deployment\. If the scaled\-up Amazon EC2 instance is associated with multiple applications, then additional concurrent deployment for each application would be generated\. For example, an Auto Scaling group that scales up by five Amazon EC2 instances and is associated with a single application would generate five concurrent deployments\. If the same five scaled\-up Amazon EC2 instances are associated with two additional applications, this would generate ten additional concurrent deployments\.   | 
 
 ## Deployment Configurations<a name="limits-deployment-configurations"></a>

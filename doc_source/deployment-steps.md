@@ -2,7 +2,7 @@
 
 This topic provides information about the components and workflow of deployments in AWS CodeDeploy\. The deployment process varies, depending on the compute platform \(EC2/On\-Premises or Lambda\) you use for your deployments\. 
 
-
+**Topics**
 + [Deployments on an AWS Lambda Compute Platform](#deployment-steps-lambda)
 + [Deployments on an EC2/On\-Premises Compute Platform](#deployment-steps-server)
 
@@ -10,7 +10,7 @@ This topic provides information about the components and workflow of deployments
 
 This topic provides information about the components and workflow of AWS CodeDeploy deployments that use the AWS Lambda compute platform\. 
 
-
+**Topics**
 + [Deployment Components on an AWS Lambda Compute Platform](#deployment-steps-workflow-lambda)
 + [Deployment Workflow on an AWS Lambda Compute Platform](#deployment-process-workflow-lambda)
 + [Uploading Your Application Revision](#deployment-steps-uploading-your-app-lambda)
@@ -67,11 +67,8 @@ You can make updates to your application and then use the AWS CodeDeploy console
 ### Stopped and Failed Deployments<a name="deployment-stop-fail-lambda"></a>
 
 You can use the AWS CodeDeploy console or the [stop\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command to stop a deployment\. When you attempt to stop the deployment, one of three things happens:
-
 + The deployment stops, and the operation returns a status of succeeded\. In this case, no more deployment lifecycle events are run on the deployment group for the stopped deployment\. 
-
 + The deployment does not immediately stop, and the operation returns a status of pending\. In this case, some deployment lifecycle events might still be running on the deployment group\. After the pending operation is complete, subsequent calls to stop the deployment return a status of succeeded\.
-
 + The deployment cannot stop, and the operation returns an error\. For more information, see [ErrorInformation](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.html) and [Common Errors](http://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html) in the AWS CodeDeploy API Reference\.
 
 Like stopped deployments, failed deployments might result in some deployment lifecycle events having already been run\. To find out why a deployment failed, you can use the AWS CodeDeploy console or analyze the log file data from the failed deployment\. For more information, see [Application Revision and Log File Cleanup](codedeploy-agent.md#codedeploy-agent-revisions-logs-cleanup) and [View Log Data for AWS CodeDeploy Deployments](deployments-view-logs.md)\.
@@ -92,7 +89,7 @@ For more information, see [Redeploy and Roll Back a Deployment with AWS CodeDepl
 
 This topic provides information about the components and workflow of AWS CodeDeploy deployments that use the EC2/On\-Premises compute platform\. For information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)
 
-
+**Topics**
 + [Deployment Components on an EC2/On\-Premises Compute Platform](#deployment-steps-components-server)
 + [Deployment Workflow on an EC2/On\-Premises Compute Platform](#deployment-steps-workflow)
 + [Setting Up Instances](#deployment-steps-setting-up-instances)
@@ -130,11 +127,8 @@ These steps include:
    We provide you with an AWS CloudFormation template that you can use to quickly set up an Amazon EC2 instance based on Amazon Linux or Windows Server\. We also provide you with the standalone AWS CodeDeploy agent so that you can install it on Amazon Linux, Ubuntu Server, Red Hat Enterprise Linux \(RHEL\), or Windows Server instances\. For more information, see [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\.
 
    You can also specify the following options: 
-
    + **Amazon SNS notifications** — Create triggers that will send notifications to subscribers of an Amazon SNS topic when specified events, such as success or failure events, occur in deployments and instances\. For more information, see [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)\.
-
    + **Alarm\-based deployment management** — Implement Amazon CloudWatch alarm monitoring to stop deployments when your metrics exceed or fall below the thresholds set in CloudWatch\.
-
    + **Automatic deployment rollbacks** — Configure a deployment to roll back automatically to the previously known good revision when a deployment fails or an alarm threshold is met\.
 
 1. Specifying a deployment configuration to indicate to how many instances to simultaneously deploy your application revisions and describing the success and failure conditions for the deployment\. For more information, see [View Deployment Configuration Details with AWS CodeDeploy](deployment-configurations-view-details.md)\.
@@ -194,11 +188,8 @@ You can make updates to your application and then use the AWS CodeDeploy console
 ### Stopped and Failed Deployments<a name="deployment-stop-fail"></a>
 
 You can use the AWS CodeDeploy console or the [stop\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command to stop a deployment\. When you attempt to stop the deployment, one of three things will happen:
-
 + The deployment stops, and the operation returns a status of succeeded\. In this case, no more deployment lifecycle events are run on the deployment group for the stopped deployment\. Some files might have already been copied to, and some scripts might have already been run on, one or more of the instances in the deployment group\.
-
 + The deployment does not immediately stop, and the operation returns a status of pending\. In this case, some deployment lifecycle events might still be running on the deployment group\. Some files might have already been copied to, and some scripts might have already been run on, one or more of the instances in the deployment group\. After the pending operation is complete, subsequent calls to stop the deployment return a status of succeeded\.
-
 + The deployment cannot stop, and the operation returns an error\. For more information, see [ErrorInformation](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.html) and [Common Errors](http://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html) in the AWS CodeDeploy API Reference\.
 
 Like stopped deployments, failed deployments might result in some deployment lifecycle events having already been run on one or more of the instances in the deployment group\. To find out why a deployment failed, you can use the AWS CodeDeploy console, call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command, or analyze the log file data from the failed deployment\. For more information, see [Application Revision and Log File Cleanup](codedeploy-agent.md#codedeploy-agent-revisions-logs-cleanup) and [View Log Data for AWS CodeDeploy Deployments](deployments-view-logs.md)\.

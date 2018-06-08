@@ -2,7 +2,7 @@
 
 This section guides you through the steps required to deploy a revision to one or more Amazon EC2 instances using the Sample deployment wizard, and then run a blue/green deployment to replace the original set of instances in a deployment group, the original environment, with a differerent set of instances, the replacement environment\.
 
-
+**Topics**
 + [Start the wizard](#getting-started-wizard-blue-green-start)
 + [Step 1: Get started](#getting-started-wizard-blue-green-1-get-started)
 + [Step 2: Choose a deployment type](#getting-started-wizard-blue-green-2-deployment-type)
@@ -47,17 +47,12 @@ To create an Amazon EC2 instance key pair, follow the instructions in [Creating 
 1. After the environment is ready, review the details under **Congratulations\! Your environment is ready**\.
 **Note**  
 For easy reference later, we recommend that you copy the entire text in the **Congratulations\! Your environment is ready** area to a file on your computer\.
-
    + The name of the Classic Load Balancer created for you, such as `BlueGreenLoadBalancer-abcdefh`\.
-
    + The name of the Auto Scaling group created for your original environment, such as `CodeDeployBGStack-abcdefh-BlueGreenAutoScalingGroup-1IJKLMN234O56`\. 
-
    + The web address of the application that has been deployed in your original environment, such as `http://BlueGreenLoadBalancer-abcdefh-1234567890.us-east-2.elb.amazonaws.com`\.
 **Important**  
 We recommend that you open your web application in a different browser window now so you can refresh it later to review the background color change made during the blue/green deployment\.
-
    + The name of the AWS CloudFormation stack used to create your environment, such as `BlueGreenLoadBalancer-abcdefh`\. When you are ready to clean up resources from your sample blue/green deployment, you will use the AWS CloudFormation console to delete this stack\.
-
    + The location of the sample application that will be installed in the original environment, such as:
 
      `[https://s3\.amazonaws\.com/aws\-codedeploy\-us\-east\-2/samples/latest/SampleApp\_Linux\.zip](https://s3.amazonaws.com/aws-codedeploy-us-east-2/samples/latest/SampleApp_Linux.zip)`
@@ -69,13 +64,9 @@ We recommend that you open your web application in a different browser window no
 On the **Deployment** page, you can view the progress of the blue/green deployment in a dashboard format\.
 
 The **Deployment progress** area reports the progress of the four major steps in the deployment:
-
 + Provisioning instances in the replacement environment\.
-
 + Installing the new application revision in the replacement environment\.
-
 + Rerouting traffic to the replacement environment\.
-
 + Terminating the instances in the original environment\.
 
 The **Instances receiving traffic** area reports the counts of instances in both the original and replacement environments that are currently registered with the load balancer\.
@@ -93,21 +84,16 @@ If the background color of the web page changes from blue to green, traffic has 
 ## Step 6: Clean up sample resources<a name="getting-started-wizard-blue-green-6-cleanup"></a>
 
 To avoid future charges, you must clean up the resources used in this wizard\. The resources must be cleaned up in the following order:
-
 + The Auto Scaling group that the instances for the replacement environment belong to\. \(The Auto Scaling group associated with the instances in the original environment will be deleted when you delete the AWS CloudFormation stack\.\) 
-
 + The AWS CloudFormation stack that the Sample deployment wizard created to provide the original environment for the blue/green deployment\.
-
 + The AWS CodeDeploy deployment group and application created by the Sample deployment wizard\.
 
 ### To delete the Auto Scaling group for the replacement environment<a name="getting-started-wizard-blue-green-6-cleanup-asg"></a>
 
 You will see two Auto Scaling groups associated with the sample blue/green deployment in the Amazon EC2 console\. To avoid errors, be sure to delete the Auto Scaling group associated with the replacement environment in this step\. You can distinguish the Auto Scaling groups by their formats:
-
 + Delete the Auto Scaling with this format:
 
   `CodeDeploy_BlueGreenDemoFleet-9zyxwvut_d-ZY9XWVUTS8R` 
-
 + You can delete the Auto Scaling group with this format now or let it be removed when the AWS CloudFormation stack is deleted:
 
   `CodeDeployBGStack-abcdefh-BlueGreenAutoScalingGroup-1IJKLMN234O56`

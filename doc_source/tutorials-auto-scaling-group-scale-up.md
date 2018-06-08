@@ -2,7 +2,7 @@
 
 In this step, you'll instruct the Auto Scaling group to create an additional Amazon EC2 instance\. After Auto Scaling creates the instance, AWS CodeDeploy will deploy your revision to it\.
 
-
+**Topics**
 + [To scale up the number of Amazon EC2 instances in the Auto Scaling group \(CLI\)](#tutorials-auto-scaling-group-scale-up-cli)
 + [To scale up the number of Amazon EC2 instances in the deployment group \(console\)](#tutorials-auto-scaling-group-scale-up-console)
 

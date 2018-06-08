@@ -2,7 +2,7 @@
 
 Now that you've successfully deployed your application revision, on the development machine, make an update to the web page's code, and then use AWS CodeDeploy to redeploy the site\. After redeployment, you should be able to see the changes on the Amazon EC2 instance\.
 
-
+**Topics**
 + [Modify the Web Page](#tutorials-windows-update-and-redeploy-application-modify-code)
 + [Redeploy the Site](#tutorials-windows-update-and-redeploy-application-deploy-updates)
 
@@ -49,7 +49,7 @@ Bundle and upload the changes to Amazon S3 as described in [Bundle the Applicati
 
 Use the AWS CLI or the AWS CodeDeploy console to redeploy the site\.
 
-
+**Topics**
 + [To redeploy the site \(CLI\)](#tutorials-windows-update-and-redeploy-application-deploy-updates-cli)
 + [To redeploy the site \(console\)](#tutorials-windows-update-and-redeploy-application-deploy-updates-console)
 

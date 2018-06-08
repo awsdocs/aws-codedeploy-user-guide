@@ -15,9 +15,7 @@ If you are following the steps in [Create an EC2/On\-Premises Compute Platform D
    1. In the **Properties** pane, copy the value of the **Link** field into the **Revision location** box in the AWS CodeDeploy console\.
 
    To specify an ETag \(a file checksum\) as part of the revision location:
-
    + If the **Link** field value ends in **?versionId=*versionId***, add **&etag=** and the ETag to the end of the **Link** field value\.
-
    + If the **Link** field value does not specify a version ID, add **?etag=** and the ETag to the end of the **Link** field value\.
 **Note**  
 Although it's not as easy as copying the value of the **Link** field, you can also type the revision location in one of the following formats:  

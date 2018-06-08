@@ -4,7 +4,7 @@ You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs 
 
 For information about using AWS CodeDeploy API actions to view instances, see [GetDeploymentInstance](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html), [ListDeploymentInstances](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.html), and [ListOnPremisesInstances](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html)\.
 
-
+**Topics**
 + [View Instance Details \(Console\)](#instances-view-details-console)
 + [View Instance Details \(CLI\)](#instances-view-details-cli)
 
@@ -35,13 +35,9 @@ If **Failed** is displayed for any of the lifecycle events, on the instance deta
 To use the AWS CLI to view instance details, call either the `get-deployment-instance` command or the `list-deployment-instances` command\.
 
 To view details about a single instance, call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command, specifying: 
-
 + The unique deployment ID\. To get the deployment ID, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
-
 + The unique instance ID\. To get the instance ID, call the [list\-deployment\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command\.
 
 To view a list of IDs for instances used in a deployment, call the [list\-deployment\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command, specifying:
-
 + The unique deployment ID\. To get the deployment ID, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
-
 + Optionally, whether to include only specific instance IDs by their deployment status\. \(If not specified, all matching instance IDs will be listed, regardless of their deployment status\.\)

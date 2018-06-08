@@ -4,7 +4,7 @@ This section is a reference only\. For a conceptual overview of the AppSpec file
 
 The application specification file \(AppSpec file\) is a [YAML](http://www.yaml.org)\-formatted or JSON\-formatted file used by AWS CodeDeploy to manage a deployment\.
 
-
+**Topics**
 + [AppSpec Files on an AWS Lambda Compute Platform](#appspec-reference-lambda)
 + [AppSpec Files on an EC2/On\-Premises Compute Platform](#appspec-reference-server)
 + [AppSpec File Structure](reference-appspec-file-structure.md)
@@ -15,9 +15,7 @@ The application specification file \(AppSpec file\) is a [YAML](http://www.yaml.
 ## AppSpec Files on an AWS Lambda Compute Platform<a name="appspec-reference-lambda"></a>
 
 If your application uses the AWS Lambda compute platform, the AppSpec file is used by AWS CodeDeploy to determine: 
-
 + Which Lambda function version to deploy\.
-
 + Which Lambda functions to use as validation tests\.
 
 An AppSpec file can be YAML\-formatted or JSON\-formatted\. You can also enter the contents of an AppSpec file directly into AWS CodeDeploy console when you create a deployment\.
@@ -25,9 +23,7 @@ An AppSpec file can be YAML\-formatted or JSON\-formatted\. You can also enter t
 ## AppSpec Files on an EC2/On\-Premises Compute Platform<a name="appspec-reference-server"></a>
 
  If your application uses the EC2/On\-Premises compute platform, the AppSpec file is used by AWS CodeDeploy to determine:
-
 + What it should install onto your instances from your application revision in Amazon S3 or GitHub\.
-
 + Which lifecycle event hooks to run in response to deployment lifecycle events\.
 
 An AppSpec file must be a YAML\-formatted file named `appspec.yml` and it must be placed in the root of the directory structure of an application's source code\. Otherwise, deployments fail\.

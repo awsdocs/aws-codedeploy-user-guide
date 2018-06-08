@@ -5,7 +5,7 @@ You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs 
 **Warning**  
 Do not use these steps if you want the deployment group to use a not\-yet\-created custom deployment group\. Instead, follow the instructions in [Create a Deployment Configuration with AWS CodeDeploy](deployment-configurations-create.md), and then return to this topic\. Do not use these steps if you want the deployment group to use a different, not\-yet\-created service role\. The service role must trust AWS CodeDeploy with, at minimum, the permissions described in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role with the correct permissions, follow the instructions in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md), and then return to this topic\.
 
-
+**Topics**
 + [Change Deployment Group Settings \(Console\)](#deployment-groups-edit-console)
 + [Change Deployment Group Settings \(CLI\)](#deployment-groups-edit-cli)
 
@@ -40,27 +40,15 @@ The **Deploy changes made to *deployment group name*** check box appears only if
 ## Change Deployment Group Settings \(CLI\)<a name="deployment-groups-edit-cli"></a>
 
 To use the AWS CLI to change deployment group settings, call the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command, specifying:
-
 + For EC2/On\-Premises and AWS Lambda deployments:
-
   + The application name\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-
   + The current deployment group name\. To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
-
   + \(Optional\) A different deployment group name\.
-
   + \(Optional\) A different Amazon Resource Name \(ARN\) that corresponds to a service role that allows AWS CodeDeploy to act on your AWS account's behalf when interacting with other AWS services\. To get the service role ARN, see [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\. For more information about service roles, see [Roles Terms and Concepts](http://docs.aws.amazon.com/IAM/latest/UserGuide/cross-acct-access.html) in *IAM User Guide*\.
-
   + \(Optional\) The name of the deployment configuration\. To view a list of deployment configurations, see [View Deployment Configuration Details with AWS CodeDeploy](deployment-configurations-view-details.md)\. \(If not specified, AWS CodeDeploy uses a default deployment configuration\.\)
-
   + \(Optional\) Commands to add one or more existing CloudWatch alarms to the deployment group that are activated if a metric specified in an alarm falls below or exceeds a defined threshold\.
-
   + \(Optional\) Commands for a deployment to roll back to the last known good revision when a deployment fails or a CloudWatch alarm is activated\.
-
   + \(Optional\) Commands to create or update a trigger that publishes to a topic in Amazon Simple Notification Service, so that subscribers to that topic receive notifications about deployment and instance events in this deployment group\. For information, see [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)\.
-
 + For EC2/On\-Premises deployments only:
-
   + \(Optional\) Replacement tags or tag groups that uniquely identify the instances to be included in the deployment group\.
-
   + \(Optional\) The names of replacement Auto Scaling groups to be added to the deployment group\.

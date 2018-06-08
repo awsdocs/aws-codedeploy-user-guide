@@ -8,7 +8,7 @@ If you want to force an update of the AWS CodeDeploy agent, follow the instructi
 
 On Windows Server instances, you can download and install the AWS CodeDeploy agent updater by running a series of Windows PowerShell commands, using a direct download link, or running an Amazon S3 copy command\.
 
-
+**Topics**
 + [Use Windows PowerShell](#codedeploy-agent-operations-update-windows-powershell)
 + [Use a direct link](#codedeploy-agent-operations-update-windows-direct-link)
 + [Use an Amazon S3 copy command](#codedeploy-agent-operations-update-windows-s3-copy)

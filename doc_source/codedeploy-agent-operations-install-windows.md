@@ -1,17 +1,14 @@
 # Install or reinstall the AWS CodeDeploy agent for Windows Server<a name="codedeploy-agent-operations-install-windows"></a>
 
 On Windows Server instances, you can use one of these methods to download and install the AWS CodeDeploy agent:
-
 + Run a series of Windows PowerShell commands
-
 + Choose a direct download link
-
 + Run an Amazon S3 copy command
 
 **Note**  
 On both new and existing instances, we recommend installing the AWS CodeDeploy agent updater for Windows Server\. The updater checks periodically for new versions of the agent and installs it when a new version is available\. On new instances, you can install the updater instead of the agent, and the current version of the agent will be installed immediately after the updater\. For more information, see [Update the AWS CodeDeploy Agent on Windows Server](codedeploy-agent-operations-update-windows.md)\.
 
-
+**Topics**
 + [Use Windows PowerShell](#codedeploy-agent-operations-install-windows-powershell)
 + [Use a Direct Link](#codedeploy-agent-operations-install-windows-direct-link)
 + [Use an Amazon S3 Copy Command](#codedeploy-agent-operations-install-windows-s3-copy)

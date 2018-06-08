@@ -2,7 +2,7 @@
 
 In this tutorial, you'll use AWS CodeDeploy to deploy an application revision to an Auto Scaling group\. For information about Auto Scaling integration with AWS CodeDeploy, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
 
-
+**Topics**
 + [Prerequisites](tutorials-auto-scaling-group-prerequisites.md)
 + [Step 1: Create and Configure the Auto Scaling Group](tutorials-auto-scaling-group-create-auto-scaling-group.md)
 + [Step 2: Deploy the Application to the Auto Scaling Group](tutorials-auto-scaling-group-create-deployment.md)

@@ -2,7 +2,7 @@
 
 Now it's time to configure your application's source content so you have something to deploy to the instance\.
 
-
+**Topics**
 + [Get the Source Code](#tutorials-wordpress-configure-content-download-code)
 + [Create Scripts to Run Your Application](#tutorials-wordpress-configure-content-create-scripts)
 + [Add an Application Specification File](#tutorials-wordpress-configure-content-add-appspec-file)
@@ -15,7 +15,7 @@ For these steps, we assume you downloaded a copy of the WordPress source code to
 
 Choose one of the following two options to copy the WordPress source files to your development machine\. The first option uses built\-in command\-line calls\. The second option uses Git\.
 
-
+**Topics**
 + [To get a copy of the WordPress source code \(built\-in command\-line calls\)](#tutorials-wordpress-configure-content-download-code-command-line)
 + [To get a copy of the WordPress source code \(Git\)](#tutorials-wordpress-configure-content-download-code-git)
 
@@ -28,11 +28,8 @@ Choose one of the following two options to copy the WordPress source files to yo
    ```
 
 1. Call the unzip, mkdir, cp, and rm commands to:
-
    + Unpack the `master` \.zip file into the `/tmp/WordPress_Temp` directory \(folder\)\.
-
    + Copy its unzipped contents to the `/tmp/WordPress` destination folder\.
-
    + Delete the temporary `/tmp/WordPress_Temp` folder and `master` file\.
 
    Run the commands one at a time:
@@ -143,11 +140,8 @@ Next, create a folder and scripts in the directory\. AWS CodeDeploy uses these s
 ## Add an Application Specification File<a name="tutorials-wordpress-configure-content-add-appspec-file"></a>
 
 Next, add an application specification file \(AppSpec file\), a [YAML](http://www.yaml.org)\-formatted file used by AWS CodeDeploy to:
-
 + Map the source files in your application revision to their destinations on the target Amazon EC2 instance\.
-
 + Specify custom permissions for deployed files\.
-
 + Specify scripts to be run on the target Amazon EC2 instance during the deployment\.
 
 The AppSpec file must be named `appspec.yml`\. It must be placed in the root directory of the application's source code\. In this tutorial, the root directory is `/tmp/WordPress`

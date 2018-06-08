@@ -2,7 +2,7 @@
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about all deployment groups associated with an application\.
 
-
+**Topics**
 + [View Deployment Group Details \(Console\)](#deployment-groups-view-details-console)
 + [View Deployment Group Details \(CLI\)](#deployment-groups-view-details-cli)
 
@@ -27,9 +27,7 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 To use the AWS CLI to view deployment group details, call either the `get-deployment-group` command or the `list-deployment-groups` command\.
 
 To view details about a single deployment group, call the [get\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command, specifying: 
-
 + The application name associated with the deployment group\. To get the application name, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-
 + The deployment group name\. To get the deployment group name, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
 
 To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command, specifying the application name associated with the deployment groups\. To get the application name, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\. 

@@ -26,32 +26,38 @@ permissions:
 ```
 
 The instructions are as follows:
-
 + **object** – Required\. This is a set of file system objects \(files or directories/folders\) that the specified permissions are applied to after the file system objects are copied to the instance\.
 
-+ **pattern** – Optional\. Specifies a pattern to apply permissions\. If specified with the special characters **"\*\*"**, or if not specified altogether, the specified permissions are applied to all matching files or directories, depending on the **type**\. 
+  Specify **object** with a string\.
++ **pattern** – Optional\. Specifies a pattern to apply permissions\. If not specified or specified with the special characters **"\*\*"**, the permissions are applied to all matching files or directories, depending on the **type**\. 
 
-+ **except** – Optional\. Specifies any exceptions to **pattern**\. 
+  Specify **pattern** with a string with quotation marks \(""\)\.
++ **except** – Optional\. Specifies any files or directories that are exceptions to **pattern**\. 
 
+  Specify **except** with a comma\-separated list of strings inside square brackets\.
 + **owner** – Optional\. The name of the owner of **object**\. If not specified, all existing owners applied to the original file or directory/folder structure remain unchanged after the copy operation\.
 
+  Specify **owner** with a string\.
 + **group** – Optional\. The name of the group for **object**\. If not specified, all existing groups applied to the original file or directory/folder structure remain unchanged after the copy operation\.
 
+  Specify **group** with a string\.
 + **mode** – Optional\. An integer specifying the octal mode for the permissions to be applied to **object**\. For example, **644** represents read and write permissions for the owner, read\-only permissions for the group, and read\-only permissions for all other users\. **4755** represents the setuid attribute is set, full control permissions for the owner, read and execute permissions for the group, and read and execute permissions for all other users\. \(For more examples, see the Linux **chmod** command documentation\.\) If **mode** is not specified, all existing modes applied to the original file or directory/folder structure remain unchanged after the copy operation\.
 
+  Specify **mode** with a string\.
 + **acls** – Optional\. A list of character strings representing one or more access control list \(ACL\) entries applied to **object**\. For example, **u:bob:rw** represents read and write permissions for user **bob**\. \(For more examples, see ACL entry format examples in the Linux **setfacl** command documentation\.\) You can specify multiple ACL entries\. If **acls** is not specified, any existing ACLs applied to the original file or directory/folder structure remain unchanged after the copy operation\. These replace any existing ACLs\.
+
+  Specify an **acls** with a dash \(\-\), followed by a space, and then a string \(for example, `- u:jane:rw`\)\. If you have more than one ACL, each is specified on a separate line\.
 **Note**  
 Setting unnamed users, unnamed groups, or other similar ACL entries causes the AppSpec file to fail\. Use **mode** to specify these types of permissions instead\.
-
-+ **context** – Optional\. For Security\-Enhanced Linux \(SELinux\)\-enabled instances, a list of security\-relevant context labels to apply to the copied objects\. Labels are specified as keys containing **user**, **type**, and **range**\. \(For more information, see the SELinux documentation\.\) If not specified, any existing labels applied to the original file or directory/folder structure remain unchanged after the copy operation\.
-
++ **context** – Optional\. For Security\-Enhanced Linux \(SELinux\)\-enabled instances, a list of security\-relevant context labels to apply to the copied objects\. Labels are specified as keys containing **user**, **type**, and **range**\. \(For more information, see the SELinux documentation\.\) Each key is entered with a string\. If not specified, any existing labels applied to the original file or directory/folder structure remain unchanged after the copy operation\.
   + **user** – Optional\. The SELinux user\.
-
   + **type** – Optional\. The SELinux type name\.
-
   + **range** – Optional\. The SELinux range specifier\. This has no effect unless Multi\-Level Security \(MLS\) and Multi\-Category Security \(MCS\) are enabled on the machine\. If not enabled, **range** defaults to **s0**\.
 
-+ **type** – Optional\. The types of objects to which to apply the specified permissions\. This can be set to **file** or **directory**\. If **file** is specified, the permissions are applied only to files that are immediately contained within **object** after the copy operation \(and not to **object** itself\)\. If **directory** is specified, the permissions are recursively applied to all directories/folders that are anywhere within **object** after the copy operation \(but not to **object** itself\)\.
+  Specify **context** with a string\. For example, `user: unconfined_u`\. Each **context** is specified on a seperate line\.
++ **type** – Optional\. The types of objects to which to apply the specified permissions\. **type** is a string that can be set to **file** or **directory**\. If **file** is specified, the permissions are applied only to files that are immediately contained in **object** after the copy operation \(and not to **object** itself\)\. If **directory** is specified, the permissions are recursively applied to all directories/folders that are anywhere in **object** after the copy operation \(but not to **object** itself\)\.
+
+  Specify **type** with a dash \(\-\), followed by a space, and then a string \(for example, `- file`\)\.
 
 ## 'permissions' Section Example<a name="reference-appspec-file-structure-permissions-example"></a>
 

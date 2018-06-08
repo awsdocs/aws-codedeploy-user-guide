@@ -1,6 +1,6 @@
 # Troubleshoot EC2/On\-PremisesDeployment Issues<a name="troubleshooting-deployments"></a>
 
-
+**Topics**
 + [Deployment fails with the message “Validation of PKCS7 signed message failed”](#troubleshooting-deployments-agent-SHA-256)
 + [Deployment or redeployment of the same files to the same instance locations fail with the error "The deployment failed because a specified file already exists at this location"](#troubleshooting-same-files-different-app-name)
 + [Troubleshooting a failed AllowTraffic lifecycle event with no error reported in the deployment logs](#troubleshooting-deployments-allowtraffic-no-logs)
@@ -38,27 +38,17 @@ The following information applies only if you choose not to retain or overwrite 
 If you try to redeploy files with the same names and locations, the redeployment will have a better chance of succeeding if you specify the application name and the deployment group with the same underlying deployment group ID you used before\. AWS CodeDeploy uses the underlying deployment group ID to identify files to remove before a redeployment\. 
 
 Deploying new files or redeploying the same files to the same locations on instances can fail for these reasons:
-
 + You specified a different application name for a redeployment of the same revision to the same instances\. The redeployment will fail because even if the deployment group name is the same, the use of a different application name means a different underlying deployment group ID will be used\.
-
 + You deleted and re\-created a deployment group for an application and then tried to redeploy the same revision to the deployment group\. The redeployment will fail because even if the deployment group name is the same, AWS CodeDeploy will reference a different underlying deployment group ID\.
-
 + You deleted an application and deployment group in AWS CodeDeploy, then created a new application and deployment group with the same names as the ones you deleted\. After that, you tried to redeploy a revision that had been deployed to the previous deployment group to the new one with the same name\. The redeployment will fail because even though the application and deployment group names are the same, AWS CodeDeploy still references the ID of the deployment group you deleted\.
-
 + You deployed a revision to a deployment group and then deployed the same revision to another deployment group to the same instances\. The second deployment will fail because AWS CodeDeploy will reference a different underlying deployment group ID\.
-
 + You deployed a revision to one deployment group and then deployed another revision to another deployment group to the same instances\. There is at least one file with the same name and in the same location that the second deployment group tries to deploy\. The second deployment will fail because AWS CodeDeploy will not remove the existing file before the second deployment starts\. Both deployments will reference different deployment group IDs\.
-
 + You deployed a revision in AWS CodeDeploy, but there is at least one file with the same name and in the same location\. The deployment will fail because, by default, AWS CodeDeploy will not remove the existing file before the deployment starts\. 
 
 To address these situations, do one of the following:
-
 + Remove the files from the locations and instances to which they were previously deployed, and then try the deployment again\. 
-
 + In your revision's AppSpec file, in either the **ApplicationStop** or **BeforeInstall** deployment lifecycle events, specify a custom script to delete files in any locations that match the files your revision is about to install\.
-
 + Deploy or redeploy the files to locations or instances that were not part of previous deployments\.
-
 + Before you delete an application or a deployment group, deploy a revision that contains an AppSpec file that specifies no files to copy to the instances\. For the deployment, specify the application name and deployment group name that use the same underlying application and deployment group IDs as those you are about to delete\. \(You can use the [get\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command to retrieve the deployment group ID\.\) AWS CodeDeploy will use the underlying deployment group ID and AppSpec file to remove all of the files it installed in the previous successful deployment\. 
 
 ## Troubleshooting a failed AllowTraffic lifecycle event with no error reported in the deployment logs<a name="troubleshooting-deployments-allowtraffic-no-logs"></a>
@@ -80,23 +70,18 @@ For Network Load Balancers, see [Health Checks for Your Target Groups](http://do
 During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the *previous* successful deployment\. \(All other scripts are run from the AppSpec file in the current deployment\.\) If one of these scripts contains an error and does not run successfully, the deployment can fail\. 
 
 Possible reasons for these failures include:
-
 + The AWS CodeDeploy agent finds the `deployment-group-id_last_successful_install` file in the correct location, but the location listed in the `deployment-group-id_last_successful_install` file does not exist\. 
 
   **On Amazon Linux, Ubuntu Server, and RHEL instances**, this file must exist in `/opt/codedeploy-agent/deployment-root/deployment-instructions`\.
 
   **On Windows Server instances**, this file must be stored in the `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions` folder\.
-
 + In the location listed in the `deployment-group-id_last_successful_install` file, either the AppSpec file is invalid or the scripts do not run successfully\.
-
 + The script contains an error that cannot be corrected, so it will never run successfully\.
 
 Use the AWS CodeDeploy console to investigate why a deployment might have failed during any of these events\. On the details page for the deployment, choose **View events**\. On the details page for the instance, in the **ApplicationStop**, **BeforeBlockTraffic**, or **AfterBlockTraffic** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. 
 
 If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and specify that the **ApplicationStop**, **BeforeBlockTraffic**, and **AfterBlockTraffic** failures should be ignored\. You can do this in two ways:
-
 + Use the AWS CodeDeploy console to create a deployment\. On the **Create deployment** page, under **ApplicationStop lifecycle event failure**, choose **Don't fail the deployment to an instance if this lifecycle event on the instance fails**\.
-
 + Use the AWS CLI to call the `[create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html)` command and include the `--ignore-application-stop-failures` option\. 
 
 When you deploy the application revision again, the deployment will continue even if any of these three lifecycle events fail\. If the new revision includes fixed scripts for those lifecycle events, future deployments can succeed without applying this fix\.
@@ -104,11 +89,8 @@ When you deploy the application revision again, the deployment will continue eve
 ## Troubleshooting a failed DownloadBundle deployment lifecycle event with "UnknownError: not opened for reading"<a name="troubleshooting-deployments-downloadbundle"></a>
 
 If you are trying to deploy an application revision from Amazon S3, and the deployment fails during the **DownloadBundle** deployment lifecycle event with the "UnknownError: not opened for reading" error:
-
 + There was internal Amazon S3 service error\. Deploy the application revision again\.
-
 + The IAM instance profile on your Amazon EC2 instance does not have permissions to access the application revision in Amazon S3\. For information about Amazon S3 bucket policies, see [Push a Revision for AWS CodeDeploy to Amazon S3](application-revisions-push.md) and [Deployment Prerequisites](deployments-create-prerequisites.md)\.
-
 + The instances to which you will deploy are associated with one region \(for example, US West \(Oregon\)\), but the Amazon S3 bucket that contains the application revision is associated with another region \(for example, US East \(N\. Virginia\)\)\. Make sure the application revision is in an Amazon S3 bucket associated with the same region as the instances\.
 
 On the event details page for the deployment, in the **Download bundle** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. If this error occurred, there should be an error in the output with the error code "UnknownError" and the error message "not opened for reading\."

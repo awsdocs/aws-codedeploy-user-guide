@@ -1,11 +1,8 @@
 # Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)<a name="instances-ec2-create-cloudformation-template"></a>
 
 You can use our AWS CloudFormation template to quickly launch an Amazon EC2 instance running Amazon Linux or Windows Server\. You can use the AWS CLI, the AWS CodeDeploy console, or the AWS APIs to launch the instance with the template\. In addition to launching the instance, the template does the following:
-
 + Instructs AWS CloudFormation to give the instance permission to participate in AWS CodeDeploy deployments\.
-
 + Tags the instance so AWS CodeDeploy can find it during a deployment\.
-
 + Installs and runs the AWS CodeDeploy agent on the instance\.
 
 You don't have to use our AWS CloudFormation to set up an Amazon EC2 instance\. For alternatives, see [Working with Instances for AWS CodeDeploy](instances.md)\.
@@ -42,7 +39,7 @@ If you use the AWS CloudFormation template to launch Amazon EC2 instances, the c
 }
 ```
 
-
+**Topics**
 + [Launch an Amazon EC2 Instance with the AWS CloudFormation Template \(Console\)](#instances-ec2-create-cloudformation-template-console)
 + [Launch an Amazon EC2 Instance with the AWS CloudFormation Template \(AWS CLI\)](#instances-ec2-create-cloudformation-template-cli)
 
@@ -67,21 +64,14 @@ Sign in to the AWS Management Console with the same account you used in [Getting
 1. In the **Stack name** box, type a name for the stack \(for example, **CodeDeployDemoStack**\)\.
 
 1. In **Parameters**, type the following, and then choose **Next**\.
-
    + For **InstanceCount**, type the number of instances you want to launch\. \(We recommend you leave the default of **1**\.\)
-
    + For **InstanceType**, type the instance type you want to launch \(or leave the default of **t1\.micro**\)\.
-
    + For **KeyPairName**, type the instance key name\.
-
    + For **OperatingSystem** box, type **Windows** to launch instances running Windows Server \(or leave the default of **Linux**\)\.
-
    + For **SSHLocation**, type the IP address range to use for connecting to the instance with SSH or RDP \(or leave the default of **0\.0\.0\.0/0**\)\.
 **Important**  
 The default of **0\.0\.0\.0/0** is provided for demonstration purposes only\. AWS CodeDeploy does not require Amazon EC2 instances to have unrestricted access to ports\. As a best practice, we recommend restricting access to SSH \(and HTTP\) ports\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com/articles/1233)\.
-
    + For **TagKey**, type the instance tag key AWS CodeDeploy will use to identify the instances during deployment \(or leave the default of **Name**\)\.
-
    + For **TagValue**, type the instance tag value AWS CodeDeploy will use to identify the instances during deployment \(or leave the default of **CodeDeployDemo**\)\.
 
 1. On the **Options** page, leave the option boxes blank, and choose **Next**\.

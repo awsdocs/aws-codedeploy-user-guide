@@ -6,7 +6,7 @@ If you've pushed an application revision to a GitHub repository and want the rev
 
 You can use only the AWS CLI or the AWS CodeDeploy APIs to register application revisions in Amazon S3 or GitHub\.
 
-
+**Topics**
 + [Register a revision in Amazon S3 with AWS CodeDeploy \(CLI\)](#application-revisions-register-s3)
 + [Register a revision in GitHub with AWS CodeDeploy \(CLI\)](#application-revisions-register-github)
 
@@ -15,21 +15,14 @@ You can use only the AWS CLI or the AWS CodeDeploy APIs to register application 
 1. Upload the revision to Amazon S3\.
 
 1. Call the [register\-application\-revision](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-application-revision.html) command, specifying:
-
    + The application name\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-
    + Information about the revision to be registered:
-
      + The name of the Amazon S3 bucket that contains the revision\.
-
      + The name and file type of the uploaded revision\. For AWS Lambda deployments, the revision is an AppSpec file written in JSON or YAML\. For EC2/On\-Premises deployments, the revision contains a version of the source files that AWS CodeDeploy will deploy to your instances or scripts that AWS CodeDeploy will run on your instances\.
 **Note**  
 The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not supported for Windows Server instances\.
-
      + \(Optional\) The revision's Amazon S3 version identifier\. \(If the version identifier is not specified, AWS CodeDeploy will use the most recent version\.\)
-
      + \(Optional\) The revision's ETag\. \(If the ETag is not specified, AWS CodeDeploy will skip object validation\.\)
-
    + \(Optional\) Any description you want to associate with the revision\.
 
 Information about a revision in Amazon S3 can be specified on the command line, using this syntax as part of the register\-application\-revision call\. \(`version` and `eTag` are optional\.\)
@@ -54,15 +47,10 @@ AWS Lambda deployments do not work with GitHub\.
 1. Upload the revision to your GitHub repository\.
 
 1. Call the [register\-application\-revision](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-application-revision.html) command, specifying:
-
    + The application name\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-
    + Information about the revision to be registered:
-
      + The GitHub user or group name assigned to the repository that contains the revision, followed by a forward slash \(`/`\), followed by the repository name\.
-
      + The ID of the commit that references the revision in the repository\.
-
    + \(Optional\) Any description you want to associate with the revision\.
 
 Information about a revision in GitHub can be specified on the command line, using this syntax as part of the register\-application\-revision call:

@@ -1,13 +1,9 @@
 # AWS CloudFormation Templates for AWS CodeDeploy Reference<a name="reference-cloudformation-templates"></a>
 
 In addition to the other methods available to you in AWS CodeDeploy, you can use AWS CloudFormation templates to perform the following tasks:
-
 + Create applications\.
-
 + Create deployment groups and specify a target revision\.
-
 + Create deployment configurations\.
-
 + Create Amazon EC2 instances\.
 
 AWS CloudFormation is a service that helps you model and set up your AWS resources using templates\. An AWS CloudFormation template is a text file whose format complies with the JSON standard\. You create a template that describes all of the AWS resources you want, and AWS CloudFormation takes care of provisioning and configuring those resources for you\.
@@ -32,11 +28,8 @@ If you plan to use AWS CloudFormation templates that are compatible with AWS Cod
 ```
 
 For more information about managed policies, see the following topics:
-
 + To view the policy that must be attached to IAM users who will create Amazon EC2 instances, see [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
-
 + For information about attaching policies to IAM users, see [Working with Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-using.html) in *IAM User Guide*\. 
-
 + To learn how to restrict users to a limited set of AWS CodeDeploy actions and resources, see [AWS Managed \(Predefined\) Policies for AWS CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md#managed-policies)\.
 
 The following table shows the actions an AWS CloudFormation template can perform on your behalf and includes links to more information about the AWS resource types and their property types you can add to an AWS CloudFormation template\. 

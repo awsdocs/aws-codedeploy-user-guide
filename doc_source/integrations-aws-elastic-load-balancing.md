@@ -12,13 +12,9 @@ Network Load Balancer
 Routes and load balances at the transport layer \(TCP/UDP Layer\-4\) based on address information extracted from the TCP packet header, not from packet content\. Network Load Balancers can handle traffic bursts, retain the source IP of the client, and use a fixed IP for the life of the load balancer\. 
 
 To learn more about Elastic Load Balancing load balancers, see the following topics:
-
 + [What Is Elastic Load Balancing?](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
-
 + [What Is a Classic Load Balancer?](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html)
-
 + [What Is an Application Load Balancer?](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
-
 + [What Is a Network Load Balancer?](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
 
 ## The role of a load balancer in an AWS CodeDeploy deployment<a name="integrations-aws-elastic-load-balancing-role"></a>
@@ -39,11 +35,8 @@ After instances in a replacement environment are registered with a load balancer
 For a blue/green deployment, you can specify a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in your deployment group\. You use the AWS CodeDeploy console or AWS CLI to add the load balancer to a deployment group\.
 
 For more information about load balancers in blue/green deployments, see the following topics:
-
 + [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)
-
 + [Create an Application for a Blue/Green Deployment \(Console\)](applications-create-blue-green.md)
-
 + [Create a Deployment Group for a Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
 
 ### In\-place deployments<a name="integrations-aws-elastic-load-balancing-in-place"></a>
@@ -55,15 +48,11 @@ If a load balancer isn't used during an in\-place deployment, internet traffic m
 For an in\-place deployment, you can specify a Classic Load Balancer, Application Load Balancer, or Network Load Balancer\. You can specify the load balancer as part of the deployment group's configuration, or use a script provided by AWS CodeDeploy to implement the load balancer\.
 
 To add the load balancer to a deployment group, you use the AWS CodeDeploy console or AWS CLI\. For information about specifying a load balancer in a deployment group for in\-place deployments, see the following topics:
-
 + [Create an Application for an In\-Place Deployment \(Console\)](applications-create-in-place.md)
-
 + [Create a Deployment Group for an In\-Place Deployment \(Console\)](deployment-groups-create-in-place.md)
-
 + [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)
 
 For information about specifying a load balancer for in\-place deployments using a script, see the following topic: 
-
 + [Use a script to set up a load balancer for an in\-place deployment](#integrations-aws-elastic-load-balancing-scripts)
 
 #### Use a script to set up a load balancer for an in\-place deployment<a name="integrations-aws-elastic-load-balancing-scripts"></a>
@@ -77,9 +66,7 @@ In the AWS CodeDeploy Samples repository on GitHub, we provide instructions and 
 To set up in\-place deployments in AWS CodeDeploy with Amazon EC2 instances that are registered with Elastic Load Balancing load balancers, do the following:
 
 1. Download the samples for the type of load balancer you want to use for an in\-place deployment:
-
    + [Classic Load Balancer](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb)
-
    + [Application Load Balancer[ or Network Load Balancer](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb-v2) \(the same script can be used for either type\)](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb-v2)
 
 1. Make sure each of your target Amazon EC2 instances has the AWS CLI installed\. 
@@ -93,9 +80,7 @@ To set up in\-place deployments in AWS CodeDeploy with Amazon EC2 instances that
 1. If the instance is part of an Auto Scaling group, you can skip this step\.
 
    In the `common_functions.sh` script:
-
    + If you are using the [Classic Load Balancer](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb), specify the names of the Elastic Load Balancing load balancers in `ELB_LIST=""`, and make any changes you need to the other deployment settings in the file\.
-
    + If you are using the [Application Load Balancer[ or Network Load Balancer](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb-v2)](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb-v2), specify the names of the Elastic Load Balancing target group names in `TARGET_GROUP_LIST=""`, and make any changes you need to the other deployment settings in the file\.
 
 1. Bundle your application's source code, the `appspec.yml`, and the deployment lifecycle event scripts into an application revision, and then upload the revision\. Deploy the revision to the Amazon EC2 instances\. During the deployment, the deployment lifecycle event scripts will deregister the Amazon EC2 instance with the load balancers, wait for the connection to drain, and then re\-register the Amazon EC2 instance with the load balancers after the deployment is complete\.

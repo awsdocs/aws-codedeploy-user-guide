@@ -2,7 +2,7 @@
 
 In this step, you'll deploy the revision to the single Amazon EC2 instance in the Auto Scaling group\.
 
-
+**Topics**
 + [To create the deployment \(CLI\)](#tutorials-auto-scaling-group-create-deployment-cli)
 + [To create the deployment \(console\)](#tutorials-auto-scaling-group-create-deployment-console)
 

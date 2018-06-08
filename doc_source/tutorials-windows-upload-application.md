@@ -5,7 +5,7 @@ Now you will prepare and upload your source content to a location from which AWS
 **Note**  
 Although it's not covered in this tutorial, you can use AWS CodeDeploy to deploy applications from GitHub repositories to instances\. For more information, see [Integrating AWS CodeDeploy with GitHub](integrations-partners-github.md)\.
 
-
+**Topics**
 + [Provision an Amazon S3 Bucket](#tutorials-windows-upload-application-create-s3-bucket)
 + [Prepare the Application's Files for the Bucket](#tutorials-windows-upload-application-prepare-application-files)
 + [Bundle the Application's Files into a Single Archive File and Push the Archive File](#tutorials-windows-upload-application-bundle-and-push-archive)
@@ -20,7 +20,7 @@ You can use the AWS CLI, the Amazon S3 console, or the Amazon S3 APIs to create 
 Bucket names must be unique across Amazon S3 for all AWS accounts\. If you aren't able to use **codedeploydemobucket**, try a different bucket name, such as **codedeploydemobucket** followed by a dash and your initials or some other unique identifier\. Then be sure to substitute your bucket name for **codedeploydemobucket** wherever you see it throughout this tutorial\.  
 The Amazon S3 bucket must be created in the same AWS region in which your target Amazon EC2 instances are launched\. For example, if you create the bucket in the US East \(N\. Virginia\) Region, then your target Amazon EC2 instances must be launched in the US East \(N\. Virginia\) Region\.
 
-
+**Topics**
 + [To create an Amazon S3 bucket \(CLI\)](#tutorials-windows-upload-application-create-s3-bucket-cli)
 + [To create an Amazon S3 bucket \(console\)](#tutorials-windows-upload-application-create-s3-bucket-console)
 + [Give Permissions to the Amazon S3 Bucket and Your IAM User](#tutorials-windows-upload-application-create-s3-bucket-grant-permission)

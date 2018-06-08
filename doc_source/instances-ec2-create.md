@@ -183,15 +183,11 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
 1. From the same directory where you created the `instance-setup.sh` or `instance-setup.txt` file, you will call the run\-instances command to create and launch the Amazon EC2 instance\.
 
    Before you call this command, you will need to collect the following: 
-
    + The ID of an Amazon Machine Image \(AMI\) \(*ami\-id*\) you will use for the instance\. To get the ID, see [Finding a Suitable AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)\.
-
    + The name of the type of Amazon EC2 instance \(*instance\-type*\) you will create, such as `t1.micro`\. For a list, see [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)\.
-
    + The name of an IAM instance profile with permission to access the Amazon S3 bucket where the AWS CodeDeploy agent installation files for your region are stored\. 
 
      For information about creating an IAM instance profile, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
-
    + The name of an Amazon EC2 instance key pair \(*key\-name*\) to enable SSH access to an Amazon EC2 instance running Amazon Linux, Ubuntu Server, or RHEL or RDP access to an Amazon EC2 instance running Windows Server\.
 **Important**  
 Type the key pair name only, not the key pair file extension\. For example, *my\-keypair*, not *my\-keypair\.pem*\.

@@ -9,7 +9,7 @@ A configuration file is placed on the instance when the agent is installed\. Thi
 
 For more information about working with the AWS CodeDeploy agent, such as steps for installing, updating, and verifying versions, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.
 
-
+**Topics**
 + [Operating Systems Supported by the AWS CodeDeploy Agent](#codedeploy-agent-supported-operating-systems)
 + [Communication Protocol and Port for the AWS CodeDeploy Agent](#codedeploy-agent-outbound-port)
 + [AWS SDK for Ruby \(aws\-sdk\-core\) Support for the AWS CodeDeploy Agent](#codedeploy-agent-aws-sdk-core-support)
@@ -23,13 +23,9 @@ For more information about working with the AWS CodeDeploy agent, such as steps 
 ### Supported Amazon EC2 AMI Operating Systems<a name="codedeploy-agent-supported-operating-systems-ec2"></a>
 
 The AWS CodeDeploy agent has been tested on the following Amazon EC2 AMI operating systems:
-
 + Amazon Linux 2017\.03\.x, 2016\.09\.0, 2016\.03\.1, 2016\.03\.0, 2015\.03, 2014\.09\.1
-
 + Ubuntu Server 16\.04 LTS and 14\.04 LTS 
-
 + Microsoft Windows Server 2016, 2012 R2, and 2008 R2
-
 + Red Hat Enterprise Linux \(RHEL\) 7\.x
 
 The AWS CodeDeploy agent is available as open source for you to adapt to your needs\. It can be used with other Amazon EC2 AMI operating systems\. For more information, go to the [AWS CodeDeploy Agent](https://github.com/aws/aws-codedeploy-agent) repository in GitHub\.
@@ -37,11 +33,8 @@ The AWS CodeDeploy agent is available as open source for you to adapt to your ne
 ### Supported On\-Premises Operating Systems<a name="codedeploy-agent-supported-operating-systems-on-premises"></a>
 
 The AWS CodeDeploy agent has been tested on the following on\-premises operating systems:
-
 + Ubuntu Server 14\.04 LTS
-
 + Microsoft Windows Server 2016, 2012 R2, and 2008 R2 
-
 + Red Hat Enterprise Linux \(RHEL\) 7\.x
 
 The AWS CodeDeploy agent is available as open source for you to adapt to your needs\. It can be used with other on\-premises instance operating systems\. For more information, go to the [AWS CodeDeploy Agent](https://github.com/aws/aws-codedeploy-agent) repository in GitHub\.
@@ -53,22 +46,21 @@ The AWS CodeDeploy agent communicates outbound using HTTPS over port 443\.
 ## AWS SDK for Ruby \(aws\-sdk\-core\) Support for the AWS CodeDeploy Agent<a name="codedeploy-agent-aws-sdk-core-support"></a>
 
 Versions of the AWS CodeDeploy agent earlier than 1\.0\.1\.880 are compatible only with version 2\.1\.2 and earlier versions of the AWS SDK for Ruby \(aws\-sdk\-core 2\.1\.2\)\. If you are using a version of the AWS CodeDeploy agent earlier than 1\.0\.1\.880, we recommend that you update to the latest version\. For information, see the following:
-
 + [Determine the Version of the AWS CodeDeploy Agent](codedeploy-agent-operations-version.md)
-
 + [Install or Reinstall the AWS CodeDeploy Agent](codedeploy-agent-operations-install.md)
 
 The latest version of the AWS SDK for Ruby compatible the AWS CodeDeploy Agent is aws\-sdk\-core 2\.3\.
 
 ## Supported Versions of the AWS CodeDeploy Agent<a name="codedeploy-agent-supported-versions"></a>
 
-Your instances must be running a supported version of the AWS CodeDeploy agent\. The current minimum supported version is 1\.0\.1\.854\. If you are running an earlier version, deployments to your instances may fail\. 
+Your instances must be running a supported version of the AWS CodeDeploy agent\. The current minimum supported version is 1\.0\.1\.854\. If you are running an earlier version, deployments to your instances might fail\. 
 
 The following table lists the currently supported versions of the AWS CodeDeploy agent and the features and enhancements included with each release\.
 
 
 | Version | Release date | Details | 
 | --- | --- | --- | 
+|  1\.0\.1\.1458  |  March 6, 2018  |  **Enhancement**: Improved certificate validations to support more trusted authorities\. **Enhancement**: Fixed an issue that caused the local CLI to fail during a deployment that includes a BeforeInstall lifecycle event\. **Enhancement**: Fixed an issue that might cause an active deployment to fail when the AWS CodeDeploy agent is updated\.  | 
 |  1\.0\.1\.1352  |  November 16, 2017  |  **Feature**: Introduced a new feature for testing and debugging an EC2/On\-Premises deployment on a local machine or instance where the AWS CodeDeploy Agent is installed\.  | 
 |  1\.0\.1\.1106  |  May 16, 2017  |  **Feature**: Introduced new support for handling content in a target location that wasn't part of the application revision from the most recent successful deployment\. Deployments options for existing content now include retaining the content, overwriting the content, or failing the deployment\.  **Enhancement**: Made the AWS CodeDeploy agent compatible with version 2\.9\.2 of the AWS SDK for Ruby \(aws\-sdk\-core 2\.9\.2\)\.  | 
 |  1\.0\.1\.1095  |  March 29, 2017  |  **Enhancement**: Introduced support for the AWS CodeDeploy agent in the China \(Beijing\) Region\. **Enhancement**: Enabled Puppet to run on Windows Server instances when invoked by a lifecycle event hook\. **Enhancement**: Improved the handling of `untar` operations\.  | 
@@ -85,9 +77,7 @@ The following table lists the currently supported versions of the AWS CodeDeploy
 | 1\.0\.1\.854 | November 17, 2015 |  **Feature**: Introduced support for the SHA\-256 hash algorithm\.   After October 17, 2016, all installations of the AWS CodeDeploy agent must be updated, at minimum, to version 1\.0\.1\.854 or deployments will fail\. For more information see [Deployment fails with the message “Validation of PKCS7 signed message failed”](troubleshooting-deployments.md#troubleshooting-deployments-agent-SHA-256)\.  **Feature**: Introduced version tracking support in `.version` files\. **Feature**: Made the deployment group ID available through the use of an environment variable\. **Enhancement**: Added support for monitoring AWS CodeDeploy agent logs using [Amazon CloudWatch Logs](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html)\.  | 
 
 For related information, see the following:
-
 + [Determine the Version of the AWS CodeDeploy Agent](codedeploy-agent-operations-version.md)
-
 + [Install or Reinstall the AWS CodeDeploy Agent](codedeploy-agent-operations-install.md)
 
 For a history of AWS CodeDeploy agent versions, see the [Release Repository on GitHub](https://github.com/aws/aws-codedeploy-agent/releases)\.
@@ -163,17 +153,12 @@ The following is an example of the file and directory structure under the root d
 |-- deployment-logs
 |    |-- codedeploy-agent-deployments.log
 ```
-
 +  **Deployment Group ID** folders represent each of your deployment groups\. A deployment group directory's name is its ID \(for example, `acde1916-9099-7caf-fd21-012345abcdef`\)\. Each deployment group directory contains one subdirectory for each attempted deployment in that deployment group\. 
 
    You can use the [batch\-get\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-deployments.html) command to find a deployment group ID\.
-
 +  **Deployment ID** folders represent each deployment in a deployment group\. Each deployment directory's name is its ID\. Each folder contains:
-
   +  **bundle\.tar**, a compressed file with the contents of the deployment's revision\. 
-
   +  **deployment\-archive**, a directory that contains the contents of the deployment's revision\. 
-
   +  **logs**, a directory that contains a `scripts.log` file\. This file lists the output of all scripts specified in the deployment's AppSpec file\. 
 
    If you want to find the folder for a deployment but don't know its deployment ID or deployment group ID, you can use the [AWS CodeDeploy console](https://console.aws.amazon.com/codedeploy) or the AWS CLI to find them\. For more information, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\. 
@@ -181,19 +166,11 @@ The following is an example of the file and directory structure under the root d
    The default maximum number of deployments that can be archived in a deployment group is five\. When that number is reached, future deployments are archived and the oldest archive is deleted\. You can use the **max\_revisions** setting in the AWS CodeDeploy agent configuration file to change the default\. For more information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\. 
 **Note**  
  If you want to recover hard disk space used by archived deployments, update the **max\_revisions** setting to a low number, such as one or two\. The next deployment deletes archived deployments so that the number is equal to the you specified\. 
-
 +  **deployment\-instructions** contains four text files for each deployment group: 
-
   + **\[Deployment Group ID\]\-cleanup**, a text file with an undo verison of each command that is run during a deployment\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef-cleanup`\. 
-
   + **\[Deployment Group ID\]\-install\.json**, a JSON file created during the most recent deployment\. It contains the commands run during the deployment\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef-install.json`\.
-
   + **\[Deployment Group ID\]\_last\_successfull\_install**, a text file that lists the archive directory of the last successful deployment\. This file is created when the AWS CodeDeploy agent has copied all files in the deployment application to the instance\. It is used by the AWS CodeDeploy agent during the next deployment to determine which `ApplicationStop` and `BeforeInstall` scripts to run\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef_last_successfull_install`\.
-
   + **\[Deployment Group ID\]\_most\_recent\_install**, a text file that lists the name of the archive directory of the most recent deployment\. This file is created when the files in the deployment are successfully downloaded\. The \[deployment group ID\]\_last\_successfull\_install file is created after this file, when the downloaded files are copied to their final destination\. An example file name is `acde1916-9099-7caf-fd21-012345abcdef_most_recent_install`\.
-
 +  **deployment\-logs** contains the following log files: 
-
   +  **codedeploy\-agent\.yyyymmdd\.log** files are created for each day there is a deployment\. Each log file contains information about the day's deployments\. These log files might be useful for debugging problems like a permissions issue\. The log file is initially named `codedeploy-agent.log`\. The next day, the date of its deployments is inserted into the file name\. For example, if today is January 3, 2018, you can see information about all of today's deployments in `codedeploy-agent.log`\. Tomorrow, on January 4, 2018, the log file is renamed `codedeploy-agent.20180103.log`\. 
-
   +  **codedeploy\-agent\-deployments\.log** compiles the contents of `scripts.log` files for each deployment\. The `scripts.log` files are located in the `logs` subfolder under each `Deployment ID` folder\. The entries in this file are preceded by a deployment ID\. For example, "`[d-ABCDEF123]LifecycleEvent - BeforeInstall`" might be written during a deployment with an ID of `d-ABCDEF123`\. When `codedeploy-agent-deployments.log` reaches its maximum size, the AWS CodeDeploy agent continues to write to it while deleting old content\. 

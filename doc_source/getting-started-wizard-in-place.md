@@ -2,7 +2,7 @@
 
 This section guides you through the steps required to deploy a revision to one or more Amazon EC2 instances using the Sample deployment wizard\. 
 
-
+**Topics**
 + [Video of a Sample AWS CodeDeploy In\-Place Deployment](#getting-started-wizard-in-place-video)
 + [Start the wizard](#getting-started-wizard-in-place-start)
 + [Step 1: Get started](#getting-started-wizard-in-place-1-get-started)

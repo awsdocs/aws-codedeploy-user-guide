@@ -5,7 +5,7 @@ In this tutorial, you use AWS CodeDeploy to deploy a sample application revision
 **Note**  
 You can also use AWS CodeDeploy to deploy an application revision from GitHub to an Ubuntu Server instance\. You can use the sample revision described in [Step 2: Create a Sample Application Revision](tutorials-on-premises-instance.md#tutorials-on-premises-instance-2-create-sample-revision) in [Tutorial: Deploy an Application to an On\-Premises Instance with AWS CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md), or you can create a revision compatible with an Ubuntu Server instance and AWS CodeDeploy\. To create your own revision, see [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md)\.
 
-
+**Topics**
 + [Prerequisites](tutorials-github-prerequisites.md)
 + [Step 1: Set Up a GitHub Account](tutorials-github-create-github-account.md)
 + [Step 2: Create a GitHub Repository](tutorials-github-create-github-repository.md)

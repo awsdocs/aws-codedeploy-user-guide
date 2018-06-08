@@ -2,7 +2,7 @@
 
 Many of the files AWS CodeDeploy relies on are stored in publicly available, AWS region\-specific Amazon S3 buckets\. These files include installation files for the AWS CodeDeploy agent, templates, and sample application files\. We call this collection of files the AWS CodeDeploy Resource Kit\. 
 
-
+**Topics**
 + [Resource Kit Bucket Names by Region](#resource-kit-bucket-names)
 + [Resource Kit Contents](#resource-kit-file-list)
 + [Display a List of the Resource Kit Files](#resource-kit-list-files)
@@ -58,91 +58,76 @@ To view a list of files, use the aws s3 ls command for your region\.
 
 **Note**  
 The files in each bucket are designed to work with resources in the corresponding region\.
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-us-east-2
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-us-east-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-us-west-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-us-west-2
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-ca-central-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-eu-west-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-eu-west-2
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-eu-west-3
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-eu-central-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-ap-northeast-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-ap-northeast-2
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-1
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-2
   ```
-
 + 
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-ap-south-1
   ```
-
 + 
 
   ```
@@ -157,91 +142,76 @@ To download a file, use the aws s3 cp command for your region\.
 Be sure to use the period \(`.`\) near the end\. This downloads the file to your current directory\.
 
 For example, the following commands download a single file named `SampleApp_Linux.zip` from one of the buckets' `/samples/latest/` folders:
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-us-east-2/samples/latest/SampleApp_Linux.zip . --region us-east-2
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-us-east-1/samples/latest/SampleApp_Linux.zip . --region us-east-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-us-west-1/samples/latest/SampleApp_Linux.zip . --region us-west-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-us-west-2/samples/latest/SampleApp_Linux.zip . --region us-west-2
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-ca-central-1/samples/latest/SampleApp_Linux.zip . --region ca-central-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-eu-west-1/samples/latest/SampleApp_Linux.zip . --region eu-west-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-eu-west-2/samples/latest/SampleApp_Linux.zip . --region eu-west-2
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-eu-west-3/samples/latest/SampleApp_Linux.zip . --region eu-west-3
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-eu-central-1/samples/latest/SampleApp_Linux.zip . --region eu-central-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-ap-northeast-1/samples/latest/SampleApp_Linux.zip . --region ap-northeast-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-ap-northeast-2/samples/latest/SampleApp_Linux.zip . --region ap-northeast-2
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-ap-southeast-1/samples/latest/SampleApp_Linux.zip . --region ap-southeast-1
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-ap-southeast-2/samples/latest/SampleApp_Linux.zip . --region ap-southeast-2
   ```
-
 + 
 
   ```
   aws s3 cp s3://aws-codedeploy-ap-south-1/samples/latest/SampleApp_Linux.zip . --region ap-south-1
   ```
-
 + 
 
   ```
@@ -249,91 +219,76 @@ For example, the following commands download a single file named `SampleApp_Linu
   ```
 
 To download all of the files, use one of the following commands for your region:
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-us-east-2 . --region us-east-2
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-us-east-1 . --region us-east-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-us-west-1 . --region us-west-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-us-west-2 . --region us-west-2
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ca-central-1 . --region ca-central-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-eu-west-1 . --region eu-west-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-eu-west-2 . --region eu-west-2
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-eu-west-3 . --region eu-west-3
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-eu-central-1 . --region eu-central-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ap-northeast-1 . --region ap-northeast-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ap-northeast-2 . --region ap-northeast-2
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ap-southeast-1 . --region ap-southeast-1
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ap-southeast-2 . --region ap-southeast-2
   ```
-
 + 
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ap-south-1 . --region ap-south-1
   ```
-
 + 
 
   ```

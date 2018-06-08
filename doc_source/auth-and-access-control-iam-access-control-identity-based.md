@@ -7,7 +7,7 @@ An *account administrator* \(or administrator user\) is a user with administrato
 
 When granting permissions, you decide who is getting the permissions, the resources they get permissions for, and the specific actions that you want to allow on those resources\.
 
-
+**Topics**
 + [AWS CodeDeploy Resources and Operations](#arn-formats)
 + [Understanding Resource Ownership](#understanding-resource-ownership)
 + [Managing Access to Resources](#managing-access-resources)
@@ -60,11 +60,8 @@ AWS CodeDeploy provides a set of operations to work with the AWS CodeDeploy reso
 ## Understanding Resource Ownership<a name="understanding-resource-ownership"></a>
 
 The AWS account owns the resources that are created in the account, regardless of who created the resources\. Specifically, the resource owner is the AWS account of the [principal entity](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html) \(that is, the root account, an IAM user, or an IAM role\) that authenticates the resource creation request\. The following examples illustrate how this works:
-
 + If you use the root account credentials of your AWS account to create a rule, your AWS account is the owner of the AWS CodeDeploy resource\.
-
 + If you create an IAM user in your AWS account and grant permissions to create AWS CodeDeploy resources to that user, the user can create AWS CodeDeploy resources\. However, your AWS account, to which the user belongs, owns the AWS CodeDeploy resources\.
-
 + If you create an IAM role in your AWS account with permissions to create AWS CodeDeploy resources, anyone who can assume the role can create AWS CodeDeploy resources\. Your AWS account, to which the role belongs, owns the AWS CodeDeploy resources\.
 
 ## Managing Access to Resources<a name="managing-access-resources"></a>
@@ -74,20 +71,18 @@ A *permissions policy* describes who has access to what\. The following section 
 **Note**  
 This section discusses using IAM in the context of AWS CodeDeploy\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-Policies attached to an IAM identity are referred to as identity\-based policies \(IAM polices\) and policies attached to a resource are referred to as resource\-based policies\. AWS CodeDeploy supports only identity\-based \(IAM policies\)\.
+Policies attached to an IAM identity are referred to as identity\-based policies \(IAM policies\) and policies attached to a resource are referred to as resource\-based policies\. AWS CodeDeploy supports only identity\-based \(IAM policies\)\.
 
-
+**Topics**
 + [Identity\-Based Policies \(IAM Policies\)](#identity-based-policies)
 + [Resource\-Based Policies](#resource-based-policies-overview)
 
 ### Identity\-Based Policies \(IAM Policies\)<a name="identity-based-policies"></a>
 
 You can attach policies to IAM identities\. For example, you can do the following: 
-
 + **Attach a permissions policy to a user or a group in your account** – To grant a user permissions to view applications, deployment groups, and other AWS CodeDeploy resources in the AWS CodeDeploy console, you can attach a permissions policy to a user or group that the user belongs to\.
 
    
-
 + **Attach a permissions policy to a role \(grant cross\-account permissions\)** – You can attach an identity\-based permissions policy to an IAM role to grant cross\-account permissions\. For example, the administrator in Account A can create a role to grant cross\-account permissions to another AWS account \(for example, Account B\) or an AWS service as follows:
 
    
@@ -107,13 +102,9 @@ You can attach policies to IAM identities\. For example, you can do the followin
   For more information about using IAM to delegate permissions, see [Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
 
 In AWS CodeDeploy, identity\-based policies are used to manage permissions to the various resources related to the deployment process\. You can control access to all the following resource types:
-
 + Applications and application revisions
-
 + Deployments
-
 + Deployment configurations
-
 + Instances and on\-premises instances
 
 The capabilities controlled by resource\-based policies vary depending on the resource type, as outlined in the following table:
@@ -141,13 +132,9 @@ Other services, such as Amazon S3, also support resource\-based permissions poli
 For each AWS CodeDeploy resource, the service defines a set of API operations\. To grant permissions for these API operations, AWS CodeDeploy defines a set of actions that you can specify in a policy\. Some API operations can require permissions for more than one action in order to perform the API operation\. For more information about resources and API operations, see [AWS CodeDeploy Resources and Operations](#arn-formats) and [AWS CodeDeploy Permissions Reference](auth-and-access-control-permissions-reference.md)\.
 
 The following are the basic policy elements:
-
 + **Resource** – You use an Amazon Resource Name \(ARN\) to identify the resource that the policy applies to\. For more information, see [AWS CodeDeploy Resources and Operations](#arn-formats)\.
-
 + **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `codedeploy:GetApplication` permission allows the user permissions to perform the `GetApplication` operation\.
-
 + **Effect** – You specify the effect, either allow or deny, when the user requests the specific action\. If you don't explicitly grant access to \(allow\) a resource, access is implicitly denied\. You can also explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
-
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. For resource\-based policies, you specify the user, account, service, or other entity that you want to receive permissions \(applies to resource\-based policies only\)\.
 
 To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
