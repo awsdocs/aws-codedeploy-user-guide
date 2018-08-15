@@ -55,7 +55,7 @@ Using JSON:
 Use the 'hooks' section to specify a Lambda function that AWS CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the **BeforeAllowTraffic** and **AfterAllowTraffic** deployment lifecyle events\. Following completion of the validation tests, the Lambda validation function calls back AWS CodeDeploy and delivers a result of 'Succeeded' or 'Failed'\. 
 
 **Important**  
-If AWS CodeDeploy is not notified by the Lambda validation function within one hour, then it assumes the deployment failured\.
+If AWS CodeDeploy is not notified by the Lambda validation function within one hour, then it assumes the deployment failed\.
 
  Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID:
 
