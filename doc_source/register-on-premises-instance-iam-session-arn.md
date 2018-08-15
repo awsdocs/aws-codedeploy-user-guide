@@ -133,7 +133,7 @@ Add a configuration file to the on\-premises instance, using root or administrat
    ```
 
    Where:
-   + *iam\-session\-arn* is the IAM session secret key ARN you noted in [Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS](#register-on-premises-instance-iam-session-arn-2)\. 
+   + *iam\-session\-arn* is the IAM session ARN you noted in [Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS](#register-on-premises-instance-iam-session-arn-2)\. 
    + *credentials\-file* is the location of the credentials file for the temporary session ARN, as noted in [Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS](#register-on-premises-instance-iam-session-arn-2)\.
    + *supported\-region* is one of the regions that AWS CodeDeploy supports, as listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
