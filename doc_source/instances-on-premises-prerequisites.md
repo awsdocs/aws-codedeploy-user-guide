@@ -3,7 +3,7 @@
 The following prerequisites must be met before you can register an on\-premises instance\.
 
 **Important**  
-If you are using the [register\-on\-premises\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command and periodically refreshed temporary credentials generated with the AWS Security Token Service \(AWS STS\), there are other prerequisites\. For information, see [IAM Session ARN Registration Prerequisites](register-on-premises-instance-iam-session-arn.md#register-on-premises-instance-iam-session-arn-prerequisites)\.
+If you are using the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command and periodically refreshed temporary credentials generated with the AWS Security Token Service \(AWS STS\), there are other prerequisites\. For information, see [IAM Session ARN Registration Prerequisites](register-on-premises-instance-iam-session-arn.md#register-on-premises-instance-iam-session-arn-prerequisites)\.
 
 **Device requirements**
 

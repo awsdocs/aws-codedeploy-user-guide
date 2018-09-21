@@ -3,7 +3,7 @@
 You can use the JSON output that is created when a trigger for a deployment or instance is activated in a custom notification workflow, such as sending messages to Amazon SQS queues or invoking a function in AWS Lambda\. 
 
 **Note**  
-This guide does not address how to configure notifications using JSON\. For information about using Amazon SNS to send messages to Amazon SQS queues, see [Sending Amazon SNS Messages to Amazon SQS Queues](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html)\. For information about using Amazon SNS to invoke a Lambda function, see [Invoking Lambda Functions Using Amazon SNS Notifications](http://docs.aws.amazon.com/sns/latest/dg/sns-lambda.html)\.
+This guide does not address how to configure notifications using JSON\. For information about using Amazon SNS to send messages to Amazon SQS queues, see [Sending Amazon SNS Messages to Amazon SQS Queues](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html)\. For information about using Amazon SNS to invoke a Lambda function, see [Invoking Lambda Functions Using Amazon SNS Notifications](https://docs.aws.amazon.com/sns/latest/dg/sns-lambda.html)\.
 
 The following examples show the structure of the JSON output available with AWS CodeDeploy triggers\.
 

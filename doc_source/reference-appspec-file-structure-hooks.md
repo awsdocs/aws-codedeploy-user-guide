@@ -46,6 +46,8 @@ Using JSON:
 ```
 "hooks": [{
     "BeforeAllowTraffic": "BeforeAllowTrafficHookFunctionName"
+    },
+    {
     "AfterAllowTraffic": "AfterAllowTrafficHookFunctionName"
 }]
 ```

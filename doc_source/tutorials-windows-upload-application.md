@@ -66,7 +66,7 @@ You must have permissions to upload to the Amazon S3 bucket\. You can specify th
 }
 ```
 
-To view your AWS account ID, see [Finding Your AWS Account ID](http://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
+To view your AWS account ID, see [Finding Your AWS Account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
 
 Now is a good time to verify the Amazon S3 bucket will allow download requests from each participating Amazon EC2 instance\. You can specify this through an Amazon S3 bucket policy\. For example, in the following Amazon S3 bucket policy, using the wildcard character \(\*\) allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::80398EXAMPLE:role/CodeDeployDemo` to download files from any directory in the Amazon S3 bucket named `codedeploydemobucket`:
 
@@ -90,7 +90,7 @@ Now is a good time to verify the Amazon S3 bucket will allow download requests f
 }
 ```
 
-For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
 Your account must have permission to upload the revision to the Amazon S3 bucket\. One way to specify this is through an IAM policy\. The following IAM policy allows your IAM user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
@@ -107,7 +107,7 @@ Your account must have permission to upload the revision to the Amazon S3 bucket
 }
 ```
 
-For information about how to create and attach an IAM policy, see [Working with Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
+For information about how to create and attach an IAM policy, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
 ## Prepare the Application's Files for the Bucket<a name="tutorials-windows-upload-application-prepare-application-files"></a>
 
@@ -143,7 +143,7 @@ If you don't switch to this folder, then the file bundling will start at your cu
    aws deploy create-application --application-name HelloWorld_App
    ```
 
-1. Call the AWS CodeDeploy [push](http://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command to bundle the files together, upload the revisions to Amazon S3, and register information with AWS CodeDeploy about the uploaded revision, all in one action\. 
+1. Call the AWS CodeDeploy [push](https://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command to bundle the files together, upload the revisions to Amazon S3, and register information with AWS CodeDeploy about the uploaded revision, all in one action\. 
 
    ```
    aws deploy push --application-name HelloWorld_App --s3-location s3://codedeploydemobucket/HelloWorld_App.zip --ignore-hidden-files

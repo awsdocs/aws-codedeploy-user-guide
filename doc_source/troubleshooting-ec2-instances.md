@@ -10,7 +10,7 @@
 
 ## Tags must be set correctly<a name="troubleshooting-ec2-tags"></a>
 
-Use the [list\-deployment\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command to confirm the instances used for a deployment are tagged correctly\. If an Amazon EC2 instance is missing in the output, use the Amazon EC2 console to confirm the tags have been set on the instance\. For more information, see [Working with Tags in the Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in the *Amazon EC2 User Guide for Linux Instances*\.
+Use the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command to confirm the instances used for a deployment are tagged correctly\. If an Amazon EC2 instance is missing in the output, use the Amazon EC2 console to confirm the tags have been set on the instance\. For more information, see [Working with Tags in the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 **Note**  
 If you tag an instance and immediately use AWS CodeDeploy to deploy an application to it, the instance might not be included in the deployment\. This is because it can take several minutes before AWS CodeDeploy can read the tags \. We recommend that you wait at least five minutes between the time you tag an instance and attempt to deploy to it\.
@@ -58,5 +58,5 @@ powershell.exe -Command Restart-Service -Name codedeployagent
 AWS CodeDeploy requires accurate time references in order to perform its operations\. If your instance's date and time are not set correctly, they may not match the signature date of your deployment request, which AWS CodeDeploy will therefore reject\.
 
 To avoid deployment failures related to incorrect time settings, see the following topics: 
-+  [Setting the Time for Your Linux Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html)
-+  [Setting the Time for a Windows Instance](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-set-time.html)
++  [Setting the Time for Your Linux Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html)
++  [Setting the Time for a Windows Instance](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-set-time.html)

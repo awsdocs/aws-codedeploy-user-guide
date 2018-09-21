@@ -2,11 +2,11 @@
 
 You can create a trigger that publishes an Amazon Simple Notification Service \(Amazon SNS\) topic for an AWS CodeDeploy deployment or instance event\. Then, when that event occurs, all subscribers to the associated topic will receive notifications through the endpoint specified in the topic, such as an SMS message or email message\. Amazon SNS offers multiple methods for subscribing to topics\.
 
-Before you create a trigger, you must set up the Amazon SNS topic to which the trigger will point\. For information, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\. When you create a topic, we recommend you give it a name that will identify its purpose, in formats such as `Topic-group-us-west-3-deploy-fail` or `Topic-group-project-2-instance-stop`\. 
+Before you create a trigger, you must set up the Amazon SNS topic to which the trigger will point\. For information, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\. When you create a topic, we recommend you give it a name that will identify its purpose, in formats such as `Topic-group-us-west-3-deploy-fail` or `Topic-group-project-2-instance-stop`\. 
 
 You must also grant Amazon SNS permissions to an AWS CodeDeploy service role before notifications can be sent for your trigger\. For information, see [Grant Amazon SNS Permissions to an AWS CodeDeploy Service Role](monitoring-sns-event-notifications-permisssions.md)\.
 
-After you have created the topic, you can add subscribers\. For information about creating, managing, and subscribing to topics, see [What Is Amazon Simple Notification Service](http://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
+After you have created the topic, you can add subscribers\. For information about creating, managing, and subscribing to topics, see [What Is Amazon Simple Notification Service](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
 
 ## Create a Trigger to Send Notifications for AWS CodeDeploy Events \(Console\)<a name="monitoring-sns-event-notifications-create-trigger-console"></a>
 
@@ -39,7 +39,7 @@ You can use the CLI to include triggers when you create a deployment group, or y
 
 ### To create a trigger to send notifications for a new deployment group<a name="monitoring-sns-event-notifications-create-trigger-cli-new"></a>
 
-Create a JSON file to configure the deployment group, and then run the [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. 
+Create a JSON file to configure the deployment group, and then run the [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. 
 
 The simplest way to create the JSON file is to use the `--generate-cli-skeleton` option to get a copy of the JSON format, and then provide the required values in a plain\-text editor\.
 
@@ -88,7 +88,7 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
 
 1. Provide values for the parameters you want to configure\.
 
-   When you use the [create\-deployment\-group](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html) command, you must provide, at a minimum, values for the following parameters:
+   When you use the [create\-deployment\-group](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html) command, you must provide, at a minimum, values for the following parameters:
    + `applicationName`: The name of an application already created in your account\. 
    + `deploymentGroupName`: A name for the deployment group you are creating\.
    + `serviceRoleArn`: The ARN of an existing service role set up for AWS CodeDeploy in your account\. For information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
@@ -149,7 +149,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
 
 ### To create a trigger to send notifications for an existing deployment group<a name="monitoring-sns-event-notifications-create-trigger-cli-existing"></a>
 
-To use the AWS CLI to add triggers for AWS CodeDeploy events to an existing deployment group, create a JSON file to update the deployment group, and then run the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. 
+To use the AWS CLI to add triggers for AWS CodeDeploy events to an existing deployment group, create a JSON file to update the deployment group, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. 
 
 The simplest way to create the JSON file is to run the get\-deployment\-group command to get a copy of the deployment group's configuration, in JSON format, and then update the parameter values in a plain\-text editor\.
 
@@ -185,7 +185,7 @@ The simplest way to create the JSON file is to run the get\-deployment\-group co
    }
    ```
 
-1. In the `triggerConfigurations` section, add data for the `triggerEvents`, `triggerTargetArn`, and `triggerName` parameters\. For information about trigger configuration parameters, see [TriggerConfig](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TriggerConfig.html)\.
+1. In the `triggerConfigurations` section, add data for the `triggerEvents`, `triggerTargetArn`, and `triggerName` parameters\. For information about trigger configuration parameters, see [TriggerConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TriggerConfig.html)\.
 
    The contents of your text file should now look similar to the following\. This code will prompt notifications to be sent whenever a deployment starts, succeeds, or fails\. 
 
@@ -217,7 +217,7 @@ The simplest way to create the JSON file is to run the get\-deployment\-group co
    }
    ```
 
-1. Save your updates as a JSON file, and then run the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. Be sure to include the `--current-deployment-group-name` option and substitute the name of your JSON file for *filename*: 
+1. Save your updates as a JSON file, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. Be sure to include the `--current-deployment-group-name` option and substitute the name of your JSON file for *filename*: 
 **Important**  
 Be sure to include `file://` before the file name\. It is required in this command\.
 

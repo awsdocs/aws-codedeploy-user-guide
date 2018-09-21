@@ -58,18 +58,18 @@ An AWS CodeDeploy deployment group on an AWS Lambda compute platform identifies 
 
 ### Deploying Your Application Revision<a name="deployment-steps-deploy-lambda"></a>
 
-Now you're ready to deploy the function revision specified in the AppSpec file to the deployment group\. You can use the AWS CodeDeploy console or the [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command\. There are parameters you can specify to control your deployment, including the revision, deployment group, and deployment configuration\.
+Now you're ready to deploy the function revision specified in the AppSpec file to the deployment group\. You can use the AWS CodeDeploy console or the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command\. There are parameters you can specify to control your deployment, including the revision, deployment group, and deployment configuration\.
 
 ### Updating Your Application<a name="deployment-steps-updating-your-app-lambda"></a>
 
-You can make updates to your application and then use the AWS CodeDeploy console or call the [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to push a revision\. 
+You can make updates to your application and then use the AWS CodeDeploy console or call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to push a revision\. 
 
 ### Stopped and Failed Deployments<a name="deployment-stop-fail-lambda"></a>
 
-You can use the AWS CodeDeploy console or the [stop\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command to stop a deployment\. When you attempt to stop the deployment, one of three things happens:
+You can use the AWS CodeDeploy console or the [stop\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command to stop a deployment\. When you attempt to stop the deployment, one of three things happens:
 + The deployment stops, and the operation returns a status of succeeded\. In this case, no more deployment lifecycle events are run on the deployment group for the stopped deployment\. 
 + The deployment does not immediately stop, and the operation returns a status of pending\. In this case, some deployment lifecycle events might still be running on the deployment group\. After the pending operation is complete, subsequent calls to stop the deployment return a status of succeeded\.
-+ The deployment cannot stop, and the operation returns an error\. For more information, see [ErrorInformation](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.html) and [Common Errors](http://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html) in the AWS CodeDeploy API Reference\.
++ The deployment cannot stop, and the operation returns an error\. For more information, see [ErrorInformation](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.html) and [Common Errors](https://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html) in the AWS CodeDeploy API Reference\.
 
 Like stopped deployments, failed deployments might result in some deployment lifecycle events having already been run\. To find out why a deployment failed, you can use the AWS CodeDeploy console or analyze the log file data from the failed deployment\. For more information, see [Application Revision and Log File Cleanup](codedeploy-agent.md#codedeploy-agent-revisions-logs-cleanup) and [View Log Data for AWS CodeDeploy Deployments](deployments-view-logs.md)\.
 
@@ -179,20 +179,20 @@ You can use multiple tag groups in a deployment group to restrict deployments to
 
 ### Deploying Your Application Revision<a name="deployment-steps-deploy"></a>
 
-Now you're ready to deploy your application revision from Amazon S3 or GitHub to the deployment group\. You can use the AWS CodeDeploy console or the [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command\. There are parameters you can specify to control your deployment, including the revision, deployment group, and deployment configuration\.
+Now you're ready to deploy your application revision from Amazon S3 or GitHub to the deployment group\. You can use the AWS CodeDeploy console or the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command\. There are parameters you can specify to control your deployment, including the revision, deployment group, and deployment configuration\.
 
 ### Updating Your Application<a name="deployment-steps-updating-your-app"></a>
 
-You can make updates to your application and then use the AWS CodeDeploy console or call the [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to push a revision\. 
+You can make updates to your application and then use the AWS CodeDeploy console or call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to push a revision\. 
 
 ### Stopped and Failed Deployments<a name="deployment-stop-fail"></a>
 
-You can use the AWS CodeDeploy console or the [stop\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command to stop a deployment\. When you attempt to stop the deployment, one of three things will happen:
+You can use the AWS CodeDeploy console or the [stop\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command to stop a deployment\. When you attempt to stop the deployment, one of three things will happen:
 + The deployment stops, and the operation returns a status of succeeded\. In this case, no more deployment lifecycle events are run on the deployment group for the stopped deployment\. Some files might have already been copied to, and some scripts might have already been run on, one or more of the instances in the deployment group\.
 + The deployment does not immediately stop, and the operation returns a status of pending\. In this case, some deployment lifecycle events might still be running on the deployment group\. Some files might have already been copied to, and some scripts might have already been run on, one or more of the instances in the deployment group\. After the pending operation is complete, subsequent calls to stop the deployment return a status of succeeded\.
-+ The deployment cannot stop, and the operation returns an error\. For more information, see [ErrorInformation](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.html) and [Common Errors](http://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html) in the AWS CodeDeploy API Reference\.
++ The deployment cannot stop, and the operation returns an error\. For more information, see [ErrorInformation](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.html) and [Common Errors](https://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html) in the AWS CodeDeploy API Reference\.
 
-Like stopped deployments, failed deployments might result in some deployment lifecycle events having already been run on one or more of the instances in the deployment group\. To find out why a deployment failed, you can use the AWS CodeDeploy console, call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command, or analyze the log file data from the failed deployment\. For more information, see [Application Revision and Log File Cleanup](codedeploy-agent.md#codedeploy-agent-revisions-logs-cleanup) and [View Log Data for AWS CodeDeploy Deployments](deployments-view-logs.md)\.
+Like stopped deployments, failed deployments might result in some deployment lifecycle events having already been run on one or more of the instances in the deployment group\. To find out why a deployment failed, you can use the AWS CodeDeploy console, call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command, or analyze the log file data from the failed deployment\. For more information, see [Application Revision and Log File Cleanup](codedeploy-agent.md#codedeploy-agent-revisions-logs-cleanup) and [View Log Data for AWS CodeDeploy Deployments](deployments-view-logs.md)\.
 
 ### Redeployments and Deployment Rollbacks<a name="deployment-rollback"></a>
 

@@ -40,7 +40,7 @@ Because the fields have different validation requirements, to save time, we reco
 
 1. From the **Key pair name** drop\-down list, choose the Amazon EC2 instance key pair you will use to connect to the Amazon EC2 instances\.
 **Note**  
-To create an Amazon EC2 instance key pair, follow the instructions in [Creating Your Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure your key pair is created in one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. The new Amazon EC2 instance key pair may not appear in the **Key pair name** drop\-down list until you restart the wizard\.
+To create an Amazon EC2 instance key pair, follow the instructions in [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure your key pair is created in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. The new Amazon EC2 instance key pair may not appear in the **Key pair name** drop\-down list until you restart the wizard\.
 
 1. Choose **Launch environment**\.
 

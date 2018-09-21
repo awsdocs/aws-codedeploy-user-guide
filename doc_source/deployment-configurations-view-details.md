@@ -16,14 +16,14 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the AWS CodeDeploy menu, choose **Deployment configurations** to see a list of deployment configuration names and criteria for each deployment configuration\.
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 ## View Deployment Configuration \(CLI\)<a name="deployment-configurations-view-details-cli"></a>
 
 To use the AWS CLI to view deployment configuration details, call either the `get-deployment-config` command or the `list-deployment-configs` command\.
 
-To view details about a single deployment configuration, call the [get\-deployment\-config](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-config.html) command, specifying the unique deployment configuration name\.
+To view details about a single deployment configuration, call the [get\-deployment\-config](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-config.html) command, specifying the unique deployment configuration name\.
 
-To view details about multiple deployment configurations, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command
+To view details about multiple deployment configurations, call the [list\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command
 
 \.

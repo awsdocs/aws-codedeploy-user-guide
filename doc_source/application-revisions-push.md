@@ -7,7 +7,7 @@ AWS CodeDeploy can also be used to deploy revisions that have been pushed to Git
 
 We assume you have already followed the instructions in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md) to set up the AWS CLI\. This is especially important for calling the push command described later\.
 
-Be sure you have an Amazon S3 bucket\. Follow the instructions in [Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)\.
+Be sure you have an Amazon S3 bucket\. Follow the instructions in [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)\.
 
 If your deployment is to Amazon EC2 instances, then the target Amazon S3 bucket must be created or exist in the same region as the target instances\. For example, if you want to deploy a revision to some instances in the US East \(N\. Virginia\) Region and other instances in the US West \(Oregon\) Region, then you must have one bucket in the US East \(N\. Virginia\) Region with one copy of the revision and another bucket in the US West \(Oregon\) Region with another copy of the same revision\. In this scenario, you would then need to create two separate deployments, one in the US East \(N\. Virginia\) Region and another in the US West \(Oregon\) Region, even though the revision is the same in both regions and buckets\.
 
@@ -32,9 +32,9 @@ You must have permissions to upload to the Amazon S3 bucket\. You can specify th
 }
 ```
 
-To view your AWS account ID, see [Finding Your AWS Account ID](http://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
+To view your AWS account ID, see [Finding Your AWS Account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
 
-To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
 The IAM user who is calling the push command must have, at minimum, permissions to upload the revision to each target Amazon S3 bucket\. For example, the following policy allows the IAM user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
@@ -53,7 +53,7 @@ The IAM user who is calling the push command must have, at minimum, permissions 
 }
 ```
 
-To learn how to create and attach an IAM policy, see [Working with Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
+To learn how to create and attach an IAM policy, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
 ## Push a Revision Using the AWS CLI<a name="push-with-cli"></a>
 
@@ -101,7 +101,7 @@ After the push is successful, you can use the AWS CLI or the AWS CodeDeploy cons
 aws deploy create-deployment \
   --application-name WordPress_App \ 
   --deployment-config-name your-deployment-config-name \ 
-  --your-deployment-group-name your-deployment-group-name \ 
+  --deployment-group-name your-deployment-group-name \ 
   --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
 ```
 

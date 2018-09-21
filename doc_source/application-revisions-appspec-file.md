@@ -33,7 +33,7 @@ For information about lifecycle events to use in the hooks section, see [AppSpec
 #   ignored.
 # For help completing this file, see the "AppSpec File Reference" in the  
 #   "AWS CodeDeploy User Guide" at
-#   http://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
+#   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
 version: 0.0
 # In the Resources section specify the name, alias, 
 # target version, and (optional) the current version of your AWS Lambda function. 
@@ -127,7 +127,7 @@ To add an AppSpec file to a revision:
 #   ignored.
 # For help completing this file, see the "AppSpec File Reference" in the  
 #   "AWS CodeDeploy User Guide" at
-#   http://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
+#   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
 version: 0.0
 # Specify "os: linux" if this revision targets Amazon Linux, 
 #   Red Hat Enterprise Linux (RHEL), or Ubuntu Server  

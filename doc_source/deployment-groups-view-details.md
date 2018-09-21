@@ -18,7 +18,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the **Applications** page, choose the application name associated with the deployment group\. 
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. To view details about an individual deployment group, in **Deployment groups**, choose the arrow next to the deployment group\.
 
@@ -26,8 +26,8 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 To use the AWS CLI to view deployment group details, call either the `get-deployment-group` command or the `list-deployment-groups` command\.
 
-To view details about a single deployment group, call the [get\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command, specifying: 
-+ The application name associated with the deployment group\. To get the application name, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-+ The deployment group name\. To get the deployment group name, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
+To view details about a single deployment group, call the [get\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command, specifying: 
++ The application name associated with the deployment group\. To get the application name, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
++ The deployment group name\. To get the deployment group name, call the [list\-deployment\-groups](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
 
-To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command, specifying the application name associated with the deployment groups\. To get the application name, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\. 
+To view a list of deployment group names, call the [list\-deployment\-groups](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command, specifying the application name associated with the deployment groups\. To get the application name, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\. 

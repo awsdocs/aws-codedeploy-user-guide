@@ -20,7 +20,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the **Applications** page, choose the name of the application with revision details you want to view\.
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. On the **Application details** page, under **Revisions**, review the list of revisions that are registered for the application\. Choose the arrow next to a revision for more details\.
 
@@ -31,13 +31,13 @@ To use the AWS CLI to view an application revision, call either the **get\-appli
 **Note**  
  References to GitHub apply to deployments to EC2/On\-Premises deployments only\. Revisions for AWS Lambda deployments do not work with GitHub\. 
 
-To view details about a single application revision, call the [get\-application\-revision](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-application-revision.html) command, specifying: 
-+ The application name\. To get the application name, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+To view details about a single application revision, call the [get\-application\-revision](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-application-revision.html) command, specifying: 
++ The application name\. To get the application name, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
 + For a revision stored in GitHub, the GitHub repository name and the ID of the commit that references the application revision that was pushed to the repository\.
-+ For a revision stored in Amazon S3, the Amazon S3 bucket name containing the revision; the name and file type of the uploaded archive file; and, optionally, the archive file's Amazon S3 version identifier and ETag\. If the version identifier, ETag, or both were specified during a call to [register\-application\-revision](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-application-revision.html), they must be specified here\.
++ For a revision stored in Amazon S3, the Amazon S3 bucket name containing the revision; the name and file type of the uploaded archive file; and, optionally, the archive file's Amazon S3 version identifier and ETag\. If the version identifier, ETag, or both were specified during a call to [register\-application\-revision](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-application-revision.html), they must be specified here\.
 
-To view details about multiple application revisions, call the [list\-application\-revisions](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command, specifying:
-+ The application name\. To get the application name, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+To view details about multiple application revisions, call the [list\-application\-revisions](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command, specifying:
++ The application name\. To get the application name, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
 + Optionally, to view details for Amazon S3 application revisions only, the Amazon S3 bucket name containing the revisions\.
 + Optionally, to view details for Amazon S3 application revisions only, a prefix string to limit the search to Amazon S3 application revisions\. \(If not specified, AWS CodeDeploy will list all matching Amazon S3 application revisions\.\)
 + Optionally, whether to list revision details based on whether each revision is the target revision of a deployment group\. \(If not specified, AWS CodeDeploy will list all matching revisions\.\)

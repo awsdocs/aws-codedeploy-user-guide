@@ -17,7 +17,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the AWS CodeDeploy menu, choose **Deployments**\. 
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. In the **Actions** column for the deployment you want to stop, choose **Stop**\.
 **Note**  
@@ -25,4 +25,4 @@ If a **Stop** button does not appear in the **Actions** column, the deployment h
 
 ## Stop a deployment \(CLI\)<a name="deployments-stop-cli"></a>
 
-Call the [stop\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command, specifying the deployment ID\. To view a list of deployment IDs, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
+Call the [stop\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/stop-deployment.html) command, specifying the deployment ID\. To view a list of deployment IDs, call the [list\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.

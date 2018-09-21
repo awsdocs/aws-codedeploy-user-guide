@@ -13,8 +13,8 @@ The following are some use cases:
 + Use CloudWatch alarm actions to automatically stop, terminate, reboot, or recover Amazon EC2 instances when a deployment or instance event you specify occurs\.
 
 The remainder of this topic describes the basic procedure for creating a CloudWatch Events rule for AWS CodeDeploy\. Before you create event rules for use in your AWS CodeDeploy operations, however, you should do the following:
-+ Complete the CloudWatch Events prerequisites\. For information, see [Amazon CloudWatch Events Prerequisites](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_Prerequisites.html)\.
-+ Familiarize yourself with events, rules, and targets in CloudWatch Events\. For more information, see [What Is Amazon CloudWatch Events?](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html) and [New CloudWatch Events – Track and Respond to Changes to Your AWS Resources](http://aws.amazon.com/blogs/aws/new-cloudwatch-events-track-and-respond-to-changes-to-your-aws-resources/)\.
++ Complete the CloudWatch Events prerequisites\. For information, see [Amazon CloudWatch Events Prerequisites](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_Prerequisites.html)\.
++ Familiarize yourself with events, rules, and targets in CloudWatch Events\. For more information, see [What Is Amazon CloudWatch Events?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html) and [New CloudWatch Events – Track and Respond to Changes to Your AWS Resources](http://aws.amazon.com/blogs/aws/new-cloudwatch-events-track-and-respond-to-changes-to-your-aws-resources/)\.
 + Create the target or targets you will use in your event rules\. 
 
 **To create a CloudWatch Events rule for AWS CodeDeploy:**

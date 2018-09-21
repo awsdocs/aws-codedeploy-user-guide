@@ -59,15 +59,15 @@ Make sure the following steps are complete before you start a deployment\.
   }
   ```
 
-  To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+  To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 + If you are creating a blue/green deployment, or you have specified an optional Classic Load Balancer, Application Load Balancer, or Network Load Balancer in the deployment group for an in\-place deployment, you have created a VPC using Amazon VPC that contains at least two subnets\. \(AWS CodeDeploy uses Elastic Load Balancing, which requires all instances in a load balancer group to be in a single VPC\.\)
 
-  If you have not created a VPC yet, see the [Amazon VPC Getting Started Guide](http://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/ExerciseOverview.html)\.
+  If you have not created a VPC yet, see the [Amazon VPC Getting Started Guide](https://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/ExerciseOverview.html)\.
 + If you are creating a blue/green deployment, you have configured a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing and used it to register the instances that make up your original environment\. 
 **Note**  
 The instances in your replacement environment will be registered with the load balancer later\.
 
-  To configure a Classic Load Balancer, complete the steps in [Tutorial: Create a Classic Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html) in *User Guide for Classic Load Balancers*\. As you do, make note of the following:
+  To configure a Classic Load Balancer, complete the steps in [Tutorial: Create a Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html) in *User Guide for Classic Load Balancers*\. As you do, make note of the following:
   + In **Step 2: Define Load Balancer**, in **Create LB Inside**, choose the same VPC you selected when you created your instances\.
   + In **Step 5: Register EC2 Instances with Your Load Balancer**, select the instances in your original environment\.
   + In **Step 7: Create and Verify Your Load Balancer**, make a note of the DNS address of your load balancer\.
@@ -77,9 +77,9 @@ The instances in your replacement environment will be registered with the load b
     When you paste the DNS name into the address field of an Internet\-connected web browser, you should see the application you have deployed for your original environment\.
 
   To configure an Application Load Balancer, follow the instructions in one of the following topics:
-  + [Create an Application Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html)
-  + [Tutorials: Create an Application Load Balancer Using the AWS CLI](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/tutorial-application-load-balancer-cli.html)
+  + [Create an Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html)
+  + [Tutorials: Create an Application Load Balancer Using the AWS CLI](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/tutorial-application-load-balancer-cli.html)
 
   To configure a Network Load Balancer, follow the instructions in one of the following topics:
-  + [Create a Network Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html)
-  + [Tutorials: Create a Network Load Balancer Using the AWS CLI](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-cli.html)
+  + [Create a Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html)
+  + [Tutorials: Create a Network Load Balancer Using the AWS CLI](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-cli.html)

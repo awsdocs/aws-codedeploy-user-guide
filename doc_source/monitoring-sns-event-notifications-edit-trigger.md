@@ -18,7 +18,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 ## Modify an AWS CodeDeploy Trigger \(CLI\)<a name="monitoring-sns-event-notifications-edit-trigger-cli"></a>
 
- To use the AWS CLI to change trigger details for AWS CodeDeploy events when you update a deployment group, create a JSON file to define changes to the deployment group's properties, and then run the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command with the `--cli-input-json` option\. 
+ To use the AWS CLI to change trigger details for AWS CodeDeploy events when you update a deployment group, create a JSON file to define changes to the deployment group's properties, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command with the `--cli-input-json` option\. 
 
 The simplest way to create the JSON file is to run the get\-deployment\-group command to get the current deployment group details in JSON format, and then edit the required values in a plain\-text editor\.
 
@@ -65,9 +65,9 @@ The simplest way to create the JSON file is to run the get\-deployment\-group co
    }
    ```
 
-1. Change any parameters, as necessary\. For information about trigger configuration parameters, see [TriggerConfig](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TriggerConfig.html)\.
+1. Change any parameters, as necessary\. For information about trigger configuration parameters, see [TriggerConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TriggerConfig.html)\.
 
-1. Save your updates as a JSON file, and then run the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command using the `--cli-input-json` option\. Be sure to include the `--current-deployment-group-name` option and substitute the name of your JSON file for *filename*: 
+1. Save your updates as a JSON file, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command using the `--cli-input-json` option\. Be sure to include the `--current-deployment-group-name` option and substitute the name of your JSON file for *filename*: 
 **Important**  
 Be sure to include `file://` before the file name\. It is required in this command\.
 

@@ -9,10 +9,10 @@ To manually disassociate any associated on\-premises instance tags, see [Manuall
 To automatically uninstall the AWS CodeDeploy agent and remove the configuration file from the on\-premises instance, see [Automatically Uninstall the AWS CodeDeploy Agent and Remove the Configuration File from an On\-Premises Instance](on-premises-instances-operations-uninstall-agent.md)\.  
 To manually uninstall only the AWS CodeDeploy agent from the on\-premises instance, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\. 
 
-Use the AWS CLI to call the [deregister](http://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command, specifying:
+Use the AWS CLI to call the [deregister](https://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command, specifying:
 + The name that uniquely identifies the on\-premises instance to AWS CodeDeploy \(with the `--instance-name` option\)\. 
 + Optionally, whether to delete the IAM user associated with the on\-premises instance \(with the `--delete-iam-user` option, the default\)\. If you do not want to delete the IAM user associated with the on\-premises instance, specify the `--no-delete-iam-user` option\.
-+ Optionally, the AWS region where the on\-premises instance was registered with AWS CodeDeploy \(with the `--region` option\)\. This must be one of the supported regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* \(for example, `us-west-2`\)\. If this option is not specified, the default AWS region associated with the calling IAM user will be used\.
++ Optionally, the AWS region where the on\-premises instance was registered with AWS CodeDeploy \(with the `--region` option\)\. This must be one of the supported regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* \(for example, `us-west-2`\)\. If this option is not specified, the default AWS region associated with the calling IAM user will be used\.
 
 For example:
 

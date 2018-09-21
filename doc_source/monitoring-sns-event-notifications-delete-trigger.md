@@ -16,9 +16,9 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 ## Delete a Trigger from a Deployment Group \(CLI\)<a name="monitoring-sns-event-notifications-delete-trigger-cli"></a>
 
-To use the CLI to delete a trigger, call the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command, with empty trigger configuration parameters, specifying:
-+ The name of the application associated with the deployment group\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-+ The name of the deployment group associated with the application\. To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
+To use the CLI to delete a trigger, call the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command, with empty trigger configuration parameters, specifying:
++ The name of the application associated with the deployment group\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
++ The name of the deployment group associated with the application\. To view a list of deployment group names, call the [list\-deployment\-groups](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
 
 For example:
 

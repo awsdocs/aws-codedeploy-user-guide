@@ -6,7 +6,7 @@ Using native CloudWatch alarm functionality, you can specify any of the actions 
 
 You can associate up to ten CloudWatch alarms with an AWS CodeDeploy deployment group\. If any of the specified alarms are activated, the deployment stops, and the status is updated to Stopped\. To use this option, you must grant CloudWatch permissions to your AWS CodeDeploy service role\.
 
-For information about setting up CloudWatch alarms in the CloudWatch console, see [Creating Amazon CloudWatch Alarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) in the *Amazon CloudWatch User Guide*\.
+For information about setting up CloudWatch alarms in the CloudWatch console, see [Creating Amazon CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html) in the *Amazon CloudWatch User Guide*\.
 
 For information about associating a CloudWatch alarm with a deployment group in AWS CodeDeploy, see [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md) and [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md)\.
 

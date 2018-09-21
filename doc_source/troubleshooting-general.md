@@ -15,9 +15,9 @@ You can use the following checklist to troubleshoot a failed deployment\.
 1. See [View Deployment Details with AWS CodeDeploy](deployments-view-details.md) and [View Instance Details with AWS CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
 
 1. Check whether you have correctly configured the instances:
-   + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
+   + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
    + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 Instance to Work with AWS CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
-   + Was the instance tagged? For more information, see [Working with Tags in the Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
+   + Was the instance tagged? For more information, see [Working with Tags in the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
    + Is the AWS CodeDeploy agent installed and running on the instance? For more information, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.
 
 1. Check the application and deployment group settings:
@@ -46,7 +46,7 @@ If you are still unable to troubleshoot your failed deployment, review the other
 
 ## AWS CodeDeploy deployment resources are supported in certain regions only<a name="troubleshooting-supported-regions"></a>
 
-If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the AWS CodeDeploy console, make sure you're referencing one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
+If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the AWS CodeDeploy console, make sure you're referencing one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
 Amazon EC2 instances and Auto Scaling groups that will be used in AWS CodeDeploy deployments must be launched and created in one of these regions\.
 
@@ -68,7 +68,7 @@ If you rely on an IAM instance profile or a service role that was created as par
 ## Avoid concurrent deployments to the same Amazon EC2 instance<a name="troubleshooting-concurrent-deployments"></a>
 
 As a best practice, you should avoid situations that would result in more than one attempted deployment to an Amazon EC2 instance at the same time\. In cases where commands from different deployments compete to run on a single instance, the deployments can time out and fail for the following reasons:
-+ AWS CodeDeploy fails a deployment if its first lifecycle event doesn't start within five minutes of the triggering of the deployment\. You can use the console or the AWS CLI [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to trigger a deployment\.
++ AWS CodeDeploy fails a deployment if its first lifecycle event doesn't start within five minutes of the triggering of the deployment\. You can use the console or the AWS CLI [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to trigger a deployment\.
 + AWS CodeDeploy fails a deployment if a lifecycle event does not start within five minutes of the end of the previous lifecycle event\.
 + The AWS CodeDeploy agent can process only one deployment command at a time\. 
 + It's not possible to control the order in which deployments occur if more than one deployment attempts to run at the same time\. 
@@ -84,7 +84,7 @@ For information about other challenges you might face with concurrent deployment
 
 Some text editors introduce non\-conforming, non\-printing characters into files\. If you use text editors to create or modify AppSpec files or shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, then any deployments that rely on these files might fail\. When AWS CodeDeploy uses these files during a deployment, the presence of these characters can lead to hard\-to\-troubleshoot AppSpec file validation failures and script execution failures\. 
 
-In the AWS CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Alternatively, you use the AWS CLI to call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like "invalid character," "command not found," or "file not found\."
+In the AWS CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Alternatively, you use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like "invalid character," "command not found," or "file not found\."
 
 To address this issue, we recommend the following:
 + Do not use text editors that automatically introduce non\-printing characters such as carriage returns \(`^M` characters\) into your AppSpec files and shell script files\. 
@@ -96,4 +96,4 @@ To address this issue, we recommend the following:
 
 Deployments might fail if you use the Finder graphical user interface \(GUI\) application on a Mac to bundle \(zip\) an AppSpec file and related files and scripts into an application revision archive \(\.zip\) file\. This is because Finder creates an intermediate `__MACOSX` folder in the \.zip file and places component files into it\. AWS CodeDeploy cannot find the component files, so the deployment fails\.
 
-To address this issue, we recommend you use the AWS CLI to call the [push](http://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command, which zips the component files into the expected structure\. Alternatively, you can use Terminal instead of the GUI to zip the component files\. Terminal does not create an intermediate `__MACOSX` folder\.
+To address this issue, we recommend you use the AWS CLI to call the [push](https://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command, which zips the component files into the expected structure\. Alternatively, you can use Terminal instead of the GUI to zip the component files\. Terminal does not create an intermediate `__MACOSX` folder\.

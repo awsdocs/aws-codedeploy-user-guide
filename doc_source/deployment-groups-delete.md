@@ -29,6 +29,6 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 ## Delete a Deployment Group \(CLI\)<a name="deployment-groups-delete-cli"></a>
 
-To use the AWS CLI to delete a deployment group, call the [delete\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/delete-deployment-group.html) command, specifying:
-+ The name of the application associated with the deployment group\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-+ The name of the deployment group associated with the application\. To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
+To use the AWS CLI to delete a deployment group, call the [delete\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/delete-deployment-group.html) command, specifying:
++ The name of the application associated with the deployment group\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
++ The name of the deployment group associated with the application\. To view a list of deployment group names, call the [list\-deployment\-groups](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.

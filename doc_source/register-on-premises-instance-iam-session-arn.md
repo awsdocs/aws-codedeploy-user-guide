@@ -1,11 +1,11 @@
 # Use the register\-on\-premises\-instance Command \(IAM Session ARN\) to Register an On\-Premises Instance<a name="register-on-premises-instance-iam-session-arn"></a>
 
-For maximum control over the authentication and registration of your on\-premises instances, you can use the [register\-on\-premises\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command and periodically refreshed temporary credentials generated with the AWS Security Token Service \(AWS STS\)\. A static IAM role for the instance assumes the role of these refreshed AWS STS credentials to perform AWS CodeDeploy deployment operations\. 
+For maximum control over the authentication and registration of your on\-premises instances, you can use the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command and periodically refreshed temporary credentials generated with the AWS Security Token Service \(AWS STS\)\. A static IAM role for the instance assumes the role of these refreshed AWS STS credentials to perform AWS CodeDeploy deployment operations\. 
 
 This method is most useful when you need to register a large number of instances\. It allows you to automate the registration process with AWS CodeDeploy\. You can use your own identity and authentication system to authenticate on\-premises instances and distribute IAM session credentials from the service to the instances for use with AWS CodeDeploy\. 
 
 **Note**  
-Alternatively, you can use a shared IAM user distributed to all on\-premises instances to call the AWS STS [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to retrieve session credentials for on\-premises instances\. This method is less secure and not recommended for production or mission\-critical environments\.
+Alternatively, you can use a shared IAM user distributed to all on\-premises instances to call the AWS STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to retrieve session credentials for on\-premises instances\. This method is less secure and not recommended for production or mission\-critical environments\.
 
 Use the information in the following topics to configure an on\-premises instance using temporary security credentials generated with AWS STS\.
 
@@ -26,15 +26,15 @@ In addition to the prerequisites listed in [Prerequisites for Configuring an On\
 
 **IAM permissions**
 
-The IAM identity you use to register an on\-premises instance must be granted permissions to perform AWS CodeDeploy operations\. Make sure the **AWSCodeDeployFullAccess** managed policy is attached to the IAM identity\. For information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
+The IAM identity you use to register an on\-premises instance must be granted permissions to perform AWS CodeDeploy operations\. Make sure the **AWSCodeDeployFullAccess** managed policy is attached to the IAM identity\. For information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 **System to refresh temporary credentials**
 
 If you use an IAM session ARN to register on\-premises instances, you must have a system in place to periodically refresh the temporary credentials\. Temporary credentials expire after one hour or sooner if a shorter period is specified when the credentials are generated\. There are two methods for refreshing the credentials:
 + **Method 1**: Use the identity and authentication system in place in your corporate network with a CRON script that periodically polls the identity and authentication system and copies the latest session credentials to the instance\. This enables you to integrate your authentication and identity structure with AWS without needing to make changes to the AWS CodeDeploy agent or service to support authentication types you use in your organization\.
-+ **Method 2**: Periodically run a CRON job on the instance to call the AWS STS [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) action and write the session credentials to a file that the AWS CodeDeploy agent can access\. This method still requires using an IAM user and copying credentials to the on\-premises instance, but you can re\-use the same IAM user and credentials across your fleet of on\-premises instances\. 
++ **Method 2**: Periodically run a CRON job on the instance to call the AWS STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) action and write the session credentials to a file that the AWS CodeDeploy agent can access\. This method still requires using an IAM user and copying credentials to the on\-premises instance, but you can re\-use the same IAM user and credentials across your fleet of on\-premises instances\. 
 
-For information about creating and working with AWS STS credentials, see [AWS Security Token Service API Reference](http://docs.aws.amazon.com/STS/latest/APIReference/) and [Using Temporary Security Credentials to Request Access to AWS Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)\.
+For information about creating and working with AWS STS credentials, see [AWS Security Token Service API Reference](https://docs.aws.amazon.com/STS/latest/APIReference/) and [Using Temporary Security Credentials to Request Access to AWS Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)\.
 
 ## Step 1: Create the IAM Role that On\-Premises Instances Will Assume<a name="register-on-premises-instance-iam-session-arn-1"></a>
 
@@ -60,11 +60,11 @@ The role you create will require the following permissions to access the files r
 }
 ```
 
-We recommend that you restrict this policy to only those Amazon S3 buckets your on\-premises instance needs to access\. If you restrict this policy, make sure to give access to the Amazon S3 buckets that contain the AWS CodeDeploy agent\. Otherwise, an error might occur whenever the AWS CodeDeploy agent is installed or updated on the on\-premises instance\. For information about controlling access to Amazon S3 buckets, see [Managing Access Permissions to Your Amazon S3 Resources](http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)\.
+We recommend that you restrict this policy to only those Amazon S3 buckets your on\-premises instance needs to access\. If you restrict this policy, make sure to give access to the Amazon S3 buckets that contain the AWS CodeDeploy agent\. Otherwise, an error might occur whenever the AWS CodeDeploy agent is installed or updated on the on\-premises instance\. For information about controlling access to Amazon S3 buckets, see [Managing Access Permissions to Your Amazon S3 Resources](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)\.
 
 **To create the IAM role**
 
-1. Call the [create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html) command using the `--role-name` option to specify a name for the IAM role \(for example, `CodeDeployInstanceRole`\) and the `--assume-role-policy-document` option to provide the permissions\.
+1. Call the [create\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html) command using the `--role-name` option to specify a name for the IAM role \(for example, `CodeDeployInstanceRole`\) and the `--assume-role-policy-document` option to provide the permissions\.
 
    When you create the IAM role for this instance, you might give it the name `CodeDeployInstanceRole` and include the required permissions in a file named `CodeDeployRolePolicy.json`:
 
@@ -78,20 +78,20 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
    arn:aws:iam::123456789012:role/CodeDeployInstanceRole
    ```
 
-   You will need the role ARN when you use the AWS STS [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to generate short\-term credentials for each instance\.
+   You will need the role ARN when you use the AWS STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to generate short\-term credentials for each instance\.
 
-   For more information about creating IAM roles, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in *IAM User Guide*\.
+   For more information about creating IAM roles, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) in *IAM User Guide*\.
 
-   For information about assigning permissions to an existing role, see [put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) in [AWS CLI Command Reference](http://docs.aws.amazon.com/cli/latest/reference/)\.
+   For information about assigning permissions to an existing role, see [put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) in [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/)\.
 
 ## Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS<a name="register-on-premises-instance-iam-session-arn-2"></a>
 
 Before you generate the temporary credentials that will be used for registering an on\-premises instance, you must create or choose the IAM identity \(user or role\) that you will generate the temporary credentials for\. The `sts:AssumeRole` permission must be included in the policy settings for this IAM identity\.
 
-For information about granting `sts:AssumeRole` permissions to an IAM identity, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) and [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)\.
+For information about granting `sts:AssumeRole` permissions to an IAM identity, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-service.html) and [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)\.
 
 There are two ways to generate the temporary credentials:
-+ Use the [assume\-role](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) command with the AWS CLI\. For example:
++ Use the [assume\-role](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) command with the AWS CLI\. For example:
 
   ```
   aws sts assume-role --role-arn arn:aws:iam::12345ACCOUNT:role/role-arn --role-session-name session-name
@@ -102,7 +102,7 @@ There are two ways to generate the temporary credentials:
   + *role\-arn* is the ARN of the role to be assumed, which you generated in [Step 1: Create the IAM Role that On\-Premises Instances Will Assume](#register-on-premises-instance-iam-session-arn-1)\.
   + *session\-name* is the name you want to give to the role session you are creating now\.
 **Note**  
-If you use a CRON script that periodically polls the identity and authentication system and copies the latest session credentials to the instance \(method 1 for refreshing temporary credentials described in [IAM Session ARN Registration Prerequisites](#register-on-premises-instance-iam-session-arn-prerequisites)\), you can instead use any supported AWS SDK to call [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)\.
+If you use a CRON script that periodically polls the identity and authentication system and copies the latest session credentials to the instance \(method 1 for refreshing temporary credentials described in [IAM Session ARN Registration Prerequisites](#register-on-premises-instance-iam-session-arn-prerequisites)\), you can instead use any supported AWS SDK to call [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)\.
 + Use a tool provided by AWS\.
 
   The aws\-codedeploy\-session\-helper tool generates AWS STS credentials and writes them to a file you place on the instance\. This tool is best suited to method 2 for refreshing temporary credentials described in [IAM Session ARN Registration Prerequisites](#register-on-premises-instance-iam-session-arn-prerequisites)\. In this method, the aws\-codedeploy\-session\-helper tool is placed on each instance and executes the command using an IAM user’s permissions\. Each instance uses the same IAM user’s credentials in conjunction with this tool\.
@@ -135,7 +135,7 @@ Add a configuration file to the on\-premises instance, using root or administrat
    Where:
    + *iam\-session\-arn* is the IAM session ARN you noted in [Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS](#register-on-premises-instance-iam-session-arn-2)\. 
    + *credentials\-file* is the location of the credentials file for the temporary session ARN, as noted in [Step 2: Generate Temporary Credentials for an Individual Instance Using AWS STS](#register-on-premises-instance-iam-session-arn-2)\.
-   + *supported\-region* is one of the regions that AWS CodeDeploy supports, as listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
+   + *supported\-region* is one of the regions that AWS CodeDeploy supports, as listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
 ## Step 4: Prepare an On\-Premises Instance for AWS CodeDeploy Deployments<a name="register-on-premises-instance-iam-session-arn-4"></a>
 
@@ -143,11 +143,11 @@ Add a configuration file to the on\-premises instance, using root or administrat
 
 Install and configure the AWS CLI on the on\-premises instance\. \(The AWS CLI will be used to download and install the AWS CodeDeploy agent on the on\-premises instance\.\) 
 
-1. To install the AWS CLI on the on\-premises instance, follow the instructions in [Getting Set Up with the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) in the *AWS Command Line Interface User Guide*\.
+1. To install the AWS CLI on the on\-premises instance, follow the instructions in [Getting Set Up with the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) in the *AWS Command Line Interface User Guide*\.
 **Note**  
 AWS CodeDeploy commands for working with on\-premises instances became available in version 1\.7\.19 of the AWS CLI\. If you have a version of the AWS CLI already installed, you can check its version by calling aws \-\-version\.
 
-1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
+1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
 **Important**  
 As you configure the AWS CLI \(for example, by calling the aws configure command\), be sure to specify the secret key ID and secret access key of an IAM user that has, at minimum, the permissions described in [IAM Session ARN Registration Prerequisites](#register-on-premises-instance-iam-session-arn-prerequisites)\.
 
@@ -155,7 +155,7 @@ As you configure the AWS CLI \(for example, by calling the aws configure command
 
 If you are not running Ubuntu Server or RHEL on your on\-premises instance, skip this step and go directly to "Install the AWS CodeDeploy Agent \." 
 
-Install the AWS CodeDeploy agent on an Ubuntu Server or RHEL on\-premises instance and enable instance to update the AWS CodeDeploy agent whenever a new version becomes available\. You do this by setting the `AWS_REGION` environment variable on the instance to the identifier of one of the regions supported by AWS CodeDeploy\. We recommend that you set the value to the region where your AWS CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
+Install the AWS CodeDeploy agent on an Ubuntu Server or RHEL on\-premises instance and enable instance to update the AWS CodeDeploy agent whenever a new version becomes available\. You do this by setting the `AWS_REGION` environment variable on the instance to the identifier of one of the regions supported by AWS CodeDeploy\. We recommend that you set the value to the region where your AWS CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
 
 To set the environment variable, call the following from the terminal:
 
@@ -182,7 +182,7 @@ Before you can use the AWS CLI, you will need the ARN of the temporary session c
 arn:sts:iam::123456789012:assumed-role/CodeDeployInstanceRole/AssetTag12010298EX
 ```
 
-Call the [register\-on\-premises\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command, specifying:
+Call the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command, specifying:
 +  A name that uniquely identifies the on\-premises instance \(with the `--instance-name` option\)\.
 **Important**  
 To help identify the on\-premises instance, especially for debugging purposes, we strongly recommend that you specify a name that maps to some unique characteristic of the on\-premises instance \(for example, the session\-name of the STS credentials and the serial number or an internal asset identifier, if applicable\)\. If you specify a MAC address as a name, be aware that MAC addresses contain characters that AWS CodeDeploy does not allow, such as colon \(:\)\. For a list of allowed characters, see [AWS CodeDeploy Limits](limits.md)\.
@@ -205,7 +205,7 @@ Where:
 You can use either the AWS CLI or the AWS CodeDeploy console to tag the on\-premises instance\. \(AWS CodeDeploy uses on\-premises instance tags to identify the deployment targets during a deployment\.\)
 
 **To tag the on\-premises instance \(CLI\)**
-+ Call the [add\-tags\-to\-on\-premises\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/add-tags-to-on-premises-instances.html) command, specifying:
++ Call the [add\-tags\-to\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/add-tags-to-on-premises-instances.html) command, specifying:
   + The name that uniquely identifies the on\-premises instance \(with the `--instance-names` option\)\. 
   + The name of the on\-premises instance tag key and tag value you want to use \(with the `--tags` option\)\. You must specify both a name and value\. AWS CodeDeploy does not allow on\-premises instance tags that have values only\.
 

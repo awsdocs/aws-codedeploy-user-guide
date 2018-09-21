@@ -1,6 +1,6 @@
 # Integrating AWS CodeDeploy with Auto Scaling<a name="integrations-aws-auto-scaling"></a>
 
-AWS CodeDeploy supports Auto Scaling, an AWS service that can launch Amazon EC2 instances automatically according to conditions you define\. These conditions can include limits exceeded in a specified time interval for CPU utilization, disk reads or writes, or inbound or outbound network traffic\. Auto Scaling terminates the instances when they are no longer needed\. For more information, see [What Is Auto Scaling?](http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html)\.
+AWS CodeDeploy supports Auto Scaling, an AWS service that can launch Amazon EC2 instances automatically according to conditions you define\. These conditions can include limits exceeded in a specified time interval for CPU utilization, disk reads or writes, or inbound or outbound network traffic\. Auto Scaling terminates the instances when they are no longer needed\. For more information, see [What Is Auto Scaling?](https://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html)\.
 
 When new Amazon EC2 instances are launched as part of an Auto Scaling group, AWS CodeDeploy can deploy your revisions to the new instances automatically\. You can also coordinate deployments in AWS CodeDeploy with Amazon EC2 instances registered with Elastic Load Balancing load balancers\. For more information, see [Integrating AWS CodeDeploy with Elastic Load Balancing](integrations-aws-elastic-load-balancing.md) and [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)\.
 
@@ -36,7 +36,7 @@ For more information, see [Tutorial: Use AWS CodeDeploy to Deploy an Application
 
 You can add your own lifecycle hooks to Auto Scaling groups to which AWS CodeDeploy deploys\. However, the order in which those custom lifecycle hook events are executed cannot be predetermined in relation to AWS CodeDeploy default deployment lifecycle events\. For example, if you add a custom lifecycle hook named `ReadyForSoftwareInstall` to an Auto Scaling group, you cannot know beforehand whether it will be executed before the first, or after the last, AWS CodeDeploy default deployment lifecycle event\.
 
-To learn how to add custom lifecycle hooks to an Auto Scaling group, see [Adding Lifecycle Hooks](http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html#adding-lifecycle-hooks)\.
+To learn how to add custom lifecycle hooks to an Auto Scaling group, see [Adding Lifecycle Hooks](https://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html#adding-lifecycle-hooks)\.
 
 ### Scale\-up events during a deployment results in a mixed environment<a name="integrations-aws-auto-scaling-behaviors-mixed-environment"></a>
 
@@ -75,7 +75,7 @@ To control the order of events, use one of these best practices:
 + Install the AWS CodeDeploy agent through a `cfn-init` script, placing it after all other scripts\.
 + Include the AWS CodeDeploy agent in a custom AMI and use a `cfn-init` script to start it, placing it after all other scripts\.
 
-For information about using `cfn-init`, see [cfn\-init](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-init.html) in *[AWS CloudFormation User Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)*\.
+For information about using `cfn-init`, see [cfn\-init](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-init.html) in *[AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)*\.
 
 ## Using a Custom AMI with AWS CodeDeploy and Auto Scaling<a name="integrations-aws-auto-scaling-custom-ami"></a>
 

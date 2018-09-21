@@ -6,9 +6,9 @@ To use the AWS CLI to deploy a revision to the EC2/On\-Premises compute platform
    + If you want to deploy a revision from an Amazon S3 bucket, continue to step 2 now\.
    + If you want to deploy a revision from a GitHub repository, first complete the steps in [Connect an AWS CodeDeploy Application to a GitHub Repository](deployments-create-cli-github.md), and then continue to step 2\. 
 
-1. Call the [create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command, specifying:
-   + An application name\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-   + An Amazon EC2 deployment group name\. To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
+1. Call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command, specifying:
+   + An application name\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+   + An Amazon EC2 deployment group name\. To view a list of deployment group names, call the [list\-deployment\-groups](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
    + Information about the revision to be deployed:
 
      For revisions stored in Amazon S3:
@@ -22,7 +22,7 @@ The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not 
      For revisions stored in GitHub:
      + The GitHub user or group name assigned to the repository that contains the revision, followed by a forward slash \(`/`\), followed by the repository name\.
      + The commit ID for the revision\.
-   + \(Optional\) The name of a deployment configuration to use\. To view a list of deployment configurations, call the [list\-deployment\-configs](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-configs.html) command\. \(If not specified, AWS CodeDeploy uses a specific default deployment configuration\.\)
+   + \(Optional\) The name of a deployment configuration to use\. To view a list of deployment configurations, call the [list\-deployment\-configs](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-configs.html) command\. \(If not specified, AWS CodeDeploy uses a specific default deployment configuration\.\)
    + \(Optional\) Whether you want the deployment to an instance to continue to the **BeforeInstall** deployment lifecycle event if the **ApplicationStop** deployment lifecycle event fails\. 
    + \(Optional\) A description for the deployment\.
    + For blue/green deployments, information about the instances that belong to the replacement environment in a blue/green deployment, including the names of one or more Auto Scaling groups, or the tag filter key, type, and value used to identify Amazon EC2 instances\.
@@ -38,7 +38,7 @@ Use this syntax as part of the create\-deployment call to specify information ab
 ```
 --github-location repository=string,commitId=string
 ```
-To get information about revisions that have been pushed already, call the [list\-application\-revisions](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command\.
+To get information about revisions that have been pushed already, call the [list\-application\-revisions](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command\.
 
 To track the status of your deployment, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\.
 

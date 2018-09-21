@@ -35,7 +35,7 @@ Additional options:
   This choice is useful when you want to temporarily deactivate alarm monitoring for a deployment group without having to add the same alarms again later\.
 + \(Optional\) If you want deployments to proceed in the event that AWS CodeDeploy is unable to retrieve alarm status from Amazon CloudWatch, choose **Continue deployments even if alarm status is unavailable**\.
 **Note**  
-This option corresponds to ignorePollAlarmFailure in the [AlarmConfiguration](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AlarmConfiguration.html) object in the AWS CodeDeploy API\. 
+This option corresponds to ignorePollAlarmFailure in the [AlarmConfiguration](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AlarmConfiguration.html) object in the AWS CodeDeploy API\. 
 
 For more information, see [Monitoring Deployments with CloudWatch Alarms in AWS CodeDeploy](monitoring-create-alarms.md)\.
 

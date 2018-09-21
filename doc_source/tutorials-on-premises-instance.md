@@ -251,21 +251,21 @@ You can use the AWS CLI or a combination of the AWS CodeDeploy and Amazon S3 con
 ### Clean Up Resources \(CLI\)<a name="tutorials-on-premises-instance-6-clean-up-resources-cli"></a>
 
 **To delete the Amazon S3 bucket**
-+ Call the [rm](http://docs.aws.amazon.com/cli/latest/reference/s3/rm.html) command along with the `--recursive` switch against the bucket \(for example, `codedeploydemobucket`\)\. The bucket and all objects in the bucket will be deleted\. 
++ Call the [rm](https://docs.aws.amazon.com/cli/latest/reference/s3/rm.html) command along with the `--recursive` switch against the bucket \(for example, `codedeploydemobucket`\)\. The bucket and all objects in the bucket will be deleted\. 
 
   ```
   aws s3 rm s3://your-bucket-name --recursive
   ```
 
 **To delete the application and deployment group records in AWS CodeDeploy**
-+ Call the [delete\-application](http://docs.aws.amazon.com/cli/latest/reference/deploy/delete-application.html) command against the application \(for example, `CodeDeploy-OnPrem-App`\)\. The records for the deployment and deployment group will be deleted\. 
++ Call the [delete\-application](https://docs.aws.amazon.com/cli/latest/reference/deploy/delete-application.html) command against the application \(for example, `CodeDeploy-OnPrem-App`\)\. The records for the deployment and deployment group will be deleted\. 
 
   ```
   aws deploy delete-application --application-name your-application-name
   ```<a name="tutorials-on-premises-instance-6-clean-up-resources-deregister-cli"></a>
 
 **To deregister the on\-premises instance and delete the IAM user**
-+ Call the [deregister](http://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command against the on\-premises instance and region:
++ Call the [deregister](https://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command against the on\-premises instance and region:
 
   ```
   aws deploy deregister --instance-name your-instance-name --delete-iam-user --region your-region
@@ -274,7 +274,7 @@ You can use the AWS CLI or a combination of the AWS CodeDeploy and Amazon S3 con
 If you do not want to delete the IAM user associated with this on\-premises instance, use the `--no-delete-iam-user` option instead\.
 
 **To uninstall the AWS CodeDeploy agent and remove the configuration file from the on\-premises instance**
-+ From the on\-premises instance, call the [uninstall](http://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command:
++ From the on\-premises instance, call the [uninstall](https://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command:
 
   ```
   aws deploy uninstall
