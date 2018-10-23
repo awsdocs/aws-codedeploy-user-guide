@@ -8,9 +8,9 @@ To automatically deregister the on\-premises instance, see [Automatically Deregi
 To manually deregister the on\-premises instance, see [Manually Deregister an On\-Premises Instance](on-premises-instances-operations-deregister-manually.md)\.  
 To manually disassociate any associated on\-premises instance tags, see [Manually Remove On\-Premises Instance Tags from an On\-Premises Instance](on-premises-instances-operations-remove-tags.md)\.  
 To manually uninstall the AWS CodeDeploy agent from the on\-premises instance, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.  
-To manually delete the associated IAM user, see [Deleting an IAM User from Your AWS Account](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_DeletingUserFromAccount.html)\. 
+To manually delete the associated IAM user, see [Deleting an IAM User from Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_DeletingUserFromAccount.html)\. 
 
-From the on\-premises instance, use the AWS CLI to call the [uninstall](http://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command\.
+From the on\-premises instance, use the AWS CLI to call the [uninstall](https://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command\.
 
 For example:
 

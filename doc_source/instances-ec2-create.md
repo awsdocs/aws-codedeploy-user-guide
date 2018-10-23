@@ -20,7 +20,7 @@ If you have not done so already, follow the instructions in [Getting Started wit
 
 1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance role you created in [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.  If you used the suggested role name, then you will choose **CodeDeployDemo\-EC2\-Instance\-Profile**\. If you created your own role name, select that\.
 **Note**  
-If neither **Launch into EC2\-Classic** nor a default virtual private cloud \(VPC\) is displayed in the **Network** list, and you are not able to select a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose an Amazon VPC and subnet, or choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and Subnets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html)\.
+If neither **Launch into EC2\-Classic** nor a default virtual private cloud \(VPC\) is displayed in the **Network** list, and you are not able to select a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose an Amazon VPC and subnet, or choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
 
 1. Expand **Advanced Details**\.
 
@@ -183,7 +183,7 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
 1. From the same directory where you created the `instance-setup.sh` or `instance-setup.txt` file, you will call the run\-instances command to create and launch the Amazon EC2 instance\.
 
    Before you call this command, you will need to collect the following: 
-   + The ID of an Amazon Machine Image \(AMI\) \(*ami\-id*\) you will use for the instance\. To get the ID, see [Finding a Suitable AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)\.
+   + The ID of an Amazon Machine Image \(AMI\) \(*ami\-id*\) you will use for the instance\. To get the ID, see [Finding a Suitable AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)\.
    + The name of the type of Amazon EC2 instance \(*instance\-type*\) you will create, such as `t1.micro`\. For a list, see [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)\.
    + The name of an IAM instance profile with permission to access the Amazon S3 bucket where the AWS CodeDeploy agent installation files for your region are stored\. 
 
@@ -194,7 +194,7 @@ Type the key pair name only, not the key pair file extension\. For example, *my\
 
      To find a key pair name, open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2](https://console.aws.amazon.com/ec2)\. In the navigation pane, under **Network & Security**, choose **Key Pairs**, and note the key pair name in the list\. 
 
-     To generate a key pair, see [Creating Your Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure you create the key pair in one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\. Otherwise, you won't be able to use the Amazon EC2 instance key pair with AWS CodeDeploy\.
+     To generate a key pair, see [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure you create the key pair in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\. Otherwise, you won't be able to use the Amazon EC2 instance key pair with AWS CodeDeploy\.
 
    **For Amazon Linux, RHEL, and Ubuntu Server**
 

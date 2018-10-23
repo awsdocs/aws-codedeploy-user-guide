@@ -1,4 +1,4 @@
-# Troubleshoot EC2/On\-PremisesDeployment Issues<a name="troubleshooting-deployments"></a>
+# Troubleshoot EC2/On\-Premises Deployment Issues<a name="troubleshooting-deployments"></a>
 
 **Topics**
 + [Deployment fails with the message “Validation of PKCS7 signed message failed”](#troubleshooting-deployments-agent-SHA-256)
@@ -49,7 +49,7 @@ To address these situations, do one of the following:
 + Remove the files from the locations and instances to which they were previously deployed, and then try the deployment again\. 
 + In your revision's AppSpec file, in either the **ApplicationStop** or **BeforeInstall** deployment lifecycle events, specify a custom script to delete files in any locations that match the files your revision is about to install\.
 + Deploy or redeploy the files to locations or instances that were not part of previous deployments\.
-+ Before you delete an application or a deployment group, deploy a revision that contains an AppSpec file that specifies no files to copy to the instances\. For the deployment, specify the application name and deployment group name that use the same underlying application and deployment group IDs as those you are about to delete\. \(You can use the [get\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command to retrieve the deployment group ID\.\) AWS CodeDeploy will use the underlying deployment group ID and AppSpec file to remove all of the files it installed in the previous successful deployment\. 
++ Before you delete an application or a deployment group, deploy a revision that contains an AppSpec file that specifies no files to copy to the instances\. For the deployment, specify the application name and deployment group name that use the same underlying application and deployment group IDs as those you are about to delete\. \(You can use the [get\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command to retrieve the deployment group ID\.\) AWS CodeDeploy will use the underlying deployment group ID and AppSpec file to remove all of the files it installed in the previous successful deployment\. 
 
 ## Troubleshooting a failed AllowTraffic lifecycle event with no error reported in the deployment logs<a name="troubleshooting-deployments-allowtraffic-no-logs"></a>
 
@@ -59,11 +59,11 @@ This failure is typically due to the health checks being configured incorrectly 
 
 To resolve the issue, review and correct any errors in the the health check configuration for the load balancer\.
 
-For Classic Load Balancers, see [Configure Health Checks](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html) in the *User Guide for Classic Load Balancers* and [ConfigureHealthCheck](http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ConfigureHealthCheck.html) in the *Elastic Load Balancing API Reference version 2012\-06\-01*\.
+For Classic Load Balancers, see [Configure Health Checks](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html) in the *User Guide for Classic Load Balancers* and [ConfigureHealthCheck](https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_ConfigureHealthCheck.html) in the *Elastic Load Balancing API Reference version 2012\-06\-01*\.
 
-For Application Load Balancers, see [Health Checks for Your Target Groups](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html) in the *User Guide for Application Load Balancers*\.
+For Application Load Balancers, see [Health Checks for Your Target Groups](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html) in the *User Guide for Application Load Balancers*\.
 
-For Network Load Balancers, see [Health Checks for Your Target Groups](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/target-group-health-checks.html) in the *Network Load Balancer User Guide*\.
+For Network Load Balancers, see [Health Checks for Your Target Groups](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/target-group-health-checks.html) in the *Network Load Balancer User Guide*\.
 
 ## Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events<a name="troubleshooting-deployments-lifecycle-event-failures"></a>
 
@@ -78,11 +78,11 @@ Possible reasons for these failures include:
 + In the location listed in the `deployment-group-id_last_successful_install` file, either the AppSpec file is invalid or the scripts do not run successfully\.
 + The script contains an error that cannot be corrected, so it will never run successfully\.
 
-Use the AWS CodeDeploy console to investigate why a deployment might have failed during any of these events\. On the details page for the deployment, choose **View events**\. On the details page for the instance, in the **ApplicationStop**, **BeforeBlockTraffic**, or **AfterBlockTraffic** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. 
+Use the AWS CodeDeploy console to investigate why a deployment might have failed during any of these events\. On the details page for the deployment, choose **View events**\. On the details page for the instance, in the **ApplicationStop**, **BeforeBlockTraffic**, or **AfterBlockTraffic** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. 
 
 If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and specify that the **ApplicationStop**, **BeforeBlockTraffic**, and **AfterBlockTraffic** failures should be ignored\. You can do this in two ways:
 + Use the AWS CodeDeploy console to create a deployment\. On the **Create deployment** page, under **ApplicationStop lifecycle event failure**, choose **Don't fail the deployment to an instance if this lifecycle event on the instance fails**\.
-+ Use the AWS CLI to call the `[create\-deployment](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html)` command and include the `--ignore-application-stop-failures` option\. 
++ Use the AWS CLI to call the `[create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html)` command and include the `--ignore-application-stop-failures` option\. 
 
 When you deploy the application revision again, the deployment will continue even if any of these three lifecycle events fail\. If the new revision includes fixed scripts for those lifecycle events, future deployments can succeed without applying this fix\.
 
@@ -93,7 +93,7 @@ If you are trying to deploy an application revision from Amazon S3, and the depl
 + The IAM instance profile on your Amazon EC2 instance does not have permissions to access the application revision in Amazon S3\. For information about Amazon S3 bucket policies, see [Push a Revision for AWS CodeDeploy to Amazon S3](application-revisions-push.md) and [Deployment Prerequisites](deployments-create-prerequisites.md)\.
 + The instances to which you will deploy are associated with one region \(for example, US West \(Oregon\)\), but the Amazon S3 bucket that contains the application revision is associated with another region \(for example, US East \(N\. Virginia\)\)\. Make sure the application revision is in an Amazon S3 bucket associated with the same region as the instances\.
 
-On the event details page for the deployment, in the **Download bundle** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. If this error occurred, there should be an error in the output with the error code "UnknownError" and the error message "not opened for reading\."
+On the event details page for the deployment, in the **Download bundle** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. If this error occurred, there should be an error in the output with the error code "UnknownError" and the error message "not opened for reading\."
 
 To determine the reason for this error:
 

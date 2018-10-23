@@ -4,7 +4,7 @@ You can get information about on\-premises instances by following the instructio
 
 **To get information about multiple on\-premises instances \(CLI\)**
 
-1. For a list of on\-premises instance names, call the [list\-on\-premises\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-on-premises-instances.html) command, specifying:
+1. For a list of on\-premises instance names, call the [list\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-on-premises-instances.html) command, specifying:
    + Whether to get information about all registered or deregistered on\-premises instances \(with the `--registration-status` option and `Registered` or `Deregistered`, respectively\)\. If you omit this, then both registered and deregistered on\-premises instance names are returned\.
    + Whether to get information only about on\-premises instances tagged with specific on\-premises instance tags \(with the `--tag-filters` option\)\. For each on\-premises instance tag, specify the `Key`, `Value`, and `Type` \(which should always be `KEY_AND_VALUE`\)\. Separate multiple on\-premises instance tags with spaces between each `Key`, `Value`, and `Type` triplet\.
 
@@ -14,7 +14,7 @@ You can get information about on\-premises instances by following the instructio
    aws deploy list-on-premises-instances --registration-status Registered --tag-filters Key=Name,Value=CodeDeployDemo-OnPrem,Type=KEY_AND_VALUE Key=Name,Value=CodeDeployDemo-OnPrem-Beta,Type=KEY_AND_VALUE
    ```
 
-1. For more detailed information, call the [batch\-get\-on\-premises\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-on-premises-instances.html) command, with the names of the on\-premises instances \(with the `--instance-names` option\): 
+1. For more detailed information, call the [batch\-get\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-on-premises-instances.html) command, with the names of the on\-premises instances \(with the `--instance-names` option\): 
 
    ```
    aws deploy batch-get-on-premises-instances --instance-names AssetTag12010298EX AssetTag09920444EX

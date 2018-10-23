@@ -100,7 +100,7 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
    }
    ```
 
-For more information about creating service roles, see [Creating a Role to Delegate Permissions to an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-creatingrole-service.html) in the *IAM User Guide*\.
+For more information about creating service roles, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-creatingrole-service.html) in the *IAM User Guide*\.
 
 ## Create a Service Role \(CLI\)<a name="getting-started-create-service-role-cli"></a>
 
@@ -188,7 +188,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
      aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRoleForLambda
      ```
 
-For more information about creating service roles, see [Creating a Role for an AWS Service](http://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html) in the *IAM User Guide*\.
+For more information about creating service roles, see [Creating a Role for an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html) in the *IAM User Guide*\.
 
 ## Get the Service Role ARN \(Console\)<a name="getting-started-get-service-role-console"></a>
 

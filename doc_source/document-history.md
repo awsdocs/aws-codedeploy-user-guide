@@ -1,8 +1,16 @@
 # Document History<a name="document-history"></a>
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *AWS CodeDeploy User Guide*\.
-+ **API version:** 2014\-10\-06
-+ **Latest documentation update:** December 19, 2017
++ **API version: **2014\-10\-06
++ **Latest documentation update: **October 1, 2018
+
+| Change | Description | Date | 
+| --- |--- |--- |
+| [New minimum supported version of the AWS CodeDeploy agent](#document-history) | The minimum supported version of the AWS CodeDeploy agent is now 1\.0\.1\.1458\. For more information, see [Version History of the AWS CodeDeploy Agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | August 7, 2018 | 
+
+## Earlier Updates<a name="release-archive"></a>
+
+The following table describes important changes in each release of the *AWS CodeDeploy User Guide* before June 2018\.
 
 
 | Change | Description | Date Changed | 
@@ -25,7 +33,7 @@ The following table describes the major changes made to this user guide to suppo
 | Updated topics | AWS CodeDeploy is now available in the EU \(London\) Region \(eu\-west\-2\)\. Several topics, including those containing instructions for setting up the AWS CodeDeploy agent, were updated to reflect the availability of this new region\. | December 13, 2016 | 
 | Updated topics | AWS CodeDeploy is now available in the Canada \(Central\) Region \(ca\-central\-1\)\. Several topics, including those containing instructions for setting up the AWS CodeDeploy agent, were updated to reflect the availability of this new region\. | December 8, 2016 | 
 | Updated topics | AWS CodeDeploy is now available in the US East \(Ohio\) Region \(us\-east\-2\)\. Several topics, including those containing instructions for setting up the AWS CodeDeploy agent, were updated to reflect the availability of this new region\. | October 17, 2016 | 
-| New topics | A new section, [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md), provides comprehensive information about using [AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and AWS CodeDeploy to help secure access to your resources through the use of credentials\. These credentials provide the permissions required to access AWS resources, such as retrieving application revisions from Amazon S3 buckets and reading the tags on Amazon EC2 instances\. | October 11, 2016 | 
+| New topics | A new section, [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md), provides comprehensive information about using [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and AWS CodeDeploy to help secure access to your resources through the use of credentials\. These credentials provide the permissions required to access AWS resources, such as retrieving application revisions from Amazon S3 buckets and reading the tags on Amazon EC2 instances\. | October 11, 2016 | 
 | Updated topic |  [Update the AWS CodeDeploy Agent on Windows Server](codedeploy-agent-operations-update-windows.md) has been updated to reflect the availability of the new AWS CodeDeploy agent updater for Windows Server\. When installed on a Windows Server instance, the updater will check periodically for new versions\. When a new version is detected, the updater will uninstall the current version of the agent, if one is installed, before installing the newest version\.  | October 4, 2016 | 
 | Updated topics |  AWS CodeDeploy now integrates with Amazon CloudWatch alarms, making it possible to stop a deployment if there is a change in the state of a specified alarm for a number of consecutive periods, as specified in the alarm threshold\.  AWS CodeDeploy also now supports automatically rolling back a deployment if certain conditions are met, such as a deployment failure or an activated alarm\. A number of topics have been updated to reflect these changes, including [Create an Application with AWS CodeDeploy](applications-create.md), [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md), [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md), [AWS CodeDeploy Deployments](deployment-steps.md), [Redeploy and Roll Back a Deployment with AWS CodeDeploy](deployments-rollback-and-redeploy.md), and [Product and Service Integrations with AWS CodeDeploy](integrations.md), along with a new topic, [Monitoring Deployments with CloudWatch Alarms in AWS CodeDeploy](monitoring-create-alarms.md)\.  | September 15, 2016 | 
 | New and updated topics |  AWS CodeDeploy now provides integration with Amazon CloudWatch Events\. You can now use CloudWatch Events to initiate one or more actions when changes are detected in the state of a deployment or the state of an instance that belongs to an AWS CodeDeploy deployment group\. You can incorporate actions that invoke AWS Lambda functions; that publish to Kinesis streams or Amazon SNS topics; that push messages to Amazon SQS queues; or that, in turn, trigger CloudWatch alarm actions\. For more information, see [Monitoring Deployments with Amazon CloudWatch Events](monitoring-cloudwatch-events.md)\.  | September 9, 2016 | 

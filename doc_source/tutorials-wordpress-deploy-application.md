@@ -30,7 +30,7 @@ Now you deploy the sample WordPress application revision you uploaded to Amazon 
      --service-role-arn serviceRoleARN
    ```
 **Note**  
-The [create\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch Alarms are met\. Commands for these actions are not included in this tutorial\.
+The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch alarms are met\. Commands for these actions are not included in this tutorial\.
 
 1. Now call the create\-deployment command to create a deployment associated with the application named **WordPress\_App**, the deployment configuration named **CodeDeployDefault\.OneAtATime**, and the deployment group named **WordPress\_DepGroup**, using the application revision named **WordPressApp\.zip** in the bucket named **codedeploydemobucket**:
 
@@ -130,7 +130,7 @@ To get the current status of the deployment, choose the **Refresh** button next 
 
 1. The command returns the deployment's overall status\. If successful, the value is `Succeeded`\.
 
-   If the overall status is `Failed`, you can call commands such as [list\-deployment\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) and [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) to troubleshoot\. For more troubleshooting options, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
+   If the overall status is `Failed`, you can call commands such as [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) and [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) to troubleshoot\. For more troubleshooting options, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
 
 ### To monitor and troubleshoot your deployment \(console\)<a name="tutorials-wordpress-deploy-application-monitor-console"></a>
 

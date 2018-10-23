@@ -13,7 +13,7 @@ For more information about working with the AWS CodeDeploy agent, such as steps 
 + [Operating Systems Supported by the AWS CodeDeploy Agent](#codedeploy-agent-supported-operating-systems)
 + [Communication Protocol and Port for the AWS CodeDeploy Agent](#codedeploy-agent-outbound-port)
 + [AWS SDK for Ruby \(aws\-sdk\-core\) Support for the AWS CodeDeploy Agent](#codedeploy-agent-aws-sdk-core-support)
-+ [Supported Versions of the AWS CodeDeploy Agent](#codedeploy-agent-supported-versions)
++ [Version History of the AWS CodeDeploy Agent](#codedeploy-agent-version-history)
 + [Application Revision and Log File Cleanup](#codedeploy-agent-revisions-logs-cleanup)
 + [Files Installed by the AWS CodeDeploy Agent](#codedeploy-agent-install-files)
 + [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)
@@ -51,16 +51,17 @@ Versions of the AWS CodeDeploy agent earlier than 1\.0\.1\.880 are compatible on
 
 The latest version of the AWS SDK for Ruby compatible the AWS CodeDeploy Agent is aws\-sdk\-core 2\.3\.
 
-## Supported Versions of the AWS CodeDeploy Agent<a name="codedeploy-agent-supported-versions"></a>
+## Version History of the AWS CodeDeploy Agent<a name="codedeploy-agent-version-history"></a>
 
-Your instances must be running a supported version of the AWS CodeDeploy agent\. The current minimum supported version is 1\.0\.1\.854\. If you are running an earlier version, deployments to your instances might fail\. 
+Your instances must be running a supported version of the AWS CodeDeploy agent\. The current minimum supported version is 1\.0\.1\.1458\. If you are running an earlier version, deployments to your instances might fail\. 
 
-The following table lists the currently supported versions of the AWS CodeDeploy agent and the features and enhancements included with each release\.
+The following table lists all releases of the AWS CodeDeploy agent and the features and enhancements included with each version\.
 
 
 | Version | Release date | Details | 
 | --- | --- | --- | 
-|  1\.0\.1\.1458  |  March 6, 2018  |  **Enhancement**: Improved certificate validations to support more trusted authorities\. **Enhancement**: Fixed an issue that caused the local CLI to fail during a deployment that includes a BeforeInstall lifecycle event\. **Enhancement**: Fixed an issue that might cause an active deployment to fail when the AWS CodeDeploy agent is updated\.  | 
+|  1\.0\.1\.1518  |  June 12, 2018  |  **Enhancement**: Fixed an issue that caused an error when the AWS CodeDeploy agent is closed while it is accepting poll requests\. **Enhancement**: Added a deployment tracking feature that prevents the AWS CodeDeploy agent from being closed when a deployment is in progress\. **Enhancement**: Improved performance when deleting files\.  | 
+|  1\.0\.1\.1458  |  March 6, 2018  |   The minimum supported version of the AWS CodeDeploy Agent is 1\.0\.1\.1458\. Use of an earlier AWS CodeDeploy agent may cause deployments to fail\.  **Enhancement**: Improved certificate validations to support more trusted authorities\. **Enhancement**: Fixed an issue that caused the local CLI to fail during a deployment that includes a BeforeInstall lifecycle event\. **Enhancement**: Fixed an issue that might cause an active deployment to fail when the AWS CodeDeploy agent is updated\.  | 
 |  1\.0\.1\.1352  |  November 16, 2017  |  **Feature**: Introduced a new feature for testing and debugging an EC2/On\-Premises deployment on a local machine or instance where the AWS CodeDeploy Agent is installed\.  | 
 |  1\.0\.1\.1106  |  May 16, 2017  |  **Feature**: Introduced new support for handling content in a target location that wasn't part of the application revision from the most recent successful deployment\. Deployments options for existing content now include retaining the content, overwriting the content, or failing the deployment\.  **Enhancement**: Made the AWS CodeDeploy agent compatible with version 2\.9\.2 of the AWS SDK for Ruby \(aws\-sdk\-core 2\.9\.2\)\.  | 
 |  1\.0\.1\.1095  |  March 29, 2017  |  **Enhancement**: Introduced support for the AWS CodeDeploy agent in the China \(Beijing\) Region\. **Enhancement**: Enabled Puppet to run on Windows Server instances when invoked by a lifecycle event hook\. **Enhancement**: Improved the handling of `untar` operations\.  | 
@@ -74,7 +75,7 @@ The following table lists the currently supported versions of the AWS CodeDeploy
 | 1\.0\.1\.950 | March 24, 2016 |  **Feature**: Added installation proxy support\. **Enhancement**: Updated the installation script to not download the AWS CodeDeploy agent if the latest version is already installed\.  | 
 | 1\.0\.1\.934 | February 11, 2016 |  **Feature**: Introduced support for specifying the number of application revisions you want the AWS CodeDeploy agent to archive for a deployment group\.   | 
 | 1\.0\.1\.880 | January 11, 2016 | Enhancement: Made the AWS CodeDeploy agent compatible with version 2\.2 of the AWS SDK for Ruby \(aws\-sdk\-core 2\.2\)\. Version 2\.1\.2 is still supported\.  | 
-| 1\.0\.1\.854 | November 17, 2015 |  **Feature**: Introduced support for the SHA\-256 hash algorithm\.   After October 17, 2016, all installations of the AWS CodeDeploy agent must be updated, at minimum, to version 1\.0\.1\.854 or deployments will fail\. For more information see [Deployment fails with the message “Validation of PKCS7 signed message failed”](troubleshooting-deployments.md#troubleshooting-deployments-agent-SHA-256)\.  **Feature**: Introduced version tracking support in `.version` files\. **Feature**: Made the deployment group ID available through the use of an environment variable\. **Enhancement**: Added support for monitoring AWS CodeDeploy agent logs using [Amazon CloudWatch Logs](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html)\.  | 
+| 1\.0\.1\.854 | November 17, 2015 |  **Feature**: Introduced support for the SHA\-256 hash algorithm\.   After October 17, 2016, all installations of the AWS CodeDeploy agent must be updated, at minimum, to version 1\.0\.1\.854 or deployments will fail\. For more information see [Deployment fails with the message “Validation of PKCS7 signed message failed”](troubleshooting-deployments.md#troubleshooting-deployments-agent-SHA-256)\.  **Feature**: Introduced version tracking support in `.version` files\. **Feature**: Made the deployment group ID available through the use of an environment variable\. **Enhancement**: Added support for monitoring AWS CodeDeploy agent logs using [Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html)\.  | 
 
 For related information, see the following:
 + [Determine the Version of the AWS CodeDeploy Agent](codedeploy-agent-operations-version.md)
@@ -155,9 +156,9 @@ The following is an example of the file and directory structure under the root d
 ```
 +  **Deployment Group ID** folders represent each of your deployment groups\. A deployment group directory's name is its ID \(for example, `acde1916-9099-7caf-fd21-012345abcdef`\)\. Each deployment group directory contains one subdirectory for each attempted deployment in that deployment group\. 
 
-   You can use the [batch\-get\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-deployments.html) command to find a deployment group ID\.
+   You can use the [batch\-get\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-deployments.html) command to find a deployment group ID\.
 +  **Deployment ID** folders represent each deployment in a deployment group\. Each deployment directory's name is its ID\. Each folder contains:
-  +  **bundle\.tar**, a compressed file with the contents of the deployment's revision\. 
+  +  **bundle\.tar**, a compressed file with the contents of the deployment's revision\. Use a zip decompression utility if you want to view the revision\.
   +  **deployment\-archive**, a directory that contains the contents of the deployment's revision\. 
   +  **logs**, a directory that contains a `scripts.log` file\. This file lists the output of all scripts specified in the deployment's AppSpec file\. 
 

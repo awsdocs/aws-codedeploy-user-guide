@@ -97,7 +97,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, o
 
    These commands create an Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**, based on the specified image ID, applying the specified IAM instance profile and Amazon EC2 instance key pair, and running the command to install the latest version of the AWS CodeDeploy agent\. This launch configuration is based on the t1\.micro Amazon EC2 instance type\.
 
-1.  Call the create\-auto\-scaling\-group command to create an Auto Scaling group\. You will need the name of one of the Availability Zones in one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*, represented by the placeholder *availability\-zone*\.
+1.  Call the create\-auto\-scaling\-group command to create an Auto Scaling group\. You will need the name of one of the Availability Zones in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*, represented by the placeholder *availability\-zone*\.
 **Note**  
 To view a list of Availability Zones in a region, call:   
 
@@ -143,7 +143,7 @@ For a list of region name identifiers, see [Resource Kit Bucket Names by Region]
 
 1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
-1. In the global navigation bar, make sure one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Auto Scaling resources are tied to the region you specify, and AWS CodeDeploy is supported in select regions only\.
+1. In the global navigation bar, make sure one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Auto Scaling resources are tied to the region you specify, and AWS CodeDeploy is supported in select regions only\.
 
 1. In the navigation bar, under **Auto Scaling**, choose **Launch Configurations**\.
 
@@ -212,9 +212,9 @@ In a production environment, we recommend that you restrict access to Amazon EC2
 
 1. Choose **Create an Auto Scaling group using this launch configuration**\.
 
-1. On the **Configure Auto Scaling group details** page, in **Group name**, type **CodeDeployDemo\-AS\-Group**\. In **Group size**, leave the default\. In the **Availability Zone\(s\)** box, choose an Availability Zone in one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. Leave the rest of the defaults, and choose **Next: Configure scaling policies**\.
+1. On the **Configure Auto Scaling group details** page, in **Group name**, type **CodeDeployDemo\-AS\-Group**\. In **Group size**, leave the default\. In the **Availability Zone\(s\)** box, choose an Availability Zone in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. Leave the rest of the defaults, and choose **Next: Configure scaling policies**\.
 **Note**  
-If **Launch into EC2\-Classic** does not appear in the **Network** list, and you are not able to select a default virtual private cloud \(VPC\), choose or create a VPC and subnet\. For more information, see [Your VPC and Subnets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html)\.
+If **Launch into EC2\-Classic** does not appear in the **Network** list, and you are not able to select a default virtual private cloud \(VPC\), choose or create a VPC and subnet\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
 
 1. On the **2\. Configure scaling policies** page, leave **Keep this group at its initial size** selected, and choose **Next: Configure Notifications**\.
 

@@ -3,7 +3,7 @@
 The following tables describe limits in AWS CodeDeploy\.
 
 **Note**  
-You can [request a limit increase](https://console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase) for the AWS CodeDeploy limits listed in [AWS Service Limits](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_codedeploy) in the *Amazon Web Services General Reference* \. You cannot increase the limit on the number of hours a deployment can run\.
+You can [request a limit increase](https://console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase) for the AWS CodeDeploy limits listed in [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_codedeploy) in the *Amazon Web Services General Reference* \. You cannot increase the limit on the number of hours a deployment can run\.
 
 **Topics**
 + [Applications](#limits-applications)
@@ -21,7 +21,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  Maximum number of applications associated with an AWS account in a single region  |  100  | 
 |  Maximum number of characters in an application name  |  100  | 
 | Characters allowed in an application name |  Letters \(a\-z, A\-Z\), numbers \(0\-9\), periods \(\.\), underscores \(\_\), `+` \(plus signs\), `=` \(equals signs\), `,` \(commas\), `@` \(at signs\), `-` \(minus signs\)\.  | 
-| Maximum number of applications that can be passed to the [BatchGetApplications](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplications.html) API action | 100 | 
+| Maximum number of applications that can be passed to the [BatchGetApplications](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplications.html) API action | 100 | 
 | Maximum number of GitHub connection tokens for a single AWS account | 25 | 
 
 ## Application Revisions<a name="limits-revisions"></a>
@@ -46,7 +46,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | Maximum number of hours an AWS Lambda deployment can run³ | 50 \(48 hours for the maximum time between the first and last traffic shift plus one hour for each of two possible lifecycle hooks\) | 
 | Maximum number of seconds until a deployment lifecycle event fails if not completed | 3600 | 
 | Maximum number of characters in a deployment description | 256 | 
-| Maximum number of deployments that can be passed to the [BatchGetDeployments](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html) API action | 100 | 
+| Maximum number of deployments that can be passed to the [BatchGetDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html) API action | 100 | 
 |  Maximum number of minutes until a deployment fails if a lifecycle event doesn't start after: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html)  | 5 | 
 | Maximum number of minutes a blue/green deployment can wait after a successful deployment before terminating instances from the original deployment | 2800 | 
 |  ¹ This limit is intended to prevent accidental, concurrent deployments of the same application to the same deployment group\. ² Each deployment to a scaled\-up Amazon EC2 instance in an Auto Scaling group counts as a single concurrent deployment\. If the scaled\-up Amazon EC2 instance is associated with multiple applications, then additional concurrent deployment for each application would be generated\. For example, an Auto Scaling group that scales up by five Amazon EC2 instances and is associated with a single application would generate five concurrent deployments\. If the same five scaled\-up Amazon EC2 instances are associated with two additional applications, this would generate ten additional concurrent deployments\.   | 
@@ -85,6 +85,6 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  Maximum number of instances in a single deployment  |  500  | 
 | Maximum number of characters in a tag key | 128 | 
 |  Maximum number of characters in a tag value  |  256  | 
-| Maximum number of instances that can be passed to the [BatchGetOnPremisesInstances](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.html) API action | 100 | 
+| Maximum number of instances that can be passed to the [BatchGetOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.html) API action | 100 | 
 | Maximum number of instances that can be used by concurrent deployments that are in progress and associated with one account  | 500 | 
 |  Required version of AWS SDK for Ruby \(aws\-sdk\-core\)  |  **2\.1\.2 **or earlier for AWS CodeDeploy agent versions earlier than 1\.0\.1\.880\. **2\.2** or earlier for AWS CodeDeploy agent version 1\.0\.1\.880 and later\.  | 

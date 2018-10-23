@@ -16,7 +16,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the AWS CodeDeploy menu, choose **Applications**\. 
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. To view additional application details, choose the application name in the list\.
 
@@ -24,8 +24,8 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 To use the AWS CLI to view application details, call the get\-application command, the batch\-get\-application command, or the list\-applications command\.
 
-To view details about a single application, call the [get\-application](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-application.html) command, specifying the application name\.
+To view details about a single application, call the [get\-application](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-application.html) command, specifying the application name\.
 
-To view details about multiple applications, call the [batch\-get\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-applications.html) command, specifying multiple application names\.
+To view details about multiple applications, call the [batch\-get\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/batch-get-applications.html) command, specifying multiple application names\.
 
-To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.

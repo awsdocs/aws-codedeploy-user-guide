@@ -6,7 +6,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. Do one of the following:
    + On the AWS CodeDeploy menu, choose **Deployments**, and then choose **Create deployment**\.
-   + On the AWS CodeDeploy menu, choose **Applications**, and then choose the name of the EC2/On\-Premises application you want to deploy a revision to\. You can look in the **Compute platform**column to identify EC2/On\-Premises applications\. On the **Application details**, page, select the button for the deployment group you want to deploy a revision to\. On the **Actions** menu, choose **Deploy new revision**\.
+   + On the AWS CodeDeploy menu, choose **Applications**, and then choose the name of the EC2/On\-Premises application you want to deploy a revision to\. You can look in the **Compute platform** column to identify EC2/On\-Premises applications\. On the **Application details**, page, select the button for the deployment group you want to deploy a revision to\. On the **Actions** menu, choose **Deploy new revision**\.
 
 1. In the **Application** list, choose the name of the application you want to use for this deployment\. Make sure EC2/On\-Premises is displayed for the **Compute platform**\.
 

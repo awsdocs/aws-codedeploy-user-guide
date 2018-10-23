@@ -177,7 +177,7 @@ Amazon's trademarks and trade dress may not be used in
 + [AWS CodeDeploy Limits](limits.md)
 + [Troubleshooting AWS CodeDeploy](troubleshooting.md)
    + [General Troubleshooting Issues](troubleshooting-general.md)
-   + [Troubleshoot EC2/On-PremisesDeployment Issues](troubleshooting-deployments.md)
+   + [Troubleshoot EC2/On-Premises Deployment Issues](troubleshooting-deployments.md)
    + [Troubleshoot AWS Lambda Deployment Issues](troubleshooting-deployments-lambda.md)
    + [Troubleshoot Deployment Group Issues](troubleshooting-deployment-groups.md)
    + [Troubleshoot Instance Issues](troubleshooting-ec2-instances.md)

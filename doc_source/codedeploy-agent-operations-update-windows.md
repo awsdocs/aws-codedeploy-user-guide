@@ -28,7 +28,7 @@ Import-Module AWSPowerShell
 ```
 
 ```
-New-Item –Path "c:\temp" –ItemType "directory" -Force
+New-Item -Path "c:\temp" -ItemType "directory" -Force
 ```
 
 ```
@@ -76,7 +76,7 @@ If the browser security settings on the Windows Server instance provide the nece
 
 ## Use an Amazon S3 copy command<a name="codedeploy-agent-operations-update-windows-s3-copy"></a>
 
-If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](http://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) command to download the AWS CodeDeploy agent updater and then run the installer manually\. For information, see [Install the AWS Command Line Interface on Microsoft Windows](http://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)\. 
+If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) command to download the AWS CodeDeploy agent updater and then run the installer manually\. For information, see [Install the AWS Command Line Interface on Microsoft Windows](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)\. 
 
 
 | Region name | Amazon S3 copy command | 

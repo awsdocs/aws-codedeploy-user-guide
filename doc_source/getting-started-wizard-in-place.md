@@ -48,15 +48,15 @@ If you want AWS CodeDeploy to launch a new set of Amazon EC2 instances:
 
 1. Next to **Operating system**, choose **Amazon Linux** or **Windows Server**\.
 **Important**  
-You may be billed for the Amazon EC2 instances launched by AWS CodeDeploy, so be sure to terminate them after you've completed the wizard\. In this wizard, an AWS CloudFormation template is used to launch these Amazon EC2 instances\. To delete the AWS CloudFormation stack created to launch the Amazon EC2 instances, see [Deleting a Stack on the AWS CloudFormation Console](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html)\. The stack name will start with **CodeDeploySampleStack**\. 
+You may be billed for the Amazon EC2 instances launched by AWS CodeDeploy, so be sure to terminate them after you've completed the wizard\. In this wizard, an AWS CloudFormation template is used to launch these Amazon EC2 instances\. To delete the AWS CloudFormation stack created to launch the Amazon EC2 instances, see [Deleting a Stack on the AWS CloudFormation Console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html)\. The stack name will start with **CodeDeploySampleStack**\. 
 
 1. From the **Key pair name** drop\-down list, choose the Amazon EC2 instance key pair you will use to connect to the Amazon EC2 instances\.
 **Note**  
-To create an Amazon EC2 instance key pair, follow the instructions in [Creating Your Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure your key pair is created in one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. The new Amazon EC2 instance key pair might not appear in the **Key pair name** drop\-down list until you restart the wizard\.
+To create an Amazon EC2 instance key pair, follow the instructions in [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure your key pair is created in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. The new Amazon EC2 instance key pair might not appear in the **Key pair name** drop\-down list until you restart the wizard\.
 
 1. Leave the defaults for **Tag key and value**\. AWS CodeDeploy will use this tag key and value to locate the instances during deployments\.
 
-    If you want to override the proposed tag key and value \(for example, if you are running through this wizard multiple times without terminating any previously created Amazon EC2 instances\), we suggest you leave the tag key of `Name` in the **Key** box and type a different tag value in the **Value** box\. For information about Amazon EC2 instance tags, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
+    If you want to override the proposed tag key and value \(for example, if you are running through this wizard multiple times without terminating any previously created Amazon EC2 instances\), we suggest you leave the tag key of `Name` in the **Key** box and type a different tag value in the **Value** box\. For information about Amazon EC2 instance tags, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 1. Choose **Launch instances**\. 
 

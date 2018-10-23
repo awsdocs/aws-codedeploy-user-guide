@@ -64,7 +64,7 @@ Before you start a local deployment, complete the following steps:
   }
   ```
 
-  For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+  For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 + If you are deploying your application revision from an Amazon S3 bucket or GitHub repository, set up an IAM instance profile and attach it to the instance\. For information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md), [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md), and [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
 + If you are deploying your content from GitHub, create a GitHub account and a public repository\. To create a GitHub account, see [Join GitHub](https://github.com/join)\. To create a GitHub repository, see [Create a Repo](https://help.github.com/articles/create-a-repo/)\.
 **Note**  
@@ -121,7 +121,7 @@ The format of the application revision bundle\. Supported types include `tgz`, `
 
 **\-b**, **\-\-file\-exists\-behavior**
 
-Indicates how files are handled that already exist in a deployment target location but weren't part of a previous successful deployment\. Options include DISALLOW, OVERWRITE, RETAIN\. For more information, see [fileExistsBehavior](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html#CodeDeploy-CreateDeployment-request-fileExistsBehavior) in *[AWS CodeDeploy API Reference](http://docs.aws.amazon.com/codedeploy/latest/APIReference/)*\.
+Indicates how files are handled that already exist in a deployment target location but weren't part of a previous successful deployment\. Options include DISALLOW, OVERWRITE, RETAIN\. For more information, see [fileExistsBehavior](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html#CodeDeploy-CreateDeployment-request-fileExistsBehavior) in *[AWS CodeDeploy API Reference](https://docs.aws.amazon.com/codedeploy/latest/APIReference/)*\.
 
 **\-g**, **\-\-deployment\-group**
 

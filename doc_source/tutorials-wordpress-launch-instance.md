@@ -10,7 +10,7 @@ After you've followed the instructions to launch the Amazon EC2 instance, return
 
 After your new Amazon EC2 instance is launched, follow these instructions to practice connecting to it\.
 
-1. Use the ssh command \(or an SSH\-capable terminal emulator like [PuTTY](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)\) to connect to your Amazon Linux or RHEL Amazon EC2 instance\. You will need the public DNS address of the instance and the private key for the key pair you used when you started the Amazon EC2 instance\. For more information, see [Connect to Your Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-connect-to-instance-linux.html)\.
+1. Use the ssh command \(or an SSH\-capable terminal emulator like [PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)\) to connect to your Amazon Linux or RHEL Amazon EC2 instance\. You will need the public DNS address of the instance and the private key for the key pair you used when you started the Amazon EC2 instance\. For more information, see [Connect to Your Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-connect-to-instance-linux.html)\.
 
    For example, if the public DNS address is **ec2\-01\-234\-567\-890\.compute\-1\.amazonaws\.com**, and your Amazon EC2 instance key pair for SSH access is named **codedeploydemo\.pem**, you would type:
 
@@ -74,4 +74,4 @@ The next step confirms your Amazon EC2 instance has an open HTTP port so you can
    + **Port Range**: 80
    + **Source**: Custom
 
-1.  If you do not see a rule with the values listed in the previous step, use the procedures in [Adding Rules to a Security Group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) to add them to a new security rule\. 
+1.  If you do not see a rule with the values listed in the previous step, use the procedures in [Adding Rules to a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) to add them to a new security rule\. 

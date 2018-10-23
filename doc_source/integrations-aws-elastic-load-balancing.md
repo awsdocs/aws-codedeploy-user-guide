@@ -12,10 +12,10 @@ Network Load Balancer
 Routes and load balances at the transport layer \(TCP/UDP Layer\-4\) based on address information extracted from the TCP packet header, not from packet content\. Network Load Balancers can handle traffic bursts, retain the source IP of the client, and use a fixed IP for the life of the load balancer\. 
 
 To learn more about Elastic Load Balancing load balancers, see the following topics:
-+ [What Is Elastic Load Balancing?](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
-+ [What Is a Classic Load Balancer?](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html)
-+ [What Is an Application Load Balancer?](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
-+ [What Is a Network Load Balancer?](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
++ [What Is Elastic Load Balancing?](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
++ [What Is a Classic Load Balancer?](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/introduction.html)
++ [What Is an Application Load Balancer?](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
++ [What Is a Network Load Balancer?](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
 
 ## The role of a load balancer in an AWS CodeDeploy deployment<a name="integrations-aws-elastic-load-balancing-role"></a>
 

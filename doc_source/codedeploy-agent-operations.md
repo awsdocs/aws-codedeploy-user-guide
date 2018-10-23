@@ -2,6 +2,9 @@
 
 The instructions in this section show you how to install, uninstall, reinstall, or update the AWS CodeDeploy agent and how to verify the AWS CodeDeploy agent is running\.
 
+**Important**  
+ The minimum supported version of the AWS CodeDeploy Agent is 1\.0\.1\.1458\. Use of an earlier AWS CodeDeploy agent may cause deployments to fail\. 
+
 **Topics**
 + [Verify the AWS CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md)
 + [Determine the Version of the AWS CodeDeploy Agent](codedeploy-agent-operations-version.md)

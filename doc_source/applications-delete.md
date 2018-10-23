@@ -1,6 +1,6 @@
 # Delete an Application in AWS CodeDeploy<a name="applications-delete"></a>
 
-You can use the AWS CodeDeploy console, the AWS CLI, or an AWS CodeDeploy API action to delete applications\. For information about using the AWS CodeDeploy API action, see [DeleteApplication](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteApplication.html)\.
+You can use the AWS CodeDeploy console, the AWS CLI, or an AWS CodeDeploy API action to delete applications\. For information about using the AWS CodeDeploy API action, see [DeleteApplication](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteApplication.html)\.
 
 **Warning**  
 Deleting an application removes information about the application from the AWS CodeDeploy system, including all related deployment group information and deployment details\. Deleting an application created for an EC2/On\-Premises deployment does not remove any application revisions from instances nor does it delete revisions from Amazon S3 buckets\. Deleting an application created for an EC2/On\-Premises deployment does not terminate any Amazon EC2 instances or deregister any on\-premises instances\. This action cannot be undone\.
@@ -29,4 +29,4 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 ## Delete an Application \(AWS CLI\)<a name="applications-delete-cli"></a>
 
-To use the AWS CLI to delete an application, call the [delete\-application](http://docs.aws.amazon.com/cli/latest/reference/deploy/delete-application.html) command, specifying the application name\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+To use the AWS CLI to delete an application, call the [delete\-application](https://docs.aws.amazon.com/cli/latest/reference/deploy/delete-application.html) command, specifying the application name\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.

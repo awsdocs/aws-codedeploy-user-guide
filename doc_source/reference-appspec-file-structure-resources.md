@@ -20,11 +20,11 @@ JSON:
 ```
 "resources": [{
     "name-of-function-to-deploy" {
-        "type": "AWS::Lambda::Function"
+        "type": "AWS::Lambda::Function",
         "properties": {
-          "name": "name-of-lambda-function-to-deploy"
-          "alias": "alias-of-lambda-function-to-deploy"
-          "currentversion": "version-of-the-lambda-function-traffic-currently-points-to"
+          "name": "name-of-lambda-function-to-deploy",
+          "alias": "alias-of-lambda-function-to-deploy",
+          "currentversion": "version-of-the-lambda-function-traffic-currently-points-to",
           "targetversion": "version-of-the-lambda-function-to-shift-traffic-to"
         }
     }

@@ -20,7 +20,7 @@ When you use the AWS CodeDeploy console to create an application, you configure 
 
 To view a list of deployment groups already associated with your AWS account, see [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)\. 
 
-For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Auto Scaling, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
+For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Auto Scaling, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 ## <a name="topiclist-deployment-groups"></a>
 

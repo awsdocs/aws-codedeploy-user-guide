@@ -3,7 +3,7 @@
 You can get information about a single on\-premises instance by following the instructions in [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\. You can use the AWS CLI or the AWS CodeDeploy console to get more information about a single on\-premises instance\.
 
 **To get information about a single on\-premises instance \(CLI\)**
-+ Call the [get\-on\-premises\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-on-premises-instance.html) command, specifying the name that uniquely identifies the on\-premises instance \(with the `--instance-name` option\):
++ Call the [get\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-on-premises-instance.html) command, specifying the name that uniquely identifies the on\-premises instance \(with the `--instance-name` option\):
 
   ```
   aws deploy get-on-premises-instance --instance-name AssetTag12010298EX

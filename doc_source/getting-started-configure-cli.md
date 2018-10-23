@@ -6,11 +6,11 @@ If you have an older version of the AWS CLI installed, you must upgrade it so th
 
 To install or upgrade the AWS CLI:
 
-1. Follow the instructions in [Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) to install or upgrade the AWS CLI\.
+1. Follow the instructions in [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) to install or upgrade the AWS CLI\.
 
-1. To configure the AWS CLI, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) and [Managing Access Keys for IAM Users](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html)\.
+1. To configure the AWS CLI, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) and [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html)\.
 **Important**  
-When you configure the AWS CLI, you will be prompted to specify an AWS region\. Specify one of the supported regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
+When you configure the AWS CLI, you will be prompted to specify an AWS region\. Specify one of the supported regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
 
 1. To verify the installation or upgrade, call the following command from the AWS CLI:
 

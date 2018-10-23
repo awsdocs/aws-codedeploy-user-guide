@@ -14,10 +14,10 @@ To automatically uninstall the AWS CodeDeploy agent and remove the configuration
 
 To manually uninstall just the AWS CodeDeploy agent from the on\-premises instance, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.
 
-To manually delete the associated IAM user, see [Deleting an IAM User from Your AWS Account](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_DeletingUserFromAccount.html)\. 
+To manually delete the associated IAM user, see [Deleting an IAM User from Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_DeletingUserFromAccount.html)\. 
 
 **To remove on\-premises instance tags from an on\-premises instance \(CLI\)**
-+ Call the [remove\-tags\-from\-on\-premises\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/remove-tags-from-on-premises-instances.html), specifying:
++ Call the [remove\-tags\-from\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/remove-tags-from-on-premises-instances.html), specifying:
   + The names that uniquely identify the on\-premises instance \(with the `--instance-names` option\)\. 
   + The names and values of the tags you want to remove \(with the `--tags` option\)\.
 

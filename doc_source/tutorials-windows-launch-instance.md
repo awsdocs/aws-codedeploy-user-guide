@@ -11,7 +11,7 @@ After you've launched the Amazon EC2 instance, return to this page, and continue
 After your Amazon EC2 instance is launched, follow these instructions to practice connecting to it\. 
 
 **Note**  
-In these instructions, we assume you are running Windows and the Windows Desktop Connection client application\. For information, see [Connecting to Your Windows Instance Using RDP](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html)\. You might need to adapt these instructions for other operating systems or other RDP connection client applications\.
+In these instructions, we assume you are running Windows and the Windows Desktop Connection client application\. For information, see [Connecting to Your Windows Instance Using RDP](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html)\. You might need to adapt these instructions for other operating systems or other RDP connection client applications\.
 
 1. Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 

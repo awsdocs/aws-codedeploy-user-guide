@@ -8,7 +8,7 @@ Your Amazon EC2 instances need permission to access the Amazon S3 buckets or Git
 You can create an IAM instance profile with the AWS CLI, the IAM console, or the IAM APIs\.
 
 **Note**  
-You can attach an IAM instance profile to an Amazon EC2 instance as you launch it or to a previously launched instance\. For more information, see [Instance Profiles](http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-instanceprofile.html)\.
+You can attach an IAM instance profile to an Amazon EC2 instance as you launch it or to a previously launched instance\. For more information, see [Instance Profiles](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-usingrole-instanceprofile.html)\.
 
 **Topics**
 + [Create an IAM Instance Profile for Your Amazon EC2 Instances \(CLI\)](#getting-started-create-iam-instance-profile-cli)
@@ -112,9 +112,9 @@ Be sure to include `file://` before the file name\. It is required in this comma
    aws iam add-role-to-instance-profile --instance-profile-name CodeDeployDemo-EC2-Instance-Profile --role-name CodeDeployDemo-EC2-Instance-Profile
    ```
 
-   If you need to get the name of the IAM instance profile, see [list\-instance\-profiles\-for\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profiles-for-role.html) in the IAM section of the *AWS CLI Reference*\.
+   If you need to get the name of the IAM instance profile, see [list\-instance\-profiles\-for\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profiles-for-role.html) in the IAM section of the *AWS CLI Reference*\.
 
-You've now created an IAM instance profile to attach to your Amazon EC2 instances\. For more information, see [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.
+You've now created an IAM instance profile to attach to your Amazon EC2 instances\. For more information, see [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.
 
 ## Create an IAM Instance Profile for Your Amazon EC2 Instances \(Console\)<a name="getting-started-create-iam-instance-profile-console"></a>
 
@@ -197,4 +197,4 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
 
    You can also type a description for this service role in the **Role description** box\.
 
-You've now created an IAM instance profile to attach to your Amazon EC2 instances\. For more information, see [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.
+You've now created an IAM instance profile to attach to your Amazon EC2 instances\. For more information, see [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\.

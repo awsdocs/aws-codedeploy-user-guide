@@ -38,7 +38,7 @@ version: 0.0
 os: operating-system-name
 files:
   source-destination-files-mappings
-permissions:high
+permissions:
   permissions-specifications
 hooks:
   deployment-lifecycle-event-mappings

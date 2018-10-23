@@ -43,7 +43,7 @@ For more information, see [Tutorial: Use AWS CodeDeploy to Deploy an Application
 + [GitHub Authentication with Applications in AWS CodeDeploy](#behaviors-authentication)
 + [AWS CodeDeploy Interaction with Private and Public GitHub Repositories](#behaviors-interactions-private-and-public)
 + [AWS CodeDeploy Interaction with Organization\-Managed GitHub Repositories](#behaviors-interactions-organization-managed)
-+ [Automatically Deploy from GitHub with AWS CodeDeploy](#behaviors-deploy-automatically)
++ [Automatically Deploy from AWS CodePipeline with AWS CodeDeploy](#behaviors-deploy-automatically)
 
 ### GitHub Authentication with Applications in AWS CodeDeploy<a name="behaviors-authentication"></a>
 
@@ -96,6 +96,6 @@ By default, GitHub repositories that are managed by an organization \(as opposed
 
 For more information, see [About Third\-Party Application Restrictions](https://help.github.com/articles/about-third-party-application-restrictions/)\.
 
-### Automatically Deploy from GitHub with AWS CodeDeploy<a name="behaviors-deploy-automatically"></a>
+### Automatically Deploy from AWS CodePipeline with AWS CodeDeploy<a name="behaviors-deploy-automatically"></a>
 
-You can trigger a deployment from a GitHub repository whenever the source code changes\. For instructions, see [Automatically Deploy from GitHub Using AWS CodeDeploy](http://aws.amazon.com/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy/)\.
+You can trigger a deployment from a AWS CodePipeline whenever the source code changes\. For more infomation, see [AWS CodePipeline](https://aws.amazon.com//codepipeline/)\.

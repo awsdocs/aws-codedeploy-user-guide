@@ -24,7 +24,7 @@ You must create a separate IAM user for each participating on\-premises instance
 
 We recommed that you assign the IAM user a name that identifies its purpose, such as CodeDeployUser\-OnPrem\.
 
-You can use the AWS CLI or the IAM console to create an IAM user\. For information, see [Creating an IAM User in Your AWS Account](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)\. 
+You can use the AWS CLI or the IAM console to create an IAM user\. For information, see [Creating an IAM User in Your AWS Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)\. 
 
 **Important**  
 Whether you use the AWS CLI or the IAM console to create a new IAM user, make a note of the user ARN provided for the user\. You will need this information later in [Step 4: Add a Configuration File to the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-4) and [Step 8: Register the On\-Premises Instance with AWS CodeDeploy](#register-on-premises-instance-iam-user-arn-8)\.
@@ -92,7 +92,7 @@ For example:
    }
    ```
 
-1. Call the [put\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html) command, specifying the name of the IAM user \(with the `--user-name` option\), a name for the policy \(with the `--policy-name` option\), and the path to the newly created policy document \(with the `--policy-document` option\)\. For example, assuming that the **CodeDeploy\-OnPrem\-Permissions\.json** file is in the same directory \(folder\) from which you're calling this command:
+1. Call the [put\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html) command, specifying the name of the IAM user \(with the `--user-name` option\), a name for the policy \(with the `--policy-name` option\), and the path to the newly created policy document \(with the `--policy-document` option\)\. For example, assuming that the **CodeDeploy\-OnPrem\-Permissions\.json** file is in the same directory \(folder\) from which you're calling this command:
 **Important**  
 Be sure to include `file://` before the file name\. It is required in this command\.
 
@@ -147,13 +147,13 @@ If you already have the secret key ID and the secret access key, skip this step 
 
 **To get the credentials \(CLI\)**
 
-1. Call the [list\-access\-keys](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html) command, specifying the name of the IAM user \(with the `--user-name` option\) and querying for just the access key IDs \(with the `--query` and `--output` options\)\. For example:
+1. Call the [list\-access\-keys](https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html) command, specifying the name of the IAM user \(with the `--user-name` option\) and querying for just the access key IDs \(with the `--query` and `--output` options\)\. For example:
 
    ```
    aws iam list-access-keys --user-name CodeDeployUser-OnPrem --query "AccessKeyMetadata[*].AccessKeyId" --output text
    ```
 
-1. If no keys appear in the output or information about only one key appears in the output, call the [create\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html) command, specifying the name of the IAM user \(with the `--user-name` option\):
+1. If no keys appear in the output or information about only one key appears in the output, call the [create\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html) command, specifying the name of the IAM user \(with the `--user-name` option\):
 
    ```
    aws iam create-access-key --user-name CodeDeployUser-OnPrem
@@ -163,7 +163,7 @@ If you already have the secret key ID and the secret access key, skip this step 
 **Important**  
 This will be the only time you will have access to this secret access key\. If you forget or lose access to this secret access key, you will need to generate a new one by following the steps in [Step 3: Get the IAM User Credentials](#register-on-premises-instance-iam-user-arn-3)\.
 
-1. If two access keys are already listed, you must delete one of them by calling the [delete\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html) command, specifying the name of the IAM user \(with the `--user-name` option\), and the ID of the access key to delete \(with the `--access-key-id` option\)\. Then call the create\-access\-key command, as described earlier in this step\. Here's an example of calling the delete\-access\-key command:
+1. If two access keys are already listed, you must delete one of them by calling the [delete\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html) command, specifying the name of the IAM user \(with the `--user-name` option\), and the ID of the access key to delete \(with the `--access-key-id` option\)\. Then call the create\-access\-key command, as described earlier in this step\. Here's an example of calling the delete\-access\-key command:
 
    ```
    aws iam delete-access-key --user-name CodeDeployUser-OnPrem --access-key-id access-key-ID
@@ -215,7 +215,7 @@ Add a configuration file to the on\-premises instance, using root or administrat
    + *secret\-key\-id* is the corresponding IAM user's secret key ID you noted in [Step 1: Create an IAM User for the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-1) or [Step 3: Get the IAM User Credentials](#register-on-premises-instance-iam-user-arn-3)\.
    + *secret\-access\-key* is the corresponding IAM user's secret access key you noted in [Step 1: Create an IAM User for the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-1) or [Step 3: Get the IAM User Credentials](#register-on-premises-instance-iam-user-arn-3)\.
    + *iam\-user\-arn* is the IAM user's ARN you noted earlier in [Step 1: Create an IAM User for the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-1)\. 
-   + *supported\-region* is the identifier of a region supported by AWS CodeDeploy where your AWS CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
+   + *supported\-region* is the identifier of a region supported by AWS CodeDeploy where your AWS CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
 **Important**  
 If you chose **Delete** next to one of the access keys in [Step 3: Get the IAM User Credentials](#register-on-premises-instance-iam-user-arn-3), and your on\-premises instance is already using the associated access key ID and secret access key, you will need to follow the instructions in [Step 4: Add a Configuration File to the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-4) to specify a different access key ID and secret access key associated with this IAM user\. Otherwise, any deployments to your on\-premises instance might be stuck in a perpetual pending state or fail altogether\.
 
@@ -223,11 +223,11 @@ If you chose **Delete** next to one of the access keys in [Step 3: Get the IAM U
 
 Install and configure the AWS CLI on the on\-premises instance\. \(The AWS CLI will be used in [Step 7: Install the AWS CodeDeploy Agent ](#register-on-premises-instance-iam-user-arn-7) to download and install the AWS CodeDeploy agent on the on\-premises instance\.\)
 
-1. To install the AWS CLI on the on\-premises instance, follow the instructions in [Getting Set Up with the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) in the *AWS Command Line Interface User Guide*\.
+1. To install the AWS CLI on the on\-premises instance, follow the instructions in [Getting Set Up with the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) in the *AWS Command Line Interface User Guide*\.
 **Note**  
 AWS CodeDeploy commands for working with on\-premises instances became available in version 1\.7\.19 of the AWS CLI\. If you have a version of the AWS CLI already installed, you can check its version by calling aws \-\-version\.
 
-1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
+1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
 **Important**  
 As you configure the AWS CLI \(for example, by calling the aws configure command\), be sure to specify the secret key ID and secret access key of an IAM user that has, at minimum, the following AWS access permissions in addition to the access permissions specified in the [Prerequisites for Configuring an On\-Premises Instance](instances-on-premises-prerequisites.md)\. This makes it possible for you to download and install the AWS CodeDeploy agent on the on\-premises instance:  
 
@@ -275,7 +275,7 @@ These access permissions can be assigned to either the IAM user you created in [
 
 If you are not running Ubuntu Server or RHEL on your on\-premises instance, skip this step and go directly to [Step 7: Install the AWS CodeDeploy Agent ](#register-on-premises-instance-iam-user-arn-7)\. 
 
-Install the AWS CodeDeploy agent on an Ubuntu Server or RHEL on\-premises instance and enable the instance to update the AWS CodeDeploy agent whenever a new version becomes available\. You do this by setting the `AWS_REGION` environment variable on the instance to the identifier of one of the regions supported by AWS CodeDeploy\. We recommend that you set the value to the region where your AWS CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
+Install the AWS CodeDeploy agent on an Ubuntu Server or RHEL on\-premises instance and enable the instance to update the AWS CodeDeploy agent whenever a new version becomes available\. You do this by setting the `AWS_REGION` environment variable on the instance to the identifier of one of the regions supported by AWS CodeDeploy\. We recommend that you set the value to the region where your AWS CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
 
 To set the environment variable, call the following from the terminal:
 
@@ -298,13 +298,13 @@ The instructions in this step assume you are registering the on\-premises instan
 
 Use the AWS CLI to register the on\-premises instance with AWS CodeDeploy so that it can be used in deployments\.
 
-1. Before you can use the AWS CLI, you will need the user ARN of the IAM user you created in [Step 1: Create an IAM User for the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-1)\. If you don't already have the user ARN, call the [get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) command, specifying the name of the IAM user \(with the `--user-name` option\) and querying for just the user ARN \(with the `--query` and `--output` options\):
+1. Before you can use the AWS CLI, you will need the user ARN of the IAM user you created in [Step 1: Create an IAM User for the On\-Premises Instance](#register-on-premises-instance-iam-user-arn-1)\. If you don't already have the user ARN, call the [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) command, specifying the name of the IAM user \(with the `--user-name` option\) and querying for just the user ARN \(with the `--query` and `--output` options\):
 
    ```
    aws iam get-user --user-name CodeDeployUser-OnPrem --query "User.Arn" --output text
    ```
 
-1. Call the [register\-on\-premises\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command, specifying:
+1. Call the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command, specifying:
    + A name that uniquely identifies the on\-premises instance \(with the `--instance-name` option\)\. 
 **Important**  
 To help identify the on\-premises instance, especially for debugging purposes, we strongly recommend that you specify a name that maps to some unique characteristic of the on\-premises instance \(for example, the serial number or an internal asset identifier, if applicable\)\. If you specify a MAC address as a name, be aware that MAC addresses contain characters that AWS CodeDeploy does not allow, such as colon \(`:`\)\. For a list of allowed characters, see [AWS CodeDeploy Limits](limits.md)\.
@@ -321,7 +321,7 @@ To help identify the on\-premises instance, especially for debugging purposes, w
 You can use either the AWS CLI or the AWS CodeDeploy console to tag the on\-premises instance\. \(AWS CodeDeploy uses on\-premises instance tags to identify the deployment targets during a deployment\.\)
 
 **To tag the on\-premises instance \(CLI\)**
-+ Call the [add\-tags\-to\-on\-premises\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/add-tags-to-on-premises-instances.html) command, specifying:
++ Call the [add\-tags\-to\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/add-tags-to-on-premises-instances.html) command, specifying:
   + The name that uniquely identifies the on\-premises instance \(with the `--instance-names` option\)\. 
   + The name of the on\-premises instance tag key and tag value you want to use \(with the `--tags` option\)\. You must specify both a name and value\. AWS CodeDeploy does not allow on\-premises instance tags that have values only\.
 

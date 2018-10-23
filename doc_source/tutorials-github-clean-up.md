@@ -14,13 +14,13 @@ To avoid further charges for resources you used during this tutorial, you must t
 
 ## To manually deregister and clean up an on\-premises instance \(if you provisioned an on\-premises instance\)<a name="tutorials-github-clean-up-on-premises-instance"></a>
 
-1. Use the AWS CLI to call the [deregister](http://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command against the on\-premises instance represented here by *your\-instance\-name* and the associated region by *your\-region*:
+1. Use the AWS CLI to call the [deregister](https://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command against the on\-premises instance represented here by *your\-instance\-name* and the associated region by *your\-region*:
 
    ```
    aws deploy deregister --instance-name your-instance-name --delete-iam-user --region your-region
    ```
 
-1. From the on\-premises instance, call the [uninstall](http://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command:
+1. From the on\-premises instance, call the [uninstall](https://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command:
 
    ```
    aws deploy uninstall

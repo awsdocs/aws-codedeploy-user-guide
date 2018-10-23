@@ -23,9 +23,9 @@ AWS CodeDeploy provides three default deployment configurations that have common
 You'll find more information about default deployment configurations in [Working with Deployment Configurations in AWS CodeDeploy](deployment-configurations.md)\.
 
 You can create custom deployment configurations in AWS CodeDeploy to define your own minimum healthy host values\. You can define these values as whole numbers or percentages when using the following operations:
-+ As `minimum-healthy-hosts` when you use the [create\-deployment\-config](http://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-config.html) command in the AWS CLI\.
-+ As `Value` in the [MinimumHealthyHosts](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_MinimumHealthyHosts.html) data type in the AWS CodeDeploy API\.
-+ As `MinimumHealthyHosts` when you use [AWS::CodeDeploy::DeploymentConfig](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html) in an AWS CloudFormation template\.
++ As `minimum-healthy-hosts` when you use the [create\-deployment\-config](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-config.html) command in the AWS CLI\.
++ As `Value` in the [MinimumHealthyHosts](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_MinimumHealthyHosts.html) data type in the AWS CodeDeploy API\.
++ As `MinimumHealthyHosts` when you use [AWS::CodeDeploy::DeploymentConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html) in an AWS CloudFormation template\.
 
 **Topics**
 + [Health Status](#instances-health-status)

@@ -55,7 +55,7 @@ Type the following commands to browse the log file for error messages:
 
 | Command | Result | 
 | --- | --- | 
-| /stderr | Show just the error messages in the log file\.  | 
+| &stderr | Show just the error messages in the log file\.  | 
 | /stderr | Search for the next error message\.¹ | 
 | ?stderr | Search for the previous error message\.² | 
 | G | Go to the end of the log file\. | 

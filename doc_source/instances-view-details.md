@@ -2,7 +2,7 @@
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about instances used in a deployment\.
 
-For information about using AWS CodeDeploy API actions to view instances, see [GetDeploymentInstance](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html), [ListDeploymentInstances](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.html), and [ListOnPremisesInstances](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html)\.
+For information about using AWS CodeDeploy API actions to view instances, see [GetDeploymentInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html), [ListDeploymentInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.html), and [ListOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html)\.
 
 **Topics**
 + [View Instance Details \(Console\)](#instances-view-details-console)
@@ -18,7 +18,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. On the AWS CodeDeploy menu, choose **Deployments**\. 
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. To display deployment details, choose the arrow next to the deployment ID that corresponds to the instance\. 
 
@@ -34,10 +34,10 @@ If **Failed** is displayed for any of the lifecycle events, on the instance deta
 
 To use the AWS CLI to view instance details, call either the `get-deployment-instance` command or the `list-deployment-instances` command\.
 
-To view details about a single instance, call the [get\-deployment\-instance](http://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command, specifying: 
-+ The unique deployment ID\. To get the deployment ID, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
-+ The unique instance ID\. To get the instance ID, call the [list\-deployment\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command\.
+To view details about a single instance, call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command, specifying: 
++ The unique deployment ID\. To get the deployment ID, call the [list\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
++ The unique instance ID\. To get the instance ID, call the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command\.
 
-To view a list of IDs for instances used in a deployment, call the [list\-deployment\-instances](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command, specifying:
-+ The unique deployment ID\. To get the deployment ID, call the [list\-deployments](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
+To view a list of IDs for instances used in a deployment, call the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command, specifying:
++ The unique deployment ID\. To get the deployment ID, call the [list\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.
 + Optionally, whether to include only specific instance IDs by their deployment status\. \(If not specified, all matching instance IDs will be listed, regardless of their deployment status\.\)

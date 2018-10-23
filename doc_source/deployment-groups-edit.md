@@ -21,7 +21,7 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
 1. In the list of applications, choose the application that is associated with the deployment group you want to change\.
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
 1. On the **Application details** page, in **Deployment groups**, choose the button next to the deployment group you want to change\.
 
@@ -39,12 +39,12 @@ The **Deploy changes made to *deployment group name*** check box appears only if
 
 ## Change Deployment Group Settings \(CLI\)<a name="deployment-groups-edit-cli"></a>
 
-To use the AWS CLI to change deployment group settings, call the [update\-deployment\-group](http://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command, specifying:
+To use the AWS CLI to change deployment group settings, call the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command, specifying:
 + For EC2/On\-Premises and AWS Lambda deployments:
-  + The application name\. To view a list of application names, call the [list\-applications](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
-  + The current deployment group name\. To view a list of deployment group names, call the [list\-deployment\-groups](http://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
+  + The application name\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
+  + The current deployment group name\. To view a list of deployment group names, call the [list\-deployment\-groups](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-groups.html) command\.
   + \(Optional\) A different deployment group name\.
-  + \(Optional\) A different Amazon Resource Name \(ARN\) that corresponds to a service role that allows AWS CodeDeploy to act on your AWS account's behalf when interacting with other AWS services\. To get the service role ARN, see [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\. For more information about service roles, see [Roles Terms and Concepts](http://docs.aws.amazon.com/IAM/latest/UserGuide/cross-acct-access.html) in *IAM User Guide*\.
+  + \(Optional\) A different Amazon Resource Name \(ARN\) that corresponds to a service role that allows AWS CodeDeploy to act on your AWS account's behalf when interacting with other AWS services\. To get the service role ARN, see [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\. For more information about service roles, see [Roles Terms and Concepts](https://docs.aws.amazon.com/IAM/latest/UserGuide/cross-acct-access.html) in *IAM User Guide*\.
   + \(Optional\) The name of the deployment configuration\. To view a list of deployment configurations, see [View Deployment Configuration Details with AWS CodeDeploy](deployment-configurations-view-details.md)\. \(If not specified, AWS CodeDeploy uses a default deployment configuration\.\)
   + \(Optional\) Commands to add one or more existing CloudWatch alarms to the deployment group that are activated if a metric specified in an alarm falls below or exceeds a defined threshold\.
   + \(Optional\) Commands for a deployment to roll back to the last known good revision when a deployment fails or a CloudWatch alarm is activated\.
