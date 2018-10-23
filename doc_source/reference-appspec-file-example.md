@@ -16,10 +16,10 @@ Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
-        Name: "myLambdaFunction"
-        Alias: "myLambdaFunctionAlias"
-        CurrentVersion: "1"
-        TargetVersion: "2"
+        Name: myLambdaFunction
+        Alias: myLambdaFunctionAlias
+        CurrentVersion: 1
+        TargetVersion: 2
 Hooks:
     - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
     - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"

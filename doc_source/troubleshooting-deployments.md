@@ -1,4 +1,4 @@
-# Troubleshoot EC2/On\-PremisesDeployment Issues<a name="troubleshooting-deployments"></a>
+# Troubleshoot EC2/On\-Premises Deployment Issues<a name="troubleshooting-deployments"></a>
 
 **Topics**
 + [Deployment fails with the message “Validation of PKCS7 signed message failed”](#troubleshooting-deployments-agent-SHA-256)
