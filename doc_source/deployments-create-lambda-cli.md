@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an AWS Lambda Compute Platform Deployment \(CLI\)<a name="deployments-create-lambda-cli"></a>
 
 After you have created the application and revision \(in AWS Lambda deployments, this is the AppSpec file\):

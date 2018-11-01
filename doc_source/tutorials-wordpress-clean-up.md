@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 6: Clean Up Your WordPress Application and Related Resources<a name="tutorials-wordpress-clean-up"></a>
 
 You've now successfully made an update to the WordPress code and redeployed the site\. To avoid ongoing charges for resources you created for this tutorial, you should delete:
@@ -78,17 +84,15 @@ To delete the `WordPress_App` application from AWS CodeDeploy:
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Applications**\. 
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
 1. In the list of applications, choose **WordPress\_App**\.
 
-1. On the **Application details** page, in **Deployment groups**, choose the button next to the deployment group\. On the **Actions** menu, choose **Delete**\. When prompted, type the name of the deployment group to confirm you want to delete it, and then choose **Delete**\.
+1. On the **Application details** page, choose **Delete application**\.
 
-1. At the bottom of the **Application details** page, choose **Delete application**\.
-
-1. When prompted, type the name of the application to confirm you want to delete it, and then choose **Delete**\. 
+1. When prompted, enter the name of the application to confirm you want to delete it, and then choose **Delete**\. 
 
 ## What's Next?<a name="tutorials-wordpress-clean-up-whats-next"></a>
 

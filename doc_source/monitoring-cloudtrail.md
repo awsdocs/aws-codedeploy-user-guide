@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Monitoring Deployments with AWS CloudTrail<a name="monitoring-cloudtrail"></a>
 
 AWS CodeDeploy is integrated with CloudTrail, a service that captures API calls made by or on behalf of AWS CodeDeploy in your AWS account and delivers the log files to an Amazon S3 bucket you specify\. CloudTrail captures API calls from the AWS CodeDeploy console, from AWS CodeDeploy commands through the AWS CLI, or from the AWS CodeDeploy APIs directly\. Using the information collected by CloudTrail, you can determine which request was made to AWS CodeDeploy, the source IP address from which the request was made, who made the request, when it was made, and so on\. To learn more about CloudTrail, including how to configure and enable it, see [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.

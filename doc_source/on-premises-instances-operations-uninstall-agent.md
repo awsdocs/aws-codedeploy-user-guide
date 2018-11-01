@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Automatically Uninstall the AWS CodeDeploy Agent and Remove the Configuration File from an On\-Premises Instance<a name="on-premises-instances-operations-uninstall-agent"></a>
 
 Typically, you uninstall the AWS CodeDeploy agent and remove the configuration file from an on\-premises instance after you're no longer planning to deploy to it\.

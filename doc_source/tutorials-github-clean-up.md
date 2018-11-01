@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 8: Clean Up<a name="tutorials-github-clean-up"></a>
 
 To avoid further charges for resources you used during this tutorial, you must terminate the Amazon EC2 instance and its associated resources\. Optionally, you can delete the AWS CodeDeploy deployment component records associated with this tutorial\. If you were using a GitHub repository just for this tutorial, you can delete it now, too\.
@@ -40,17 +46,15 @@ To avoid further charges for resources you used during this tutorial, you must t
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. If the **Applications** page is not displayed, on the AWS CodeDeploy menu, choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
 1. Choose **CodeDeployGitHubDemo\-App**\.
 
-1. On the **Application details** page, in **Deployment groups**, choose the button next to the deployment group\. On the **Actions** menu, choose **Delete**\. When prompted, type the name of the deployment group to confirm you want to delete it, and then choose **Delete**\.
+1. Choose **Delete application**\.
 
-1. At the bottom of the **Application details** page, choose **Delete application**\.
-
-1. When prompted, type the name of the application to confirm you want to delete it, and then choose **Delete**\. 
+1. When prompted, enter **Delete**, and then choose **Delete**\. 
 
 ## To delete your GitHub repository<a name="tutorials-github-clean-up-github-repository"></a>
 

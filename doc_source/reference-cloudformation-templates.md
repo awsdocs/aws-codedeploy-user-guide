@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CloudFormation Templates for AWS CodeDeploy Reference<a name="reference-cloudformation-templates"></a>
 
 In addition to the other methods available to you in AWS CodeDeploy, you can use AWS CloudFormation templates to perform the following tasks:

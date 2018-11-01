@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an Application with AWS CodeDeploy<a name="applications-create"></a>
 
 An *application* is simply a name or container used by AWS CodeDeploy to ensure that the correct revision, deployment configuration, and deployment group are referenced during a deployment\. You can use the AWS CodeDeploy console, the AWS CLI, the AWS CodeDeploy APIs, or an AWS CloudFormation template to create applications\.

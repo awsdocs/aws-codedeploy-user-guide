@@ -1,6 +1,12 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 5: Check Your Results Again<a name="tutorials-auto-scaling-group-reverify"></a>
 
-In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp revision on the new instance in the Auto Scaling group\.
+In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp revision on the new instance in the Amazon EC2 Auto Scaling group\.
 
 **Topics**
 + [To check automatic deployment results \(CLI\)](#tutorials-auto-scaling-group-reverify-cli)
@@ -20,7 +26,7 @@ In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp 
    aws deploy get-deployment --deployment-id deployment-id --query "deploymentInfo.[status, creator]" --output text
    ```
 
-   In addition to the deployment status, you should see `autoScaling` in the command output\. \(`autoScaling` means Auto Scaling created the deployment\.\) 
+   In addition to the deployment status, you should see `autoScaling` in the command output\. \(`autoScaling` means Amazon EC2 Auto Scaling created the deployment\.\) 
 
    Do not proceed until the deployment status shows `Succeeded`\.
 
@@ -44,19 +50,23 @@ In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp 
    http://ec2-01-234-567-890.compute-1.amazonaws.com
    ```
 
-   If the congratulations page appears, you've used AWS CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Auto Scaling group\!
+   If the congratulations page appears, you've used AWS CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
 
 ## To check automatic deployment results \(console\)<a name="tutorials-auto-scaling-group-reverify-console"></a>
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployments**\. The **Deployments** page displays information about the deployment Auto Scaling created\. Normally, you would create a deployment on your own, but Auto Scaling created one on your behalf to deploy your revision to the new Amazon EC2 instance\.
-**Note**  
-To update the deployment's current status, use refresh the page in your browser\.
+1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
 
-1. After **Succeeded** is displayed for the deployment status, verify the results on the instance\. You will first need to get the public DNS of the instance:
+1. Choose the deployment ID of the deployment that Amazon EC2 Auto Scaling created\.
+
+   \.
+
+1.  The **Deployment** page displays information about the deployment\. Normally, you would create a deployment on your own, but Amazon EC2 Auto Scaling created one on your behalf to deploy your revision to the new Amazon EC2 instance\.
+
+1. After **Succeeded** is displayed at the top of the page, verify the results on the instance\. You first need to get the public DNS of the instance:
 
 1. In the Amazon EC2 navigation pane, under **Auto Scaling**, choose **Auto Scaling Groups**, and then choose the **CodeDeployDemo\-AS\-Group** entry\.
 
@@ -70,4 +80,4 @@ Show the `SimpleDemoApp` revision deployed to the instance using a URL like the 
 http://ec2-01-234-567-890.compute-1.amazonaws.com
 ```
 
-If the congratulations page appears, you've used AWS CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Auto Scaling group\!
+If the congratulations page appears, you've used AWS CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!

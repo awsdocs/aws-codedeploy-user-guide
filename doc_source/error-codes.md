@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Error Codes for AWS CodeDeploy<a name="error-codes"></a>
 
 This topic provides reference information about AWS CodeDeploy errors\.
@@ -15,7 +21,7 @@ This topic provides reference information about AWS CodeDeploy errors\.
 | `AUTO_SCALING_IAM_ROLE_PERMISSIONS` |  The service role associated with your deployment group does not have the permission required to perform operations in the following AWS service\. Learn more: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
 | `OVER_MAX_INSTANCES` |  The deployment failed because more instances are targeted for deployment than are allowed for your account\. To reduce the number of instances targeted for this deployment, update the tag settings for this deployment group or delete some of the targeted instances\. Alternatively, you can contact AWS Support to request a limit increase\. Learn more: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
 | `THROTTLED` |  The deployment failed because more requests were made than are permitted for AWS CodeDeploy by an IAM role\. Try reducing the number of requests\. Learn more:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
-| `UNABLE_TO_SEND_ASG` |  The deployment failed because the deployment group isn’t configured correctly with its Auto Scaling group\. In the AWS CodeDeploy console, delete the Auto Scaling group from the deployment group, and then add it again\. Learn more: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
+| `UNABLE_TO_SEND_ASG` |  The deployment failed because the deployment group isn’t configured correctly with its Amazon EC2 Auto Scaling group\. In the AWS CodeDeploy console, delete the Amazon EC2 Auto Scaling group from the deployment group, and then add it again\. Learn more: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
 
 ## Related Topics<a name="error-codes-related-topics"></a>
 

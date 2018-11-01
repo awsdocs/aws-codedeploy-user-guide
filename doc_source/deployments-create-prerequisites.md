@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Deployment Prerequisites<a name="deployments-create-prerequisites"></a>
 
 Make sure the following steps are complete before you start a deployment\.
@@ -8,7 +14,7 @@ Make sure the following steps are complete before you start a deployment\.
 + If you want to use a custom deployment configuration for your deployment, create it before starting the deployment process\. For information, see [Create a Deployment Configuration with AWS CodeDeploy](deployment-configurations-create.md)\.
 
 ## Deployment Prerequisites on an EC2/On\-Premises Compute Platform<a name="deployment-prerequisites-server"></a>
-+ For an in\-place deployment, create or configure the instances you want to deploy to\. For information, see [Working with Instances for AWS CodeDeploy](instances.md)\. For a blue/green deployment, you either have an existing Auto Scaling group to use as a template for your replacement environment, or you have one or more instances or Auto Scaling groups that you specify as your original environment\. For more information, see [Tutorial: Use AWS CodeDeploy to Deploy an Application to an Auto Scaling Group](tutorials-auto-scaling-group.md) and [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\. 
++ For an in\-place deployment, create or configure the instances you want to deploy to\. For information, see [Working with Instances for AWS CodeDeploy](instances.md)\. For a blue/green deployment, you either have an existing Amazon EC2 Auto Scaling group to use as a template for your replacement environment, or you have one or more instances or Amazon EC2 Auto Scaling groups that you specify as your original environment\. For more information, see [Tutorial: Use AWS CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md) and [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\. 
 + Create an application that includes at least one deployment group\. For information, see [Create an Application with AWS CodeDeploy](applications-create.md) and [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\.
 + Prepare the application revision that you want to deploy to the instances in your deployment group\. For information, see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
 + If you want to use a custom deployment configuration for your deployment, create it before starting the deployment process\. For information, see [Create a Deployment Configuration with AWS CodeDeploy](deployment-configurations-create.md)\.

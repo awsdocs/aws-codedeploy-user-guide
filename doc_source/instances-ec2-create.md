@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CLI or Amazon EC2 Console\)<a name="instances-ec2-create"></a>
 
 These instructions show you how to launch a new Amazon EC2 instance that is configured for use in AWS CodeDeploy deployments\.
@@ -18,7 +24,7 @@ If you have not done so already, follow the instructions in [Getting Started wit
 
 1. On the **Step 2: Choose an Instance Type** page, choose any available Amazon EC2 instance type, and then choose **Next: Configure Instance Details**\.
 
-1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance role you created in [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.  If you used the suggested role name, then you will choose **CodeDeployDemo\-EC2\-Instance\-Profile**\. If you created your own role name, select that\.
+1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance role you created in [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\. If you used the suggested role name, then choose **CodeDeployDemo\-EC2\-Instance\-Profile**\. If you created your own role name, choose that\.
 **Note**  
 If neither **Launch into EC2\-Classic** nor a default virtual private cloud \(VPC\) is displayed in the **Network** list, and you are not able to select a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose an Amazon VPC and subnet, or choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
 

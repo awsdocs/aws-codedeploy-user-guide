@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 3: Upload a Sample Application to Your GitHub Repository<a name="tutorials-github-upload-sample-revision"></a>
 
 In this step, you will copy a sample revision from a public Amazon S3 bucket to your GitHub repository\. \(For simplicity, the sample revisions provided for this tutorial are single web pages\.\)

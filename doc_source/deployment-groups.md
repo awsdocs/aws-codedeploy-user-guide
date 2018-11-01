@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Working with Deployment Groups in AWS CodeDeploy<a name="deployment-groups"></a>
 
 ## Deployment Groups in AWS Lambda Compute Platform Deployments<a name="deployment-group-lambda"></a>
@@ -6,7 +12,7 @@ In an AWS Lambda deployment, a deployment group defines a set of AWS CodeDeploy 
 
 ## Deployment Groups in EC2/On\-Premises Compute Platform Deployments<a name="deployment-group-server"></a>
 
-In an EC2/On\-Premises deployment, a deployment group is a set of individual instances targeted for a deployment\. A deployment group contains individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both\. 
+In an EC2/On\-Premises deployment, a deployment group is a set of individual instances targeted for a deployment\. A deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both\. 
 
 In an in\-place deployment, the instances in the deployment group are updated with the latest application revision\. 
 
@@ -20,7 +26,7 @@ When you use the AWS CodeDeploy console to create an application, you configure 
 
 To view a list of deployment groups already associated with your AWS account, see [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)\. 
 
-For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Auto Scaling, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
+For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Amazon EC2 Auto Scaling, see [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 ## <a name="topiclist-deployment-groups"></a>
 

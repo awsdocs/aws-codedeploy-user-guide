@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 4: Deploy Your WordPress Application<a name="tutorials-wordpress-deploy-application"></a>
 
 Now you deploy the sample WordPress application revision you uploaded to Amazon S3\. You can use the AWS CLI or the AWS CodeDeploy console to deploy the revision and monitor the deployment's progress\. After the application revision is successfully deployed, you check the results\.
@@ -52,37 +58,35 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
 
    Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. If the **Applications** page is not displayed, on the AWS CodeDeploy menu, choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
 1. In the list of applications, choose **WordPress\_App**\.
 
-1. Under **Deployment groups**, choose **Create deployment group**\.
+1. On the **Deployment groups** tab, choose **Create deployment group**\.
 
-1. In **Deployment group name**, type **WordPress\_DepGroup**\.
+1. In **Deployment group name**, enter **WordPress\_DepGroup**\.
 
 1. Under **Deployment type**, choose **In\-place deployment**\.
 
-1. In **Environment configuration**, choose the **Amazon EC2 instances** tab\.
+1. In **Environment configuration**, select **Amazon EC2 instances**\.
 
-1. In the **Key** box, type **Name**\.
+1. In **Key**, enter **Name**\.
 
-1. In the **Value** box, type **CodeDeployDemo**\.
+1. In **Value**, enter **CodeDeployDemo**\.
 **Note**  
-After you type **CodeDeployDemo**, a **1** should appear under **Instances** to confirm AWS CodeDeploy found one matching Amazon EC2 instance\.
+After you type **CodeDeployDemo**, a **1** should appear under **Matching instances** to confirm AWS CodeDeploy found one matching Amazon EC2 instance\.
 
-1. In the **Deployment configuration** drop\-down list, choose **CodeDeployDefault\.OneAtATime**\.
+1. In **Deployment configuration**, choose **CodeDeployDefault\.OneAtATime**\.
 
-1. In the **Service role ARN** drop\-down list, choose the service role ARN, and then choose **Create deployment group**\.
+1. In **Service role ARN**, choose the service role ARN, and then choose **Create deployment group**\.
 
-1. On the **Application details** page, select the button next to the new deployment group\. From the **Actions** menu, choose **Deploy new revision**\.
+1. Choose **Create deployment**\.
 
-1. In the **Application** drop\-down list, choose **WordPress\_App**\.
+1. In **Deployment group** choose **WordPress\_DepGroup**\.
 
-1. In the **Deployment group** drop\-down list, choose **WordPress\_DepGroup**\.
-
-1. Next to **Repository type**, choose **My application is stored in Amazon S3**\. In **Revision location**, type the location of the sample WordPress application revision you previously uploaded to Amazon S3\. To get the location:
+1. Next to **Repository type**, choose **My application is stored in Amazon S3**\. In **Revision location**, enter the location of the sample WordPress application revision you previously uploaded to Amazon S3\. To get the location:
 
    1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
 
@@ -102,11 +106,9 @@ After you type **CodeDeployDemo**, a **1** should appear under **Instances** to 
 
 1. \(Optional\) Type a comment in the **Deployment description** box\. 
 
-1. From the **Deployment configuration** drop\-down list, choose **CodeDeployDefault\.OneAtATime**\.
+1. Expand **Deployment group overrides**, and from **Deployment configuration**, choose **CodeDeployDefault\.OneAtATime**\.
 
-1. Choose **Deploy**\. Information about your newly created deployment appears on the **Deployments** page\.
-**Note**  
-To get the current status of the deployment, choose the **Refresh** button next to the table\.
+1. Choose **Start deployment**\. Information about your newly created deployment appears on the **Deployments** page\.
 
 ## Monitor and Troubleshoot Your Deployment<a name="tutorials-wordpress-deploy-application-monitor"></a>
 
@@ -136,16 +138,11 @@ To get the current status of the deployment, choose the **Refresh** button next 
 
 On the **Deployments** page in the AWS CodeDeploy console, you can monitor your deployment's status in the **Status** column\.
 
-**Note**  
-To get the current status of the deployment, choose the **Refresh** button above the table\.
-
 To get more information about your deployment, especially if the **Status** column value has any value other than **Succeeded**:
 
-1. In the **Deployments** table, choose the arrow next to the deployment ID\. After a deployment fails, a message that describes the reason for the failure appears in **Details**\.
+1. In the **Deployments** table, choose the name of the deployment\. After a deployment fails, a message that describes the reason for the failure is displayed\.
 
-1. In **Instances**, choose **View all instances**\. More information about the deployment is displayed\. After a deployment fails, you might be able to determine on which Amazon EC2 instances and at which step the deployment failed\.
-**Note**  
-If you don't see **Instances**, choose the **Refresh** button above the table\. After the **Status** column changes from **In progress** to **Created**, **Instances** should appear\.
+1. In **Instance activity**, more information about the deployment is displayed\. After a deployment fails, you might be able to determine on which Amazon EC2 instances and at which step the deployment failed\.
 
 1. If you want to do more troubleshooting, you can use a technique like the one described in [View Instance Details with AWS CodeDeploy](instances-view-details.md)\. You can also analyze the deployment log files on an Amazon EC2 instance\. For more information, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
 

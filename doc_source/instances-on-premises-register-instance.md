@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Use the register Command \(IAM User ARN\) to Register an On\-Premises Instance<a name="instances-on-premises-register-instance"></a>
 
 This section describes how to configure an on\-premises instance and register and tag it with AWS CodeDeploy with the least amount of effort\. The register command is most useful when you are working with single or small fleets of on\-premises instances\. You can use the register command only when you are using an IAM user ARN to authenticate an instance\. You cannot use the register command with an IAM session ARN for authentication\.

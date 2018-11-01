@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CodeDeploy Permissions Reference<a name="auth-and-access-control-permissions-reference"></a>
 
 When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The table lists each AWS CodeDeploy API operation, the corresponding actions for which you can grant permissions to perform the action, and the format of the resource ARN to use for granting permissions\. You specify the actions in the policy's `Action` field, and you specify an ARN, with or without a wildcard character \(\*\), as the resource value in the policy's `Resource` field\.
@@ -65,7 +71,7 @@ If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, 
 |  [ListDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeployments.html)  |  `codedeploy:ListDeployments` Required to get information about all deployments to a deployment group associated with the IAM user, or to get all deployments associated with the IAM user or AWS account\.  |  arn:aws:codedeploy:*region*:*account\-id*:deploymentgroup:*application\-name*/*deployment\-group\-name*  | 
 |  [ListGitHubAccountTokenNames](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListGitHubAccountTokenNames.html)  |  `codedeploy:ListGitHubAccountTokenNames` Required to get a list of the names of stored connections to GitHub accounts\.   |  arn:aws:codedeploy:*region*:*account\-id*:\*  | 
 |  [ListOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html)  |  `codedeploy:ListOnPremisesInstances` Required to get a list of one or more on\-premises instance names\.  |  arn:aws:codedeploy:*region*:*account\-id*:\*  | 
-|   PutLifecycleEventHookExecutionStatus  |  `codedeploy:PutLifecycleEventHookExecutionStatus` Required to provide notification of the status of the execution of a lifecycle hook event\.  |  arn:aws:codedeploy:*region*:*account\-id*:deploymentgroup:*application\-name*/*deployment\-group\-name*  | 
+|  PutLifecycleEventHookExecutionStatus  |  `codedeploy:PutLifecycleEventHookExecutionStatus` Required to provide notification of the status of the execution of a lifecycle hook event\.  |  arn:aws:codedeploy:*region*:*account\-id*:deploymentgroup:*application\-name*/*deployment\-group\-name*  | 
 |  [RegisterApplicationRevision](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterApplicationRevision.html)  |  `codedeploy:RegisterApplicationRevision` Required to register information about an application revision for an application associated with the IAM user\.  |  arn:aws:codedeploy:*region*:*account\-id*:application:*application\-name*  | 
 |  [RegisterOnPremisesInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterOnPremisesInstance.html)  |  `codedeploy:RegisterOnPremisesInstance` Required to register an on\-premises instance with AWS CodeDeploy\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
 |  [RemoveTagsFromOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RemoveTagsFromOnPremisesInstances.html)  |  `codedeploy:RemoveTagsFromOnPremisesInstances` Required to remove tags from one or more on\-premises instances\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 

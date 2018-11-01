@@ -1,8 +1,14 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 1: Provision an IAM User<a name="getting-started-provision-user"></a>
 
 Follow these instructions to prepare an IAM user to use AWS CodeDeploy:
 
-1. Create an IAM user or use an existing one associated with your AWS account\. For more information, see [Creating an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html#Using_CreateUser_console) in *IAM User Guide*\.
+1. Create an IAM user or use one associated with your AWS account\. For more information, see [Creating an IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_SettingUpUser.html#Using_CreateUser_console) in *IAM User Guide*\.
 
 1. Grant the IAM user access to AWS CodeDeploy—and AWS services and actions AWS CodeDeploy depends on—by copying the following policy and attaching it to the IAM user:
 

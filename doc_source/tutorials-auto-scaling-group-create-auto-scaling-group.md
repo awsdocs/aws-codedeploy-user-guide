@@ -1,14 +1,20 @@
-# Step 1: Create and Configure the Auto Scaling Group<a name="tutorials-auto-scaling-group-create-auto-scaling-group"></a>
+--------
 
-In this step, you'll create an Auto Scaling group that contains a single Amazon Linux, RHEL, or Windows Server Amazon EC2 instance\. In a later step, you will instruct Auto Scaling to add one more Amazon EC2 instance, and AWS CodeDeploy will deploy your revision to it\.
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
+# Step 1: Create and Configure the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-create-auto-scaling-group"></a>
+
+In this step, you'll create an Amazon EC2 Auto Scaling group that contains a single Amazon Linux, RHEL, or Windows Server Amazon EC2 instance\. In a later step, you will instruct Amazon EC2 Auto Scaling to add one more Amazon EC2 instance, and AWS CodeDeploy will deploy your revision to it\.
 
 **Topics**
-+ [To create and configure the Auto Scaling group \(CLI\)](#tutorials-auto-scaling-group-create-auto-scaling-group-cli)
-+ [To create and configure the Auto Scaling group \(console\)](#tutorials-auto-scaling-group-create-auto-scaling-group-console)
++ [To create and configure the Amazon EC2 Auto Scaling group \(CLI\)](#tutorials-auto-scaling-group-create-auto-scaling-group-cli)
++ [To create and configure the Amazon EC2 Auto Scaling group \(console\)](#tutorials-auto-scaling-group-create-auto-scaling-group-console)
 
-## To create and configure the Auto Scaling group \(CLI\)<a name="tutorials-auto-scaling-group-create-auto-scaling-group-cli"></a>
+## To create and configure the Amazon EC2 Auto Scaling group \(CLI\)<a name="tutorials-auto-scaling-group-create-auto-scaling-group-cli"></a>
 
-1. Call the create\-launch\-configuration command to create an Auto Scaling launch configuration\.
+1. Call the create\-launch\-configuration command to create an Amazon EC2 Auto Scaling launch configuration\.
 
    Before you call this command, you need the ID of an AMI that works for this tutorial, represented by the placeholder *image\-id*\. You also need the name of an Amazon EC2 instance key pair to enable access to the Amazon EC2 instance, represented by the placeholder *key\-name*\. Finally, you need instructions to install the latest version of the AWS CodeDeploy agent\.
 
@@ -20,7 +26,7 @@ In this step, you'll create an Auto Scaling group that contains a single Amazon 
 
    1. On the **Quick Start** tab of the **Choose an Amazon Machine Image** page, note the ID of the AMI next to **Amazon Linux AMI**, **Red Hat Enterprise Linux 7\.1**, **Ubuntu Server 14\.04 LTS**, or **Microsoft Windows Server 2012 R2**\. 
 **Note**  
-If you have a custom version of an AMI that is compatible with AWS CodeDeploy, choose it here instead of browsing through the **Quick Start** tab\. For information about using a custom AMI with AWS CodeDeploy and Auto Scaling, see [Using a Custom AMI with AWS CodeDeploy and Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
+If you have a custom version of an AMI that is compatible with AWS CodeDeploy, choose it here instead of browsing through the **Quick Start** tab\. For information about using a custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling, see [Using a Custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
 
    For the Amazon EC2 instance key pair, use the name of your Amazon EC2 instance key pair\.
 
@@ -95,9 +101,9 @@ Be sure to include `file://` before the file name\. It is required in this comma
 **Note**  
 If you have a custom version of an AMI that is compatible with AWS CodeDeploy, omit the \-\-user\-data option in the preceding command\. 
 
-   These commands create an Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**, based on the specified image ID, applying the specified IAM instance profile and Amazon EC2 instance key pair, and running the command to install the latest version of the AWS CodeDeploy agent\. This launch configuration is based on the t1\.micro Amazon EC2 instance type\.
+   These commands create an Amazon EC2 Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**, based on the specified image ID, applying the specified IAM instance profile and Amazon EC2 instance key pair, and running the command to install the latest version of the AWS CodeDeploy agent\. This launch configuration is based on the t1\.micro Amazon EC2 instance type\.
 
-1.  Call the create\-auto\-scaling\-group command to create an Auto Scaling group\. You will need the name of one of the Availability Zones in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*, represented by the placeholder *availability\-zone*\.
+1.  Call the create\-auto\-scaling\-group command to create an Amazon EC2 Auto Scaling group\. You will need the name of one of the Availability Zones in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*, represented by the placeholder *availability\-zone*\.
 **Note**  
 To view a list of Availability Zones in a region, call:   
 
@@ -129,7 +135,7 @@ For a list of region name identifiers, see [Resource Kit Bucket Names by Region]
    aws autoscaling create-auto-scaling-group --auto-scaling-group-name CodeDeployDemo-AS-Group --launch-configuration-name CodeDeployDemo-AS-Configuration --min-size 1 --max-size 1 --desired-capacity 1 --availability-zones availability-zone
    ```
 
-   These commands create an Auto Scaling group named **CodeDeployDemo\-AS\-Group** based on the Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**\. This Auto Scaling group has only one Amazon EC2 instance, and it is created in the specified Availability Zone\.
+   These commands create an Amazon EC2 Auto Scaling group named **CodeDeployDemo\-AS\-Group** based on the Amazon EC2 Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**\. This Amazon EC2 Auto Scaling group has only one Amazon EC2 instance, and it is created in the specified Availability Zone\.
 
 1. Call the describe\-auto\-scaling\-groups command against **CodeDeployDemo\-AS\-Group**:
 
@@ -139,11 +145,11 @@ For a list of region name identifiers, see [Resource Kit Bucket Names by Region]
 
    Do not proceed until the returned values show `Healthy` and `InService`\.
 
-## To create and configure the Auto Scaling group \(console\)<a name="tutorials-auto-scaling-group-create-auto-scaling-group-console"></a>
+## To create and configure the Amazon EC2 Auto Scaling group \(console\)<a name="tutorials-auto-scaling-group-create-auto-scaling-group-console"></a>
 
 1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
-1. In the global navigation bar, make sure one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Auto Scaling resources are tied to the region you specify, and AWS CodeDeploy is supported in select regions only\.
+1. In the global navigation bar, make sure one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Amazon EC2 Auto Scaling resources are tied to the region you specify, and AWS CodeDeploy is supported in select regions only\.
 
 1. In the navigation bar, under **Auto Scaling**, choose **Launch Configurations**\.
 
@@ -151,7 +157,7 @@ For a list of region name identifiers, see [Resource Kit Bucket Names by Region]
 
 1. On the **Quick Start** tab of the **Choose AMI** page, next to **Amazon Linux AMI**, **Red Hat Enterprise Linux 7\.2**, **Ubuntu Server 14\.04 LTS**, or **Microsoft Windows Server 2012 R2 Base**, choose **Select**\.
 **Note**  
-If you have a custom version of an AMI that already has the AWS CodeDeploy agent installed, choose it here instead\. For information about using a custom AMI with AWS CodeDeploy and Auto Scaling, see [Using a Custom AMI with AWS CodeDeploy and Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
+If you have a custom version of an AMI that already has the AWS CodeDeploy agent installed, choose it here instead\. For information about using a custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling, see [Using a Custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
 
 1. On the **Choose Instance Type** page, leave the defaults, and choose **Next: Configure details**\.
 

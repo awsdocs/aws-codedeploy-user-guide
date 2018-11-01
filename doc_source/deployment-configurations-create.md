@@ -1,9 +1,15 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create a Deployment Configuration with AWS CodeDeploy<a name="deployment-configurations-create"></a>
 
 You can use the AWS CLI, the AWS CodeDeploy APIs, or an AWS CloudFormation template to create custom deployment configurations\. 
 
 **Note**  
-In the AWS CodeDeploy console, you can use the Sample deployment wizard for an in\-place deployment to create a custom deployment configuration\. 
+In the AWS CodeDeploy console, you can use the for an in\-place deployment to create a custom deployment configuration\. 
 
 For information about using an AWS CloudFormation template to create a deployment configuration, see [AWS CloudFormation Templates for AWS CodeDeploy Reference](reference-cloudformation-templates.md)\.
 

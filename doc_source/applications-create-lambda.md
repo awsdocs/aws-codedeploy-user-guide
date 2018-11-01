@@ -1,36 +1,52 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an Application for an AWS Lambda Function Deployment \(Console\)<a name="applications-create-lambda"></a>
 
-To use the AWS CodeDeploy console to create an application for a Lambda function deployment:
+You can use the AWS CodeDeploy console to create an application for an AWS Lambda function deployment\.
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. If the AWS CodeDeploy home page appears, choose **Get Started Now**\.
+1. In the navigation pane, expand **Deploy**, and choose **Getting started**\.
+
+1. On the **Create application** page, choose **Use CodeDeploy**\.
+
+1. Enter the name of your application in **Application name**\.
+
+1. From **Compute platform**, choose **AWS Lambda**\.
 
 1. Choose **Create application**\.
 
-1. In **Application name**, type a name for the application\. \(In an AWS account, an AWS CodeDeploy application name can be used only once per region\. You can reuse an application name in different regions\.\)
+1. On your application page, from the **Deployment groups** tab, choose **Create deployment group**\.
 
-1. From the **Compute platform** drop\-down list, choose **AWS Lambda**\.
-
-1. In **Deployment group name**, type a name for the deployment group\.
+1. In **Deployment group name**, enter a name that describes the deployment group\.
 **Note**  
-If you want to use the same settings used in another deployment group, specify those settings on this page\. You might want to reuse the deployment triggers, rollbacks, or deployment configuration\. Although the new and existing deployment group have the same name, AWS CodeDeploy treats them as separate deployment groups, because they are associated with separate applications\.
+If you want to use the same settings used in another deployment group \(including the deployment group name and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group might have the same name, AWS CodeDeploy treats them as separate deployment groups, because each is associated with a separate application\.
 
-1.  From the **Deployment configuration** drop\-down list, choose one of the predefined deployment configurations, and then skip to step 9\.
+1. In **Service role**, choose a service role that grants AWS CodeDeploy access to AWS Lambda\.
+
+1.  If you want to use a predefined deployment configuration, choose one from **Deployment configuration**, and then skip to step 12\. To create a custom configuration, continue to the next step\.
 
    For more information about deployment configurations, see [ Deployment Configurations on an AWS Lambda Compute Platform ](deployment-configurations.md#deployment-configuration-lambda)\.
 
-1. To create a custom configuration, choose **Create deployment configuration** and do the following:
-   + For **Deployment configuration name**, type a name for the configuration\.
-   + \(Optional\) For **Description**, type a description for the configuration\.
-   + From the **Type** drop\-down list, choose a configuration type\. If you choose **Canary**, traffic is shifted in two increments\. If you choose **Linear**, traffic is shifted in equal increments, with an equal number of minutes between each increment\.
-   + For **Step**, enter a percentage of traffic, between 1 and 99, to be shifted\. If your configuration type is **Canary**, this is the percentage of traffic that is shifted in the first increment\. The remaining traffic is shifted after the selected interval in the second increment\. If your configuration type is **Linear**, this is the percentage of traffic that is shifted at the start of each interval\.
-   + In the **Interval** dialog box, enter the number of minutes\. If your configuration type is **Canary**, this is the number of minutes between the first and second traffic shift\. If your configuration typeis **Linear**, this is the number of minutes between each incremental shift\.
+1. To create a custom configuration, choose **Create deployment configuration**, and then do the following:
+
+   1. For **Deployment configuration name**, enter a name for the configuration\.
+
+   1. From **Type**, choose a configuration type\. If you choose **Canary**, traffic is shifted in two increments\. If you choose **Linear**, traffic is shifted in equal increments, with an equal number of minutes between each increment\.
+
+   1. For **Step**, enter a percentage of traffic, between 1 and 99, to be shifted\. If your configuration type is **Canary**, this is the percentage of traffic that is shifted in the first increment\. The remaining traffic is shifted after the selected interval in the second increment\. If your configuration type is **Linear**, this is the percentage of traffic that is shifted at the start of each interval\.
+
+   1. In **Interval**, enter the number of minutes\. If your configuration type is **Canary**, this is the number of minutes between the first and second traffic shift\. If your configuration type is **Linear**, this is the number of minutes between each incremental shift\.
 **Note**  
-The maximum length of an AWS Lambda deployment is two days, or 2,880 minutes\. Therefore, the maximum value specified for **Interval** for a canary configuration is 2,800 minutes\. The maximum value for a linear configuration depends on the value for **Step**\. For example, if the step percentage of a linear traffic shift is 25%, then there are four traffic shifts\. The maximum interval value would be 2,880 divided by four, or 720 minutes\.
-   + Choose **Submit**\.
+The maximum length of an AWS Lambda deployment is two days, or 2,880 minutes\. Therefore, the maximum value specified for **Interval** for a canary configuration is 2,800 minutes\. The maximum value for a linear configuration depends on the value for **Step**\. For example, if the step percentage of a linear traffic shift is 25%, then there are four traffic shifts\. The maximum interval value is 2,880 divided by four, or 720 minutes\.
+
+   1. Choose **Create deployment configuration**\.
 
 1. \(Optional\) In **Advanced**, configure any options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.
 
@@ -38,4 +54,4 @@ The maximum length of an AWS Lambda deployment is two days, or 2,880 minutes\. T
 
 1. In **Service role ARN**, choose an Amazon Resource Name \(ARN\) for a service role that trusts AWS CodeDeploy with, at minimum, the trust and permissions described in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\. To get the service role ARN, see [Get the Service Role ARN \(Console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\.
 
-1. Choose **Create application**\. 
+1. Choose **Create deployment group**\. 

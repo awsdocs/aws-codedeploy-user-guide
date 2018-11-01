@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Working with Applications in AWS CodeDeploy<a name="applications"></a>
 
 After you configure instances, but before you can deploy a revision, you must create an application in AWS CodeDeploy\. An *application* is simply a name or container used by AWS CodeDeploy to ensure the correct revision, deployment configuration, and deployment group are referenced during a deployment\. 

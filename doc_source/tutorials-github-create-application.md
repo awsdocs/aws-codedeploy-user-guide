@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 5: Create an Application and Deployment Group<a name="tutorials-github-create-application"></a>
 
 In this step, you will use the AWS CodeDeploy console or the AWS CLI to create an application and deployment group to use to deploy the sample revision from your GitHub repository\.
@@ -6,23 +12,37 @@ In this step, you will use the AWS CodeDeploy console or the AWS CLI to create a
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the **Applications** page, choose **Create application**\.
-**Note**  
-If you haven't created any applications yet and the AWS CodeDeploy start page is displayed, choose **Get Started Now**, complete a deployment using the Sample deployment wizard, and then return to this topic\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
-1. In the **Application name** box, type **CodeDeployGitHubDemo\-App**\.
+1. Choose **Create application**, and then select **Custom application**\.
 
-1. In the **Deployment group name** box, type **CodeDeployGitHubDemo\-DepGrp**\.
+1. In **Application name**, enter **CodeDeployGitHubDemo\-App**\.
 
-1. In **Deployment type**, choose **In\-place deployment**\.
+1. In **Compute Platform**, choose **EC2/On\-premises**\.
 
-1. In **Environment configuration**, depending on the type of instance you are using, choose the **Amazon EC2 instances** tab or the **On\-premises instances** tab\. In the **Key** and **Value** boxes, type the instance tag key and value that was applied to your instance as part of [Step 4: Provision an Instance](tutorials-github-provision-instance.md)\.
+1. Choose **Create application**\.
 
-1. In the **Service role ARN** drop\-down list, choose your service role ARN\. \(Follow the instructions in [Get the Service Role ARN \(Console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console) if you need to find your service role ARN\.\)
+1. On the **Deployment groups** tab, choose **Create deployment group**\.
 
-1. Choose **Create application**, and continue to the next step\. 
+1. In **Deployment group name**, enter **CodeDeployGitHubDemo\-DepGrp**\.
+
+1. In **Service role**, choose the name of your AWS CodeDeploy service role\.
+
+1. In **Deployment type**, choose **In\-place**\.
+
+1. In **Environment configuration**, depending on the type of instance you are using, choose **Amazon EC2 instances** or **On\-premises instances**\. For **Key** and **Value**, enter the instance tag key and value that was applied to your instance as part of [Step 4: Provision an Instance](tutorials-github-provision-instance.md)\.
+
+1. In **Deployment configuration**, choose **CodeDeployDefault\.AllatOnce**\.
+
+1. In **Load Balancer**, clear **Enable load balancing**\.
+
+1. Expand **Advanced**\.
+
+1. In **Alarms**, select **Ignore alarm configuration**\.
+
+1. Choose **Create deployment group**, and continue to the next step\. 
 
 ## Create an application and deployment group \(CLI\)<a name="tutorials-github-create-application-cli"></a>
 

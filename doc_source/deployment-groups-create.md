@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create a Deployment Group with AWS CodeDeploy<a name="deployment-groups-create"></a>
 
 You can use the AWS CodeDeploy console, the AWS CLI, the AWS CodeDeploy APIs, or an AWS CloudFormation template to create deployment groups\. For information about using an AWS CloudFormation template to create a deployment group, see [AWS CloudFormation Templates for AWS CodeDeploy Reference](reference-cloudformation-templates.md)\.

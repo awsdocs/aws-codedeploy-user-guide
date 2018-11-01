@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CodeDeploy Resource Kit Reference<a name="resource-kit"></a>
 
 Many of the files AWS CodeDeploy relies on are stored in publicly available, AWS region\-specific Amazon S3 buckets\. These files include installation files for the AWS CodeDeploy agent, templates, and sample application files\. We call this collection of files the AWS CodeDeploy Resource Kit\. 
@@ -46,10 +52,9 @@ The following table lists the files in the AWS CodeDeploy Resource Kit\.
 | codedeploy\-agent\.msi | The AWS CodeDeploy agent for Windows Server\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
 | install | A file you can use to more easily install the AWS CodeDeploy agent\. | 
 |  `CodeDeploy_SampleCF_Template.json`  |  An AWS CloudFormation template you can use to launch from one to three Amazon EC2 instances running Amazon Linux or Windows Server\. There may be several files with the same base file name, but different versions \(such as `-1.0.0`\)\.  | 
-| CodeDeploy\_SampleCF\_ELB\_Integration\.json | An AWS CloudFormation template you can use to create a load\-balanced sample Web site running on an Apache Web Server\. The application is configured to span all Availability Zones in the region you create it in\. Thes template creates three Amazon EC2 instances and IAM instance profile to grant the instances access to the resources in Amazon S3, Auto Scaling, AWS CloudFormation, and Elastic Load Balancing\. It also creates the load balancer and an AWS CodeDeploy service role\. | 
+| CodeDeploy\_SampleCF\_ELB\_Integration\.json | An AWS CloudFormation template you can use to create a load\-balanced sample Web site running on an Apache Web Server\. The application is configured to span all Availability Zones in the region you create it in\. This template creates three Amazon EC2 instances and IAM instance profile to grant the instances access to the resources in Amazon S3, Amazon EC2 Auto Scaling, AWS CloudFormation, and Elastic Load Balancing\. It also creates the load balancer and an AWS CodeDeploy service role\. | 
 | SampleApp\_ELB\_Integration\.zip | A sample application revision you can deploy to an Amazon EC2 instance that is registered to an Elastic Load Balancing load balancer\. | 
 | SampleApp\_Linux\.zip |  A sample application revision you can deploy to an Amazon EC2 instance running Amazon Linux or to a Ubuntu Server or RHEL instance\. There may be several files with the same base file name, but different versions \(such as `-1.0`\)\.  | 
-| SampleApp2\_Linux\.zip | A sample application revision that is deployed to a replacement fleet of instances when you run theSample deployment wizard\.  | 
 | SampleApp\_Windows\.zip | A sample application revision you can deploy to a Windows Server instance\. There may be several files with the same base file name, but different versions \(such as \-1\.0\)\. | 
 
 ## Display a List of the Resource Kit Files<a name="resource-kit-list-files"></a>

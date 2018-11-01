@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 2: Create a GitHub Repository<a name="tutorials-github-create-github-repository"></a>
 
 You will need a GitHub repository to store the revision\.
@@ -9,7 +15,7 @@ If you already have a GitHub repository, be sure to substitute its name for **Co
    + On the navigation bar, choose **Create new** \(**\+**\), and then choose **New repository**\.
 
 1. In the **Create a new repository** page, do the following:
-   + In the **Repository name** box, type **CodeDeployGitHubDemo**\.
+   + In the **Repository name** box, enter **CodeDeployGitHubDemo**\.
    + Select **Public**\.
 **Note**  
 Selecting the default **Public** option means that anyone can see this repository\. Although you can select the **Private** option to limit who can see and commit to the repository, this option may result in additional charges from GitHub\.

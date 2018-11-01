@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Integrating AWS CodeDeploy with Elastic Load Balancing<a name="integrations-aws-elastic-load-balancing"></a>
 
 Elastic Load Balancing provides three types of load balancers that can be used in AWS CodeDeploy deployments: Classic Load Balancers, Application Load Balancers, and Network Load Balancers\.
@@ -18,14 +24,14 @@ To learn more about Elastic Load Balancing load balancers, see the following top
 + [What Is an Application Load Balancer?](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
 + [What Is a Network Load Balancer?](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
 
-## The role of a load balancer in an AWS CodeDeploy deployment<a name="integrations-aws-elastic-load-balancing-role"></a>
+## The Role of a Load Balancer in an AWS CodeDeploy Deployment<a name="integrations-aws-elastic-load-balancing-role"></a>
 
 During AWS CodeDeploy deployments, a load balancer prevents internet traffic from being routed to instances when they are not ready, are currently being deployed to, or are no longer needed as part of an environment\. The exact role the load balancer plays, however, depends on whether it is used in a blue/green deployment or an in\-place deployment\.
 
 **Note**  
 The use of Elastic Load Balancing load balancers is mandatory in blue/green deployments and optional in in\-place deployments\.
 
-### Blue/green deployments<a name="integrations-aws-elastic-load-balancing-blue-green"></a>
+### Blue/Green Deployments<a name="integrations-aws-elastic-load-balancing-blue-green"></a>
 
 Rerouting instance traffic behind an Elastic Load Balancing load balancer is fundamental to AWS CodeDeploy blue/green deployments\. 
 
@@ -40,7 +46,7 @@ For more information about load balancers in blue/green deployments, see the fol
 + [Create an Application for a Blue/Green Deployment \(Console\)](applications-create-blue-green.md)
 + [Create a Deployment Group for a Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
 
-### In\-place deployments<a name="integrations-aws-elastic-load-balancing-in-place"></a>
+### In\-Place Deployments<a name="integrations-aws-elastic-load-balancing-in-place"></a>
 
 During an in\-place deployment, a load balancer prevents internet traffic from being routed to an instance while it is being deployed to, and then makes the instance available for traffic again after the deployment to that instance is complete\.
 
@@ -78,7 +84,7 @@ To set up in\-place deployments in AWS CodeDeploy with Amazon EC2 instances that
 
 1. In the `appspec.yml` for the application revision, provide instructions for AWS CodeDeploy to run the `register_with_elb.sh` script during the **ApplicationStart** event and the `deregister_from_elb.sh` script during the **ApplicationStop** event\.
 
-1. If the instance is part of an Auto Scaling group, you can skip this step\.
+1. If the instance is part of an Amazon EC2 Auto Scaling group, you can skip this step\.
 
    In the `common_functions.sh` script:
    + If you are using the [Classic Load Balancer](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb), specify the names of the Elastic Load Balancing load balancers in `ELB_LIST=""`, and make any changes you need to the other deployment settings in the file\.

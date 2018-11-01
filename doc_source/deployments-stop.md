@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Stop a Deployment with AWS CodeDeploy<a name="deployments-stop"></a>
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to stop deployments associated with your AWS account\.
@@ -13,15 +19,21 @@ Stopping an EC2/On\-Premises deployment can leave some or all of the instances i
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployments**\. 
+1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
 **Note**  
 If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
-1. In the **Actions** column for the deployment you want to stop, choose **Stop**\.
+1. Choose the deployment you want to stop do one of the following:
+
+   1. Choose **Stop deployment** to stop the deployment without a rollback\.
+
+   1. Choose **Stop and roll back deployment** to stop and roll back the deployment
+
+   For more information, see [Redeploy and Roll Back a Deployment with AWS CodeDeploy](deployments-rollback-and-redeploy.md)\.
 **Note**  
-If a **Stop** button does not appear in the **Actions** column, the deployment has progressed to a point where it cannot be stopped\.
+If **Stop deployment** and **Stop and roll back deployment** are unavailable, the deployment has progressed to a point where it cannot be stopped\.
 
 ## Stop a deployment \(CLI\)<a name="deployments-stop-cli"></a>
 

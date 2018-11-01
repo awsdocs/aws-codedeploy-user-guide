@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Integrating AWS CodeDeploy with GitHub<a name="integrations-partners-github"></a>
 
 AWS CodeDeploy supports [GitHub](https://github.com/about), a web\-based code hosting and sharing service\. AWS CodeDeploy can deploy application revisions stored in GitHub repositories or Amazon S3 buckets to instances\. 
@@ -53,17 +59,17 @@ After you give AWS CodeDeploy permission to interact with GitHub, the associatio
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
 1. Choose **Create deployment**\.
 **Note**  
 You don't have to create a new deployment\. This is currently the only way to link a different GitHub account to an application\.
 
-1. From the **Application** drop\-down list, choose the application you want to link to a different GitHub account\.
+1. Choose the application you want to link to a different GitHub account\.
 
-1. Next to **Repository type**, choose **My application is stored in GitHub**\.
+1. Next to **Repository type**, choose **GitHub**\.
 
 1. In **Connect to GitHub**, do one of the following:
    + To create a connection for AWS CodeDeploy applications to a GitHub account, sign out of GitHub in a separate web browser tab\. In **GitHub account**, type a name to identify this connection, and then choose **Connect to GitHub**\. The web page prompts you to authorize AWS CodeDeploy to interact with GitHub for your application\. Continue to step 2\.

@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Working with Deployment Configurations in AWS CodeDeploy<a name="deployment-configurations"></a>
 
 A deployment configuration is a set of rules and success and failure conditions used by AWS CodeDeploy during a deployment\. These rules and conditions are different, depending on whether you deploy to an EC2/On\-Premises compute platform or an AWS Lambda compute platform\. 

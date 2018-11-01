@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Push a Revision for AWS CodeDeploy to Amazon S3<a name="application-revisions-push"></a>
 
 After you plan your revision as described in [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md) and add an AppSpec file to the revision as described in [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md), you are ready to bundle the component files and push the revision to Amazon S3\. For deployments to Amazon EC2 instances, after you push the revision, you can use AWS CodeDeploy to deploy the revision from Amazon S3 to the instances\.

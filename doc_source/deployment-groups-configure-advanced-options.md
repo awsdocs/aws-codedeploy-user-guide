@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Configure Advanced Options for a Deployment Group<a name="deployment-groups-configure-advanced-options"></a>
 
 When you create or update a deployment group, you can configure a number of options to provide more control and oversight over the deployments for that deployment group\.
@@ -23,9 +29,9 @@ You can configure a deployment to stop when an Amazon CloudWatch alarm detects t
 
 You must have already created the alarm in CloudWatch before you can add it to a deployment group\.
 
-1. To add alarm monitoring to the deployment group, choose **Add alarm**\. 
+1. To add alarm monitoring to the deployment group, in **Alarms**, choose **Add alarm**\. 
 
-1. In **Alarm name**, type the name of a CloudWatch alarm you have already set up to monitor this deployment\.
+1. Enter the name of a CloudWatch alarm you have already set up to monitor this deployment\.
 
    You must enter the CloudWatch alarm exactly as it was created in CloudWatch\. To view a list of alarms, open the CloudWatch console at [https://console.aws.amazon.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/), and then choose **ALARM**\.
 

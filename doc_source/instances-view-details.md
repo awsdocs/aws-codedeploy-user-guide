@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # View Instance Details with AWS CodeDeploy<a name="instances-view-details"></a>
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about instances used in a deployment\.
@@ -14,21 +20,21 @@ To view instance details:
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployments**\. 
+1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
 **Note**  
 If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
-1. To display deployment details, choose the arrow next to the deployment ID that corresponds to the instance\. 
+1. To display deployment details, choose the deployment ID for the instance\. 
 
-1. In **Instances**, choose **View all instances**\. 
+1. You can view all instances in the **Instance activity** section of the deployment's page\. 
 
 1. To see information about individual deployment lifecycle events for an instance, on the deployment details page, in the **Events** column, choose **View events**\. 
 **Note**  
 If **Failed** is displayed for any of the lifecycle events, on the instance details page, choose **View logs**, **View in EC2**, or both\. You can find troubleshooting tips in [Troubleshoot Instance Issues](troubleshooting-ec2-instances.md)\.
 
-1. If you want to see more information about an Amazon EC2 instance, but **View in EC2** is not available on the instance details page, return to the deployment details page, and in the **Instance ID** column, choose the ID of the Amazon EC2 instance\.
+1. If you want to see more information about an Amazon EC2 instance, choose the ID of the instance in the **Instance ID** column\.
 
 ## View Instance Details \(CLI\)<a name="instances-view-details-cli"></a>
 

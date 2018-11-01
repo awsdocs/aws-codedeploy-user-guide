@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CodeDeploy Primary Components<a name="primary-components"></a>
 
 Before you start working with the service, you should familiarize yourself with the major components of the AWS CodeDeploy deployment process\. 
@@ -21,7 +27,7 @@ These are the deployment configurations that specify how traffic is routed durin
 + **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
 + **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version at once\.
 
-**Deployment group**: A set of individual instances\. A deployment group contains individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both\. For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com//AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Auto Scaling, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
+**Deployment group**: A set of individual instances\. A deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both\. For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com//AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Amazon EC2 Auto Scaling, see [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 **Deployment type**: The method used to make the latest application revision available on instances in a deployment group\.
 + **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an In\-Place Deployment](welcome.md#welcome-deployment-overview-in-place)\.
@@ -43,7 +49,7 @@ When using an EC2/On\-Premises compute platform, blue/green deployments work wit
 
 **Service role**: An IAM role that grants permissions to an AWS service so it can access AWS resources\. The policies you attach to the service role determine which AWS resources the service can access and the actions it can perform with those resources\. For AWS CodeDeploy, a service role is used for the following:
 + To read either the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. This enables AWS CodeDeploy to identify instances to which it can deploy applications\.
-+ To perform operations on instances, Auto Scaling groups, and Elastic Load Balancing load balancers\.
++ To perform operations on instances, Amazon EC2 Auto Scaling groups, and Elastic Load Balancing load balancers\.
 + To publish information to Amazon SNS topics so that notifications can be sent when specified deployment or instance events occur\.
 + To retrieve information about CloudWatch alarms in order to set up alarm monitoring for deployments\.
 

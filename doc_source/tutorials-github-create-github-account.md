@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 1: Set Up a GitHub Account<a name="tutorials-github-create-github-account"></a>
 
 You will need a GitHub account to create a GitHub repository where the revision will be stored\. If you already have a GitHub account, skip ahead to [Step 2: Create a GitHub Repository](tutorials-github-create-github-repository.md)\.

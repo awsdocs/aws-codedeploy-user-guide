@@ -1,10 +1,16 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 3: Create a Service Role for AWS CodeDeploy<a name="getting-started-create-service-role"></a>
 
 In AWS, service roles are used to grant permissions to an AWS service so it can access AWS resources\. The policies that you attach to the service role determine which AWS resources the service can access and what it can do with those resources\. 
 
-The service role you create for AWS CodeDeploy must be granted the permissions to access the instances to which you will deploy applications\. These permissions enable AWS CodeDeploy to read the tags applied to the instances or the Auto Scaling group names associated with the instances\. 
+The service role you create for AWS CodeDeploy must be granted the permissions to access the instances to which you will deploy applications\. These permissions enable AWS CodeDeploy to read the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. 
 
-The permissions you add to the service role specify the operations AWS CodeDeploy can perform when it accesses your Amazon EC2 instances and Auto Scaling groups\. To add these permissions, attach an AWS\-supplied policy, `AWSCodeDeployRole`, to the service role\.
+The permissions you add to the service role specify the operations AWS CodeDeploy can perform when it accesses your Amazon EC2 instances and Amazon EC2 Auto Scaling groups\. To add these permissions, attach an AWS\-supplied policy, `AWSCodeDeployRole`, to the service role\.
 
 As part of setting up the service role, you also update its trust relationship to specify the endpoints to which you want to grant it access\.
 
@@ -31,7 +37,7 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
 1. On the **Attached permissions policy** page, if there is a box next to **AWSCodeDeployRole**, select it, and then choose **Next: Review**\.
 
    The **AWSCodeDeployRole** policy provides the permissions required for your service role to:
-   + Read the tags on your instances or identify your Amazon EC2 instances by Auto Scaling group names\.
+   + Read the tags on your instances or identify your Amazon EC2 instances by Amazon EC2 Auto Scaling group names\.
    + Publish information to Amazon SNS topics\.
    + Retrieve information about CloudWatch alarms\.
    + Retrieve information about Elastic Load Balancing\.

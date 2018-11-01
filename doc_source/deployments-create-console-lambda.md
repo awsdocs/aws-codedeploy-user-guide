@@ -1,26 +1,32 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an AWS Lambda Compute Platform Deployment \(Console\)<a name="deployments-create-console-lambda"></a>
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
 1. Do one of the following:
-   + On the AWS CodeDeploy menu, choose **Deployments**, and then choose **Create deployment**\.
-   + On the AWS CodeDeploy menu, choose **Applications**, and then choose the name of the AWS Lambda application you want to deploy a revision to\. You can look in the Compute platform column to identify AWS Lambda applications\. On the **Application details**, page, select the button for the deployment group you want to deploy a revision to\. On the **Actions** menu, choose **Deploy new revision**\.
+   +  If you want to deploy an application, in the navigation pane, expand **Deploy**, and then choose **Applications**\. Choose the name of the application you want to deploy\. Make sure the **Compute platform** column for your application is **AWS Lambda\.**
+   +  If you want to redeploy a deployment, in the navigation pane, expand **Deploy**, and then choose **Deployments**\. Choose the deployment you want to redeploy, and in the **Application** column, choose the name of its application\. Make sure the **Compute platform** column for your deployment is **AWS Lambda**\.
 
-1. In the **Application** list, choose the name of the application you want to use for this deployment\. After selecting your application, make sure the Compute platform under the **Application** list says AWS Lambda\.
+1. On the **Deployments** tab, choose **Create deployment**\.
+**Note**  
+Your application must have a deployment group before it can be deployed\. If your application does not have a deployment group, on the **Deployment groups** tab, choose **Create deployment group**\. For more information, see [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\. 
 
-1. In the **Deployment group** list, choose the name of the deployment group associated with the application\.
+1. In **Deployment group**, choose a deployment group to use for this deployment\.
 
-1. Notice the **Deployment type** label\. AWS Lambda deployments are all blue/green\.
+1. Next to **Revision location**, choose where your revision is located:
+   + **My application is stored in Amazon S3** — For information, see [Specify Information About a Revision Stored in an Amazon S3 Bucket](deployments-create-console-s3.md), and then return to step 6\. 
+   + **Use AppSpec editor** — Select either JSON or YAML, then type your AppSpec file into the provided editor\. You may save the AppSpec file you type in by selecting **Save as text file**\. When you click **Deploy** at the end of these steps you will receive an error if your JSON or YAML is not valid\. For more information about creating an AppSpec file, see [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md)\. 
 
-1. Next to **Revision location** choose where your revision is located:
-   + **My revision is stored in Amazon S3** — For information, see [Specify Information About a Revision Stored in an Amazon S3 Bucket](deployments-create-console-s3.md), and then return to step 6\. 
-   + **I will use the AppSpec editor** — Select either JSON or YAML, then type your AppSpec file into the provided editor\. You may save the AppSpec file you type in by selecting **Save as text file**\. When you click **Deploy** at the end of these steps you will receive an error if your JSON or YAML is not valid\. For more information about creating an AppSpec file, see [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md)\. 
+1. \(Optional\) In **Deployment description**, enter a description for this deployment\.
 
-1. \(Optional\) In the **Deployment description** box, type a description for this deployment\.
-
-1. In the **Deployment configuration** list, choose a deployment configuration to control how traffic is shifted to the Lambda function version\. 
+1. \(Optional\) Expand **Override deployment configuration** to choose a deployment configuration to control how traffic is shifted to the Lambda function version that is different from the one specified in the deployment group\.
 
    For more information, see [ Deployment Configurations on an AWS Lambda Compute Platform ](deployment-configurations.md#deployment-configuration-lambda)
 
@@ -33,6 +39,6 @@ For information about rollbacks in AWS CodeDeploy, see [Redeployments and Deploy
    + **Roll back when alarm thresholds are met** — If alarms were added to the deployment group, AWS CodeDeploy will redeploy the last known good revision when one or more of the specified alarms is activated\.
    + **Disable rollbacks** — Do not perform rollbacks for this deployment\.
 
-1. Choose **Deploy**\. 
+1. Choose **Create deployment**\. 
 
    To track the status of your deployment, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\.

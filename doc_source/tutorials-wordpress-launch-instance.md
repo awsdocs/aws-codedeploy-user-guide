@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 1: Launch and Configure an Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance<a name="tutorials-wordpress-launch-instance"></a>
 
 To deploy the WordPress application with AWS CodeDeploy, you'll need an Amazon EC2 instance running Amazon Linux or Red Hat Enterprise Linux \(RHEL\)\. The Amazon EC2 instance requires a new inbound security rule that allows HTTP connections\. This rule is needed in order to view the WordPress page in a browser after it is successfully deployed\.

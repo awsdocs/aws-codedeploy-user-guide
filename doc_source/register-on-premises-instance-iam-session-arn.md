@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Use the register\-on\-premises\-instance Command \(IAM Session ARN\) to Register an On\-Premises Instance<a name="register-on-premises-instance-iam-session-arn"></a>
 
 For maximum control over the authentication and registration of your on\-premises instances, you can use the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command and periodically refreshed temporary credentials generated with the AWS Security Token Service \(AWS STS\)\. A static IAM role for the instance assumes the role of these refreshed AWS STS credentials to perform AWS CodeDeploy deployment operations\. 
@@ -219,13 +225,13 @@ You can use either the AWS CLI or the AWS CodeDeploy console to tag the on\-prem
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. From the AWS CodeDeploy menu, choose **On\-premises instances**\.
+1. In the navigation pane, expand **Deploy**, and choose **On\-premises instances**\.
 
-1. In the list of on\-premises instances, choose the arrow next to the on\-premises instance you want to tag\.
+1. In the list of on\-premises instances, choose name of the on\-premises instance you want to tag\.
 
-1. In the list of tags, select or type the desired tag key and tag value\. After you type the tag key and tag value, another row appears\. You can repeat this for up to 10 tags\. To remove a tag, choose the delete icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/delete-triggers-x.png)\)\.
+1. In the list of tags, select or enter the desired tag key and tag value\. After you enter the tag key and tag value, another row appears\. You can repeat this for up to 10 tags\. To remove a tag, choose **Remove**\.
 
 1. After you have added tags, choose **Update Tags**\.
 

@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Tutorial: Use AWS CodeDeploy to Deploy an Application from GitHub<a name="tutorials-github"></a>
 
 In this tutorial, you use AWS CodeDeploy to deploy a sample application revision from GitHub to a single Amazon EC2 instance running Amazon Linux, a single Red Hat Enterprise Linux \(RHEL\) instance, or a single Windows Server instance\. For information about GitHub integration with AWS CodeDeploy, see [Integrating AWS CodeDeploy with GitHub](integrations-partners-github.md)\.

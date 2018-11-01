@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # View Deployment Configuration Details with AWS CodeDeploy<a name="deployment-configurations-view-details"></a>
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about deployment configurations associated with your AWS account\. For descriptions of the predefined AWS CodeDeploy deployment configurations, see [Predefined Deployment Configurations for an EC2/On\-Premises Compute Platform ](deployment-configurations.md#deployment-configurations-predefined)\.
@@ -12,9 +18,11 @@ To use the AWS CodeDeploy console to view a list of deployment configuration nam
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployment configurations** to see a list of deployment configuration names and criteria for each deployment configuration\.
+1. In the navigation pane, expand **Deploy**, and choose **Deployment configurations**\.
+
+    Here you can see the deployment configuration names and criteria for each deployment configuration\. 
 **Note**  
 If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 

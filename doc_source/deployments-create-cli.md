@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an EC2/On\-Premises Compute Platform Deployment \(CLI\)<a name="deployments-create-cli"></a>
 
 To use the AWS CLI to deploy a revision to the EC2/On\-Premises compute platform:
@@ -25,7 +31,7 @@ The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not 
    + \(Optional\) The name of a deployment configuration to use\. To view a list of deployment configurations, call the [list\-deployment\-configs](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-configs.html) command\. \(If not specified, AWS CodeDeploy uses a specific default deployment configuration\.\)
    + \(Optional\) Whether you want the deployment to an instance to continue to the **BeforeInstall** deployment lifecycle event if the **ApplicationStop** deployment lifecycle event fails\. 
    + \(Optional\) A description for the deployment\.
-   + For blue/green deployments, information about the instances that belong to the replacement environment in a blue/green deployment, including the names of one or more Auto Scaling groups, or the tag filter key, type, and value used to identify Amazon EC2 instances\.
+   + For blue/green deployments, information about the instances that belong to the replacement environment in a blue/green deployment, including the names of one or more Amazon EC2 Auto Scaling groups, or the tag filter key, type, and value used to identify Amazon EC2 instances\.
 
 **Note**  
 Use this syntax as part of the create\-deployment call to specify information about a revision in Amazon S3 directly on the command line\. \(The `version` and `eTag` are optional\.\)  

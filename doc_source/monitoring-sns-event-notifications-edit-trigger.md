@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Edit a Trigger in an AWS CodeDeploy Deployment Group<a name="monitoring-sns-event-notifications-edit-trigger"></a>
 
 If your notification requirements change, you can modify your trigger rather than create a new one\.
@@ -6,7 +12,7 @@ If your notification requirements change, you can modify your trigger rather tha
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
 1. On the **Applications** page, choose the name of the application associated with the deployment group where you will modify a trigger\.
 

@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Add an Application Specification File to a Revision for AWS CodeDeploy<a name="application-revisions-appspec-file"></a>
 
 This topic shows how to add an AppSpec file to your deployment\. It also includes templates to create an AppSpec file for an AWS Lambda and EC2/On\-Premises deployment\.
@@ -16,11 +22,9 @@ To create an AppSpec file:
 
 1. Modify the template as needed\.
 
-1. Use a JSON or YAML validator to validate your AppSpec file\. If you use the AppSpec editor, the file is validated when you choose **Deploy**\.
+1. Use a JSON or YAML validator to validate your AppSpec file\. If you use the AppSpec editor, the file is validated when you choose **Create deployment**\.
 
 1. If you use a text editor, save the file\. If you use the AWS CLI to create your deployment, reference the AppSpec file if it's on your hard drive or in an Amazon S3 bucket\. If you use the console, you must push your AppSpec file to Amazon S3\.
-
-1. \(Optional\) If you use the AppSpec editor, choose **Save as text file** to save the AppSpec file to your hard drive\.
 
 ### YAML AppSpec File Template with Instructions<a name="app-spec-template-yaml-lambda"></a>
 

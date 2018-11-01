@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Manually Remove On\-Premises Instance Tags from an On\-Premises Instance<a name="on-premises-instances-operations-remove-tags"></a>
 
 Typically, you remove an on\-premises instance tag from an on\-premises instance when that tag is no longer being used, or you want to remove the on\-premises instance from any deployment groups that rely on that tag\. You can use the AWS CLI or the AWS CodeDeploy console to remove on\-premises instance tags from on\-premises instances\.
@@ -31,12 +37,12 @@ To manually delete the associated IAM user, see [Deleting an IAM User from Your 
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the AWS CodeDeploy menu, choose **On\-premises instances**\.
+1. In the navigation pane, expand **Deploy**, and choose **On\-premises instances**\.
 
-1. In the list of on\-premises instances, choose the arrow next to the on\-premises instance from which you want to remove tags\.
+1. In the list of on\-premises instances, choose the name of the on\-premises instance from which you want to remove tags\.
 
-1. In the **Tags** area, choose the delete icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/delete-triggers-x.png)\) next to each tag you want to remove\.
+1. In **Tags**, choose **Remove** next to each tag you want to remove\.
 
 1. After you have deleted the tags, choose **Update tags**\.

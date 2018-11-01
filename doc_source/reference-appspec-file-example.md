@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AppSpec File Example<a name="reference-appspec-file-example"></a>
 
 This topic provides example AppSpec files for an AWS Lambda and an EC2/On\-Premises deployment\.

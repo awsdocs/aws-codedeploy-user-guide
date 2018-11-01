@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create a Trigger for an AWS CodeDeploy Event<a name="monitoring-sns-event-notifications-create-trigger"></a>
 
 You can create a trigger that publishes an Amazon Simple Notification Service \(Amazon SNS\) topic for an AWS CodeDeploy deployment or instance event\. Then, when that event occurs, all subscribers to the associated topic will receive notifications through the endpoint specified in the topic, such as an SMS message or email message\. Amazon SNS offers multiple methods for subscribing to topics\.
@@ -14,18 +20,18 @@ You can use the AWS CodeDeploy console to create triggers for an AWS CodeDeploy 
 
 **To create a trigger for an AWS CodeDeploy event**
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
-**Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+1. In the AWS Management Console, open the AWS CodeDeploy console\.
 
-1. On the **Applications** page, choose the name of the application for which triggers will be sent\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
-1. On the **Applications details** page, choose the arrow next to the deployment group for which triggers will be sent\.
+1. In the list of applications, choose the name of the applications for which triggers are sent\.
 
-1. In the **Triggers ** area, choose **Create trigger**\.
+1. On the **Deployment groups** tab, choose the deployment group for which triggers are sent, and then choose **Edit**\.
+
+1. Expand **Advanced**, and in **Triggers**, choose **Create trigger**\.
 
 1. In the **Create trigger** pane, do the following:
-   + In **Trigger name**, type a name for the trigger that makes it easy to identify its purpose\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.
+   + In **Trigger name**, enter a name for the trigger that makes it easy to identify its purpose\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.
    + In **Events**, choose the event type or types that will trigger the Amazon SNS topic to send notifications\. 
    + In **Amazon SNS topic**, choose the name of topic you created for sending notifications for this trigger\.
 

@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Monitoring Deployments with Amazon SNS Event Notifications<a name="monitoring-sns-event-notifications"></a>
 
 You can add triggers to an AWS CodeDeploy deployment group to receive notifications about events related to deployments or instances in that deployment group\. These notifications are sent to recipients who are subscribed to an Amazon SNS topic you have made part of the trigger's action\. 

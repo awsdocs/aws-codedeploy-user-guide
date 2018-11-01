@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 1: Launch a Windows Server Amazon EC2 Instance<a name="tutorials-windows-launch-instance"></a>
 
 To deploy the "Hello, World\!" application with AWS CodeDeploy, you need an Amazon EC2 instance running Windows Server\.

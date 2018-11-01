@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Update the AWS CodeDeploy Agent<a name="codedeploy-agent-operations-update"></a>
 
 For the Amazon Linux, RHEL, and Ubuntu Server operating systems, the AWS CodeDeploy agent is updated automatically when a new version is released\. For Windows Server, you can install the AWS CodeDeploy agent updater for Windows Server after or instead of the AWS CodeDeploy agent\. The agent will be updated whenever a new version is detected\. You can also force updates on all supported operating systems by running a command on an instance\.

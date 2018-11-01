@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Install or reinstall the AWS CodeDeploy agent for Ubuntu Server<a name="codedeploy-agent-operations-install-ubuntu"></a>
 
 Sign in to the instance, and run the following commands, one at a time\. 

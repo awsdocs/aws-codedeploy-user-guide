@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 5: Update and Redeploy Your WordPress Application<a name="tutorials-wordpress-update-and-redeploy-application"></a>
 
 Now that you've successfully deployed your application revision, update the WordPress code on the development machine, and then use AWS CodeDeploy to redeploy the site\. Afterward, you should see the code changes on the Amazon EC2 instance\.
@@ -87,19 +93,19 @@ After AWS CodeDeploy has redeployed the site, revisit the site in your web brows
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+
+1. In the list of applications, choose **WordPress\_App**\.
+
+1. On the **Deployment groups** tab, choose **WordPress\_DepGroup**\.
 
 1. Choose **Create deployment**\. 
 
 1. On the **Create deployment** page:
 
-   1. In the **Application** list, choose **WordPress\_App**\.
-**Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
-
-   1. In the **Deployment group** list, choose **WordPress\_DepGroup**\.
+   1. In **Deployment group**, choose **WordPress\_DepGroup**\.
 
    1. In the **Repository type** area, choose **My application is stored in Amazon S3**, and then copy your revision's Amazon S3 link into the **Revision location** box\. To find the link value: 
 
@@ -117,10 +123,10 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
    1. Leave the **Deployment description** box blank\.
 
-   1. In the **Deployment configuration** list, choose **CodeDeployDefault\.OneAtATime**, and then choose **Deploy**\. 
+   1. Expand **Deployment group overrides** and from **Deployment configuration**, choose **CodeDeployDefault\.OneAtATime**\.
 
-      To update the deployment's status, choose the **Refresh** button above the table\.
+   1. Choose **Start deployment**\. Information about your newly created deployment appears on the **Deployments** page\.
 
-      You can check the status of the deployment, as described in [Monitor and Troubleshoot Your Deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor)\.
+   1. You can check the status of the deployment, as described in [Monitor and Troubleshoot Your Deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor)\.
 
       After AWS CodeDeploy has redeployed the site, revisit the site in your web browser to verify the colors have been changed\. \(You might need to refresh your browser\.\) If the colors have been changed, congratulations\! You have successfully modified and redeployed your site\!

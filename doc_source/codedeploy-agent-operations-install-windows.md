@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Install or reinstall the AWS CodeDeploy agent for Windows Server<a name="codedeploy-agent-operations-install-windows"></a>
 
 On Windows Server instances, you can use one of these methods to download and install the AWS CodeDeploy agent:

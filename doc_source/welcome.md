@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # What Is AWS CodeDeploy?<a name="welcome"></a>
 
 AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on\-premises instances, or serverless Lambda functions\.
@@ -39,6 +45,7 @@ AWS CodeDeploy offers these benefits:
 + **Stop and roll back**\. You can automatically or manually stop and roll back deployments if there are errors\. 
 + **Centralized control**\. You can launch and track the status of your deployments through the AWS CodeDeploy console or the AWS CLI\. You receive a report that lists when each application revision was deployed and to which Amazon EC2 instances\. 
 + **Easy to adopt**\. AWS CodeDeploy is platform\-agnostic and works with any application\. You can easily reuse your setup code\. AWS CodeDeploy can also integrate with your software release process or continuous delivery toolchain\.
++ **Concurrent deployments**\. If you have more than one application that use the EC2/On\-Premises compute platform, then AWS CodeDeploy can deploy them concurrently to the same set of instances\.
 
 ## Overview of AWS CodeDeploy Compute Platforms<a name="compute-platform"></a>
 
@@ -55,7 +62,7 @@ The following table describes how AWS CodeDeploy components are used with each c
 
 | AWS CodeDeploy Component | EC2/On\-Premises | AWS Lambda | 
 | --- | --- | --- | 
-| Deployment group | Deploys a  set of instances to which a new revision is deployed\. | Deploys a Lambda function version on a high\-availability compute infrastructure\. | 
+| Deployment group | Deploys a set of instances to which a new revision is deployed\. | Deploys a Lambda function version on a high\-availability compute infrastructure\. | 
 | Deployment | Deploys a new revision that consists of an application and AppSpec file\. The AppSpec specifies how to deploy the application to the instances in a deployment group\. | Deploys a new revision that consists of an AppSpec file\. The AppSpec specifies which Lambda function version to deploy\. | 
 | Deployment configuration | Settings that determine the deployment speed and the minimum number of instances that must be healthy at any point during a deployment\. | Settings that determine how traffic is shifted to the updated Lambda function versions\. | 
 | Revision | A combination of an AppSpec file and application files, such as executables, configuration files, and so on\. | An AppSpec file that specifies which Lambda functions to deploy and update\. | 
@@ -80,7 +87,7 @@ When using an EC2/On\-Premises compute platform, blue/green deployments work wit
   For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](#welcome-deployment-overview-blue-green)\.
 
 **Note**  
-Using the AWS CodeDeploy agent, you can perform a deployment on an instance you are logged on to without the need for an application, deployment group, or even an AWS account\. For information, see [Use the AWS CodeDeploy Agent to Validate a Deployment Package on a Local Machine](deployments-local.md)\.
+Using the AWS CodeDeploy agent, you can perform a deployment on an instance you are logged on to without the need for an application, deployment group or even an AWS account\. For information, see [Use the AWS CodeDeploy Agent to Validate a Deployment Package on a Local Machine](deployments-local.md)\.
 
 **Topics**
 + [Overview of an In\-Place Deployment](#welcome-deployment-overview-in-place)
@@ -99,7 +106,7 @@ Here's how it works:
 
 1. First, you create deployable content on your local development machine or similar environment, and then you add an *application specification file* \(AppSpec file\)\. The AppSpec file is unique to AWS CodeDeploy\. It defines the deployment actions you want AWS CodeDeploy to execute\. You bundle your deployable content and the AppSpec file into an archive file, and then upload it to an Amazon S3 bucket or a GitHub repository\. This archive file is called an *application revision* \(or simply a *revision*\)\.
 
-1. Next, you provide AWS CodeDeploy with information about your deployment, such as which Amazon S3 bucket or GitHub repository to pull the revision from and to which set of Amazon EC2 instances to deploy its contents\. AWS CodeDeploy calls a set of Amazon EC2 instances a *deployment group*\. A deployment group contains individually tagged Amazon EC2 instances, Amazon EC2 instances in Auto Scaling groups, or both\.
+1. Next, you provide AWS CodeDeploy with information about your deployment, such as which Amazon S3 bucket or GitHub repository to pull the revision from and to which set of Amazon EC2 instances to deploy its contents\. AWS CodeDeploy calls a set of Amazon EC2 instances a *deployment group*\. A deployment group contains individually tagged Amazon EC2 instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both\.
 
    Each time you successfully upload a new application revision that you want to deploy to the deployment group, that bundle is set as the *target revision* for the deployment group\. In other words, the application revision that is currently targeted for deployment is the target revision\. This is also the revision that will be pulled for automatic deployments\.
 
@@ -135,7 +142,7 @@ You must use Amazon EC2 instances for blue/green deployments on the EC2/On\-Prem
 
 If you're using the EC2/On\-Premises compute platform, the following applies:
 
- You must have one or more Amazon EC2 instances with identifying Amazon EC2 tags or an Auto Scaling group\. The instances must meet these additional requirements:
+ You must have one or more Amazon EC2 instances with identifying Amazon EC2 tags or an Amazon EC2 Auto Scaling group\. The instances must meet these additional requirements:
 + Each Amazon EC2 instance must have the correct IAM instance profile attached\.
 + The AWS CodeDeploy agent must be installed and running on each instance\.
 
@@ -144,29 +151,29 @@ You typically also have an application revision running on the instances in your
 
 When you create a deployment group that is used in blue/green deployments, you can choose how your replacement environment is specified:
 
-**Copy an existing Auto Scaling group**: During the blue/green deployment, AWS CodeDeploy creates the instances for your replacement environment automatically during the deployment\. With this option, AWS CodeDeploy uses the Auto Scaling group you specify as a template for the replacement environment, including the same number of running instances and many other configuration options\.
+**Copy an existing Amazon EC2 Auto Scaling group**: During the blue/green deployment, AWS CodeDeploy creates the instances for your replacement environment automatically during the deployment\. With this option, AWS CodeDeploy uses the Amazon EC2 Auto Scaling group you specify as a template for the replacement environment, including the same number of running instances and many other configuration options\.
 
-**Choose instances manually**: You can specify the instances to be counted as your replacement using Amazon EC2 instance tags, Auto Scaling group names, or both\. If you choose this option, you do not need to specify the instances for the replacement environment until you create a deployment\.
+**Choose instances manually**: You can specify the instances to be counted as your replacement using Amazon EC2 instance tags, Amazon EC2 Auto Scaling group names, or both\. If you choose this option, you do not need to specify the instances for the replacement environment until you create a deployment\.
 
 Here's how it works:
 
-1. You already have instances or an Auto Scaling group that will serve as your original environment\. The first time you run a blue/green deployment, you'll typically use instances that were already used in  an in\-place deployment\.
+1. You already have instances or an Amazon EC2 Auto Scaling group that serves as your original environment\. The first time you run a blue/green deployment, you typically use instances that were already used in an in\-place deployment\.
 
 1. In an existing AWS CodeDeploy application, you create a blue/green deployment group where, in addition to the options required for an in\-place deployment, you specify the following:
-   + The load balancer that will route traffic from your original environment to your replacement environment during the blue/green deployment process\.
+   + The load balancer that routes traffic from your original environment to your replacement environment during the blue/green deployment process\.
    + Whether to reroute traffic to the replacement environment immediately or wait for you to reroute it manually\. 
    + The rate at which traffic is routed to the replacement instances\.
    + Whether the instances that are replaced are terminated or kept running\.
 
 1. You create a deployment for this deployment group during which the following occur:
 
-   1. If you chose to copy an Auto Scaling group, instances are provisioned for your replacement environment\.
+   1. If you chose to copy an Amazon EC2 Auto Scaling group, instances are provisioned for your replacement environment\.
 
    1. The application revision you specify for the deployment is installed on the replacement instances\.
 
    1. If you specified a wait time in the deployment group settings, the deployment is paused\. This is the time when you can run tests and verifications in your replacement environment\. If you don't manually reroute the traffic before the end of the wait period, the deployment is stopped\.
 
-   1. Instances in the replacement environment are registered with an Elastic Load Balancing load balancer and traffic begins to be routed to them\.
+   1. Instances in the replacement environment are registered with an Elastic Load Balancing load balancer and traffic starts being routed to them\.
 
    1. Instances in the original environment are deregistered and handled according to your specification in the deployment group, either terminated or kept running\.
 

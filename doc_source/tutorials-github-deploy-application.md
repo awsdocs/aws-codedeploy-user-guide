@@ -1,17 +1,23 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 6: Deploy the Application to the Instance<a name="tutorials-github-deploy-application"></a>
 
-In this step, you will use the AWS CodeDeploy console or the AWS CLI to deploy the sample revision from your GitHub repository to your instance\. 
+In this step, you use the AWS CodeDeploy console or the AWS CLI to deploy the sample revision from your GitHub repository to your instance\. 
 
 ## To deploy the revision \(console\)<a name="tutorials-github-deploy-application-console"></a>
 
-1. On the **Application details** page, in **Deployment groups**, choose the button next to `CodeDeployGitHubDemo-DepGrp`\.
+1. On the **Deployment group details** page, choose **Create deployment**\.
 
-1. In the **Actions** menu, choose **Deploy new revision**\. 
+1. In **Deployment group**, choose **`CodeDeployGitHubDemo-DepGrp`**\.
 
-1. On the **Create deployment** page, in the **Repository type** area, choose **My application is stored in GitHub**\.
+1. In **Revision type**, choose **GitHub**\.
 
 1. In **Connect to GitHub**, do one of the following:
-   + To create a connection for AWS CodeDeploy applications to a GitHub account, sign out of GitHub in a separate web browser tab\. In **GitHub account**, type a name to identify this connection, and then choose **Connect to GitHub**\. The web page prompts you to authorize AWS CodeDeploy to interact with GitHub for the application named `CodeDeployGitHubDemo-App`\. Continue to step 5\.
+   + To create a connection for AWS CodeDeploy applications to a GitHub account, sign out of GitHub in a separate web browser tab\. In **GitHub account**, enter a name to identify this connection, and then choose **Connect to GitHub**\. The webpage prompts you to authorize AWS CodeDeploy to interact with GitHub for the application named `CodeDeployGitHubDemo-App`\. Continue to step 5\.
    + To use a connection you have already created, in **GitHub account**, select its name, and then choose **Connect to GitHub**\. Continue to step 7\.
    + To create a connection to a different GitHub account, sign out of GitHub in a separate web browser tab\. Choose **Connect to a different GitHub account**, and then choose **Connect to GitHub**\. Continue to step 5\.
 
@@ -19,19 +25,19 @@ In this step, you will use the AWS CodeDeploy console or the AWS CLI to deploy t
 
 1. On the **Authorize application** page, choose **Authorize application**\. 
 
-1. On the AWS CodeDeploy **Create deployment** page, in the **Repository name** box, type the GitHub user name you used to sign in, followed by a forward slash \(`/`\), followed by the name of the repository where you pushed your application revision \(for example, ***my\-github\-user\-name*/CodeDeployGitHubDemo**\)\.
+1. On the AWS CodeDeploy **Create deployment** page, in **Repository name**, enter the GitHub user name you used to sign in, followed by a forward slash \(`/`\), followed by the name of the repository where you pushed your application revision \(for example, ***my\-github\-user\-name*/CodeDeployGitHubDemo**\)\.
 
-   If you are unsure of the value to type, or if you want to specify a different repository:
+   If you are unsure of the value to enter, or if you want to specify a different repository:
 
    1. In a separate web browser tab, go to your [GitHub dashboard](https://github.com/dashboard)\.
 
-   1. In **Your repositories**, hover your mouse pointer over the target repository name\. A tooltip appears, displaying the GitHub user or organization name, followed by a forward slash character \(`/`\), followed by the name of the repository\. Type this displayed value into the **Repository name** box\.
+   1. In **Your repositories**, hover your mouse pointer over the target repository name\. A tooltip appears, displaying the GitHub user or organization name, followed by a forward slash \(`/`\), followed by the name of the repository\. Enter this value into **Repository name**\.
 **Note**  
-If the target repository name is not displayed in **Your repositories**, use the **Search GitHub** box to find the target repository and corresponding GitHub user or organization name\.
+If the target repository name is not displayed in **Your repositories**, use the **Search GitHub** box to find the target repository and GitHub user or organization name\.
 
-1. In the **Commit ID** box, type the ID of the commit associated with the push of your application revision to GitHub\.
+1. In the **Commit ID** box, enter the ID of the commit associated with the push of your application revision to GitHub\.
 
-   If you are unsure of the value to type:
+   If you are unsure of the value to enter:
 
    1. In a separate web browser tab, go to your [GitHub dashboard](https://github.com/dashboard)\.
 
@@ -49,19 +55,19 @@ Before you can call any AWS CLI commands that interact with GitHub \(such as the
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
-1. Choose **Create deployment**\.
+1. Choose **CodeDeployGitHubDemo\-App**\.
+
+1. On the **Deployments** tab, choose **Create deployment**\.
 **Note**  
 You will not be creating a new deployment\. This is currently the only way to give AWS CodeDeploy permission to interact with GitHub on behalf of your GitHub user account\.
 
-1. From the **Application** drop\-down list, choose **CodeDeployGitHubDemo\-App**\.
+1. From **Deployment group**, choose **CodeDeployGitHubDemo\-DepGrp**\.
 
-1. From the **Deployment group** drop\-down list, choose **CodeDeployGitHubDemo\-DepGrp**\.
-
-1. In the **Repository type** area, choose **My application is stored in GitHub**\.
+1. In **Revision type**, choose **GitHub**\.
 
 1. In **Connect to GitHub**, do one of the following:
    + To create a connection for AWS CodeDeploy applications to a GitHub account, sign out of GitHub in a separate web browser tab\. In **GitHub account**, type a name to identify this connection, and then choose **Connect to GitHub**\. The web page prompts you to authorize AWS CodeDeploy to interact with GitHub for the application named `CodeDeployGitHubDemo-App`\. Continue to step 8\.

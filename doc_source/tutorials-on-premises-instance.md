@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Tutorial: Deploy an Application to an On\-Premises Instance with AWS CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)<a name="tutorials-on-premises-instance"></a>
 
 This tutorial helps you gain experience with AWS CodeDeploy by guiding you through the deployment of a sample application revision to a single on\-premises instance—that is, a physical device that is not an Amazon EC2 instance—running Windows Server, Ubuntu Server, or Red Hat Enterprise Linux \(RHEL\)\. For information about on\-premises instances and how they work with AWS CodeDeploy, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\.
@@ -5,8 +11,6 @@ This tutorial helps you gain experience with AWS CodeDeploy by guiding you throu
 Not what you're looking for?
 + To practice deploying to an Amazon EC2 instance running Amazon Linux or RHEL, see [Tutorial: Deploy WordPress to an Amazon EC2 Instance \(Amazon Linux or Red Hat Enterprise Linux and Linux, macOS, or Unix\)](tutorials-wordpress.md)\.
 + To practice deploying to an Amazon EC2 instance running Windows Server, see [Tutorial: Deploy a "Hello, World\!" Application with AWS CodeDeploy \(Windows Server\)](tutorials-windows.md)\.
-
-This tutorial builds on concepts introduced in [Try a Sample In\-Place Deployment in AWS CodeDeploy](getting-started-wizard-in-place.md)\. If you have not yet completed the Sample deployment wizard for an in\-place deployment, you may want to do that first\.
 
 **Topics**
 + [Prerequisites](#tutorials-on-premises-instance-prerequisites)
@@ -298,14 +302,12 @@ You have now completed all of the steps to clean up the resources used for this 
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. If the list of applications does not appear, on the AWS CodeDeploy menu, choose **Applications**\.
+1. In the navigation pane choose **Applications**\.
 
-1. Choose the name of the application you want to delete \(for example, `CodeDeploy-OnPrem-App`\)\.
+1. Choose the name of the application you want to delete \(for example, `CodeDeploy-OnPrem-App`\) and then choose **Delete application**\.
 
-1. At the bottom of the **Application details** page, choose **Delete application**\.
-
-1. When prompted, type the name of the application to confirm you want to delete it, and then choose **Delete**\. 
+1. When prompted, enter the name of the application to confirm you want to delete it, and then choose **Delete**\. 
 
 You cannot use the AWS CodeDeploy console to deregister the on\-premises instance or uninstall the AWS CodeDeploy agent\. Follow the instructions in [To deregister the on\-premises instance and delete the IAM user ](#tutorials-on-premises-instance-6-clean-up-resources-deregister-cli)\.

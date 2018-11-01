@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Working with Instances for AWS CodeDeploy<a name="instances"></a>
 
 AWS CodeDeploy supports deployments to instances running Amazon Linux, Ubuntu Server, Red Hat Enterprise Linux \(RHEL\), and Windows Server\. 
@@ -12,12 +18,12 @@ The following table compares Amazon EC2 instances and on\-premises instances:
 | **Subject** | **Amazon EC2 Instances** | **On\-Premises Instances** | 
 | --- | --- | --- | 
 |  Requires you to install and run a version of the AWS CodeDeploy agent that's compatible with the operating system running on the instance\.  | Yes |  Yes  | 
-|  Requires the instance to be able to connect to the AWS CodeDeploy service\.  |  Yes  |  Yes  | 
+|  Requires the instance to be able to connect to AWS CodeDeploy\.  |  Yes  |  Yes  | 
 |  Requires an IAM instance profile to be attached to the instance\. The IAM instance profile must have permissions to participate in AWS CodeDeploy deployments\. For information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.  |  Yes  |  No  | 
 |  Requires you to do one of the following to authenticate and register instances: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/instances.html)  |  No  |  Yes  | 
 |  Requires you to register each instance with AWS CodeDeploy before you can deploy to it\.  |  No  |  Yes  | 
 |  Requires you to tag each instance before AWS CodeDeploy can deploy to it\.  |  Yes  |  Yes  | 
-|  Can participate in Auto Scaling and Elastic Load Balancing scenarios as part of AWS CodeDeploy deployments\.  |  Yes  |  No  | 
+|  Can participate in Amazon EC2 Auto Scaling and Elastic Load Balancing scenarios as part of AWS CodeDeploy deployments\.  |  Yes  |  No  | 
 |  Can be deployed from Amazon S3 buckets and GitHub repositories\.  |  Yes  |  Yes  | 
 |  Can support triggers that prompt the sending of SMS or email notifications when specified events occur in deployments or instances\.  |  Yes  |  Yes  | 
 |  Is subject to being billed for associated deployments\.  |  No  |  Yes  | 
@@ -35,7 +41,7 @@ To launch or configure instances for use in deployments, choose from the followi
 | I want to configure a Windows Server, Ubuntu Server, or RHEL on\-premises instance \(physical devices that are not Amazon EC2 instances\)\. | See [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. | 
 | I want AWS CodeDeploy to provision a replacement fleet of instances during a blue/green deployment\. | See [Working with Deployments in AWS CodeDeploy](deployments.md)\. | 
 
-To prepare Amazon EC2 instances in Auto Scaling groups, you must follow some additional steps\. For more information, see [Integrating AWS CodeDeploy with Auto Scaling](integrations-aws-auto-scaling.md)\.
+To prepare Amazon EC2 instances in Amazon EC2 Auto Scaling groups, you must follow some additional steps\. For more information, see [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 **Topics**
 + [Tagging Instances for AWS CodeDeploy Deployments](instances-tagging.md)

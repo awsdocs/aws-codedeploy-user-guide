@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 7: Monitor and Verify the Deployment<a name="tutorials-github-verify"></a>
 
 In this step, you will use the AWS CodeDeploy console or the AWS CLI to verify the success of the deployment\. You will use your web browser to view the web page that was deployed to the instance you created or configured\.
@@ -7,9 +13,9 @@ If you're deploying to an Ubuntu Server instance, use your own testing strategy 
 
 **To monitor and verify the deployment \(console\)**
 
-1. If the **Deployments** page is not displayed, on the AWS CodeDeploy menu, choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
 
-1. In the list of deployments, look for the row with an **Application** value of **CodeDeployGitHubDemo\-App** and a **Deployment group** value of **CodeDeployGitHubDemo\-DepGrp**\. If **Succeeded** or **Failed** do not appear in the **Status** column, choose the **Refresh** button periodically\.
+1. In the list of deployments, look for the row with an **Application** value of **CodeDeployGitHubDemo\-App** and a **Deployment Group** value of **CodeDeployGitHubDemo\-DepGrp**\. If **Succeeded** or **Failed** do not appear in the **Status** column, choose the **Refresh** button periodically\.
 
 1. If **Failed** appears in the **Status** column, follow the instructions in [View Instance Details \(Console\)](instances-view-details.md#instances-view-details-console) to troubleshoot the deployment\.
 

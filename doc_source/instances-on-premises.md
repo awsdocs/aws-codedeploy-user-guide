@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Working with On\-Premises Instances for AWS CodeDeploy<a name="instances-on-premises"></a>
 
 An on\-premises instance is any physical device that is not an Amazon EC2 instance that can run the AWS CodeDeploy agent and connect to public AWS service endpoints\. 

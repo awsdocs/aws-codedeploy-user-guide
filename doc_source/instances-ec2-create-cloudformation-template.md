@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)<a name="instances-ec2-create-cloudformation-template"></a>
 
 You can use our AWS CloudFormation template to quickly launch an Amazon EC2 instance running Amazon Linux or Windows Server\. You can use the AWS CLI, the AWS CodeDeploy console, or the AWS APIs to launch the instance with the template\. In addition to launching the instance, the template does the following:

@@ -1,6 +1,12 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments<a name="deployment-groups-create-load-balancer"></a>
 
-Before you run any blue/green deployment, or an in\-place deployment for which you want to specify an optional load balancer in the deployment group, you must have created a Classic Load Balancer or Application Load Balancer in Elastic Load Balancing\. For blue/green deployments, you use that load balancer to register the instances that make up your replacement environment\. Instances in your original environment can optionally be registered with this same load balancer\.
+Before you run any blue/green deployment, or an in\-place deployment for which you want to specify an optional load balancer in the deployment group, you must have created a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing\. For blue/green deployments, you use that load balancer to register the instances that make up your replacement environment\. Instances in your original environment can optionally be registered with this same load balancer\.
 
 To configure a Classic Load Balancer, follow the instructions in [Tutorial: Create a Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html) in *User Guide for Classic Load Balancers*\. Note the following:
 + In **Step 2: Define Load Balancer**, in **Create LB Inside**, choose the same VPC you selected when you created your instances\.
@@ -12,3 +18,9 @@ To configure a Classic Load Balancer, follow the instructions in [Tutorial: Crea
 To configure an Application Load Balancer, follow the instructions in one of the following topics:
 + [Create an Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html)
 + [Tutorial: Create an Application Load Balancer Using the AWS CLI](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/tutorial-application-load-balancer-cli.html)
+
+To configure a Network Load Balancer, follow the instructions in one of the following topics:
++  [Create a Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html) 
++  [Tutorial: Create a Network Load Balancer Using the AWS CLI](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-cli.html) 
+
+To configure a Classic Load Balancer, follow the instructions in [ Tutorial: Create a Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-getting-started.html)\.

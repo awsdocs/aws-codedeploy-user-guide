@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 3: Upload Your WordPress Application to Amazon S3<a name="tutorials-wordpress-upload-application"></a>
 
 Now you will prepare and upload your source content to a location from which AWS CodeDeploy can deploy it\. The following instructions show you how to provision an Amazon S3 bucket, prepare the application revision's files for the bucket, bundle the revision's files, and then push the revision to the bucket\.

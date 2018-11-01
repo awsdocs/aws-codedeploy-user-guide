@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CodeDeploy Deployments<a name="deployment-steps"></a>
 
 This topic provides information about the components and workflow of deployments in AWS CodeDeploy\. The deployment process varies, depending on the compute platform \(EC2/On\-Premises or Lambda\) you use for your deployments\. 
@@ -118,11 +124,11 @@ These steps include:
 
 1. Setting up a deployment group by specifying a deployment type and the instances to which you want to deploy your application revisions\. An in\-place deployment updates instances with the latest application revision\. A blue/green deployment registers a replacement set of instances for the deployment group with a load balancer and deregisters the original instances\. 
 
-   You can specify the tags applied to the instances, the Auto Scaling group names, or both\.
+   You can specify the tags applied to the instances, the Amazon EC2 Auto Scaling group names, or both\.
 
    If you specify one group of tags in a deployment group, AWS CodeDeploy deploys to instances that have at least one of the specified tags applied\. If you specify two or more tag groups, AWS CodeDeploy deploys only to the instances that meet the criteria for each of the tag groups\. For more information, see [Tagging Instances for Deployment Groups in AWS CodeDeploy](instances-tagging.md)\.
 
-   In all cases, the instances must be configured to be used in a deployment \(that is, they must be tagged or belong to an Auto Scaling group\) and have the AWS CodeDeploy agent installed and running\. 
+   In all cases, the instances must be configured to be used in a deployment \(that is, they must be tagged or belong to an Amazon EC2 Auto Scaling group\) and have the AWS CodeDeploy agent installed and running\. 
 
    We provide you with an AWS CloudFormation template that you can use to quickly set up an Amazon EC2 instance based on Amazon Linux or Windows Server\. We also provide you with the standalone AWS CodeDeploy agent so that you can install it on Amazon Linux, Ubuntu Server, Red Hat Enterprise Linux \(RHEL\), or Windows Server instances\. For more information, see [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\.
 
@@ -171,7 +177,7 @@ The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not 
 
 ### Creating Your Application and Deployment Groups<a name="deployment-steps-registering-app-deployment-groups"></a>
 
-An AWS CodeDeploy deployment group identifies a collection of instances based on their tags, Auto Scaling group names, or both\. Multiple application revisions can be deployed to the same instance\. An application revision can be deployed to multiple instances\. 
+An AWS CodeDeploy deployment group identifies a collection of instances based on their tags, Amazon EC2 Auto Scaling group names, or both\. Multiple application revisions can be deployed to the same instance\. An application revision can be deployed to multiple instances\. 
 
 For example, you could add a tag of "Prod" to the three production servers and "Backup" to the two backup servers\. These two tags can be used to create two different deployment groups in the AWS CodeDeploy application, allowing you to choose which set of servers \(or both\) should participate in a deployment\.
 

@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Step 6: Clean Up Your "Hello, World\!" Application and Related Resources<a name="tutorials-windows-clean-up"></a>
 
 You've now successfully made an update to the "Hello, World\!" code and redeployed the site\. To avoid ongoing charges for resources you created to complete this tutorial, you should delete any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you manually created them outside of AWS CloudFormation\)\. You should also delete any Amazon S3 buckets that you created just for this tutorial, and the `HelloWorld_App` application in AWS CodeDeploy\.
@@ -11,19 +17,19 @@ You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and AWS 
 
 ## To use clean up resources \(CLI\)<a name="tutorials-windows-clean-up-cli"></a>
 
-1. If you used the AWS CloudFormation stack for this tutorial, delete the stack by calling the delete\-stack command against the stack named **CodeDeployDemoStack**\. This will terminate all accompanying Amazon EC2 instances and delete all accompanying IAM roles originally created by the stack\.
+1. If you used the AWS CloudFormation stack for this tutorial, delete the stack by calling the delete\-stack command against the stack named **CodeDeployDemoStack**\. This terminates all accompanying Amazon EC2 instances and delete all accompanying IAM roles originally created by the stack\.
 
    ```
    aws cloudformation delete-stack --stack-name CodeDeployDemoStack
    ```
 
-1. To delete the Amazon S3 bucket, call the rm command with the \-\-recursive switch against the bucket named **codedeploydemobucket**\. This will delete the bucket and all objects in the bucket\.
+1. To delete the Amazon S3 bucket, call the rm command with the \-\-recursive switch against the bucket named **codedeploydemobucket**\. This deletes the bucket and all objects in the bucket\.
 
    ```
    aws s3 rm s3://codedeploydemobucket --recursive
    ```
 
-1. To delete the `HelloWorld_App` application from AWS CodeDeploy, call the delete\-application command\. This will delete all associated deployment group records and deployment records for the application\.
+1. To delete the `HelloWorld_App` application from AWS CodeDeploy, call the delete\-application command\. This deletes all associated deployment group records and deployment records for the application\.
 
    ```
    aws deploy delete-application --application-name HelloWorld_App
@@ -45,7 +51,7 @@ If you used our AWS CloudFormation template for this tutorial, delete the associ
 
 1. Select the box beside the stack name\.
 
-1. In the **Actions** menu, choose **Delete Stack**\. This will delete the stack, terminate all accompanying Amazon EC2 instances, and delete all accompanying IAM roles\.
+1. In the **Actions** menu, choose **Delete Stack**\. This deletes the stack, terminate all accompanying Amazon EC2 instances, and delete all accompanying IAM roles\.
 
 To terminate Amazon EC2 instances you created outside of an AWS CloudFormation stack:
 
@@ -73,15 +79,15 @@ To delete the `HelloWorld_App` application from AWS CodeDeploy:
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the AWS CodeDeploy menu, choose **Applications**\. 
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
-1. On the **Application details** page, in **Deployment groups**, choose the button next to the deployment group\. On the **Actions** menu, choose **Delete**\. When prompted, type the name of the deployment group to confirm you want to delete it, and then choose **Delete**\.
+1. Choose **`HelloWorld_App`**\.
 
-1. At the bottom of the **Application details** page, choose **Delete application**\.
+1. Choose **Delete application**\.
 
-1. When prompted, type the name of the application to confirm you want to delete it, and then choose **Delete**\. 
+1. When prompted, enter **Delete**, and then choose **Delete**\. 
 
 ## What's Next?<a name="tutorials-windows-clean-up-whats-next"></a>
 

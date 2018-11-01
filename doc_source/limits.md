@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CodeDeploy Limits<a name="limits"></a>
 
 The following tables describe limits in AWS CodeDeploy\.
@@ -49,7 +55,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | Maximum number of deployments that can be passed to the [BatchGetDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html) API action | 100 | 
 |  Maximum number of minutes until a deployment fails if a lifecycle event doesn't start after: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html)  | 5 | 
 | Maximum number of minutes a blue/green deployment can wait after a successful deployment before terminating instances from the original deployment | 2800 | 
-|  ¹ This limit is intended to prevent accidental, concurrent deployments of the same application to the same deployment group\. ² Each deployment to a scaled\-up Amazon EC2 instance in an Auto Scaling group counts as a single concurrent deployment\. If the scaled\-up Amazon EC2 instance is associated with multiple applications, then additional concurrent deployment for each application would be generated\. For example, an Auto Scaling group that scales up by five Amazon EC2 instances and is associated with a single application would generate five concurrent deployments\. If the same five scaled\-up Amazon EC2 instances are associated with two additional applications, this would generate ten additional concurrent deployments\.   | 
+|  ¹ This limit is intended to prevent accidental, concurrent deployments of the same application to the same deployment group\. ² Each deployment to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group counts as a single concurrent deployment\. If the scaled\-up Amazon EC2 instance is associated with multiple applications, then additional concurrent deployment for each application would be generated\. For example, an Amazon EC2 Auto Scaling group that scales up by five Amazon EC2 instances and is associated with a single application would generate five concurrent deployments\. If the same five scaled\-up Amazon EC2 instances are associated with two additional applications, this would generate ten additional concurrent deployments\.   | 
 
 ## Deployment Configurations<a name="limits-deployment-configurations"></a>
 
@@ -72,7 +78,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | --- |--- |
 |  Maximum number of deployment groups associated with a single application  |  100  | 
 |  Maximum number of tags in a deployment group  |  10  | 
-|  Maximum number of Auto Scaling groups in a deployment group  |  10  | 
+|  Maximum number of Amazon EC2 Auto Scaling groups in a deployment group  |  10  | 
 | Maximum number of characters in a deployment group name  | 100 | 
 | Characters allowed in a deployment group name | Letters \(a\-z, A\-Z\), numbers \(0\-9\), periods \(\.\), underscores \(\_\), \+ \(plus signs\), = \(equals signs\), , \(commas\), @ \(at signs\), \- \(minus signs\)\. | 
 | Maximum number of event notification triggers in a deployment group | 10 | 

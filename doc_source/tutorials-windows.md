@@ -1,14 +1,18 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Tutorial: Deploy a "Hello, World\!" Application with AWS CodeDeploy \(Windows Server\)<a name="tutorials-windows"></a>
 
-In this tutorial, you will deploy a single web page to a single Windows Server Amazon EC2 instance running Internet Information Services \(IIS\) as its web server\. This web page will display a simple "Hello, World\!" message\.
+In this tutorial, you deploy a single webpage to a single Windows Server Amazon EC2 instance running Internet Information Services \(IIS\) as its web server\. This webpage displays a simple "Hello, World\!" message\.
 
 Not what you're looking for?
 + To practice deploying to an Amazon Linux or Red Hat Enterprise Linux \(RHEL\) Amazon EC2 instance instead, see [Tutorial: Deploy WordPress to an Amazon EC2 Instance \(Amazon Linux or Red Hat Enterprise Linux and Linux, macOS, or Unix\)](tutorials-wordpress.md)\.
 + To practice deploying to an on\-premises instance instead, see [Tutorial: Deploy an Application to an On\-Premises Instance with AWS CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md)\.
 
-This tutorial builds on concepts that were introduced in the [Step 5: Try the AWS CodeDeploy Sample Deployment Wizard](getting-started-wizard.md)\. If you have not yet completed it, you may want to do that first\.
-
-This tutorial's steps are presented from a Windows perspective\. Although you can complete most of these steps on a local machine running Linux, macOS, or Unix, you will need to adapt those that cover Windows\-based directory paths such as `c:\temp`\. Also, if you want to connect to the Amazon EC2 instance, you will need a client application that is capable of connecting through Remote Desktop Protocol \(RDP\) to the Amazon EC2 instance running Windows Server\. \(Windows includes an RDP connection client application by default\.\)
+This tutorial's steps are presented from a Windows perspective\. Although you can complete most of these steps on a local machine running Linux, macOS, or Unix, you must adapt those that cover Windows\-based directory paths such as `c:\temp`\. Also, if you want to connect to the Amazon EC2 instance, you need a client application that can connect through Remote Desktop Protocol \(RDP\) to the Amazon EC2 instance running Windows Server\. \(Windows includes an RDP connection client application by default\.\)
 
 Before you start this tutorial, you must complete the prerequisites in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md), including configuring your IAM user, installing or upgrading the AWS CLI, and creating an IAM instance profile and a service role\.
 

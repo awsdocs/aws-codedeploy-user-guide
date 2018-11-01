@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Grant Amazon SNS Permissions to an AWS CodeDeploy Service Role<a name="monitoring-sns-event-notifications-permisssions"></a>
 
 Before your triggers can generate notifications, the service role you use in your AWS CodeDeploy operations must be granted permission to access the Amazon SNS resources\. 
@@ -18,7 +24,7 @@ Before your triggers can generate notifications, the service role you use in you
 
 1. On the **Set Permissions** page, choose **Custom Policy**, and then choose **Select**\.
 
-1. On the **Review Policy** page, in the **Policy Name** field, type a name to identify this policy, such as `SNSPublish`\.
+1. On the **Review Policy** page, in the **Policy Name** field, enter a name to identify this policy, such as `SNSPublish`\.
 
 1. Paste the following into the **Policy Document** field: 
 

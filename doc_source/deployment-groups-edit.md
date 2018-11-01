@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Change Deployment Group Settings with AWS CodeDeploy<a name="deployment-groups-edit"></a>
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to change the settings of a deployment group\.
@@ -15,27 +21,23 @@ To use the AWS CodeDeploy console to change deployment group settings:
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. Choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
-1. In the list of applications, choose the application that is associated with the deployment group you want to change\.
+1. In the list of applications, choose the name of the application that is associated with the deployment group you want to change\.
 **Note**  
 If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 
-1. On the **Application details** page, in **Deployment groups**, choose the button next to the deployment group you want to change\.
+1. Choose the **Deployment groups** tab, and then choose the name of the deployment group you want to change\.
 
-1. On the **Actions** menu, choose **Edit**\.
+1. On the **Depoyment group** page, choose **Edit**\.
 
-1. Revise the deployment group options as needed\.
+1. Edit the deployment group options as needed\.
 
    For information about deployment group components, see [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\.
 
-1. If you want to deploy the last successful revision to the deployment group, select **Deploy changes made to *deployment group name***, and then choose **Save**\. When prompted, choose **Deploy**\. AWS CodeDeploy updates the deployment group's information, starts a deployment of the last successful revision to the deployment group based on changes you specified, and displays the **Deployments** page\.
-**Note**  
-The **Deploy changes made to *deployment group name*** check box appears only if there was a successful deployment to this deployment group\.
-
-1. If you want to update the deployment group's information with your changes, but do not want to deploy any applications to the deployment group at this time, clear **Deploy changes made to *deployment group name***, and then choose **Save**\. AWS CodeDeploy updates the deployment group's information, but does not deploy any applications to the deployment group\.
+1. Choose **Save changes**\.
 
 ## Change Deployment Group Settings \(CLI\)<a name="deployment-groups-edit-cli"></a>
 
@@ -51,4 +53,4 @@ To use the AWS CLI to change deployment group settings, call the [update\-deploy
   + \(Optional\) Commands to create or update a trigger that publishes to a topic in Amazon Simple Notification Service, so that subscribers to that topic receive notifications about deployment and instance events in this deployment group\. For information, see [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)\.
 + For EC2/On\-Premises deployments only:
   + \(Optional\) Replacement tags or tag groups that uniquely identify the instances to be included in the deployment group\.
-  + \(Optional\) The names of replacement Auto Scaling groups to be added to the deployment group\.
+  + \(Optional\) The names of replacement Amazon EC2 Auto Scaling groups to be added to the deployment group\.

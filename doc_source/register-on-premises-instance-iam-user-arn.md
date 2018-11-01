@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Use the register\-on\-premises\-instance Command \(IAM User ARN\) to Register an On\-Premises Instance<a name="register-on-premises-instance-iam-user-arn"></a>
 
 Follow these instructions to configure an on\-premises instance and register and tag it with AWS CodeDeploy mostly on your own, using static IAM user credentials for authentication\.
@@ -335,13 +341,13 @@ You can use either the AWS CLI or the AWS CodeDeploy console to tag the on\-prem
 
 1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
 1. From the AWS CodeDeploy menu, choose **On\-premises instances**\.
 
 1. In the list of on\-premises instances, choose the arrow next to the on\-premises instance you want to tag\.
 
-1. In the list of tags, select or type the desired tag key and tag value\. After you type the tag key and tag value, another row appears\. You can repeat this for up to 10 tags\. To remove a tag, choose the delete icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/delete-triggers-x.png)\)\.
+1. In the list of tags, select or enter the desired tag key and tag value\. After you enter the tag key and tag value, another row appears\. You can repeat this for up to 10 tags\. To remove a tag, choose the delete icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/delete-triggers-x.png)\)\.
 
 1. After you have added tags, choose **Update Tags**\.
 

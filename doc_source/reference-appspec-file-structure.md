@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AppSpec File Structure<a name="reference-appspec-file-structure"></a>
 
 The following is the high\-level structure for an AppSpec file used for deployments to AWS Lambda and EC2/On\-Premises compute platforms\.

@@ -1,14 +1,20 @@
-# Step 4: Increase the Number of Amazon EC2 Instances in the Auto Scaling Group<a name="tutorials-auto-scaling-group-scale-up"></a>
+--------
 
-In this step, you'll instruct the Auto Scaling group to create an additional Amazon EC2 instance\. After Auto Scaling creates the instance, AWS CodeDeploy will deploy your revision to it\.
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
+# Step 4: Increase the Number of Amazon EC2 Instances in the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-scale-up"></a>
+
+In this step, you instruct the Amazon EC2 Auto Scaling group to create an additional Amazon EC2 instance\. After Amazon EC2 Auto Scaling creates the instance, AWS CodeDeploy deploys your revision to it\.
 
 **Topics**
-+ [To scale up the number of Amazon EC2 instances in the Auto Scaling group \(CLI\)](#tutorials-auto-scaling-group-scale-up-cli)
++ [To scale up the number of Amazon EC2 instances in the Amazon EC2 Auto Scaling group \(CLI\)](#tutorials-auto-scaling-group-scale-up-cli)
 + [To scale up the number of Amazon EC2 instances in the deployment group \(console\)](#tutorials-auto-scaling-group-scale-up-console)
 
-## To scale up the number of Amazon EC2 instances in the Auto Scaling group \(CLI\)<a name="tutorials-auto-scaling-group-scale-up-cli"></a>
+## To scale up the number of Amazon EC2 instances in the Amazon EC2 Auto Scaling group \(CLI\)<a name="tutorials-auto-scaling-group-scale-up-cli"></a>
 
-1. Call the update\-auto\-scaling\-group command to increase the Amazon EC2 instances in the Auto Scaling group named **CodeDeployDemo\-AS\-Group** from one to two\.
+1. Call the update\-auto\-scaling\-group command to increase the Amazon EC2 instances in the Amazon EC2 Auto Scaling group named **CodeDeployDemo\-AS\-Group** from one to two\.
 
    On local Linux, macOS, or Unix machines:
 
@@ -26,7 +32,7 @@ In this step, you'll instruct the Auto Scaling group to create an additional Ama
    aws autoscaling update-auto-scaling-group --auto-scaling-group-name CodeDeployDemo-AS-Group --min-size 2 --max-size 2 --desired-capacity 2
    ```
 
-1. Make sure the Auto Scaling group now has two Amazon EC2 instances\. Call the describe\-auto\-scaling\-groups command against **CodeDeployDemo\-AS\-Group**:
+1. Make sure the Amazon EC2 Auto Scaling group now has two Amazon EC2 instances\. Call the describe\-auto\-scaling\-groups command against **CodeDeployDemo\-AS\-Group**:
 
    ```
    aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names CodeDeployDemo-AS-Group --query "AutoScalingGroups[0].Instances[*].[HealthStatus, LifecycleState]" --output text

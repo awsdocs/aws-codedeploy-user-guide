@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AppSpec 'files' Section \(EC2/On\-Premises Deployments Only\)<a name="reference-appspec-file-structure-files"></a>
 
 Provides information to AWS CodeDeploy about which files from your application revision should be installed on the instance during the deployment's **Install** event\. This section is required only if you are copying files from your revision to locations on the instance during deployment\. 

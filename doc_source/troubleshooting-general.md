@@ -1,10 +1,15 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # General Troubleshooting Issues<a name="troubleshooting-general"></a>
 
 **Topics**
 + [General Troubleshooting Checklist](#troubleshooting-checklist)
 + [AWS CodeDeploy deployment resources are supported in certain regions only](#troubleshooting-supported-regions)
 + [Required IAM roles are not available](#troubleshooting-iam-cloudformation)
-+ [Avoid concurrent deployments to the same Amazon EC2 instance](#troubleshooting-concurrent-deployments)
 + [Using some text editors to create AppSpec files and shell scripts can cause deployments to fail](#troubleshooting-text-editors)
 + [Using Finder in macOS to bundle an application revision can cause deployments to fail](#troubleshooting-bundle-with-finder)
 
@@ -48,7 +53,7 @@ If you are still unable to troubleshoot your failed deployment, review the other
 
 If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the AWS CodeDeploy console, make sure you're referencing one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
-Amazon EC2 instances and Auto Scaling groups that will be used in AWS CodeDeploy deployments must be launched and created in one of these regions\.
+Amazon EC2 instances and Amazon EC2 Auto Scaling groups that will be used in AWS CodeDeploy deployments must be launched and created in one of these regions\.
 
 If you're using the AWS CLI, run the `aws configure` command from the AWS CLI\. Then you can view and set your default region\.
 
@@ -64,21 +69,6 @@ For more information:
 ## Required IAM roles are not available<a name="troubleshooting-iam-cloudformation"></a>
 
 If you rely on an IAM instance profile or a service role that was created as part of an AWS CloudFormation stack, if you delete the stack, all IAM roles are deleted, too\. This may be why the IAM role is no longer displayed in the IAM console and AWS CodeDeploy no longer works as expected\. To fix this problem, you must manually re\-create the deleted IAM role\.
-
-## Avoid concurrent deployments to the same Amazon EC2 instance<a name="troubleshooting-concurrent-deployments"></a>
-
-As a best practice, you should avoid situations that would result in more than one attempted deployment to an Amazon EC2 instance at the same time\. In cases where commands from different deployments compete to run on a single instance, the deployments can time out and fail for the following reasons:
-+ AWS CodeDeploy fails a deployment if its first lifecycle event doesn't start within five minutes of the triggering of the deployment\. You can use the console or the AWS CLI [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command to trigger a deployment\.
-+ AWS CodeDeploy fails a deployment if a lifecycle event does not start within five minutes of the end of the previous lifecycle event\.
-+ The AWS CodeDeploy agent can process only one deployment command at a time\. 
-+ It's not possible to control the order in which deployments occur if more than one deployment attempts to run at the same time\. 
-
-**Note**  
-The default timeout for a script in a lifecycle event is 30 minutes\. You can change the timeout to a different value in the AppSpec file\. For more information, see [Add an AppSpec File for an EC2/On\-Premises Deployment](application-revisions-appspec-file.md#add-appspec-file-server)\.
-
-AWS CodeDeploy logic considers a deployment to have failed if its steps are not complete within five minutes, even if a deployment process is otherwise running as expected\. The five\-minute limit can be exceeded if commands from multiple deployments are being sent to the AWS CodeDeploy agent at the same time\.
-
-For information about other challenges you might face with concurrent deployments in Auto Scaling groups, see [Avoid associating multiple deployment groups with a single Auto Scaling group](troubleshooting-auto-scaling.md#troubleshooting-multiple-depgroups)\.
 
 ## Using some text editors to create AppSpec files and shell scripts can cause deployments to fail<a name="troubleshooting-text-editors"></a>
 

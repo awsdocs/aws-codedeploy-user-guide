@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Automatically Deregister an On\-Premises Instance<a name="on-premises-instances-operations-deregister-automatically"></a>
 
 Typically, you deregister an on\-premises instance after you're no longer planning to deploy to it\. When you deregister an on\-premises instance, even though the on\-premises instance might be part of a deployment group's on\-premises instance tags, the on\-premises instance will not be included in any deployments\. You can use the AWS CLI to deregister on\-premises instances\.
@@ -26,6 +32,8 @@ The deregister command does the following:
 
 1. If specified, deletes the IAM user associated with the on\-premises instance\.
 
-After you deregister an on\-premises instance, you cannot create a replacement on\-premises instance with the same name or the same associated IAM user name until AWS CodeDeploy deletes its records about the deregistered on\-premises instance\. This typically takes about 24 hours\.
+After you deregister an on\-premises instance:
++  It stops appearing in the console immediately\. 
++  You can create another instance with the same name immediately\. 
 
 If this command encounters any errors, an error message appears, describing how you can manually complete the remaining steps\. Otherwise, a success message appears, describing how to call the uninstall command\.

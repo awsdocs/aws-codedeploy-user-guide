@@ -1,9 +1,15 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Create a Deployment Group \(CLI\)<a name="deployment-groups-create-cli"></a>
 
 To use the AWS CLI to create a deployment group, call the [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command, specifying:
 + The application name\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
 + A name for the deployment group\. A deployment group with this name will be created for the specified application\. A deployment group can only be associated with one application\.
-+ Information about the tags, tag groups, or Auto Scaling group names that identify the instances to be included in the deployment group\.
++ Information about the tags, tag groups, or Amazon EC2 Auto Scaling group names that identify the instances to be included in the deployment group\.
 + The Amazon Resource Name \(ARN\) identifier of the service role that allows AWS CodeDeploy to act on behalf of your AWS account when interacting with other AWS services\. To get the service role ARN, see [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\. For more information about service roles, see [Roles Terms and Concepts](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts) in *IAM User Guide*\.
 + Information about the type of deployment, either an in\-place deployment or blue/green deployment, to associate with the deployment group\.
 + \(Optional\) The name of an existing deployment configuration\. To view a list of deployment configurations, see [View Deployment Configuration Details with AWS CodeDeploy](deployment-configurations-view-details.md)\. If not specified, AWS CodeDeploy uses a default deployment configuration\.

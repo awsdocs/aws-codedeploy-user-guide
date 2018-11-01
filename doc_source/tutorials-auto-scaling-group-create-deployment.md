@@ -1,6 +1,12 @@
-# Step 2: Deploy the Application to the Auto Scaling Group<a name="tutorials-auto-scaling-group-create-deployment"></a>
+--------
 
-In this step, you'll deploy the revision to the single Amazon EC2 instance in the Auto Scaling group\.
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
+# Step 2: Deploy the Application to the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-create-deployment"></a>
+
+In this step, you'll deploy the revision to the single Amazon EC2 instance in the Amazon EC2 Auto Scaling group\.
 
 **Topics**
 + [To create the deployment \(CLI\)](#tutorials-auto-scaling-group-create-deployment-cli)
@@ -16,7 +22,7 @@ In this step, you'll deploy the revision to the single Amazon EC2 instance in th
 
 1. You should have already created a service role by following the instructions in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\. The service role will give AWS CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their tags\. You will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
 
-1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
+1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Amazon EC2 Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
 **Note**  
 The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch alarms are met\. Commands for these actions are not included in this tutorial\.
 
@@ -105,29 +111,43 @@ Currently, AWS CodeDeploy does not provide a sample revision to deploy to Ubuntu
 
    Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. If the **Applications** page does not appear, on the AWS CodeDeploy menu, choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
 
 1. Choose **Create application**\.
 
-1. In the **Application name** box, type **SimpleDemoApp**\.
+1. Choose **Custom application**\.
 
-1. In the **Deployment group name** box, type **SimpleDemoDG**\.
+1. In **Application name**, enter **SimpleDemoApp**\.
 
-1. In **Environment configuration**, on the **Auto Scaling groups** tab, type **CodeDeployDemo\-AS\-Group**\.
+1. In **Compute platform**, choose **EC2/On\-premises**\.
 
-1. From the **Deployment configuration** drop\-down list, choose **CodeDeployDefault\.OneAtATime**\.
+1. Choose **Create application**\.
 
-1. From the **Service role ARN** drop\-down list, choose the service role ARN\.
+1. On the **Deployment groups** tab, choose **Create deployment group**\.
 
-1. Choose **Create application**\. 
+1. In **Deployment group name**, enter **SimpleDemoDG**\.
 
-1. In the **Application details** page, in the **Deployment groups** area, next to **SimpleDemoDG**, choose the arrow to see the deployment group details\.
+1. In **Service Role**, choose the name of your service role\.
 
-1. Select the button next to **SimpleDemoDG**\. In the **Actions** menu, choose **Deploy new revision**\.
+1. In **Deployment type**, choose **In\-place**\.
 
-1. In the **Repository type** area, choose **My application is stored in Amazon S3**, and then in the **Revision location** box, type the location of the sample application for your operating system and region\.
+1. In **Environment configuration** select **Amazon EC2 Auto Scaling groups**, and then choose **CodeDeployDemo\-AS\-Group**\.
+
+1. In **Deployment configuration**, choose **CodeDeployDefault\.OneAtATime**\.
+
+1. Clear **Enable load balancing**\.
+
+1. Choose **Create deployment group**\. 
+
+1. In the deployment group page, choose **Create deployment**\.
+
+1. In **Deployment group**, choose **SimpleDemoDG**\.
+
+1. In **Revision type**, choose **S3**\. 
+
+1. In **Revision location**, enter the location of the sample application for your operating system and region\.
 
    **For Amazon Linux and RHEL Amazon EC2 instances**  
 ****    
@@ -141,9 +161,12 @@ Sign in with the same account or IAM user information you used in [Getting Start
 
    Type the location of your custom application revision stored in Amazon S3\.
 
-1. Leave the **Deployment description** box blank\.
+1. Leave **Deployment description** blank\.
 
-1. With **CodeDeployDefault\.OneAtATime** selected in the **Deployment configuration** drop\-down list, choose **Deploy**\. 
+1. Expand **Advanced**\.
+
+1. In **Alarms**, select **Ignore alarm configuration**\.
+
+1. Choose **Create deployment**\. 
 **Note**  
-To update the deployment's current status, refresh the page in your browser\.  
 If **Failed** appears instead of **Succeeded**, you may want to try some of the techniques in [Monitor and Troubleshoot Your Deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor) \(using the application name of **SimpleDemoApp** and the deployment group name of **SimpleDemoDG**\)\.

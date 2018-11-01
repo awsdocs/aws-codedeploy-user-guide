@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Troubleshoot GitHub Token Issues<a name="troubleshooting-github-token-issues"></a>
 
 ## Invalid GitHub OAuth token<a name="troubleshooting-invalid-github-token"></a>

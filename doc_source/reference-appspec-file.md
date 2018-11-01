@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # AWS CodeDeploy AppSpec File Reference<a name="reference-appspec-file"></a>
 
 This section is a reference only\. For a conceptual overview of the AppSpec file, see [AWS CodeDeploy Application Specification Files](application-specification-files.md)\.

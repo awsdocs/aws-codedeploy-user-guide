@@ -1,3 +1,9 @@
+--------
+
+ The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+
+--------
+
 # Verify the AWS CodeDeploy Agent Is Running<a name="codedeploy-agent-operations-verify"></a>
 
 This section describes commands to run if you suspect the AWS CodeDeploy agent has stopped running on an instance\.
