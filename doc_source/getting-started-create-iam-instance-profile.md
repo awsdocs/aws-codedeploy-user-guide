@@ -7,7 +7,7 @@
 # Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances<a name="getting-started-create-iam-instance-profile"></a>
 
 **Note**  
- If you are using the AWS Lambda compute platform, skip this step\. AWS Lambda deployments deploy a serverless Lambda function version, so an instance profile for Amazon EC2 instances is not required\.
+ If you are using the Amazon ECS or AWS Lambda compute platform , skip this step\. Amazon ECS deployments deploy an Amazon ECS service, and AWS Lambda deployments deploy a serverless Lambda function version, so an instance profile for Amazon EC2 instances is not required\.
 
 Your Amazon EC2 instances need permission to access the Amazon S3 buckets or GitHub repositories where the applications that will be deployed by AWS CodeDeploy are stored\. To launch Amazon EC2 instances that are compatible with AWS CodeDeploy, you must create an additional IAM role, an *instance profile*\. These instructions show you how to create an IAM instance profile to attach to your Amazon EC2 instances\. This role gives AWS CodeDeploy permission to access the Amazon S3 buckets or GitHub repositories where your applications are stored\.
 

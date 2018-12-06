@@ -193,6 +193,13 @@ Be sure to include `file://` before the file name\. It is required in this comma
      ```
      aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRoleForLambda
      ```
+   + If your deployment is to an Amazon ECS compute platform:
+
+     Call the attach\-role\-policy command to give the service role named **CodeDeployServiceRole** the permissions based on the IAM managed policy named **AWSCodeDeployRoleForECS** or **AWSCodeDeployRoleForECSLimited**\. For example:
+
+     ```
+     aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRoleForECS
+     ```
 
 For more information about creating service roles, see [Creating a Role for an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html) in the *IAM User Guide*\.
 

@@ -44,7 +44,7 @@ For a blue/green deployment, you can specify a Classic Load Balancer, Applicatio
 For more information about load balancers in blue/green deployments, see the following topics:
 + [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)
 + [Create an Application for a Blue/Green Deployment \(Console\)](applications-create-blue-green.md)
-+ [Create a Deployment Group for a Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
++ [Create a Deployment Group for an EC2/On\-Premises Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
 
 ### In\-Place Deployments<a name="integrations-aws-elastic-load-balancing-in-place"></a>
 

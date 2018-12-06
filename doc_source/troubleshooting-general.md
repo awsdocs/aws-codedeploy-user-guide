@@ -17,7 +17,7 @@
 
 You can use the following checklist to troubleshoot a failed deployment\.
 
-1. See [View Deployment Details with AWS CodeDeploy](deployments-view-details.md) and [View Instance Details with AWS CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
+1. See [View AWS CodeDeployDeployment Details ](deployments-view-details.md) and [View Instance Details with AWS CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
 
 1. Check whether you have correctly configured the instances:
    + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.

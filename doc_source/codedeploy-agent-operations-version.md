@@ -8,6 +8,9 @@
 
 You can determine the version of the AWS CodeDeploy agent running on your instance in two ways\.
 
+**Important**  
+ The minimum supported version of the AWS CodeDeploy Agent is 1\.0\.1\.1458\. Use of an earlier AWS CodeDeploy agent may cause deployments to fail\. 
+
 First, starting with version 1\.0\.1\.854 of the AWS CodeDeploy agent, you can view the version number in a `.version` file on the instance\. The following table shows the location and sample version string for each of the supported operating systems\.
 
 

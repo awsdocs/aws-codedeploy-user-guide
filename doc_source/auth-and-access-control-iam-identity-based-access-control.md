@@ -66,15 +66,25 @@ AWSCodeDeployFullAccess does not provide permissions to operations in other serv
 
    
 + **AWSCodeDeployRole** – Allows AWS CodeDeploy to identify Amazon EC2 instances by their Amazon EC2 tags or Amazon EC2 Auto Scaling group names, and on\-premises instances by their on\-premises instance tags, and to deploy application revisions to them accordingly\. Provides permissions needed to publish notification to an Amazon SNS topic and retrieve information about alarms from CloudWatch\.
-+ **AWSCodeDeployRoleForLambda** – Grants AWS CodeDeploy permission to access to AWS Lambda\.
+
+   
++ **AWSCodeDeployRoleForLambda** – Grants AWS CodeDeploy permission to access AWS Lambda and any other resource required for a deployment\.
+
+   
++  **AWSCodeDeployRoleForECS** – Grants AWS CodeDeploy permission to access Amazon ECS and any other resource required for a deployment\. 
+
+   
++  **AWSCodeDeployRoleForECSLimited** – Grants AWS CodeDeploy permission to access Amazon ECS and any other resource required for a deployment with the following exceptions: 
+  +  In the `hooks` section of the AppSpec file, only Lambda functions with names that begin with `CodeDeployHook_` can be used\. For more information, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\. 
+  +  Amazon S3 bucket access is limited to S3 buckets with a registration tag, `UseWithCodeDeploy`, that has a value of `true`\. For more information, see [Object Tagging](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html)\. 
 
 Permissions for some aspects of the deployment process are granted to two other role types that act on behalf of AWS CodeDeploy, rather than to IAM users:
-+ **IAM instance profile**: An IAM role that you attach to your Amazon EC2 instances\. This profile includes the permissions required to access the Amazon S3 buckets or GitHub repositories where the applications that will be deployed by AWS CodeDeploy are stored\. For more information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
++ **IAM instance profile**: An IAM role that you attach to your Amazon EC2 instances\. This profile includes the permissions required to access the Amazon S3 buckets or GitHub repositories where the applications are stored\. For more information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
 + **Service role**: An IAM role that grants permissions to an AWS service so it can access AWS resources\. The policies you attach to the service role determine which AWS resources the service can access and the actions it can perform with those resources\. For AWS CodeDeploy, a service role is used for the following:
   + To read either the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. This enables AWS CodeDeploy to identify instances to which it can deploy applications\.
   + To perform operations on instances, Amazon EC2 Auto Scaling groups, and Elastic Load Balancing load balancers\.
   + To publish information to Amazon SNS topics so that notifications can be sent when specified deployment or instance events occur\.
-  + To retrieve information about CloudWatch alarms in order to set up alarm monitoring for deployments\.
+  + To retrieve information about CloudWatch alarms to set up alarm monitoring for deployments\.
 
   For more information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
 

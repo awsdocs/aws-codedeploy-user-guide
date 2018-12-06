@@ -4,9 +4,9 @@
 
 --------
 
-# Create an AWS Lambda Compute Platform Deployment \(CLI\)<a name="deployments-create-lambda-cli"></a>
+# Create an Amazon ECS Compute Platform Deployment \(CLI\)<a name="deployments-create-ecs-cli"></a>
 
-After you have created the application and revision \(in AWS Lambda deployments, this is the AppSpec file\):
+After you have created the application and revision \(in Amazon ECS deployments, this is the AppSpec file\):
 
 Call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command, specifying:
 + An application name\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
@@ -20,7 +20,6 @@ Call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/d
   + \(Optional\) The ETag for the revision\. \(If the ETag is not specified, AWS CodeDeploy skips object validation\.\)
 
   For revisions stored in a file that is not in Amazon S3, you need the file name and its path\. Your revision file is written using JSON or YAML, so it most likely has a \.json or \.yaml extension\.
-+ \(Optional\) The name of a deployment configuration to use\. To view a list of deployment configurations, call the [list\-deployment\-configs](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-configs.html) command\. \(If not specified, AWS CodeDeploy uses a specific default deployment configuration\.\)
 + \(Optional\) A description for the deployment\.
 
 The revision file can be specified as a file uploaded to an Amazon S3 bucket or as a string\. The syntax for each when used as part of the create\-deployment command is:

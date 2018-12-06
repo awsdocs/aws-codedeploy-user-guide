@@ -13,7 +13,7 @@ If you're deploying to an Ubuntu Server instance, use your own testing strategy 
 
 **To monitor and verify the deployment \(console\)**
 
-1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 
 1. In the list of deployments, look for the row with an **Application** value of **CodeDeployGitHubDemo\-App** and a **Deployment Group** value of **CodeDeployGitHubDemo\-DepGrp**\. If **Succeeded** or **Failed** do not appear in the **Status** column, choose the **Refresh** button periodically\.
 

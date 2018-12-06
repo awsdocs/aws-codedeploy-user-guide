@@ -6,11 +6,129 @@
 
 # AppSpec 'hooks' Section<a name="reference-appspec-file-structure-hooks"></a>
 
-The content of the 'hooks' section of the AppSpec file varies, depending on the compute platform for your deployment\. The 'hooks' section for an EC2/On\-Premises deployment contains mappings that link deployment lifecycle event hooks to one or more scripts\. The 'hooks' section for a Lambda deployment specifies Lambda validation functions to run during a deployment lifecycle event\. If an event hook is not present, then no operation is executed for that event\. This section is required only if you are running scripts or Lambda validation functions as part of the deployment\.
+The content in the `'hooks'` section of the AppSpec file varies, depending on the compute platform for your deployment\. The `'hooks'` section for an EC2/On\-Premises deployment contains mappings that link deployment lifecycle event hooks to one or more scripts\. The `'hooks'` section for a Lambda or an Amazon ECS deployment specifies Lambda validation functions to run during a deployment lifecycle event\. If an event hook is not present, no operation is executed for that event\. This section is required only if you are running scripts or Lambda validation functions as part of the deployment\.
 
 **Topics**
++ [AppSpec 'hooks' Section for an Amazon ECS Deployment](#appspec-hooks-ecs)
 + [AppSpec 'hooks' Section for an AWS Lambda Deployment](#appspec-hooks-lambda)
 + [AppSpec 'hooks' Section for an EC2/On\-Premises Deployment](#appspec-hooks-server)
+
+## AppSpec 'hooks' Section for an Amazon ECS Deployment<a name="appspec-hooks-ecs"></a>
+
+**Topics**
++ [List of Lifecycle Event Hooks for an Amazon ECS Deployment](#reference-appspec-file-structure-hooks-list-ecs)
++ [Run Order of Hooks in an Amazon ECS Deployment](#reference-appspec-file-structure-hooks-run-order-ecs)
++ [Structure of 'hooks' Section](#reference-appspec-file-structure-hooks-section-structure-ecs)
++ [Sample Lambda 'hooks' Function](#reference-appspec-file-structure-hooks-section-structure-ecs-sample-function)
+
+### List of Lifecycle Event Hooks for an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-list-ecs"></a>
+
+An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event\. Each hook is executed once per deployment\. Following are descriptions of the lifecycle events where you can run a hook during an Amazon ECS deployment\. 
++  **BeforeInstall** – Use to run tasks before the replacement task set is created\. One target group is associated with the original task set\. If an optional test listener is specified, it is associated with the original task set\. A rollback is not possible at this point\. 
++  **AfterInstall** – Use to run tasks after the replacement task set is created and one of the target groups is associated with it\. If an optional test listener is specified, it is associated with the original task set\. The results of a hook function at this lifecycle event can trigger a rollback\.
++  **AfterAllowTestTraffic** – Use to run tasks after the test listener serves traffic to the replacement task set\. The results of a hook function at this point can trigger a rollback\. The results of a hook function at this lifecycle event can trigger a rollback\. 
++  **BeforeAllowTraffic** – Use to run tasks after the second target group is associated with the replacement task set, but before traffic is shifted to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
++  **AfterAllowTraffic** – Use to run tasks after the second target group serves traffic to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
+
+### Run Order of Hooks in an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-run-order-ecs"></a>
+
+In an Amazon ECS deployment, event hooks run in the following order:
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/lifecycle-event-order-ecs.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
+
+**Note**  
+The **Start**, **Install**, **TestTraffic**, **AllowTraffic**, and **End** events in the deployment cannot be scripted, which is why they appear in gray in this diagram\.
+
+### Structure of 'hooks' Section<a name="reference-appspec-file-structure-hooks-section-structure-ecs"></a>
+
+The following are examples of the structure of the `'hooks'` section\.
+
+Using YAML:
+
+```
+Hooks:
+  - BeforeInstall: "BeforeInstallHookFunctionName"
+  - AfterInstall: "AfterInstallHookFunctionName"
+  - AfterAllowTestTraffic: "AfterAllowTestTrafficHookFunctionName"
+  - BeforeAllowTraffic: "BeforeAllowTrafficHookFunctionName"
+  - AfterAllowTraffic: "AfterAllowTrafficHookFunctionName"
+```
+
+Using JSON:
+
+```
+"Hooks": [
+		{
+			"BeforeInstall": "BeforeInstallHookFunctionName"
+		},
+		{
+			"AfterInstall": "AfterInstallHookFunctionName"
+		},
+		{
+			"AfterAllowTestTraffic": "AfterAllowTestTrafficHookFunctionName"
+		},
+		{
+			"BeforeAllowTraffic": "BeforeAllowTrafficHookFunctionName"
+		},
+		{
+			"AfterAllowTraffic": "AfterAllowTrafficHookFunctionName"
+		}
+	]
+}
+```
+
+### Sample Lambda 'hooks' Function<a name="reference-appspec-file-structure-hooks-section-structure-ecs-sample-function"></a>
+
+Use the `'hooks'` section to specify a Lambda function that AWS CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the **BeforeInstall**, **AfterInstall**, **AllowTestTraffic**, **BeforeAllowTraffice**, and **AllowTestTraffic** deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back AWS CodeDeploy and delivers a result of 'Succeeded' or 'Failed'\. 
+
+**Important**  
+If AWS CodeDeploy is not notified by the Lambda validation function within one hour, then it assumes the deployment failed\.
+
+ Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID:
+
+```
+aws deploy put-lifecycle-event-hook-execution-status --deployment-id <deployment-id> --status Succeeded --lifecycle-event-hook-execution-id <execution-id> --region <region>
+```
+
+ The following is a sample Lambda hook function written in Node\.js\. 
+
+```
+'use strict';
+
+const aws = require('aws-sdk');
+const codedeploy = new aws.CodeDeploy({apiVersion: '2014-10-06'});
+
+exports.handler = (event, context, callback) => {
+    //Read the DeploymentId from the event payload.
+    var deploymentId = event.DeploymentId;
+
+    //Read the LifecycleEventHookExecutionId from the event payload
+    var lifecycleEventHookExecutionId = event.LifecycleEventHookExecutionId;
+
+    /*
+     Enter validation tests here.
+    */
+
+    // Prepare the validation test results with the deploymentId and
+    // the lifecycleEventHookExecutionId for AWS CodeDeploy.
+    var params = {
+        deploymentId: deploymentId,
+        lifecycleEventHookExecutionId: lifecycleEventHookExecutionId,
+        status: 'Succeeded' // status can be 'Succeeded' or 'Failed'
+    };
+    
+    // Pass AWS CodeDeploy the prepared validation test results.
+    codedeploy.putLifecycleEventHookExecutionStatus(params, function(err, data) {
+        if (err) {
+            // Validation failed.
+            callback('Validation test failed');
+        } else {
+            // Validation succeeded.
+            callback(null, 'Validation test succeeded');
+        }
+    });
+};
+```
 
 ## AppSpec 'hooks' Section for an AWS Lambda Deployment<a name="appspec-hooks-lambda"></a>
 

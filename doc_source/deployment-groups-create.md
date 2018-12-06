@@ -14,6 +14,7 @@ As part of creating a deployment group, you must specify a service role\. For mo
 
 **Topics**
 + [Create a Deployment Group for an In\-Place Deployment \(Console\)](deployment-groups-create-in-place.md)
-+ [Create a Deployment Group for a Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
++ [Create a Deployment Group for an EC2/On\-Premises Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
++ [Create a Deployment Group for an Amazon ECS Deployment \(Console\)](deployment-groups-create-ecs.md)
 + [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)
 + [Create a Deployment Group \(CLI\)](deployment-groups-create-cli.md)

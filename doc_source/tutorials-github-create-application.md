@@ -14,7 +14,7 @@ In this step, you will use the AWS CodeDeploy console or the AWS CLI to create a
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. Choose **Create application**, and then select **Custom application**\.
 

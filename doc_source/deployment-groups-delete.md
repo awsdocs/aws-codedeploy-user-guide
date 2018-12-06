@@ -23,7 +23,7 @@ To use the AWS CodeDeploy console to delete a deployment group:
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. In the list of applications, choose the name of the application associated with the deployment group\.
 

@@ -9,7 +9,7 @@
 You can use the AWS CLI, the AWS CodeDeploy APIs, or an AWS CloudFormation template to create custom deployment configurations\. 
 
 **Note**  
-In the AWS CodeDeploy console, you can use the for an in\-place deployment to create a custom deployment configuration\. 
+You cannot create a custom deployment configuration for an Amazon ECS compute platform deployment\. 
 
 For information about using an AWS CloudFormation template to create a deployment configuration, see [AWS CloudFormation Templates for AWS CodeDeploy Reference](reference-cloudformation-templates.md)\.
 

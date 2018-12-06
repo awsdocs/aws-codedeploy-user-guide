@@ -11,12 +11,21 @@ This section is a reference only\. For a conceptual overview of the AppSpec file
 The application specification file \(AppSpec file\) is a [YAML](http://www.yaml.org)\-formatted or JSON\-formatted file used by AWS CodeDeploy to manage a deployment\.
 
 **Topics**
++ [AppSpec Files on an Amazon ECS Compute Platform](#appspec-reference-ecs)
 + [AppSpec Files on an AWS Lambda Compute Platform](#appspec-reference-lambda)
 + [AppSpec Files on an EC2/On\-Premises Compute Platform](#appspec-reference-server)
 + [AppSpec File Structure](reference-appspec-file-structure.md)
 + [AppSpec File Example](reference-appspec-file-example.md)
 + [AppSpec File Spacing](#reference-appspec-file-spacing)
 + [Validate Your AppSpec File and File Location](reference-appspec-file-validate.md)
+
+## AppSpec Files on an Amazon ECS Compute Platform<a name="appspec-reference-ecs"></a>
+
+ If your application uses the Amazon ECS compute platform, the AppSpec file is used by AWS CodeDeploy to determine: 
++  Your Amazon ECS task definition file\. This is specified with its ARN in the `TaskDefinition` instruction in the AppSpec file\. 
++  The container and port in your replacement task set where your Application Load Balancer or Network Load Balancer reroutes traffic during a deployment\. This is specified with the `LoadBalancerInfo` instruction in the AppSpec file\. 
++  Optional information about your Amazon ECS service, such the platform version on which it runs, its subnets, and its security groups\. 
++  Optional Lambda functions to run during hooks that correspond with lifecycle events during an Amazon ECS deployment\. For more information, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\. 
 
 ## AppSpec Files on an AWS Lambda Compute Platform<a name="appspec-reference-lambda"></a>
 

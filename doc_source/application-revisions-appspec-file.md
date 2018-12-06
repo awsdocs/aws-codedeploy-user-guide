@@ -8,6 +8,127 @@
 
 This topic shows how to add an AppSpec file to your deployment\. It also includes templates to create an AppSpec file for an AWS Lambda and EC2/On\-Premises deployment\.
 
+**Topics**
++ [Add an AppSpec File for an Amazon ECS Deployment](#add-appspec-file-ecs)
++ [Add an AppSpec File for an AWS Lambda Deployment](#add-appspec-file-lambda)
++ [Add an AppSpec File for an EC2/On\-Premises Deployment](#add-appspec-file-server)
+
+## Add an AppSpec File for an Amazon ECS Deployment<a name="add-appspec-file-ecs"></a>
+
+For a deployment to an Amazon ECS compute platform:
++ The AppSpec file specifies the Amazon ECS task definition used for the deployment, a container name and port mapping used to route traffic, and optional Lambda functions run after deployment lifecycle events\.
++ A revision is the same as an AppSpec file\.
++ An AppSpec file can be written using JSON or YAML\.
++ An AppSpec file can be saved as a text file or entered directly into a console when you create a deployment\. For more information, see [ Create an Amazon ECS Compute Platform Deployment \(Console\) ](deployments-create-console-ecs.md)\.
+
+**To create an AppSpec file**
+
+1. Copy the JSON or YAML template into a text editor or into the AppSpec editor in the console\.
+
+1. Modify the template as needed\.
+
+1. Use a JSON or YAML validator to validate your AppSpec file\. If you use the AppSpec editor, the file is validated when you choose **Create deployment**\.
+
+1. If you use a text editor, save the file\. If you use the AWS CLI to create your deployment, reference the AppSpec file if it's on your hard drive or in an Amazon S3 bucket\. If you use the console, you must push your AppSpec file to Amazon S3\.
+
+### YAML AppSpec File Template for an Amazon ECS Deployment with Instructions<a name="app-spec-template-yaml-ecs"></a>
+
+The following is a YAML template of an AppSpec file for an Amazon ECS deployment with all available options\. For information about lifecycle events to use in the `hooks` section, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\.
+
+```
+# This is an appspec.yml template file for use with an Amazon ECS deployment in AWS CodeDeploy.
+# The lines in this template that start with the hashtag are 
+#   comments that can be safely left in the file or 
+#   ignored.
+# For help completing this file, see the "AppSpec File Reference" in the  
+#   "AWS CodeDeploy User Guide" at
+#   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
+version: 0.0
+# In the Resources section, you must specify the following: the Amazon ECS service, task definition name, 
+# and the name and port of the your load balancer to route traffic,
+# target version, and (optional) the current version of your AWS Lambda function. 
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "" # Specify your task definition using its ARN
+        LoadBalancerInfo: # Specify (without double-quotes) the port used by the original version of your Amazon ECS application.
+          - ContainerName: "" # Specify the name of your Amazon ECS application's container
+            ContainerPort: "" # Specify the port for your container where traffic reroutes 
+# Optional properties
+        PlatformVersion: "" # Specify the version of your Amazon ECS Service
+        NetworkConfiguration:
+          AwsvpcConfiguration:
+            Subnets: ["",""] # Specify one or more comma-separated subnets in your Amazon ECS service
+            SecurityGroups: [""] # Specify one or more comma-separated security groups in your Amazon ECS service
+            AssignPublicIp: "" # Specify "ENABLED" or "DISABLED"             
+# (Optional) In the Hooks section, specify a validation Lambda function to run during 
+# a lifecycle event. 
+Hooks:
+# Hooks for Amazon ECS deployments are:
+    - BeforeInstall: "" # Specify a Lambda function name or ARN
+    - AfterInstall: "" # Specify a Lambda function name or ARN
+    - AfterAllowTestTraffic: "" # Specify a Lambda function name or ARN
+    - BeforeAllowTraffic: "" # Specify a Lambda function name or ARN
+    - AfterAllowTraffic: "" # Specify a Lambda function name or ARN
+```
+
+### JSON AppSpec File for an Amazon ECS Deployment Template<a name="app-spec-template-json-ecs"></a>
+
+The following is a JSON template for an AppSpec file for an Amazon ECS deployment with all available options\. For template instructions, refer to comments in the YAML version in the previous section\. For information about lifecycle events to use in the `hooks` section, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\.
+
+```
+{
+	"version": 0.0,
+	"Resources": [
+		{
+			"TargetService": {
+				"Type": "AWS::ECS::Service",
+				"Properties": {
+    			"TaskDefinition": "",
+    			"LoadBalancerInfo": [
+    				{
+    					"ContainerName": "",
+    					"ContainerPort": 
+    				}
+    			],
+    			"PlatformVersion": "",
+    			"NetworkConfiguration": {
+    				"AwsvpcConfiguration": {
+    					"Subnets": [
+    						"",
+    						""
+    					],
+    					"SecurityGroups": [
+    						""
+    					],
+    					"AssignPublicIp": ""
+    				}
+    			}
+  			}				
+			}
+		}
+	],
+	"Hooks": [
+		{
+			"BeforeInstall": ""
+		},
+		{
+			"AfterInstall": ""
+		},
+		{
+			"AfterAllowTestTraffic": ""
+		},
+		{
+			"BeforeAllowTraffic": ""
+		},
+		{
+			"AfterAllowTraffic": ""
+		}
+	]
+}
+```
+
 ## Add an AppSpec File for an AWS Lambda Deployment<a name="add-appspec-file-lambda"></a>
 
 For a deployment to an AWS Lambda compute platform:
@@ -26,7 +147,7 @@ To create an AppSpec file:
 
 1. If you use a text editor, save the file\. If you use the AWS CLI to create your deployment, reference the AppSpec file if it's on your hard drive or in an Amazon S3 bucket\. If you use the console, you must push your AppSpec file to Amazon S3\.
 
-### YAML AppSpec File Template with Instructions<a name="app-spec-template-yaml-lambda"></a>
+### YAML AppSpec File Template for an AWS Lambda Deployment with Instructions<a name="app-spec-template-yaml-lambda"></a>
 
 For information about lifecycle events to use in the hooks section, see [AppSpec 'hooks' Section for an AWS Lambda Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-lambda)\.
 
@@ -56,7 +177,7 @@ Hooks:
     - LifeCycleEvent: "" # Specify a Lambda validation function between double-quotes.
 ```
 
-### JSON AppSpec File Template<a name="app-spec-template-json-lambda"></a>
+### JSON AppSpec File for an AWS Lambda Deployment Template<a name="app-spec-template-json-lambda"></a>
 
 In the following template, replace "MyFunction" with the name of your AWS Lambda function\. In the optional Hooks section, replace the lifecycle events with BeforeAllowTraffic or AfterAllowTraffic\.
 
@@ -117,9 +238,9 @@ To add an AppSpec file to a revision:
 
 1. Push the revision to Amazon S3 or GitHub\. 
 
-   For instructions, see [Push a Revision for AWS CodeDeploy to Amazon S3](application-revisions-push.md)\.
+   For instructions, see [Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md)\.
 
-### AppSpec File Template with Instructions<a name="app-spec-template-server"></a>
+### AppSpec File Template for an EC2/On\-Premises Deployment with Instructions<a name="app-spec-template-server"></a>
 
 **Note**  
  Deployments to Windows Server instances do not support the `runas` element\. If you are deploying to Windows Server instances, do not include it in your AppSpec file\. 

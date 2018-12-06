@@ -57,7 +57,7 @@ Before you can call any AWS CLI commands that interact with GitHub \(such as the
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. Choose **CodeDeployGitHubDemo\-App**\.
 

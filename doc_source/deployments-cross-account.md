@@ -86,7 +86,7 @@ The ARN of the cross\-account role you will assume\.
 ## Step 4: Upload the Application Revision to Amazon S3 Bucket<a name="deployments-cross-account-4-upload-application-revision"></a>
 
 In the account in which you created the Amazon S3 bucket:
-+ Upload your application revision to the Amazon S3 bucket\. For information, see [Push a Revision for AWS CodeDeploy to Amazon S3](application-revisions-push.md)\. 
++ Upload your application revision to the Amazon S3 bucket\. For information, see [Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md)\. 
 
 ## Step 5: Assume the Cross\-Account Role and Deploy Applications<a name="deployments-cross-account-5-assume-role-and-deploy"></a>
 

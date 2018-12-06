@@ -4,7 +4,7 @@
 
 --------
 
-# Create a Deployment Group for a Blue/Green Deployment \(Console\)<a name="deployment-groups-create-blue-green"></a>
+# Create a Deployment Group for an EC2/On\-Premises Blue/Green Deployment \(Console\)<a name="deployment-groups-create-blue-green"></a>
 
 To use the AWS CodeDeploy console to create a deployment group for a blue/green deployment:
 
@@ -19,7 +19,7 @@ You have not created a Classic Load Balancer or an Application Load Balancer in 
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. On the **Applications** page, choose the name of the application for which you want to create a deployment group\.
 

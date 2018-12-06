@@ -54,7 +54,7 @@ For information about rollbacks in AWS CodeDeploy, see [Redeployments and Deploy
 
 1. Choose **Start deployment**\. 
 
-   To track the status of your deployment, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\.
+   To track the status of your deployment, see [View AWS CodeDeployDeployment Details ](deployments-view-details.md)\.
 
 **Topics**
 + [Specify Information About a Revision Stored in an Amazon S3 Bucket](deployments-create-console-s3.md)

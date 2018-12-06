@@ -23,7 +23,7 @@ To use the AWS CodeDeploy console to delete an application:
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. In the list of applications, choose the button next to the application you want to delete, and then choose **Delete**\.
 

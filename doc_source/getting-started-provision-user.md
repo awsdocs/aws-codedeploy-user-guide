@@ -23,6 +23,7 @@ Follow these instructions to prepare an IAM user to use AWS CodeDeploy:
            "codedeploy:*",
            "ec2:*",
            "lambda:*",
+           "ecs:*",
            "elasticloadbalancing:*",
            "iam:AddRoleToInstanceProfile",
            "iam:CreateInstanceProfile",
@@ -47,7 +48,7 @@ Follow these instructions to prepare an IAM user to use AWS CodeDeploy:
    }
    ```
 
-   The preceding policy grants the IAM user the access required to deploy to both an AWS Lambda compute platform and an EC2/On\-Premises compute platform\.
+   The preceding policy grants the IAM user the access required to deploy an AWS Lambda compute platform, an EC2/On\-Premises compute platform, and an Amazon ECS compute platform\.
 
     To learn how to attach a policy to an IAM user, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\. To learn how to restrict users to a limited set of AWS CodeDeploy actions and resources, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\.
 

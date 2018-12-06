@@ -6,9 +6,15 @@
 
 # Working with Deployment Groups in AWS CodeDeploy<a name="deployment-groups"></a>
 
+You can specify one or more deployment groups for an AWS CodeDeploy application\. Each application deployment uses one of its deployment groups\. The deployment group contains settings and configurations used during the deployment\. Most deployment group settings depend on the compute platform used by your application\. Some settings, such as rollbacks, triggers, and alarms can be configured for deployment groups for any compute platform\.
+
+## Deployment Groups in Amazon ECS Compute Platform Deployments<a name="deployment-group-ecs"></a>
+
+In an Amazon ECS deployment, a deployment group specifies the Amazon ECS service, load balancer, optional test listener, and two target groups\. It also specifies when to reroute traffic to the replacement task set and when to terminate the original task set and Amazon ECS application after a successful deployment\.
+
 ## Deployment Groups in AWS Lambda Compute Platform Deployments<a name="deployment-group-lambda"></a>
 
-In an AWS Lambda deployment, a deployment group defines a set of AWS CodeDeploy configurations for future serverless Lambda deployment to the group\. For example, the deployment group might specify alarms and rollbacks\. A single deployment in an AWS Lambda deployment group can override one or more group configurations\.
+In an AWS Lambda deployment, a deployment group defines a set of AWS CodeDeploy configurations for future deployments of an AWS Lambda function\. For example, the deployment group specifies how to route traffic to a new version of a Lambda function\. It also might specify alarms and rollbacks\. A single deployment in an AWS Lambda deployment group can override one or more group configurations\.
 
 ## Deployment Groups in EC2/On\-Premises Compute Platform Deployments<a name="deployment-group-server"></a>
 

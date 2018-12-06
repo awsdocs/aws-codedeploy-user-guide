@@ -52,7 +52,7 @@ In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing c
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-   In the navigation pane, expand **Deploy**, and choose **Applications**\.
+   In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. In the list of applications, choose **SimpleDemoApp**\.
 

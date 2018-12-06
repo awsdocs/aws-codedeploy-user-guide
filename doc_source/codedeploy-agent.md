@@ -9,7 +9,7 @@
  The AWS CodeDeploy agent is a software package that, when installed and configured on an instance, enables that instance to be used in AWS CodeDeploy deployments\. 
 
 **Note**  
- The AWS CodeDeploy agent is required only if you deploy to an EC2/On\-Premises compute platform\. The agent is not required for deployments that use the AWS Lambda compute platform\. 
+ The AWS CodeDeploy agent is required only if you deploy to an EC2/On\-Premises compute platform\. The agent is not required for deployments that use the Amazon ECS or AWS Lambda compute platform\. 
 
 A configuration file is placed on the instance when the agent is installed\. This file is used to specify how the agent works\. This configuration file specifies directory paths and other settings for AWS CodeDeploy to use as it interacts with the instance\. You can change some of the configuration options in the file\. For information about working with the AWS CodeDeploy agent configuration file, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
 
@@ -66,6 +66,7 @@ The following table lists all releases of the AWS CodeDeploy agent and the featu
 
 | Version | Release date | Details | 
 | --- | --- | --- | 
+|  1\.0\.1\.1597  |  November 15, 2018  |  **Enhancement**: AWS CodeDeploy supports Ubuntu 18\.04\. **Enhancement**: AWS CodeDeploy supports Ruby 2\.5\. **Enhancement**: AWS CodeDeploy supports FIPS endpoints\. For more information about FIPS endpoints, see [FIPS 140\-2 Overview](https://aws.amazon.com/compliance/fips/)\. For endpoints that can be used with AWS CodeBuild, see [AWS CodeDeploy Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region)\.  | 
 |  1\.0\.1\.1518  |  June 12, 2018  |  **Enhancement**: Fixed an issue that caused an error when the AWS CodeDeploy agent is closed while it is accepting poll requests\. **Enhancement**: Added a deployment tracking feature that prevents the AWS CodeDeploy agent from being closed when a deployment is in progress\. **Enhancement**: Improved performance when deleting files\.  | 
 |  1\.0\.1\.1458  |  March 6, 2018  |   The minimum supported version of the AWS CodeDeploy Agent is 1\.0\.1\.1458\. Use of an earlier AWS CodeDeploy agent may cause deployments to fail\.  **Enhancement**: Improved certificate validations to support more trusted authorities\. **Enhancement**: Fixed an issue that caused the local CLI to fail during a deployment that includes a BeforeInstall lifecycle event\. **Enhancement**: Fixed an issue that might cause an active deployment to fail when the AWS CodeDeploy agent is updated\.  | 
 |  1\.0\.1\.1352  |  November 16, 2017  |  **Feature**: Introduced a new feature for testing and debugging an EC2/On\-Premises deployment on a local machine or instance where the AWS CodeDeploy Agent is installed\.  | 
@@ -168,7 +169,7 @@ The following is an example of the file and directory structure under the root d
   +  **deployment\-archive**, a directory that contains the contents of the deployment's revision\. 
   +  **logs**, a directory that contains a `scripts.log` file\. This file lists the output of all scripts specified in the deployment's AppSpec file\. 
 
-   If you want to find the folder for a deployment but don't know its deployment ID or deployment group ID, you can use the [AWS CodeDeploy console](https://console.aws.amazon.com/codedeploy) or the AWS CLI to find them\. For more information, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\. 
+   If you want to find the folder for a deployment but don't know its deployment ID or deployment group ID, you can use the [AWS CodeDeploy console](https://console.aws.amazon.com/codedeploy) or the AWS CLI to find them\. For more information, see [View AWS CodeDeployDeployment Details ](deployments-view-details.md)\. 
 
    The default maximum number of deployments that can be archived in a deployment group is five\. When that number is reached, future deployments are archived and the oldest archive is deleted\. You can use the **max\_revisions** setting in the AWS CodeDeploy agent configuration file to change the default\. For more information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\. 
 **Note**  

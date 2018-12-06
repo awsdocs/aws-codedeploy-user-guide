@@ -58,7 +58,7 @@ In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp 
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 
 1. Choose the deployment ID of the deployment that Amazon EC2 Auto Scaling created\.
 

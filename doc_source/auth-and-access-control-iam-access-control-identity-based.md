@@ -6,7 +6,7 @@
 
 # Overview of Managing Access Permissions to Your AWS CodeDeploy Resources<a name="auth-and-access-control-iam-access-control-identity-based"></a>
 
-Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\), and some services \(such as AWS Lambda\) also support attaching permissions policies to resources\. 
+Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\), and some services \(such as AWS Lambda and Amazon ECS\) also support attaching permissions policies to resources\. 
 
 **Note**  
 An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
@@ -49,13 +49,13 @@ You can also specify all deployment groups that belong to a specific account by 
 "Resource": "arn:aws:codedeploy:us-west-2:123456789012:deploymentgroup/*"
 ```
 
-To specify all resources, or if a specific API action does not support ARNs, use the wildcard character \(\*\) in the Resource element as follows:
+To specify all resources, or if a specific API action does not support ARNs, use the wildcard character \(\*\) in the `Resource` element as follows:
 
 ```
 "Resource": "*"
 ```
 
-Some AWS CodeDeploy API actions accept multiple resources \(for example, BatchGetDeploymentGroups\)\. To specify multiple resources in a single statement, separate their ARNs with commas, as follows:
+Some AWS CodeDeploy API actions accept multiple resources \(for example, `BatchGetDeploymentGroups`\)\. To specify multiple resources in a single statement, separate their ARNs with commas, as follows:
 
 ```
 "Resource": ["arn1", "arn2"]

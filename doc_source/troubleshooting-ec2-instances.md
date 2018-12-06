@@ -37,7 +37,7 @@ If an instance is terminated between lifecycle events or before the first lifecy
 
 ## Analyzing log files to investigate deployment failures on instances<a name="troubleshooting-deploy-failures"></a>
 
-If the status of an instance in the deployment is anything other than `Succeeded`, you can review the deployment log file data to help identify the problem\. For information about accessing deployment log data, see [View Log Data for AWS CodeDeploy Deployments](deployments-view-logs.md)\.
+If the status of an instance in the deployment is anything other than `Succeeded`, you can review the deployment log file data to help identify the problem\. For information about accessing deployment log data, see [View Log Data for AWS CodeDeploy EC2/On\-Premises Deployments](deployments-view-logs.md)\.
 
 ## Create a new AWS CodeDeploy log file if it was accidentally deleted<a name="troubleshooting-create-new-log-file"></a>
 

@@ -4,12 +4,12 @@
 
 --------
 
-# View Deployment Details with AWS CodeDeploy<a name="deployments-view-details"></a>
+# View AWS CodeDeployDeployment Details<a name="deployments-view-details"></a>
 
 You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about deployments associated with your AWS account\.
 
 **Note**  
-You can view deployment logs on your instances in the following locations:  
+You can view EC2/On\-Premises deployment logs on your instances in the following locations:  
 Amazon Linux, RHEL, and Ubuntu Server: `/opt/codedeploy-agent/deployment-root/deployment-logs/codedeploy-agent-deployments.log`
 Windows Server: C:\\ProgramData\\Amazon\\CodeDeploy<DEPLOYMENT\-GROUP\-ID><DEPLOYMENT\-ID>\\logs\\scripts\.log
 For more information, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
@@ -26,7 +26,7 @@ To use the AWS CodeDeploy console to view deployment details:
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Deployments**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 **Note**  
 If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
 

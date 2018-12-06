@@ -23,7 +23,7 @@ To use the AWS CodeDeploy console to change deployment group settings:
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. In the list of applications, choose the name of the application that is associated with the deployment group you want to change\.
 **Note**  
@@ -54,3 +54,6 @@ To use the AWS CLI to change deployment group settings, call the [update\-deploy
 + For EC2/On\-Premises deployments only:
   + \(Optional\) Replacement tags or tag groups that uniquely identify the instances to be included in the deployment group\.
   + \(Optional\) The names of replacement Amazon EC2 Auto Scaling groups to be added to the deployment group\.
++ For Amazon ECS deployments only:
+  +  The Amazon ECS service to deploy\. 
+  +  Load balancer information, including the Application Load Balancer or Network Load Balancer, the target groups required for an Amazon ECS deployment, and production and optional test listener information\. 

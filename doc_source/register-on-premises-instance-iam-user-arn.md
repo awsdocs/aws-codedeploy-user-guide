@@ -26,7 +26,7 @@ Follow these instructions to configure an on\-premises instance and register and
 Create an IAM user that the on\-premises instance will use to authenticate and interact with AWS CodeDeploy\. 
 
 **Important**  
-You must create a separate IAM user for each participating on\-premises instance\. If you try to reuse an individual IAM user for multiple on\-premises instances, you might not be able to successfully resister or tag those on\-premises instances with AWS CodeDeploy\. Deployments to those on\-premises instances might be stuck in a perpetual pending state or fail altogether\.
+You must create a separate IAM user for each participating on\-premises instance\. If you try to reuse an individual IAM user for multiple on\-premises instances, you might not be able to successfully register or tag those on\-premises instances with AWS CodeDeploy\. Deployments to those on\-premises instances might be stuck in a perpetual pending state or fail altogether\.
 
 We recommed that you assign the IAM user a name that identifies its purpose, such as CodeDeployUser\-OnPrem\.
 
@@ -364,4 +364,4 @@ If you reuse an AWS CodeDeploy service role as part of creating a deployment gro
 
 After you deploy an application revision to registered and tagged on\-premises instances, you can track the deployment's progress\.
 
-You track deployments to on\-premises instances in a way that's similar to tracking deployments to Amazon EC2 instances\. For instructions, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\.
+You track deployments to on\-premises instances in a way that's similar to tracking deployments to Amazon EC2 instances\. For instructions, see [View AWS CodeDeployDeployment Details ](deployments-view-details.md)\.

@@ -53,7 +53,7 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. Choose **HelloWorld\_App**\.
 
@@ -75,17 +75,13 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In **Load Balancer**, clear **Enable load balancing**\.
 
-1. Expand **Advanced**\.
-
-1. In **Alarms**, select **Ignore alarm configuration**\.
-
 1. Choose **Create deployment group**\.
 
 1. Choose **Create deployment**\.
 
 1. In **Deployment group**, choose **HelloWorld\_DepGroup**
 
-1. In **Revision type**, choose **S3**, and then in **Revision location**, enter the location of the sample "Hello, World\!" application revision you previously uploaded to Amazon S3\. To get the location:
+1. In **Revision type**, choose **My application is stored in Amazon S3**, and then in **Revision location**, enter the location of the sample "Hello, World\!" application revision you previously uploaded to Amazon S3\. To get the location:
 
    1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
 

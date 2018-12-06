@@ -46,7 +46,7 @@ Use this syntax as part of the create\-deployment call to specify information ab
 ```
 To get information about revisions that have been pushed already, call the [list\-application\-revisions](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command\.
 
-To track the status of your deployment, see [View Deployment Details with AWS CodeDeploy](deployments-view-details.md)\.
+To track the status of your deployment, see [View AWS CodeDeployDeployment Details ](deployments-view-details.md)\.
 
 **Topics**
 + [Connect an AWS CodeDeploy Application to a GitHub Repository](deployments-create-cli-github.md)

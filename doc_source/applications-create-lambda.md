@@ -28,7 +28,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 **Note**  
 If you want to use the same settings used in another deployment group \(including the deployment group name and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group might have the same name, AWS CodeDeploy treats them as separate deployment groups, because each is associated with a separate application\.
 
-1. In **Service role**, choose a service role that grants AWS CodeDeploy access to AWS Lambda\.
+1. In **Service role**, choose a service role that grants AWS CodeDeploy access to AWS Lambda\. For more information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
 
 1.  If you want to use a predefined deployment configuration, choose one from **Deployment configuration**, and then skip to step 12\. To create a custom configuration, continue to the next step\.
 
@@ -51,7 +51,5 @@ The maximum length of an AWS Lambda deployment is two days, or 2,880 minutes\. T
 1. \(Optional\) In **Advanced**, configure any options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.
 
    For more information, see [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)\. 
-
-1. In **Service role ARN**, choose an Amazon Resource Name \(ARN\) for a service role that trusts AWS CodeDeploy with, at minimum, the trust and permissions described in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\. To get the service role ARN, see [Get the Service Role ARN \(Console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\.
 
 1. Choose **Create deployment group**\. 

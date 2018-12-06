@@ -22,7 +22,7 @@ You can use the AWS CodeDeploy console to create triggers for an AWS CodeDeploy 
 
 1. In the AWS Management Console, open the AWS CodeDeploy console\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. In the list of applications, choose the name of the applications for which triggers are sent\.
 

@@ -4,7 +4,7 @@
 
 --------
 
-# Push a Revision for AWS CodeDeploy to Amazon S3<a name="application-revisions-push"></a>
+# Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)<a name="application-revisions-push"></a>
 
 After you plan your revision as described in [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md) and add an AppSpec file to the revision as described in [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md), you are ready to bundle the component files and push the revision to Amazon S3\. For deployments to Amazon EC2 instances, after you push the revision, you can use AWS CodeDeploy to deploy the revision from Amazon S3 to the instances\.
 
@@ -64,7 +64,7 @@ To learn how to create and attach an IAM policy, see [Working with Policies](htt
 ## Push a Revision Using the AWS CLI<a name="push-with-cli"></a>
 
 **Note**  
- The `push` command bundles application artifacts and an AppSpec file into a revision\. The file format of this revision is a compressed ZIP file\. The command cannot be used with an AWS Lambda deployment because its expects a revision that is a JSON\-formatted or YAML\-formatted AppSpec file\. 
+ The `push` command bundles application artifacts and an AppSpec file into a revision\. The file format of this revision is a compressed ZIP file\. The command cannot be used with an AWS Lambda or an Amazon ECS deployment because each expects a revision that is a JSON\-formatted or YAML\-formatted AppSpec file\. 
 
 Call the push command to bundle and push the revision for a deployment\. Its parameters are:
 +  \-\-application\-name: \(string\) Required\. The name of the AWS CodeDeploy application to be associated with the application revision\. 

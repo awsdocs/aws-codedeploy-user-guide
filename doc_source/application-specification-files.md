@@ -11,9 +11,18 @@ An application specification file \(AppSpec file\), which is unique to AWS CodeD
 For information about how to create a well\-formed AppSpec file, see [AWS CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
 
 **Topics**
++ [AppSpec Files on an Amazon ECS Compute Platform](#appspec-files-on-ecs-compute-platform)
 + [AppSpec Files on an AWS Lambda Compute Platform](#appspec-files-on-lambda-compute-platform)
 + [AppSpec Files on an EC2/On\-Premises Compute Platform](#appspec-files-on-server-compute-platform)
 + [How the AWS CodeDeploy Agent Uses the AppSpec File](#application-specification-files-agent-usage)
+
+## AppSpec Files on an Amazon ECS Compute Platform<a name="appspec-files-on-ecs-compute-platform"></a>
+
+If your application uses the Amazon ECS compute platform, the AppSpec file can be formatted with either YAML or JSON\. It can also be typed directly into an editor in the console\. The AppSpec file is used to specify:
++ The name of the Amazon ECS service and the container name and port used to direct traffic to the new task set\.
++ The functions to be used as validation tests\.
+
+You can run validation Lambda functions after deployment lifecycle events\. For more information, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs), [ AppSpec File Structure for Amazon ECS Deployments ](reference-appspec-file-structure.md#ecs-appspec-structure), and [ AppSpec File Example for an Amazon ECS Deployment ](reference-appspec-file-example.md#appspec-file-example-ecs)\.
 
 ## AppSpec Files on an AWS Lambda Compute Platform<a name="appspec-files-on-lambda-compute-platform"></a>
 
@@ -39,7 +48,7 @@ During deployment, the AWS CodeDeploy agent looks up the name of the current eve
 If a script runs successfully, it returns an exit code of 0 \(zero\)\.
 
 **Note**  
- The AWS CodeDeploy agent is not used in an AWS Lambda deployment\. 
+ The AWS CodeDeploy agent is not used in an AWS Lambda or an Amazon ECS deployment\. 
 
 During the **Install** event, the AWS CodeDeploy agent uses the mappings defined in the **files** section of the AppSpec file to determine which folders or files to copy from the revision to the instance\.
 

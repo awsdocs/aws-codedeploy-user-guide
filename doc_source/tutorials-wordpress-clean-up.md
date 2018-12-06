@@ -86,7 +86,7 @@ To delete the `WordPress_App` application from AWS CodeDeploy:
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
 1. In the list of applications, choose **WordPress\_App**\.
 
