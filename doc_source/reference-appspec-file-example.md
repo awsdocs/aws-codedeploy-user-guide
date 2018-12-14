@@ -52,13 +52,11 @@ Hooks:
 			"TargetService": {
 				"Type": "AWS::ECS::Service",
 				"Properties": {
-					"TaskDefinition": "my_service:8",
-					"LoadBalancerInfo": [
-						{
-							"ContainerName": "SampleApplicationName",
-							"ContainerPort": 80
-						}
-					],
+					"TaskDefinition": "arn:aws:ecs:us-east-1:123456789:task-definition/my_service:8",
+					"LoadBalancerInfo": {
+						"ContainerName": "SampleApplicationName",
+						"ContainerPort": 80
+					},
 					"PlatformVersion": "LATEST",
 					"NetworkConfiguration": {
 						"AwsvpcConfiguration": {
