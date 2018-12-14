@@ -64,8 +64,8 @@ Resources:
     Properties:
       TaskDefinition: "task-definition-ARN"
       LoadBalancerInfo: 
-        - ContainerName: "ECS-container-name-for-your-ECS-application" 
-          ContainerPort: port-used-by-your-ECS-application
+        ContainerName: "ECS-container-name-for-your-ECS-application" 
+        ContainerPort: port-used-by-your-ECS-application
 # Optional properties
       PlatformVersion: "ecs-service-platform-version"
       NetworkConfiguration:
@@ -84,12 +84,10 @@ JSON:
 				"Type": "AWS::ECS::Service",
 				"Properties": {
 					"TaskDefinition": "",
-					"LoadBalancerInfo": [
-						{
-							"ContainerName": "",
-							"ContainerPort": 
-						}
-					],
+					"LoadBalancerInfo": {
+						"ContainerName": "",
+						"ContainerPort": 
+					},
 					"PlatformVersion": "",
 					"NetworkConfiguration": {
 						"AwsvpcConfiguration": {
