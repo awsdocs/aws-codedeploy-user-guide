@@ -23,9 +23,9 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "my_service:8"
+        TaskDefinition: "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1"
         LoadBalancerInfo:
-          - ContainerName: "SampleApplicationName"
+            ContainerName: "SampleApplicationName"
             ContainerPort: 80
 # Optional properties
         PlatformVersion: "LATEST"
@@ -52,13 +52,11 @@ Hooks:
 			"TargetService": {
 				"Type": "AWS::ECS::Service",
 				"Properties": {
-					"TaskDefinition": "my_service:8",
-					"LoadBalancerInfo": [
-						{
-							"ContainerName": "SampleApplicationName",
-							"ContainerPort": 80
-						}
-					],
+					"TaskDefinition": "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1",
+					"LoadBalancerInfo": {
+						"ContainerName": "SampleApplicationName",
+						"ContainerPort": 80
+					},
 					"PlatformVersion": "LATEST",
 					"NetworkConfiguration": {
 						"AwsvpcConfiguration": {

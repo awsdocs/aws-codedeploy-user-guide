@@ -55,7 +55,7 @@ Before you begin, you must have an instance key pair to enable SSH access to the
 
 To find a key pair name, open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2](https://console.aws.amazon.com/ec2)\. In the navigation pane, under **Network & Security**, choose **Key Pairs**, and note the key pair name in the list\. 
 
-To generate a new key pair, see [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure the key pair is created in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\. Otherwise, you won't be able to use the instance key pair with AWS CodeDeploy\.
+To generate a new key pair, see [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure the key pair is created in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\. Otherwise, you can't use the instance key pair with AWS CodeDeploy\.
 
 1. Sign in to the AWS Management Console and open the AWS CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
 **Important**  
@@ -98,7 +98,7 @@ Before you call the create\-stack command, you must have an Amazon EC2 instance 
 
 To find a key pair name, open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2](https://console.aws.amazon.com/ec2)\. In the navigation pane, under **Network & Security**, choose **Key Pairs**, and note the key pair name in the list\. 
 
-To generate a key pair, see [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure the key pair is created in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. Otherwise, you won't be able to use the instance key pair with AWS CodeDeploy\.
+To generate a key pair, see [Creating Your Key Pair Using Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)\. Be sure the key pair is created in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. Otherwise, you can't use the instance key pair with AWS CodeDeploy\.
 
 1. Use our AWS CloudFormation template in a call to the create\-stack command\. This stack will launch a new Amazon EC2 instance with the AWS CodeDeploy agent installed\.
 

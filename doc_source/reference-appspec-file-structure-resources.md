@@ -64,7 +64,7 @@ Resources:
     Properties:
       TaskDefinition: "task-definition-ARN"
       LoadBalancerInfo: 
-        - ContainerName: "ECS-container-name-for-your-ECS-application" 
+          ContainerName: "ECS-container-name-for-your-ECS-application" 
           ContainerPort: port-used-by-your-ECS-application
 # Optional properties
       PlatformVersion: "ecs-service-platform-version"
@@ -84,12 +84,10 @@ JSON:
 				"Type": "AWS::ECS::Service",
 				"Properties": {
 					"TaskDefinition": "",
-					"LoadBalancerInfo": [
-						{
-							"ContainerName": "",
-							"ContainerPort": 
-						}
-					],
+					"LoadBalancerInfo": {
+						"ContainerName": "",
+						"ContainerPort": 
+					},
 					"PlatformVersion": "",
 					"NetworkConfiguration": {
 						"AwsvpcConfiguration": {
@@ -98,6 +96,7 @@ JSON:
 								""
 							],
 							"SecurityGroups": [
+								"",
 								""
 							],
 							"AssignPublicIp": ""
@@ -110,7 +109,7 @@ JSON:
 ```
 
 Each property is specified with a string\. 
-+ **TaskDefinition** – Required\. This is the task definition for the Amazon ECS service to deploy\. It is specified with the ARN of the task definition\.
++ **TaskDefinition** – Required\. This is the task definition for the Amazon ECS service to deploy\. It is specified with the ARN of the task definition\. The ARN format is `arn:aws:ecs:region:account-id:task-definition/task-definition-family-name:task-definition-revision-number`\. For more information, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
 + **ContainerName** – Required\. This is the name of the Amazon ECS container that contains your Amazon ECS application\. It must be a container specified in your Amazon ECS task definition\.
 + **Port** – Required\. This is the port where your load balancer reroutes traffic during a deployment\.
 + **PlatformVersion**: Optional\. The platform version of the Fargate tasks in the deployed Amazon ECS service\. For more information, see [AWS Fargate Platform Versions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html)\.

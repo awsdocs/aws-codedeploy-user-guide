@@ -6,13 +6,13 @@
 
 # Update the AWS CodeDeploy Agent on Windows Server<a name="codedeploy-agent-operations-update-windows"></a>
 
-To enable automatic updates of the AWS CodeDeploy agent whenever a new version is released, install the AWS CodeDeploy agent updater for Windows Server on new or existing instances\. The updater checks periodically for new versions\. When a new version is detected, the updater uninstalls the current version of the agent, if one is installed, before installing the newest version\.
+To enable automatic updates of the AWS CodeDeploy agent, install the AWS CodeDeploy agent updater for Windows Server on new or existing instances\. The updater checks periodically for new versions\. When a new version is detected, the updater uninstalls the current version of the agent, if one is installed, before installing the newest version\.
 
 If a deployment is already underway when the updater detects a new version, the deployment continues to completion\. If a deployment attempts to start during the update process, the deployment fails\.
 
 If you want to force an update of the AWS CodeDeploy agent, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md)\.
 
-On Windows Server instances, you can download and install the AWS CodeDeploy agent updater by running a series of Windows PowerShell commands, using a direct download link, or running an Amazon S3 copy command\.
+On Windows Server instances, you can download and install the AWS CodeDeploy agent updater by running Windows PowerShell commands, using a direct download link, or running an Amazon S3 copy command\.
 
 **Topics**
 + [Use Windows PowerShell](#codedeploy-agent-operations-update-windows-powershell)
@@ -59,7 +59,7 @@ notepad C:\ProgramData\Amazon\CodeDeployUpdater\log\codedeploy-agent.updater.log
 
 ## Use a direct link<a name="codedeploy-agent-operations-update-windows-direct-link"></a>
 
-If the browser security settings on the Windows Server instance provide the necessary permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link to download the AWS CodeDeploy agent updater by entering the following in your browser's address bar and then download and run the installer manually\.
+If the browser security settings on the Windows Server instance provide the required permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link to download the AWS CodeDeploy agent updater\. Enter the following in your browser's address bar and then download and run the installer manually\.
 
 
 | Region name | Download link | 

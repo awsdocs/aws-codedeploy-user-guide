@@ -13,7 +13,7 @@ To specify which instances are included in an AWS CodeDeploy deployment group, y
 **Note**  
 You can also include Amazon EC2 Auto Scaling groups in deployment groups, but they are identified by their names rather than by tags applied to instances\. For information, see [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
-The criteria for instances in a deployment group can be as simple as a single tag in a single tag group, or as complex as 10 tags each in a maximum of three tag groups\.
+The criteria for instances in a deployment group can be as simple as a single tag in a single tag group\. It can be as complex as 10 tags each in a maximum of three tag groups\.
 
 If you use a single tag group, any instance identified by at least one tag in the group is included in the deployment group\. If you use multiple tag groups, only instances that are identified by at least one tag in *each* of the tag groups are included\.
 
@@ -120,7 +120,7 @@ You can also use multiple sets of tag groups with a single key\-value pair in ea
 | --- | --- | 
 | Type | t2\.medium | 
 
-You might have instances in many regions and of various instance types tagged with `Name=AppVersion-ABC`, but in this example, only the instances also tagged with `Region=North` and `Type=t2.medium` are part of the deployment group\. 
+You might have instances in many regions and of various instance types tagged with `Name=AppVersion-ABC`\. In this example, only the instances also tagged with `Region=North` and `Type=t2.medium` are part of the deployment group\. 
 
 AWS CodeDeploy console setup view: 
 
@@ -158,7 +158,7 @@ JSON structure:
 
 ## Example 4: Multiple Tag Groups, Multiple Tags<a name="instances-tagging-example-4"></a>
 
-When you use multiple tag groups with multiple tags in one or more of the groups, an instance must match at least one of the tags in each of the groups to be included in the deployment group\.
+When you use multiple tag groups with multiple tags in one or more group, an instance must match at least one of the tags in each of the groups\.
 
 
 **Tag Group 1**  

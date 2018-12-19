@@ -51,16 +51,16 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "" # Specify your task definition using its ARN
-        LoadBalancerInfo: # Specify (without double-quotes) the port used by the original version of your Amazon ECS application.
-          - ContainerName: "" # Specify the name of your Amazon ECS application's container
-            ContainerPort: "" # Specify the port for your container where traffic reroutes 
+        TaskDefinition: "" # Specify the ARN of your task definition (arn:aws:ecs:region:account-id:task-definition/task-definition-family-name:task-definition-revision-number)
+        LoadBalancerInfo: 
+          ContainerName: "" # Specify the name of your Amazon ECS application's container
+          ContainerPort: "" # Specify the port for your container where traffic reroutes 
 # Optional properties
         PlatformVersion: "" # Specify the version of your Amazon ECS Service
         NetworkConfiguration:
           AwsvpcConfiguration:
             Subnets: ["",""] # Specify one or more comma-separated subnets in your Amazon ECS service
-            SecurityGroups: [""] # Specify one or more comma-separated security groups in your Amazon ECS service
+            SecurityGroups: ["",""] # Specify one or more comma-separated security groups in your Amazon ECS service
             AssignPublicIp: "" # Specify "ENABLED" or "DISABLED"             
 # (Optional) In the Hooks section, specify a validation Lambda function to run during 
 # a lifecycle event. 
@@ -86,12 +86,10 @@ The following is a JSON template for an AppSpec file for an Amazon ECS deploymen
 				"Type": "AWS::ECS::Service",
 				"Properties": {
     			"TaskDefinition": "",
-    			"LoadBalancerInfo": [
-    				{
-    					"ContainerName": "",
-    					"ContainerPort": 
-    				}
-    			],
+    			"LoadBalancerInfo": {
+    				"ContainerName": "",
+    				"ContainerPort":
+    			},
     			"PlatformVersion": "",
     			"NetworkConfiguration": {
     				"AwsvpcConfiguration": {
@@ -100,6 +98,7 @@ The following is a JSON template for an AppSpec file for an Amazon ECS deploymen
     						""
     					],
     					"SecurityGroups": [
+    						"",
     						""
     					],
     					"AssignPublicIp": ""

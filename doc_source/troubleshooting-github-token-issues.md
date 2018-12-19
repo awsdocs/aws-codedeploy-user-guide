@@ -12,7 +12,7 @@
 
  If you receive a GitHub token error, you might have an older token that is now invalid\. 
 
-**To fix an invalid GitHub OAuth token:**
+**To fix an invalid GitHub OAuth token**
 
 1.  Use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html) to remove the old token\. 
 

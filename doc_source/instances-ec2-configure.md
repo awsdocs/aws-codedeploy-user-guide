@@ -14,13 +14,11 @@ If you do not have an Amazon EC2 instance, you can use the AWS CloudFormation te
 To perform the steps in this topic:
 + An IAM instance profile with permissions to participate in AWS CodeDeploy deployments must be attached to your instance\.
 
-  For information about how to attach an IAM instance profile when you create an Amazon EC2 instance, see [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md) and [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
-
-  For information about how to attach an IAM instance profile to an existing Amazon EC2 instance, see [Attaching an IAM Role to an Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
+  For information, see [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md) and [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md) and [Attaching an IAM Role to an Instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
 + Your Amazon EC2 instance must be tagged\.
 + The AWS CodeDeploy agent must be installed and running on the Amazon EC2 instance\.
 
-  If the agent is not running, deployments will appear to be stalled in a pending state\.
+  If the agent is not running, deployments appear to be stalled in a pending state\.
 
 ## Step 1: Verify an IAM Instance Profile Is Attached to Your Amazon EC2 Instance<a name="instances-ec2-configure-1-verify-instance-profile-attached"></a>
 
@@ -48,13 +46,13 @@ To help you identify the instance profile in the IAM console, you'll see the pre
 
 1. Choose the **Trust Relationships** tab\. If there is no entry in **Trusted Entities** that reads **The identity provider\(s\) ec2\.amazonaws\.com**, you cannot use this Amazon EC2 instance\. Stop and create an Amazon EC2 instance using the information in [Working with Instances for AWS CodeDeploy](instances.md)\.
 
-   If there is an entry that reads **The identity provider\(s\) ec2\.amazonaws\.com**, and you will be storing your applications in GitHub repositories only, then skip ahead to [Step 3: Tag the Amazon EC2 Instance](#instances-ec2-configure-3-tag-instance)\.
+   If there is an entry that reads **The identity provider\(s\) ec2\.amazonaws\.com**, and you are storing your applications in GitHub repositories only, then skip ahead to [Step 3: Tag the Amazon EC2 Instance](#instances-ec2-configure-3-tag-instance)\.
 
-   If there is an entry that reads **The identity provider\(s\) ec2\.amazonaws\.com**, and you will be storing your applications in Amazon S3 buckets, choose the **Permissions** tab\.
+   If there is an entry that reads **The identity provider\(s\) ec2\.amazonaws\.com**, and you are storing your applications in Amazon S3 buckets, choose the **Permissions** tab\.
 
 1. If there is a policy in the **Managed Policies** area, choose the policy's name, and then choose **Edit**\. If there is a policy in **Inline Policies**, under **Actions**, choose **Edit Policy**\.
 
-1. If you will be storing your applications in Amazon S3 buckets, in the **Policy Document** box, make sure `"s3:Get*"` and `"s3:List*"` are in the list of specified actions\. 
+1. If you are storing your applications in Amazon S3 buckets, in the **Policy Document** box, make sure `"s3:Get*"` and `"s3:List*"` are in the list of specified actions\. 
 
    It may look something like this:
 
@@ -85,9 +83,9 @@ To help you identify the instance profile in the IAM console, you'll see the pre
      }
    ```
 
-   If `"s3:Get*"` and `"s3:List*"` are not in the list of specified actions, choose **Edit** to add them, and then choose **Save**\. \(If neither `"s3:Get*"` or `"s3:List*"` is the last action in the list, be sure to add a comma after the action, so the policy document will validate\.\)
+   If `"s3:Get*"` and `"s3:List*"` are not in the list of specified actions, choose **Edit** to add them, and then choose **Save**\. \(If neither `"s3:Get*"` or `"s3:List*"` is the last action in the list, be sure to add a comma after the action, so the policy document validates\.\)
 **Note**  
-We recommend that you restrict this policy to only those Amazon S3 buckets your Amazon EC2 instances must access\. Make sure to give access to the Amazon S3 buckets that contain the AWS CodeDeploy agent\. Otherwise, an error may occur when the AWS CodeDeploy agent is installed or updated on the instances\. To grant the IAM instance profile access to only some AWS CodeDeploy resource kit buckets in Amazon S3, use the following policy but remove the lines for buckets you want to prevent access to:  
+We recommend that you restrict this policy to only those Amazon S3 buckets your Amazon EC2 instances must access\. Make sure to give access to the Amazon S3 buckets that contain the AWS CodeDeploy agent\. Otherwise, an error might occur when the AWS CodeDeploy agent is installed or updated on the instances\. To grant the IAM instance profile access to only some AWS CodeDeploy resource kit buckets in Amazon S3, use the following policy, but remove the lines for buckets you want to prevent access to:  
 
    ```
    {

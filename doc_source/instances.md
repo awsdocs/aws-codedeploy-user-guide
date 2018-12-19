@@ -8,7 +8,7 @@
 
 AWS CodeDeploy supports deployments to instances running Amazon Linux, Ubuntu Server, Red Hat Enterprise Linux \(RHEL\), and Windows Server\. 
 
-You can use AWS CodeDeploy to deploy to both Amazon EC2 instances and on\-premises instances\. An on\-premises instance is any physical device that is not an Amazon EC2 instance and that can run the AWS CodeDeploy agent and connect to public AWS service endpoints\. You can use AWS CodeDeploy to simultaneously deploy an application to Amazon EC2 instances running in the cloud and to desktop PCs running in your office or servers in your own data center\. 
+You can use AWS CodeDeploy to deploy to both Amazon EC2 instances and on\-premises instances\. An on\-premises instance is any physical device that is not an Amazon EC2 instance that can run the AWS CodeDeploy agent and connect to public AWS service endpoints\. You can use AWS CodeDeploy to simultaneously deploy an application to Amazon EC2 instances in the cloud and to desktop PCs in your office or servers in your own data center\. 
 
 ## Comparing Amazon EC2 Instances to On\-Premises Instances<a name="instances-comparison"></a>
 

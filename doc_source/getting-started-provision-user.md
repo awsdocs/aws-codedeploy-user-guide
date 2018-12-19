@@ -52,7 +52,7 @@ Follow these instructions to prepare an IAM user to use AWS CodeDeploy:
 
     To learn how to attach a policy to an IAM user, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\. To learn how to restrict users to a limited set of AWS CodeDeploy actions and resources, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\.
 
-   You can use the AWS CloudFormation templates provided in this documentation to launch Amazon EC2 instances that are compatible with AWS CodeDeploy\. To use AWS CloudFormation templates to create applications, deployment groups, or deployment configurations, you must grant the IAM user access to AWS CloudFormation—and AWS services and actions that AWS CloudFormation depends on—by attaching an additional policy to the IAM user, as follows:
+   You can use the AWS CloudFormation templates provided in this documentation to launch Amazon EC2 instances that are compatible with AWS CodeDeploy\. To use AWS CloudFormation templates to create applications, deployment groups, or deployment configurations, you must grant the IAM user access to AWS CloudFormation—and AWS services and actions that AWS CloudFormation depends on—by attaching an additional policy to the IAM user:
 
    ```
    {

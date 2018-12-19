@@ -6,7 +6,7 @@
 
 # Uninstall the AWS CodeDeploy Agent<a name="codedeploy-agent-operations-uninstall"></a>
 
-You can remove the AWS CodeDeploy Agent from instances when it is no longer needed or when you want to perform a fresh installation\.
+You can remove the AWS CodeDeploy agent from instances when it is no longer needed or when you want to perform a fresh installation\.
 
 ## Uninstall the AWS CodeDeploy Agent from Amazon Linux or RHEL<a name="codedeploy-agent-operations-uninstall-linux"></a>
 
@@ -40,4 +40,4 @@ product where name="CodeDeploy Host Agent" call uninstall /nointeractive
 exit
 ```
 
-Alternatively, sign in to the instance, and in **Control Panel**, open **Programs and Features**, choose **CodeDeploy Host Agent**, and then choose **Uninstall**\.
+You can also sign in to the instance, and in **Control Panel**, open **Programs and Features**, choose **CodeDeploy Host Agent**, and then choose **Uninstall**\.

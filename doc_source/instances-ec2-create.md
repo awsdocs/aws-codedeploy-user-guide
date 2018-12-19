@@ -26,7 +26,7 @@ If you have not done so already, follow the instructions in [Getting Started wit
 
 1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance role you created in [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\. If you used the suggested role name, then choose **CodeDeployDemo\-EC2\-Instance\-Profile**\. If you created your own role name, choose that\.
 **Note**  
-If neither **Launch into EC2\-Classic** nor a default virtual private cloud \(VPC\) is displayed in the **Network** list, and you are not able to select a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose an Amazon VPC and subnet, or choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
+If **Launch into EC2\-Classic** or a default virtual private cloud \(VPC\) are not displayed in the **Network** list, and you cannot choose a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose or create an Amazon VPC and subnet\. Choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
 
 1. Expand **Advanced Details**\.
 
@@ -90,7 +90,7 @@ The contents of the **Key** and **Value** boxes are case\-sensitive\.
 
 1. On the **Step 6: Configure Security Group** page, leave the **Create a new security group** option selected\.
 
-   A default SSH role will be configured for Amazon EC2 instances running Amazon Linux, Ubuntu Server, or RHEL\. A default RDP role will be configured for Amazon EC2 instances running Windows Server\.
+   A default SSH role is configured for Amazon EC2 instances running Amazon Linux, Ubuntu Server, or RHEL\. A default RDP role is configured for Amazon EC2 instances running Windows Server\.
 
 1. If you want to open the HTTP port, choose the **Add Rule** button, and from the **Type** drop\-down list, choose **HTTP**\. Accept the default **Source** value of **Anywhere 0\.0\.0\.0/0**, and then choose **Review and Launch**\.
 **Note**  
@@ -110,7 +110,7 @@ You must have a key pair if you want to access your Amazon EC2 instance with SSH
 
 1. Choose the ID for your Amazon EC2 instance\. Do not continue until the instance has been launched and passed all checks\.
 
-To verify the AWS CodeDeploy agent is running on the instance, see [Verify the AWS CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md), and then return to this page\. After you do this, the Amazon EC2 instance will be ready for use in AWS CodeDeploy deployments\.
+To verify the AWS CodeDeploy agent is running on the instance, see [Verify the AWS CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md), and then return to this page\. After you do this, the Amazon EC2 instance is ready for use in AWS CodeDeploy deployments\.
 
 ## Launch an Amazon EC2 Instance \(CLI\)<a name="instances-ec2-create-cli"></a>
 
@@ -134,7 +134,7 @@ For demonstration purposes, these commands create a security group that allows u
 
 1. On your development machine, create a file named `instance-setup.sh` \(for Amazon EC2 instances running Amazon Linux, Ubuntu Server, or RHEL\) or `instance-setup.txt` \(for Amazon EC2 instances running Windows Server\) that contains the following contents\. 
 
-   As the Amazon EC2 instance is launched, this script will download the AWS CodeDeploy agent from the specified Amazon S3 location and then install it on the instance\.
+   As the Amazon EC2 instance is launched, this script downloads the AWS CodeDeploy agent from the specified Amazon S3 location and then installs it on the instance\.
 
    **For Amazon Linux and RHEL**
 
@@ -186,11 +186,11 @@ If you are installing the AWS CodeDeploy agent on Ubuntu Server 14\.04, change t
 
    *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
-1. From the same directory where you created the `instance-setup.sh` or `instance-setup.txt` file, you will call the run\-instances command to create and launch the Amazon EC2 instance\.
+1. From the same directory where you created the `instance-setup.sh` or `instance-setup.txt` file, you call the run\-instances command to create and launch the Amazon EC2 instance\.
 
-   Before you call this command, you will need to collect the following: 
-   + The ID of an Amazon Machine Image \(AMI\) \(*ami\-id*\) you will use for the instance\. To get the ID, see [Finding a Suitable AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)\.
-   + The name of the type of Amazon EC2 instance \(*instance\-type*\) you will create, such as `t1.micro`\. For a list, see [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)\.
+   Before you call this command, you need to collect the following: 
+   + The ID of an Amazon Machine Image \(AMI\) \(*ami\-id*\) you use for the instance\. To get the ID, see [Finding a Suitable AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)\.
+   + The name of the type of Amazon EC2 instance \(*instance\-type*\) you create, such as `t1.micro`\. For a list, see [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)\.
    + The name of an IAM instance profile with permission to access the Amazon S3 bucket where the AWS CodeDeploy agent installation files for your region are stored\. 
 
      For information about creating an IAM instance profile, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
@@ -256,6 +256,6 @@ Be sure to include `file://` before the file name\. It is required in this comma
    aws ec2 describe-instance-status --instance-ids instance-id --query "InstanceStatuses[*].InstanceStatus.[Status]" --output text 
    ```
 
-If the instance has been launched and passed all checks, `ok` will appear in the output:
+If the instance has been launched and passed all checks, `ok` appears in the output:
 
-To verify the AWS CodeDeploy agent is running on the instance, see [Verify the AWS CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md), and then return to this page\. After you do this, the Amazon EC2 instance will be ready for use in AWS CodeDeploy deployments\.
+To verify the AWS CodeDeploy agent is running on the instance, see [Verify the AWS CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md), and then return to this page\. After you do this, the Amazon EC2 instance is ready for use in AWS CodeDeploy deployments\.

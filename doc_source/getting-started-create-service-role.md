@@ -8,7 +8,7 @@
 
 In AWS, service roles are used to grant permissions to an AWS service so it can access AWS resources\. The policies that you attach to the service role determine which AWS resources the service can access and what it can do with those resources\. 
 
-The service role you create for AWS CodeDeploy must be granted the permissions to access the instances to which you will deploy applications\. These permissions enable AWS CodeDeploy to read the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. 
+The service role you create for AWS CodeDeploy must be granted the permissions to access the instances to which you deploy applications\. These permissions enable AWS CodeDeploy to read the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. 
 
 The permissions you add to the service role specify the operations AWS CodeDeploy can perform when it accesses your Amazon EC2 instances and Amazon EC2 Auto Scaling groups\. To add these permissions, attach an AWS\-supplied policy, `AWSCodeDeployRole`, to the service role\.
 
@@ -42,13 +42,13 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
    + Retrieve information about CloudWatch alarms\.
    + Retrieve information about Elastic Load Balancing\.
 
-1. On the **Review** page, in **Role name**, type a name for the service role \(for example **CodeDeployServiceRole**\), and then choose **Create role**\.
+1. On the **Review** page, in **Role name**, enter a name for the service role \(for example **CodeDeployServiceRole**\), and then choose **Create role**\.
 
-   You can also type a description for this service role in the **Role description** box\.
+   You can also enter a description for this service role in **Role description**\.
 
 1. If you want this service role to have permission to access all currently supported endpoints, you are finished with this procedure\.
 
-   If you want to restrict this service role from access to some endpoints, in the list of roles, browse to and choose the role you just created, and continue to the next step\.
+   To restrict this service role from access to some endpoints, in the list of roles, browse to and choose the role you created, and continue to the next step\.
 
 1. On the **Trust relationships** tab, choose **Edit trust relationship**\.
 
@@ -72,7 +72,7 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
    }
    ```
 
-   To grant the service role access to only some supported endpoints, replace the contents of the **Policy Document** box with the following policy, remove the lines for the endpoints you want to prevent access to, and then choose **Update Trust Policy**\.
+   To grant the service role access to only some supported endpoints, replace the contents of the **Policy Document** box with the following policy\. Remove the lines for the endpoints you want to prevent access to, and then choose **Update Trust Policy**\.
 
    ```
    {

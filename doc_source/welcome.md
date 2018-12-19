@@ -8,7 +8,16 @@
 
 AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on\-premises instances, serverless Lambda functions, or Amazon ECS services\.
 
-You can deploy a nearly unlimited variety of application content, such as code, serverless AWS Lambda functions, web and configuration files, executables, packages, scripts, multimedia files, and so on\. AWS CodeDeploy can deploy application content that runs on a server and is stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories\. AWS CodeDeploy can also deploy a serverless Lambda function\. You do not need to make changes to your existing code before you can use AWS CodeDeploy\. 
+You can deploy a nearly unlimited variety of application content, including:
++ code
++ serverless AWS Lambda functions
++ web and configuration files
++ executables
++ packages
++ scripts
++ multimedia files
+
+AWS CodeDeploy can deploy application content that runs on a server and is stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories\. AWS CodeDeploy can also deploy a serverless Lambda function\. You do not need to make changes to your existing code before you can use AWS CodeDeploy\. 
 
 AWS CodeDeploy makes it easier for you to:
 + Rapidly release new features\.
@@ -32,7 +41,7 @@ AWS CodeDeploy works with various systems for configuration management, source c
 
 ## Video Introduction to AWS CodeDeploy<a name="intro-video-welcome"></a>
 
-This short video \(2:10\) describes how AWS CodeDeploy automates code deployments to Amazon EC2 instances, making it easier for you to rapidly release new features, eliminate downtime during deployment, and avoid the need for error\-prone, manual operations\.
+This short video \(2:10\) describes how AWS CodeDeploy automates code deployments to Amazon EC2 instances\.
 
 [![AWS Videos](http://img.youtube.com/vi/Wx-ain8UryM/0.jpg)](http://www.youtube.com/watch?v=Wx-ain8UryM)
 
@@ -41,7 +50,7 @@ This short video \(2:10\) describes how AWS CodeDeploy automates code deployment
 AWS CodeDeploy offers these benefits:
 + **Server, serverless, and container applications**\. AWS CodeDeploy lets you deploy both traditional applications on servers and applications that deploy a serverless AWS Lambda function version or an Amazon ECS application\.
 + **Automated deployments**\. AWS CodeDeploy fully automates your application deployments across your development, test, and production environments\. AWS CodeDeploy scales with your infrastructure so that you can deploy to one instance or thousands\.
-+ **Minimize downtime**\. If your application uses the EC2/On\-Premises compute platform, AWS CodeDeploy helps maximize your application availability\. During an in\-place deployment, AWS CodeDeploy performs a rolling update across Amazon EC2 instances\. You can specify the number of instances to be taken offline at a time for updates\. During a blue/green deployment, the latest application revision is installed on replacement instances, and traffic is rerouted to these instances when you choose, either immediately or as soon as you are done testing the new environment\. For both deployment types, AWS CodeDeploy tracks application health according to rules you configure\. 
++ **Minimize downtime**\. If your application uses the EC2/On\-Premises compute platform, AWS CodeDeploy helps maximize your application availability\. During an in\-place deployment, AWS CodeDeploy performs a rolling update across Amazon EC2 instances\. You can specify the number of instances to be taken offline at a time for updates\. During a blue/green deployment, the latest application revision is installed on replacement instances\. Traffic is rerouted to these instances when you choose, either immediately or as soon as you are done testing the new environment\. For both deployment types, AWS CodeDeploy tracks application health according to rules you configure\. 
 + **Stop and roll back**\. You can automatically or manually stop and roll back deployments if there are errors\. 
 + **Centralized control**\. You can launch and track the status of your deployments through the AWS CodeDeploy console or the AWS CLI\. You receive a report that lists when each application revision was deployed and to which Amazon EC2 instances\. 
 + **Easy to adopt**\. AWS CodeDeploy is platform\-agnostic and works with any application\. You can easily reuse your setup code\. AWS CodeDeploy can also integrate with your software release process or continuous delivery toolchain\.
@@ -70,9 +79,9 @@ The following table describes how AWS CodeDeploy components are used with each c
 | --- | --- | --- | --- | 
 | Deployment group | Deploys a revision to a set of instances\. | Deploys a new version of a serverless Lambda function on a high\-availability compute infrastructure\. | Specifies the Amazon ECS service with the containerized application to deploy as a task set, a production and optional test listener used to serve traffic to the deployed application, when to reroute traffic and terminate the deployed application's original task set, and optional trigger, alarm, and rollback settings\. | 
 | Deployment | Deploys a new revision that consists of an application and AppSpec file\. The AppSpec specifies how to deploy the application to the instances in a deployment group\. | Shifts production traffic from one version of a Lambda function to a new version of the same function\. The AppSpec file specifies which Lambda function version to deploy\. | Deploys an updated version of an Amazon ECS containerized application as a new, replacement task set\. AWS CodeDeploy reroutes production traffic from the task set with the original version to the new replacement task set with the updated version\. When the deployment completes, the original task set is terminated\. | 
-| Deployment configuration | Settings that determine the deployment speed and the minimum number of instances that must be healthy at any point during a deployment\. | Settings that determine how traffic is shifted to the updated Lambda function versions\. | Traffic always shifts all at once\. Custom deployment configuration settings cannot be specified for an Amazon ECS deployment\.  | 
-| Revision | A combination of an AppSpec file and application files, such as executables, configuration files, and so on\. | An AppSpec file that specifies which Lambda function to deploy and Lambda fuctions that can run validation tests during deployment lifecycle event hooks\. |  An AppSpec file that specifies the Amazon ECS task definition for the Amazon ECS service with the containerized application to deploy, the container where your updated application is deployed, and a port for the container where production traffic is rerouted\. It can also specify optional network configuration settings and Lambda fuctions that can run validation tests during deployment lifecycle event hooks\.  | 
-| Application | A collection of deployment groups and revisions\. An EC2/On\-Premises application uses the EC2/On\-Premises compute platform\. | A collection deployment groups and revisions\. An application used for an AWS Lambda deployment uses the Amazon ECS compute platform\. | A collection deployment groups and revisions\. An application used for an Amazon ECS deployment uses the Amazon ECS compute platform\. | 
+| Deployment configuration | Settings that determine the deployment speed and the minimum number of instances that must be healthy at any point during a deployment\. | Settings that determine how traffic is shifted to the updated Lambda function versions\. | Traffic is always shifted all at once\. Custom deployment configuration settings cannot be specified for an Amazon ECS deployment\.  | 
+| Revision | A combination of an AppSpec file and application files, such as executables, configuration files, and so on\. | An AppSpec file that specifies which Lambda function to deploy and Lambda fuctions that can run validation tests during deployment lifecycle event hooks\. |  An AppSpec file that specifies: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html)  | 
+| Application | A collection of deployment groups and revisions\. An EC2/On\-Premises application uses the EC2/On\-Premises compute platform\. | A collection of deployment groups and revisions\. An application used for an AWS Lambda deployment uses the Amazon ECS compute platform\. | A collection of deployment groups and revisions\. An application used for an Amazon ECS deployment uses the Amazon ECS compute platform\. | 
 
 ## Overview of AWS CodeDeploy Deployment Types<a name="welcome-deployment-overview"></a>
 
@@ -94,7 +103,7 @@ If you use an EC2/On\-Premises compute platform, be aware that blue/green deploy
   For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](#welcome-deployment-overview-blue-green)\.
 
 **Note**  
-Using the AWS CodeDeploy agent, you can perform a deployment on an instance you are logged on to without the need for an application, deployment group or even an AWS account\. For information, see [Use the AWS CodeDeploy Agent to Validate a Deployment Package on a Local Machine](deployments-local.md)\.
+Using the AWS CodeDeploy agent, you can perform a deployment on an instance you are signed in to without the need for an application, deployment group, or even an AWS account\. For information, see [Use the AWS CodeDeploy Agent to Validate a Deployment Package on a Local Machine](deployments-local.md)\.
 
 **Topics**
 + [Overview of an In\-Place Deployment](#welcome-deployment-overview-in-place)
@@ -115,24 +124,24 @@ Here's how it works:
 
 1. Next, you provide AWS CodeDeploy with information about your deployment, such as which Amazon S3 bucket or GitHub repository to pull the revision from and to which set of Amazon EC2 instances to deploy its contents\. AWS CodeDeploy calls a set of Amazon EC2 instances a *deployment group*\. A deployment group contains individually tagged Amazon EC2 instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both\.
 
-   Each time you successfully upload a new application revision that you want to deploy to the deployment group, that bundle is set as the *target revision* for the deployment group\. In other words, the application revision that is currently targeted for deployment is the target revision\. This is also the revision that will be pulled for automatic deployments\.
+   Each time you successfully upload a new application revision that you want to deploy to the deployment group, that bundle is set as the *target revision* for the deployment group\. In other words, the application revision that is currently targeted for deployment is the target revision\. This is also the revision that is pulled for automatic deployments\.
 
 1. Next, the AWS CodeDeploy agent on each instance polls AWS CodeDeploy to determine what and when to pull from the specified Amazon S3 bucket or GitHub repository\.
 
-1. Finally, the AWS CodeDeploy agent on each instance pulls the target revision from the specified Amazon S3 bucket or GitHub repository and, using the instructions in the AppSpec file, deploys the contents to the instance\.
+1. Finally, the AWS CodeDeploy agent on each instance pulls the target revision from the Amazon S3 bucket or GitHub repository and, using the instructions in the AppSpec file, deploys the contents to the instance\.
 
  AWS CodeDeploy keeps a record of your deployments so that you can get deployment status, deployment configuration parameters, instance health, and so on\.
 
 ### Overview of a Blue/Green Deployment<a name="welcome-deployment-overview-blue-green"></a>
 
 A blue/green deployment reroutes traffic from your application's original environment to a replacement environment\. Your environment depends on your AWS CodeDeploy application's compute platform\. 
-+  **AWS Lambda**: Traffic shifts from one version of a Lambda function to a new version of the same Lamdba function\. 
-+  **Amazon ECS**: Traffic shifts from a task set in your Amazon ECS service to an updated, replacement task set in the same Amazon ECS service\. 
-+  **EC2/On\-Premises**: Traffic shifts from one set of instances in the original environment to a replacement set of instances\. 
++  **AWS Lambda**: Traffic is shifted from one version of a Lambda function to a new version of the same Lamdba function\. 
++  **Amazon ECS**: Traffic is shifted from a task set in your Amazon ECS service to an updated, replacement task set in the same Amazon ECS service\. 
++  **EC2/On\-Premises**: Traffic is shifted from one set of instances in the original environment to a replacement set of instances\. 
 
 All AWS Lambda and Amazon ECS deployments are blue/green\. An EC2/On\-Premises deployment can be in\-place or blue/green\. A blue/green deployment offers a number of advantages over an in\-place deployment:
 + An application can be installed and tested in the new replacement environment and deployed to production simply by rerouting traffic\.
-+  If you're using the EC2/On\-Premises compute platform, switching back to the most recent version of an application is faster and more reliable because traffic can be routed back to the original instances as long as they have not been terminated\. With an in\-place deployment, versions must be rolled back by redeploying the previous version of the application\.
++  If you're using the EC2/On\-Premises compute platform, switching back to the most recent version of an application is faster and more reliable\. That's because traffic can be routed back to the original instances as long as they have not been terminated\. With an in\-place deployment, versions must be rolled back by redeploying the previous version of the application\.
 + If you're using the EC2/On\-Premises compute platform, new instances are provisioned for a blue/green deployment and reflect the most up\-to\-date server configurations\. This helps you avoid the types of problems that sometimes occur on long\-running instances\.
 + If you're using the AWS Lambda compute platform, you control how traffic is shifted from your original AWS Lambda function version to your new AWS Lambda function version\.
 
@@ -169,7 +178,7 @@ You typically also have an application revision running on the instances in your
 
 When you create a deployment group that is used in blue/green deployments, you can choose how your replacement environment is specified:
 
-**Copy an existing Amazon EC2 Auto Scaling group**: During the blue/green deployment, AWS CodeDeploy creates the instances for your replacement environment automatically during the deployment\. With this option, AWS CodeDeploy uses the Amazon EC2 Auto Scaling group you specify as a template for the replacement environment, including the same number of running instances and many other configuration options\.
+**Copy an existing Amazon EC2 Auto Scaling group**: During the blue/green deployment, AWS CodeDeploy creates the instances for your replacement environment during the deployment\. With this option, AWS CodeDeploy uses the Amazon EC2 Auto Scaling group you specify as a template for the replacement environment, including the same number of running instances and many other configuration options\.
 
 **Choose instances manually**: You can specify the instances to be counted as your replacement using Amazon EC2 instance tags, Amazon EC2 Auto Scaling group names, or both\. If you choose this option, you do not need to specify the instances for the replacement environment until you create a deployment\.
 
