@@ -33,8 +33,8 @@ If you want to use the same settings used in another deployment group \(includin
 1. From **Target group 1 name** and **Target group 2 name**, choose the target groups used to route traffic during your deployment\. AWS CodeDeploy binds one target group to your Amazon ECS service's original task set and the other to its replacement task set\. For more information, see [Target Groups for Your Application Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html)\. 
 
 1.  Choose **Reroute traffic immediately** or **Specify when to reroute traffic** to determine when to reroute traffic to your updated Amazon ECS service\. 
-
-    If you chose to specify when to reroute traffic, then choose the number of days, hours, and minutes to wait after a successful deployment before traffic is routed to the replacement task set in your Amazon ECS service\. 
+     
+    If you chose to specify when to reroute traffic, then choose the number of days, hours, and minutes to wait after a successful deployment for you manually reroute traffic. If the wait time you specify passes without traffic being rerouted, the deployment status is changed to Stopped\. 
 
 1.  For **Original revision termination**, choose the number of days, hours, and minutes to wait after a successful deployment before the original task set in your Amazon ECS service is terminated\. 
 
