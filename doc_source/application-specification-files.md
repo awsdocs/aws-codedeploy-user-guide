@@ -1,20 +1,14 @@
---------
+# CodeDeploy Application Specification Files<a name="application-specification-files"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+An application specification file \(AppSpec file\), which is unique to CodeDeploy, is a [YAML](http://www.yaml.org)\-formatted or [JSON](http://www.json.org)\-formatted file\. The AppSpec file is used to manage each deployment as a series of lifecycle event hooks, which are defined in the file\.
 
---------
-
-# AWS CodeDeploy Application Specification Files<a name="application-specification-files"></a>
-
-An application specification file \(AppSpec file\), which is unique to AWS CodeDeploy, is a [YAML](http://www.yaml.org)\-formatted or [JSON](http://www.json.org)\-formatted file\. The AppSpec file is used to manage each deployment as a series of lifecycle event hooks, which are defined in the file\.
-
-For information about how to create a well\-formed AppSpec file, see [AWS CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+For information about how to create a well\-formed AppSpec file, see [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
 
 **Topics**
 + [AppSpec Files on an Amazon ECS Compute Platform](#appspec-files-on-ecs-compute-platform)
 + [AppSpec Files on an AWS Lambda Compute Platform](#appspec-files-on-lambda-compute-platform)
 + [AppSpec Files on an EC2/On\-Premises Compute Platform](#appspec-files-on-server-compute-platform)
-+ [How the AWS CodeDeploy Agent Uses the AppSpec File](#application-specification-files-agent-usage)
++ [How the CodeDeploy Agent Uses the AppSpec File](#application-specification-files-agent-usage)
 
 ## AppSpec Files on an Amazon ECS Compute Platform<a name="appspec-files-on-ecs-compute-platform"></a>
 
@@ -39,19 +33,19 @@ If your application uses the EC2/On\-Premises compute platform, the AppSpec file
 + Specify custom permissions for deployed files\.
 + Specify scripts to be run on each instance at various stages of the deployment process\.
 
-You can run scripts on an instance after many of the individual deployment lifecycle events\. AWS CodeDeploy runs only those scripts specified in the file, but those scripts can call other scripts on the instance\. You can run any type of script as long as it is supported by the operating system running on the instances\. For more information, see [AppSpec 'hooks' Section for an EC2/On\-Premises Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-server)\. 
+You can run scripts on an instance after many of the individual deployment lifecycle events\. CodeDeploy runs only those scripts specified in the file, but those scripts can call other scripts on the instance\. You can run any type of script as long as it is supported by the operating system running on the instances\. For more information, see [AppSpec 'hooks' Section for an EC2/On\-Premises Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-server)\. 
 
-## How the AWS CodeDeploy Agent Uses the AppSpec File<a name="application-specification-files-agent-usage"></a>
+## How the CodeDeploy Agent Uses the AppSpec File<a name="application-specification-files-agent-usage"></a>
 
-During deployment, the AWS CodeDeploy agent looks up the name of the current event in the **hooks** section of the AppSpec file\. If the event is not found, the AWS CodeDeploy agent moves on to the next step\. If the event is found, the AWS CodeDeploy agent retrieves the list of scripts to execute\. The scripts are run sequentially, in the order in which they appear in the file\. The status of each script is logged in the AWS CodeDeploy agent log file on the instance\. 
+During deployment, the CodeDeploy agent looks up the name of the current event in the **hooks** section of the AppSpec file\. If the event is not found, the CodeDeploy agent moves on to the next step\. If the event is found, the CodeDeploy agent retrieves the list of scripts to execute\. The scripts are run sequentially, in the order in which they appear in the file\. The status of each script is logged in the CodeDeploy agent log file on the instance\. 
 
 If a script runs successfully, it returns an exit code of 0 \(zero\)\.
 
 **Note**  
- The AWS CodeDeploy agent is not used in an AWS Lambda or an Amazon ECS deployment\. 
+ The CodeDeploy agent is not used in an AWS Lambda or an Amazon ECS deployment\. 
 
-During the **Install** event, the AWS CodeDeploy agent uses the mappings defined in the **files** section of the AppSpec file to determine which folders or files to copy from the revision to the instance\.
+During the **Install** event, the CodeDeploy agent uses the mappings defined in the **files** section of the AppSpec file to determine which folders or files to copy from the revision to the instance\.
 
-If the AWS CodeDeploy agent installed on the operating system doesn't match what's listed in the AppSpec file, the deployment fails\.
+If the CodeDeploy agent installed on the operating system doesn't match what's listed in the AppSpec file, the deployment fails\.
 
-For information about AWS CodeDeploy agent log files, see [Working with the AWS CodeDeploy Agent](codedeploy-agent.md)\.
+For information about CodeDeploy agent log files, see [Working with the CodeDeploy Agent](codedeploy-agent.md)\.

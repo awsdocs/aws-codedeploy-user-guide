@@ -1,17 +1,11 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 6: Clean Up Your WordPress Application and Related Resources<a name="tutorials-wordpress-clean-up"></a>
 
 You've now successfully made an update to the WordPress code and redeployed the site\. To avoid ongoing charges for resources you created for this tutorial, you should delete:
 + Any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you created them outside of AWS CloudFormation\)\.
 + Any Amazon S3 buckets\.
-+ The `WordPress_App` application in AWS CodeDeploy\.
++ The `WordPress_App` application in CodeDeploy\.
 
-You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and AWS CodeDeploy consoles, or the AWS APIs to perform the cleanup\.
+You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and CodeDeploy consoles, or the AWS APIs to perform the cleanup\.
 
 **Topics**
 + [To clean up resources \(CLI\)](#tutorials-wordpress-clean-up-cli)
@@ -80,11 +74,11 @@ To delete the Amazon S3 bucket:
 
 1. After the bucket is empty, you can delete the bucket\. In the list of buckets, choose the row of the bucket \(but not the bucket name\)\. Choose **Delete bucket**, and when prompted to confirm, choose **OK**\. 
 
-To delete the `WordPress_App` application from AWS CodeDeploy:
+To delete the `WordPress_App` application from CodeDeploy:
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -96,4 +90,4 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 ## What's Next?<a name="tutorials-wordpress-clean-up-whats-next"></a>
 
-If you've arrived here, congratulations\! You have successfully completed an AWS CodeDeploy deployment, and then updated your site's code and redeployed it\. 
+If you've arrived here, congratulations\! You have successfully completed a CodeDeploy deployment, and then updated your site's code and redeployed it\. 

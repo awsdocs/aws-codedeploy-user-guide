@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 6: Clean Up<a name="tutorials-auto-scaling-group-clean-up"></a>
 
-In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing charges for resources you used during this tutorial\. Optionally, you can delete the Amazon EC2 Auto Scaling configuration and AWS CodeDeploy deployment component records\.
+In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing charges for resources you used during this tutorial\. Optionally, you can delete the Amazon EC2 Auto Scaling configuration and CodeDeploy deployment component records\.
 
 **Topics**
 + [To clean up resources \(CLI\)](#tutorials-auto-scaling-group-clean-up-cli)
@@ -26,7 +20,7 @@ In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing c
    aws autoscaling delete-launch-configuration --launch-configuration-name CodeDeployDemo-AS-Configuration
    ```
 
-1. Optionally, delete the application from AWS CodeDeploy by calling the delete\-application command against the application named **SimpleDemoApp**\. This will also delete all associated deployment, deployment group, and revision records\. 
+1. Optionally, delete the application from CodeDeploy by calling the delete\-application command against the application named **SimpleDemoApp**\. This will also delete all associated deployment, deployment group, and revision records\. 
 
    ```
    aws deploy delete-application --application-name SimpleDemoApp
@@ -46,11 +40,11 @@ In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing c
 
 1. Choose **Actions**, choose **Delete launch configuration**, and then choose **Yes, Delete**\.
 
-1. Optionally, delete the application from AWS CodeDeploy\. This will also delete all associated deployment, deployment group, and revision records\. Open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Optionally, delete the application from CodeDeploy\. This will also delete all associated deployment, deployment group, and revision records\. Open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
    In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 

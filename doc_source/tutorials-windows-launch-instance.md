@@ -1,16 +1,10 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 1: Launch a Windows Server Amazon EC2 Instance<a name="tutorials-windows-launch-instance"></a>
 
-To deploy the "Hello, World\!" application with AWS CodeDeploy, you need an Amazon EC2 instance running Windows Server\.
+To deploy the Hello World application with CodeDeploy, you need an Amazon EC2 instance running Windows Server\.
 
-Follow the instructions in [Working with Instances for AWS CodeDeploy](instances.md)\. When you are ready to assign an Amazon EC2 instance tag to the instance, be sure to specify the tag key of **Name** and the tag value of **CodeDeployDemo**\. \(If you specify a different tag key or tag value, then the instructions in [Step 4: Deploy Your "Hello, World\!" Application](tutorials-windows-deploy-application.md) might produce unexpected results\.\)
+Follow the instructions in [Working with Instances for CodeDeploy](instances.md)\. When you are ready to assign an Amazon EC2 instance tag to the instance, be sure to specify the tag key of **Name** and the tag value of **CodeDeployDemo**\. \(If you specify a different tag key or tag value, then the instructions in [Step 4: Deploy Your Hello World Application](tutorials-windows-deploy-application.md) might produce unexpected results\.\)
 
-After you've launched the Amazon EC2 instance, return to this page, and continue to the next section\. Do not continue on to [Create an Application with AWS CodeDeploy](applications-create.md) as a next step\.
+After you've launched the Amazon EC2 instance, return to this page, and continue to the next section\. Do not continue on to [Create an Application with CodeDeploy](applications-create.md) as a next step\.
 
 ## Connect to Your Amazon EC2 Instance<a name="tutorials-windows-launch-instance-connect"></a>
 
@@ -27,9 +21,9 @@ In these instructions, we assume you are running Windows and the Windows Desktop
 
 1. Choose **Connect**\.
 
-1. Choose **Get Password**\.
+1. Choose **Get Password**, and then choose **Choose File**\.
 
-1. Choose **Browse**\. Browse to and choose the Amazon EC2 instance key pair file associated with the Windows Server Amazon EC2 instance, and then choose **Open**\.
+1. Browse to and choose the Amazon EC2 instance key pair file associated with the Windows Server Amazon EC2 instance, and then choose **Open**\.
 
 1. Choose **Decrypt Password**\. Make a note of the password that is displayed\. You need it in step 10\.
 
@@ -43,6 +37,34 @@ In these instructions, we assume you are running Windows and the Windows Desktop
 
 1. After you are connected, the desktop of the Amazon EC2 instance running Windows Server is displayed\.
 
-1. You can now sign out of the running Amazon EC2 instance\.
+1. You can now disconnect from the Amazon EC2 instance\.
 **Warning**  
-Do not stop or terminate the instance\. Otherwise, AWS CodeDeploy can't deploy to it\.
+Do not stop or terminate the instance\. Otherwise, CodeDeploy can't deploy to it\.
+
+## Add an Inbound Rule That Allows HTTP Traffic to Your Amazon Linux or RHEL Amazon EC2 Instance<a name="tutorials-windows-launch-instance-add-inbound-rule"></a>
+
+The next step confirms your Amazon EC2 instance has an open HTTP port so you can see the deployed webpage on your Windows Server Amazon EC2 instance in a browser\. 
+
+1. Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
+
+1. Choose **Instances**, and then choose your instance\. 
+
+1.  Under **Security groups**, choose **view inbound rules**\. 
+
+   You should see a list of rules in your security group like the following:
+
+   ```
+   Security Groups associated with i-1234567890abcdef0
+    Ports     Protocol     Source     launch-wizard-N
+    22        tcp          0.0.0.0/0          ✔
+   ```
+
+1.  Under **Security groups**, choose the security group for your Amazon EC2 instance\. It might be named **launch\-wizard\-*N***\. The ***N*** in the name is a number assigned to your security group when your instance was created\. 
+
+    Choose the **Inbound** tab\. If the security group for your instance is configured correctly, you should see a rule with the following values: 
+   + **Type**: HTTP
+   + **Protocol**: TCP
+   + **Port Range**: 80
+   + **Source**: Custom
+
+1.  If you do not see a rule with these values, use the procedures in [Adding Rules to a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) to add them to a new security rule\. 

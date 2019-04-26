@@ -1,14 +1,8 @@
---------
+# View Application Revision Details with CodeDeploy<a name="application-revisions-view-details"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about all application revisions that are registered to your AWS account for a specified application\.
 
---------
-
-# View Application Revision Details with AWS CodeDeploy<a name="application-revisions-view-details"></a>
-
-You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about all application revisions that are registered to your AWS account for a specified application\.
-
-For information about registering a revision, see [Register an Application Revision in Amazon S3 with AWS CodeDeploy](application-revisions-register.md)\.
+For information about registering a revision, see [Register an Application Revision in Amazon S3 with CodeDeploy](application-revisions-register.md)\.
 
 **Topics**
 + [View Application Revision Details \(Console\)](#application-revisions-view-details-console)
@@ -18,13 +12,13 @@ For information about registering a revision, see [Register an Application Revis
 
 To view application revision details:
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy** and choose **Applications**\.
 **Note**  
-If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. AWS CodeDeploy is supported in these regions only\.
+If no entries are displayed, make sure the correct region is selected\. On the navigation bar, in the region selector, choose one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. CodeDeploy is supported in these regions only\.
 
 1. Choose the name of the application that has the revision you want to view\.
 
@@ -45,8 +39,8 @@ To view details about a single application revision, call the [get\-application\
 To view details about multiple application revisions, call the [list\-application\-revisions](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command, specifying:
 + The application name\. To get the application name, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
 + Optionally, to view details for Amazon S3 application revisions only, the Amazon S3 bucket name containing the revisions\.
-+ Optionally, to view details for Amazon S3 application revisions only, a prefix string to limit the search to Amazon S3 application revisions\. \(If not specified, AWS CodeDeploy will list all matching Amazon S3 application revisions\.\)
-+ Optionally, whether to list revision details based on whether each revision is the target revision of a deployment group\. \(If not specified, AWS CodeDeploy will list all matching revisions\.\)
-+ Optionally, the column name and order by which to sort the list of revision details\. \(If not specified, AWS CodeDeploy will list results in an arbitrary order\.\)
++ Optionally, to view details for Amazon S3 application revisions only, a prefix string to limit the search to Amazon S3 application revisions\. \(If not specified, CodeDeploy will list all matching Amazon S3 application revisions\.\)
++ Optionally, whether to list revision details based on whether each revision is the target revision of a deployment group\. \(If not specified, CodeDeploy will list all matching revisions\.\)
++ Optionally, the column name and order by which to sort the list of revision details\. \(If not specified, CodeDeploy will list results in an arbitrary order\.\)
 
 You can list all revisions or only those revisions stored in Amazon S3\. You cannot list only those revisions stored in GitHub\.

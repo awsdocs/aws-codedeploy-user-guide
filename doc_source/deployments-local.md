@@ -1,19 +1,13 @@
---------
+# Use the CodeDeploy Agent to Validate a Deployment Package on a Local Machine<a name="deployments-local"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Use the AWS CodeDeploy Agent to Validate a Deployment Package on a Local Machine<a name="deployments-local"></a>
-
-Using the AWS CodeDeploy agent, you can deploy content on an instance you are logged in to\. This allows you to test the integrity of an application specification file \(AppSpec file\) that you intend to use in a deployment and the content you intend to deploy\. 
+Using the CodeDeploy agent, you can deploy content on an instance you are logged in to\. This allows you to test the integrity of an application specification file \(AppSpec file\) that you intend to use in a deployment and the content you intend to deploy\. 
 
 You do not need to create an application and deployment group\. If you want to deploy content stored on the local instance, you do not even need an AWS account\. For the simplest testing, you can run the codedeploy\-local command, without specifying any options, in a directory that contains the AppSpec file and the content to be deployed\. There are options for other test cases in the tool\. 
 
 By validating a deployment package on a local machine you can:
 + Test the integrity of an application revision\.
 + Test the contents of an AppSpec file\.
-+ Try out AWS CodeDeploy for the first time with your existing application code\.
++ Try out CodeDeploy for the first time with your existing application code\.
 + Deploy content rapidly when you are already logged in to an instance\.
 
 You can use deploy content that is stored on the local instance or in a supported remote repository type \(Amazon S3 buckets or public GitHub repositories\)\.
@@ -21,9 +15,9 @@ You can use deploy content that is stored on the local instance or in a supporte
 ## Prerequisites<a name="deployments-local-prerequisites"></a>
 
 Before you start a local deployment, complete the following steps: 
-+ Create or use an instance type supported by the AWS CodeDeploy agent\. For information, see [Operating Systems Supported by the AWS CodeDeploy Agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\. 
-+ Install version 1\.0\.1\.1352 or later of the AWS CodeDeploy agent\. For information, see [Install or Reinstall the AWS CodeDeploy Agent](codedeploy-agent-operations-install.md)\.
-+ If you are deploying your content from an Amazon S3 bucket or GitHub repository, provision an IAM user to use with AWS CodeDeploy\. For information, see [Step 1: Provision an IAM User](getting-started-provision-user.md)\.
++ Create or use an instance type supported by the CodeDeploy agent\. For information, see [Operating Systems Supported by the CodeDeploy Agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\. 
++ Install version 1\.0\.1\.1352 or later of the CodeDeploy agent\. For information, see [Install or Reinstall the CodeDeploy Agent](codedeploy-agent-operations-install.md)\.
++ If you are deploying your content from an Amazon S3 bucket or GitHub repository, provision an IAM user to use with CodeDeploy\. For information, see [Step 1: Provision an IAM User](getting-started-provision-user.md)\.
 + If you are deploying your application revision from an Amazon S3 bucket, create an Amazon S3 bucket in the region you are working in and apply an Amazon S3 bucket policy to the bucket\. This policy grants your instances the permissions required to download the application revision\.
 
   For example, the following Amazon S3 bucket policy allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::80398EXAMPLE:role/CodeDeployDemo` to download from anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
@@ -71,16 +65,16 @@ Before you start a local deployment, complete the following steps:
   ```
 
   For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
-+ If you are deploying your application revision from an Amazon S3 bucket or GitHub repository, set up an IAM instance profile and attach it to the instance\. For information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md), [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md), and [Create an Amazon EC2 Instance for AWS CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
++ If you are deploying your application revision from an Amazon S3 bucket or GitHub repository, set up an IAM instance profile and attach it to the instance\. For information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md), [Create an Amazon EC2 Instance for CodeDeploy \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md), and [Create an Amazon EC2 Instance for CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
 + If you are deploying your content from GitHub, create a GitHub account and a public repository\. To create a GitHub account, see [Join GitHub](https://github.com/join)\. To create a GitHub repository, see [Create a Repo](https://help.github.com/articles/create-a-repo/)\.
 **Note**  
  Private repositories are not currently supported\. If your content is stored in a private GitHub repository, you can download it to the instance and use the `--bundle-location` option to specify its local path\.
-+ Prepare the content \(including an AppSpec file\) that you want to deploy to the instance and place it on the local instance, in your Amazon S3 bucket, or in your GitHub repository\. For information, see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
-+ If you want to use values other than the defaults for other configuration options, create the configuration file and place it on the instance \(`/etc/codedeploy-agent/conf/codedeployagent.yml` for Amazon Linux, RHEL, or Ubuntu Server instances or `C:\ProgramData\Amazon\CodeDeploy\conf.yml` for Windows Server instances\)\. For information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
++ Prepare the content \(including an AppSpec file\) that you want to deploy to the instance and place it on the local instance, in your Amazon S3 bucket, or in your GitHub repository\. For information, see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
++ If you want to use values other than the defaults for other configuration options, create the configuration file and place it on the instance \(`/etc/codedeploy-agent/conf/codedeployagent.yml` for Amazon Linux, RHEL, or Ubuntu Server instances or `C:\ProgramData\Amazon\CodeDeploy\conf.yml` for Windows Server instances\)\. For information, see [CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
 **Note**  
 If you use a configuration file on Amazon Linux, RHEL, or Ubuntu Server instances, you must either:  
 Use the `:root_dir:` and `:log_dir:` variables to specify locations other than the defaults for the deployment root and log directory folders\. 
-Use `sudo` to run AWS CodeDeploy agent commands\.
+Use `sudo` to run CodeDeploy agent commands\.
 
 ## Create a Local Deployment<a name="deployments-local-deploy"></a>
 
@@ -139,13 +133,13 @@ A set of override lifecycle event hooks you want to run, in order, instead of th
 + You want to run a different set of events without having to update the AppSpec file\. 
 + You want to run a single event hook as an exception to what's in the AppSpec file, such as `ApplicationStop`\.
 
-If you don't specify **DownloadBundle** and **Install** events in the override list, they will run before all the event hooks you do specify\. If you include **DownloadBundle** and **Install** in the list of `--events` options, they must be preceded only by events that normally run before them in AWS CodeDeploy deployments\. For information, see [AppSpec 'hooks' Section](reference-appspec-file-structure-hooks.md)\.
+If you don't specify **DownloadBundle** and **Install** events in the override list, they will run before all the event hooks you do specify\. If you include **DownloadBundle** and **Install** in the list of `--events` options, they must be preceded only by events that normally run before them in CodeDeploy deployments\. For information, see [AppSpec 'hooks' Section](reference-appspec-file-structure-hooks.md)\.
 
 **\-c**, **\-\-agent\-configuration\-file**
 
 The location of a configuration file to use for the deployment, if you store it in a location other than the default\. A configuration file specifies alternatives to other default values and behaviors for a deployment\. 
 
-By default, configuration files are stored in `/etc/codedeploy-agent/conf/codedeployagent.yml` \(Amazon Linux, RHEL, or Ubuntu Server instances\) or `C:/ProgramData/Amazon/CodeDeploy/conf.yml` \(Windows Server\)\. For more information, see [AWS CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
+By default, configuration files are stored in `/etc/codedeploy-agent/conf/codedeployagent.yml` \(Amazon Linux, RHEL, or Ubuntu Server instances\) or `C:/ProgramData/Amazon/CodeDeploy/conf.yml` \(Windows Server\)\. For more information, see [CodeDeploy Agent Configuration Reference](reference-agent-configuration.md)\.
 
 **\-h**, **\-\-help**
 

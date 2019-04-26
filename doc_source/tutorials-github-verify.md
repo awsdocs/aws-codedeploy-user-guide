@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 7: Monitor and Verify the Deployment<a name="tutorials-github-verify"></a>
 
-In this step, you will use the AWS CodeDeploy console or the AWS CLI to verify the success of the deployment\. You will use your web browser to view the web page that was deployed to the instance you created or configured\.
+In this step, you will use the CodeDeploy console or the AWS CLI to verify the success of the deployment\. You will use your web browser to view the web page that was deployed to the instance you created or configured\.
 
 **Note**  
 If you're deploying to an Ubuntu Server instance, use your own testing strategy to determine whether the deployed revision works as expected on the instance, and then go to the next step\.

@@ -1,12 +1,6 @@
---------
+# CodeDeploy Resource Kit Reference<a name="resource-kit"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# AWS CodeDeploy Resource Kit Reference<a name="resource-kit"></a>
-
-Many of the files AWS CodeDeploy relies on are stored in publicly available, AWS region\-specific Amazon S3 buckets\. These files include installation files for the AWS CodeDeploy agent, templates, and sample application files\. We call this collection of files the AWS CodeDeploy Resource Kit\. 
+Many of the files CodeDeploy relies on are stored in publicly available, AWS region\-specific Amazon S3 buckets\. These files include installation files for the CodeDeploy agent, templates, and sample application files\. We call this collection of files the CodeDeploy Resource Kit\. 
 
 **Topics**
 + [Resource Kit Bucket Names by Region](#resource-kit-bucket-names)
@@ -16,7 +10,7 @@ Many of the files AWS CodeDeploy relies on are stored in publicly available, AWS
 
 ## Resource Kit Bucket Names by Region<a name="resource-kit-bucket-names"></a>
 
-This table lists the names of *bucket\-name * replacements required for some procedures in the guide\. These are the names of the Amazon S3 buckets that contain the AWS CodeDeploy Resource Kit files\.
+This table lists the names of *bucket\-name * replacements required for some procedures in the guide\. These are the names of the Amazon S3 buckets that contain the CodeDeploy Resource Kit files\.
 
 
 ****  
@@ -32,6 +26,7 @@ This table lists the names of *bucket\-name * replacements required for some pro
 | EU \(London\) | aws\-codedeploy\-eu\-west\-2 | eu\-west\-2 | 
 | EU \(Paris\) | aws\-codedeploy\-eu\-west\-3 | eu\-west\-3 | 
 | EU \(Frankfurt\) | aws\-codedeploy\-eu\-central\-1 | eu\-central\-1 | 
+| Asia Pacific \(Hong Kong\) | aws\-codedeploy\-ap\-east\-1 | ap\-east\-1 | 
 | Asia Pacific \(Tokyo\) | aws\-codedeploy\-ap\-northeast\-1 | ap\-northeast\-1 | 
 | Asia Pacific \(Seoul\) | aws\-codedeploy\-ap\-northeast\-2 | ap\-northeast\-2 | 
 | Asia Pacific \(Singapore\) | aws\-codedeploy\-ap\-southeast\-1 | ap\-southeast\-1 | 
@@ -41,18 +36,18 @@ This table lists the names of *bucket\-name * replacements required for some pro
 
 ## Resource Kit Contents<a name="resource-kit-file-list"></a>
 
-The following table lists the files in the AWS CodeDeploy Resource Kit\.
+The following table lists the files in the CodeDeploy Resource Kit\.
 
 
 | File | Description | 
 | --- | --- | 
-| VERSION | A file used by AWS CodeDeploy agents to update themselves as they are running on instances\. | 
-| codedeploy\-agent\.noarch\.rpm | The AWS CodeDeploy agent for Amazon Linux and Red Hat Enterprise Linux \(RHEL\)\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
-| codedeploy\-agent\_all\.deb | The AWS CodeDeploy agent for Ubuntu Server\. There may be several files with the same base file name, but different versions \(such as \_1\.0\-0\)\. | 
-| codedeploy\-agent\.msi | The AWS CodeDeploy agent for Windows Server\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
-| install | A file you can use to more easily install the AWS CodeDeploy agent\. | 
+| VERSION | A file used by CodeDeploy agents to update themselves as they are running on instances\. | 
+| codedeploy\-agent\.noarch\.rpm | The CodeDeploy agent for Amazon Linux and Red Hat Enterprise Linux \(RHEL\)\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
+| codedeploy\-agent\_all\.deb | The CodeDeploy agent for Ubuntu Server\. There may be several files with the same base file name, but different versions \(such as \_1\.0\-0\)\. | 
+| codedeploy\-agent\.msi | The CodeDeploy agent for Windows Server\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
+| install | A file you can use to more easily install the CodeDeploy agent\. | 
 |  `CodeDeploy_SampleCF_Template.json`  |  An AWS CloudFormation template you can use to launch from one to three Amazon EC2 instances running Amazon Linux or Windows Server\. There may be several files with the same base file name, but different versions \(such as `-1.0.0`\)\.  | 
-| CodeDeploy\_SampleCF\_ELB\_Integration\.json | An AWS CloudFormation template you can use to create a load\-balanced sample Web site running on an Apache Web Server\. The application is configured to span all Availability Zones in the region you create it in\. This template creates three Amazon EC2 instances and IAM instance profile to grant the instances access to the resources in Amazon S3, Amazon EC2 Auto Scaling, AWS CloudFormation, and Elastic Load Balancing\. It also creates the load balancer and an AWS CodeDeploy service role\. | 
+| CodeDeploy\_SampleCF\_ELB\_Integration\.json | An AWS CloudFormation template you can use to create a load\-balanced sample Web site running on an Apache Web Server\. The application is configured to span all Availability Zones in the region you create it in\. This template creates three Amazon EC2 instances and IAM instance profile to grant the instances access to the resources in Amazon S3, Amazon EC2 Auto Scaling, AWS CloudFormation, and Elastic Load Balancing\. It also creates the load balancer and a CodeDeploy service role\. | 
 | SampleApp\_ELB\_Integration\.zip | A sample application revision you can deploy to an Amazon EC2 instance that is registered to an Elastic Load Balancing load balancer\. | 
 | SampleApp\_Linux\.zip |  A sample application revision you can deploy to an Amazon EC2 instance running Amazon Linux or to a Ubuntu Server or RHEL instance\. There may be several files with the same base file name, but different versions \(such as `-1.0`\)\.  | 
 | SampleApp\_Windows\.zip | A sample application revision you can deploy to a Windows Server instance\. There may be several files with the same base file name, but different versions \(such as \-1\.0\)\. | 
@@ -107,6 +102,11 @@ The files in each bucket are designed to work with resources in the correspondin
 
   ```
   aws s3 ls --recursive s3://aws-codedeploy-eu-central-1
+  ```
++ 
+
+  ```
+  aws s3 ls --recursive s3://aws-codedeploy-ap-east-1
   ```
 + 
 
@@ -195,6 +195,11 @@ For example, the following commands download a single file named `SampleApp_Linu
 + 
 
   ```
+  aws s3 cp s3://aws-codedeploy-ap-east-1/samples/latest/SampleApp_Linux.zip . --region ap-east-1
+  ```
++ 
+
+  ```
   aws s3 cp s3://aws-codedeploy-ap-northeast-1/samples/latest/SampleApp_Linux.zip . --region ap-northeast-1
   ```
 + 
@@ -268,6 +273,11 @@ To download all of the files, use one of the following commands for your region:
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-eu-central-1 . --region eu-central-1
+  ```
++ 
+
+  ```
+  aws s3 cp --recursive s3://aws-codedeploy-ap-east-1 . --region ap-east-1
   ```
 + 
 

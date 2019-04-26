@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # AppSpec File Structure<a name="reference-appspec-file-structure"></a>
 
 The following is the high\-level structure for an AppSpec file used for deployments to AWS Lambda and EC2/On\-Premises compute platforms\.
@@ -26,7 +20,7 @@ hooks:
 In this structure:
 
 ** **version** **  
-This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by AWS CodeDeploy for future use\.  
+This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by CodeDeploy for future use\.  
 Specify **version** with a string\.
 
 ** **resources** **  
@@ -53,7 +47,7 @@ hooks:
 In this structure:
 
 ** **version** **  
-This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by AWS CodeDeploy for future use\.  
+This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by CodeDeploy for future use\.  
 Specify **version** with a string\.
 
 ** **resources** **  
@@ -80,7 +74,7 @@ hooks:
 In this structure:
 
 ** **version** **  
-This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by AWS CodeDeploy for future use\.  
+This section specifies the version of the AppSpec file\. Do not change this value\. It is required\. Currently, the only allowed value is **0\.0**\. It is reserved by CodeDeploy for future use\.  
 Specify **version** with a string\.
 
 ** **os** **  

@@ -1,16 +1,10 @@
---------
+# Working with Deployments in CodeDeploy<a name="deployments"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Working with Deployments in AWS CodeDeploy<a name="deployments"></a>
-
-In AWS CodeDeploy, a deployment is the process, and the components involved in the process, of installing content on one or more instances\. This content can consist of code, web and configuration files, executables, packages, scripts, and so on\. AWS CodeDeploy deploys content that is stored in a source repository, according to the configuration rules you specify\.
+In CodeDeploy, a deployment is the process, and the components involved in the process, of installing content on one or more instances\. This content can consist of code, web and configuration files, executables, packages, scripts, and so on\. CodeDeploy deploys content that is stored in a source repository, according to the configuration rules you specify\.
 
  If you use the EC2/On\-Premises compute platform, then two deployments to the same set of instances can run concurrently\. 
 
-AWS CodeDeploy provides two deployment type options, in\-place deployments and blue/green deployments\.
+CodeDeploy provides two deployment type options, in\-place deployments and blue/green deployments\.
 + **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an In\-Place Deployment](welcome.md#welcome-deployment-overview-in-place)\.
 + **Blue/green deployment**: The behavior of your deployment depends on which compute platform you use:
   + **Blue/green on an EC2/On\-Premises compute platform**: The instances in a deployment group \(the original environment\) are replaced by a different set of instances \(the replacement environment\) using these steps:
@@ -25,7 +19,7 @@ If you use an EC2/On\-Premises compute platform, be aware that blue/green deploy
 
   For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)\.
 
-For information about automatically deploying from Amazon S3, see [Automatically Deploy from Amazon S3 Using AWS CodeDeploy](http://aws.amazon.com/blogs/devops/automatically-deploy-from-amazon-s3-using-aws-codedeploy/)\.
+For information about automatically deploying from Amazon S3, see [Automatically Deploy from Amazon S3 Using CodeDeploy](http://aws.amazon.com/blogs/devops/automatically-deploy-from-amazon-s3-using-aws-codedeploy/)\.
 
 **Topics**
 + [Create a Deployment](deployments-create.md)

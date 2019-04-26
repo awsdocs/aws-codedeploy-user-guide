@@ -1,16 +1,29 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Step 3: Create a Service Role for AWS CodeDeploy<a name="getting-started-create-service-role"></a>
+# Step 3: Create a Service Role for CodeDeploy<a name="getting-started-create-service-role"></a>
 
 In AWS, service roles are used to grant permissions to an AWS service so it can access AWS resources\. The policies that you attach to the service role determine which AWS resources the service can access and what it can do with those resources\. 
 
-The service role you create for AWS CodeDeploy must be granted the permissions to access the instances to which you deploy applications\. These permissions enable AWS CodeDeploy to read the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. 
+The service role you create for CodeDeploy must be granted the permissions required for your compute platform\. If you deploy to more than one compute platform, create one service role for each\. To add permissions, attach one or more of the following AWS\-supplied policies:
 
-The permissions you add to the service role specify the operations AWS CodeDeploy can perform when it accesses your Amazon EC2 instances and Amazon EC2 Auto Scaling groups\. To add these permissions, attach an AWS\-supplied policy, `AWSCodeDeployRole`, to the service role\.
+For EC2/On\-Premises deployments, attach the **AWSCodeDeployRole** policy\. It provides the permissions for your service role to:
++ Read the tags on your instances or identify your Amazon EC2 instances by Amazon EC2 Auto Scaling group names\.
++ Read, create, update, and delete Amazon EC2 Auto Scaling groups, lifecycle hooks, and scaling policies\.
++ Publish information to Amazon SNS topics\.
++ Retrieve information about CloudWatch alarms\.
++ Read and update Elastic Load Balancing\.
+
+For Amazon ECS deployments, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
++  Read, update, and delete Amazon ECS task sets\. 
++  Update Elastic Load Balancing target groups, listeners, and rules\. 
++  Invoke AWS Lambda functions\. 
++  Access revision files in Amazon S3 buckets\. 
++  Retrieve information about CloudWatch alarms\. 
++ Publish information to Amazon SNS topics\.
+
+For AWS Lambda deployments, attach the **AWSCodeDeployRoleForLambda** policy\. It provides the permissions for your service role to:
++  Read, update, and invoke AWS Lambda functions and aliases\. 
++  Access revision files in Amazon S3 buckets\. 
++  Publish information to Amazon SNS topics\. 
++  Retrieve information about CloudWatch alarms\. 
 
 As part of setting up the service role, you also update its trust relationship to specify the endpoints to which you want to grant it access\.
 
@@ -30,19 +43,16 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
 
 1. On the **Create role** page, choose **AWS service**, and from the **Choose the service that will use this role** list, choose **CodeDeploy**\.
 
-1. From **Select your use case**, choose **CodeDeploy**\.
+1. From **Select your use case**, choose your use case:
+   +  For EC2/On\-Premises deployments, choose **CodeDeploy**\. 
+   +  For Amazon ECS deployments, choose **CodeDeploy \- ECS**\. 
+   +  For AWS Lambda deployments, choose **CodeDeploy for Lambda**\. 
 
 1. Choose **Next: Permissions**\.
 
-1. On the **Attached permissions policy** page, if there is a box next to **AWSCodeDeployRole**, select it, and then choose **Next: Review**\.
+1. On the **Attached permissions policy** page, the permission policy is displayed\. Choose **Next: Tags**\.
 
-   The **AWSCodeDeployRole** policy provides the permissions required for your service role to:
-   + Read the tags on your instances or identify your Amazon EC2 instances by Amazon EC2 Auto Scaling group names\.
-   + Publish information to Amazon SNS topics\.
-   + Retrieve information about CloudWatch alarms\.
-   + Retrieve information about Elastic Load Balancing\.
-
-1. On the **Review** page, in **Role name**, enter a name for the service role \(for example **CodeDeployServiceRole**\), and then choose **Create role**\.
+1. On the **Review** page, in **Role name**, enter a name for the service role \(for example, **CodeDeployServiceRole**\), and then choose **Create role**\.
 
    You can also enter a description for this service role in **Role description**\.
 
@@ -92,6 +102,7 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
                        "codedeploy.eu-west-1.amazonaws.com",
                        "codedeploy.eu-west-2.amazonaws.com",
                        "codedeploy.eu-central-1.amazonaws.com",
+                       "codedeploy.ap-east-1.amazonaws.com",
                        "codedeploy.ap-northeast-1.amazonaws.com",
                        "codedeploy.ap-northeast-2.amazonaws.com",
                        "codedeploy.ap-southeast-1.amazonaws.com",
@@ -110,7 +121,7 @@ For more information about creating service roles, see [Creating a Role to Deleg
 
 ## Create a Service Role \(CLI\)<a name="getting-started-create-service-role-cli"></a>
 
-1. On your development machine, create a text file named, for example, `CodeDeployDemo-Trust.json`\. This file is used to allow AWS CodeDeploy to work on your behalf\.
+1. On your development machine, create a text file named, for example, `CodeDeployDemo-Trust.json`\. This file is used to allow CodeDeploy to work on your behalf\.
 
    Do one of the following: 
    + To grant access to all supported regions, save the following content in the file:
@@ -152,6 +163,7 @@ For more information about creating service roles, see [Creating a Role to Deleg
                          "codedeploy.eu-west-1.amazonaws.com",
                          "codedeploy.eu-west-2.amazonaws.com",
                          "codedeploy.eu-central-1.amazonaws.com",
+                         "codedeploy.ap-east-1.amazonaws.com",
                          "codedeploy.ap-northeast-1.amazonaws.com",
                          "codedeploy.ap-northeast-2.amazonaws.com",
                          "codedeploy.ap-southeast-1.amazonaws.com",

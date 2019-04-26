@@ -1,14 +1,8 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 2: Install or Upgrade and Then Configure the AWS CLI<a name="getting-started-configure-cli"></a>
 
-To call AWS CodeDeploy commands from the AWS CLI on a local development machine, you must install the AWS CLI\. AWS CodeDeploy commands first became available in version 1\.6\.1 of the AWS CLI\. AWS CodeDeploy commands for working with on\-premises instances became available in 1\.7\.19 of the AWS CLI\. 
+To call CodeDeploy commands from the AWS CLI on a local development machine, you must install the AWS CLI\. CodeDeploy commands first became available in version 1\.6\.1 of the AWS CLI\. CodeDeploy commands for working with on\-premises instances became available in 1\.7\.19 of the AWS CLI\. 
 
-If you have an older version of the AWS CLI installed, you must upgrade it so the AWS CodeDeploy commands are available\. Call aws \-\-version to check the version\.
+If you have an older version of the AWS CLI installed, you must upgrade it so the CodeDeploy commands are available\. Call aws \-\-version to check the version\.
 
 To install or upgrade the AWS CLI:
 
@@ -24,4 +18,4 @@ When you configure the AWS CLI, you are prompted to specify an AWS Region\. Choo
    aws deploy help
    ```
 
-   If successful, this command displays a list of available AWS CodeDeploy commands\.
+   If successful, this command displays a list of available CodeDeploy commands\.

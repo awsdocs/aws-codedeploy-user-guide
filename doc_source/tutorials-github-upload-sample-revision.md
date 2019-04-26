@@ -1,20 +1,14 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 3: Upload a Sample Application to Your GitHub Repository<a name="tutorials-github-upload-sample-revision"></a>
 
 In this step, you will copy a sample revision from a public Amazon S3 bucket to your GitHub repository\. \(For simplicity, the sample revisions provided for this tutorial are single web pages\.\)
 
 **Note**  
 If you use one of your revisions instead of our sample revision, your revision must:   
-Follow the guidelines in [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md)\.
+Follow the guidelines in [Plan a Revision for CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md)\.
 Work with the corresponding instance type\.
 Be accessible from your GitHub dashboard\.
 If your revision meets these requirements, skip ahead to [Step 5: Create an Application and Deployment Group](tutorials-github-create-application.md)\.  
-If you're deploying to an Ubuntu Server instance, you'll need to upload to your GitHub repository a revision compatible with an Ubuntu Server instance and AWS CodeDeploy\. For more information, see [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md)\.
+If you're deploying to an Ubuntu Server instance, you'll need to upload to your GitHub repository a revision compatible with an Ubuntu Server instance and CodeDeploy\. For more information, see [Plan a Revision for CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md)\.
 
 **Topics**
 + [Push a sample revision from a local Linux, macOS, or Unix machine](#tutorials-github-upload-sample-revision-unixes)
@@ -61,6 +55,7 @@ Where *\(Amazon S3 copy command\)* is one of the following:
 + `aws s3 cp s3://aws-codedeploy-eu-west-2/samples/latest/SampleApp_Linux.zip . --region eu-west-2` for the EU \(London\) region 
 + `aws s3 cp s3://aws-codedeploy-eu-west-3/samples/latest/SampleApp_Linux.zip . --region eu-west-3` for the EU \(Paris\) region 
 + `aws s3 cp s3://aws-codedeploy-eu-central-1/samples/latest/SampleApp_Linux.zip . --region eu-central-1` for the EU \(Frankfurt\) Region
++ `aws s3 cp s3://aws-codedeploy-ap-east-1/samples/latest/SampleApp_Linux.zip . --region ap-east-1` for the Asia Pacific \(Hong Kong\) region
 + `aws s3 cp s3://aws-codedeploy-ap-northeast-1/samples/latest/SampleApp_Linux.zip . --region ap-northeast-1` for the Asia Pacific \(Tokyo\) region
 + `aws s3 cp s3://aws-codedeploy-ap-northeast-2/samples/latest/SampleApp_Linux.zip . --region ap-northeast-2` for the Asia Pacific \(Seoul\) region
 + `aws s3 cp s3://aws-codedeploy-ap-southeast-1/samples/latest/SampleApp_Linux.zip . --region ap-southeast-1` for the Asia Pacific \(Singapore\) Region
@@ -103,6 +98,7 @@ Where *\(Amazon S3 copy command\)* is one of the following:
 + `aws s3 cp s3://aws-codedeploy-eu-west-2/samples/latest/SampleApp_Windows.zip . --region eu-west-2` for the EU \(London\) region
 + `aws s3 cp s3://aws-codedeploy-eu-west-3/samples/latest/SampleApp_Windows.zip . --region eu-west-3` for the EU \(Paris\) region
 + `aws s3 cp s3://aws-codedeploy-eu-central-1/samples/latest/SampleApp_Windows.zip . --region eu-central-1` for the EU \(Frankfurt\) Region
++ `aws s3 cp s3://aws-codedeploy-ap-east-1/samples/latest/SampleApp_Windows.zip . --region ap-east-1` for the Asia Pacific \(Hong Kong\) region
 + `aws s3 cp s3://aws-codedeploy-ap-northeast-1/samples/latest/SampleApp_Windows.zip . --region ap-northeast-1` for the Asia Pacific \(Tokyo\) region
 + `aws s3 cp s3://aws-codedeploy-ap-northeast-2/samples/latest/SampleApp_Windows.zip . --region ap-northeast-2` for the Asia Pacific \(Seoul\) region
 + `aws s3 cp s3://aws-codedeploy-ap-southeast-1/samples/latest/SampleApp_Windows.zip . --region ap-southeast-1` for the Asia Pacific \(Singapore\) Region

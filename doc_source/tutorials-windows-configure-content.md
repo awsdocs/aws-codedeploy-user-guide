@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 2: Configure Your Source Content to Deploy to the Windows Server Amazon EC2 Instance<a name="tutorials-windows-configure-content"></a>
 
 Now it's time to configure your application's source content so you have something you can deploy to the Amazon EC2 instance\. For this tutorial, you'll deploy a single web page to the Amazon EC2 instance running Windows Server, which will run Internet Information Services \(IIS\) as its web server\. This web page will display a simple "Hello, World\!" message\.
@@ -48,9 +42,9 @@ You don't have to use the location of `c:\temp` or the subfolder name of `HelloW
    </head>
    <body>
      <div align="center"><h1>Hello, World!</h1></div>
-     <div align="center"><h2>You have successfully deployed an application using AWS CodeDeploy</h2></div>
+     <div align="center"><h2>You have successfully deployed an application using CodeDeploy</h2></div>
      <div align="center">
-       <p>What to do next? Take a look through the <a href="https://aws.amazon.com/codedeploy">AWS CodeDeploy Documentation</a>.</p>
+       <p>What to do next? Take a look through the <a href="https://aws.amazon.com/codedeploy">CodeDeploy Documentation</a>.</p>
      </div>
    </body>
    </html>
@@ -58,7 +52,7 @@ You don't have to use the location of `c:\temp` or the subfolder name of `HelloW
 
 ## Create a Script to Run Your Application<a name="tutorials-windows-configure-content-create-scripts"></a>
 
-Next, you will create a script that AWS CodeDeploy will use to set up the web server on the target Amazon EC2 instance\.
+Next, you will create a script that CodeDeploy will use to set up the web server on the target Amazon EC2 instance\.
 
 1. In the same subfolder where the `index.html` file is saved, use a text editor to create another file\. Name the file `before-install.bat`\.
 
@@ -76,7 +70,7 @@ Next, you will create a script that AWS CodeDeploy will use to set up the web se
 
 ## Add an Application Specification File<a name="tutorials-windows-configure-content-add-appspec-file"></a>
 
-Next, you will add an application specification file \(AppSpec file\) in addition to the web page and batch script file\. The AppSpec file is a [YAML](http://www.yaml.org)\-formatted file used by AWS CodeDeploy to: 
+Next, you will add an application specification file \(AppSpec file\) in addition to the web page and batch script file\. The AppSpec file is a [YAML](http://www.yaml.org)\-formatted file used by CodeDeploy to: 
 + Map the source files in your application revision to their destinations on the instance\.
 + Specify scripts to be run on the instance during the deployment\.
 
@@ -102,9 +96,9 @@ The AppSpec file must be named `appspec.yml`\. It must be placed in the applicat
          timeout: 900
    ```
 
-AWS CodeDeploy will use this AppSpec file to copy the `index.html` file in the application source code's root folder to the `c:\inetpub\wwwroot` folder on the target Amazon EC2 instance\. During the deployment, AWS CodeDeploy will run the `before-install.bat` batch script on the target Amazon EC2 instance during the **BeforeInstall** deployment lifecycle event\. If this script takes longer than 900 seconds \(15 minutes\) to run, AWS CodeDeploy will stop the deployment and mark the deployment to the Amazon EC2 instance as failed\.
+CodeDeploy will use this AppSpec file to copy the `index.html` file in the application source code's root folder to the `c:\inetpub\wwwroot` folder on the target Amazon EC2 instance\. During the deployment, CodeDeploy will run the `before-install.bat` batch script on the target Amazon EC2 instance during the **BeforeInstall** deployment lifecycle event\. If this script takes longer than 900 seconds \(15 minutes\) to run, CodeDeploy will stop the deployment and mark the deployment to the Amazon EC2 instance as failed\.
 
-For more information about these settings, see the [AWS CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+For more information about these settings, see the [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
 
 **Important**  
-The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, AWS CodeDeploy will raise an error that may be difficult to debug\. For more information, see [AppSpec File Spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.
+The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, CodeDeploy will raise an error that may be difficult to debug\. For more information, see [AppSpec File Spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.

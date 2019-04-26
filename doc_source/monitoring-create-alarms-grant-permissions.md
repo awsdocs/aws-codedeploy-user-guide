@@ -1,12 +1,6 @@
---------
+# Grant CloudWatch Permissions to a CodeDeploy Service Role<a name="monitoring-create-alarms-grant-permissions"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Grant CloudWatch Permissions to an AWS CodeDeploy Service Role<a name="monitoring-create-alarms-grant-permissions"></a>
-
-Before you can use CloudWatch alarm monitoring with your deployments, the service role you use in your AWS CodeDeploy operations must be granted permission to access the CloudWatch resources\. 
+Before you can use CloudWatch alarm monitoring with your deployments, the service role you use in your CodeDeploy operations must be granted permission to access the CloudWatch resources\. 
 
 **To grant CloudWatch permissions to a service role**
 

@@ -1,12 +1,6 @@
---------
+# Working with Deployment Groups in CodeDeploy<a name="deployment-groups"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Working with Deployment Groups in AWS CodeDeploy<a name="deployment-groups"></a>
-
-You can specify one or more deployment groups for an AWS CodeDeploy application\. Each application deployment uses one of its deployment groups\. The deployment group contains settings and configurations used during the deployment\. Most deployment group settings depend on the compute platform used by your application\. Some settings, such as rollbacks, triggers, and alarms can be configured for deployment groups for any compute platform\.
+You can specify one or more deployment groups for a CodeDeploy application\. Each application deployment uses one of its deployment groups\. The deployment group contains settings and configurations used during the deployment\. Most deployment group settings depend on the compute platform used by your application\. Some settings, such as rollbacks, triggers, and alarms can be configured for deployment groups for any compute platform\.
 
 ## Deployment Groups in Amazon ECS Compute Platform Deployments<a name="deployment-group-ecs"></a>
 
@@ -14,7 +8,7 @@ In an Amazon ECS deployment, a deployment group specifies the Amazon ECS service
 
 ## Deployment Groups in AWS Lambda Compute Platform Deployments<a name="deployment-group-lambda"></a>
 
-In an AWS Lambda deployment, a deployment group defines a set of AWS CodeDeploy configurations for future deployments of an AWS Lambda function\. For example, the deployment group specifies how to route traffic to a new version of a Lambda function\. It also might specify alarms and rollbacks\. A single deployment in an AWS Lambda deployment group can override one or more group configurations\.
+In an AWS Lambda deployment, a deployment group defines a set of CodeDeploy configurations for future deployments of an AWS Lambda function\. For example, the deployment group specifies how to route traffic to a new version of a Lambda function\. It also might specify alarms and rollbacks\. A single deployment in an AWS Lambda deployment group can override one or more group configurations\.
 
 ## Deployment Groups in EC2/On\-Premises Compute Platform Deployments<a name="deployment-group-server"></a>
 
@@ -24,21 +18,21 @@ In an in\-place deployment, the instances in the deployment group are updated wi
 
 In a blue/green deployment, traffic is rerouted from one set of instances to another by deregistering the original instances from a load balancer and registering a replacement set of instances that typically has the latest application revision already installed\.
 
-You can associate more than one deployment group with an application in AWS CodeDeploy\. This makes it possible to deploy an application revision to different sets of instances at different times\. For example, you might use one deployment group to deploy an application revision to a set of instances tagged `Test` where you ensure the quality of the code\. Next, you deploy the same application revision to a deployment group with instances tagged `Staging` for additional verification\. Finally, when you are ready to release the latest application to customers, you deploy to a deployment group that includes instances tagged `Production`\.
+You can associate more than one deployment group with an application in CodeDeploy\. This makes it possible to deploy an application revision to different sets of instances at different times\. For example, you might use one deployment group to deploy an application revision to a set of instances tagged `Test` where you ensure the quality of the code\. Next, you deploy the same application revision to a deployment group with instances tagged `Staging` for additional verification\. Finally, when you are ready to release the latest application to customers, you deploy to a deployment group that includes instances tagged `Production`\.
 
-You can also use multiple tag groups to further refine the criteria for the instances included in a deployment group\. For information, see [Tagging Instances for Deployment Groups in AWS CodeDeploy](instances-tagging.md)\.
+You can also use multiple tag groups to further refine the criteria for the instances included in a deployment group\. For information, see [Tagging Instances for Deployment Groups in CodeDeploy](instances-tagging.md)\.
 
-When you use the AWS CodeDeploy console to create an application, you configure its first deployment group at the same time\. When you use the AWS CLI to create an application, you create its first deployment group in a separate step\.
+When you use the CodeDeploy console to create an application, you configure its first deployment group at the same time\. When you use the AWS CLI to create an application, you create its first deployment group in a separate step\.
 
-To view a list of deployment groups already associated with your AWS account, see [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)\. 
+To view a list of deployment groups already associated with your AWS account, see [View Deployment Group Details with CodeDeploy](deployment-groups-view-details.md)\. 
 
-For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for AWS CodeDeploy](instances-on-premises.md)\. For information about Amazon EC2 Auto Scaling, see [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
+For information about Amazon EC2 instance tags, see [Working with Tags Using the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console)\. For information about on\-premises instances, see [Working with On\-Premises Instances for CodeDeploy](instances-on-premises.md)\. For information about Amazon EC2 Auto Scaling, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 ## <a name="topiclist-deployment-groups"></a>
 
 **Topics**
-+ [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)
-+ [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)
-+ [Change Deployment Group Settings with AWS CodeDeploy](deployment-groups-edit.md)
++ [Create a Deployment Group with CodeDeploy](deployment-groups-create.md)
++ [View Deployment Group Details with CodeDeploy](deployment-groups-view-details.md)
++ [Change Deployment Group Settings with CodeDeploy](deployment-groups-edit.md)
 + [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)
-+ [Delete a Deployment Group with AWS CodeDeploy](deployment-groups-delete.md)
++ [Delete a Deployment Group with CodeDeploy](deployment-groups-delete.md)

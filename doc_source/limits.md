@@ -1,15 +1,9 @@
---------
+# CodeDeploy Limits<a name="limits"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# AWS CodeDeploy Limits<a name="limits"></a>
-
-The following tables describe limits in AWS CodeDeploy\.
+The following tables describe limits in CodeDeploy\.
 
 **Note**  
-You can [request a limit increase](https://console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase) for the AWS CodeDeploy limits listed in [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_codedeploy) in the *Amazon Web Services General Reference* \. You cannot increase the limit on the number of hours a deployment can run\.
+You can [request a limit increase](https://console.aws.amazon.com/support/home#/case/create%3FissueType=service-limit-increase) for the CodeDeploy limits listed in [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_codedeploy) in the *Amazon Web Services General Reference* \. You cannot increase the limit on the number of hours a deployment can run\.
 
 **Topics**
 + [Applications](#limits-applications)
@@ -36,7 +30,8 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  |  | 
 | --- |--- |
 |  Maximum number of characters in an application revision name  |  100  | 
-|  Allowed file types for application revisions  |  Archive files with the extension `.zip` or `.tar` and compressed archive files with the extension `.tar.gz`\. An archive or compressed archive file that is compatible with AWS CodeDeploy must contain a single application specification file \(AppSpec file\) with the file name `appspec.yml`\.  | 
+|  Allowed file types for EC2/On\-Premises application revisions  |  Archive files with the extension `.zip` or `.tar` and compressed archive files with the extension `.tar.gz`\. An archive or compressed archive file that is compatible with CodeDeploy must contain a single application specification file \(AppSpec file\) with the file name `appspec.yml`\.  | 
+|  Allowed file types for AWS Lambda and Amazon ECSapplication revisions  | A single AppSpec file with the file name appspec\.yaml, or a compressed file with the extension \.zip or \.tar\.gz that contains a single AppSpec file with the file name appspec\.yaml\. | 
 
 ## Deployments<a name="limits-deployments"></a>
 
@@ -49,7 +44,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | Maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an EC2/On\-Premises blue/green deployment | 48 | 
 | Maximum number of hours between the completion of a deployment and the termination of the original environment during an EC2/On\-Premises blue/green deployment | 48 | 
 | Maximum number of hours an EC2/On\-Premises blue/green deployment can run | 109 \(48 for each of the above two limits\) plus one hour for each of 13 possible lifecycle events | 
-| Maximum number of hours an AWS Lambda deployment can run³ | 50 \(48 hours for the maximum time between the first and last traffic shift plus one hour for each of two possible lifecycle hooks\) | 
+| Maximum number of hours an AWS Lambda deployment can run | 50 \(48 hours for the maximum time between the first and last traffic shift plus one hour for each of two possible lifecycle hooks\) | 
 | Maximum number of seconds until a deployment lifecycle event fails if not completed | 3600 | 
 | Maximum number of characters in a deployment description | 256 | 
 | Maximum number of deployments that can be passed to the [BatchGetDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.html) API action | 100 | 
@@ -95,4 +90,4 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  Maximum number of characters in a tag value  |  256  | 
 | Maximum number of instances that can be passed to the [BatchGetOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.html) API action | 100 | 
 | Maximum number of instances that can be used by concurrent deployments that are in progress and associated with one account  | 500 | 
-|  Required version of AWS SDK for Ruby \(aws\-sdk\-core\)  |  **2\.1\.2 **or earlier for AWS CodeDeploy agent versions earlier than 1\.0\.1\.880\. **2\.2** or earlier for AWS CodeDeploy agent version 1\.0\.1\.880 and later\.  | 
+|  Required version of AWS SDK for Ruby \(aws\-sdk\-core\)  |  **2\.1\.2 **or earlier for CodeDeploy agent versions earlier than 1\.0\.1\.880\. **2\.2** or earlier for CodeDeploy agent version 1\.0\.1\.880 and later\.  | 

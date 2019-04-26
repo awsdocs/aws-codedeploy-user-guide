@@ -1,18 +1,12 @@
---------
+# Update the CodeDeploy Agent on Windows Server<a name="codedeploy-agent-operations-update-windows"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Update the AWS CodeDeploy Agent on Windows Server<a name="codedeploy-agent-operations-update-windows"></a>
-
-To enable automatic updates of the AWS CodeDeploy agent, install the AWS CodeDeploy agent updater for Windows Server on new or existing instances\. The updater checks periodically for new versions\. When a new version is detected, the updater uninstalls the current version of the agent, if one is installed, before installing the newest version\.
+To enable automatic updates of the CodeDeploy agent, install the CodeDeploy agent updater for Windows Server on new or existing instances\. The updater checks periodically for new versions\. When a new version is detected, the updater uninstalls the current version of the agent, if one is installed, before installing the newest version\.
 
 If a deployment is already underway when the updater detects a new version, the deployment continues to completion\. If a deployment attempts to start during the update process, the deployment fails\.
 
-If you want to force an update of the AWS CodeDeploy agent, follow the instructions in [Install or reinstall the AWS CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md)\.
+If you want to force an update of the CodeDeploy agent, follow the instructions in [Install or reinstall the CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md)\.
 
-On Windows Server instances, you can download and install the AWS CodeDeploy agent updater by running Windows PowerShell commands, using a direct download link, or running an Amazon S3 copy command\.
+On Windows Server instances, you can download and install the CodeDeploy agent updater by running Windows PowerShell commands, using a direct download link, or running an Amazon S3 copy command\.
 
 **Topics**
 + [Use Windows PowerShell](#codedeploy-agent-operations-update-windows-powershell)
@@ -49,9 +43,9 @@ c:\temp\codedeploy-agent-updater.msi /quiet /l c:\temp\host-agent-updater-log.tx
 powershell.exe -Command Get-Service -Name codedeployagent
 ```
 
-*bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+*bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
-If you need to troubleshoot an update process error, type the following command to open the AWS CodeDeploy agent updater log file:
+If you need to troubleshoot an update process error, type the following command to open the CodeDeploy agent updater log file:
 
 ```
 notepad C:\ProgramData\Amazon\CodeDeployUpdater\log\codedeploy-agent.updater.log
@@ -59,7 +53,7 @@ notepad C:\ProgramData\Amazon\CodeDeployUpdater\log\codedeploy-agent.updater.log
 
 ## Use a direct link<a name="codedeploy-agent-operations-update-windows-direct-link"></a>
 
-If the browser security settings on the Windows Server instance provide the required permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link to download the AWS CodeDeploy agent updater\. Enter the following in your browser's address bar and then download and run the installer manually\.
+If the browser security settings on the Windows Server instance provide the required permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link to download the CodeDeploy agent updater\. Enter the following in your browser's address bar and then download and run the installer manually\.
 
 
 | Region name | Download link | 
@@ -73,6 +67,7 @@ If the browser security settings on the Windows Server instance provide the requ
 |  EU \(London\)  |  `[https://aws\-codedeploy\-eu\-west\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-eu-west-2.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  EU \(Paris\)  |  `[https://aws\-codedeploy\-eu\-west\-3\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  EU \(Frankfurt\)  |  `[https://aws\-codedeploy\-eu\-central\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-eu-central-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
+|  Asia Pacific \(Hong Kong\)  |  `[https://aws\-codedeploy\-ap\-east\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-east-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  Asia Pacific \(Tokyo\)  |  `[https://aws\-codedeploy\-ap\-northeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-northeast-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  Asia Pacific \(Seoul\)  |  `[https://aws\-codedeploy\-ap\-northeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  Asia Pacific \(Singapore\)  |  `[https://aws\-codedeploy\-ap\-southeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
@@ -82,7 +77,7 @@ If the browser security settings on the Windows Server instance provide the requ
 
 ## Use an Amazon S3 copy command<a name="codedeploy-agent-operations-update-windows-s3-copy"></a>
 
-If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) command to download the AWS CodeDeploy agent updater and then run the installer manually\. For information, see [Install the AWS Command Line Interface on Microsoft Windows](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)\. 
+If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) command to download the CodeDeploy agent updater and then run the installer manually\. For information, see [Install the AWS Command Line Interface on Microsoft Windows](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)\. 
 
 
 | Region name | Amazon S3 copy command | 
@@ -96,6 +91,7 @@ If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](http
 |  EU \(London\)  |  <pre>aws s3 cp s3://aws-codedeploy-eu-west-2/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  EU \(Paris\)  |  <pre>aws s3 cp s3://aws-codedeploy-eu-west-3/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  EU \(Frankfurt\)  |  <pre>aws s3 cp s3://aws-codedeploy-eu-central-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
+|  Asia Pacific \(Hong Kong\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-east-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  Asia Pacific \(Tokyo\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  Asia Pacific \(Seoul\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-2/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  Asia Pacific \(Singapore\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 

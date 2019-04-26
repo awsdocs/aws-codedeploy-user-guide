@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Specify Information About a Revision Stored in an Amazon S3 Bucket<a name="deployments-create-console-s3"></a>
 
 If you are following the steps in [Create an EC2/On\-Premises Compute Platform Deployment \(Console\)](deployments-create-console.md), follow these steps to add details about an application revision stored in an Amazon S3 bucket\.
@@ -18,7 +12,7 @@ If you are following the steps in [Create an EC2/On\-Premises Compute Platform D
 
    1. If the **Properties** pane is not visible, choose the **Properties** button\.
 
-   1. In the **Properties** pane, copy the value of the **Link** field into the **Revision location** box in the AWS CodeDeploy console\.
+   1. In the **Properties** pane, copy the value of the **Link** field into the **Revision location** box in the CodeDeploy console\.
 
    To specify an ETag \(a file checksum\) as part of the revision location:
    + If the **Link** field value ends in **?versionId=*versionId***, add **&etag=** and the ETag to the end of the **Link** field value\.

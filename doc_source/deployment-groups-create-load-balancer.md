@@ -1,10 +1,4 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments<a name="deployment-groups-create-load-balancer"></a>
+# Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Deployments<a name="deployment-groups-create-load-balancer"></a>
 
 Before you run any blue/green deployment, or an in\-place deployment for which you want to specify an optional load balancer in the deployment group, you must have created a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing\. For blue/green deployments, you use that load balancer to register the instances that make up your replacement environment\. Instances in your original environment can optionally be registered with this same load balancer\.
 

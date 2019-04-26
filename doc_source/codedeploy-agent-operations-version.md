@@ -1,17 +1,11 @@
---------
+# Determine the Version of the CodeDeploy Agent<a name="codedeploy-agent-operations-version"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Determine the Version of the AWS CodeDeploy Agent<a name="codedeploy-agent-operations-version"></a>
-
-You can determine the version of the AWS CodeDeploy agent running on your instance in two ways\.
+You can determine the version of the CodeDeploy agent running on your instance in two ways\.
 
 **Important**  
- The minimum supported version of the AWS CodeDeploy agent is 1\.0\.1\.1458\. Use of an earlier AWS CodeDeploy agent might cause deployments to fail\. 
+ The minimum supported version of the CodeDeploy agent is 1\.0\.1\.1458\. Use of an earlier CodeDeploy agent might cause deployments to fail\. 
 
-First, starting with version 1\.0\.1\.854 of the AWS CodeDeploy agent, you can view the version number in a `.version` file on the instance\. The following table shows the location and sample version string for each of the supported operating systems\.
+First, starting with version 1\.0\.1\.854 of the CodeDeploy agent, you can view the version number in a `.version` file on the instance\. The following table shows the location and sample version string for each of the supported operating systems\.
 
 
 | Operating system | File location | Sample agent\_version string | 
@@ -20,7 +14,7 @@ First, starting with version 1\.0\.1\.854 of the AWS CodeDeploy agent, you can v
 | Ubuntu Server | /opt/codedeploy\-agent/\.version | OFFICIAL\_1\.0\.1\.854\_deb | 
 | Windows Server | C:\\ProgramData\\Amazon\\CodeDeploy\\\.version | OFFICIAL\_1\.0\.1\.854\_msi | 
 
-Second, you can run a command on an instance to determine the version of the AWS CodeDeploy agent\.
+Second, you can run a command on an instance to determine the version of the CodeDeploy agent\.
 
 **Topics**
 + [Determine the version on Amazon Linux or RHEL](#codedeploy-agent-operations-version-linux)

@@ -1,15 +1,9 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 3: Upload Your "Hello, World\!" Application to Amazon S3<a name="tutorials-windows-upload-application"></a>
 
-Now you will prepare and upload your source content to a location from which AWS CodeDeploy can deploy it\. The following instructions show you how to provision an Amazon S3 bucket, prepare the application revision's files for the bucket, bundle the revision's files, and then push the revision to the bucket\.
+Now you will prepare and upload your source content to a location from which CodeDeploy can deploy it\. The following instructions show you how to provision an Amazon S3 bucket, prepare the application revision's files for the bucket, bundle the revision's files, and then push the revision to the bucket\.
 
 **Note**  
-Although it's not covered in this tutorial, you can use AWS CodeDeploy to deploy applications from GitHub repositories to instances\. For more information, see [Integrating AWS CodeDeploy with GitHub](integrations-partners-github.md)\.
+Although it's not covered in this tutorial, you can use CodeDeploy to deploy applications from GitHub repositories to instances\. For more information, see [Integrating CodeDeploy with GitHub](integrations-partners-github.md)\.
 
 **Topics**
 + [Provision an Amazon S3 Bucket](#tutorials-windows-upload-application-create-s3-bucket)
@@ -143,16 +137,16 @@ You may be charged for storing objects in a bucket and for transferring applicat
 **Note**  
 If you don't switch to this folder, then the file bundling will start at your current folder\. For example, if your current folder is `c:\temp` instead of `c:\temp\HelloWorldApp`, the bundling will start with files and subfolders in the `c:\temp` folder, which may include more than the `HelloWorldApp` subfolder\.
 
-1. Call the create\-application command to register a new application named **HelloWorld\_App** with AWS CodeDeploy:
+1. Call the create\-application command to register a new application named **HelloWorld\_App** with CodeDeploy:
 
    ```
    aws deploy create-application --application-name HelloWorld_App
    ```
 
-1. Call the AWS CodeDeploy [push](https://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command to bundle the files together, upload the revisions to Amazon S3, and register information with AWS CodeDeploy about the uploaded revision, all in one action\. 
+1. Call the CodeDeploy [push](https://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command to bundle the files together, upload the revisions to Amazon S3, and register information with CodeDeploy about the uploaded revision, all in one action\. 
 
    ```
    aws deploy push --application-name HelloWorld_App --s3-location s3://codedeploydemobucket/HelloWorld_App.zip --ignore-hidden-files
    ```
 
-   This command bundles the files from the current directory \(excluding any hidden files\) into a single archive file named `HelloWorld_App.zip`, uploads the revision to the **codedeploydemobucket** bucket, and registers information with AWS CodeDeploy about the uploaded revision\.
+   This command bundles the files from the current directory \(excluding any hidden files\) into a single archive file named `HelloWorld_App.zip`, uploads the revision to the **codedeploydemobucket** bucket, and registers information with CodeDeploy about the uploaded revision\.

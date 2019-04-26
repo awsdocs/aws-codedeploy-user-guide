@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 8: Clean Up<a name="tutorials-github-clean-up"></a>
 
-To avoid further charges for resources you used during this tutorial, you must terminate the Amazon EC2 instance and its associated resources\. Optionally, you can delete the AWS CodeDeploy deployment component records associated with this tutorial\. If you were using a GitHub repository just for this tutorial, you can delete it now, too\.
+To avoid further charges for resources you used during this tutorial, you must terminate the Amazon EC2 instance and its associated resources\. Optionally, you can delete the CodeDeploy deployment component records associated with this tutorial\. If you were using a GitHub repository just for this tutorial, you can delete it now, too\.
 
 ## To delete a AWS CloudFormation stack \(if you used the AWS CloudFormation template to create an Amazon EC2 instance\)<a name="tutorials-github-clean-up-cloudformation-template"></a>
 
@@ -42,11 +36,11 @@ To avoid further charges for resources you used during this tutorial, you must t
 
 1. When prompted, choose **Yes, Terminate**\. 
 
-## To delete the AWS CodeDeploy deployment component records<a name="tutorials-github-clean-up-codedeploy-records"></a>
+## To delete the CodeDeploy deployment component records<a name="tutorials-github-clean-up-codedeploy-records"></a>
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 

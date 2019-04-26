@@ -1,17 +1,11 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Tagging Instances for Deployment Groups in AWS CodeDeploy<a name="instances-tagging"></a>
+# Tagging Instances for Deployment Groups in CodeDeploy<a name="instances-tagging"></a>
 
 To help manage your Amazon EC2 instances and on\-premises instances, you can use tags to assign your own metadata to each resource\. Tags enable you to categorize your instances in different ways \(for example, by purpose, owner, or environment\)\. This is useful when you have many instances\. You can quickly identify an instance or group of instances based on the tags you've assigned to them\. Each tag consists of a key and an optional value, both of which you define\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
-To specify which instances are included in an AWS CodeDeploy deployment group, you specify tags in one or more *tag groups*\. Instances that meet your tag criteria are the ones that the latest application revision is installed on when a deployment to that deployment group is created\.
+To specify which instances are included in a CodeDeploy deployment group, you specify tags in one or more *tag groups*\. Instances that meet your tag criteria are the ones that the latest application revision is installed on when a deployment to that deployment group is created\.
 
 **Note**  
-You can also include Amazon EC2 Auto Scaling groups in deployment groups, but they are identified by their names rather than by tags applied to instances\. For information, see [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
+You can also include Amazon EC2 Auto Scaling groups in deployment groups, but they are identified by their names rather than by tags applied to instances\. For information, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 The criteria for instances in a deployment group can be as simple as a single tag in a single tag group\. It can be as complex as 10 tags each in a maximum of three tag groups\.
 
@@ -38,7 +32,7 @@ You can specify a single tag in a single tag group:
 
 Each instance that is tagged with `Name=AppVersion-ABC` is part of the deployment group, even if it has other tags applied\. 
 
-AWS CodeDeploy console setup view: 
+CodeDeploy console setup view: 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/TaggingExample1-polaris.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
@@ -69,7 +63,7 @@ You can also specify multiple tags in a single tag group:
 
 An instance that is tagged with any of these three tags is part of the deployment group, even if it has other tags applied\. If, for example, you had other instances tagged with `Region=West`, they would not be included in the deployment group\.
 
-AWS CodeDeploy console setup view: 
+CodeDeploy console setup view: 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/TaggingExample2-polaris.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
@@ -122,7 +116,7 @@ You can also use multiple sets of tag groups with a single key\-value pair in ea
 
 You might have instances in many regions and of various instance types tagged with `Name=AppVersion-ABC`\. In this example, only the instances also tagged with `Region=North` and `Type=t2.medium` are part of the deployment group\. 
 
-AWS CodeDeploy console setup view: 
+CodeDeploy console setup view: 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/TaggingExample3-polaris.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
@@ -197,7 +191,7 @@ Instances with the following tag groups would *not* be included in the deploymen
 + `Environment=Staging`,`Region=East`,`Type=t2.micro`
 + `Environment=Production`,`Region=South`,`Type=t2.large`
 
-AWS CodeDeploy console setup view: 
+CodeDeploy console setup view: 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/TaggingExample4-polaris.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 

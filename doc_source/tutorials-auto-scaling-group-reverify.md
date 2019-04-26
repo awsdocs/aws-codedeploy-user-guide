@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 5: Check Your Results Again<a name="tutorials-auto-scaling-group-reverify"></a>
 
-In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp revision on the new instance in the Amazon EC2 Auto Scaling group\.
+In this step, you'll check to see if CodeDeploy installed the SimpleDemoApp revision on the new instance in the Amazon EC2 Auto Scaling group\.
 
 **Topics**
 + [To check automatic deployment results \(CLI\)](#tutorials-auto-scaling-group-reverify-cli)
@@ -50,13 +44,13 @@ In this step, you'll check to see if AWS CodeDeploy installed the SimpleDemoApp 
    http://ec2-01-234-567-890.compute-1.amazonaws.com
    ```
 
-   If the congratulations page appears, you've used AWS CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
+   If the congratulations page appears, you've used CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
 
 ## To check automatic deployment results \(console\)<a name="tutorials-auto-scaling-group-reverify-console"></a>
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 
@@ -80,4 +74,4 @@ Show the `SimpleDemoApp` revision deployed to the instance using a URL like the 
 http://ec2-01-234-567-890.compute-1.amazonaws.com
 ```
 
-If the congratulations page appears, you've used AWS CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
+If the congratulations page appears, you've used CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!

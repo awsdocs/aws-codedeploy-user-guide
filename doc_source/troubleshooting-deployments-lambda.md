@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Troubleshoot AWS Lambda Deployment Issues<a name="troubleshooting-deployments-lambda"></a>
 
 **Topics**
@@ -17,12 +11,12 @@ In some cases, the alias of a Lambda function specified in a deployment might re
 
 1. From the left pane, choose **Functions**\.
 
-1. Select the name of the Lambda function that is in your AWS CodeDeploy deployment\.
+1. Select the name of the Lambda function that is in your CodeDeploy deployment\.
 
-1. From **Qualifiers**, choose the alias used in your AWS CodeDeploy deployment\.
+1. From **Qualifiers**, choose the alias used in your CodeDeploy deployment\.
 
 1. From **Additional Version**, choose **<none>**\. This ensures the alias is not configured to shift a percentage, or weight, of traffic to more than one version\. Make a note of the version selected in the **Version** drop\-down menu\.
 
 1. Choose **Save and test**\.
 
-1. Open the AWS CodeDeploy console and attempt a deployment of the version displayed in the drop\-down menu in step 5\.
+1. Open the CodeDeploy console and attempt a deployment of the version displayed in the drop\-down menu in step 5\.

@@ -1,23 +1,17 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Deployment Prerequisites<a name="deployments-create-prerequisites"></a>
 
 Make sure the following steps are complete before you start a deployment\.
 
 ## Deployment Prerequisites on an AWS Lambda Compute Platform<a name="deployment-prerequisites-lambda"></a>
-+ Create an application that includes at least one deployment group\. For information, see [Create an Application with AWS CodeDeploy](applications-create.md) and [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\.
-+ Prepare the application revision, also known as the AppSpec file, that specifies the Lambda function version you want to deploy\. The AppSpec file can also specify Lambda functions to validate your deployment\. For more information see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
-+ If you want to use a custom deployment configuration for your deployment, create it before starting the deployment process\. For information, see [Create a Deployment Configuration with AWS CodeDeploy](deployment-configurations-create.md)\.
++ Create an application that includes at least one deployment group\. For information, see [Create an Application with CodeDeploy](applications-create.md) and [Create a Deployment Group with CodeDeploy](deployment-groups-create.md)\.
++ Prepare the application revision, also known as the AppSpec file, that specifies the Lambda function version you want to deploy\. The AppSpec file can also specify Lambda functions to validate your deployment\. For more information see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
++ If you want to use a custom deployment configuration for your deployment, create it before starting the deployment process\. For information, see [Create a Deployment Configuration with CodeDeploy](deployment-configurations-create.md)\.
 
 ## Deployment Prerequisites on an EC2/On\-Premises Compute Platform<a name="deployment-prerequisites-server"></a>
-+ For an in\-place deployment, create or configure the instances you want to deploy to\. For information, see [Working with Instances for AWS CodeDeploy](instances.md)\. For a blue/green deployment, you either have an existing Amazon EC2 Auto Scaling group to use as a template for your replacement environment, or you have one or more instances or Amazon EC2 Auto Scaling groups that you specify as your original environment\. For more information, see [Tutorial: Use AWS CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md) and [Integrating AWS CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\. 
-+ Create an application that includes at least one deployment group\. For information, see [Create an Application with AWS CodeDeploy](applications-create.md) and [Create a Deployment Group with AWS CodeDeploy](deployment-groups-create.md)\.
-+ Prepare the application revision that you want to deploy to the instances in your deployment group\. For information, see [Working with Application Revisions for AWS CodeDeploy](application-revisions.md)\.
-+ If you want to use a custom deployment configuration for your deployment, create it before starting the deployment process\. For information, see [Create a Deployment Configuration with AWS CodeDeploy](deployment-configurations-create.md)\.
++ For an in\-place deployment, create or configure the instances you want to deploy to\. For information, see [Working with Instances for CodeDeploy](instances.md)\. For a blue/green deployment, you either have an existing Amazon EC2 Auto Scaling group to use as a template for your replacement environment, or you have one or more instances or Amazon EC2 Auto Scaling groups that you specify as your original environment\. For more information, see [Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md) and [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\. 
++ Create an application that includes at least one deployment group\. For information, see [Create an Application with CodeDeploy](applications-create.md) and [Create a Deployment Group with CodeDeploy](deployment-groups-create.md)\.
++ Prepare the application revision that you want to deploy to the instances in your deployment group\. For information, see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
++ If you want to use a custom deployment configuration for your deployment, create it before starting the deployment process\. For information, see [Create a Deployment Configuration with CodeDeploy](deployment-configurations-create.md)\.
 + If you are deploying your application revision from an Amazon S3 bucket, the bucket is in the same AWS region as the instances in your deployment group\. 
 + If you are deploying your application revision from an Amazon S3 bucket, an Amazon S3 bucket policy has been applied to the bucket\. This policy grants your instances the permissions required to download the application revision\.
 
@@ -66,7 +60,7 @@ Make sure the following steps are complete before you start a deployment\.
   ```
 
   To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
-+ If you are creating a blue/green deployment, or you have specified an optional Classic Load Balancer, Application Load Balancer, or Network Load Balancer in the deployment group for an in\-place deployment, you have created a VPC using Amazon VPC that contains at least two subnets\. \(AWS CodeDeploy uses Elastic Load Balancing, which requires all instances in a load balancer group to be in a single VPC\.\)
++ If you are creating a blue/green deployment, or you have specified an optional Classic Load Balancer, Application Load Balancer, or Network Load Balancer in the deployment group for an in\-place deployment, you have created a VPC using Amazon VPC that contains at least two subnets\. \(CodeDeploy uses Elastic Load Balancing, which requires all instances in a load balancer group to be in a single VPC\.\)
 
   If you have not created a VPC yet, see the [Amazon VPC Getting Started Guide](https://docs.aws.amazon.com/AmazonVPC/latest/GettingStartedGuide/ExerciseOverview.html)\.
 + If you are creating a blue/green deployment, you have configured a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing and used it to register the instances that make up your original environment\. 

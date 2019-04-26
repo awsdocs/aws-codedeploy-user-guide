@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # AppSpec 'resources' Section \(Amazon ECS and AWS Lambda Deployments Only\)<a name="reference-appspec-file-structure-resources"></a>
 
  The content in the `'resources'` section of the AppSpec file varies, depending on the compute platform of your deployment\. The `'resources'` section for an Amazon ECS deployment contains your Amazon ECS task definition, container and port for routing traffic to your updated Amazon ECS task set, and other optional information\. The `'resources'` section for an AWS Lambda deployment contains the name, alias, current version, and target version of a Lambda function\. 
@@ -60,10 +54,10 @@ YAML:
 ```
 Resources:
   - TargetService:
-    Type: AWS::ECS::Service
-    Properties:
-      TaskDefinition: "task-definition-ARN"
-      LoadBalancerInfo: 
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "task-definition-ARN"
+        LoadBalancerInfo: 
           ContainerName: "ECS-container-name-for-your-ECS-application" 
           ContainerPort: port-used-by-your-ECS-application
 # Optional properties
@@ -118,4 +112,4 @@ Each property is specified with a string\.
   + **SecurityGroups**: Optional\. A comma\-separated list of one or more security groups in your Amazon Elastic Container Service\.
   + **AssignPublicIp**: Optional\. A string that specifies whether your Amazon ECS service's elastic network interface receives a public IP address\. The valid values are `ENABLED` and `DISABLED`\.
 **Note**  
- All or none of the settings under **NetworkConfiguration** must be specified\. For example, if you want to specify **Subnets**, you must also specify **SecurityGroups** and **AssignPublicIp**\. If none is specified, AWS CodeDeploy uses the current network Amazon ECS settings\. 
+ All or none of the settings under **NetworkConfiguration** must be specified\. For example, if you want to specify **Subnets**, you must also specify **SecurityGroups** and **AssignPublicIp**\. If none is specified, CodeDeploy uses the current network Amazon ECS settings\. 

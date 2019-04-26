@@ -1,10 +1,4 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Add an Application Specification File to a Revision for AWS CodeDeploy<a name="application-revisions-appspec-file"></a>
+# Add an Application Specification File to a Revision for CodeDeploy<a name="application-revisions-appspec-file"></a>
 
 This topic shows how to add an AppSpec file to your deployment\. It also includes templates to create an AppSpec file for an AWS Lambda and EC2/On\-Premises deployment\.
 
@@ -36,12 +30,12 @@ For a deployment to an Amazon ECS compute platform:
 The following is a YAML template of an AppSpec file for an Amazon ECS deployment with all available options\. For information about lifecycle events to use in the `hooks` section, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\.
 
 ```
-# This is an appspec.yml template file for use with an Amazon ECS deployment in AWS CodeDeploy.
+# This is an appspec.yml template file for use with an Amazon ECS deployment in CodeDeploy.
 # The lines in this template that start with the hashtag are 
 #   comments that can be safely left in the file or 
 #   ignored.
 # For help completing this file, see the "AppSpec File Reference" in the  
-#   "AWS CodeDeploy User Guide" at
+#   "CodeDeploy User Guide" at
 #   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
 version: 0.0
 # In the Resources section, you must specify the following: the Amazon ECS service, task definition name, 
@@ -151,12 +145,12 @@ To create an AppSpec file:
 For information about lifecycle events to use in the hooks section, see [AppSpec 'hooks' Section for an AWS Lambda Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-lambda)\.
 
 ```
-# This is an appspec.yml template file for use with an AWS Lambda deployment in AWS CodeDeploy.
+# This is an appspec.yml template file for use with an AWS Lambda deployment in CodeDeploy.
 # The lines in this template starting with the hashtag symbol are 
 #   instructional comments and can be safely left in the file or 
 #   ignored.
 # For help completing this file, see the "AppSpec File Reference" in the  
-#   "AWS CodeDeploy User Guide" at
+#   "CodeDeploy User Guide" at
 #   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
 version: 0.0
 # In the Resources section specify the name, alias, 
@@ -205,7 +199,7 @@ For information about lifecycle events to use in the Hooks section, see [AppSpec
 
 ## Add an AppSpec File for an EC2/On\-Premises Deployment<a name="add-appspec-file-server"></a>
 
-Without an AppSpec file, AWS CodeDeploy cannot map the source files in your application revision to their destinations or run scripts for your deployment to an EC2/On\-Premises compute platform, \.
+Without an AppSpec file, CodeDeploy cannot map the source files in your application revision to their destinations or run scripts for your deployment to an EC2/On\-Premises compute platform, \.
 
 Each revision must contain only one AppSpec file\. 
 
@@ -237,7 +231,7 @@ To add an AppSpec file to a revision:
 
 1. Push the revision to Amazon S3 or GitHub\. 
 
-   For instructions, see [Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md)\.
+   For instructions, see [Push a Revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md)\.
 
 ### AppSpec File Template for an EC2/On\-Premises Deployment with Instructions<a name="app-spec-template-server"></a>
 
@@ -245,12 +239,12 @@ To add an AppSpec file to a revision:
  Deployments to Windows Server instances do not support the `runas` element\. If you are deploying to Windows Server instances, do not include it in your AppSpec file\. 
 
 ```
-# This is an appspec.yml template file for use with an EC2/On-Premises deployment in AWS CodeDeploy.
+# This is an appspec.yml template file for use with an EC2/On-Premises deployment in CodeDeploy.
 # The lines in this template starting with the hashtag symbol are 
 #   instructional comments and can be safely left in the file or 
 #   ignored.
 # For help completing this file, see the "AppSpec File Reference" in the  
-#   "AWS CodeDeploy User Guide" at
+#   "CodeDeploy User Guide" at
 #   https://docs.aws.amazon.com/codedeploy/latest/userguide/app-spec-ref.html
 version: 0.0
 # Specify "os: linux" if this revision targets Amazon Linux, 
@@ -311,7 +305,7 @@ hooks:
 #   the default is 1800 seconds (30 minutes).
 #   Note that the maximum amount of time that all scripts must finish executing 
 #   for each individual deployment lifecycle event is 3600 seconds (1 hour). 
-#   Otherwise, the deployment will stop and AWS CodeDeploy will consider the deployment
+#   Otherwise, the deployment will stop and CodeDeploy will consider the deployment
 #   to have failed to the Amazon EC2 instance. Make sure that the total number of seconds 
 #   that are specified in "timeout" for all scripts in each individual deployment 
 #   lifecycle event does not exceed a combined 3600 seconds (1 hour).

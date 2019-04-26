@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 2: Configure Your Source Content to Be Deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance<a name="tutorials-wordpress-configure-content"></a>
 
 Now it's time to configure your application's source content so you have something to deploy to the instance\.
@@ -78,7 +72,7 @@ Choose one of the following two options to copy the WordPress source files to yo
 
 ## Create Scripts to Run Your Application<a name="tutorials-wordpress-configure-content-create-scripts"></a>
 
-Next, create a folder and scripts in the directory\. AWS CodeDeploy uses these scripts to set up and deploy your application revision on the target Amazon EC2 instance\. You can use any text editor to create the scripts\.
+Next, create a folder and scripts in the directory\. CodeDeploy uses these scripts to set up and deploy your application revision on the target Amazon EC2 instance\. You can use any text editor to create the scripts\.
 
 1. Create a scripts directory in your copy of the WordPress source code:
 
@@ -120,7 +114,7 @@ Next, create a folder and scripts in the directory\. AWS CodeDeploy uses these s
    ```
    #!/bin/bash
    mysql -uroot <<CREATE_TEST_DB
-   CREATE DATABASE test;
+   CREATE DATABASE IF NOT EXISTS test;
    CREATE_TEST_DB
    ```
 
@@ -145,7 +139,7 @@ Next, create a folder and scripts in the directory\. AWS CodeDeploy uses these s
 
 ## Add an Application Specification File<a name="tutorials-wordpress-configure-content-add-appspec-file"></a>
 
-Next, add an application specification file \(AppSpec file\), a [YAML](http://www.yaml.org)\-formatted file used by AWS CodeDeploy to:
+Next, add an application specification file \(AppSpec file\), a [YAML](http://www.yaml.org)\-formatted file used by CodeDeploy to:
 + Map the source files in your application revision to their destinations on the target Amazon EC2 instance\.
 + Specify custom permissions for deployed files\.
 + Specify scripts to be run on the target Amazon EC2 instance during the deployment\.
@@ -180,9 +174,9 @@ hooks:
       runas: root
 ```
 
-AWS CodeDeploy uses this AppSpec file to copy all of the files in the `/tmp/WordPress` folder on the development machine to the `/var/www/html/WordPress` folder on the target Amazon EC2 instance\. During the deployment, AWS CodeDeploy runs the specified scripts as `root` in the `/var/www/html/WordPress/scripts` folder on the target Amazon EC2 instance at specified events during the deployment lifecycle, such as **BeforeInstall** and **AfterInstall**\. If any of these scripts take longer than 300 seconds \(5 minutes\) to run, AWS CodeDeploy stops the deployment and marks the deployment as failed\.
+CodeDeploy uses this AppSpec file to copy all of the files in the `/tmp/WordPress` folder on the development machine to the `/var/www/html/WordPress` folder on the target Amazon EC2 instance\. During the deployment, CodeDeploy runs the specified scripts as `root` in the `/var/www/html/WordPress/scripts` folder on the target Amazon EC2 instance at specified events during the deployment lifecycle, such as **BeforeInstall** and **AfterInstall**\. If any of these scripts take longer than 300 seconds \(5 minutes\) to run, CodeDeploy stops the deployment and marks the deployment as failed\.
 
-For more information about these settings, see the [AWS CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+For more information about these settings, see the [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
 
 **Important**  
-The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, AWS CodeDeploy raises an error that might be difficult to debug\. For more information, see [AppSpec File Spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.
+The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, CodeDeploy raises an error that might be difficult to debug\. For more information, see [AppSpec File Spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.

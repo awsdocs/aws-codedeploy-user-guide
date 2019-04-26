@@ -1,14 +1,8 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 6: Clean Up Your "Hello, World\!" Application and Related Resources<a name="tutorials-windows-clean-up"></a>
 
-You've now successfully made an update to the "Hello, World\!" code and redeployed the site\. To avoid ongoing charges for resources you created to complete this tutorial, you should delete any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you manually created them outside of AWS CloudFormation\)\. You should also delete any Amazon S3 buckets that you created just for this tutorial, and the `HelloWorld_App` application in AWS CodeDeploy\.
+You've now successfully made an update to the "Hello, World\!" code and redeployed the site\. To avoid ongoing charges for resources you created to complete this tutorial, you should delete any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you manually created them outside of AWS CloudFormation\)\. You should also delete any Amazon S3 buckets that you created just for this tutorial, and the `HelloWorld_App` application in CodeDeploy\.
 
-You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and AWS CodeDeploy consoles, or the AWS APIs to clean up resources\.
+You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and CodeDeploy consoles, or the AWS APIs to clean up resources\.
 
 **Topics**
 + [To use clean up resources \(CLI\)](#tutorials-windows-clean-up-cli)
@@ -29,7 +23,7 @@ You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and AWS 
    aws s3 rm s3://codedeploydemobucket --recursive
    ```
 
-1. To delete the `HelloWorld_App` application from AWS CodeDeploy, call the delete\-application command\. This deletes all associated deployment group records and deployment records for the application\.
+1. To delete the `HelloWorld_App` application from CodeDeploy, call the delete\-application command\. This deletes all associated deployment group records and deployment records for the application\.
 
    ```
    aws deploy delete-application --application-name HelloWorld_App
@@ -75,11 +69,11 @@ To delete the Amazon S3 bucket:
 
 1. After the bucket is empty, you can delete the bucket\. In the list of buckets, choose the row of the bucket \(but not the bucket name\)\. Choose **Delete bucket**, and when prompted to confirm, choose **OK**\. 
 
-To delete the `HelloWorld_App` application from AWS CodeDeploy:
+To delete the `HelloWorld_App` application from CodeDeploy:
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -91,4 +85,4 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 ## What's Next?<a name="tutorials-windows-clean-up-whats-next"></a>
 
-If you've arrived here, you have successfully completed a deployment with AWS CodeDeploy\. Congratulations\!
+If you've arrived here, you have successfully completed a deployment with CodeDeploy\. Congratulations\!

@@ -1,18 +1,12 @@
---------
+# Install or reinstall the CodeDeploy agent for Windows Server<a name="codedeploy-agent-operations-install-windows"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Install or reinstall the AWS CodeDeploy agent for Windows Server<a name="codedeploy-agent-operations-install-windows"></a>
-
-On Windows Server instances, you can use one of these methods to download and install the AWS CodeDeploy agent:
+On Windows Server instances, you can use one of these methods to download and install the CodeDeploy agent:
 + Run a series of Windows PowerShell commands\.
 + Choose a direct download link\.
 + Run an Amazon S3 copy command\.
 
 **Note**  
-On both new and existing instances, we recommend installing the AWS CodeDeploy agent updater for Windows Server\. The updater checks periodically for new versions of the agent and installs it when a new version is available\. On new instances, you can install the updater instead of the agent, and the current version of the agent will be installed immediately after the updater\. For more information, see [Update the AWS CodeDeploy Agent on Windows Server](codedeploy-agent-operations-update-windows.md)\.
+On both new and existing instances, we recommend installing the CodeDeploy agent updater for Windows Server\. The updater checks periodically for new versions of the agent and installs it when a new version is available\. On new instances, you can install the updater instead of the agent, and the current version of the agent will be installed immediately after the updater\. For more information, see [Update the CodeDeploy Agent on Windows Server](codedeploy-agent-operations-update-windows.md)\.
 
 **Topics**
 + [Use Windows PowerShell](#codedeploy-agent-operations-install-windows-powershell)
@@ -35,25 +29,25 @@ Sign in to the instance, and run the following commands in Windows PowerShell:
    Import-Module AWSPowerShell
    ```
 
-1.  Create a directory into where the AWS CodeDeploy agent installation file is downloaded\. 
+1.  Create a directory into where the CodeDeploy agent installation file is downloaded\. 
 
    ```
    New-Item -Path "c:\temp" -ItemType "directory" -Force
    ```
 
-1.  Download the AWS CodeDeploy agent installation file\. 
+1.  Download the CodeDeploy agent installation file\. 
 
    ```
    powershell.exe -Command Read-S3Object -BucketName bucket-name -Key latest/codedeploy-agent.msi -File c:\temp\codedeploy-agent.msi
    ```
 
-1.  Run the AWS CodeDeploy agent installation file\. 
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+
+1.  Run the CodeDeploy agent installation file\. 
 
    ```
    c:\temp\codedeploy-agent.msi /quiet /l c:\temp\host-agent-install-log.txt
    ```
-
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
 To check that the service is running, run the following command:
 
@@ -61,7 +55,7 @@ To check that the service is running, run the following command:
 powershell.exe -Command Get-Service -Name codedeployagent
 ```
 
- If the AWS CodeDeploy agent was just installed and has not been started, then after running the Get\-Service command, under **Status**, you should see **Start\.\.\.**:
+ If the CodeDeploy agent was just installed and has not been started, then after running the Get\-Service command, under **Status**, you should see **Start\.\.\.**:
 
 ```
 Status     Name                DisplayName
@@ -69,7 +63,7 @@ Status     Name                DisplayName
 Start...   codedeployagent    CodeDeploy Host Agent Service
 ```
 
-If the AWS CodeDeploy agent is already running, after running the Get\-Service command, under **Status**, you should see **Running**:
+If the CodeDeploy agent is already running, after running the Get\-Service command, under **Status**, you should see **Running**:
 
 ```
 Status     Name                DisplayName
@@ -79,7 +73,7 @@ Running    codedeployagent    CodeDeploy Host Agent Service
 
 ## Use a Direct Link<a name="codedeploy-agent-operations-install-windows-direct-link"></a>
 
-If the browser security settings on the Windows Server instance provide the permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link for your region to download the AWS CodeDeploy agent and then run the installer manually\.
+If the browser security settings on the Windows Server instance provide the permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link for your region to download the CodeDeploy agent and then run the installer manually\.
 
 
 | Region name | Download link | 
@@ -93,6 +87,7 @@ If the browser security settings on the Windows Server instance provide the perm
 | EU \(London\) | `[https://aws\-codedeploy\-eu\-west\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | EU \(Paris\) | `[https://aws\-codedeploy\-eu\-west\-3\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | EU \(Frankfurt\) | `[https://aws\-codedeploy\-eu\-central\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-central-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
+| Asia Pacific \(Hong Kong\) | `[https://aws\-codedeploy\-ap\-east\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-east-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Tokyo\) | `[https://aws\-codedeploy\-ap\-northeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Seoul\) | `[https://aws\-codedeploy\-ap\-northeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Singapore\) | `[https://aws\-codedeploy\-ap\-southeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
@@ -102,7 +97,7 @@ If the browser security settings on the Windows Server instance provide the perm
 
 ## Use an Amazon S3 Copy Command<a name="codedeploy-agent-operations-install-windows-s3-copy"></a>
 
-If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) command to download the AWS CodeDeploy agent and then run the installer manually\. For information, see [Install the AWS Command Line Interface on Microsoft Windows](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)\. 
+If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) command to download the CodeDeploy agent and then run the installer manually\. For information, see [Install the AWS Command Line Interface on Microsoft Windows](https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html)\. 
 
 
 | Region name | Amazon S3 copy command | 
@@ -116,6 +111,7 @@ If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](http
 | EU \(London\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | EU \(Paris\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-3/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | EU \(Frankfurt\) | <pre>aws s3 cp s3://aws-codedeploy-eu-central-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
+| Asia Pacific \(Hong Kong\) | <pre>aws s3 cp s3://aws-codedeploy-ap-east-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Asia Pacific \(Tokyo\) | <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Asia Pacific \(Seoul\) | <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Asia Pacific \(Singapore\) | <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 

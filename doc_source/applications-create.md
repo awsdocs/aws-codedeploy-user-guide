@@ -1,14 +1,8 @@
---------
+# Create an Application with CodeDeploy<a name="applications-create"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+An *application* is simply a name or container used by CodeDeploy to ensure that the correct revision, deployment configuration, and deployment group are referenced during a deployment\. You can use the CodeDeploy console, the AWS CLI, the CodeDeploy APIs, or an AWS CloudFormation template to create applications\.
 
---------
-
-# Create an Application with AWS CodeDeploy<a name="applications-create"></a>
-
-An *application* is simply a name or container used by AWS CodeDeploy to ensure that the correct revision, deployment configuration, and deployment group are referenced during a deployment\. You can use the AWS CodeDeploy console, the AWS CLI, the AWS CodeDeploy APIs, or an AWS CloudFormation template to create applications\.
-
-Your code, or application revision, is installed to instances through a process called a deployment\. AWS CodeDeploy supports two types of deployments: 
+Your code, or application revision, is installed to instances through a process called a deployment\. CodeDeploy supports two types of deployments: 
 + **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an In\-Place Deployment](welcome.md#welcome-deployment-overview-in-place)\.
 + **Blue/green deployment**: The behavior of your deployment depends on which compute platform you use:
   + **Blue/green on an EC2/On\-Premises compute platform**: The instances in a deployment group \(the original environment\) are replaced by a different set of instances \(the replacement environment\) using these steps:
@@ -23,9 +17,9 @@ If you use an EC2/On\-Premises compute platform, be aware that blue/green deploy
 
   For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)\.
 
-When you use the AWS CodeDeploy console to create an application, you configure its first deployment group at the same time\. When you use the AWS CLI to create an application, you create its first deployment group in a separate step\.
+When you use the CodeDeploy console to create an application, you configure its first deployment group at the same time\. When you use the AWS CLI to create an application, you create its first deployment group in a separate step\.
 
-To view a list of applications already registered to your AWS account, see [View Application Details with AWS CodeDeploy](applications-view-details.md)\. For information about using an AWS CloudFormation template to create an application, see [AWS CloudFormation Templates for AWS CodeDeploy Reference](reference-cloudformation-templates.md)\.
+To view a list of applications already registered to your AWS account, see [View Application Details with CodeDeploy](applications-view-details.md)\. For information about using an AWS CloudFormation template to create an application, see [AWS CloudFormation Templates for CodeDeploy Reference](reference-cloudformation-templates.md)\.
 
  Both deployment types do not apply to all destinations\. The following table lists which deployment types work with deployments to the three types of deployment destinations\.
 

@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Create an Amazon ECS Compute Platform Deployment \(CLI\)<a name="deployments-create-ecs-cli"></a>
 
 After you have created the application and revision \(in Amazon ECS deployments, this is the AppSpec file\):
@@ -16,8 +10,8 @@ Call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/d
   For revisions stored in Amazon S3:
   + The Amazon S3 bucket name that contains the revision\.
   + The name of the uploaded revision\.
-  + \(Optional\) The Amazon S3 version identifier for the revision\. \(If the version identifier is not specified, AWS CodeDeploy uses the most recent version\.\)
-  + \(Optional\) The ETag for the revision\. \(If the ETag is not specified, AWS CodeDeploy skips object validation\.\)
+  + \(Optional\) The Amazon S3 version identifier for the revision\. \(If the version identifier is not specified, CodeDeploy uses the most recent version\.\)
+  + \(Optional\) The ETag for the revision\. \(If the ETag is not specified, CodeDeploy skips object validation\.\)
 
   For revisions stored in a file that is not in Amazon S3, you need the file name and its path\. Your revision file is written using JSON or YAML, so it most likely has a \.json or \.yaml extension\.
 + \(Optional\) A description for the deployment\.
@@ -41,4 +35,4 @@ The create\-deployment command can load a revision from a file\. For more inform
 
 For AWS Lambda deployment revision templates, see [Add an AppSpec File for an AWS Lambda Deployment](application-revisions-appspec-file.md#add-appspec-file-lambda)\. For an example revision, see [ AppSpec File Example for an AWS Lambda Deployment ](reference-appspec-file-example.md#appspec-file-example-lambda)\.
 
-To track the status of your deployment, see [View AWS CodeDeployDeployment Details ](deployments-view-details.md)\.
+To track the status of your deployment, see [View CodeDeployDeployment Details ](deployments-view-details.md)\.

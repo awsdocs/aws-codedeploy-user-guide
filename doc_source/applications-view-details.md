@@ -1,12 +1,6 @@
---------
+# View Application Details with CodeDeploy<a name="applications-view-details"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# View Application Details with AWS CodeDeploy<a name="applications-view-details"></a>
-
-You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to view details about all applications associated with your AWS account\.
+You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about all applications associated with your AWS account\.
 
 **Topics**
 + [View Application Details \(Console\)](#applications-view-details-console)
@@ -14,11 +8,11 @@ You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs 
 
 ## View Application Details \(Console\)<a name="applications-view-details-console"></a>
 
-To use the AWS CodeDeploy console to view application details:
+To use the CodeDeploy console to view application details:
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and choose **Getting started**\.
 

@@ -1,14 +1,8 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Validate Your AppSpec File and File Location<a name="reference-appspec-file-validate"></a>
 
  **File syntax** 
 
-AWS CodeDeploy does not provide a tool for validating the contents of an AppSpec File\. Instead, consider using a browser\-based tool such as [YAML Lint](http://www.yamllint.com/) or [Online YAML Parser](http://yaml-online-parser.appspot.com/) to help you check your YAML syntax\.
+CodeDeploy does not provide a tool for validating the contents of an AppSpec File\. Instead, consider using a browser\-based tool such as [YAML Lint](http://www.yamllint.com/) or [Online YAML Parser](http://yaml-online-parser.appspot.com/) to help you check your YAML syntax\.
 
  **File location** 
 

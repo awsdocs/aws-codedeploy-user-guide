@@ -1,12 +1,6 @@
---------
+# Redeploy and Roll Back a Deployment with CodeDeploy<a name="deployments-rollback-and-redeploy"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Redeploy and Roll Back a Deployment with AWS CodeDeploy<a name="deployments-rollback-and-redeploy"></a>
-
-AWS CodeDeploy rolls back deployments by redeploying a previously deployed revision of an application as a new deployment\. These rolled\-back deployments are technically new deployments, with new deployment IDs, rather than restored versions of a previous deployment\.
+CodeDeploy rolls back deployments by redeploying a previously deployed revision of an application as a new deployment\. These rolled\-back deployments are technically new deployments, with new deployment IDs, rather than restored versions of a previous deployment\.
 
 Deployments can be rolled back automatically or manually\.
 
@@ -29,28 +23,28 @@ For more information about configuring automatic rollbacks, see [Configure Advan
 
 ## Manual Rollbacks<a name="deployments-rollback-and-redeploy-manual-rollbacks"></a>
 
-If you have not set up automatic rollbacks, you can manually roll back a deployment by creating a new deployment that uses any previously deployed application revision and following the steps to redeploy a revision\. You might do this if an application has gotten into an unknown state\. Rather than spending a lot of time troubleshooting, you can redeploy the application to a known working state\. For more information, see [Create a Deployment with AWS CodeDeploy](deployments-create.md)\. 
+If you have not set up automatic rollbacks, you can manually roll back a deployment by creating a new deployment that uses any previously deployed application revision and following the steps to redeploy a revision\. You might do this if an application has gotten into an unknown state\. Rather than spending a lot of time troubleshooting, you can redeploy the application to a known working state\. For more information, see [Create a Deployment with CodeDeploy](deployments-create.md)\. 
 
 **Note**  
-If you remove an instance from a deployment group, AWS CodeDeploy does not uninstall anything that might have already been installed on that instance\.
+If you remove an instance from a deployment group, CodeDeploy does not uninstall anything that might have already been installed on that instance\.
 
 ## Rollback and Redeployment Workflow<a name="deployments-rollback-and-redeploy-workflow"></a>
 
-When automatic rollback is initiated, or when you manually initiate a redeployment or manual rollback, AWS CodeDeploy first tries to remove from each participating instance all files that were last successfully installed\. AWS CodeDeploy does this by checking the cleanup file:
+When automatic rollback is initiated, or when you manually initiate a redeployment or manual rollback, CodeDeploy first tries to remove from each participating instance all files that were last successfully installed\. CodeDeploy does this by checking the cleanup file:
 
  `/opt/codedeploy-agent/deployment-root/deployment-instructions/deployment-group-ID-cleanup` file \(for Amazon Linux, Ubuntu Server, and RHEL instances\) 
 
 `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions\deployment-group-ID-cleanup` file \(for Windows Server instances\) 
 
-If it exists, AWS CodeDeploy uses the cleanup file to remove from the instance all listed files before starting the new deployment\. 
+If it exists, CodeDeploy uses the cleanup file to remove from the instance all listed files before starting the new deployment\. 
 
 For example, the first two text files and two script files were already deployed to an Amazon EC2 instance running Windows Server, and the scripts created two more text files during deployment lifecycle events:
 
 ```
-c:\temp\a.txt (previously deployed by AWS CodeDeploy)
-c:\temp\b.txt (previously deployed by AWS CodeDeploy)
-c:\temp\c.bat (previously deployed by AWS CodeDeploy)
-c:\temp\d.bat (previously deployed by AWS CodeDeploy)
+c:\temp\a.txt (previously deployed by CodeDeploy)
+c:\temp\b.txt (previously deployed by CodeDeploy)
+c:\temp\c.bat (previously deployed by CodeDeploy)
+c:\temp\d.bat (previously deployed by CodeDeploy)
 c:\temp\e.txt (previously created by c.bat)
 c:\temp\f.txt (previously created by d.bat)
 ```
@@ -64,7 +58,7 @@ c:\temp\c.bat
 c:\temp\d.bat
 ```
 
-Before the new deployment, AWS CodeDeploy will remove only the first two text files and the two script files, leaving the last two text files untouched:
+Before the new deployment, CodeDeploy will remove only the first two text files and the two script files, leaving the last two text files untouched:
 
 ```
 c:\temp\a.txt will be removed
@@ -75,16 +69,16 @@ c:\temp\e.txt will remain
 c:\temp\f.txt will remain
 ```
 
-As part of this process, AWS CodeDeploy will not try to revert or otherwise reconcile any actions taken by any scripts in previous deployments during subsequent redeployments, whether manual or automatic rollbacks\. For example, if the `c.bat` and `d.bat` files contain logic to not re\-create the `e.txt` and `f.txt` files if they already exist, then the old versions of `e.txt` and `f.txt` will remain untouched whenever AWS CodeDeploy runs `c.bat` and `d.bat` in subsequent deployments\. You can add logic to `c.bat` and `d.bat` to always check for and delete old versions of `e.txt` and `f.txt` before creating new ones\. 
+As part of this process, CodeDeploy will not try to revert or otherwise reconcile any actions taken by any scripts in previous deployments during subsequent redeployments, whether manual or automatic rollbacks\. For example, if the `c.bat` and `d.bat` files contain logic to not re\-create the `e.txt` and `f.txt` files if they already exist, then the old versions of `e.txt` and `f.txt` will remain untouched whenever CodeDeploy runs `c.bat` and `d.bat` in subsequent deployments\. You can add logic to `c.bat` and `d.bat` to always check for and delete old versions of `e.txt` and `f.txt` before creating new ones\. 
 
 ## Rollback Behavior with Existing Content<a name="deployments-rollback-and-redeploy-content-options"></a>
 
-As part of the deployment process, the AWS CodeDeploy agent removes from each instance all the files installed by the most recent deployment\. If files that weren’t part of a previous deployment appear in target deployment locations, you can choose what AWS CodeDeploy does with them during the next deployment:
+As part of the deployment process, the CodeDeploy agent removes from each instance all the files installed by the most recent deployment\. If files that weren’t part of a previous deployment appear in target deployment locations, you can choose what CodeDeploy does with them during the next deployment:
 + **Fail the deployment** — An error is reported and the deployment status is changed to Failed\.
 + **Overwrite the content** — The version of the file from the application revision replaces the version already on the instance\.
 + **Retain the content** — The file in the target location is kept and the version in the application revision is not copied to the instance\. 
 
-You might choose to retain files that you want to be part of the next deployment without having to add them to the application revision package\. For example, you might upload files directly to the instance that are required for the deployment but weren’t added to the application revision bundle\. Or you might upload files to the instance if your applications are already in your production environment but you want to use AWS CodeDeploy for the first time to deploy them\.
+You might choose to retain files that you want to be part of the next deployment without having to add them to the application revision package\. For example, you might upload files directly to the instance that are required for the deployment but weren’t added to the application revision bundle\. Or you might upload files to the instance if your applications are already in your production environment but you want to use CodeDeploy for the first time to deploy them\.
 
 In the case of rollbacks, where the most recent successfully deployed application revision is redeployed due to a deployment failure, the content\-handling option for that last successful deployment is applied to the rollback deployment\. 
 
@@ -97,6 +91,6 @@ In the following example, there are three deployments\. Any file that is overwri
 
 |  Deployment  |  Application revision  |  Content overwrite option  |  Deployment status  |  Behavior and result  | 
 | --- | --- | --- | --- | --- | 
-|  deployment 1  |  application revision 1  |  RETAIN  |  Succeeded  |  AWS CodeDeploy detects files in the target locations that were not deployed by the previous deployment\. These files might be placed there intentionally to become part of the current deployment\. They are kept and recorded as part of the current deployment package\.  | 
-|  deployment 2  |  application revision 2  |  OVERWRITE  |  Failed  |  During the deployment process, AWS CodeDeploy deletes all the files that are part of the previous successful deployment\. This includes the files that were retained during deployment 1\. However, the deployment fails for unrelated reasons\.   | 
-|  deployment 3  |  application revision 1  |  RETAIN  |   | Because auto rollback is enabled for the deployment or deployment group, AWS CodeDeploy deploys the last known good application revision, application revision 1\.However, the files that you wanted to retain in deployment 1 were deleted before deployment 2 failed and cannot be retrieved by AWS CodeDeploy\. You can add them to the instance yourself if they are required for application revision 1, or you can create a new application revision\. | 
+|  deployment 1  |  application revision 1  |  RETAIN  |  Succeeded  |  CodeDeploy detects files in the target locations that were not deployed by the previous deployment\. These files might be placed there intentionally to become part of the current deployment\. They are kept and recorded as part of the current deployment package\.  | 
+|  deployment 2  |  application revision 2  |  OVERWRITE  |  Failed  |  During the deployment process, CodeDeploy deletes all the files that are part of the previous successful deployment\. This includes the files that were retained during deployment 1\. However, the deployment fails for unrelated reasons\.   | 
+|  deployment 3  |  application revision 1  |  RETAIN  |   | Because auto rollback is enabled for the deployment or deployment group, CodeDeploy deploys the last known good application revision, application revision 1\.However, the files that you wanted to retain in deployment 1 were deleted before deployment 2 failed and cannot be retrieved by AWS CodeDeploy\. You can add them to the instance yourself if they are required for application revision 1, or you can create a new application revision\. | 

@@ -1,17 +1,11 @@
---------
+# Push a Revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)<a name="application-revisions-push"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)<a name="application-revisions-push"></a>
-
-After you plan your revision as described in [Plan a Revision for AWS CodeDeploy](application-revisions-plan.md) and add an AppSpec file to the revision as described in [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md), you are ready to bundle the component files and push the revision to Amazon S3\. For deployments to Amazon EC2 instances, after you push the revision, you can use AWS CodeDeploy to deploy the revision from Amazon S3 to the instances\.
+After you plan your revision as described in [Plan a Revision for CodeDeploy](application-revisions-plan.md) and add an AppSpec file to the revision as described in [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md), you are ready to bundle the component files and push the revision to Amazon S3\. For deployments to Amazon EC2 instances, after you push the revision, you can use CodeDeploy to deploy the revision from Amazon S3 to the instances\.
 
 **Note**  
-AWS CodeDeploy can also be used to deploy revisions that have been pushed to GitHub\. For more information, see your GitHub documentation\.
+CodeDeploy can also be used to deploy revisions that have been pushed to GitHub\. For more information, see your GitHub documentation\.
 
-We assume you have already followed the instructions in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md) to set up the AWS CLI\. This is especially important for calling the push command described later\.
+We assume you have already followed the instructions in [Getting Started with CodeDeploy](getting-started-codedeploy.md) to set up the AWS CLI\. This is especially important for calling the push command described later\.
 
 Be sure you have an Amazon S3 bucket\. Follow the instructions in [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)\.
 
@@ -67,8 +61,8 @@ To learn how to create and attach an IAM policy, see [Working with Policies](htt
  The `push` command bundles application artifacts and an AppSpec file into a revision\. The file format of this revision is a compressed ZIP file\. The command cannot be used with an AWS Lambda or an Amazon ECS deployment because each expects a revision that is a JSON\-formatted or YAML\-formatted AppSpec file\. 
 
 Call the push command to bundle and push the revision for a deployment\. Its parameters are:
-+  \-\-application\-name: \(string\) Required\. The name of the AWS CodeDeploy application to be associated with the application revision\. 
-+  \-\-s3\-location: \(string\) Required\. Information about the location of the application revision to be uploaded to Amazon S3\. You must specify an Amazon S3 bucket and a key\. The key is the name of the revision\. AWS CodeDeploy zips the content before it is uploaded\. Use the format `s3://your-S3-bucket-name/your-key.zip`\. 
++  \-\-application\-name: \(string\) Required\. The name of the CodeDeploy application to be associated with the application revision\. 
++  \-\-s3\-location: \(string\) Required\. Information about the location of the application revision to be uploaded to Amazon S3\. You must specify an Amazon S3 bucket and a key\. The key is the name of the revision\. CodeDeploy zips the content before it is uploaded\. Use the format `s3://your-S3-bucket-name/your-key.zip`\. 
 +  \-\-ignore\-hidden\-files or \-\-no\-ignore\-hidden\-files: \(boolean\) Optional\. Use the `--no-ignore-hidden-files` flag \(the default\) to bundle and upload hidden files to Amazon S3\. Use the `--ignore-hidden-files` flag to not bundle and upload hidden files to Amazon S3\. 
 +  \-\-source \(string\) Optional\. The location of the content to be deployed and the AppSpec file on the development machine to be zipped and uploaded to Amazon S3\. The location is specified as a path relative to the current directory\. If the relative path is not specified or if a single period is used for the path \("\."\), the current directory is used\. 
 +  \-\-description \(string\) Optional\. A comment that summarizes the application revision\. If not specified, the default string "Uploaded by AWS CLI 'time' UTC" is used, where 'time' is the current system time in Coordinated Universal Time \(UTC\)\. 
@@ -99,7 +93,7 @@ aws deploy push --application-name WordPress_App --description "This is a revisi
 +  Names the revision `WordPressApp.zip` and pushes it to a bucket named `codedeploydemobucket`\. 
 +  Bundles all files in the root directory into the revision\. 
 
-After the push is successful, you can use the AWS CLI or the AWS CodeDeploy console to deploy the revision from Amazon S3\. To deploy this revision with the AWS CLI: 
+After the push is successful, you can use the AWS CLI or the CodeDeploy console to deploy the revision from Amazon S3\. To deploy this revision with the AWS CLI: 
 
  In Linux, macOS, or Unix: 
 
@@ -117,4 +111,4 @@ aws deploy create-deployment \
 aws deploy create-deployment --application-name WordPress_App --deployment-config-name your-deployment-config-name --your-deployment-group-name your-deployment-group-name --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
 ```
 
- For more information, see [Create a Deployment with AWS CodeDeploy](deployments-create.md)\. 
+ For more information, see [Create a Deployment with CodeDeploy](deployments-create.md)\. 

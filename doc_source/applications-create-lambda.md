@@ -1,16 +1,10 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Create an Application for an AWS Lambda Function Deployment \(Console\)<a name="applications-create-lambda"></a>
 
-You can use the AWS CodeDeploy console to create an application for an AWS Lambda function deployment\.
+You can use the CodeDeploy console to create an application for an AWS Lambda function deployment\.
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and choose **Getting started**\.
 
@@ -26,9 +20,9 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In **Deployment group name**, enter a name that describes the deployment group\.
 **Note**  
-If you want to use the same settings used in another deployment group \(including the deployment group name and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group might have the same name, AWS CodeDeploy treats them as separate deployment groups, because each is associated with a separate application\.
+If you want to use the same settings used in another deployment group \(including the deployment group name and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group might have the same name, CodeDeploy treats them as separate deployment groups, because each is associated with a separate application\.
 
-1. In **Service role**, choose a service role that grants AWS CodeDeploy access to AWS Lambda\. For more information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
+1. In **Service role**, choose a service role that grants CodeDeploy access to AWS Lambda\. For more information, see [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\.
 
 1.  If you want to use a predefined deployment configuration, choose one from **Deployment configuration**, and then skip to step 12\. To create a custom configuration, continue to the next step\.
 

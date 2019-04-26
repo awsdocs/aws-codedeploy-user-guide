@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Monitoring Deployments with Amazon CloudWatch Events<a name="monitoring-cloudwatch-events"></a>
 
-You can use Amazon CloudWatch Events to detect and react to changes in the state of an instance or a deployment \(an "event"\) in your AWS CodeDeploy operations\. Then, based on rules you create, CloudWatch Events will invoke one or more target actions when a deployment or instance enters the state you specify in a rule\. Depending on the type of state change, you might want to send notifications, capture state information, take corrective action, initiate events, or take other actions\. You can select the following types of targets when using CloudWatch Events as part of your AWS CodeDeploy operations:
+You can use Amazon CloudWatch Events to detect and react to changes in the state of an instance or a deployment \(an "event"\) in your CodeDeploy operations\. Then, based on rules you create, CloudWatch Events will invoke one or more target actions when a deployment or instance enters the state you specify in a rule\. Depending on the type of state change, you might want to send notifications, capture state information, take corrective action, initiate events, or take other actions\. You can select the following types of targets when using CloudWatch Events as part of your CodeDeploy operations:
 + AWS Lambda functions
 +  Kinesis streams
 + Amazon SQS queues
@@ -18,12 +12,12 @@ The following are some use cases:
 + Push data about deployments or instances to a Kinesis stream to support comprehensive, real\-time status monitoring\.
 + Use CloudWatch alarm actions to automatically stop, terminate, reboot, or recover Amazon EC2 instances when a deployment or instance event you specify occurs\.
 
-The remainder of this topic describes the basic procedure for creating a CloudWatch Events rule for AWS CodeDeploy\. Before you create event rules for use in your AWS CodeDeploy operations, however, you should do the following:
+The remainder of this topic describes the basic procedure for creating a CloudWatch Events rule for CodeDeploy\. Before you create event rules for use in your CodeDeploy operations, however, you should do the following:
 + Complete the CloudWatch Events prerequisites\. For information, see [Amazon CloudWatch Events Prerequisites](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_Prerequisites.html)\.
 + Familiarize yourself with events, rules, and targets in CloudWatch Events\. For more information, see [What Is Amazon CloudWatch Events?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html) and [New CloudWatch Events – Track and Respond to Changes to Your AWS Resources](http://aws.amazon.com/blogs/aws/new-cloudwatch-events-track-and-respond-to-changes-to-your-aws-resources/)\.
 + Create the target or targets you will use in your event rules\. 
 
-**To create a CloudWatch Events rule for AWS CodeDeploy:**
+**To create a CloudWatch Events rule for CodeDeploy:**
 
 1. Open the CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
 
@@ -42,7 +36,7 @@ The remainder of this topic describes the basic procedure for creating a CloudWa
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/monitoring-cloudwatch-events.html)
 
-1. Specify which AWS CodeDeploy applications the rule applies to:
+1. Specify which CodeDeploy applications the rule applies to:
    + To make a rule that applies to all applications, choose **Any application**, and then skip to step 8\.
    + To make a rule that applies to one application only, choose **Specific application**, and then choose the name of the application from the list\.
 

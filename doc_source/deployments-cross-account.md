@@ -1,14 +1,8 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Deploy an Application in a Different AWS Account<a name="deployments-cross-account"></a>
 
 Organizations commonly have multiple AWS accounts that they use for different purposes \(for example, one for system administration tasks and another for development, test, and production tasks or one associated with development and test environments and another associated with the production environment\)\.
 
-Although you might perform related work in different accounts, AWS CodeDeploy deployment groups and the Amazon EC2 instances to which they deploy are strictly tied to the accounts under which they were created\. You cannot, for example, add an instance that you launched in one account to a deployment group in another\.
+Although you might perform related work in different accounts, CodeDeploy deployment groups and the Amazon EC2 instances to which they deploy are strictly tied to the accounts under which they were created\. You cannot, for example, add an instance that you launched in one account to a deployment group in another\.
 
 Assume you have two AWS accounts: your development account and your production account\. You work primarily in the development account, but you want to be able kick off deployments in your production account without a full set of credentials there or without having to sign out of the development account and in to the production account\. 
 
@@ -64,14 +58,14 @@ Make note of the ARN for this IAM instance profile\. You will need to add it to 
 ## Step 3: Create Resources and a Cross\-Account Role in the Production Account<a name="deployments-cross-account-3-create-resources-and-role"></a>
 
 In your production account:
-+ Create your AWS CodeDeploy resources — application, deployment group, deployment configuration, Amazon EC2 instances, Amazon EC2 instance profile, service role, and so on — using the instructions in this guide\.
-+ Create an additional role, a cross\-account IAM role, that a user in your development account can assume to perform AWS CodeDeploy operations in this production account\. 
++ Create your CodeDeploy resources — application, deployment group, deployment configuration, Amazon EC2 instances, Amazon EC2 instance profile, service role, and so on — using the instructions in this guide\.
++ Create an additional role, a cross\-account IAM role, that a user in your development account can assume to perform CodeDeploy operations in this production account\. 
 
   Use the [Walkthrough: Delegate Access Across AWS Accounts Using IAM Roles ](https://docs.aws.amazon.com/IAM/latest/UserGuide/walkthru_cross-account-with-roles.html) as a guide to help you create the cross\-account role\. Instead of adding the sample permissions in the walkthrough to your policy document, you should attach, at minimum, the following two AWS\-supplied policies to the role: 
   + `AmazonS3FullAccess`: Required only if the S3 bucket is in the development account\. Provides the assumed production account role with full access to the Amazon S3 services and resources in the development account, where the revision is stored\. 
   + `AWSCodeDeployDeployerAccess`: Enables an IAM user to register and deploy revisions\. 
 
-  If you want to create and manage deployment groups and not just initiate deployments, add the `AWSCodeDeployFullAccess` policy instead of the `AWSCodeDeployDeployerAccess` policy\. For more information about using IAM managed policies to grant permissions for AWS CodeDeploy tasks, see [AWS Managed \(Predefined\) Policies for AWS CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md#managed-policies)\. 
+  If you want to create and manage deployment groups and not just initiate deployments, add the `AWSCodeDeployFullAccess` policy instead of the `AWSCodeDeployDeployerAccess` policy\. For more information about using IAM managed policies to grant permissions for CodeDeploy tasks, see [AWS Managed \(Predefined\) Policies for CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md#managed-policies)\. 
 
   You can attach additional policies if you want to perform tasks in other AWS services while using this cross\-account role\.
 
@@ -86,7 +80,7 @@ The ARN of the cross\-account role you will assume\.
 ## Step 4: Upload the Application Revision to Amazon S3 Bucket<a name="deployments-cross-account-4-upload-application-revision"></a>
 
 In the account in which you created the Amazon S3 bucket:
-+ Upload your application revision to the Amazon S3 bucket\. For information, see [Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md)\. 
++ Upload your application revision to the Amazon S3 bucket\. For information, see [Push a Revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md)\. 
 
 ## Step 5: Assume the Cross\-Account Role and Deploy Applications<a name="deployments-cross-account-5-assume-role-and-deploy"></a>
 
@@ -99,4 +93,4 @@ For instructions about how to use the AWS CLI to assume the cross\-account role 
 For more information about assuming a role through AWS STS, see [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) in the [AWS Security Token Service User Guide](https://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html) and [assume\-role](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) in the [AWS CLI Command Reference](https://docs.aws.amazon.com/cli/latest/reference/)\.
 
 **Related topic:**
-+ [AWS CodeDeploy: Deploying from a Development Account to a Production Account](http://aws.amazon.com/blogs/devops/aws-codedeploy-deploying-from-a-development-account-to-a-production-account/)
++ [CodeDeploy: Deploying from a Development Account to a Production Account](http://aws.amazon.com/blogs/devops/aws-codedeploy-deploying-from-a-development-account-to-a-production-account/)

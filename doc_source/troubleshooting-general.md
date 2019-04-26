@@ -1,14 +1,9 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # General Troubleshooting Issues<a name="troubleshooting-general"></a>
 
 **Topics**
 + [General Troubleshooting Checklist](#troubleshooting-checklist)
-+ [AWS CodeDeploy deployment resources are supported in certain regions only](#troubleshooting-supported-regions)
++ [CodeDeploy deployment resources are supported in certain regions only](#troubleshooting-supported-regions)
++ [Procedures in This Guide Do Not Match the CodeDeploy Console](#troubleshooting-old-console)
 + [Required IAM roles are not available](#troubleshooting-iam-cloudformation)
 + [Using some text editors to create AppSpec files and shell scripts can cause deployments to fail](#troubleshooting-text-editors)
 + [Using Finder in macOS to bundle an application revision can cause deployments to fail](#troubleshooting-bundle-with-finder)
@@ -17,28 +12,28 @@
 
 You can use the following checklist to troubleshoot a failed deployment\.
 
-1. See [View AWS CodeDeployDeployment Details ](deployments-view-details.md) and [View Instance Details with AWS CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
+1. See [View CodeDeployDeployment Details ](deployments-view-details.md) and [View Instance Details with CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
 
 1. Check whether you have correctly configured the instances:
    + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
-   + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 Instance to Work with AWS CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
+   + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 Instance to Work with CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
    + Was the instance tagged? For more information, see [Working with Tags in the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
-   + Is the AWS CodeDeploy agent installed and running on the instance? For more information, see [Managing AWS CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.
+   + Is the CodeDeploy agent installed and running on the instance? For more information, see [Managing CodeDeploy Agent Operations](codedeploy-agent-operations.md)\.
 
 1. Check the application and deployment group settings:
-   + To check your application settings, see [View Application Details with AWS CodeDeploy](applications-view-details.md)\.
-   + To check your deployment group settings, see [View Deployment Group Details with AWS CodeDeploy](deployment-groups-view-details.md)\.
+   + To check your application settings, see [View Application Details with CodeDeploy](applications-view-details.md)\.
+   + To check your deployment group settings, see [View Deployment Group Details with CodeDeploy](deployment-groups-view-details.md)\.
 
 1. Confirm the application revision is correctly configured:
-   + Check the format of your AppSpec file\. For more information, see [Add an Application Specification File to a Revision for AWS CodeDeploy](application-revisions-appspec-file.md) and [AWS CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+   + Check the format of your AppSpec file\. For more information, see [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md) and [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
    + Check your Amazon S3 bucket or GitHub repository to verify your application revision is in the expected location\.
-   + Review the details of your AWS CodeDeploy application revision to ensure that it is registered correctly\. For information, see [View Application Revision Details with AWS CodeDeploy](application-revisions-view-details.md)\.
-   + If you're deploying from Amazon S3, check your Amazon S3 bucket to verify AWS CodeDeploy has been granted permissions to download the application revision\. For information about bucket policies, see [Deployment Prerequisites](deployments-create-prerequisites.md)\.
-   + If you're deploying from GitHub, check your GitHub repository to verify AWS CodeDeploy has been granted permissions to download the application revision\. For more information, see [Create a Deployment with AWS CodeDeploy](deployments-create.md) and [GitHub Authentication with Applications in AWS CodeDeploy](integrations-partners-github.md#behaviors-authentication)\.
+   + Review the details of your CodeDeploy application revision to ensure that it is registered correctly\. For information, see [View Application Revision Details with CodeDeploy](application-revisions-view-details.md)\.
+   + If you're deploying from Amazon S3, check your Amazon S3 bucket to verify CodeDeploy has been granted permissions to download the application revision\. For information about bucket policies, see [Deployment Prerequisites](deployments-create-prerequisites.md)\.
+   + If you're deploying from GitHub, check your GitHub repository to verify CodeDeploy has been granted permissions to download the application revision\. For more information, see [Create a Deployment with CodeDeploy](deployments-create.md) and [GitHub Authentication with Applications in CodeDeploy](integrations-partners-github.md#behaviors-authentication)\.
 
-1. Check whether the service role is correctly configured\. For information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
+1. Check whether the service role is correctly configured\. For information, see [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\.
 
-1. Confirm you followed the steps in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md) to: 
+1. Confirm you followed the steps in [Getting Started with CodeDeploy](getting-started-codedeploy.md) to: 
    + Attach policies to the IAM user\.
    + Install or upgrade and configure the AWS CLI\.
    + Create an IAM instance profile and a service role\.
@@ -49,32 +44,36 @@ You can use the following checklist to troubleshoot a failed deployment\.
 
 If you are still unable to troubleshoot your failed deployment, review the other issues in this topic\.
 
-## AWS CodeDeploy deployment resources are supported in certain regions only<a name="troubleshooting-supported-regions"></a>
+## CodeDeploy deployment resources are supported in certain regions only<a name="troubleshooting-supported-regions"></a>
 
-If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the AWS CodeDeploy console, make sure you're referencing one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
+If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the CodeDeploy console, make sure you're referencing one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
-Amazon EC2 instances and Amazon EC2 Auto Scaling groups that will be used in AWS CodeDeploy deployments must be launched and created in one of these regions\.
+Amazon EC2 instances and Amazon EC2 Auto Scaling groups that will be used in CodeDeploy deployments must be launched and created in one of these regions\.
 
 If you're using the AWS CLI, run the `aws configure` command from the AWS CLI\. Then you can view and set your default region\.
 
-If you're using the AWS CodeDeploy console, on the navigation bar, from the region selector, choose one of the supported regions\.
+If you're using the CodeDeploy console, on the navigation bar, from the region selector, choose one of the supported regions\.
 
 **Important**  
 To use services in the China \(Beijing\) Region or China \(Ningxia\) Region, you must have an account and credentials for those regions\. Accounts and credentials for other AWS regions do not work for the Beijing and Ningxia Regions, and vice versa\.  
-Information about some resources for the China Regions, such as AWS CodeDeploy Resource Kit bucket names and AWS CodeDeploy agent installation procedures, are not included in this edition of the *AWS CodeDeploy User Guide*\.  
+Information about some resources for the China Regions, such as CodeDeploy Resource Kit bucket names and CodeDeploy agent installation procedures, are not included in this edition of the *CodeDeploy User Guide*\.  
 For more information:  
-[AWS CodeDeploy](http://docs.amazonaws.cn/en_us/aws/latest/userguide/codedeploy.html) in *[Getting Started with AWS in the China \(Beijing\) Region](http://docs.amazonaws.cn/en_us/aws/latest/userguide/introduction.html) *
-*AWS CodeDeploy User Guide for the China Regions* \([English version](http://docs.amazonaws.cn/en_us/codedeploy/latest/userguide/welcome.html) \| [Chinese version](http://docs.amazonaws.cn/codedeploy/latest/userguide/welcome.html)\)
+[CodeDeploy](http://docs.amazonaws.cn/en_us/aws/latest/userguide/codedeploy.html) in *[Getting Started with AWS in the China \(Beijing\) Region](http://docs.amazonaws.cn/en_us/aws/latest/userguide/introduction.html) *
+*CodeDeploy User Guide for the China Regions* \([English version](http://docs.amazonaws.cn/en_us/codedeploy/latest/userguide/welcome.html) \| [Chinese version](http://docs.amazonaws.cn/codedeploy/latest/userguide/welcome.html)\)
+
+## Procedures in This Guide Do Not Match the CodeDeploy Console<a name="troubleshooting-old-console"></a>
+
+ This guide supports procedures in the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
 
 ## Required IAM roles are not available<a name="troubleshooting-iam-cloudformation"></a>
 
-If you rely on an IAM instance profile or a service role that was created as part of an AWS CloudFormation stack, if you delete the stack, all IAM roles are deleted, too\. This may be why the IAM role is no longer displayed in the IAM console and AWS CodeDeploy no longer works as expected\. To fix this problem, you must manually re\-create the deleted IAM role\.
+If you rely on an IAM instance profile or a service role that was created as part of an AWS CloudFormation stack, if you delete the stack, all IAM roles are deleted, too\. This may be why the IAM role is no longer displayed in the IAM console and CodeDeploy no longer works as expected\. To fix this problem, you must manually re\-create the deleted IAM role\.
 
 ## Using some text editors to create AppSpec files and shell scripts can cause deployments to fail<a name="troubleshooting-text-editors"></a>
 
-Some text editors introduce non\-conforming, non\-printing characters into files\. If you use text editors to create or modify AppSpec files or shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, then any deployments that rely on these files might fail\. When AWS CodeDeploy uses these files during a deployment, the presence of these characters can lead to hard\-to\-troubleshoot AppSpec file validation failures and script execution failures\. 
+Some text editors introduce non\-conforming, non\-printing characters into files\. If you use text editors to create or modify AppSpec files or shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, then any deployments that rely on these files might fail\. When CodeDeploy uses these files during a deployment, the presence of these characters can lead to hard\-to\-troubleshoot AppSpec file validation failures and script execution failures\. 
 
-In the AWS CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Alternatively, you use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like "invalid character," "command not found," or "file not found\."
+In the CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Alternatively, you use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like "invalid character," "command not found," or "file not found\."
 
 To address this issue, we recommend the following:
 + Do not use text editors that automatically introduce non\-printing characters such as carriage returns \(`^M` characters\) into your AppSpec files and shell script files\. 
@@ -84,6 +83,6 @@ To address this issue, we recommend the following:
 
 ## Using Finder in macOS to bundle an application revision can cause deployments to fail<a name="troubleshooting-bundle-with-finder"></a>
 
-Deployments might fail if you use the Finder graphical user interface \(GUI\) application on a Mac to bundle \(zip\) an AppSpec file and related files and scripts into an application revision archive \(\.zip\) file\. This is because Finder creates an intermediate `__MACOSX` folder in the \.zip file and places component files into it\. AWS CodeDeploy cannot find the component files, so the deployment fails\.
+Deployments might fail if you use the Finder graphical user interface \(GUI\) application on a Mac to bundle \(zip\) an AppSpec file and related files and scripts into an application revision archive \(\.zip\) file\. This is because Finder creates an intermediate `__MACOSX` folder in the \.zip file and places component files into it\. CodeDeploy cannot find the component files, so the deployment fails\.
 
 To address this issue, we recommend you use the AWS CLI to call the [push](https://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command, which zips the component files into the expected structure\. Alternatively, you can use Terminal instead of the GUI to zip the component files\. Terminal does not create an intermediate `__MACOSX` folder\.

@@ -1,12 +1,6 @@
---------
+# Grant Amazon SNS Permissions to a CodeDeploy Service Role<a name="monitoring-sns-event-notifications-permisssions"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Grant Amazon SNS Permissions to an AWS CodeDeploy Service Role<a name="monitoring-sns-event-notifications-permisssions"></a>
-
-Before your triggers can generate notifications, the service role you use in your AWS CodeDeploy operations must be granted permission to access the Amazon SNS resources\. 
+Before your triggers can generate notifications, the service role you use in your CodeDeploy operations must be granted permission to access the Amazon SNS resources\. 
 
 **To grant Amazon SNS permissions to a service role**
 

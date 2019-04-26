@@ -1,10 +1,4 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Register an On\-Premises Instance with AWS CodeDeploy<a name="on-premises-instances-register"></a>
+# Register an On\-Premises Instance with CodeDeploy<a name="on-premises-instances-register"></a>
 
 To register an on\-premises instance, you must use an IAM identity to authenticate your requests\. You can choose from the following options for the IAM identity and registration method you use:
 + Use an IAM user ARN to authenticate requests\.

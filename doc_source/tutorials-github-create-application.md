@@ -1,18 +1,12 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 5: Create an Application and Deployment Group<a name="tutorials-github-create-application"></a>
 
-In this step, you will use the AWS CodeDeploy console or the AWS CLI to create an application and deployment group to use to deploy the sample revision from your GitHub repository\.
+In this step, you will use the CodeDeploy console or the AWS CLI to create an application and deployment group to use to deploy the sample revision from your GitHub repository\.
 
 ## Create an application and deployment group \(console\)<a name="tutorials-github-create-application-console"></a>
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -28,7 +22,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In **Deployment group name**, enter **CodeDeployGitHubDemo\-DepGrp**\.
 
-1. In **Service role**, choose the name of your AWS CodeDeploy service role\.
+1. In **Service role**, choose the name of your CodeDeploy service role\.
 
 1. In **Deployment type**, choose **In\-place**\.
 
@@ -46,7 +40,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 ## Create an application and deployment group \(CLI\)<a name="tutorials-github-create-application-cli"></a>
 
-1. Call the create\-application command to create an application in AWS CodeDeploy named `CodeDeployGitHubDemo-App`:
+1. Call the create\-application command to create an application in CodeDeploy named `CodeDeployGitHubDemo-App`:
 
    ```
    aws deploy create-application --application-name CodeDeployGitHubDemo-App

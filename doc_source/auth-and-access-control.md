@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Authentication and Access Control for AWS CodeDeploy<a name="auth-and-access-control"></a>
 
-Access to AWS CodeDeploy requires credentials\. Those credentials must have permissions to access AWS resources, such as retrieving application revisions from Amazon S3 buckets and reading the tags on Amazon EC2 instances\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and AWS CodeDeploy to help secure access to your resources:
+Access to AWS CodeDeploy requires credentials\. Those credentials must have permissions to access AWS resources, such as retrieving application revisions from Amazon S3 buckets and reading the tags on Amazon EC2 instances\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and CodeDeploy to help secure access to your resources:
 + [Authentication](#authentication)
 + [Access Control](#access-control)
 
@@ -16,11 +10,11 @@ You can access AWS as any of the following types of identities:
 + **AWS account root user** – When you sign up for AWS, you provide an email address and password that is associated with your AWS account\. These are your *root credentials* and they provide complete access to all of your AWS resources\.
 **Important**  
 For security reasons, we recommend that you use the root credentials only to create an *administrator user*, which is an *IAM user* with full permissions to your AWS account\. Then, you can use this administrator user to create other IAM users and roles with limited permissions\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) and [Creating an Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
-+ **IAM user** – An [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html) is simply an identity within your AWS account that has specific custom permissions \(for example, permissions to send event data to a target in AWS CodeDeploy\)\. You can use an IAM user name and password to sign in to secure AWS webpages like the [AWS Management Console](https://console.aws.amazon.com/), [AWS Discussion Forums](https://forums.aws.amazon.com/), or the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
++ **IAM user** – An [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html) is simply an identity within your AWS account that has specific custom permissions \(for example, permissions to send event data to a target in CodeDeploy\)\. You can use an IAM user name and password to sign in to secure AWS webpages like the [AWS Management Console](https://console.aws.amazon.com/), [AWS Discussion Forums](https://forums.aws.amazon.com/), or the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
    
 
-  In addition to a user name and password, you can also generate [access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for each user\. You can use these keys when you access AWS services programmatically, either through [one of the several SDKs](https://aws.amazon.com/tools/) or by using the [AWS Command Line Interface \(AWS CLI\)](https://aws.amazon.com/cli/)\. The SDK and CLI tools use the access keys to cryptographically sign your request\. If you don’t use the AWS tools, you must sign the request yourself\. AWS CodeDeploy supports *Signature Version 4*, a protocol for authenticating inbound API requests\. For more information about authenticating requests, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *AWS General Reference*\.
+  In addition to a user name and password, you can also generate [access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for each user\. You can use these keys when you access AWS services programmatically, either through [one of the several SDKs](https://aws.amazon.com/tools/) or by using the [AWS Command Line Interface \(AWS CLI\)](https://aws.amazon.com/cli/)\. The SDK and CLI tools use the access keys to cryptographically sign your request\. If you don’t use the AWS tools, you must sign the request yourself\. CodeDeploy supports *Signature Version 4*, a protocol for authenticating inbound API requests\. For more information about authenticating requests, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *AWS General Reference*\.
 
    
 + **IAM role** – An [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is another IAM identity you can create in your account that has specific permissions\. It is similar to an *IAM user*, but it is not associated with a specific person\. An IAM role enables you to obtain temporary access keys that can be used to access AWS services and resources\. IAM roles with temporary credentials are useful in the following situations:
@@ -39,9 +33,9 @@ For security reasons, we recommend that you use the root credentials only to cre
 
 ## Access Control<a name="access-control"></a>
 
-You can have valid credentials to authenticate your requests, but unless you have permissions you cannot create or access AWS CodeDeploy resources\. For example, you must have permissions to create, view, or delete applications, deployments, deployment configurations, and deployment groups; to register, deregister, add tags to, or remove tags from on\-premises instances; and so on\.
+You can have valid credentials to authenticate your requests, but unless you have permissions you cannot create or access CodeDeploy resources\. For example, you must have permissions to create, view, or delete applications, deployments, deployment configurations, and deployment groups; to register, deregister, add tags to, or remove tags from on\-premises instances; and so on\.
 
-The following sections describe how to manage permissions for AWS CodeDeploy\. We recommend that you read the overview first\.
-+ [Overview of Managing Access Permissions to Your AWS CodeDeploy Resources](auth-and-access-control-iam-access-control-identity-based.md)
-+ [Using Identity\-Based Policies \(IAM Policies\) for AWS CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md)
-+ [AWS CodeDeploy Permissions Reference](auth-and-access-control-permissions-reference.md)
+The following sections describe how to manage permissions for CodeDeploy\. We recommend that you read the overview first\.
++ [Overview of Managing Access Permissions to Your CodeDeploy Resources](auth-and-access-control-iam-access-control-identity-based.md)
++ [Using Identity\-Based Policies \(IAM Policies\) for CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md)
++ [CodeDeploy Permissions Reference](auth-and-access-control-permissions-reference.md)

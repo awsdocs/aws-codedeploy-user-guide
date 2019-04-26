@@ -1,12 +1,6 @@
---------
+# Working with Application Revisions for CodeDeploy<a name="application-revisions"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Working with Application Revisions for AWS CodeDeploy<a name="application-revisions"></a>
-
-In AWS CodeDeploy, a revision contains a version of the source files AWS CodeDeploy will deploy to your instances or scripts AWS CodeDeploy will run on your instances\. 
+In CodeDeploy, a revision contains a version of the source files CodeDeploy will deploy to your instances or scripts CodeDeploy will run on your instances\. 
 
 You plan the revision, add an AppSpec file to the revision, and then push the revision to Amazon S3 or GitHub\. After you push the revision, you can deploy it\.
 

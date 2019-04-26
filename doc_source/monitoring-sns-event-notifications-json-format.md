@@ -1,17 +1,11 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# JSON Data Formats for AWS CodeDeploy Triggers<a name="monitoring-sns-event-notifications-json-format"></a>
+# JSON Data Formats for CodeDeploy Triggers<a name="monitoring-sns-event-notifications-json-format"></a>
 
 You can use the JSON output that is created when a trigger for a deployment or instance is activated in a custom notification workflow, such as sending messages to Amazon SQS queues or invoking a function in AWS Lambda\. 
 
 **Note**  
 This guide does not address how to configure notifications using JSON\. For information about using Amazon SNS to send messages to Amazon SQS queues, see [Sending Amazon SNS Messages to Amazon SQS Queues](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.html)\. For information about using Amazon SNS to invoke a Lambda function, see [Invoking Lambda Functions Using Amazon SNS Notifications](https://docs.aws.amazon.com/sns/latest/dg/sns-lambda.html)\.
 
-The following examples show the structure of the JSON output available with AWS CodeDeploy triggers\.
+The following examples show the structure of the JSON output available with CodeDeploy triggers\.
 
 **Sample JSON Output for Instance\-Based Triggers**
 

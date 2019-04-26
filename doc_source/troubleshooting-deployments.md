@@ -1,9 +1,3 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Troubleshoot EC2/On\-Premises Deployment Issues<a name="troubleshooting-deployments"></a>
 
 **Topics**
@@ -14,17 +8,18 @@
 + [Troubleshooting a failed DownloadBundle deployment lifecycle event with "UnknownError: not opened for reading"](#troubleshooting-deployments-downloadbundle)
 + [Windows PowerShell scripts fail to use the 64\-bit version of Windows PowerShell by default](#troubleshooting-deployments-powershell)
 + [Long\-running processes can cause deployments to fail](#troubleshooting-long-running-processes)
++ [CodeDeploy Plugin CommandPoller Missing Credentials Error](#troubleshooting-agent-commandpoller-error)
 
 **Note**  
-The causes of many deployment failures can be identified by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View AWS CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
+The causes of many deployment failures can be identified by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
 ## Deployment fails with the message “Validation of PKCS7 signed message failed”<a name="troubleshooting-deployments-agent-SHA-256"></a>
 
-This error message indicates the instance is running a version of the AWS CodeDeploy agent that supports only the SHA\-1 hash algorithm\. Support for the SHA\-2 hash algorithm was introduced in version 1\.0\.1\.854 of the AWS CodeDeploy agent, released in November 2015\. Effective October 17, 2016, deployments will fail if a version of the AWS CodeDeploy agent earlier than 1\.0\.1\.854 is installed\. For more information, see [AWS to Switch to SHA256 Hash Algorithm for SSL Certificates](https://aws.amazon.com/security/security-bulletins/aws-to-switch-to-sha256-hash-algorithm-for-ssl-certificates/), [NOTICE: Retiring AWS CodeDeploy host agents older than version 1\.0\.1\.85](https://forums.aws.amazon.com/thread.jspa?threadID=223319), and [Update the AWS CodeDeploy Agent](codedeploy-agent-operations-update.md)\.
+This error message indicates the instance is running a version of the CodeDeploy agent that supports only the SHA\-1 hash algorithm\. Support for the SHA\-2 hash algorithm was introduced in version 1\.0\.1\.854 of the CodeDeploy agent, released in November 2015\. Effective October 17, 2016, deployments will fail if a version of the CodeDeploy agent earlier than 1\.0\.1\.854 is installed\. For more information, see [AWS to Switch to SHA256 Hash Algorithm for SSL Certificates](https://aws.amazon.com/security/security-bulletins/aws-to-switch-to-sha256-hash-algorithm-for-ssl-certificates/), [NOTICE: Retiring CodeDeploy host agents older than version 1\.0\.1\.85](https://forums.aws.amazon.com/thread.jspa?threadID=223319), and [Update the CodeDeploy Agent](codedeploy-agent-operations-update.md)\.
 
 ## Deployment or redeployment of the same files to the same instance locations fail with the error "The deployment failed because a specified file already exists at this location"<a name="troubleshooting-same-files-different-app-name"></a>
 
-When AWS CodeDeploy tries to deploy a file to an instance but a file with the same name already exists in the specified target location, the deployment to that instance may fail\. You may receive the error message "The deployment failed because a specified file already exists at this location: *location\-name*\." This is because, during each deployment, AWS CodeDeploy first deletes all files from the previous deployment, which are listed in a cleanup log file\. If there are files in the target installation folders that aren’t listed in this cleanup file, the AWS CodeDeploy agent by default interprets this as an error and fails the deployment\.
+When CodeDeploy tries to deploy a file to an instance but a file with the same name already exists in the specified target location, the deployment to that instance may fail\. You may receive the error message "The deployment failed because a specified file already exists at this location: *location\-name*\." This is because, during each deployment, CodeDeploy first deletes all files from the previous deployment, which are listed in a cleanup log file\. If there are files in the target installation folders that aren’t listed in this cleanup file, the CodeDeploy agent by default interprets this as an error and fails the deployment\.
 
 **Note**  
 On Amazon Linux, RHEL, and Ubuntu Server instances, the cleanup file is located in `/opt/codedeploy-agent/deployment-root/deployment-instructions/`\. On Windows Server instances, the location is `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions\`\.
@@ -33,29 +28,29 @@ The easiest way to avoid this error is to specify an option other than the defau
 
 The overwrite option is useful when, for example, you manually placed a file on an instance after the last deployment, but then added a file of the same name to the next application revision\.
 
-You might choose the retain option for files you place on the instance that you want to be part of the next deployment without having to add them to the application revision package\. The retain option is also useful if your application files are already in your production environment and you want to deploy using AWS CodeDeploy for the first time\. For more information, see [Create an EC2/On\-Premises Compute Platform Deployment \(Console\)](deployments-create-console.md) and [Rollback Behavior with Existing Content](deployments-rollback-and-redeploy.md#deployments-rollback-and-redeploy-content-options)\.
+You might choose the retain option for files you place on the instance that you want to be part of the next deployment without having to add them to the application revision package\. The retain option is also useful if your application files are already in your production environment and you want to deploy using CodeDeploy for the first time\. For more information, see [Create an EC2/On\-Premises Compute Platform Deployment \(Console\)](deployments-create-console.md) and [Rollback Behavior with Existing Content](deployments-rollback-and-redeploy.md#deployments-rollback-and-redeploy-content-options)\.
 
 ### Troubleshooting "The deployment failed because a specified file already exists at this location" deployment errors<a name="troubleshooting-same-files-different-app-name-failed-deployment"></a>
 
-If you choose not to specify an option to overwrite or retain content that AWS CodeDeploy detects in your target deployment locations \(or if you do not specify any deployment option for handling existing content in a programmatic command\), you can choose to troubleshoot the error\.
+If you choose not to specify an option to overwrite or retain content that CodeDeploy detects in your target deployment locations \(or if you do not specify any deployment option for handling existing content in a programmatic command\), you can choose to troubleshoot the error\.
 
 The following information applies only if you choose not to retain or overwrite the content\.
 
-If you try to redeploy files with the same names and locations, the redeployment will have a better chance of succeeding if you specify the application name and the deployment group with the same underlying deployment group ID you used before\. AWS CodeDeploy uses the underlying deployment group ID to identify files to remove before a redeployment\. 
+If you try to redeploy files with the same names and locations, the redeployment will have a better chance of succeeding if you specify the application name and the deployment group with the same underlying deployment group ID you used before\. CodeDeploy uses the underlying deployment group ID to identify files to remove before a redeployment\. 
 
 Deploying new files or redeploying the same files to the same locations on instances can fail for these reasons:
 + You specified a different application name for a redeployment of the same revision to the same instances\. The redeployment will fail because even if the deployment group name is the same, the use of a different application name means a different underlying deployment group ID will be used\.
-+ You deleted and re\-created a deployment group for an application and then tried to redeploy the same revision to the deployment group\. The redeployment will fail because even if the deployment group name is the same, AWS CodeDeploy will reference a different underlying deployment group ID\.
-+ You deleted an application and deployment group in AWS CodeDeploy, then created a new application and deployment group with the same names as the ones you deleted\. After that, you tried to redeploy a revision that had been deployed to the previous deployment group to the new one with the same name\. The redeployment will fail because even though the application and deployment group names are the same, AWS CodeDeploy still references the ID of the deployment group you deleted\.
-+ You deployed a revision to a deployment group and then deployed the same revision to another deployment group to the same instances\. The second deployment will fail because AWS CodeDeploy will reference a different underlying deployment group ID\.
-+ You deployed a revision to one deployment group and then deployed another revision to another deployment group to the same instances\. There is at least one file with the same name and in the same location that the second deployment group tries to deploy\. The second deployment will fail because AWS CodeDeploy will not remove the existing file before the second deployment starts\. Both deployments will reference different deployment group IDs\.
-+ You deployed a revision in AWS CodeDeploy, but there is at least one file with the same name and in the same location\. The deployment will fail because, by default, AWS CodeDeploy will not remove the existing file before the deployment starts\. 
++ You deleted and re\-created a deployment group for an application and then tried to redeploy the same revision to the deployment group\. The redeployment will fail because even if the deployment group name is the same, CodeDeploy will reference a different underlying deployment group ID\.
++ You deleted an application and deployment group in CodeDeploy, then created a new application and deployment group with the same names as the ones you deleted\. After that, you tried to redeploy a revision that had been deployed to the previous deployment group to the new one with the same name\. The redeployment will fail because even though the application and deployment group names are the same, CodeDeploy still references the ID of the deployment group you deleted\.
++ You deployed a revision to a deployment group and then deployed the same revision to another deployment group to the same instances\. The second deployment will fail because CodeDeploy will reference a different underlying deployment group ID\.
++ You deployed a revision to one deployment group and then deployed another revision to another deployment group to the same instances\. There is at least one file with the same name and in the same location that the second deployment group tries to deploy\. The second deployment will fail because CodeDeploy will not remove the existing file before the second deployment starts\. Both deployments will reference different deployment group IDs\.
++ You deployed a revision in CodeDeploy, but there is at least one file with the same name and in the same location\. The deployment will fail because, by default, CodeDeploy will not remove the existing file before the deployment starts\. 
 
 To address these situations, do one of the following:
 + Remove the files from the locations and instances to which they were previously deployed, and then try the deployment again\. 
 + In your revision's AppSpec file, in either the **ApplicationStop** or **BeforeInstall** deployment lifecycle events, specify a custom script to delete files in any locations that match the files your revision is about to install\.
 + Deploy or redeploy the files to locations or instances that were not part of previous deployments\.
-+ Before you delete an application or a deployment group, deploy a revision that contains an AppSpec file that specifies no files to copy to the instances\. For the deployment, specify the application name and deployment group name that use the same underlying application and deployment group IDs as those you are about to delete\. \(You can use the [get\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command to retrieve the deployment group ID\.\) AWS CodeDeploy will use the underlying deployment group ID and AppSpec file to remove all of the files it installed in the previous successful deployment\. 
++ Before you delete an application or a deployment group, deploy a revision that contains an AppSpec file that specifies no files to copy to the instances\. For the deployment, specify the application name and deployment group name that use the same underlying application and deployment group IDs as those you are about to delete\. \(You can use the [get\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command to retrieve the deployment group ID\.\) CodeDeploy will use the underlying deployment group ID and AppSpec file to remove all of the files it installed in the previous successful deployment\. 
 
 ## Troubleshooting a failed AllowTraffic lifecycle event with no error reported in the deployment logs<a name="troubleshooting-deployments-allowtraffic-no-logs"></a>
 
@@ -73,10 +68,10 @@ For Network Load Balancers, see [Health Checks for Your Target Groups](https://d
 
 ## Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events<a name="troubleshooting-deployments-lifecycle-event-failures"></a>
 
-During a deployment, the AWS CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the *previous* successful deployment\. \(All other scripts are run from the AppSpec file in the current deployment\.\) If one of these scripts contains an error and does not run successfully, the deployment can fail\. 
+During a deployment, the CodeDeploy agent runs the scripts specified for ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic in the AppSpec file from the *previous* successful deployment\. \(All other scripts are run from the AppSpec file in the current deployment\.\) If one of these scripts contains an error and does not run successfully, the deployment can fail\. 
 
 Possible reasons for these failures include:
-+ The AWS CodeDeploy agent finds the `deployment-group-id_last_successful_install` file in the correct location, but the location listed in the `deployment-group-id_last_successful_install` file does not exist\. 
++ The CodeDeploy agent finds the `deployment-group-id_last_successful_install` file in the correct location, but the location listed in the `deployment-group-id_last_successful_install` file does not exist\. 
 
   **On Amazon Linux, Ubuntu Server, and RHEL instances**, this file must exist in `/opt/codedeploy-agent/deployment-root/deployment-instructions`\.
 
@@ -84,10 +79,10 @@ Possible reasons for these failures include:
 + In the location listed in the `deployment-group-id_last_successful_install` file, either the AppSpec file is invalid or the scripts do not run successfully\.
 + The script contains an error that cannot be corrected, so it will never run successfully\.
 
-Use the AWS CodeDeploy console to investigate why a deployment might have failed during any of these events\. On the details page for the deployment, choose **View events**\. On the details page for the instance, in the **ApplicationStop**, **BeforeBlockTraffic**, or **AfterBlockTraffic** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. 
+Use the CodeDeploy console to investigate why a deployment might have failed during any of these events\. On the details page for the deployment, choose **View events**\. On the details page for the instance, in the **ApplicationStop**, **BeforeBlockTraffic**, or **AfterBlockTraffic** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. 
 
 If the cause of the failure is a script from the last successful deployment that will never run successfully, create a new deployment and specify that the **ApplicationStop**, **BeforeBlockTraffic**, and **AfterBlockTraffic** failures should be ignored\. You can do this in two ways:
-+ Use the AWS CodeDeploy console to create a deployment\. On the **Create deployment** page, under **ApplicationStop lifecycle event failure**, choose **Don't fail the deployment to an instance if this lifecycle event on the instance fails**\.
++ Use the CodeDeploy console to create a deployment\. On the **Create deployment** page, under **ApplicationStop lifecycle event failure**, choose **Don't fail the deployment to an instance if this lifecycle event on the instance fails**\.
 + Use the AWS CLI to call the `[create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html)` command and include the `--ignore-application-stop-failures` option\. 
 
 When you deploy the application revision again, the deployment will continue even if any of these three lifecycle events fail\. If the new revision includes fixed scripts for those lifecycle events, future deployments can succeed without applying this fix\.
@@ -96,7 +91,7 @@ When you deploy the application revision again, the deployment will continue eve
 
 If you are trying to deploy an application revision from Amazon S3, and the deployment fails during the **DownloadBundle** deployment lifecycle event with the "UnknownError: not opened for reading" error:
 + There was internal Amazon S3 service error\. Deploy the application revision again\.
-+ The IAM instance profile on your Amazon EC2 instance does not have permissions to access the application revision in Amazon S3\. For information about Amazon S3 bucket policies, see [Push a Revision for AWS CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md) and [Deployment Prerequisites](deployments-create-prerequisites.md)\.
++ The IAM instance profile on your Amazon EC2 instance does not have permissions to access the application revision in Amazon S3\. For information about Amazon S3 bucket policies, see [Push a Revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)](application-revisions-push.md) and [Deployment Prerequisites](deployments-create-prerequisites.md)\.
 + The instances to which you will deploy are associated with one region \(for example, US West \(Oregon\)\), but the Amazon S3 bucket that contains the application revision is associated with another region \(for example, US East \(N\. Virginia\)\)\. Make sure the application revision is in an Amazon S3 bucket associated with the same region as the instances\.
 
 On the event details page for the deployment, in the **Download bundle** row, choose **View logs**\. Alternatively, use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. If this error occurred, there should be an error in the output with the error code "UnknownError" and the error message "not opened for reading\."
@@ -109,11 +104,11 @@ To determine the reason for this error:
 
 1. After you have examined the log files, we recommend that you disable wire logging to reduce log file size and the amount of sensitive information that may appear in the output in plain text on the instance in the future\.
 
-To learn how to find the wire logging file and enable and disable wire logging, see **:log\_aws\_wire:** in [Working with the AWS CodeDeploy Agent](codedeploy-agent.md)\.
+To learn how to find the wire logging file and enable and disable wire logging, see **:log\_aws\_wire:** in [Working with the CodeDeploy Agent](codedeploy-agent.md)\.
 
 ## Windows PowerShell scripts fail to use the 64\-bit version of Windows PowerShell by default<a name="troubleshooting-deployments-powershell"></a>
 
-If a Windows PowerShell script running as part of a deployment relies on 64\-bit functionality \(for example, because it consumes more memory than a 32\-bit application will allow or calls libraries that are offered only in a 64\-bit version\), the script may crash or otherwise not run as expected\. This is because, by default, AWS CodeDeploy uses the 32\-bit version of Windows PowerShell to run Windows PowerShell scripts that are part of an application revision\. 
+If a Windows PowerShell script running as part of a deployment relies on 64\-bit functionality \(for example, because it consumes more memory than a 32\-bit application will allow or calls libraries that are offered only in a 64\-bit version\), the script may crash or otherwise not run as expected\. This is because, by default, CodeDeploy uses the 32\-bit version of Windows PowerShell to run Windows PowerShell scripts that are part of an application revision\. 
 
 Add code like the following to the beginning of any script that must run with the 64\-bit version of Windows PowerShell:
 
@@ -155,7 +150,7 @@ Although the file path information in this code may seem counterintuitive, 32\-b
 
 ## Long\-running processes can cause deployments to fail<a name="troubleshooting-long-running-processes"></a>
 
-For deployments to Amazon Linux, Ubuntu Server, and RHEL instances, if you have a deployment script that starts a long\-running process, AWS CodeDeploy may spend a long time waiting in the deployment lifecycle event and then fail the deployment\. This is because if the process runs longer than the foreground and background processes in that event are expected to take, AWS CodeDeploy stops and fails the deployment, even if the process is still running as expected\.
+For deployments to Amazon Linux, Ubuntu Server, and RHEL instances, if you have a deployment script that starts a long\-running process, CodeDeploy may spend a long time waiting in the deployment lifecycle event and then fail the deployment\. This is because if the process runs longer than the foreground and background processes in that event are expected to take, CodeDeploy stops and fails the deployment, even if the process is still running as expected\.
 
 For example, an application revision contains two files in its root, `after-install.sh` and `sleep.sh`\. Its AppSpec file contains the following instructions:
 
@@ -185,7 +180,7 @@ The `sleep.sh` file contains the following, which suspends program execution for
 sleep 180
 ```
 
-When `after-install.sh` calls `sleep.sh`, `sleep.sh` will start and keep running for three minutes \(180 seconds\), which is two minutes \(120 seconds\) past the time AWS CodeDeploy expects `sleep.sh` \(and, by relation, `after-install.sh`\) to stop running\. After the timeout of one minute \(60 seconds\), AWS CodeDeploy stops and fails the deployment at the **AfterInstall** application lifecycle event, even though `sleep.sh` continues to run as expected\. The following error is displayed:
+When `after-install.sh` calls `sleep.sh`, `sleep.sh` will start and keep running for three minutes \(180 seconds\), which is two minutes \(120 seconds\) past the time CodeDeploy expects `sleep.sh` \(and, by relation, `after-install.sh`\) to stop running\. After the timeout of one minute \(60 seconds\), CodeDeploy stops and fails the deployment at the **AfterInstall** application lifecycle event, even though `sleep.sh` continues to run as expected\. The following error is displayed:
 
 `Script at specified location: after-install.sh failed to complete in 60 seconds`\.
 
@@ -197,9 +192,9 @@ You cannot simply add an ampersand \(`&`\) in `after-install.sh` to run `sleep.s
 /tmp/sleep.sh &
 ```
 
-Doing so can leave the deployment in a pending state for up to the default one\-hour deployment lifecycle event timeout period, after which AWS CodeDeploy stops and fails the deployment at the **AfterInstall** application lifecycle event as before\.
+Doing so can leave the deployment in a pending state for up to the default one\-hour deployment lifecycle event timeout period, after which CodeDeploy stops and fails the deployment at the **AfterInstall** application lifecycle event as before\.
 
-In `after-install.sh`, call `sleep.sh` as follows, which enables AWS CodeDeploy to continue after the process starts running:
+In `after-install.sh`, call `sleep.sh` as follows, which enables CodeDeploy to continue after the process starts running:
 
 ```
 #!/bin/bash
@@ -207,3 +202,11 @@ In `after-install.sh`, call `sleep.sh` as follows, which enables AWS CodeDeploy 
 ```
 
 In the preceding call, `sleep.sh` is the name of the process you want to start running in the background, redirecting stdout, stderr, and stdin to `/dev/null`\.
+
+## CodeDeploy Plugin CommandPoller Missing Credentials Error<a name="troubleshooting-agent-commandpoller-error"></a>
+
+ If you receive an error similar to "`InstanceAgent::Plugins::CodeDeployPlugin::CommandPoller: Missing credentials - please check if this instance was started with an IAM instance profile`" it might be caused by one of the following: 
++  The instance you are deploying to does not have an IAM instance profile associated with it\. 
++  Your IAM instance profile does not have the correct permissions configured\. 
+
+ An IAM instance profile grants the CodeDeploy Agent permission to communicate with CodeDeploy and to download your revision from Amazon S3\. For Amazon EC2 instances, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\. For on\-premises instances, see [Working with On\-Premises Instances for CodeDeploy](instances-on-premises.md)\. 

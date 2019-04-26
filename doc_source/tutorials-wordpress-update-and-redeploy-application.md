@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 5: Update and Redeploy Your WordPress Application<a name="tutorials-wordpress-update-and-redeploy-application"></a>
 
-Now that you've successfully deployed your application revision, update the WordPress code on the development machine, and then use AWS CodeDeploy to redeploy the site\. Afterward, you should see the code changes on the Amazon EC2 instance\.
+Now that you've successfully deployed your application revision, update the WordPress code on the development machine, and then use CodeDeploy to redeploy the site\. Afterward, you should see the code changes on the Amazon EC2 instance\.
 
 **Topics**
 + [Set Up the WordPress Site](#tutorials-wordpress-update-and-redeploy-application-configure-and-install)
@@ -63,11 +57,11 @@ sed -i '' 's/#fff/#768331/g' wp-content/themes/twentyfifteen/style.css
 
 ## Redeploy the Site<a name="tutorials-wordpress-update-and-redeploy-application-deploy-updates"></a>
 
-Now that you've modified the site's code, use Amazon S3 and AWS CodeDeploy to redeploy the site\.
+Now that you've modified the site's code, use Amazon S3 and CodeDeploy to redeploy the site\.
 
 Bundle and upload the changes to Amazon S3, as described in [Bundle the Application's Files into a Single Archive File and Push the Archive File](tutorials-wordpress-upload-application.md#tutorials-wordpress-upload-application-bundle-and-push-archive)\. \(As you follow those instructions, remember that you do not need to create an application\.\) Give the new revision the same key as before \(**WordPressApp\.zip**\)\. Upload it to the same Amazon S3 bucket you created earlier \(for example, **codedeploydemobucket**\)\.
 
-Use the AWS CLI, the AWS CodeDeploy console, or the AWS CodeDeploy APIs to redeploy the site\.
+Use the AWS CLI, the CodeDeploy console, or the CodeDeploy APIs to redeploy the site\.
 
 **Topics**
 + [To redeploy the site \(CLI\)](#tutorials-wordpress-update-and-redeploy-application-deploy-updates-cli)
@@ -87,13 +81,13 @@ Call the create\-deployment command to create a deployment based on the newly up
 
 You can check the status of the deployment, as described in [Monitor and Troubleshoot Your Deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor)\.
 
-After AWS CodeDeploy has redeployed the site, revisit the site in your web browser to verify the colors have been changed\. \(You might need to refresh your browser\.\) If the colors have been changed, congratulations\! You have successfully modified and redeployed your site\!
+After CodeDeploy has redeployed the site, revisit the site in your web browser to verify the colors have been changed\. \(You might need to refresh your browser\.\) If the colors have been changed, congratulations\! You have successfully modified and redeployed your site\!
 
 ### To redeploy the site \(console\)<a name="tutorials-wordpress-update-and-redeploy-application-deploy-updates-console"></a>
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -117,7 +111,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
       1.  If the **Properties** pane is not visible in the Amazon S3 console, choose the **Properties** button\. 
 
-      1.  In the **Properties** pane, copy the value of the **Link** field into the **Revision location** box in the AWS CodeDeploy console\. 
+      1.  In the **Properties** pane, copy the value of the **Link** field into the **Revision location** box in the CodeDeploy console\. 
 
    1. If a message appears saying the file type could not be detected, choose **\.zip**\. 
 
@@ -129,4 +123,4 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
    1. You can check the status of the deployment, as described in [Monitor and Troubleshoot Your Deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor)\.
 
-      After AWS CodeDeploy has redeployed the site, revisit the site in your web browser to verify the colors have been changed\. \(You might need to refresh your browser\.\) If the colors have been changed, congratulations\! You have successfully modified and redeployed your site\!
+      After CodeDeploy has redeployed the site, revisit the site in your web browser to verify the colors have been changed\. \(You might need to refresh your browser\.\) If the colors have been changed, congratulations\! You have successfully modified and redeployed your site\!

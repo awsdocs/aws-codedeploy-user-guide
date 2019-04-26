@@ -1,18 +1,12 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Monitoring Deployments with AWS CloudTrail<a name="monitoring-cloudtrail"></a>
 
-AWS CodeDeploy is integrated with CloudTrail, a service that captures API calls made by or on behalf of AWS CodeDeploy in your AWS account and delivers the log files to an Amazon S3 bucket you specify\. CloudTrail captures API calls from the AWS CodeDeploy console, from AWS CodeDeploy commands through the AWS CLI, or from the AWS CodeDeploy APIs directly\. Using the information collected by CloudTrail, you can determine which request was made to AWS CodeDeploy, the source IP address from which the request was made, who made the request, when it was made, and so on\. To learn more about CloudTrail, including how to configure and enable it, see [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
+CodeDeploy is integrated with CloudTrail, a service that captures API calls made by or on behalf of CodeDeploy in your AWS account and delivers the log files to an Amazon S3 bucket you specify\. CloudTrail captures API calls from the CodeDeploy console, from CodeDeploy commands through the AWS CLI, or from the CodeDeploy APIs directly\. Using the information collected by CloudTrail, you can determine which request was made to CodeDeploy, the source IP address from which the request was made, who made the request, when it was made, and so on\. To learn more about CloudTrail, including how to configure and enable it, see [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
-## AWS CodeDeploy Information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
+## CodeDeploy Information in CloudTrail<a name="service-name-info-in-cloudtrail"></a>
 
-When CloudTrail logging is enabled in your AWS account, API calls made to AWS CodeDeploy actions are tracked in log files\. AWS CodeDeploy records are written together with other AWS service records in a log file\. CloudTrail determines when to create and write to a new file based on a time period and file size\.
+When CloudTrail logging is enabled in your AWS account, API calls made to CodeDeploy actions are tracked in log files\. CodeDeploy records are written together with other AWS service records in a log file\. CloudTrail determines when to create and write to a new file based on a time period and file size\.
 
-All of the AWS CodeDeploy actions are logged and documented in the [AWS CodeDeploy Command Line Reference](https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html) and the [AWS CodeDeploy API Reference](https://docs.aws.amazon.com/codedeploy/latest/APIReference/)\. For example, calls to create deployments, delete applications, and register application revisions generate entries in CloudTrail log files\. 
+All of the CodeDeploy actions are logged and documented in the [AWS CodeDeploy Command Line Reference](https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html) and the [AWS CodeDeploy API Reference](https://docs.aws.amazon.com/codedeploy/latest/APIReference/)\. For example, calls to create deployments, delete applications, and register application revisions generate entries in CloudTrail log files\. 
 
 Every log entry contains information about who generated the request\. The user identity information in the log helps you determine whether the request was made with root or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. For more information, see the **userIdentity** field in the [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html)\.
 
@@ -20,13 +14,13 @@ You can store your log files in your bucket for as long as you want, but you can
 
 You can have CloudTrail publish Amazon SNS notifications when new log files are delivered\. For more information, see [Configuring Amazon SNS Notifications for CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)\.
 
-You can also aggregate AWS CodeDeploy log files from multiple AWS regions and multiple AWS accounts into a single Amazon S3 bucket\. For more information, see [Receiving CloudTrail Log Files from Multiple Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_top_level.html)\.
+You can also aggregate CodeDeploy log files from multiple AWS regions and multiple AWS accounts into a single Amazon S3 bucket\. For more information, see [Receiving CloudTrail Log Files from Multiple Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_top_level.html)\.
 
-## Understanding AWS CodeDeploy Log File Entries<a name="understanding-service-name-entries"></a>
+## Understanding CodeDeploy Log File Entries<a name="understanding-service-name-entries"></a>
 
 CloudTrail log files can contain one or more log entries where each entry is made up of multiple JSON\-formatted events\. A log entry represents a single request from any source and includes information about the requested action, any parameters, the date and time of the action, and so on\. The log entries are not guaranteed to be in any particular order\. That is, they are not an ordered stack trace of the public API calls\.
 
-The following example shows a CloudTrail log entry that demonstrates the AWS CodeDeploy create deployment group action:
+The following example shows a CloudTrail log entry that demonstrates the CodeDeploy create deployment group action:
 
 ```
 {

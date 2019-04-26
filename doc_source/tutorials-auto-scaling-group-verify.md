@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 3: Check Your Results<a name="tutorials-auto-scaling-group-verify"></a>
 
-In this step, you'll check to see that AWS CodeDeploy installed the **SimpleDemoApp** revision on the single Amazon EC2 instance in the Amazon EC2 Auto Scaling group\.
+In this step, you'll check to see that CodeDeploy installed the **SimpleDemoApp** revision on the single Amazon EC2 instance in the Amazon EC2 Auto Scaling group\.
 
 **Topics**
 + [To check the results \(CLI\)](#tutorials-auto-scaling-group-verify-cli)
@@ -38,9 +32,9 @@ Using a web browser, show the SimpleDemoApp revision deployed to that Amazon EC2
 http://ec2-01-234-567-890.compute-1.amazonaws.com
 ```
 
-If you see the congratulations page, you've successfully used AWS CodeDeploy to deploy a revision to a single Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
+If you see the congratulations page, you've successfully used CodeDeploy to deploy a revision to a single Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
 
-Next, you'll add an Amazon EC2 instance to the Amazon EC2 Auto Scaling group\. After Amazon EC2 Auto Scaling adds the Amazon EC2 instance, AWS CodeDeploy will deploy your revision to the new instance\.
+Next, you'll add an Amazon EC2 instance to the Amazon EC2 Auto Scaling group\. After Amazon EC2 Auto Scaling adds the Amazon EC2 instance, CodeDeploy will deploy your revision to the new instance\.
 
 ## To check the results \(console\)<a name="tutorials-auto-scaling-group-verify-console"></a>
 
@@ -60,6 +54,6 @@ Using a web browser, show the SimpleDemoApp revision deployed to that Amazon EC2
 http://ec2-01-234-567-890.compute-1.amazonaws.com
 ```
 
-If you see the congratulations page, you've successfully used AWS CodeDeploy to deploy a revision to a single Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
+If you see the congratulations page, you've successfully used CodeDeploy to deploy a revision to a single Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
 
-Next, you add an Amazon EC2 instance to the Amazon EC2 Auto Scaling group\. After Amazon EC2 Auto Scaling adds the Amazon EC2 instance, AWS CodeDeploy will deploy your revision to the new Amazon EC2 instance\.
+Next, you add an Amazon EC2 instance to the Amazon EC2 Auto Scaling group\. After Amazon EC2 Auto Scaling adds the Amazon EC2 instance, CodeDeploy will deploy your revision to the new Amazon EC2 instance\.

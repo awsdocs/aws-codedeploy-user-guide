@@ -1,20 +1,14 @@
---------
+# Working with Deployment Configurations in CodeDeploy<a name="deployment-configurations"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Working with Deployment Configurations in AWS CodeDeploy<a name="deployment-configurations"></a>
-
-A deployment configuration is a set of rules and success and failure conditions used by AWS CodeDeploy during a deployment\. These rules and conditions are different, depending on whether you deploy to an EC2/On\-Premises compute platform or an AWS Lambda compute platform\. 
+A deployment configuration is a set of rules and success and failure conditions used by CodeDeploy during a deployment\. These rules and conditions are different, depending on whether you deploy to an EC2/On\-Premises compute platform or an AWS Lambda compute platform\. 
 
 ## Deployment Configurations on an EC2/On\-Premises Compute Platform<a name="deployment-configuration-server"></a>
 
 When you deploy to an EC2/On\-Premises compute platform, the deployment configuration specifies, through the use of a minimum healthy hosts value, the number or percentage of instances that must remain available at any time during a deployment\.
 
-You can use one of the three predefined deployment configurations provided by AWS or create a custom deployment configuration\. If you don't specify a deployment configuration, AWS CodeDeploy uses the CodeDeployDefault\.OneAtATime deployment configuration\.
+You can use one of the three predefined deployment configurations provided by AWS or create a custom deployment configuration\. If you don't specify a deployment configuration, CodeDeploy uses the CodeDeployDefault\.OneAtATime deployment configuration\.
 
-For more information about how AWS CodeDeploy monitors and evaluates instance health during a deployment, see [AWS CodeDeploy Instance Health](instances-health.md)\. To view a list of deployment configurations already registered to your AWS account, see [View Deployment Configuration Details with AWS CodeDeploy](deployment-configurations-view-details.md)\. 
+For more information about how CodeDeploy monitors and evaluates instance health during a deployment, see [CodeDeploy Instance Health](instances-health.md)\. To view a list of deployment configurations already registered to your AWS account, see [View Deployment Configuration Details with CodeDeploy](deployment-configurations-view-details.md)\. 
 
 ### Predefined Deployment Configurations for an EC2/On\-Premises Compute Platform<a name="deployment-configurations-predefined"></a>
 
@@ -38,7 +32,7 @@ The following table lists the predefined deployment configurations\.
 
 | Deployment Configuration | Description | 
 | --- | --- | 
-|  **CodeDeployDefault\.AllAtOnce**  |  Shifts all traffic to the updated Amazon ECS container at once\.  | 
+|  **CodeDeployDefault\.ECSAllAtOnce**  |  Shifts all traffic to the updated Amazon ECS container at once\.  | 
 
 ## Deployment Configurations on an AWS Lambda Compute Platform<a name="deployment-configuration-lambda"></a>
 

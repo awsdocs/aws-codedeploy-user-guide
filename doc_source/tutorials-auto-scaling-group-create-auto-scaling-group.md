@@ -1,12 +1,6 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 1: Create and Configure the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-create-auto-scaling-group"></a>
 
-In this step, you'll create an Amazon EC2 Auto Scaling group that contains a single Amazon Linux, RHEL, or Windows Server Amazon EC2 instance\. In a later step, you will instruct Amazon EC2 Auto Scaling to add one more Amazon EC2 instance, and AWS CodeDeploy will deploy your revision to it\.
+In this step, you'll create an Amazon EC2 Auto Scaling group that contains a single Amazon Linux, RHEL, or Windows Server Amazon EC2 instance\. In a later step, you will instruct Amazon EC2 Auto Scaling to add one more Amazon EC2 instance, and CodeDeploy will deploy your revision to it\.
 
 **Topics**
 + [To create and configure the Amazon EC2 Auto Scaling group \(CLI\)](#tutorials-auto-scaling-group-create-auto-scaling-group-cli)
@@ -16,9 +10,9 @@ In this step, you'll create an Amazon EC2 Auto Scaling group that contains a sin
 
 1. Call the create\-launch\-configuration command to create an Amazon EC2 Auto Scaling launch configuration\.
 
-   Before you call this command, you need the ID of an AMI that works for this tutorial, represented by the placeholder *image\-id*\. You also need the name of an Amazon EC2 instance key pair to enable access to the Amazon EC2 instance, represented by the placeholder *key\-name*\. Finally, you need instructions to install the latest version of the AWS CodeDeploy agent\.
+   Before you call this command, you need the ID of an AMI that works for this tutorial, represented by the placeholder *image\-id*\. You also need the name of an Amazon EC2 instance key pair to enable access to the Amazon EC2 instance, represented by the placeholder *key\-name*\. Finally, you need instructions to install the latest version of the CodeDeploy agent\.
 
-   AWS CodeDeployTo get the ID of an AMI that works with this tutorial:
+   To get the ID of an AMI that works with this tutorial:
 
    1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
@@ -26,13 +20,13 @@ In this step, you'll create an Amazon EC2 Auto Scaling group that contains a sin
 
    1. On the **Quick Start** tab of the **Choose an Amazon Machine Image** page, note the ID of the AMI next to **Amazon Linux AMI**, **Red Hat Enterprise Linux 7\.1**, **Ubuntu Server 14\.04 LTS**, or **Microsoft Windows Server 2012 R2**\. 
 **Note**  
-If you have a custom version of an AMI that is compatible with AWS CodeDeploy, choose it here instead of browsing through the **Quick Start** tab\. For information about using a custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling, see [Using a Custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
+If you have a custom version of an AMI that is compatible with CodeDeploy, choose it here instead of browsing through the **Quick Start** tab\. For information about using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling, see [Using a Custom AMI with CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
 
    For the Amazon EC2 instance key pair, use the name of your Amazon EC2 instance key pair\.
 
-   To install the latest version of the AWS CodeDeploy agent, on your development machine, create a file named `instance-setup.sh` \(for an Amazon Linux, Ubuntu Server or RHEL Amazon EC2 instance\) or `instance-setup.txt` \(for a Windows Server Amazon EC2 instance\) with the following contents\.
+   To install the latest version of the CodeDeploy agent, on your development machine, create a file named `instance-setup.sh` \(for an Amazon Linux, Ubuntu Server or RHEL Amazon EC2 instance\) or `instance-setup.txt` \(for a Windows Server Amazon EC2 instance\) with the following contents\.
 **Note**  
-If you have a custom version of an AMI that is compatible with AWS CodeDeploy, you don't need to create the `instance-setup.sh` or `instance-setup.txt` file\. 
+If you have a custom version of an AMI that is compatible with CodeDeploy, you don't need to create the `instance-setup.sh` or `instance-setup.txt` file\. 
 
    **On Amazon Linux and RHEL Amazon EC2 instances**
 
@@ -46,7 +40,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, y
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **On Ubuntu Server Amazon EC2 instances**
 
@@ -61,7 +55,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, y
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **On Windows Server Amazon EC2 instances**
 
@@ -73,7 +67,7 @@ If you have a custom version of an AMI that is compatible with AWS CodeDeploy, y
    </powershell>
    ```
 
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    Call the create\-launch\-configuration command\.
 
@@ -99,9 +93,9 @@ Be sure to include `file://` before the file name\. It is required in this comma
    aws autoscaling create-launch-configuration --launch-configuration-name CodeDeployDemo-AS-Configuration --image-id image-id --key-name key-name --iam-instance-profile CodeDeployDemo-EC2-Instance-Profile --instance-type t1.micro --user-data file://path/to/instance-setup.txt
    ```
 **Note**  
-If you have a custom version of an AMI that is compatible with AWS CodeDeploy, omit the \-\-user\-data option in the preceding command\. 
+If you have a custom version of an AMI that is compatible with CodeDeploy, omit the \-\-user\-data option in the preceding command\. 
 
-   These commands create an Amazon EC2 Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**, based on the specified image ID, applying the specified IAM instance profile and Amazon EC2 instance key pair, and running the command to install the latest version of the AWS CodeDeploy agent\. This launch configuration is based on the t1\.micro Amazon EC2 instance type\.
+   These commands create an Amazon EC2 Auto Scaling launch configuration named **CodeDeployDemo\-AS\-Configuration**, based on the specified image ID, applying the specified IAM instance profile and Amazon EC2 instance key pair, and running the command to install the latest version of the CodeDeploy agent\. This launch configuration is based on the t1\.micro Amazon EC2 instance type\.
 
 1.  Call the create\-auto\-scaling\-group command to create an Amazon EC2 Auto Scaling group\. You will need the name of one of the Availability Zones in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*, represented by the placeholder *availability\-zone*\.
 **Note**  
@@ -149,7 +143,7 @@ For a list of region name identifiers, see [Resource Kit Bucket Names by Region]
 
 1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
-1. In the global navigation bar, make sure one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Amazon EC2 Auto Scaling resources are tied to the region you specify, and AWS CodeDeploy is supported in select regions only\.
+1. In the global navigation bar, make sure one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Amazon EC2 Auto Scaling resources are tied to the region you specify, and CodeDeploy is supported in select regions only\.
 
 1. In the navigation bar, under **Auto Scaling**, choose **Launch Configurations**\.
 
@@ -157,7 +151,7 @@ For a list of region name identifiers, see [Resource Kit Bucket Names by Region]
 
 1. On the **Quick Start** tab of the **Choose AMI** page, next to **Amazon Linux AMI**, **Red Hat Enterprise Linux 7\.2**, **Ubuntu Server 14\.04 LTS**, or **Microsoft Windows Server 2012 R2 Base**, choose **Select**\.
 **Note**  
-If you have a custom version of an AMI that already has the AWS CodeDeploy agent installed, choose it here instead\. For information about using a custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling, see [Using a Custom AMI with AWS CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
+If you have a custom version of an AMI that already has the CodeDeploy agent installed, choose it here instead\. For information about using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling, see [Using a Custom AMI with CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
 
 1. On the **Choose Instance Type** page, leave the defaults, and choose **Next: Configure details**\.
 
@@ -165,7 +159,7 @@ If you have a custom version of an AMI that already has the AWS CodeDeploy agent
 
    Expand **Advanced Details**, and in **User data**, type the following\.
 **Note**  
-If you are using a custom version of an AMI that already has the AWS CodeDeploy agent installed, skip this step\. 
+If you are using a custom version of an AMI that already has the CodeDeploy agent installed, skip this step\. 
 
    **For Amazon Linux and RHEL Amazon EC2 instances**
 
@@ -179,7 +173,7 @@ If you are using a custom version of an AMI that already has the AWS CodeDeploy 
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Ubuntu Server Amazon EC2 instances**
 
@@ -194,7 +188,7 @@ If you are using a custom version of an AMI that already has the AWS CodeDeploy 
    ./install auto
    ```
 
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances**
 
@@ -206,7 +200,7 @@ If you are using a custom version of an AMI that already has the AWS CodeDeploy 
    </powershell>
    ```
 
-   *bucket\-name* is the name of the Amazon S3 sds\-s3\-latest\-bucket\-name bucket that contains the AWS CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    Leave the rest of the defaults, and choose **Skip to review**\.
 
@@ -218,11 +212,21 @@ In a production environment, we recommend that you restrict access to Amazon EC2
 
 1. Choose **Create an Auto Scaling group using this launch configuration**\.
 
-1. On the **Configure Auto Scaling group details** page, in **Group name**, type **CodeDeployDemo\-AS\-Group**\. In **Group size**, leave the default\. In the **Availability Zone\(s\)** box, choose an Availability Zone in one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\. Leave the rest of the defaults, and choose **Next: Configure scaling policies**\.
-**Note**  
-If **Launch into EC2\-Classic** does not appear in the **Network** list, and you are not able to select a default virtual private cloud \(VPC\), choose or create a VPC and subnet\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
+1. On the **Configure Auto Scaling group details** page, do the following:
 
-1. On the **2\. Configure scaling policies** page, leave **Keep this group at its initial size** selected, and choose **Next: Configure Notifications**\.
+   1. For **Group name**, type **CodeDeployDemo\-AS\-Group**\.
+
+   1.  Keep **Group size** set to the default value of 1 for this tutorial\. 
+
+   1.  In **Network**, choose **Launch into EC2\-Classic**\. If it does not appear and you are not able to select a default virtual private cloud \(VPC\), choose or create a VPC and subnet\. For more information, see [Your VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\. 
+
+   1.  For **Subnet**, choose a subnet for the VPC\. 
+**Note**  
+ You can choose the Availability Zone for your instance by choosing its corresponding default subnet\. 
+
+   1. Choose **Next: Configure scaling policies**\.
+
+1. On the **Configure scaling policies** page, leave **Keep this group at its initial size** selected, and choose **Next: Configure Notifications**\.
 
 1. Skip the step for configuring notifications, and choose **Review**\.
 

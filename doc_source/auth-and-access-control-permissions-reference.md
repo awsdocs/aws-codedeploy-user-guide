@@ -1,20 +1,14 @@
---------
+# CodeDeploy Permissions Reference<a name="auth-and-access-control-permissions-reference"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The table lists each CodeDeploy API operation, the corresponding actions for which you can grant permissions to perform the action, and the format of the resource ARN to use for granting permissions\. You specify the actions in the policy's `Action` field, and you specify an ARN, with or without a wildcard character \(\*\), as the resource value in the policy's `Resource` field\.
 
---------
-
-# AWS CodeDeploy Permissions Reference<a name="auth-and-access-control-permissions-reference"></a>
-
-When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The table lists each AWS CodeDeploy API operation, the corresponding actions for which you can grant permissions to perform the action, and the format of the resource ARN to use for granting permissions\. You specify the actions in the policy's `Action` field, and you specify an ARN, with or without a wildcard character \(\*\), as the resource value in the policy's `Resource` field\.
-
-You can use AWS\-wide condition keys in your AWS CodeDeploy policies to express conditions\. For a complete list of AWS\-wide keys, see [Available Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
+You can use AWS\-wide condition keys in your CodeDeploy policies to express conditions\. For a complete list of AWS\-wide keys, see [Available Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
 
 To specify an action, use the `codedeploy:` prefix followed by the API operation name \(for example, `codedeploy:GetApplication` and `codedeploy:CreateApplication`\. To specify multiple actions in a single statement, separate them with commas \(for example, `"Action": ["codedeploy:action1", "codedeploy:action2"]`\)\.
 
 **Using Wildcard Characters**
 
-You can use a wildcard character \(\*\) in your ARN to specify multiple actions or resources\. For example, `codedeploy:*` specifies all AWS CodeDeploy actions and `codedeploy:Get*` specifies all AWS CodeDeploy actions that begin with the word `Get`\. The following example grants access to all deployment groups with names that begin with `West` and are associated with applications that have names beginning with `Test`\. 
+You can use a wildcard character \(\*\) in your ARN to specify multiple actions or resources\. For example, `codedeploy:*` specifies all CodeDeploy actions and `codedeploy:Get*` specifies all AWS CodeDeploy actions that begin with the word `Get`\. The following example grants access to all deployment groups with names that begin with `West` and are associated with applications that have names beginning with `Test`\. 
 
 ```
 arn:aws:codedeploy:us-west-2:80398EXAMPLE:deploymentgroup:Test*/West*
@@ -28,17 +22,17 @@ You can use wildcards with the following resources listed in the table:
 
 Wildcards can't be used with *region* or *account\-id*\. For more information about wildcards, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) in *IAM User Guide*\. 
 
-The actions you can specify in an IAM policy for use with AWS CodeDeploy are listed below\. 
+The actions you can specify in an IAM policy for use with CodeDeploy are listed below\. 
 
 **Note**  
- In the ARN for each action a colon \(:\) follows the resource\. You can also follow the resource with a forward slash \(/\)\. For more information, see [AWS CodeDeploy Example ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-codedeploy)\. 
+ In the ARN for each action a colon \(:\) follows the resource\. You can also follow the resource with a forward slash \(/\)\. For more information, see [CodeDeploy Example ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-codedeploy)\. 
 
 If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, you can open the table in a new window\. To close the window, choose the close button \(**X**\) in the lower\-right corner\.
 
 
-**AWS CodeDeploy API Operations and Required Permissions for Actions**  
+**CodeDeploy API Operations and Required Permissions for Actions**  
 
-| AWS CodeDeploy API Operations | Required Permissions \(API Actions\) | Resources | 
+| CodeDeploy API Operations | Required Permissions \(API Actions\) | Resources | 
 | --- | --- | --- | 
 |  [AddTagsToOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.html)  |  `codedeploy:AddTagsToOnPremisesInstances` Required to add tags to one or more on\-premises instances\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
 |  [BatchGetApplicationRevisions](https://docs.aws.amazon.com/codedeploy/latest/APIReference/BatchGetApplicationRevisions.html)  |  `codedeploy:BatchGetApplicationRevisions` Required to get information about multiple application revisions associated with the IAM user\.  |  arn:aws:codedeploy:*region*:*account\-id*:application:*application\-name*  | 
@@ -73,7 +67,7 @@ If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, 
 |  [ListOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html)  |  `codedeploy:ListOnPremisesInstances` Required to get a list of one or more on\-premises instance names\.  |  arn:aws:codedeploy:*region*:*account\-id*:\*  | 
 |  PutLifecycleEventHookExecutionStatus  |  `codedeploy:PutLifecycleEventHookExecutionStatus` Required to provide notification of the status of the execution of a lifecycle hook event\.  |  arn:aws:codedeploy:*region*:*account\-id*:deploymentgroup:*application\-name*/*deployment\-group\-name*  | 
 |  [RegisterApplicationRevision](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterApplicationRevision.html)  |  `codedeploy:RegisterApplicationRevision` Required to register information about an application revision for an application associated with the IAM user\.  |  arn:aws:codedeploy:*region*:*account\-id*:application:*application\-name*  | 
-|  [RegisterOnPremisesInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterOnPremisesInstance.html)  |  `codedeploy:RegisterOnPremisesInstance` Required to register an on\-premises instance with AWS CodeDeploy\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
+|  [RegisterOnPremisesInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterOnPremisesInstance.html)  |  `codedeploy:RegisterOnPremisesInstance` Required to register an on\-premises instance with CodeDeploy\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
 |  [RemoveTagsFromOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RemoveTagsFromOnPremisesInstances.html)  |  `codedeploy:RemoveTagsFromOnPremisesInstances` Required to remove tags from one or more on\-premises instances\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
 |  [SkipWaitTimeForInstanceTermination](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_SkipWaitTimeForInstanceTermination.html)  |  `codedeploy:SkipWaitTimeForInstanceTermination` Required in a blue/green deployment to override a specified wait time and start terminating instances in the original environment immediately\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
 |  [StopDeployment](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_StopDeployment.html)  |  `codedeploy:StopDeployment` Required to stop an in\-progress deployment to a deployment group for an application associated with the IAM user\.  |  arn:aws:codedeploy:*region*:*account\-id*:deploymentgroup:*application\-name*/*deployment\-group\-name*  | 

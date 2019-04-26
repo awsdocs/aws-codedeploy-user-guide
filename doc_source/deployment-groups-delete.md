@@ -1,15 +1,9 @@
---------
+# Delete a Deployment Group with CodeDeploy<a name="deployment-groups-delete"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Delete a Deployment Group with AWS CodeDeploy<a name="deployment-groups-delete"></a>
-
-You can use the AWS CodeDeploy console, the AWS CLI, or the AWS CodeDeploy APIs to delete deployment groups associated with your AWS account\.
+You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to delete deployment groups associated with your AWS account\.
 
 **Warning**  
-If you delete a deployment group, all details associated with that deployment group will also be deleted from AWS CodeDeploy\. The instances used in the deployment group will remain unchanged\. This action cannot be undone\.
+If you delete a deployment group, all details associated with that deployment group will also be deleted from CodeDeploy\. The instances used in the deployment group will remain unchanged\. This action cannot be undone\.
 
 **Topics**
 + [Delete a Deployment Group \(Console\)](#deployment-groups-delete-console)
@@ -17,11 +11,11 @@ If you delete a deployment group, all details associated with that deployment gr
 
 ## Delete a Deployment Group \(Console\)<a name="deployment-groups-delete-console"></a>
 
-To use the AWS CodeDeploy console to delete a deployment group:
+To use the CodeDeploy console to delete a deployment group:
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 

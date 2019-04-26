@@ -1,15 +1,9 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances<a name="getting-started-create-iam-instance-profile"></a>
 
 **Note**  
  If you are using the Amazon ECS or AWS Lambda compute platform , skip this step\. Amazon ECS deployments deploy an Amazon ECS service, and AWS Lambda deployments deploy a serverless Lambda function version, so an instance profile for Amazon EC2 instances is not required\.
 
-Your Amazon EC2 instances need permission to access the Amazon S3 buckets or GitHub repositories where the applications are stored\. To launch Amazon EC2 instances that are compatible with AWS CodeDeploy, you must create an additional IAM role, an *instance profile*\. These instructions show you how to create an IAM instance profile to attach to your Amazon EC2 instances\. This role gives AWS CodeDeploy permission to access the Amazon S3 buckets or GitHub repositories where your applications are stored\.
+Your Amazon EC2 instances need permission to access the Amazon S3 buckets or GitHub repositories where the applications are stored\. To launch Amazon EC2 instances that are compatible with CodeDeploy, you must create an additional IAM role, an *instance profile*\. These instructions show you how to create an IAM instance profile to attach to your Amazon EC2 instances\. This role gives CodeDeploy permission to access the Amazon S3 buckets or GitHub repositories where your applications are stored\.
 
 You can create an IAM instance profile with the AWS CLI, the IAM console, or the IAM APIs\.
 
@@ -22,7 +16,7 @@ You can attach an IAM instance profile to an Amazon EC2 instance as you launch i
 
 ## Create an IAM Instance Profile for Your Amazon EC2 Instances \(CLI\)<a name="getting-started-create-iam-instance-profile-cli"></a>
 
-In these steps, we assume you have already followed the instructions in the first three steps of [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+In these steps, we assume you have already followed the instructions in the first three steps of [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. On your development machine, create a text file named `CodeDeployDemo-EC2-Trust.json`\. Paste the following content, which allows Amazon EC2 to work on your behalf:
 
@@ -60,7 +54,7 @@ In these steps, we assume you have already followed the instructions in the firs
    }
    ```
 **Note**  
-We recommend that you restrict this policy to only those Amazon S3 buckets your Amazon EC2 instances must access\. Make sure to give access to the Amazon S3 buckets that contain the AWS CodeDeploy agent\. Otherwise, an error might occur when the AWS CodeDeploy agent is installed or updated on the instances\. To grant the IAM instance profile access to only some AWS CodeDeploy resource kit buckets in Amazon S3, use the following policy, but remove the lines for buckets you want to prevent access to:  
+We recommend that you restrict this policy to only those Amazon S3 buckets your Amazon EC2 instances must access\. Make sure to give access to the Amazon S3 buckets that contain the CodeDeploy agent\. Otherwise, an error might occur when the CodeDeploy agent is installed or updated on the instances\. To grant the IAM instance profile access to only some CodeDeploy resource kit buckets in Amazon S3, use the following policy, but remove the lines for buckets you want to prevent access to:  
 
    ```
    {
@@ -83,6 +77,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
            "arn:aws:s3:::aws-codedeploy-eu-west-2/*",
            "arn:aws:s3:::aws-codedeploy-eu-west-3/*",
            "arn:aws:s3:::aws-codedeploy-eu-central-1/*",
+           "arn:aws:s3:::aws-codedeploy-ap-east-1/*",
            "arn:aws:s3:::aws-codedeploy-ap-northeast-1/*",
            "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",        
@@ -146,7 +141,7 @@ You've now created an IAM instance profile to attach to your Amazon EC2 instance
    }
    ```
 **Note**  
-We recommend that you restrict this policy to only those Amazon S3 buckets your Amazon EC2 instances must access\. Make sure to give access to the Amazon S3 buckets that contain the AWS CodeDeploy agent\. Otherwise, an error might occur when the AWS CodeDeploy agent is installed or updated on the instances\. To grant the IAM instance profile access to only some AWS CodeDeploy resource kit buckets in Amazon S3, use the following policy, but remove the lines for buckets you want to prevent access to:  
+We recommend that you restrict this policy to only those Amazon S3 buckets your Amazon EC2 instances must access\. Make sure to give access to the Amazon S3 buckets that contain the CodeDeploy agent\. Otherwise, an error might occur when the CodeDeploy agent is installed or updated on the instances\. To grant the IAM instance profile access to only some CodeDeploy resource kit buckets in Amazon S3, use the following policy, but remove the lines for buckets you want to prevent access to:  
 
    ```
    {
@@ -169,6 +164,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
            "arn:aws:s3:::aws-codedeploy-eu-west-2/*",
            "arn:aws:s3:::aws-codedeploy-eu-west-3/*",
            "arn:aws:s3:::aws-codedeploy-eu-central-1/*",
+           "arn:aws:s3:::aws-codedeploy-ap-east-1/*",
            "arn:aws:s3:::aws-codedeploy-ap-northeast-1/*",
            "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",        
@@ -197,9 +193,11 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
 
 1. Choose **Next: Permissions**\.
 
-1.  On the **Attached permissions policy** page, if there is a box next to **CodeDeployDemo\-EC2\-Permissions**, select it, and then choose **Next: Review**\.
+1.  On the **Attached permissions policy** page, choose the policy you just created, and then choose **Next: Tags**\. If you used the suggested name, it is **CodeDeployDemo\-EC2\-Permissions**\. 
 
-1. On the **Review** page, in **Role name**, enter a name for the service role \(for example **CodeDeployDemo\-EC2\-Instance\-Profile**\), and then choose **Create role**\.
+1.  Leave the **Add tags \(optional\)** page unchanged, then choose **Next: Review**\. 
+
+1. On the **Review** page, in **Role name**, enter a name for the service role \(for example, **CodeDeployDemo\-EC2\-Instance\-Profile**\), and then choose **Create role**\.
 
    You can also enter a description for this service role in **Role description**\.
 

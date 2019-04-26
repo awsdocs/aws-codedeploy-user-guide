@@ -1,24 +1,18 @@
---------
+# Create a Trigger for a CodeDeploy Event<a name="monitoring-sns-event-notifications-create-trigger"></a>
 
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
-# Create a Trigger for an AWS CodeDeploy Event<a name="monitoring-sns-event-notifications-create-trigger"></a>
-
-You can create a trigger that publishes an Amazon Simple Notification Service \(Amazon SNS\) topic for an AWS CodeDeploy deployment or instance event\. Then, when that event occurs, all subscribers to the associated topic will receive notifications through the endpoint specified in the topic, such as an SMS message or email message\. Amazon SNS offers multiple methods for subscribing to topics\.
+You can create a trigger that publishes an Amazon Simple Notification Service \(Amazon SNS\) topic for a AWS CodeDeploy deployment or instance event\. Then, when that event occurs, all subscribers to the associated topic will receive notifications through the endpoint specified in the topic, such as an SMS message or email message\. Amazon SNS offers multiple methods for subscribing to topics\.
 
 Before you create a trigger, you must set up the Amazon SNS topic to which the trigger will point\. For information, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\. When you create a topic, we recommend you give it a name that will identify its purpose, in formats such as `Topic-group-us-west-3-deploy-fail` or `Topic-group-project-2-instance-stop`\. 
 
-You must also grant Amazon SNS permissions to an AWS CodeDeploy service role before notifications can be sent for your trigger\. For information, see [Grant Amazon SNS Permissions to an AWS CodeDeploy Service Role](monitoring-sns-event-notifications-permisssions.md)\.
+You must also grant Amazon SNS permissions to a CodeDeploy service role before notifications can be sent for your trigger\. For information, see [Grant Amazon SNS Permissions to a CodeDeploy Service Role](monitoring-sns-event-notifications-permisssions.md)\.
 
 After you have created the topic, you can add subscribers\. For information about creating, managing, and subscribing to topics, see [What Is Amazon Simple Notification Service](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
 
-## Create a Trigger to Send Notifications for AWS CodeDeploy Events \(Console\)<a name="monitoring-sns-event-notifications-create-trigger-console"></a>
+## Create a Trigger to Send Notifications for CodeDeploy Events \(Console\)<a name="monitoring-sns-event-notifications-create-trigger-console"></a>
 
-You can use the AWS CodeDeploy console to create triggers for an AWS CodeDeploy event\. At the end of the setup process, a test notification message is sent to ensure that both permissions and trigger details are set up correctly\.
+You can use the CodeDeploy console to create triggers for a CodeDeploy event\. At the end of the setup process, a test notification message is sent to ensure that both permissions and trigger details are set up correctly\.
 
-**To create a trigger for an AWS CodeDeploy event**
+**To create a trigger for a CodeDeploy event**
 
 1. In the AWS Management Console, open the AWS CodeDeploy console\.
 
@@ -37,9 +31,9 @@ You can use the AWS CodeDeploy console to create triggers for an AWS CodeDeploy 
 
 1. Choose **Create trigger**\.
 
-   AWS CodeDeploy will send a test notification to confirm you have correctly configured access between AWS CodeDeploy and the Amazon SNS topic\. Depending on the endpoint type you selected for the topic, and if you are subscribed to the topic, you will receive confirmation in an SMS message or email message\.
+   CodeDeploy will send a test notification to confirm you have correctly configured access between CodeDeploy and the Amazon SNS topic\. Depending on the endpoint type you selected for the topic, and if you are subscribed to the topic, you will receive confirmation in an SMS message or email message\.
 
-## Create a Trigger to Send Notifications for AWS CodeDeploy Events \(CLI\)<a name="monitoring-sns-event-notifications-create-trigger-cli"></a>
+## Create a Trigger to Send Notifications for CodeDeploy Events \(CLI\)<a name="monitoring-sns-event-notifications-create-trigger-cli"></a>
 
 You can use the CLI to include triggers when you create a deployment group, or you can add triggers to an existing deployment group\.
 
@@ -55,7 +49,7 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
    aws deploy create-deployment-group --generate-cli-skeleton
    ```
 
-1. Add the name of an existing AWS CodeDeploy application to the output:
+1. Add the name of an existing CodeDeploy application to the output:
 
    ```
    {
@@ -97,7 +91,7 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
    When you use the [create\-deployment\-group](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html) command, you must provide, at a minimum, values for the following parameters:
    + `applicationName`: The name of an application already created in your account\. 
    + `deploymentGroupName`: A name for the deployment group you are creating\.
-   + `serviceRoleArn`: The ARN of an existing service role set up for AWS CodeDeploy in your account\. For information, see [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\.
+   + `serviceRoleArn`: The ARN of an existing service role set up for CodeDeploy in your account\. For information, see [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\.
 
    In the `triggerConfigurations` section, provide values for the following parameters: 
    + `triggerName`: The name you want to give the trigger so you can easily identify it\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.
@@ -155,7 +149,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
 
 ### To create a trigger to send notifications for an existing deployment group<a name="monitoring-sns-event-notifications-create-trigger-cli-existing"></a>
 
-To use the AWS CLI to add triggers for AWS CodeDeploy events to an existing deployment group, create a JSON file to update the deployment group, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. 
+To use the AWS CLI to add triggers for CodeDeploy events to an existing deployment group, create a JSON file to update the deployment group, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command using the `--cli-input-json` option\. 
 
 The simplest way to create the JSON file is to run the get\-deployment\-group command to get a copy of the deployment group's configuration, in JSON format, and then update the parameter values in a plain\-text editor\.
 

@@ -1,23 +1,17 @@
---------
-
- The procedures in this guide support the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
-
---------
-
 # Create a Deployment Group for an EC2/On\-Premises Blue/Green Deployment \(Console\)<a name="deployment-groups-create-blue-green"></a>
 
-To use the AWS CodeDeploy console to create a deployment group for a blue/green deployment:
+To use the CodeDeploy console to create a deployment group for a blue/green deployment:
 
 **Warning**  
 Do not follow these steps if:  
-You do not have instances with the AWS CodeDeploy agent installed that you want to replace during the blue/green deployment process\. To set up your instances, follow the instructions in [Working with Instances for AWS CodeDeploy](instances.md), and then follow the steps in this topic\.
-You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a Deployment Configuration with AWS CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
-You do not have a service role that trusts AWS CodeDeploy with, at minimum, the trust and permissions described in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role, follow the instructions in [Step 3: Create a Service Role for AWS CodeDeploy](getting-started-create-service-role.md), and then follow the steps in this topic\.
-You have not created a Classic Load Balancer or an Application Load Balancer in Elastic Load Balancing for the registration of the instances in your replacement environment\. For more information, see [Set Up a Load Balancer in Elastic Load Balancing for AWS CodeDeploy Deployments](deployment-groups-create-load-balancer.md)\.
+You do not have instances with the CodeDeploy agent installed that you want to replace during the blue/green deployment process\. To set up your instances, follow the instructions in [Working with Instances for CodeDeploy](instances.md), and then follow the steps in this topic\.
+You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a Deployment Configuration with CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
+You do not have a service role that trusts CodeDeploy with, at minimum, the trust and permissions described in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role, follow the instructions in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md), and then follow the steps in this topic\.
+You have not created a Classic Load Balancer or an Application Load Balancer in Elastic Load Balancing for the registration of the instances in your replacement environment\. For more information, see [Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Deployments](deployment-groups-create-load-balancer.md)\.
 
-1. Sign in to the AWS Management Console and open the AWS CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
+1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with AWS CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -27,15 +21,15 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In **Deployment group name**, enter a name that describes the deployment group\.
 **Note**  
-If you want to use the same settings used in another deployment group \(including the deployment group name, tags, Amazon EC2 Auto Scaling group names, and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group have the same name, AWS CodeDeploy treats them as separate deployment groups, because they are associated with separate applications\.
+If you want to use the same settings used in another deployment group \(including the deployment group name, tags, Amazon EC2 Auto Scaling group names, and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group have the same name, CodeDeploy treats them as separate deployment groups, because they are associated with separate applications\.
 
-1. In **Service role**, choose a service role that grants AWS CodeDeploy access to your target instance\.
+1. In **Service role**, choose a service role that grants CodeDeploy access to your target instance\.
 
 1. In **Deployment type** choose **Blue/green**\.
 
 1. In **Environment configuration**, choose the method to use to provide instances for your replacement environment:
 
-   1. **Automatically copy Amazon EC2 Auto Scaling group**: AWS CodeDeploy creates an Amazon EC2 Auto Scaling group by copying one you specify\.
+   1. **Automatically copy Amazon EC2 Auto Scaling group**: CodeDeploy creates an Amazon EC2 Auto Scaling group by copying one you specify\.
 
    1. **Manually provision instances**: You won't specify the instances for your replacement environment until you create a deployment\. You must create the instances before you start the deployment\. Instead, here you specify the instances you want to replace\.
 
@@ -47,7 +41,7 @@ If you want to use the same settings used in another deployment group \(includin
 
    Each instance is deregistered from the load balancer \(Classic Load Balancers\) or target group \(Application Load Balancers and Network Load Balancers\) to prevent traffic from being routed to it during the deployment\. It is re\-registered when the deployment is complete\.
 
-   For more information about load balancers for AWS CodeDeploy deployments, see [Integrating AWS CodeDeploy with Elastic Load Balancing](integrations-aws-elastic-load-balancing.md)\.
+   For more information about load balancers for CodeDeploy deployments, see [Integrating CodeDeploy with Elastic Load Balancing](integrations-aws-elastic-load-balancing.md)\.
 
 1. In **Deployment settings**, review the default options for rerouting traffic to the replacement environment, which deployment configuration to use for the deployment, and how instances in the original environment are handled after the deployment\.
 
