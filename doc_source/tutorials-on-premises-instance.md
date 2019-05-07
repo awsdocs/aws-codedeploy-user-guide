@@ -238,7 +238,7 @@ To verify the deployment was successful, follow the instructions in [View CodeDe
 
 If the deployment was successful, you'll find four text files in the `c:\temp\CodeDeployExample` folder \(for Windows Server\) or `/tmp/CodeDeployExample` \(for Ubuntu Server and RHEL\)\. 
 
-If the deployment failed, follow the troubleshooting steps in [View Instance Details with CodeDeploy](instances-view-details.md) and [Troubleshoot Instance Issues](troubleshooting-ec2-instances.md)\. Make any required fixes, rebundle and upload your application revision, and then try the deployment again\.
+If the deployment failed, follow the troubleshooting steps in [View Instance Details with CodeDeploy](instances-view-details.md) and [Troubleshoot instance issues](troubleshooting-ec2-instances.md)\. Make any required fixes, rebundle and upload your application revision, and then try the deployment again\.
 
 ## Step 6: Clean Up Resources<a name="tutorials-on-premises-instance-6-clean-up-resources"></a>
 

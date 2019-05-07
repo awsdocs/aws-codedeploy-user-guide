@@ -26,7 +26,7 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 1. To see information about individual deployment lifecycle events for an instance, on the deployment details page, in the **Events** column, choose **View events**\. 
 **Note**  
-If **Failed** is displayed for any of the lifecycle events, on the instance details page, choose **View logs**, **View in EC2**, or both\. You can find troubleshooting tips in [Troubleshoot Instance Issues](troubleshooting-ec2-instances.md)\.
+If **Failed** is displayed for any of the lifecycle events, on the instance details page, choose **View logs**, **View in EC2**, or both\. You can find troubleshooting tips in [Troubleshoot instance issues](troubleshooting-ec2-instances.md)\.
 
 1. If you want to see more information about an Amazon EC2 instance, choose the ID of the instance in the **Instance ID** column\.
 

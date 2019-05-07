@@ -65,7 +65,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 | Characters allowed in a custom deployment configuration name |  Letters \(a\-z, A\-Z\), numbers \(0\-9\), periods \(\.\), underscores \(\_\), `+` \(plus signs\), `=` \(equals signs\), `,` \(commas\), `@` \(at signs\), `-` \(minus signs\)\.  | 
 | Disallowed prefixes in a custom deployment configuration name | CodeDeployDefault\. | 
 | Maximum number of minutes between the first and last traffic shift during an AWS Lambda canary or linear deployment | 2880 | 
-| Maximum percentage of traffic that can be shifted in one increment during an AWS Lambda deployment | 99 | 
+| Maximum percentage of traffic that can be shifted in one increment during an AWS Lambda deployment that uses a canary or linear deployment configuration\. | 99 | 
 
 ## Deployment Groups<a name="limits-deployment-groups"></a>
 

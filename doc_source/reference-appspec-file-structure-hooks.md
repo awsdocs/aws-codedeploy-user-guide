@@ -24,6 +24,8 @@ An AWS Lambda hook is one Lambda function specified with a string on a new line 
 +  **BeforeAllowTraffic** – Use to run tasks after the second target group is associated with the replacement task set, but before traffic is shifted to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
 +  **AfterAllowTraffic** – Use to run tasks after the second target group serves traffic to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
 
+For more information, see [ What Happens During an Amazon ECS Deployment ](deployment-steps.md#deployment-steps-what-happens)\.
+
 ### Run Order of Hooks in an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-run-order-ecs"></a>
 
 In an Amazon ECS deployment, event hooks run in the following order:
@@ -257,7 +259,7 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 
   This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 
-  To troubleshoot a deployment that fails during the **DownloadBundle** deployment lifecycle event, see [Troubleshooting a failed DownloadBundle deployment lifecycle event with "UnknownError: not opened for reading"](troubleshooting-deployments.md#troubleshooting-deployments-downloadbundle)\.
+  To troubleshoot a deployment that fails during the **DownloadBundle** deployment lifecycle event, see [Troubleshooting a failed DownloadBundle deployment lifecycle event with `UnknownError: not opened for reading`](troubleshooting-deployments.md#troubleshooting-deployments-downloadbundle)\.
 + **BeforeInstall** – You can use this deployment lifecycle event for preinstall tasks, such as decrypting files and creating a backup of the current version\.
 + **Install** – During this deployment lifecycle event, the CodeDeploy agent copies the revision files from the temporary location to the final destination folder\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 + **AfterInstall** – You can use this deployment lifecycle event for tasks such as configuring your application or changing file permissions\.

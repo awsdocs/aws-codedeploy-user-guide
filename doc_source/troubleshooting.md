@@ -6,11 +6,11 @@ Use the topics in this section to help solve problems and errors you might encou
 You can identify the causes of many deployment failures by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
 
 **Topics**
-+ [General Troubleshooting Issues](troubleshooting-general.md)
++ [General troubleshooting issues](troubleshooting-general.md)
 + [Troubleshoot EC2/On\-Premises Deployment Issues](troubleshooting-deployments.md)
-+ [Troubleshoot AWS Lambda Deployment Issues](troubleshooting-deployments-lambda.md)
-+ [Troubleshoot Deployment Group Issues](troubleshooting-deployment-groups.md)
-+ [Troubleshoot Instance Issues](troubleshooting-ec2-instances.md)
++ [Troubleshoot AWS Lambda deployment issues](troubleshooting-deployments-lambda.md)
++ [Troubleshoot deployment group issues](troubleshooting-deployment-groups.md)
++ [Troubleshoot instance issues](troubleshooting-ec2-instances.md)
 + [Troubleshoot GitHub Token Issues](troubleshooting-github-token-issues.md)
 + [Troubleshoot Amazon EC2 Auto Scaling Issues](troubleshooting-auto-scaling.md)
 + [Error Codes for AWS CodeDeploy](error-codes.md)

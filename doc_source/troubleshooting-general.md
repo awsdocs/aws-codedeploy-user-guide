@@ -1,20 +1,20 @@
-# General Troubleshooting Issues<a name="troubleshooting-general"></a>
+# General troubleshooting issues<a name="troubleshooting-general"></a>
 
 **Topics**
-+ [General Troubleshooting Checklist](#troubleshooting-checklist)
-+ [CodeDeploy deployment resources are supported in certain regions only](#troubleshooting-supported-regions)
-+ [Procedures in This Guide Do Not Match the CodeDeploy Console](#troubleshooting-old-console)
++ [General troubleshooting checklist](#troubleshooting-checklist)
++ [CodeDeploy deployment resources are supported in only in some AWS Regions](#troubleshooting-supported-regions)
++ [Procedures in this guide do not match the CodeDeploy console](#troubleshooting-old-console)
 + [Required IAM roles are not available](#troubleshooting-iam-cloudformation)
 + [Using some text editors to create AppSpec files and shell scripts can cause deployments to fail](#troubleshooting-text-editors)
 + [Using Finder in macOS to bundle an application revision can cause deployments to fail](#troubleshooting-bundle-with-finder)
 
-## General Troubleshooting Checklist<a name="troubleshooting-checklist"></a>
+## General troubleshooting checklist<a name="troubleshooting-checklist"></a>
 
 You can use the following checklist to troubleshoot a failed deployment\.
 
-1. See [View CodeDeployDeployment Details ](deployments-view-details.md) and [View Instance Details with CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you are unable to determine the cause, continue to the rest of the items in this checklist\.
+1. See [View CodeDeployDeployment Details ](deployments-view-details.md) and [View Instance Details with CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you cannot determine the cause, review the items in this checklist\.
 
-1. Check whether you have correctly configured the instances:
+1. Check that you have correctly configured the instances:
    + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
    + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 Instance to Work with CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
    + Was the instance tagged? For more information, see [Working with Tags in the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
@@ -31,7 +31,7 @@ You can use the following checklist to troubleshoot a failed deployment\.
    + If you're deploying from Amazon S3, check your Amazon S3 bucket to verify CodeDeploy has been granted permissions to download the application revision\. For information about bucket policies, see [Deployment Prerequisites](deployments-create-prerequisites.md)\.
    + If you're deploying from GitHub, check your GitHub repository to verify CodeDeploy has been granted permissions to download the application revision\. For more information, see [Create a Deployment with CodeDeploy](deployments-create.md) and [GitHub Authentication with Applications in CodeDeploy](integrations-partners-github.md#behaviors-authentication)\.
 
-1. Check whether the service role is correctly configured\. For information, see [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\.
+1. Check that the service role is correctly configured\. For information, see [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\.
 
 1. Confirm you followed the steps in [Getting Started with CodeDeploy](getting-started-codedeploy.md) to: 
    + Attach policies to the IAM user\.
@@ -44,15 +44,15 @@ You can use the following checklist to troubleshoot a failed deployment\.
 
 If you are still unable to troubleshoot your failed deployment, review the other issues in this topic\.
 
-## CodeDeploy deployment resources are supported in certain regions only<a name="troubleshooting-supported-regions"></a>
+## CodeDeploy deployment resources are supported in only in some AWS Regions<a name="troubleshooting-supported-regions"></a>
 
-If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the CodeDeploy console, make sure you're referencing one of the regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
+If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the CodeDeploy console, make sure you're referencing one of the AWS Regions listed in [Region and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
-Amazon EC2 instances and Amazon EC2 Auto Scaling groups that will be used in CodeDeploy deployments must be launched and created in one of these regions\.
+Amazon EC2 instances and Amazon EC2 Auto Scaling groups that are used in CodeDeploy deployments must be launched and created in one of these AWS Regions\.
 
-If you're using the AWS CLI, run the `aws configure` command from the AWS CLI\. Then you can view and set your default region\.
+If you're using the AWS CLI, run the aws configure command from the AWS CLI\. Then you can view and set your default AWS Region\.
 
-If you're using the CodeDeploy console, on the navigation bar, from the region selector, choose one of the supported regions\.
+If you're using the CodeDeploy console, on the navigation bar, from the region selector, choose one of the supported AWS Regions\.
 
 **Important**  
 To use services in the China \(Beijing\) Region or China \(Ningxia\) Region, you must have an account and credentials for those regions\. Accounts and credentials for other AWS regions do not work for the Beijing and Ningxia Regions, and vice versa\.  
@@ -61,9 +61,9 @@ For more information:
 [CodeDeploy](http://docs.amazonaws.cn/en_us/aws/latest/userguide/codedeploy.html) in *[Getting Started with AWS in the China \(Beijing\) Region](http://docs.amazonaws.cn/en_us/aws/latest/userguide/introduction.html) *
 *CodeDeploy User Guide for the China Regions* \([English version](http://docs.amazonaws.cn/en_us/codedeploy/latest/userguide/welcome.html) \| [Chinese version](http://docs.amazonaws.cn/codedeploy/latest/userguide/welcome.html)\)
 
-## Procedures in This Guide Do Not Match the CodeDeploy Console<a name="troubleshooting-old-console"></a>
+## Procedures in this guide do not match the CodeDeploy console<a name="troubleshooting-old-console"></a>
 
- This guide supports procedures in the new console design\. If you choose to use the older version of the console, you will find many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
+ The procedures in this guide are written to reflect the new console design\. If you are using the older version of the console, many of the concepts and basic procedures in this guide still apply\. To access help in the new console, choose the information icon\. 
 
 ## Required IAM roles are not available<a name="troubleshooting-iam-cloudformation"></a>
 
@@ -73,13 +73,13 @@ If you rely on an IAM instance profile or a service role that was created as par
 
 Some text editors introduce non\-conforming, non\-printing characters into files\. If you use text editors to create or modify AppSpec files or shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, then any deployments that rely on these files might fail\. When CodeDeploy uses these files during a deployment, the presence of these characters can lead to hard\-to\-troubleshoot AppSpec file validation failures and script execution failures\. 
 
-In the CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Alternatively, you use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like "invalid character," "command not found," or "file not found\."
+In the CodeDeploy console, on the event details page for the deployment, choose **View logs**\. \(Or you use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\.\) Look for errors like `invalid character`, `command not found`, or `file not found`\.
 
 To address this issue, we recommend the following:
-+ Do not use text editors that automatically introduce non\-printing characters such as carriage returns \(`^M` characters\) into your AppSpec files and shell script files\. 
-+ Use text editors that display non\-printing characters such as carriage returns in your AppSpec files and shell script files, so you can find and remove any that may be automatically or randomly introduced\. For examples of these types of text editors, search the Internet for "text editor show carriage returns\."
-+ Use text editors running on Amazon Linux, Ubuntu Server, or RHEL instances to create shell script files that run on Amazon Linux, Ubuntu Server, or RHEL instances\. For examples of these types of text editors, search the Internet for "Linux shell script editor\."
-+ If you must use a text editor in Windows or Mac OS to create shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, use a program or utility that converts text in Windows or Mac OS format to Unix format\. For examples of these programs and utilities, search the Internet for "DOS to UNIX" or "Mac to UNIX\." Be sure to test the converted shell script files on the target operating systems\.
++ Do not use text editors that introduce non\-printing characters such as carriage returns \(`^M` characters\) into your AppSpec files and shell script files\. 
++ Use text editors that display non\-printing characters such as carriage returns in your AppSpec files and shell script files, so you can find and remove any that might be introduced\. For examples of these types of text editors, search the internet for text editors that show carriage returns\.
++ Use text editors running on Amazon Linux, Ubuntu Server, or RHEL instances to create shell script files that run on Amazon Linux, Ubuntu Server, or RHEL instances\. For examples of these types of text editors, search the internet for Linux shell script editors\.
++ If you must use a text editor in Windows or macOS to create shell script files to run on Amazon Linux, Ubuntu Server, or RHEL instances, use a program or utility that converts text in Windows or macOS format to Unix format\. For examples of these programs and utilities, search the internet for DOS to UNIX or Mac to UNIX\. Be sure to test the converted shell script files on the target operating systems\.
 
 ## Using Finder in macOS to bundle an application revision can cause deployments to fail<a name="troubleshooting-bundle-with-finder"></a>
 
