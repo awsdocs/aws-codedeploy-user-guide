@@ -12,7 +12,7 @@ If you already have a GitHub repository, be sure to substitute its name for **Co
    + In the **Repository name** box, enter **CodeDeployGitHubDemo**\.
    + Select **Public**\.
 **Note**  
-Selecting the default **Public** option means that anyone can see this repository\. Although you can select the **Private** option to limit who can see and commit to the repository, this option may result in additional charges from GitHub\.
+Selecting the default **Public** option means that anyone can see this repository\. You can select the **Private** option to limit who can see and commit to the repository\.
    + Clear the **Initialize this repository with a README** check box\. You will create a `README.md` file manually in the next step instead\.
    + Choose **Create repository**\.
 
