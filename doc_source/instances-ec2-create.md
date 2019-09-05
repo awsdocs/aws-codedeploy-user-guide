@@ -86,7 +86,7 @@ The contents of the **Key** and **Value** boxes are case\-sensitive\.
 
    A default SSH role is configured for Amazon EC2 instances running Amazon Linux, Ubuntu Server, or RHEL\. A default RDP role is configured for Amazon EC2 instances running Windows Server\.
 
-1. If you want to open the HTTP port, choose the **Add Rule** button, and from the **Type** drop\-down list, choose **HTTP**\. Accept the default **Source** value of **Anywhere 0\.0\.0\.0/0**, and then choose **Review and Launch**\.
+1. If you want to open the HTTP port, choose the **Add Rule** button, and from the **Type** drop\-down list, choose **HTTP**\. Accept the default **Source** value of **Custom 0\.0\.0\.0/0**, and then choose **Review and Launch**\.
 **Note**  
 In a production environment, we recommend restricting access to the SSH, RDP, and HTTP ports, instead of specifying **Anywhere 0\.0\.0\.0/0**\. CodeDeploy does not require unrestricted port access and does not require HTTP access\. For more information, see [Tips for Securing Your Amazon EC2 Instance](https://aws.amazon.com/articles/1233)\.
 

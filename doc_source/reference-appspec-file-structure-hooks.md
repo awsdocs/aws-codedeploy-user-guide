@@ -259,7 +259,7 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 
   This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 
-  To troubleshoot a deployment that fails during the **DownloadBundle** deployment lifecycle event, see [Troubleshooting a failed DownloadBundle deployment lifecycle event with `UnknownError: not opened for reading`](troubleshooting-deployments.md#troubleshooting-deployments-downloadbundle)\.
+  To troubleshoot a deployment that fails during the **DownloadBundle** deployment lifecycle event, see [Troubleshooting a failed DownloadBundle deployment lifecycle event with UnknownError: not opened for reading](troubleshooting-deployments.md#troubleshooting-deployments-downloadbundle)\.
 + **BeforeInstall** – You can use this deployment lifecycle event for preinstall tasks, such as decrypting files and creating a backup of the current version\.
 + **Install** – During this deployment lifecycle event, the CodeDeploy agent copies the revision files from the temporary location to the final destination folder\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 + **AfterInstall** – You can use this deployment lifecycle event for tasks such as configuring your application or changing file permissions\.

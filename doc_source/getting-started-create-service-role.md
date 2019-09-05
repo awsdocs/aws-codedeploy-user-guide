@@ -10,12 +10,23 @@ For EC2/On\-Premises deployments, attach the **AWSCodeDeployRole** policy\. It p
 + Publish information to Amazon SNS topics\.
 + Retrieve information about CloudWatch alarms\.
 + Read and update Elastic Load Balancing\.
+**Note**  
+ If you create your Auto Scaling group with a launch template, you must add the following permissions:   
+ `ec2:RunInstance` 
+ `ec2:CreateTags` 
+ `iam:PassRole` 
+ For more information, see [Allow a User to Create Deployments Using an Auto Scaling Group Created by a Launch Template](auth-and-access-control-iam-identity-based-access-control.md#identity-based-policies-example-4), [Create a Service Role](#getting-started-create-service-role), and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
 
-For Amazon ECS deployments, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
+For Amazon ECS deployments, if you want full access to support services, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
 +  Read, update, and delete Amazon ECS task sets\. 
 +  Update Elastic Load Balancing target groups, listeners, and rules\. 
 +  Invoke AWS Lambda functions\. 
 +  Access revision files in Amazon S3 buckets\. 
++  Retrieve information about CloudWatch alarms\. 
++ Publish information to Amazon SNS topics\.
+
+For Amazon ECS deployments, if you want limited access to support services, attach the **AWSCodeDeployRoleForECSLimited** policy\. It provides the permissions for your service role to:
++  Read, update, and delete Amazon ECS task sets\. 
 +  Retrieve information about CloudWatch alarms\. 
 + Publish information to Amazon SNS topics\.
 
@@ -124,7 +135,7 @@ For more information about creating service roles, see [Creating a Role to Deleg
 1. On your development machine, create a text file named, for example, `CodeDeployDemo-Trust.json`\. This file is used to allow CodeDeploy to work on your behalf\.
 
    Do one of the following: 
-   + To grant access to all supported regions, save the following content in the file:
+   + To grant access to all supported AWS Regions, save the following content in the file:
 
      ```
      {

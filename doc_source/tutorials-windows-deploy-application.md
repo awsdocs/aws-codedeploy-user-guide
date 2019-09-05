@@ -83,17 +83,11 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
    1. In the list of objects, choose **HelloWorld\_App\.zip**\.
 
-   1. If the **Properties** pane is not displayed, choose the **Properties** button\.
-
-   1. In the **Properties** pane, copy the value of the **Link** field to your clipboard\.
-
-      It might look something like this:
-
-      **https://s3\.amazonaws\.com/codedeploydemobucket/HelloWorld\_App\.zip**
+   1. In the **Overview** tab, choose **Copy path**\.
 
    1. Return to the CodeDeploy console, and in **Revision Location**, paste the **Link** field value\.
 
-1. If a message appears in the **File type** list stating the file type could not be detected, choose **\.zip** in the list of file types\.
+1. For **Revision file type**, choose **\.zip**\. 
 
 1. \(Optional\) Enter a comment in **Deployment description**\.
 

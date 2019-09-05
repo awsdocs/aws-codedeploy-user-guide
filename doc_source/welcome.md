@@ -23,6 +23,8 @@ The service scales with your infrastructure so you can easily deploy to one inst
 
 CodeDeploy works with various systems for configuration management, source control, [continuous integration](https://aws.amazon.com/devops/continuous-integration/), [continuous delivery](https://aws.amazon.com/devops/continuous-delivery/), and continuous deployment\. For more information, see [Product Integrations](https://aws.amazon.com/codedeploy/product-integrations/)\.
 
+ The CodeDeploy console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines\. Choose **Go to resource** or press the `/` key, and then type the name of the resource\. Any matches appear in the list\. Searches are case insensitive\. You only see resources that you have permissions to view\. For more information, see [Viewing Resources in the Console](console-resources.md)\. 
+
 **Topics**
 + [Video Introduction to AWS CodeDeploy](#intro-video-welcome)
 + [Benefits of AWS CodeDeploy](#benefits)

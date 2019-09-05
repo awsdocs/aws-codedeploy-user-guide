@@ -7,6 +7,6 @@ For more information about Amazon EC2, see [https://docs.aws.amazon.com/AWSEC2/l
 The instructions in this section show you how to create and configure Amazon EC2 instances for use in your CodeDeploy deployments\.
 
 **Topics**
-+ [Create an Amazon EC2 Instance \(AWS CLI or Amazon EC2 Console\)](instances-ec2-create.md)
++ [Create an Amazon EC2 Instance for CodeDeploy](instances-ec2-create.md)
 + [Create an Amazon EC2 Instance \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)
 + [Configure an Amazon EC2 Instance](instances-ec2-configure.md)

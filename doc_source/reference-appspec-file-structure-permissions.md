@@ -3,7 +3,7 @@
 The 'permissions' section specifies how special permissions, if any, should be applied to the files and directories/folders in the 'files' section after they are copied to the instance\. You can specify multiple **object** instructions\. This section is optional\. It applies to Amazon Linux, Ubuntu Server, and RHEL instances only\.
 
 **Note**  
-The 'permissions' section is used for EC2/On\-Premises deployments only\. It is not used for AWS Lambda deployments\.
+The 'permissions' section is used for EC2/On\-Premises deployments only\. It is not used for AWS Lambda or Amazon ECS deployments\.
 
 This section has the following structure:
 
@@ -77,7 +77,7 @@ The following example shows how to specify the 'permissions' section with the **
              |-- my-file-7.txt
              |-- my-file-8.txt
              |-- my-file-9.txt
-	         `-- my-folder-3
+	           `-- my-folder-3
 ```
 
 The following AppSpec file shows how to set permissions on these files and folders after they are copied:

@@ -20,7 +20,7 @@ To deploy a CodeDeploy application revision to an Amazon EC2 Auto Scaling group:
 **Note**  
 You can also use CodeDeploy to deploy revisions from GitHub repositories to Amazon EC2 Auto Scaling groups\. Although Amazon EC2 instances still require an IAM instance profile, the profile doesn't need any additional permissions to deploy from a GitHub repository\. For more information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
 
-1. Create or use an Amazon EC2 Auto Scaling group, specifying the IAM instance profile\.
+1. Create or use an Amazon EC2 Auto Scaling group, specifying the IAM instance profile in your launch configuration or template\. For more information, see [IAM Role for Applications that Run on Amazon EC2 Instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html)\.
 
 1. Create or locate a service role that allows CodeDeploy to create a deployment group that contains the Amazon EC2 Auto Scaling group\.
 

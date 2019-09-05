@@ -178,3 +178,24 @@ The following example allows the specified user to create deployments for the de
   ]
 }
 ```
+
+### Example 4: Allow a User to Create Deployments Using an Auto Scaling Group Created by a Launch Template<a name="identity-based-policies-example-4"></a>
+
+ The following example grants permissions to create Amazon EC2 deployments that use an Auto Scaling group created with a launch template\. These permissions are required in addition to the permissions included in the `AWSCodeDeployRole`\. For more information, see [Create a Service Role](getting-started-create-service-role.md), [Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md), and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:PassRole",
+                "ec2:RunInstance",
+                "ec2:CreateTags"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```

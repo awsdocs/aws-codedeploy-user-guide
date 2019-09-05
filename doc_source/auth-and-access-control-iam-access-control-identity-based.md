@@ -112,13 +112,13 @@ The capabilities controlled by resource\-based policies vary depending on the re
 
 ****  
 
-| Resource types | Capabilities | 
+|  Resource types  |  Capabilities  | 
 | --- | --- | 
-| All | View and list details about resources | 
-| Applications Deployment configurationsDeployment groups | Create resourcesDelete resources | 
-| Deployments | Create deploymentsStop deployments | 
-| Application revisions | Register application revisions | 
-| ApplicationsDeployment groups | Update resources | 
+|  All  |  View and list details about resources  | 
+|  Applications Deployment configurations Deployment groups  |  Create resources Delete resources  | 
+|  Deployments  |  Create deployments Stop deployments  | 
+|  Application revisions  |  Register application revisions  | 
+|  Applications Deployment groups  |  Update resources  | 
 |  On\-premises instances  |  Add tags to instances Remove tags from instances Register instances Deregister instances  | 
 
 You can create specific IAM policies to restrict the calls and resources that users in your account have access to, and then attach those policies to IAM users\. For more information about how to create IAM roles and to explore example IAM policy statements for CodeDeploy, see [Overview of Managing Access Permissions to Your CodeDeploy Resources](#auth-and-access-control-iam-access-control-identity-based)\. 

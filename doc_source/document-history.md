@@ -2,11 +2,11 @@
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.
 + **API version: **2014\-10\-06
-+ **Latest documentation update: **May 7, 2019
++ **Latest documentation update: **September 5, 2019
 
 | Change | Description | Date | 
 | --- |--- |--- |
-| [Updated topics](#document-history) | CodeDeploy is now available in the Asia Pacific \(Hong Kong\) Region \(ap\-east\-1\) region\. Several topics, including those containing instructions for setting up the CodeDeploy agent, were updated to reflect the availability of this new region\. | April 25, 2019 | 
+| [Updated topics](#document-history) | CodeDeploy is now available in the Asia Pacific \(Hong Kong\) Region \(ap\-east\-1\) region\. Several topics, including those containing instructions for setting up the CodeDeploy agent, were updated to reflect the availability of this new region\. You must explicitly enable access to this region\. For more informaiton, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html)\. | April 25, 2019 | 
 | [ Updated topics ](#document-history) |  AWS CodeDeploy now supports blue/green deployments of a containerized application in an Amazon ECS service\. A CodeDeploy application that uses the new Amazon ECS compute platform deploys a containerized application to a new, replacement task set in the same Amazon ECS service\. Several topics have been added and updated to reflect this change, including [Overview of AWS CodeDeploy Compute Platforms](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html#compute-platform), [Deployments on an Amazon ECS Compute Platform](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-steps.html#deployment-steps-ecs), [AppSpec File Structure for Amazon ECS Deployments](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure.html#ecs-appspec-structure), and [Create an Application for an Amazon ECS Service Deployment \(Console\)](https://docs.aws.amazon.com/codedeploy/latest/userguide/applications-create-ecs.html)\.  | November 27, 2018 | 
 | [Updated CodeDeploy agent](#document-history) | The AWS CodeDeploy agent was updated to version 1\.0\.1\.1597\. For more information, see [Version History of the CodeDeploy Agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | November 15, 2018 | 
 | [Updated console](#document-history) | Procedures in this guide were updated to match the new design of the CodeDeploy console\. | October 30, 2018 | 

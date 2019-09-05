@@ -1,7 +1,8 @@
-# Troubleshoot Amazon EC2 Auto Scaling Issues<a name="troubleshooting-auto-scaling"></a>
+# Troubleshoot Amazon EC2 Auto Scaling issues<a name="troubleshooting-auto-scaling"></a>
 
 **Topics**
 + [General Amazon EC2 Auto Scaling troubleshooting](#troubleshooting-auto-scaling-general)
++ ["CodeDeployRole does not give you permission to perform operations in the following AWS service: AmazonAutoScaling" error](#troubleshooting-auto-scaling-permissions-error)
 + [Instances in an Amazon EC2 Auto Scaling group are continuously provisioned and terminated before a revision can be deployed](#troubleshooting-auto-scaling-provision-termination-loop)
 + [Terminating or rebooting an Amazon EC2 Auto Scaling instance might cause deployments to fail](#troubleshooting-auto-scaling-reboot)
 + [Avoid associating multiple deployment groups with a single Amazon EC2 Auto Scaling group](#troubleshooting-multiple-depgroups)
@@ -13,7 +14,7 @@
 Deployments to Amazon EC2 instances in an Amazon EC2 Auto Scaling group can fail for the following reasons:
 + **Amazon EC2 Auto Scaling continuously launches and terminates Amazon EC2 instances\.** If CodeDeploy cannot automatically deploy your application revision, Amazon EC2 Auto Scaling continuously launches and terminates Amazon EC2 instances\. 
 
-  Disassociate the Amazon EC2 Auto Scaling group from the CodeDeploy deployment group or change the configuration of your Amazon EC2 Auto Scaling group so that the desired number of instances matches the current number of instances \(thus preventing Amazon EC2 Auto Scaling from launching any more Amazon EC2 instances\)\. For more information, see [Change Deployment Group Settings with CodeDeploy](deployment-groups-edit.md) or [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html)\.
+  Disassociate the Amazon EC2 Auto Scaling group from the CodeDeploy deployment group or change the configuration of your Amazon EC2 Auto Scaling group so that the desired number of instances matches the current number of instances \(thus preventing Amazon EC2 Auto Scaling from launching any more Amazon EC2 instances\)\. For more information, see [Change Deployment Group Settings with CodeDeploy](deployment-groups-edit.md) or [Manual Scaling for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-manual-scaling.html)\.
 + **The CodeDeploy agent is unresponsive\.** The CodeDeploy agent might not be installed if initialization scripts \(for example, cloud\-init scripts\) that run immediately after an Amazon EC2 instance is launched or started take more than one hour to run\. CodeDeploy has a one\-hour timeout for the CodeDeploy agent to respond to pending deployments\. To address this issue, move your initialization scripts into your CodeDeploy application revision\.
 + **An Amazon EC2 instance in an Amazon EC2 Auto Scaling group reboots during a deployment\.** Your deployment can fail if an Amazon EC2 instance is rebooted during a deployment or the CodeDeploy agent is shut down while processing a deployment command\. For more information, see [Terminating or rebooting an Amazon EC2 Auto Scaling instance might cause deployments to fail](#troubleshooting-auto-scaling-reboot)\.
 + **Multiple application revisions are deployed simultaneously to the same Amazon EC2 instance in an Amazon EC2 Auto Scaling group\.** Deploying multiple application revisions to the same Amazon EC2 instance in an Amazon EC2 Auto Scaling group at the same time can fail if one of the deployments has scripts that run for more than a few minutes\. Do not deploy multiple application revisions to the same Amazon EC2 instances in an Amazon EC2 Auto Scaling group\.
@@ -22,6 +23,15 @@ Deployments to Amazon EC2 instances in an Amazon EC2 Auto Scaling group can fail
   + **CodeDeploy agent is included in your AMI **: Configure the AMI so that the agent is in a `Stopped` state when the instance is created, and then include a script for starting the agent as the final step in your `cfn-init` script library\. 
 
   \.
+
+## "CodeDeployRole does not give you permission to perform operations in the following AWS service: AmazonAutoScaling" error<a name="troubleshooting-auto-scaling-permissions-error"></a>
+
+ Deployments that use an Auto Scaling group created with a launch template require the following permissions\. These are in addition to the permissions granted by the `AWSCodeDeployRole` AWS managed policy\. 
++  `ec2:RunInstance` 
++  `ec2:CreateTags` 
++  `iam:PassRole` 
+
+ You might received this error if you are missing these permissions\. For more information, see [Allow a User to Create Deployments Using an Auto Scaling Group Created by a Launch Template](auth-and-access-control-iam-identity-based-access-control.md#identity-based-policies-example-4), [Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md), and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
 
 ## Instances in an Amazon EC2 Auto Scaling group are continuously provisioned and terminated before a revision can be deployed<a name="troubleshooting-auto-scaling-provision-termination-loop"></a>
 

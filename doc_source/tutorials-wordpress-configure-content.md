@@ -91,8 +91,8 @@ Next, create a folder and scripts in the directory\. CodeDeploy uses these scrip
 
    ```
    #!/bin/bash
-   service httpd start
    service mysqld start
+   service httpd start
    ```
 
 1. Create a `stop_server.sh` file in `/tmp/WordPress/scripts`\. Add the following lines to the file\. This `stop_server.sh` script stops Apache and MySQL\.

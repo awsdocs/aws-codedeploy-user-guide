@@ -5,7 +5,6 @@ The following related resources can help you as you work with CodeDeploy\.
 ## Reference Guides and Support Resources<a name="resources-guides"></a>
 + [AWS CodeDeploy API Reference](https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html) — Descriptions, syntax, and usage examples about CodeDeploy actions and data types, including common parameters and error codes\.
 + [CodeDeploy Technical FAQs](https://aws.amazon.com/codedeploy/faqs/) — Top questions from customers about CodeDeploy\.
-+ [CodeDeploy Release Notes](https://aws.amazon.com/releasenotes/AWS-CodeDeploy) — A high\-level overview of the current and past releases, specifically notes about new features, corrections, and known issues\.
 + [AWS Support Center](https://console.aws.amazon.com/support/home#/) — The hub for creating and managing your AWS Support cases\. Also includes links to other resources, such as forums, technical FAQs, service health status, and AWS Trusted Advisor\.
 + [AWS Support Plans](https://aws.amazon.com/premiumsupport/) — The primary web page for information about AWS Support plans\.
 + [Contact Us](https://aws.amazon.com/contact-us/) — A central contact point for inquiries concerning AWS billing, account, events, abuse, and other issues\. 

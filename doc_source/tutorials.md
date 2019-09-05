@@ -10,3 +10,4 @@ The procedures in these tutorials provide suggestions for the location in which 
 + [Tutorial: Deploy an Application to an On\-Premises Instance with CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md)
 + [Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md)
 + [Tutorial: Use CodeDeploy to Deploy an Application from GitHub](tutorials-github.md)
++ [Tutorial: Deploy an Updated Lambda Function with CodeDeploy and the AWS Serverless Application Model](tutorial-lambda-sam.md)

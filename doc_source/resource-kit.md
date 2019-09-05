@@ -12,6 +12,9 @@ Many of the files CodeDeploy relies on are stored in publicly available, AWS reg
 
 This table lists the names of *bucket\-name * replacements required for some procedures in the guide\. These are the names of the Amazon S3 buckets that contain the CodeDeploy Resource Kit files\.
 
+**Note**  
+ To access the Amazon S3 bucket in the Asia Pacific \(Hong Kong\) Region, you must enable the region in your AWS account\. For more information, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable)\. 
+
 
 ****  
 
@@ -61,82 +64,82 @@ The files in each bucket are designed to work with resources in the correspondin
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-us-east-2
+  aws s3 ls --recursive s3://aws-codedeploy-us-east-2 --region us-east-2
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-us-east-1
+  aws s3 ls --recursive s3://aws-codedeploy-us-east-1 --region us-east-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-us-west-1
+  aws s3 ls --recursive s3://aws-codedeploy-us-west-1 --region us-west-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-us-west-2
+  aws s3 ls --recursive s3://aws-codedeploy-us-west-2 --region us-west-2
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ca-central-1
+  aws s3 ls --recursive s3://aws-codedeploy-ca-central-1 --region ca-central-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-eu-west-1
+  aws s3 ls --recursive s3://aws-codedeploy-eu-west-1 --region eu-west-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-eu-west-2
+  aws s3 ls --recursive s3://aws-codedeploy-eu-west-2 --region eu-west-2
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-eu-west-3
+  aws s3 ls --recursive s3://aws-codedeploy-eu-west-3 --region eu-west-3
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-eu-central-1
+  aws s3 ls --recursive s3://aws-codedeploy-eu-central-1 --region eu-central-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ap-east-1
+  aws s3 ls --recursive s3://aws-codedeploy-ap-east-1 --region ap-east-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ap-northeast-1
+  aws s3 ls --recursive s3://aws-codedeploy-ap-northeast-1 --region ap-northeast-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ap-northeast-2
+  aws s3 ls --recursive s3://aws-codedeploy-ap-northeast-2 --region ap-northeast-2
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-1
+  aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-1 --region ap-southeast-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-2
+  aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-2 --region ap-southeast-2
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-ap-south-1
+  aws s3 ls --recursive s3://aws-codedeploy-ap-south-1 --region ap-south-1
   ```
 + 
 
   ```
-  aws s3 ls --recursive s3://aws-codedeploy-sa-east-1
+  aws s3 ls --recursive s3://aws-codedeploy-sa-east-1 --region sa-east-1
   ```
 
 ## Download the Resource Kit Files<a name="resource-kit-download-file"></a>

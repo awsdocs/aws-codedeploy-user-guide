@@ -11,6 +11,6 @@ You can identify the causes of many deployment failures by reviewing the log fil
 + [Troubleshoot AWS Lambda deployment issues](troubleshooting-deployments-lambda.md)
 + [Troubleshoot deployment group issues](troubleshooting-deployment-groups.md)
 + [Troubleshoot instance issues](troubleshooting-ec2-instances.md)
-+ [Troubleshoot GitHub Token Issues](troubleshooting-github-token-issues.md)
-+ [Troubleshoot Amazon EC2 Auto Scaling Issues](troubleshooting-auto-scaling.md)
++ [Troubleshoot GitHub token issues](troubleshooting-github-token-issues.md)
++ [Troubleshoot Amazon EC2 Auto Scaling issues](troubleshooting-auto-scaling.md)
 + [Error Codes for AWS CodeDeploy](error-codes.md)

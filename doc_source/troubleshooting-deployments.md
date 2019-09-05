@@ -5,7 +5,7 @@
 + [Deployment or redeployment of the same files to the same instance locations fail with the error "The deployment failed because a specified file already exists at this location"](#troubleshooting-same-files-different-app-name)
 + [Troubleshooting a failed AllowTraffic lifecycle event with no error reported in the deployment logs](#troubleshooting-deployments-allowtraffic-no-logs)
 + [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](#troubleshooting-deployments-lifecycle-event-failures)
-+ [Troubleshooting a failed DownloadBundle deployment lifecycle event with `UnknownError: not opened for reading`](#troubleshooting-deployments-downloadbundle)
++ [Troubleshooting a failed DownloadBundle deployment lifecycle event with UnknownError: not opened for reading](#troubleshooting-deployments-downloadbundle)
 + [Windows PowerShell scripts fail to use the 64\-bit version of Windows PowerShell by default](#troubleshooting-deployments-powershell)
 + [Long\-running processes can cause deployments to fail](#troubleshooting-long-running-processes)
 + [Troubleshooting all lifecycle events skipped errors](#troubleshooting-skipped-lifecycle-events)
@@ -88,7 +88,7 @@ If the cause of the failure is a script from the last successful deployment that
 
 When you deploy the application revision again, the deployment continues even if any of these three lifecycle events fail\. If the new revision includes fixed scripts for those lifecycle events, future deployments can succeed without applying this fix\.
 
-## Troubleshooting a failed DownloadBundle deployment lifecycle event with `UnknownError: not opened for reading`<a name="troubleshooting-deployments-downloadbundle"></a>
+## Troubleshooting a failed DownloadBundle deployment lifecycle event with UnknownError: not opened for reading<a name="troubleshooting-deployments-downloadbundle"></a>
 
 If you are trying to deploy an application revision from Amazon S3, and the deployment fails during the DownloadBundle deployment lifecycle event with the `UnknownError: not opened for reading` error:
 + There was internal Amazon S3 service error\. Deploy the application revision again\.

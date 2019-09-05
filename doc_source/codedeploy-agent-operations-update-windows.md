@@ -53,7 +53,7 @@ notepad C:\ProgramData\Amazon\CodeDeployUpdater\log\codedeploy-agent.updater.log
 
 ## Use a direct link<a name="codedeploy-agent-operations-update-windows-direct-link"></a>
 
-If the browser security settings on the Windows Server instance provide the required permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link to download the CodeDeploy agent updater\. Enter the following in your browser's address bar and then download and run the installer manually\.
+If the browser security settings on the Windows Server instance provide the required permissions \(for example, to ` http://*.s3.amazonaws.com ` \), you can use a direct link to download the CodeDeploy agent updater\. Enter the following in your browser's address bar and then download and run the installer manually\.
 
 
 | Region name | Download link | 

@@ -6,11 +6,11 @@ To avoid further charges for resources you used during this tutorial, you must t
 
 1. Sign in to the AWS Management Console and open the AWS CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
 
-1. In the **Stack Name** column, select the box next to the stack starting with `CodeDeploySampleStack`\.
+1. In the **Stacks** column, choose the stack starting with `CodeDeploySampleStack`\.
 
-1. Choose **Delete Stack**\.
+1. Choose **Delete**\.
 
-1. When prompted, choose **Yes, Delete**\. The Amazon EC2 instance and the associated IAM instance profile and service role will be deleted\.
+1. When prompted, choose **Delete stack**\. The Amazon EC2 instance and the associated IAM instance profile and service role are deleted\.
 
 ## To manually deregister and clean up an on\-premises instance \(if you provisioned an on\-premises instance\)<a name="tutorials-github-clean-up-on-premises-instance"></a>
 

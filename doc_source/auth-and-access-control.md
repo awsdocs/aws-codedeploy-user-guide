@@ -39,3 +39,4 @@ The following sections describe how to manage permissions for CodeDeploy\. We re
 + [Overview of Managing Access Permissions to Your CodeDeploy Resources](auth-and-access-control-iam-access-control-identity-based.md)
 + [Using Identity\-Based Policies \(IAM Policies\) for CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md)
 + [CodeDeploy Permissions Reference](auth-and-access-control-permissions-reference.md)
++ [Viewing Resources in the Console](console-resources.md)

@@ -87,7 +87,7 @@ If the browser security settings on the Windows Server instance provide the perm
 | EU \(London\) | `[https://aws\-codedeploy\-eu\-west\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | EU \(Paris\) | `[https://aws\-codedeploy\-eu\-west\-3\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | EU \(Frankfurt\) | `[https://aws\-codedeploy\-eu\-central\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-central-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
-| Asia Pacific \(Hong Kong\) | `[https://aws\-codedeploy\-ap\-east\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-east-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
+| Asia Pacific \(Hong Kong\) | `[https://aws\-codedeploy\-ap\-east\-1\.s3\.ap\-east\-1\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-east-1.s3.ap-east-1.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Tokyo\) | `[https://aws\-codedeploy\-ap\-northeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Seoul\) | `[https://aws\-codedeploy\-ap\-northeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Singapore\) | `[https://aws\-codedeploy\-ap\-southeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 

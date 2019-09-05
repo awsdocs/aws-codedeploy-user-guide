@@ -127,22 +127,22 @@ JSON structure:
          "ec2TagSetList": [ 
             [ 
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Name",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Name",
                   "Value": "AppVersion-ABC"
                }
             ],
             [ 
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Region",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
                   "Value": "North"
                }
             ],
             [ 
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Type",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Type",
                   "Value": "t2.medium"
                }
             ],
@@ -202,42 +202,42 @@ JSON structure:
          "ec2TagSetList": [ 
             [ 
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Environment",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Environment",
                   "Value": "Beta"
                },
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Environment",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Environment",
                   "Value": "Staging"
                }
             ],
             [ 
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Region",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
                   "Value": "North"
                },
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Region",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
                   "Value": "South"
                },
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Region",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
                   "Value": "East"
                }
             ],
             [ 
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Type",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Type",
                   "Value": "t2.medium"
                },
                { 
-                  "Key": "KEY_AND_VALUE",
-                  "Type": "Type",
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Type",
                   "Value": "t2.large"
                }
             ],
