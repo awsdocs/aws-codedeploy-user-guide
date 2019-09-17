@@ -16,7 +16,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. Choose **Create application**\.
 
-1. On your application page, from the **Deployment groups** tab, choose **Create deployment group**\. For more information about what you need to create a deployment group for an Amazon ECS deployment, see [Before You Begin an Amazon ECS Deployment](deployment-steps.md#deployment-steps-prerequisites-ecs)\. 
+1. On your application page, from the **Deployment groups** tab, choose **Create deployment group**\. For more information about what you need to create a deployment group for an Amazon ECS deployment, see [Before You Begin an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-prerequisites-ecs)\. 
 
 1. In **Deployment group name**, enter a name that describes the deployment group\.
 **Note**  

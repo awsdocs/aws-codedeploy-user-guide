@@ -36,7 +36,7 @@ After instances in a replacement environment are registered with a load balancer
 For a blue/green deployment, you can specify a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in your deployment group\. You use the CodeDeploy console or AWS CLI to add the load balancer to a deployment group\.
 
 For more information about load balancers in blue/green deployments, see the following topics:
-+ [Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Deployments](deployment-groups-create-load-balancer.md)
++ [Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Amazon EC2 Deployments](deployment-groups-create-load-balancer.md)
 + [Create an Application for a Blue/Green Deployment \(Console\)](applications-create-blue-green.md)
 + [Create a Deployment Group for an EC2/On\-Premises Blue/Green Deployment \(Console\)](deployment-groups-create-blue-green.md)
 
@@ -53,7 +53,7 @@ For an in\-place deployment, you can specify a Classic Load Balancer, Applicatio
 To add the load balancer to a deployment group, you use the CodeDeploy console or AWS CLI\. For information about specifying a load balancer in a deployment group for in\-place deployments, see the following topics:
 + [Create an Application for an In\-Place Deployment \(Console\)](applications-create-in-place.md)
 + [Create a Deployment Group for an In\-Place Deployment \(Console\)](deployment-groups-create-in-place.md)
-+ [Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Deployments](deployment-groups-create-load-balancer.md)
++ [Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Amazon EC2 Deployments](deployment-groups-create-load-balancer.md)
 
 ### Specify In\-Place Deployment Load Balancer Using a Script<a name="integrations-aws-elastic-load-balancing-in-place-script"></a>
 

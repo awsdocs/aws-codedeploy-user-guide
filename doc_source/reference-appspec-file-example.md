@@ -163,7 +163,7 @@ Here is an example of an AppSpec file for an in\-place deployment to an Amazon L
  Deployments to Windows Server instances do not support the `runas` element\. If you are deploying to Windows Server instances, do not include it in your AppSpec file\. 
 
 ```
-version: 0.0
+  version: 0.0
 os: linux
 files:
   - source: Config/config.txt

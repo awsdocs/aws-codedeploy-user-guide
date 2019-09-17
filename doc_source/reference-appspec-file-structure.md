@@ -88,7 +88,7 @@ This section specifies the names of files that should be copied to the instance 
 For more information, see [AppSpec 'files' Section \(EC2/On\-Premises Deployments Only\)](reference-appspec-file-structure-files.md)\.
 
 ** **permissions** **  
-This section specifies how special permissions, if any, should be applied to the files in the **files** section as they are being copied over to the instance\. This section applies to Amazon Linux, Ubuntu Server, and Red Hat Enterprise Linux \(RHEL\) instances only\.  
+This section specifies how special permissions, if any, should be applied to the files in the `files` section as they are being copied over to the instance\. This section applies to Amazon Linux, Ubuntu Server, and Red Hat Enterprise Linux \(RHEL\) instances only\.  
 For more information see, [AppSpec 'permissions' Section \(EC2/On\-Premises Deployments Only\)](reference-appspec-file-structure-permissions.md)\.
 
 ** **hooks** **  

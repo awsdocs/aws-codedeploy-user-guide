@@ -18,13 +18,13 @@ The content in the `'hooks'` section of the AppSpec file varies, depending on th
 ### List of Lifecycle Event Hooks for an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-list-ecs"></a>
 
 An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event\. Each hook is executed once per deployment\. Following are descriptions of the lifecycle events where you can run a hook during an Amazon ECS deployment\. 
-+  **BeforeInstall** – Use to run tasks before the replacement task set is created\. One target group is associated with the original task set\. If an optional test listener is specified, it is associated with the original task set\. A rollback is not possible at this point\. 
-+  **AfterInstall** – Use to run tasks after the replacement task set is created and one of the target groups is associated with it\. If an optional test listener is specified, it is associated with the original task set\. The results of a hook function at this lifecycle event can trigger a rollback\.
-+  **AfterAllowTestTraffic** – Use to run tasks after the test listener serves traffic to the replacement task set\. The results of a hook function at this point can trigger a rollback\.
-+  **BeforeAllowTraffic** – Use to run tasks after the second target group is associated with the replacement task set, but before traffic is shifted to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
-+  **AfterAllowTraffic** – Use to run tasks after the second target group serves traffic to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
++  `BeforeInstall` – Use to run tasks before the replacement task set is created\. One target group is associated with the original task set\. If an optional test listener is specified, it is associated with the original task set\. A rollback is not possible at this point\. 
++  `AfterInstall` – Use to run tasks after the replacement task set is created and one of the target groups is associated with it\. If an optional test listener is specified, it is associated with the original task set\. The results of a hook function at this lifecycle event can trigger a rollback\.
++  `AfterAllowTestTraffic` – Use to run tasks after the test listener serves traffic to the replacement task set\. The results of a hook function at this point can trigger a rollback\.
++  `BeforeAllowTraffic` – Use to run tasks after the second target group is associated with the replacement task set, but before traffic is shifted to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
++  `AfterAllowTraffic` – Use to run tasks after the second target group serves traffic to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
 
-For more information, see [ What Happens During an Amazon ECS Deployment ](deployment-steps.md#deployment-steps-what-happens)\.
+For more information, see [What Happens During an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-what-happens) and [Tutorial: Deploy an Amazon ECS Service with a Validation Test](tutorial-ecs-deployment-with-hooks.md)\.
 
 ### Run Order of Hooks in an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-run-order-ecs"></a>
 
@@ -75,10 +75,10 @@ Using JSON:
 
 ### Sample Lambda 'hooks' Function<a name="reference-appspec-file-structure-hooks-section-structure-ecs-sample-function"></a>
 
-Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the **BeforeInstall**, **AfterInstall**, **AllowTestTraffic**, **BeforeAllowTraffice**, and **AllowTestTraffic** deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back CodeDeploy and delivers a result of 'Succeeded' or 'Failed'\. 
+Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeInstall`, `AfterInstall`, `AllowTestTraffic`, `BeforeAllowTraffice`, and `AllowTestTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
 
 **Important**  
-If CodeDeploy is not notified by the Lambda validation function within one hour, then it assumes the deployment failed\.
+The deployment is considered to have failed if CodeDeploy is not notified by the Lambda validation function within one hour\.
 
  Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID:
 
@@ -136,7 +136,7 @@ exports.handler = (event, context, callback) => {
 
 ### List of Lifecycle Event Hooks for an AWS Lambda Deployment<a name="reference-appspec-file-structure-hooks-list-lambda"></a>
 
-An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event\. Each hook is executed once per deployment\. Following are descriptions of the hooks that are available for use in your AppSpec file\. 
+An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event\. Each hook is executed once per deployment\. Here are descriptions of the hooks available for use in your AppSpec file\. 
 + **BeforeAllowTraffic** – Use to run tasks before traffic is shifted to the deployed Lambda function version\.
 + **AfterAllowTraffic** – Use to run tasks after all traffic is shifted to the deployed Lambda function version\.
 
@@ -174,10 +174,10 @@ Using JSON:
 
 ### Sample Lambda 'hooks' Function<a name="reference-appspec-file-structure-hooks-section-structure-lambda-sample-function"></a>
 
-Use the 'hooks' section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the **BeforeAllowTraffic** and **AfterAllowTraffic** deployment lifecyle events\. Following completion of the validation tests, the Lambda validation function calls back CodeDeploy and delivers a result of 'Succeeded' or 'Failed'\. 
+Use the 'hooks' section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeAllowTraffic` and `AfterAllowTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda validation function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
 
 **Important**  
-If CodeDeploy is not notified by the Lambda validation function within one hour, then it assumes the deployment failed\.
+The deployment is considered to have failed if CodeDeploy is not notified by the Lambda validation function within one hour\.
 
  Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID:
 
@@ -237,12 +237,12 @@ exports.handler = (event, context, callback) => {
 
 ### List of Lifecycle Event Hooks<a name="reference-appspec-file-structure-hooks-list"></a>
 
-An EC2/On\-Premises deployment hook is executed once per deployment to an instance\. You can specify one or more scripts to run in a hook\. Each hook for a lifecycle event is specified with a string on a separate line\. Following are descriptions of the hooks that are available for use in your AppSpec file\. 
+An EC2/On\-Premises deployment hook is executed once per deployment to an instance\. You can specify one or more scripts to run in a hook\. Each hook for a lifecycle event is specified with a string on a separate line\. Here are descriptions of the hooks available for use in your AppSpec file\. 
 
 For information about which lifecycle event hooks are valid for which deployment and rollback types, see [Lifecycle Event Hook Availability](#reference-appspec-file-structure-hooks-availability)\.
-+ **ApplicationStop** – This deployment lifecycle event occurs even before the application revision is downloaded\. You can specify scripts for this event to gracefully stop the application or remove currently installed packages in preparation of a deployment\. The AppSpec file and scripts used for this deployment lifecycle event are from the previous successfully deployed application revision\.
++ `ApplicationStop` – This deployment lifecycle event occurs even before the application revision is downloaded\. You can specify scripts for this event to gracefully stop the application or remove currently installed packages in preparation for a deployment\. The AppSpec file and scripts used for this deployment lifecycle event are from the previous successfully deployed application revision\.
 **Note**  
-An AppSpec file does not exist on an instance before you deploy to it\. For this reason, the **ApplicationStop** hook does not run the first time you deploy to the instance\. You can use the **ApplicationStop** hook the second time you deploy to an instance\.
+An AppSpec file does not exist on an instance before you deploy to it\. For this reason, the `ApplicationStop` hook does not run the first time you deploy to the instance\. You can use the `ApplicationStop` hook the second time you deploy to an instance\.
 
    To determine the location of the last successfully deployed application revision, the CodeDeploy agent looks up the location listed in the `deployment-group-id_last_successful_install` file\. This file is located in:
 
@@ -250,8 +250,8 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 
   `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions` folder on Windows Server Amazon EC2 instances\.
 
-  To troubleshoot a deployment that fails during the **ApplicationStop** deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
-+ **DownloadBundle** – During this deployment lifecycle event, the CodeDeploy agent copies the application revision files to a temporary location: 
+  To troubleshoot a deployment that fails during the `ApplicationStop` deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
++ `DownloadBundle` – During this deployment lifecycle event, the CodeDeploy agent copies the application revision files to a temporary location: 
 
   `/opt/codedeploy-agent/deployment-root/deployment-group-id/deployment-id/deployment-archive` folder on Amazon Linux, Ubuntu Server, and RHEL Amazon EC2 instances\. 
 
@@ -259,22 +259,22 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 
   This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 
-  To troubleshoot a deployment that fails during the **DownloadBundle** deployment lifecycle event, see [Troubleshooting a failed DownloadBundle deployment lifecycle event with UnknownError: not opened for reading](troubleshooting-deployments.md#troubleshooting-deployments-downloadbundle)\.
-+ **BeforeInstall** – You can use this deployment lifecycle event for preinstall tasks, such as decrypting files and creating a backup of the current version\.
-+ **Install** – During this deployment lifecycle event, the CodeDeploy agent copies the revision files from the temporary location to the final destination folder\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
-+ **AfterInstall** – You can use this deployment lifecycle event for tasks such as configuring your application or changing file permissions\.
-+ **ApplicationStart** – You typically use this deployment lifecycle event to restart services that were stopped during **ApplicationStop**\.
-+ **ValidateService** – This is the last deployment lifecycle event\. It is used to verify the deployment was completed successfully\.
-+ **BeforeBlockTraffic** – You can use this deployment lifecycle event to run tasks on instances before they are deregistered from a load balancer\.
+  To troubleshoot a deployment that fails during the `DownloadBundle` deployment lifecycle event, see [Troubleshooting a failed DownloadBundle deployment lifecycle event with UnknownError: not opened for reading](troubleshooting-deployments.md#troubleshooting-deployments-downloadbundle)\.
++ `BeforeInstall` – You can use this deployment lifecycle event for preinstall tasks, such as decrypting files and creating a backup of the current version\.
++ `Install` – During this deployment lifecycle event, the CodeDeploy agent copies the revision files from the temporary location to the final destination folder\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
++ `AfterInstall` – You can use this deployment lifecycle event for tasks such as configuring your application or changing file permissions\.
++ `ApplicationStart` – You typically use this deployment lifecycle event to restart services that were stopped during `ApplicationStop`\.
++ `ValidateService` – This is the last deployment lifecycle event\. It is used to verify the deployment was completed successfully\.
++ `BeforeBlockTraffic` – You can use this deployment lifecycle event to run tasks on instances before they are deregistered from a load balancer\.
 
-  To troubleshoot a deployment that fails during the **BeforeBlockTraffic** deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
-+ **BlockTraffic** – During this deployment lifecycle event, internet traffic is blocked from accessing instances that are currently serving traffic\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\. 
-+ **AfterBlockTraffic** – You can use this deployment lifecycle event to run tasks on instances after they are deregistered from a load balancer\. 
+  To troubleshoot a deployment that fails during the `BeforeBlockTraffic` deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
++ `BlockTraffic` – During this deployment lifecycle event, internet traffic is blocked from accessing instances that are currently serving traffic\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\. 
++ `AfterBlockTraffic` – You can use this deployment lifecycle event to run tasks on instances after they are deregistered from a load balancer\. 
 
-  To troubleshoot a deployment that fails during the **AfterBlockTraffic** deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
-+ **BeforeAllowTraffic** – You can use this deployment lifecycle event to run tasks on instances before they are registered with a load balancer\.
-+ **AllowTraffic** – During this deployment lifecycle event, internet traffic is allowed to access instances after a deployment\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
-+ **AfterAllowTraffic** – You can use this deployment lifecycle event to run tasks on instances after they are registered with a load balancer\.
+  To troubleshoot a deployment that fails during the `AfterBlockTraffic` deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
++ `BeforeAllowTraffic` – You can use this deployment lifecycle event to run tasks on instances before they are registered with a load balancer\.
++ `AllowTraffic` – During this deployment lifecycle event, internet traffic is allowed to access instances after a deployment\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
++ `AfterAllowTraffic` – You can use this deployment lifecycle event to run tasks on instances after they are registered with a load balancer\.
 
 ### Lifecycle Event Hook Availability<a name="reference-appspec-file-structure-hooks-availability"></a>
 
@@ -310,7 +310,7 @@ For in\-place deployments, the six hooks related to blocking and allowing traffi
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/lifecycle-event-order-in-place.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
 **Note**  
-The **Start**, **DownloadBundle**, **Install**, and **End** events in the deployment cannot be scripted, which is why they appear in gray in this diagram\. However, you can edit the 'files' section of the AppSpec file to specify what's installed during the **Install** event\.
+The **Start**, **DownloadBundle**, **Install**, and **End** events in the deployment cannot be scripted, which is why they appear in gray in this diagram\. However, you can edit the `'files'` section of the AppSpec file to specify what's installed during the **Install** event\.
 
 **Blue/green deployments**
 
@@ -323,7 +323,7 @@ The **Start**, **DownloadBundle**, **Install**, **BlockTraffic**, **AllowTraffic
 
 ### Structure of 'hooks' Section<a name="reference-appspec-file-structure-hooks-section-structure"></a>
 
-The 'hooks' section has the following structure:
+The `'hooks'` section has the following structure:
 
 ```
 hooks:
@@ -366,7 +366,7 @@ The name of the current deployment lifecycle event \(for example, `AfterInstall`
 
 These environment variables are local to each deployment lifecycle event\.
 
-The following script changes the listening port on an Apache HTTP server to 9090 instead of 80 if the value of **DEPLOYMENT\_GROUP\_NAME** is equal to `Staging`\. This script must be invoked during the **BeforeInstall** deployment lifecycle event:
+The following script changes the listening port on an Apache HTTP server to 9090 instead of 80 if the value of **DEPLOYMENT\_GROUP\_NAME** is equal to `Staging`\. This script must be invoked during the `BeforeInstall` deployment lifecycle event:
 
 ```
 if [ "$DEPLOYMENT_GROUP_NAME" == "Staging" ]
@@ -375,7 +375,7 @@ then
 fi
 ```
 
-The following script example changes the verbosity level of messages recorded in its error log from warning to debug if the value of the **DEPLOYMENT\_GROUP\_NAME** environment variable is equal to `Staging`\. This script must be invoked during the **BeforeInstall** deployment lifecycle event:
+The following script example changes the verbosity level of messages recorded in its error log from warning to debug if the value of the **DEPLOYMENT\_GROUP\_NAME** environment variable is equal to `Staging`\. This script must be invoked during the `BeforeInstall` deployment lifecycle event:
 
 ```
 if [ "$DEPLOYMENT_GROUP_NAME" == "Staging" ]
@@ -384,7 +384,7 @@ then
 fi
 ```
 
-The following script example replaces the text in the specified web page with text that displays the value of these environment variables\. This script must be invoked during the **AfterInstall** deployment lifecycle event:
+The following script example replaces the text in the specified webpage with text that displays the value of these environment variables\. This script must be invoked during the `AfterInstall` deployment lifecycle event:
 
 ```
 #!/usr/bin/python
@@ -405,7 +405,7 @@ fp.close()
 
 ### Hooks Example<a name="reference-appspec-file-structure-hooks-example"></a>
 
-Here is an example of a **hooks** entry that specifies two hooks for the **AfterInstall** lifecycle event:
+Here is an example of a **hooks** entry that specifies two hooks for the `AfterInstall` lifecycle event:
 
 ```
 hooks:
@@ -416,6 +416,6 @@ hooks:
        timeout: 180
 ```
 
-The `Scripts/RunResourceTests.sh` script runs during the **AfterInstall** stage of the deployment process\. The deployment is unsuccessful if it takes the script more than 180 seconds \(3 minutes\) to run\.
+The `Scripts/RunResourceTests.sh` script runs during the `AfterInstall` stage of the deployment process\. The deployment is unsuccessful if it takes the script more than 180 seconds \(3 minutes\) to run\.
 
 The location of scripts you specify in the 'hooks' section is relative to the root of the application revision bundle\. In the preceding example, a file named `RunResourceTests.sh` is in a directory named `Scripts`\. The `Scripts` directory is at the root level of the bundle\. For more information, see [Plan a Revision for CodeDeploy](application-revisions-plan.md)\.

@@ -1,11 +1,13 @@
 # Create an EC2/On\-Premises Compute Platform Deployment \(Console\)<a name="deployments-create-console"></a>
 
+This topic shows you how to deploy an application to an Amazon EC2 or on\-premises server using the console\.
+
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. Do one of the following:
-   +  If you want to deploy an application, in the navigation pane, expand **Deploy**, and then choose **Applications**\. Choose the name of the application you want to deploy\. Make sure the **Compute platform** column for your application is **EC2/On\-Premises\.**
+   +  If you want to deploy an application, in the navigation pane, expand **Deploy**, and then choose **Applications**\. Choose the name of the application you want to deploy\. Make sure the **Compute platform** column for your application is **EC2/On\-Premises**\.
    +  If you want to redeploy a deployment, in the navigation pane, expand **Deploy**, and then choose **Deployments**\. Locate the deployment you want to redeploy, and then choose the name of its application in the **Application** column\. Make sure the **Compute platform** column for your deployment is **EC2/On\-Premises**\.
 
 1. On the **Deployments** tab, choose **Create deployment**\.
@@ -16,7 +18,7 @@ Your application must have a deployment group before it can be deployed\. If you
 
 1. Next to **Repository type**, choose the repository type your revision is stored in:
    + **My application is stored in Amazon S3** — For information, see [Specify Information About a Revision Stored in an Amazon S3 Bucket](deployments-create-console-s3.md), and then return to step 6\. 
-   + **My application is stored in GitHub** — For information, see [Specify Information About a Revision Stored in a GitHub Repository](deployments-create-console-github.md) below, and then return to step 6\.
+   + **My application is stored in GitHub** — For information, see [Specify Information About a Revision Stored in a GitHub Repository](deployments-create-console-github.md), and then return to step 6\.
 
 1. \(Optional\) In **Deployment description**, enter a description for this deployment\.
 
@@ -26,24 +28,24 @@ Your application must have a deployment group before it can be deployed\. If you
 
 1. 
 
-   1. Select **Don't fail the deployment if the ApplicationStop lifecycle event fails** if you want a deployment to an instance to succeed if theApplicationStop lifecycle event fails\.
+   1. Select **Don't fail the deployment if the ApplicationStop lifecycle event fails** if you want a deployment to an instance to succeed if the `ApplicationStop` lifecycle event fails\.
 
    1. Expand **Additional deployment behavior settings** to specify how CodeDeploy handles files in a deployment target location that weren't part of the previous successful deployment\.
 
       Choose from the following:
-      + **Fail the deployment** — An error is reported and the deployment status is changed to Failed\.
+      + **Fail the deployment** — An error is reported and the deployment status is changed to `Failed`\.
       + **Overwrite the content** — If a file of the same name exists in the target location, the version from the application revision replaces it\.
-      + **Retain the content** — If a file of the same name exists in the target location, it is kept and the version in the application revision is not copied to the instance\.
+      + **Retain the content** — If a file of the same name exists in the target location, the file is kept and the version in the application revision is not copied to the instance\.
 
       For more information, see [Rollback Behavior with Existing Content](deployments-rollback-and-redeploy.md#deployments-rollback-and-redeploy-content-options)\. 
 
 1. \(Optional\) In **Rollback configuration overrides**, you can specify different automatic rollback options for this deployment than were specified for the deployment group, if any\.
-**Note**  
-For information about rollbacks in CodeDeploy, see [Redeployments and Deployment Rollbacks](deployment-steps.md#deployment-rollback) and [Redeploy and Roll Back a Deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
+
+   For information about rollbacks in CodeDeploy, see [Redeployments and Deployment Rollbacks](deployment-steps-server.md#deployment-rollback) and [Redeploy and Roll Back a Deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
 
    Choose from the following:
-   + **Roll back when a deployment fails** — CodeDeploy will redeploy the last known good revision as a new deployment\.
-   + **Roll back when alarm thresholds are met** — If alarms were added to the deployment group, CodeDeploy will redeploy the last known good revision when one or more of the specified alarms is activated\.
+   + **Roll back when a deployment fails** — CodeDeploy redeploys the last known good revision as a new deployment\.
+   + **Roll back when alarm thresholds are met** — If alarms were added to the deployment group, CodeDeploy edeploys the last known good revision when one or more of the specified alarms is activated\.
    + **Disable rollbacks** — Do not perform rollbacks for this deployment\.
 
 1. Choose **Start deployment**\. 

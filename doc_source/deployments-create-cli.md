@@ -23,7 +23,7 @@ The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not 
      + The GitHub user or group name assigned to the repository that contains the revision, followed by a forward slash \(`/`\), followed by the repository name\.
      + The commit ID for the revision\.
    + \(Optional\) The name of a deployment configuration to use\. To view a list of deployment configurations, call the [list\-deployment\-configs](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-configs.html) command\. \(If not specified, CodeDeploy uses a specific default deployment configuration\.\)
-   + \(Optional\) Whether you want the deployment to an instance to continue to the **BeforeInstall** deployment lifecycle event if the **ApplicationStop** deployment lifecycle event fails\. 
+   + \(Optional\) Whether you want the deployment to an instance to continue to the `BeforeInstall` deployment lifecycle event if the `ApplicationStop` deployment lifecycle event fails\. 
    + \(Optional\) A description for the deployment\.
    + For blue/green deployments, information about the instances that belong to the replacement environment in a blue/green deployment, including the names of one or more Amazon EC2 Auto Scaling groups, or the tag filter key, type, and value used to identify Amazon EC2 instances\.
 

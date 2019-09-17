@@ -51,7 +51,7 @@ The appspec\.yml for an EC2/On\-Premises compute platform deployment is saved in
 
 ## AppSpec File Spacing<a name="reference-appspec-file-spacing"></a>
 
-The following is the correct format for AppSpec file spacing\. The numbers in square brackets indicate the number of spaces that must occur between items\. For example, `[4]` means to insert four spaces between the items\. CodeDeploy will raise an error that might be difficult to debug if the locations and number of spaces in an AppSpec file are not correct\.
+The following is the correct format for AppSpec file spacing\. The numbers in square brackets indicate the number of spaces that must occur between items\. For example, `[4]` means to insert four spaces between the items\. CodeDeploy raises an error that might be difficult to debug if the locations and number of spaces in an AppSpec file are not correct\.
 
 ```
 version:[1]version-number
@@ -84,7 +84,7 @@ hooks:
 Here is an example of a correctly spaced AppSpec file:
 
 ```
-version: 0.0
+  version: 0.0
 os: linux
 files:
   - source: /

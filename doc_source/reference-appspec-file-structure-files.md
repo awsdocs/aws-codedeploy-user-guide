@@ -10,20 +10,20 @@ files:
     destination: destination-file-location
 ```
 
-Multiple **source** and **destination** pairs can be set\.
+Multiple `source` and `destination` pairs can be set\.
 
-The **source** instruction identifies a file or directory from your revision to copy to the instance:
-+ If **source** refers to a file, only the specified files are copied to the instance\.
-+ If **source** refers to a directory, then all files in the directory are copied to the instance\.
-+ If **source** is a single slash \("/" for Amazon Linux, RHEL, and Ubuntu Server instances, or "\\" for Windows Server instances\), then all of the files from your revision are copied to the instance\.
+The `source` instruction identifies a file or directory from your revision to copy to the instance:
++ If `source` refers to a file, only the specified files are copied to the instance\.
++ If `source` refers to a directory, then all files in the directory are copied to the instance\.
++ If `source` is a single slash \("/" for Amazon Linux, RHEL, and Ubuntu Server instances, or "\\" for Windows Server instances\), then all of the files from your revision are copied to the instance\.
 
-The paths used in **source** are relative paths, starting from the root of your revision\.
+The paths used in `source` are relative paths, starting from the root of your revision\.
 
-The **destination** instruction identifies the location on the instance where the files should be copied\. This must be a fully qualified path\.
+The `destination` instruction identifies the location on the instance where the files should be copied\. This must be a fully qualified path\.
 
-**source** and **destination** are each specified with a string\.
+`source` and `destination` are each specified with a string\.
 
-Here's an example **files** section for an Amazon Linux, Ubuntu Server, or RHEL instance\.
+Here's an example `files` section for an Amazon Linux, Ubuntu Server, or RHEL instance\.
 
 ```
 files:
@@ -41,10 +41,10 @@ In this example, the following two operations are performed during the **Install
 
 ## 'files' Section Examples<a name="reference-appspec-file-structure-files-examples"></a>
 
-The following examples show how to specify the **files** section\. Although these examples describe Windows Server file and directory \(folder\) structures, they can easily be adapted for Amazon Linux, Ubuntu Server, and RHEL instances\.
+The following examples show how to specify the `files` section\. Although these examples describe Windows Server file and directory \(folder\) structures, they can easily be adapted for Amazon Linux, Ubuntu Server, and RHEL instances\.
 
 **Note**  
-Only EC2/On\-Premises deployments use the ** files** section\. It does not apply to AWS Lambda deployments\.
+Only EC2/On\-Premises deployments use the `files` section\. It does not apply to AWS Lambda deployments\.
 
 For the following examples, we assume these files appear in the bundle in the root of `source`:
 + `appspec.yml`
