@@ -131,7 +131,7 @@ Here's how it works:
 ### Overview of a Blue/Green Deployment<a name="welcome-deployment-overview-blue-green"></a>
 
 A blue/green deployment reroutes traffic from your application's original environment to a replacement environment\. Your environment depends on your CodeDeploy application's compute platform\. 
-+  **AWS Lambda**: Traffic is shifted from one version of a Lambda function to a new version of the same Lamdba function\. 
++  **AWS Lambda**: Traffic is shifted from one version of a Lambda function to a new version of the same Lambda function\. 
 +  **Amazon ECS**: Traffic is shifted from a task set in your Amazon ECS service to an updated, replacement task set in the same Amazon ECS service\. 
 +  **EC2/On\-Premises**: Traffic is shifted from one set of instances in the original environment to a replacement set of instances\. 
 
