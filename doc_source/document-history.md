@@ -2,7 +2,7 @@
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.
 + **API version: **2014\-10\-06
-+ **Latest documentation update: **September 17, 2019
++ **Latest documentation update: **September 25, 2019
 
 | Change | Description | Date | 
 | --- |--- |--- |
