@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Troubleshoot deployment group issues<a name="troubleshooting-deployment-groups"></a>
 
 ## Tagging an instance as part of a deployment group does not automatically deploy your application to the new instance<a name="troubleshooting-adding-instance-to-group"></a>

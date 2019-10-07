@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 5: Clean Up<a name="tutorial-lambda-clean-up"></a>
 
 To avoid further charges for resources you used during this tutorial, delete the resources created by your AWS SAM template and the CloudWatch logs created by your Lambda validation functions\.

@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Use the register\-on\-premises\-instance Command \(IAM Session ARN\) to Register an On\-Premises Instance<a name="register-on-premises-instance-iam-session-arn"></a>
 
 For maximum control over the authentication and registration of your on\-premises instances, you can use the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command and periodically refreshed temporary credentials generated with the AWS Security Token Service \(AWS STS\)\. A static IAM role for the instance assumes the role of these refreshed AWS STS credentials to perform CodeDeploy deployment operations\. 

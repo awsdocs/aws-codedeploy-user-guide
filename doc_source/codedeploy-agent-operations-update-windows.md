@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Update the CodeDeploy Agent on Windows Server<a name="codedeploy-agent-operations-update-windows"></a>
 
 To enable automatic updates of the CodeDeploy agent, install the CodeDeploy agent updater for Windows Server on new or existing instances\. The updater checks periodically for new versions\. When a new version is detected, the updater uninstalls the current version of the agent, if one is installed, before installing the newest version\.

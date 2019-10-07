@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # View Instance Details with CodeDeploy<a name="instances-view-details"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about instances used in a deployment\.

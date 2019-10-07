@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group"></a>
 
 In this tutorial, you'll use CodeDeploy to deploy an application revision to an Amazon EC2 Auto Scaling group\. For information about Amazon EC2 Auto Scaling integration with CodeDeploy, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.

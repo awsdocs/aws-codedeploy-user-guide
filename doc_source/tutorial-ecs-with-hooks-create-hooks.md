@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 3: Create a Lifecycle Hook Lambda Function<a name="tutorial-ecs-with-hooks-create-hooks"></a>
 
 In this section, you implement one Lambda function for your Amazon ECS deployment's `AfterAllowTestTraffic` hook\. The Lambda function runs a validation test before the updated Amazon ECS application is installed\. For this tutorial, the Lambda function returns `Succeeded`\. During a real world deployment, validation tests return `Succeeded` or `Failed`, depending on the result of the validation test\. Also during a real world deployment, you might implement a Lambda test function for one or more of the other Amazon ECS deployment lifecycle event hooks \(`BeforeInstall`, `AfterInstall`, `BeforeAllowTraffic`, and `AfterAllowTraffic`\)\. For more information, see [List of Lifecycle Event Hooks for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#reference-appspec-file-structure-hooks-list-ecs)\.

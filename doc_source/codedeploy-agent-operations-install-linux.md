@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Install or reinstall the CodeDeploy agent for Amazon Linux or RHEL<a name="codedeploy-agent-operations-install-linux"></a>
 
 Sign in to the instance, and run the following commands, one at a time\.

@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Monitoring Deployments with CloudWatch Alarms in CodeDeploy<a name="monitoring-create-alarms"></a>
 
 You can create a CloudWatch alarm for an instance or Amazon EC2 Auto Scaling group you are using in your CodeDeploy operations\. An alarm watches a single metric over a time period you specify and performs one or more actions based on the value of the metric relative to a given threshold over a number of time periods\.  CloudWatch alarms invoke actions when their state changes \(for example, from `OK` to `ALARM`\)\.

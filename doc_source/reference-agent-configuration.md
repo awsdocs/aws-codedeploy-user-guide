@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # CodeDeploy Agent Configuration Reference<a name="reference-agent-configuration"></a>
 
 When the CodeDeploy agent is installed, a configuration file is placed on the instance\. This configuration file specifies directory paths and other settings for CodeDeploy to use as it interacts with the instance\. You can change some of the configuration options in the file\.

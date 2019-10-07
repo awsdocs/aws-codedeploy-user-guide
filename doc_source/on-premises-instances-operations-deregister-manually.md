@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Manually Deregister an On\-Premises Instance<a name="on-premises-instances-operations-deregister-manually"></a>
 
 Typically, you deregister an on\-premises instance after you're no longer planning to deploy to it\. You use the AWS CLI to manually deregister on\-premises instances\.

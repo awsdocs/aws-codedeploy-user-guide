@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 4: Provision an Instance<a name="tutorials-github-provision-instance"></a>
 
 In this step, you will create or configure the instance that you will deploy the sample application to\. You can deploy to an Amazon EC2 instance or an on\-premises instance that is running one of the operating systems supported by CodeDeploy\. For information see [Operating Systems Supported by the CodeDeploy Agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\. \(If you already have an instance configured for use in CodeDeploy deployments, skip to the next step\.\)

@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Choose a CodeDeploy Repository Type<a name="application-revisions-repository-type"></a>
 
 The storage location for files required by CodeDeploy is called a *repository*\. Use of a repository depends on which compute platform your deployment uses\.

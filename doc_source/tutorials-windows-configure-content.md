@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 2: Configure Your Source Content to Deploy to the Windows Server Amazon EC2 Instance<a name="tutorials-windows-configure-content"></a>
 
 Now it's time to configure your application's source content so you have something you can deploy to the Amazon EC2 instance\. For this tutorial, you'll deploy a single web page to the Amazon EC2 instance running Windows Server, which will run Internet Information Services \(IIS\) as its web server\. This web page will display a simple "Hello, World\!" message\.

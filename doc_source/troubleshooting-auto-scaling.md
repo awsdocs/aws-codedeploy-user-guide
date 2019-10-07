@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Troubleshoot Amazon EC2 Auto Scaling issues<a name="troubleshooting-auto-scaling"></a>
 
 **Topics**

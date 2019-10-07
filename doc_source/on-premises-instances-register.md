@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Register an On\-Premises Instance with CodeDeploy<a name="on-premises-instances-register"></a>
 
 To register an on\-premises instance, you must use an IAM identity to authenticate your requests\. You can choose from the following options for the IAM identity and registration method you use:

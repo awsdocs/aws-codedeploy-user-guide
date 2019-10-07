@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # AppSpec 'permissions' Section \(EC2/On\-Premises Deployments Only\)<a name="reference-appspec-file-structure-permissions"></a>
 
 The `'permissions'` section specifies how special permissions, if any, should be applied to the files and directories/folders in the `'files'` section after they are copied to the instance\. You can specify multiple `object` instructions\. This section is optional\. It applies to Amazon Linux, Ubuntu Server, and RHEL instances only\.

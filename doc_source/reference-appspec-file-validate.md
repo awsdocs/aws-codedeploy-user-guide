@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Validate Your AppSpec File and File Location<a name="reference-appspec-file-validate"></a>
 
  **File syntax** 

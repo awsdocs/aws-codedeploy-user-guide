@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Create a File for Your AfterAllowTraffic Lambda Function<a name="tutorial-lambda-sam-create-lambda-after-traffic"></a>
 
 Create the file for your `afterAllowTraffic` hook Lambda function\.

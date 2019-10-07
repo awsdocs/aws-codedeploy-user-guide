@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 4: Update Your AppSpec File<a name="tutorial-ecs-with-hooks-create-appspec-file"></a>
 
  In this section, you update your AppSpec file with a `Hooks` section\. In the `Hooks` section, you specify a Lambda function for the `AfterAllowTestTraffic` lifecycle hook\. 

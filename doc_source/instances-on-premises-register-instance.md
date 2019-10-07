@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Use the register Command \(IAM User ARN\) to Register an On\-Premises Instance<a name="instances-on-premises-register-instance"></a>
 
 This section describes how to configure an on\-premises instance and register and tag it with CodeDeploy with the least amount of effort\. The register command is most useful when you are working with single or small fleets of on\-premises instances\. You can use the register command only when you are using an IAM user ARN to authenticate an instance\. You cannot use the register command with an IAM session ARN for authentication\.

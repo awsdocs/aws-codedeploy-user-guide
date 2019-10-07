@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Use the register\-on\-premises\-instance Command \(IAM User ARN\) to Register an On\-Premises Instance<a name="register-on-premises-instance-iam-user-arn"></a>
 
 Follow these instructions to configure an on\-premises instance and register and tag it with CodeDeploy mostly on your own, using static IAM user credentials for authentication\.

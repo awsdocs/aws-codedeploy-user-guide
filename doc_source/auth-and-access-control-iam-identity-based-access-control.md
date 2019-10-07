@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Using Identity\-Based Policies \(IAM Policies\) for CodeDeploy<a name="auth-and-access-control-iam-identity-based-access-control"></a>
 
 This topic provides examples of identity\-based policies that demonstrate how an account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) and thereby grant permissions to perform operations on CodeDeploy resources\. For information about the policy that must be attached to an IAM user in order to use CodeDeploy, see [Step 1: Provision an IAM User](getting-started-provision-user.md)\. 

@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 3: Create a Service Role for CodeDeploy<a name="getting-started-create-service-role"></a>
 
 In AWS, service roles are used to grant permissions to an AWS service so it can access AWS resources\. The policies that you attach to the service role determine which AWS resources the service can access and what it can do with those resources\. 

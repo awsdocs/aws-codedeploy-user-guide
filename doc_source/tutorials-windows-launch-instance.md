@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 1: Launch a Windows Server Amazon EC2 Instance<a name="tutorials-windows-launch-instance"></a>
 
 To deploy the Hello World application with CodeDeploy, you need an Amazon EC2 instance running Windows Server\.

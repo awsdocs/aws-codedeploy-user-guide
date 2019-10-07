@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Document History<a name="document-history"></a>
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.

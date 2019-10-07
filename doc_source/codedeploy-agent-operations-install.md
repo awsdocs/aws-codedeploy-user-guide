@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Install or Reinstall the CodeDeploy Agent<a name="codedeploy-agent-operations-install"></a>
 
 If you suspect the CodeDeploy agent is missing or not working, you can run commands on an instance to install or reinstall it\.

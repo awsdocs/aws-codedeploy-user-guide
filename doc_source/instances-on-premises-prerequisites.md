@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Prerequisites for Configuring an On\-Premises Instance<a name="instances-on-premises-prerequisites"></a>
 
 The following prerequisites must be met before you can register an on\-premises instance\.

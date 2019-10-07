@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Delete an Application in CodeDeploy<a name="applications-delete"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or a CodeDeploy API action to delete applications\. For information about using the CodeDeploy API action, see [DeleteApplication](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteApplication.html)\.

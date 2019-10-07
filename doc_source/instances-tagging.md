@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Tagging Instances for Deployment Groups in CodeDeploy<a name="instances-tagging"></a>
 
 To help manage your Amazon EC2 instances and on\-premises instances, you can use tags to assign your own metadata to each resource\. Tags enable you to categorize your instances in different ways \(for example, by purpose, owner, or environment\)\. This is useful when you have many instances\. You can quickly identify an instance or group of instances based on the tags you've assigned to them\. Each tag consists of a key and an optional value, both of which you define\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.

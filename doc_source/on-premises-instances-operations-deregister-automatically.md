@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Automatically Deregister an On\-Premises Instance<a name="on-premises-instances-operations-deregister-automatically"></a>
 
 Typically, you deregister an on\-premises instance after you're no longer planning to deploy to it\. When you deregister an on\-premises instance, even though the on\-premises instance might be part of a deployment group's on\-premises instance tags, the on\-premises instance will not be included in any deployments\. You can use the AWS CLI to deregister on\-premises instances\.

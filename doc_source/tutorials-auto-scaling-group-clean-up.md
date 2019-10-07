@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 6: Clean Up<a name="tutorials-auto-scaling-group-clean-up"></a>
 
 In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing charges for resources you used during this tutorial\. Optionally, you can delete the Amazon EC2 Auto Scaling configuration and CodeDeploy deployment component records\.

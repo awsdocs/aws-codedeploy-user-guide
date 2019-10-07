@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Working with Applications in CodeDeploy<a name="applications"></a>
 
 After you configure instances, but before you can deploy a revision, you must create an application in CodeDeploy\. An *application* is simply a name or container used by CodeDeploy to ensure the correct revision, deployment configuration, and deployment group are referenced during a deployment\. 

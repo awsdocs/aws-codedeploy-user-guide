@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Create a Deployment Configuration with CodeDeploy<a name="deployment-configurations-create"></a>
 
 You can use the CodeDeploy console, AWS CLI, the CodeDeploy APIs, or an AWS CloudFormation template to create custom deployment configurations\. 

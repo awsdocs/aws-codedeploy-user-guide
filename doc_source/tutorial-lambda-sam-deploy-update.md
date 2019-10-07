@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 3: Deploy the Updated Lambda Function<a name="tutorial-lambda-sam-deploy-update"></a>
 
  In this step, you use your updated `myDateTimeFunction.js` to update and initiate the deployment of your Lambda function\. You can monitor the deployment progress in the CodeDeploy or AWS Lambda console\. 

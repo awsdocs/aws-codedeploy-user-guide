@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Monitoring Deployments in CodeDeploy<a name="monitoring"></a>
 
 Monitoring is an important part of maintaining the reliability, availability, and performance of CodeDeploy and your AWS solutions\. You should collect monitoring data from all of the parts of your AWS solution so that you can more easily debug a multi\-point failure if one occurs\. Before you start monitoring CodeDeploy, however, you should create a monitoring plan that includes answers to the following questions:

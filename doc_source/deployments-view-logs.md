@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # View Log Data for CodeDeploy EC2/On\-Premises Deployments<a name="deployments-view-logs"></a>
 
 You can view the log data created by a CodeDeploy deployment by setting up the Amazon CloudWatch Logs agent to view aggregated data in the CloudWatch console or by logging into an individual instance to review the log file\.

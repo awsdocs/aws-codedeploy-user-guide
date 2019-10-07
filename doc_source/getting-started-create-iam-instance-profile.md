@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances<a name="getting-started-create-iam-instance-profile"></a>
 
 **Note**  

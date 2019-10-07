@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Create a Deployment Group for an EC2/On\-Premises Blue/Green Deployment \(Console\)<a name="deployment-groups-create-blue-green"></a>
 
 To use the CodeDeploy console to create a deployment group for a blue/green deployment:

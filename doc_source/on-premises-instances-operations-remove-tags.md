@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Manually Remove On\-Premises Instance Tags from an On\-Premises Instance<a name="on-premises-instances-operations-remove-tags"></a>
 
 Typically, you remove an on\-premises instance tag from an on\-premises instance when that tag is no longer being used, or you want to remove the on\-premises instance from any deployment groups that rely on that tag\. You can use the AWS CLI or the AWS CodeDeploy console to remove on\-premises instance tags from on\-premises instances\.

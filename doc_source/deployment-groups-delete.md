@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Delete a Deployment Group with CodeDeploy<a name="deployment-groups-delete"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to delete deployment groups associated with your AWS account\.

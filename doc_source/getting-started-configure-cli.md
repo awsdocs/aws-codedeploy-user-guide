@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 2: Install or Upgrade and Then Configure the AWS CLI<a name="getting-started-configure-cli"></a>
 
 To call CodeDeploy commands from the AWS CLI on a local development machine, you must install the AWS CLI\. CodeDeploy commands first became available in version 1\.6\.1 of the AWS CLI\. CodeDeploy commands for working with on\-premises instances became available in 1\.7\.19 of the AWS CLI\. 

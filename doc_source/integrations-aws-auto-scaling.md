@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Integrating CodeDeploy with Amazon EC2 Auto Scaling<a name="integrations-aws-auto-scaling"></a>
 
 CodeDeploy supports Amazon EC2 Auto Scaling, an AWS service that can launch Amazon EC2 instances automatically according to conditions you define\. These conditions can include limits exceeded in a specified time interval for CPU utilization, disk reads or writes, or inbound or outbound network traffic\. Amazon EC2 Auto Scaling terminates the instances when they are no longer needed\. For more information, see [What Is Amazon EC2 Auto Scaling?](https://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html)\.

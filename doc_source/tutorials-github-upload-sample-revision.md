@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 3: Upload a Sample Application to Your GitHub Repository<a name="tutorials-github-upload-sample-revision"></a>
 
 In this step, you will copy a sample revision from a public Amazon S3 bucket to your GitHub repository\. \(For simplicity, the sample revisions provided for this tutorial are single web pages\.\)

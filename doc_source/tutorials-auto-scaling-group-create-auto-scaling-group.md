@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 1: Create and Configure the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-create-auto-scaling-group"></a>
 
 In this step, you'll create an Amazon EC2 Auto Scaling group that contains a single Amazon Linux, RHEL, or Windows Server Amazon EC2 instance\. In a later step, you will instruct Amazon EC2 Auto Scaling to add one more Amazon EC2 instance, and CodeDeploy will deploy your revision to it\.

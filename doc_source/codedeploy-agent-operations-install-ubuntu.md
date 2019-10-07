@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Install or reinstall the CodeDeploy agent for Ubuntu Server<a name="codedeploy-agent-operations-install-ubuntu"></a>
 
 Sign in to the instance, and run the following commands, one at a time\. 

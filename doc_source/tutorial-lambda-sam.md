@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Tutorial: Deploy an Updated Lambda Function with CodeDeploy and the AWS Serverless Application Model<a name="tutorial-lambda-sam"></a>
 
 AWS SAM is an open\-source framework for building serverless applications\. It transforms and expands YAML syntax in a AWS SAM template into AWS CloudFormation syntax to build serverless applications, such as a Lambda function\. For more information, see [What Is the AWS Serverless Application Model?](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) 

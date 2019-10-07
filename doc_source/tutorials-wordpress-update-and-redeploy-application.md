@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 5: Update and Redeploy Your WordPress Application<a name="tutorials-wordpress-update-and-redeploy-application"></a>
 
 Now that you've successfully deployed your application revision, update the WordPress code on the development machine, and then use CodeDeploy to redeploy the site\. Afterward, you should see the code changes on the Amazon EC2 instance\.

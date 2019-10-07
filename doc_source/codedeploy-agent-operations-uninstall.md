@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Uninstall the CodeDeploy Agent<a name="codedeploy-agent-operations-uninstall"></a>
 
 You can remove the CodeDeploy agent from instances when it is no longer needed or when you want to perform a fresh installation\.

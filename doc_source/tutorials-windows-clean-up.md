@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 6: Clean Up Your "Hello, World\!" Application and Related Resources<a name="tutorials-windows-clean-up"></a>
 
 You've now successfully made an update to the "Hello, World\!" code and redeployed the site\. To avoid ongoing charges for resources you created to complete this tutorial, you should delete any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you manually created them outside of AWS CloudFormation\)\. You should also delete any Amazon S3 buckets that you created just for this tutorial, and the `HelloWorld_App` application in CodeDeploy\.

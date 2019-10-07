@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Redeploy and Roll Back a Deployment with CodeDeploy<a name="deployments-rollback-and-redeploy"></a>
 
 CodeDeploy rolls back deployments by redeploying a previously deployed revision of an application as a new deployment\. These rolled\-back deployments are technically new deployments, with new deployment IDs, rather than restored versions of a previous deployment\.

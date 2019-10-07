@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 2: Configure Your Source Content to Be Deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance<a name="tutorials-wordpress-configure-content"></a>
 
 Now it's time to configure your application's source content so you have something to deploy to the instance\.

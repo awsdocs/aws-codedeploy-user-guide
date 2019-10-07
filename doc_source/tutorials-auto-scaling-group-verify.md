@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 3: Check Your Results<a name="tutorials-auto-scaling-group-verify"></a>
 
 In this step, you'll check to see that CodeDeploy installed the **SimpleDemoApp** revision on the single Amazon EC2 instance in the Amazon EC2 Auto Scaling group\.

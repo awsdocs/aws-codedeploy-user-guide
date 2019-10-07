@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Integration Examples from the Community<a name="integrations-community"></a>
 
 The following sections provide links to blog posts, articles, and community\-provided examples\.

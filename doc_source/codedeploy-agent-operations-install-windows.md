@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Install or reinstall the CodeDeploy agent for Windows Server<a name="codedeploy-agent-operations-install-windows"></a>
 
 On Windows Server instances, you can use one of these methods to download and install the CodeDeploy agent:

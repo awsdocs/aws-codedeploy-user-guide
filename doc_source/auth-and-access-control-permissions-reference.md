@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # CodeDeploy Permissions Reference<a name="auth-and-access-control-permissions-reference"></a>
 
 When you are setting up [Access Control](auth-and-access-control.md#access-control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The table lists each CodeDeploy API operation, the corresponding actions for which you can grant permissions to perform the action, and the format of the resource ARN to use for granting permissions\. You specify the actions in the policy's `Action` field, and you specify an ARN, with or without a wildcard character \(\*\), as the resource value in the policy's `Resource` field\.

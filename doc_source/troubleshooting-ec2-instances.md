@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Troubleshoot instance issues<a name="troubleshooting-ec2-instances"></a>
 
 **Topics**

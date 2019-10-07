@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 2: Update Your Amazon ECS Application<a name="tutorial-ecs-with-hooks-update-the-ecs-application"></a>
 
  In this section, you update your Amazon ECS application to use a new revision of its task definition\. You create the new revision and add a minor update to it by adding a tag\. 

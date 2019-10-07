@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Troubleshoot GitHub token issues<a name="troubleshooting-github-token-issues"></a>
 
 ## Invalid GitHub OAuth token<a name="troubleshooting-invalid-github-token"></a>

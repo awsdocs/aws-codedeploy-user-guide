@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Use the CodeDeploy Agent to Validate a Deployment Package on a Local Machine<a name="deployments-local"></a>
 
 Using the CodeDeploy agent, you can deploy content on an instance you are logged in to\. This allows you to test the integrity of an application specification file \(AppSpec file\) that you intend to use in a deployment and the content you intend to deploy\. 

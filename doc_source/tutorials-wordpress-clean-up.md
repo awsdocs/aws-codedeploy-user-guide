@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 6: Clean Up Your WordPress Application and Related Resources<a name="tutorials-wordpress-clean-up"></a>
 
 You've now successfully made an update to the WordPress code and redeployed the site\. To avoid ongoing charges for resources you created for this tutorial, you should delete:

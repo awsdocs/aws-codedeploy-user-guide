@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Set Up a Load Balancer, Target Groups, and Listeners for CodeDeploy Amazon ECS Deployments<a name="deployment-groups-create-load-balancer-for-ecs"></a>
 
  Before you run a deployment using the Amazon ECS compute platform, you must create an Application Load Balancer or a Network Load Balancer, two target groups, and one or two listeners\. This topic shows you how to create an Application Load Balancer\. For more information, see [Before You Begin an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-prerequisites-ecs)\. 

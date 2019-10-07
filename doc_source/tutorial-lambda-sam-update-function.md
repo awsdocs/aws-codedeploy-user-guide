@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 2: Update the Lambda Function<a name="tutorial-lambda-sam-update-function"></a>
 
  In this topic, you update your `myDateTimeFunction.js` file\. In the next step, you use the file to deploy the updated function\. This triggers CodeDeploy to deploy it by shifting production traffic from the current version of the Lambda function to the updated version\. 

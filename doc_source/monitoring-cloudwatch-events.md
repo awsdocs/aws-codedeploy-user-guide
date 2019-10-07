@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Monitoring Deployments with Amazon CloudWatch Events<a name="monitoring-cloudwatch-events"></a>
 
 You can use Amazon CloudWatch Events to detect and react to changes in the state of an instance or a deployment \(an "event"\) in your CodeDeploy operations\. Then, based on rules you create, CloudWatch Events will invoke one or more target actions when a deployment or instance enters the state you specify in a rule\. Depending on the type of state change, you might want to send notifications, capture state information, take corrective action, initiate events, or take other actions\. You can select the following types of targets when using CloudWatch Events as part of your CodeDeploy operations:

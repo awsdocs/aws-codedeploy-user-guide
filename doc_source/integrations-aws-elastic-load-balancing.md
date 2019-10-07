@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Integrating CodeDeploy with Elastic Load Balancing<a name="integrations-aws-elastic-load-balancing"></a>
 
 During CodeDeploy deployments, a load balancer prevents internet traffic from being routed to instances when they are not ready, are currently being deployed to, or are no longer needed as part of an environment\. The exact role the load balancer plays, however, depends on whether it is used in a blue/green deployment or an in\-place deployment\.

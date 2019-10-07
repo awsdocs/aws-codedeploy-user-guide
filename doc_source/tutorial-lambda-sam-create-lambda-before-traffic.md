@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Create a File for Your BeforeAllowTraffic Lambda Function<a name="tutorial-lambda-sam-create-lambda-before-traffic"></a>
 
 Create the file for your `beforeAllowTraffic` hook Lambda function\.

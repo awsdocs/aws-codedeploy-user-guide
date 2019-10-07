@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Create an Application for a Blue/Green Deployment \(Console\)<a name="applications-create-blue-green"></a>
 
 To use the CodeDeploy console to create an application for a blue/green deployment:

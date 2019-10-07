@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # CodeDeploy Instance Health<a name="instances-health"></a>
 
 CodeDeploy monitors the health status of the instances in a deployment group\. It fails deployments if the number of healthy instances falls below the minimum number of healthy instances that have been specified for the deployment group during a deployment\. For example, if 85% of instances must remain healthy during a deployment, and the deployment group contains 10 instances, the overall deployment will fail if deployment to even a single instance fails\. This is because when an instance is taken offline so the latest application revision can be installed, the available healthy instance counts already drops to 90%\. A failed instance plus another offline instance would mean that only 80% of instances are healthy and available\. CodeDeploy will fail the overall deployment\.

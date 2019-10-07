@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Create Your AWS SAM Template<a name="tutorial-lambda-sam-template"></a>
 
 Create an AWS SAM template file that specifies the components in your infrastructure\.

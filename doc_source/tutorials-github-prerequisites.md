@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Prerequisites<a name="tutorials-github-prerequisites"></a>
 
 Before you start this tutorial, do the following:

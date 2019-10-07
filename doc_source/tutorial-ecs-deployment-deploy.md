@@ -1,3 +1,5 @@
+[Back to contents](index.md)
+
 # Step 3: Use the CodeDeploy Console to Deploy Your Amazon ECS Service<a name="tutorial-ecs-deployment-deploy"></a>
 
  In this section, you create a CodeDeploy application and deployment group to deploy your updated Amazon ECS application\. During deployment, CodeDeploy shifts the production traffic for your Amazon ECS application to its new version in a new, replacement task set\. To complete this step, you need the following items: 
