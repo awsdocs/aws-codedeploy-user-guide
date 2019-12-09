@@ -45,7 +45,7 @@ Your application must have a deployment group before it can be deployed\. If you
 
    Choose from the following:
    + **Roll back when a deployment fails** — CodeDeploy redeploys the last known good revision as a new deployment\.
-   + **Roll back when alarm thresholds are met** — If alarms were added to the deployment group, CodeDeploy edeploys the last known good revision when one or more of the specified alarms is activated\.
+   + **Roll back when alarm thresholds are met** — If alarms were added to the deployment group, CodeDeploy redeploys the last known good revision when one or more of the specified alarms is activated\.
    + **Disable rollbacks** — Do not perform rollbacks for this deployment\.
 
 1. Choose **Start deployment**\. 
