@@ -75,7 +75,7 @@ Using JSON:
 
 ### Sample Lambda 'hooks' Function<a name="reference-appspec-file-structure-hooks-section-structure-ecs-sample-function"></a>
 
-Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeInstall`, `AfterInstall`, `AllowTestTraffic`, `BeforeAllowTraffice`, and `AllowTestTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
+Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeInstall`, `AfterInstall`, `AllowTestTraffic`, `BeforeAllowTraffic`, and `AllowTestTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
 
 **Important**  
 The deployment is considered to have failed if CodeDeploy is not notified by the Lambda validation function within one hour\.
