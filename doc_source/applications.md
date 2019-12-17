@@ -17,5 +17,6 @@ Use the information in the following table for next steps:
 **Topics**
 + [Create an Application](applications-create.md)
 + [View Application Details](applications-view-details.md)
++ [Create a Notification Rule](notification-rule-create.md)
 + [Rename an Application](applications-rename.md)
 + [Delete an Application](applications-delete.md)

@@ -38,7 +38,7 @@ You can use the following checklist to troubleshoot a failed deployment\.
    + Install or upgrade and configure the AWS CLI\.
    + Create an IAM instance profile and a service role\.
 
-   For more information, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\.
+   For more information, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\.
 
 1. Confirm you are using AWS CLI version 1\.6\.1 or later\. To check the version you have installed, call aws \-\-version\.
 

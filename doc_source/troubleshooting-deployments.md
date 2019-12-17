@@ -240,4 +240,4 @@ In the preceding call, `sleep.sh` is the name of the process you want to start r
 +  The instance you are deploying to does not have an IAM instance profile associated with it\. 
 +  Your IAM instance profile does not have the correct permissions configured\. 
 
- An IAM instance profile grants the CodeDeploy agent permission to communicate with CodeDeploy and to download your revision from Amazon S3\. For Amazon EC2 instances, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\. For on\-premises instances, see [Working with On\-Premises Instances for CodeDeploy](instances-on-premises.md)\. 
+ An IAM instance profile grants the CodeDeploy Agent permission to communicate with CodeDeploy and to download your revision from Amazon S3\. For Amazon EC2 instances, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\. For on\-premises instances, see [Working with On\-Premises Instances for CodeDeploy](instances-on-premises.md)\. 

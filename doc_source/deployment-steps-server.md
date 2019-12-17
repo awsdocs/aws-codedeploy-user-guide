@@ -1,6 +1,6 @@
 # Deployments on an EC2/On\-Premises Compute Platform<a name="deployment-steps-server"></a>
 
-This topic provides information about the components and workflow of CodeDeploy deployments that use the EC2/On\-Premises compute platform\. For information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)
+This topic provides information about the components and workflow of CodeDeploy deployments that use the EC2/On\-Premises compute platform\. For information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)\.
 
 **Topics**
 + [Deployment Components on an EC2/On\-Premises Compute Platform](#deployment-steps-components-server)

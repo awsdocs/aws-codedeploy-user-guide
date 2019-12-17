@@ -44,7 +44,7 @@ Follow these instructions to prepare an IAM user to use CodeDeploy:
 
    The preceding policy grants the IAM user the access required to deploy an AWS Lambda compute platform, an EC2/On\-Premises compute platform, and an Amazon ECS compute platform\.
 
-    To learn how to attach a policy to an IAM user, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\. To learn how to restrict users to a limited set of CodeDeploy actions and resources, see [Authentication and Access Control for AWS CodeDeploy](auth-and-access-control.md)\.
+    To learn how to attach a policy to an IAM user, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\. To learn how to restrict users to a limited set of CodeDeploy actions and resources, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\.
 
    You can use the AWS CloudFormation templates provided in this documentation to launch Amazon EC2 instances that are compatible with CodeDeploy\. To use AWS CloudFormation templates to create applications, deployment groups, or deployment configurations, you must grant the IAM user access to AWS CloudFormation—and AWS services and actions that AWS CloudFormation depends on—by attaching an additional policy to the IAM user:
 

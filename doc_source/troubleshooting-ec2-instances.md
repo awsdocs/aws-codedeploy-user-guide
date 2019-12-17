@@ -44,7 +44,7 @@ sudo service codedeploy-agent stop
 ```
 
 ```
-sudo service codedeploy-agent
+sudo service codedeploy-agent start
 ```
 
 **For a Windows Server instance**:

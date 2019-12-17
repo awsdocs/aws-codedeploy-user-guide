@@ -92,21 +92,6 @@ Now is a good time to verify the Amazon S3 bucket will allow download requests f
 
  For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
-Your account must have permission to upload the revision to the Amazon S3 bucket\. One way to specify this is through an IAM policy\. The following custom IAM user policy allows your IAM user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
-
-```
-{
-  "Version":"2012-10-17",  
-  "Statement":[
-    {
-      "Effect":"Allow",
-      "Action":["s3:PutObject"],
-      "Resource":"arn:aws:s3:::codedeploydemobucket/*"
-    }
-  ]
-}
-```
-
 For information about how to create and attach an IAM policy, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
 ## Prepare the Application's Files for the Bucket<a name="tutorials-wordpress-upload-application-prepare-application-files"></a>

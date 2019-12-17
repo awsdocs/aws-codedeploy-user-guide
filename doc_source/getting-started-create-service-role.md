@@ -12,10 +12,10 @@ For EC2/On\-Premises deployments, attach the **AWSCodeDeployRole** policy\. It p
 + Read and update Elastic Load Balancing\.
 **Note**  
  If you create your Auto Scaling group with a launch template, you must add the following permissions:   
- `ec2:RunInstance` 
+ `ec2:RunInstances` 
  `ec2:CreateTags` 
  `iam:PassRole` 
- For more information, see [Allow a User to Create Deployments Using an Auto Scaling Group Created by a Launch Template](auth-and-access-control-iam-identity-based-access-control.md#identity-based-policies-example-4), [Create a Service Role](#getting-started-create-service-role), and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
+ For more information, see [Create a Service Role](#getting-started-create-service-role) and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
 
 For Amazon ECS deployments, if you want full access to support services, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
 +  Read, update, and delete Amazon ECS task sets\. 

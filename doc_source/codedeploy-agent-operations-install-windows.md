@@ -83,10 +83,10 @@ If the browser security settings on the Windows Server instance provide the perm
 | US West \(N\. California\) | `[https://aws\-codedeploy\-us\-west\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-us-west-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | US West \(Oregon\) | `[https://aws\-codedeploy\-us\-west\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-us-west-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Canada \(Central\) | `[https://aws\-codedeploy\-ca\-central\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ca-central-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
-| EU \(Ireland\) | `[https://aws\-codedeploy\-eu\-west\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
-| EU \(London\) | `[https://aws\-codedeploy\-eu\-west\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
-| EU \(Paris\) | `[https://aws\-codedeploy\-eu\-west\-3\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
-| EU \(Frankfurt\) | `[https://aws\-codedeploy\-eu\-central\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-central-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
+| Europe \(Ireland\) | `[https://aws\-codedeploy\-eu\-west\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
+| Europe \(London\) | `[https://aws\-codedeploy\-eu\-west\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
+| Europe \(Paris\) | `[https://aws\-codedeploy\-eu\-west\-3\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
+| Europe \(Frankfurt\) | `[https://aws\-codedeploy\-eu\-central\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-eu-central-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Hong Kong\) | `[https://aws\-codedeploy\-ap\-east\-1\.s3\.ap\-east\-1\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-east-1.s3.ap-east-1.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Tokyo\) | `[https://aws\-codedeploy\-ap\-northeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-1.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
 | Asia Pacific \(Seoul\) | `[https://aws\-codedeploy\-ap\-northeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/codedeploy-agent.msi)` | 
@@ -107,10 +107,10 @@ If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](http
 | US West \(N\. California\) | <pre>aws s3 cp s3://aws-codedeploy-us-west-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | US West \(Oregon\) | <pre>aws s3 cp s3://aws-codedeploy-us-west-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Canada \(Central\) | <pre>aws s3 cp s3://aws-codedeploy-ca-central-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
-| EU \(Ireland\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
-| EU \(London\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
-| EU \(Paris\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-3/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
-| EU \(Frankfurt\) | <pre>aws s3 cp s3://aws-codedeploy-eu-central-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
+| Europe \(Ireland\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
+| Europe \(London\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
+| Europe \(Paris\) | <pre>aws s3 cp s3://aws-codedeploy-eu-west-3/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
+| Europe \(Frankfurt\) | <pre>aws s3 cp s3://aws-codedeploy-eu-central-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Asia Pacific \(Hong Kong\) | <pre>aws s3 cp s3://aws-codedeploy-ap-east-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Asia Pacific \(Tokyo\) | <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 
 | Asia Pacific \(Seoul\) | <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre> | 

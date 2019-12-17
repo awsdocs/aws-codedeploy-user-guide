@@ -30,7 +30,7 @@ If you plan to use AWS CloudFormation templates that are compatible with CodeDep
 For more information about managed policies, see the following topics:
 + To view the policy that must be attached to IAM users who will create Amazon EC2 instances, see [Create an Amazon EC2 Instance for CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
 + For information about attaching policies to IAM users, see [Working with Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-using.html) in *IAM User Guide*\. 
-+ To learn how to restrict users to a limited set of CodeDeploy actions and resources, see [AWS Managed \(Predefined\) Policies for CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md#managed-policies)\.
++ To learn how to restrict users to a limited set of CodeDeploy actions and resources, see [AWS Managed \(Predefined\) Policies for CodeDeploy](security_iam_id-based-policy-examples.md#managed-policies)\.
 
 The following table shows the actions an AWS CloudFormation template can perform on your behalf and includes links to more information about the AWS resource types and their property types you can add to an AWS CloudFormation template\. 
 

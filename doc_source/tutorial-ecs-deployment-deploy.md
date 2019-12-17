@@ -26,7 +26,7 @@
 
 1. In **Deployment group name**, enter **ecs\-demo\-dg**\.
 
-1. In **Service role**, choose a service role that grants CodeDeploy access to Amazon ECS\. For more information, see [Using Identity\-Based Policies \(IAM Policies\) for CodeDeploy](auth-and-access-control-iam-identity-based-access-control.md)\.
+1. In **Service role**, choose a service role that grants CodeDeploy access to Amazon ECS\. For more information, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\.
 
 1. In **Environment configuration**, choose your Amazon ECS cluster name and service name\.
 

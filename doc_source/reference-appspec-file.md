@@ -84,7 +84,7 @@ hooks:
 Here is an example of a correctly spaced AppSpec file:
 
 ```
-  version: 0.0
+version: 0.0
 os: linux
 files:
   - source: /

@@ -2,20 +2,6 @@
 
 If your notification requirements change, you can modify your trigger rather than create a new one\.
 
-## Modify a CodeDeploy Trigger \(Console\)<a name="monitoring-sns-event-notifications-edit-trigger-console"></a>
-
-1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
-**Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
-
-1. On the **Applications** page, choose the name of the application associated with the deployment group where you will modify a trigger\.
-
-1. On the **Application details** page, choose the arrow next to the deployment group where you will edit a trigger\.
-
-1. In the **Triggers** area, locate the name of the trigger you want to modify, and then choose the pencil icon at the end of its row\.
-
-1. Update the trigger name, selected events, or Amazon SNS topic, and then choose **Save**\.
-
 ## Modify a CodeDeploy Trigger \(CLI\)<a name="monitoring-sns-event-notifications-edit-trigger-cli"></a>
 
  To use the AWS CLI to change trigger details for CodeDeploy events when you update a deployment group, create a JSON file to define changes to the deployment group's properties, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command with the `--cli-input-json` option\. 
@@ -75,4 +61,4 @@ Be sure to include `file://` before the file name\. It is required in this comma
    aws deploy update-deployment-group --current-deployment-group-name deployment-group-name --cli-input-json file://filename.json
    ```
 
-At the end of the creation process, you will receive a test notification message that indicates both permissions and trigger details are set up correctly\.
+At the end of the creation process, you receive a test notification message that indicates both permissions and trigger details are set up correctly\.

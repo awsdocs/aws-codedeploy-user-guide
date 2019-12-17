@@ -80,11 +80,7 @@ Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call 
 **Important**  
 The deployment is considered to have failed if CodeDeploy is not notified by the Lambda validation function within one hour\.
 
- Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID:
-
-```
-aws deploy put-lifecycle-event-hook-execution-status --deployment-id <deployment-id> --status Succeeded --lifecycle-event-hook-execution-id <execution-id> --region <region>
-```
+ Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID using the `putLifecycleEventHookExecutionStatus` command\.
 
  The following is a sample Lambda hook function written in Node\.js\. 
 
@@ -179,11 +175,7 @@ Use the 'hooks' section to specify a Lambda function that CodeDeploy can call to
 **Important**  
 The deployment is considered to have failed if CodeDeploy is not notified by the Lambda validation function within one hour\.
 
- Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID:
-
-```
-aws deploy put-lifecycle-event-hook-execution-status --deployment-id <deployment-id> --status Succeeded --lifecycle-event-hook-execution-id <execution-id> --region <region>
-```
+ Before invoking a Lambda hook function, the server must be notified of the deployment ID and the lifecycle event hook execution ID using the `putLifecycleEventHookExecutionStatus` command\.
 
  The following is a sample Lambda hook function written in Node\.js\. 
 

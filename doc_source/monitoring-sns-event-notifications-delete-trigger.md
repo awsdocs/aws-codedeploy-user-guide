@@ -8,11 +8,19 @@ Because there is a limit of 10 triggers per deployment group, you might want to 
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
-1. On the **Applications** page, choose the application associated with the deployment group from which you want to delete a trigger\.
+1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
-1. On the **Application details** page, choose the arrow next to the deployment group\.
+1. On the **Applications** page, choose the name of the application associated with the deployment group where you want to delete a trigger\.
 
-1. In the **Triggers** area, locate the name of the trigger to delete, choose the ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/delete-triggers-x.png) button at the end of its row, and then choose **Delete**\.
+1. On the **Application details** page, choose the deployment group where you want to delete a trigger\.
+
+1.  Choose **Edit**\. 
+
+1.  Expand **Advanced \- optional**\. 
+
+1. In the **Triggers** area, choose the trigger you want to delete, then choose **Delete trigger**\. 
+
+1.  Choose **Save changes**\. 
 
 ## Delete a Trigger from a Deployment Group \(CLI\)<a name="monitoring-sns-event-notifications-delete-trigger-cli"></a>
 

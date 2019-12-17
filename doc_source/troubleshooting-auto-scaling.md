@@ -31,7 +31,7 @@ Deployments to Amazon EC2 instances in an Amazon EC2 Auto Scaling group can fail
 +  `ec2:CreateTags` 
 +  `iam:PassRole` 
 
- You might received this error if you are missing these permissions\. For more information, see [Allow a User to Create Deployments Using an Auto Scaling Group Created by a Launch Template](auth-and-access-control-iam-identity-based-access-control.md#identity-based-policies-example-4), [Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md), and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
+ You might received this error if you are missing these permissions\. For more information, see [Tutorial: Use CodeDeploy to Deploy an Application to an Amazon EC2 Auto Scaling Group](tutorials-auto-scaling-group.md) and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
 
 ## Instances in an Amazon EC2 Auto Scaling group are continuously provisioned and terminated before a revision can be deployed<a name="troubleshooting-auto-scaling-provision-termination-loop"></a>
 

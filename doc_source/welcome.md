@@ -23,7 +23,7 @@ The service scales with your infrastructure so you can easily deploy to one inst
 
 CodeDeploy works with various systems for configuration management, source control, [continuous integration](https://aws.amazon.com/devops/continuous-integration/), [continuous delivery](https://aws.amazon.com/devops/continuous-delivery/), and continuous deployment\. For more information, see [Product Integrations](https://aws.amazon.com/codedeploy/product-integrations/)\.
 
- The CodeDeploy console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines\. Choose **Go to resource** or press the `/` key, and then type the name of the resource\. Any matches appear in the list\. Searches are case insensitive\. You only see resources that you have permissions to view\. For more information, see [Viewing Resources in the Console](console-resources.md)\. 
+ The CodeDeploy console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines\. Choose **Go to resource** or press the `/` key, and then type the name of the resource\. Any matches appear in the list\. Searches are case insensitive\. You only see resources that you have permissions to view\. For more information, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\. 
 
 **Topics**
 + [Video Introduction to AWS CodeDeploy](#intro-video-welcome)
@@ -84,7 +84,7 @@ The following table describes how CodeDeploy components are used with each compu
 CodeDeploy provides two deployment type options:
 + **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an In\-Place Deployment](#welcome-deployment-overview-in-place)\.
 **Note**  
-AWS Lambda compute platform deployments cannot use an in\-place deployment type\.
+AWS Lambda and Amazon ECS deployments cannot use an in\-place deployment type\.
 + **Blue/green deployment**: The behavior of your deployment depends on which compute platform you use:
   + **Blue/green on an EC2/On\-Premises compute platform**: The instances in a deployment group \(the original environment\) are replaced by a different set of instances \(the replacement environment\) using these steps:
     + Instances are provisioned for the replacement environment\.
@@ -110,7 +110,7 @@ Using the CodeDeploy agent, you can perform a deployment on an instance you are 
 The following diagram shows the flow of a typical CodeDeploy in\-place deployment\.
 
 **Note**  
-AWS Lambda compute platform deployments cannot use an in\-place deployment type\.
+AWS Lambda and Amazon ECS deployments cannot use an in\-place deployment type\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/sds_architecture.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 

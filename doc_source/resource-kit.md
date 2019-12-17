@@ -25,10 +25,10 @@ This table lists the names of *bucket\-name * replacements required for some pro
 | US West \(N\. California\) | aws\-codedeploy\-us\-west\-1 | us\-west\-1 | 
 | US West \(Oregon\) | aws\-codedeploy\-us\-west\-2 | us\-west\-2 | 
 | Canada \(Central\) | aws\-codedeploy\-ca\-central\-1 | ca\-central\-1 | 
-| EU \(Ireland\) | aws\-codedeploy\-eu\-west\-1 | eu\-west\-1 | 
-| EU \(London\) | aws\-codedeploy\-eu\-west\-2 | eu\-west\-2 | 
-| EU \(Paris\) | aws\-codedeploy\-eu\-west\-3 | eu\-west\-3 | 
-| EU \(Frankfurt\) | aws\-codedeploy\-eu\-central\-1 | eu\-central\-1 | 
+| Europe \(Ireland\) | aws\-codedeploy\-eu\-west\-1 | eu\-west\-1 | 
+| Europe \(London\) | aws\-codedeploy\-eu\-west\-2 | eu\-west\-2 | 
+| Europe \(Paris\) | aws\-codedeploy\-eu\-west\-3 | eu\-west\-3 | 
+| Europe \(Frankfurt\) | aws\-codedeploy\-eu\-central\-1 | eu\-central\-1 | 
 | Asia Pacific \(Hong Kong\) | aws\-codedeploy\-ap\-east\-1 | ap\-east\-1 | 
 | Asia Pacific \(Tokyo\) | aws\-codedeploy\-ap\-northeast\-1 | ap\-northeast\-1 | 
 | Asia Pacific \(Seoul\) | aws\-codedeploy\-ap\-northeast\-2 | ap\-northeast\-2 | 
