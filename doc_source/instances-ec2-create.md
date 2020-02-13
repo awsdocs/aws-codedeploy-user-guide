@@ -42,7 +42,7 @@ If **Launch into EC2\-Classic** or a default virtual private cloud \(VPC\) are n
 
    **For Ubuntu Server**
 **Important**  
-If you are installing the CodeDeploy agent on Ubuntu Server 14\.04, change the third line the following:  
+If you are installing the CodeDeploy agent on Ubuntu Server 14\.04, replace the third line of the code snippet below with the following:  
 `apt-get -y install ruby2.0`
 
    ```
