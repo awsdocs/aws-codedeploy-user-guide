@@ -28,7 +28,7 @@
 
 1. Verify the security group you want to use is available and make a note of its group ID \(for example, **sg\-abcd1234**\)\. You use this when you create your load balancer\.
 
-## Ceate an Amazon EC2 Application Load Balancer, Two Target roups, and Listeners \(Console\)<a name="deployment-groups-create-load-balancer-for-ecs-console"></a>
+## Ceate an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(Console\)<a name="deployment-groups-create-load-balancer-for-ecs-console"></a>
 
 To use the Amazon EC2 console to create an Amazon EC2 Application Load Balancer:
 
