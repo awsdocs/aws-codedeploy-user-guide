@@ -3,11 +3,7 @@
 Sign in to the instance, and run the following commands, one at a time\.
 
 **Note**  
-In the fourth command, `/home/ec2-user` represents the default user name for an Amazon Linux or RHEL Amazon EC2 instance\. If your instance was created using a custom AMI, the AMI owner might have specified a different default user name\. 
-
-```
-sudo yum update
-```
+In the third command, `/home/ec2-user` represents the default user name for an Amazon Linux or RHEL Amazon EC2 instance\. If your instance was created using a custom AMI, the AMI owner might have specified a different default user name\. 
 
 ```
 sudo yum install ruby
