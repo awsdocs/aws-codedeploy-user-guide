@@ -16,7 +16,7 @@ On Ubuntu Server 14\.04:
   sudo apt-get install ruby2.0
   ```
 
-On Ubuntu Server 16\.04:
+On Ubuntu Server 16\.04 and 18.04:
 + 
 
   ```
