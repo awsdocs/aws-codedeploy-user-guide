@@ -5,23 +5,27 @@ Sign in to the instance, and run the following commands, one at a time\.
 **Note**  
 In the fifth command, `/home/ubuntu` represents the default user name for an Ubuntu Server instance\. If your instance was created using a custom AMI, the AMI owner might have specified a different default user name\. 
 
+On Ubuntu Server 14\.04:
++ 
+
 ```
 sudo apt-get update
 ```
 
-On Ubuntu Server 14\.04:
+```
+sudo apt-get install ruby2.0
+```
+
+On Ubuntu Server 16\.04 and 18.04:
 + 
 
-  ```
-  sudo apt-get install ruby2.0
-  ```
+```
+sudo apt-get update
+```
 
-On Ubuntu Server 16\.04:
-+ 
-
-  ```
-  sudo apt-get install ruby
-  ```
+```
+sudo apt-get install ruby
+```
 
 ```
 sudo apt-get install wget
