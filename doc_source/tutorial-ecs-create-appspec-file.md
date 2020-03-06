@@ -50,4 +50,4 @@
 **Note**  
  Your replacement task set inherits the subnet, security group, platform version, and assigned public IP values from your original task set\. You can override these values for your replacement task set by setting their optional properties in your AppSpec file\. For more information, see [ AppSpec 'resources' Section for Amazon ECS Deployments ](reference-appspec-file-structure-resources.md#reference-appspec-file-structure-resources-ecs) and [ AppSpec File Example for an Amazon ECS Deployment ](reference-appspec-file-example.md#appspec-file-example-ecs)\. 
 
-1.  Upload your AppSpec file to the S3 bucket your created as a prerequisite for this tutorial\. 
+1.  Upload your AppSpec file to the S3 bucket you created as a prerequisite for this tutorial\. 
