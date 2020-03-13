@@ -15,7 +15,7 @@ For EC2/On\-Premises deployments, attach the **AWSCodeDeployRole** policy\. It p
  `ec2:RunInstances` 
  `ec2:CreateTags` 
  `iam:PassRole` 
- For more information, see [Create a Service Role](#getting-started-create-service-role) and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
+ For more information, see [Step 3: Create a Service Role](#getting-started-create-service-role) and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
 
 For Amazon ECS deployments, if you want full access to support services, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
 +  Read, update, and delete Amazon ECS task sets\. 
@@ -221,7 +221,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
      Call the attach\-role\-policy command to give the service role named **CodeDeployServiceRole** the permissions based on the IAM managed policy named **AWSCodeDeployRoleForECS** or **AWSCodeDeployRoleForECSLimited**\. For example:
 
      ```
-     aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRoleForECS
+     aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/AWSCodeDeployRoleForECS
      ```
 
 For more information about creating service roles, see [Creating a Role for an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html) in the *IAM User Guide*\.

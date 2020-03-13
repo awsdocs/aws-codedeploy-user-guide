@@ -42,6 +42,8 @@ The CodeDeploy agent is available as open source for you to adapt to your needs\
 
 The CodeDeploy agent communicates outbound using HTTPS over port 443\.
 
+When the CodeDeploy agent runs on an EC2 instance, it will use the [EC2 metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html) endpoint to retrieve instance related information\. Find out more about [limiting and granting instance metadata service access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html#instance-metadata-limiting-access)\.
+
 ## Version History of the CodeDeploy Agent<a name="codedeploy-agent-version-history"></a>
 
 Your instances must be running a supported version of the CodeDeploy agent\. The current minimum supported version is 1\.0\.1\.1458\. If you are running an earlier version, deployments to your instances might fail\. 

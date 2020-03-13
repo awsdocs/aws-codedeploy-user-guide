@@ -25,14 +25,29 @@ The following table lists the predefined deployment configurations\.
 
 ## Deployment Configurations on an Amazon ECS Compute Platform<a name="deployment-configuration-ecs"></a>
 
- When you deploy to an Amazon ECS compute platform, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS container\. Amazon ECS deployments support one deployment configuration\. 
+ When you deploy to an Amazon ECS compute platform, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS task set\. 
+
+There are three ways traffic can be shifted during a deployment:
++ **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Amazon ECS task set in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
++ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
++ **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
+
+You can also create your own custom canary or linear deployment configuration\.
+
+### Predefined Deployment Configurations for an Amazon ECS Compute Platform<a name="deployment-configurations-predefined-ecs"></a>
+
+The following table lists the predefined configurations available for Amazon ECS deployments\.
 
 
 ****  
 
 | Deployment Configuration | Description | 
 | --- | --- | 
-|  **CodeDeployDefault\.ECSAllAtOnce**  |  Shifts all traffic to the updated Amazon ECS container at once\.  | 
+|  CodeDeployDefault\.ECSLinear10PercentEvery1Minutes  |  Shifts 10 percent of traffic every minute until all traffic is shifted\.  | 
+|  CodeDeployDefault\.ECSLinear10PercentEvery3Minutes   |  Shifts 10 percent of traffic every three minutes until all traffic is shifted\.  | 
+|  CodeDeployDefault\.ECSCanary10percent5Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed five minutes later\.  | 
+| CodeDeployDefault\.ECSCanary10percent15Minutes |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 15 minutes later\.  | 
+|  CodeDeployDefault\.ECSAllAtOnce  |  Shifts all traffic to the updated Amazon ECS container at once\.  | 
 
 ## Deployment Configurations on an AWS Lambda Compute Platform<a name="deployment-configuration-lambda"></a>
 
@@ -54,13 +69,13 @@ The following table lists the predefined configurations available for AWS Lambda
 
 | Deployment Configuration | Description | 
 | --- | --- | 
-|  **CodeDeployDefault\.LambdaCanary10Percent5Minutes**  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed five minutes later\.  | 
-|  **CodeDeployDefault\.LambdaCanary10Percent10Minutes**  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 10 minutes later\.  | 
-|  **CodeDeployDefault\.LambdaCanary10Percent15Minutes**  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 15 minutes later\.  | 
-|  **CodeDeployDefault\.LambdaCanary10Percent30Minutes**  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 30 minutes later\.  | 
-|  **CodeDeployDefault\.LambdaLinear10PercentEvery1Minute**  | Shifts 10 percent of traffic every minute until all traffic is shifted\. | 
-|  **CodeDeployDefault\.LambdaLinear10PercentEvery2Minutes**  |  Shifts 10 percent of traffic every two minutes until all traffic is shifted\.  | 
-|  **CodeDeployDefault\.LambdaLinear10PercentEvery3Minutes**  |  Shifts 10 percent of traffic every three minutes until all traffic is shifted\.  | 
+|  CodeDeployDefault\.LambdaCanary10Percent5Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed five minutes later\.  | 
+|  CodeDeployDefault\.LambdaCanary10Percent10Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 10 minutes later\.  | 
+|  CodeDeployDefault\.LambdaCanary10Percent15Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 15 minutes later\.  | 
+|  CodeDeployDefault\.LambdaCanary10Percent30Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 30 minutes later\.  | 
+|  CodeDeployDefault\.LambdaLinear10PercentEvery1Minute  | Shifts 10 percent of traffic every minute until all traffic is shifted\. | 
+|  CodeDeployDefault\.LambdaLinear10PercentEvery2Minutes  |  Shifts 10 percent of traffic every two minutes until all traffic is shifted\.  | 
+|  CodeDeployDefault\.LambdaLinear10PercentEvery3Minutes  |  Shifts 10 percent of traffic every three minutes until all traffic is shifted\.  | 
 | CodeDeployDefault\.LambdaLinear10PercentEvery10Minutes | Shifts 10 percent of traffic every 10 minutes until all traffic is shifted\. | 
 |  CodeDeployDefault\.LambdaAllAtOnce  |  Shifts all traffic to the updated Lambda functions at once\.  | 
 

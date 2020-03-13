@@ -1,4 +1,4 @@
-# Step 7: Clean Up<a name="tutoria-ecs-clean-up"></a>
+# Step 4: Clean Up<a name="tutorial-ecs-clean-up"></a>
 
  The next tutorial, [Tutorial: Deploy an Amazon ECS Service with a Validation Test](tutorial-ecs-deployment-with-hooks.md), builds on this tutorial and uses the CodeDeploy application and deployment group you created\. If you want to follow the steps in that tutorial, skip this step and do not delete the resources you created\. 
 

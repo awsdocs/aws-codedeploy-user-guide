@@ -100,4 +100,4 @@ For more information, see [About Third\-Party Application Restrictions](https://
 
 ### Automatically Deploy from CodePipeline with CodeDeploy<a name="behaviors-deploy-automatically"></a>
 
-You can trigger a deployment from a CodePipeline whenever the source code changes\. For more infomation, see [CodePipeline](https://aws.amazon.com//codepipeline/)\.
+You can trigger a deployment from a CodePipeline whenever the source code changes\. For more infomation, see [CodePipeline](https://aws.amazon.com/codepipeline/)\.

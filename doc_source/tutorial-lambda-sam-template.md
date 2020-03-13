@@ -21,7 +21,7 @@ Create an AWS SAM template file that specifies the components in your infrastruc
        Type: AWS::Serverless::Function
        Properties:
          Handler: myDateTimeFunction.handler
-         Runtime: nodejs8.10
+         Runtime: nodejs10.x
    # Instructs your myDateTimeFunction is published to an alias named "live".      
          AutoPublishAlias: live
    # Grants this function permission to call lambda:InvokeFunction
@@ -61,7 +61,7 @@ Create an AWS SAM template file that specifies the components in your infrastruc
                Action: 
                  - "lambda:InvokeFunction"
                Resource: !Ref myDateTimeFunction.Version
-         Runtime: nodejs8.10
+         Runtime: nodejs10.x
    # Specifies the name of the Lambda hook function      
          FunctionName: 'CodeDeployHook_beforeAllowTraffic'
          DeploymentPreference:
@@ -92,7 +92,7 @@ Create an AWS SAM template file that specifies the components in your infrastruc
                Action: 
                  - "lambda:InvokeFunction"
                Resource: !Ref myDateTimeFunction.Version
-         Runtime: nodejs8.10
+         Runtime: nodejs10.x
    # Specifies the name of the Lambda hook function      
          FunctionName: 'CodeDeployHook_afterAllowTraffic'
          DeploymentPreference:

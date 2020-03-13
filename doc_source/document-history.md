@@ -2,10 +2,11 @@
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.
 + **API version: **2014\-10\-06
-+ **Latest documentation update: **December 16, 2019
++ **Latest documentation update: **January 6, 2020
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [CodeDeploy supports weighted traffic shifting for Amazon ECS blue/green deployments](#document-history) | CodeDeploy now supports weighted traffic shifting for Amazon ECS blue/green deployments\. You choose or create a deployment configuration to specify the number of traffic shifting intervals in the deployment and the percentage of traffic to shift in each interval\. The following topic has been updated to reflect this change: [Deployment Configurations on an Amazon ECS Compute Platform](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html#deployment-configuration-ecs)\. | February 6, 2020 | 
 | [Updated security, authentication, and access control topics](#document-history) | The security, authentication, and access control information for CodeDeploy has been organized into a new Security chapter\. For more information, see [Security](https://docs.aws.amazon.com/codedeploy/latest/userguide/security.html)\. | November 26, 2019 | 
 | [CodeDeploy supports notification rules](#document-history) | You can now use notification rules to notify users of important changes in deployments\. For more information, see [Create a Notification Rule](https://docs.aws.amazon.com/codedeploy/latest/userguide/notification-rule-create.html)\. | November 5, 2019 | 
 | [Updated topics](#document-history) | CodeDeploy is now available in the Asia Pacific \(Hong Kong\) Region \(ap\-east\-1\) region\. Several topics, including those containing instructions for setting up the CodeDeploy agent, were updated to reflect the availability of this new region\. You must explicitly enable access to this region\. For more informaiton, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html)\. | April 25, 2019 | 

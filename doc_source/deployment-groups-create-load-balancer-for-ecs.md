@@ -28,7 +28,7 @@
 
 1. Verify the security group you want to use is available and make a note of its group ID \(for example, **sg\-abcd1234**\)\. You use this when you create your load balancer\.
 
-## Ceate an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(Console\)<a name="deployment-groups-create-load-balancer-for-ecs-console"></a>
+## Create an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(Console\)<a name="deployment-groups-create-load-balancer-for-ecs-console"></a>
 
 To use the Amazon EC2 console to create an Amazon EC2 Application Load Balancer:
 
@@ -94,7 +94,7 @@ To use the Amazon EC2 console to create an Amazon EC2 Application Load Balancer:
 **Note**  
 You must have two target groups created for your load balancer in order for your Amazon ECS deployment to run\. You use the ARN of one of your target groups when you create your Amazon ECS service\. For more information, see [Step 4: Create an Amazon ECS Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-blue-green.html#create-blue-green-taskdef) in the *Amazon ECS User Guide*\.
 
-## Ceate an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(CLI\)<a name="deployment-groups-create-load-balancer-for-ecs-cli"></a>
+## Create an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(CLI\)<a name="deployment-groups-create-load-balancer-for-ecs-cli"></a>
 
 To create an Application Load Balancer using the AWS CLI:
 

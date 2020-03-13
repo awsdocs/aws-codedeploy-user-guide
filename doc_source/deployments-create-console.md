@@ -22,7 +22,7 @@ Your application must have a deployment group before it can be deployed\. If you
 
 1. \(Optional\) In **Deployment description**, enter a description for this deployment\.
 
-1. \(Optional\) Expand **Override deployment configuration** to choose a deployment configuration to control how traffic is shifted to the Lambda function version that is different from the one specified in the deployment group\.
+1. \(Optional\) Expand **Override deployment configuration** to choose a deployment configuration to control how traffic is shifted to the Amazon EC2 or on\-premises server that is different from the one specified in the deployment group\.
 
    For more information, see [Working with Deployment Configurations in CodeDeploy](deployment-configurations.md)\.
 

@@ -1,6 +1,6 @@
 # Tutorial: Deploy an Amazon ECS Service<a name="tutorial-ecs-deployment"></a>
 
- In this tutorial, you learn how to deploy an Amazon ECS application\. You start with an Amazon ECS application you already created\. The first step is to update your application by modifying its task definition file with a new tag\. Next, you use CodeDeploy to deploy the update\. During deployment, CodeDeploy installs your update into a new, replacement task set\. Then, it shifts production traffic from the original version of your Amazon ECS service, which is in its original task set, to the updated version in the replacement taks set\.
+ In this tutorial, you learn how to deploy an Amazon ECS application\. You start with an Amazon ECS application you already created\. The first step is to update your application by modifying its task definition file with a new tag\. Next, you use CodeDeploy to deploy the update\. During deployment, CodeDeploy installs your update into a new, replacement task set\. Then, it shifts production traffic from the original version of your Amazon ECS service, which is in its original task set, to the updated version in the replacement task set\.
 
  During an Amazon ECS deployment, CodeDeploy uses a load balancer that is configured with two target groups and one production traffic listener\. The following diagram shows how the load balancer, production listener, target groups, and your Amazon ECS application are related before the deployment starts\. This tutorial uses an Application Load Balancer\. You can also use a Network Load Balancer\. 
 
@@ -19,4 +19,4 @@ After you complete this tutorial, you can use the CodeDeploy application and dep
 + [Step 1: Update Your Amazon ECS Application](tutorial-ecs-update-the-ecs-application.md)
 + [Step 2: Create the AppSpec File](tutorial-ecs-create-appspec-file.md)
 + [Step 3: Use the CodeDeploy Console to Deploy Your Amazon ECS Service](tutorial-ecs-deployment-deploy.md)
-+ [Step 7: Clean Up](tutoria-ecs-clean-up.md)
++ [Step 4: Clean Up](tutorial-ecs-clean-up.md)

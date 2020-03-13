@@ -27,7 +27,7 @@ Deployments to Amazon EC2 instances in an Amazon EC2 Auto Scaling group can fail
 ## "CodeDeployRole does not give you permission to perform operations in the following AWS service: AmazonAutoScaling" error<a name="troubleshooting-auto-scaling-permissions-error"></a>
 
  Deployments that use an Auto Scaling group created with a launch template require the following permissions\. These are in addition to the permissions granted by the `AWSCodeDeployRole` AWS managed policy\. 
-+  `ec2:RunInstance` 
++  `ec2:RunInstances` 
 +  `ec2:CreateTags` 
 +  `iam:PassRole` 
 

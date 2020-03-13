@@ -1,7 +1,7 @@
 # AWS CodeDeploy User Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -79,7 +79,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Step 1: Update Your Amazon ECS Application](tutorial-ecs-update-the-ecs-application.md)
       + [Step 2: Create the AppSpec File](tutorial-ecs-create-appspec-file.md)
       + [Step 3: Use the CodeDeploy Console to Deploy Your Amazon ECS Service](tutorial-ecs-deployment-deploy.md)
-      + [Step 7: Clean Up](tutoria-ecs-clean-up.md)
+      + [Step 4: Clean Up](tutorial-ecs-clean-up.md)
    + [Tutorial: Deploy an Amazon ECS Service with a Validation Test](tutorial-ecs-deployment-with-hooks.md)
       + [Prerequisites](tutorial-ecs-with-hooks-prereqs.md)
       + [Step 1: Create a Test Listener](tutorial-ecs-with-hooks-create-second-listener.md)
