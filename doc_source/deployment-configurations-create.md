@@ -2,9 +2,6 @@
 
 You can use the CodeDeploy console, AWS CLI, the CodeDeploy APIs, or an AWS CloudFormation template to create custom deployment configurations\. 
 
-**Note**  
-You cannot create a custom deployment configuration for an Amazon ECS compute platform deployment\. 
-
 For information about using an AWS CloudFormation template to create a deployment configuration, see [AWS CloudFormation Templates for CodeDeploy Reference](reference-cloudformation-templates.md)\.
 
 To use the AWS CLI to create a deployment configuration, call the [create\-deployment\-config](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-config.html) command, specifying:
@@ -21,4 +18,11 @@ The following example creates an AWS Lambda deployment configuration named Canar
 
 ```
 aws deploy create-deployment-config --deployment-config-name Canary25Percent45Minutes --traffic-routing-config "type="TimeBasedCanary",timeBasedCanary={canaryPercentage=25,canaryInterval=45}" --compute-platform Lambda
+```
+
+The following example creates an AWS ECS deployment configuration named ECSLinear10Percent1Minutes\. It uses linear traffic shifting to shift 10 percent of traffic every 1 minute\. :
+
+```
+aws deploy create-deployment-config --deployment-config-name ECSLinear10Percent1Minutes --compute-platform ECS --traffic-routing-config type=TimeBasedLinear,timeBasedLinear="{linearPercentage=10,linearInterval=1}"
+
 ```
