@@ -24,5 +24,4 @@ The following example creates an AWS ECS deployment configuration named ECSLinea
 
 ```
 aws deploy create-deployment-config --deployment-config-name ECSLinear10Percent1Minutes --compute-platform ECS --traffic-routing-config type=TimeBasedLinear,timeBasedLinear="{linearPercentage=10,linearInterval=1}"
-
 ```
