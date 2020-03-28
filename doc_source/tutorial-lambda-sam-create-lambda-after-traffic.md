@@ -2,7 +2,7 @@
 
 Create the file for your `afterAllowTraffic` hook Lambda function\.
 
-1.  Create a text file and save it as `>afterAllowTraffic.js` in the `SAM-Tutorial` directory\. 
+1.  Create a text file and save it as `afterAllowTraffic.js` in the `SAM-Tutorial` directory\. 
 
 1.  Copy the following Node\.js code into `afterAllowTraffic.js`\. This function executes during your deployment's `AfterAllowTraffic` hook\. 
 
