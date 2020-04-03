@@ -1,6 +1,6 @@
 # Install or reinstall the CodeDeploy agent for Amazon Linux or RHEL<a name="codedeploy-agent-operations-install-linux"></a>
 
-Sign in to the instance, and run the following commands, one at a time\. Running the first command, `sudo yum install`, first is considered best practice when using `yum` to install packages, but you can skip it if you do not wish to update all of your packages\.
+Sign in to the instance, and run the following commands, one at a time\. Running the first command, `sudo yum update`, first is considered best practice when using `yum` to install packages, but you can skip it if you do not wish to update all of your packages\.
 
 **Note**  
 In the fourth command, `/home/ec2-user` represents the default user name for an Amazon Linux or RHEL Amazon EC2 instance\. If your instance was created using a custom AMI, the AMI owner might have specified a different default user name\. 
