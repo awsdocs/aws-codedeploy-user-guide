@@ -41,8 +41,8 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  Maximum number of concurrent deployments to a deployment group¹  |  1  | 
 | Maximum number of concurrent deployments associated with an AWS account²  | 100 | 
 |  Maximum number of hours an EC2/On\-Premises in\-place deployment can run  |  8  | 
-| Maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an EC2/On\-Premises blue/green deployment | 48 | 
-| Maximum number of hours between the completion of a deployment and the termination of the original environment during an EC2/On\-Premises blue/green deployment | 48 | 
+| Maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an EC2/On\-Premises or Amazon ECS blue/green deployment | 48 | 
+| Maximum number of hours between the completion of a deployment and the termination of the original environment during an EC2/On\-Premises or Amazon ECS blue/green deployment | 48 | 
 | Maximum number of hours an EC2/On\-Premises blue/green deployment can run | 109 \(48 for each of the above two limits\) plus one hour for each of 13 possible lifecycle events | 
 | Maximum number of hours an AWS Lambda deployment can run | 50 \(48 hours for the maximum time between the first and last traffic shift plus one hour for each of two possible lifecycle hooks\) | 
 | Maximum number of seconds until a deployment lifecycle event fails if not completed | 3600 | 

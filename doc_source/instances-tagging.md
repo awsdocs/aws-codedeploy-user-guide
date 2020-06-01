@@ -187,9 +187,9 @@ To illustrate, instances with the following tag groups *would* be among those in
 + `Environment=Staging`,`Region=South`,`Type=t2.large`
 
 Instances with the following tag groups would *not* be included in the deployment group\. The **highlighted** key values cause the instances to be excluded:
-+ `Environment=Beta`, `Region=West`,`Type=t2.medium`
-+ `Environment=Staging`,`Region=East`,`Type=t2.micro`
-+ `Environment=Production`,`Region=South`,`Type=t2.large`
++ `Environment=Beta`, Region=**West**,`Type=t2.medium`
++ `Environment=Staging`,`Region=East`,Type=**t2\.micro**
++ Environment=**Production**,`Region=South`,`Type=t2.large`
 
 CodeDeploy console setup view: 
 

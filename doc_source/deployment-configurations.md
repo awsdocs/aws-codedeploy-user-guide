@@ -1,6 +1,6 @@
 # Working with Deployment Configurations in CodeDeploy<a name="deployment-configurations"></a>
 
-A deployment configuration is a set of rules and success and failure conditions used by CodeDeploy during a deployment\. These rules and conditions are different, depending on whether you deploy to an EC2/On\-Premises compute platform or an AWS Lambda compute platform\. 
+A deployment configuration is a set of rules and success and failure conditions used by CodeDeploy during a deployment\. These rules and conditions are different, depending on whether you deploy to an EC2/On\-Premises compute platform, AWS Lambda compute platform, or Amazon ECS compute platform\. 
 
 ## Deployment Configurations on an EC2/On\-Premises Compute Platform<a name="deployment-configuration-server"></a>
 
@@ -45,9 +45,23 @@ The following table lists the predefined configurations available for Amazon ECS
 | --- | --- | 
 |  CodeDeployDefault\.ECSLinear10PercentEvery1Minutes  |  Shifts 10 percent of traffic every minute until all traffic is shifted\.  | 
 |  CodeDeployDefault\.ECSLinear10PercentEvery3Minutes   |  Shifts 10 percent of traffic every three minutes until all traffic is shifted\.  | 
-|  CodeDeployDefault\.ECSCanary10percent5Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed five minutes later\.  | 
-| CodeDeployDefault\.ECSCanary10percent15Minutes |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 15 minutes later\.  | 
+|  CodeDeployDefault\.ECSCanary10Percent5Minutes  |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed five minutes later\.  | 
+| CodeDeployDefault\.ECSCanary10Percent15Minutes |  Shifts 10 percent of traffic in the first increment\. The remaining 90 percent is deployed 15 minutes later\.  | 
 |  CodeDeployDefault\.ECSAllAtOnce  |  Shifts all traffic to the updated Amazon ECS container at once\.  | 
+
+## Deployment Configurations for AWS CloudFormation Blue/Green Deployments \(Amazon ECS\)<a name="deployment-configuration-cfn-bg"></a>
+
+ When you deploy to an Amazon ECS compute platform through AWS CloudFormation blue/green deployments, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS container\.
+
+There are three ways that traffic can shift during an Amazon ECS blue/green deployment through AWS CloudFormation:
++ **Canary**: Traffic is shifted in two increments\. You can choose a predefined canary option that specifies the percentage of traffic shifted to your updated Amazon ECS task set in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\.
++ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
++ **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
+
+For this deployment configuration, you cannot create your own custom canary or linear deployment configuration\. For step\-by\-step instructions on using AWS CloudFormation to manage your Amazon ECS blue/green deployments, see [Automate ECS Blue/Green Deployments Through CodeDeploy Using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\. 
+
+**Note**  
+Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the MXP, CPT, KIX, or BJS/ZHY regions\.
 
 ## Deployment Configurations on an AWS Lambda Compute Platform<a name="deployment-configuration-lambda"></a>
 

@@ -25,7 +25,7 @@ Wildcards can't be used with *region* or *account\-id*\. For more information ab
 **Note**  
  In the ARN for each action, a colon \(:\) follows the resource\. You can also follow the resource with a forward slash \(/\)\. For more information, see [CodeDeploy Example ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-codedeploy)\. 
 
-If you see an expand arrow \(**↗**\) in the upper\-right corner of the table, you can open the table in a new window\. To close the window, choose the close button \(**X**\) in the lower\-right corner\.
+Use the scroll bars to see the rest of the table\.
 
 
 **CodeDeploy API Operations and Required Permissions for Actions**  

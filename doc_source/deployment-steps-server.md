@@ -71,7 +71,7 @@ To manually provision instances:
 For an initial deployment, the AWS CloudFormation template does all of this for you\. It creates and configures new, single Amazon EC2 instances based on Amazon Linux or Windows Server with the CodeDeploy agent already installed\. For more information, see [Working with Instances for CodeDeploy](instances.md)\. 
 
 **Note**  
-For a blue/green deployment, you can choose between using instances you already have for the replacement environment or letting CodeDeploy provision new instances for you as part of the deployment process\. 
+For a blue/green deployment, you can choose between using instances that you already have for the replacement environment or letting CodeDeploy provision new instances for you as part of the deployment process\. 
 
 ## Uploading Your Application Revision<a name="deployment-steps-uploading-your-app"></a>
 

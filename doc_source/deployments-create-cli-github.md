@@ -6,15 +6,11 @@ Before you can deploy an application from a GitHub repository for the first time
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
 
-1. Choose **Deployments**\.
+1. Choose **Applications**\.
 
-1. Choose **Create deployment**\.
+1. From **Applications**, choose the application you want to link to your GitHub user account and choose **Deploy application**\.
 **Note**  
 You are not creating a deployment\. This is currently the only way to give CodeDeploy permission to interact with GitHub on behalf of your GitHub user account\.
-
-1. From **Application**, choose the application you want to link to your GitHub user account\.
-
-1. From **Deployment group**, choose any available deployment group\.
 
 1. Next to **Repository type**, choose **My application revision is stored in GitHub**\.
 

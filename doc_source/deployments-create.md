@@ -12,3 +12,4 @@ The process for creating a deployment depends on the compute platform used by yo
 + [Create an Amazon ECS Compute Platform Deployment \(CLI\)](deployments-create-ecs-cli.md)
 + [Create an AWS Lambda Compute Platform Deployment \(CLI\)](deployments-create-lambda-cli.md)
 + [Create an EC2/On\-Premises Compute Platform Deployment \(CLI\)](deployments-create-cli.md)
++ [Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation](deployments-create-ecs-cfn.md)

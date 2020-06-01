@@ -25,7 +25,7 @@ The local or network account used on the on\-premises instance to configure the 
 
 The IAM identity you use to register the on\-premises instance must be granted permissions to complete the registration \(and to deregister the on\-premises instance, as needed\)\. 
 
-In addition to the policy described in [Getting Started with CodeDeploy](getting-started-codedeploy.md), make sure the calling IAM identity also has the following additional policy attached:
+In addition to the policy described in [Getting Started with CodeDeploy](getting-started-codedeploy.md), make sure the calling IAM identity also has the following additional policy attached\. For information on how to attach IAM policies, see [Managing IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html)\.
 
 ```
 {

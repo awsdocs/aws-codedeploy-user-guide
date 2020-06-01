@@ -41,7 +41,7 @@ In these instructions, we assume you are running Windows and the Windows Desktop
 **Warning**  
 Do not stop or terminate the instance\. Otherwise, CodeDeploy can't deploy to it\.
 
-## Add an Inbound Rule That Allows HTTP Traffic to Your Amazon Linux or RHEL Amazon EC2 Instance<a name="tutorials-windows-launch-instance-add-inbound-rule"></a>
+## Add an Inbound Rule That Allows HTTP Traffic to Your Windows Server Amazon EC2 Instance<a name="tutorials-windows-launch-instance-add-inbound-rule"></a>
 
 The next step confirms your Amazon EC2 instance has an open HTTP port so you can see the deployed webpage on your Windows Server Amazon EC2 instance in a browser\. 
 

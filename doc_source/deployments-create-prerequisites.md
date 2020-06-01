@@ -83,3 +83,8 @@ The instances in your replacement environment will be registered with the load b
   To configure a Network Load Balancer, follow the instructions in one of the following topics:
   + [Create a Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html)
   + [Tutorials: Create a Network Load Balancer Using the AWS CLI](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancer-cli.html)
+
+## Deployment Prerequisites for a Blue/Green Deployment Through AWS CloudFormation<a name="deployment-prerequisites-cfn-bg"></a>
++ Your template does not need to model resources for a CodeDeploy application or deployment group\.
++ Your template must include resources for a VPC using Amazon VPC that contains at least two subnets\.
++ Your template must include resources for a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing that is used to direct traffic to your target groups\.

@@ -184,6 +184,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Create an AWS Lambda Compute Platform Deployment (CLI)](deployments-create-lambda-cli.md)
       + [Create an EC2/On-Premises Compute Platform Deployment (CLI)](deployments-create-cli.md)
          + [Connect a CodeDeploy Application to a GitHub Repository](deployments-create-cli-github.md)
+      + [Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation](deployments-create-ecs-cfn.md)
    + [View CodeDeployDeployment Details](deployments-view-details.md)
    + [View Log Data for CodeDeploy EC2/On-Premises Deployments](deployments-view-logs.md)
    + [Stop a Deployment with CodeDeploy](deployments-stop.md)
@@ -236,4 +237,4 @@ Amazon's trademarks and trade dress may not be used in
    + [Error Codes for AWS CodeDeploy](error-codes.md)
 + [CodeDeploy Resources](resources.md)
 + [Document History](document-history.md)
-+ [AWS Glossary](glossary.md)
++ [AWS glossary](glossary.md)

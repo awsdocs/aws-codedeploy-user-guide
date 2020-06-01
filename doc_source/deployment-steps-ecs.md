@@ -13,6 +13,7 @@ This topic provides information about the components and workflow of CodeDeploy 
 + [Updating Your Application](#deployment-steps-updating-your-app-ecs)
 + [Stopped and Failed Deployments](#deployment-stop-fail-ecs)
 + [Redeployments and Deployment Rollbacks](#deployment-rollback-ecs)
++ [Amazon ECS Blue/Green Deployments Through AWS CloudFormation](#deployment-steps-ecs-cf)
 
 ## Before You Begin an Amazon ECS Deployment<a name="deployment-steps-prerequisites-ecs"></a>
 
@@ -221,3 +222,10 @@ In all cases, the new or rolled\-back deployment is assigned its own deployment 
 If you redeploy, the target group associated with the current deployment's original task set is associated with the redeployment's replacement task set\.
 
 For more information, see [Redeploy and Roll Back a Deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
+
+## Amazon ECS Blue/Green Deployments Through AWS CloudFormation<a name="deployment-steps-ecs-cf"></a>
+
+You can use AWS CloudFormation to manage Amazon ECS blue/green deployments through CodeDeploy\. For more information, see [Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation](deployments-create-ecs-cfn.md)\.
+
+**Note**  
+Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the MXP, CPT, KIX, or BJS/ZHY regions\.

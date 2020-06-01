@@ -15,6 +15,9 @@ Before you start working with the service, you should familiarize yourself with 
 
   You can manage the way in which traffic is shifted to the updated task set during a deployment by choosing a canary, linear, or all\-at\-once configuration\.
 
+**Note**  
+Amazon ECS blue/green deployments are supported through both CodeDeploy and AWS CloudFormation\. Details for these deployments are described in subsequent sections\.
+
 **Deployment configuration**: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment\. If your deployment uses the EC2/On\-Premises compute platform, you can specify the minimum number of healthy instances for the deployment\. If your deployment uses the AWS Lambda compute platform or the Amazon ECS compute platform, you can specify how traffic is routed to your updated Lambda function versions\.
 
 For more information about specifying the minimum number of healthy hosts for a deployment that uses the EC2/On\-Premises compute platform, see [Minimum Healthy Instances and Deployments](instances-health.md#minimum-healthy-hosts)\.
@@ -43,8 +46,12 @@ These are the deployment configurations that specify how traffic is routed durin
 If you use an EC2/On\-Premises compute platform, be aware that blue/green deployments work with Amazon EC2 instances only\.
   + **Blue/green on an AWS Lambda compute platform**: Traffic is shifted from your current serverless environment to one with your updated Lambda function versions\. You can specify Lambda functions that perform validation tests and choose the way in which the traffic shifting occurs\. All AWS Lambda compute platform deployments are blue/green deployments\. For this reason, you do not need to specify a deployment type\. 
   + **Blue/green on an Amazon ECS compute platform**: Traffic is shifted from the task set with the original version of an application in an Amazon ECS service to a replacement task set in the same service\. You can set the traffic shifting to linear or canary through the deployment configuration\. The protocol and port of a specified load balancer listener is used to reroute production traffic\. During a deployment, a test listener can be used to serve traffic to the replacement task set while validation tests are run\. 
+  + **Blue/green deployments through AWS CloudFormation**: Traffic is shifted from your current resources to your updated resources as part of an AWS CloudFormation stack update\. Currently, only ECS blue/green deployments are supported\. 
 
   For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](welcome.md#welcome-deployment-overview-blue-green)\.
+
+**Note**  
+Amazon ECS blue/green deployments are supported using both CodeDeploy and AWS CloudFormation\. Details for these deployments are described in subsequent sections\.
 
 **IAM instance profile**: An IAM role that you attach to your Amazon EC2 instances\. This profile includes the permissions required to access the Amazon S3 buckets or GitHub repositories where the applications are stored\. For more information, see [Step 4: Create an IAM Instance Profile for Your Amazon EC2 Instances](getting-started-create-iam-instance-profile.md)\.
 

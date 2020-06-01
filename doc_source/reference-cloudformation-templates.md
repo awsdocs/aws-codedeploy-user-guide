@@ -1,5 +1,10 @@
 # AWS CloudFormation Templates for CodeDeploy Reference<a name="reference-cloudformation-templates"></a>
 
+This section introduces the AWS CloudFormation resources, transform, and hook designed to work with CodeDeploy deployments\. For a walkthrough of creating a stack update managed by the AWS CloudFormation hook for CodeDeploy, see [Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation](deployments-create-ecs-cfn.md)
+
+**Note**  
+AWS CloudFormation hooks are part of the AWS CloudFormation components for AWS and are different from CodeDeploy lifecycle event hooks\.
+
 In addition to the other methods available to you in CodeDeploy, you can use AWS CloudFormation templates to perform the following tasks:
 + Create applications\.
 + Create deployment groups and specify a target revision\.
@@ -34,11 +39,4 @@ For more information about managed policies, see the following topics:
 
 The following table shows the actions an AWS CloudFormation template can perform on your behalf and includes links to more information about the AWS resource types and their property types you can add to an AWS CloudFormation template\. 
 
-
-| Action |  AWS CloudFormation Resource Type | 
-| --- | --- | 
-| Create a CodeDeploy application\.  | [AWS::CodeDeploy::Application](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html) | 
-| Create and specify the details for a deployment group to be used to deploy your application revisions\. ¹ | [AWS::CodeDeploy::DeploymentGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html) | 
-| Create a set of deployment rules, deployment success conditions, and deployment failure conditions that CodeDeploy will use during a deployment\. | [AWS::CodeDeploy::DeploymentConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html) | 
-| Create an Amazon EC2 instance\. ² | [AWS::EC2::Instance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html) | 
-| ¹ If you specify the version of the application revision that you want to be deployed as part of the deployment group, your target revision will be deployed as soon as the provisioning process is complete\. For more information about template configuration, see [CodeDeploy DeploymentGroup Deployment Revision S3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html) and [CodeDeploy DeploymentGroup Deployment Revision GitHubLocation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html) in the *AWS CloudFormation User Guide*\. ² We provide templates you can use to create Amazon EC2 instances in the regions in which CodeDeploy is supported\. For more information about using these templates, see [Create an Amazon EC2 Instance for CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.   | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/reference-cloudformation-templates.html)

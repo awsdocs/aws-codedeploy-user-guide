@@ -26,6 +26,4 @@ To use the AWS CLI to view deployment configuration details, call either the `ge
 
 To view details about a single deployment configuration, call the [get\-deployment\-config](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-config.html) command, specifying the unique deployment configuration name\.
 
-To view details about multiple deployment configurations, call the [list\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command
-
-\.
+To view details about multiple deployment configurations, call the [list\-deployments](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployments.html) command\.

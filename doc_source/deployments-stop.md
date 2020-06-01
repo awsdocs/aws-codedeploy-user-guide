@@ -9,6 +9,9 @@ Stopping an EC2/On\-Premises deployment can leave some or all of the instances i
 + [Stop a deployment \(console\)](#deployments-stop-console)
 + [Stop a deployment \(CLI\)](#deployments-stop-cli)
 
+**Note**  
+If your deployment is a blue/green deployment through AWS CloudFormation, you cannot perform this task in the CodeDeploy console\. Go to the AWS CloudFormation console to perform this task\. 
+
 ## Stop a deployment \(console\)<a name="deployments-stop-console"></a>
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
