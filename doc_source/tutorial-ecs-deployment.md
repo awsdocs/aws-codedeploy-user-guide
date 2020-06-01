@@ -6,7 +6,7 @@
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/codedeploy-ecs-deployment-with-no-test-listener-step-1.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
- After a successful deployment, the production traffic listener serves traffic to your new replacment task set and the original task set is terminated\. The following diagram shows how your resources are related after a successful deployment\. For more information, see [What Happens During an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-what-happens)\. 
+ After a successful deployment, the production traffic listener serves traffic to your new replacement task set and the original task set is terminated\. The following diagram shows how your resources are related after a successful deployment\. For more information, see [What Happens During an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-what-happens)\. 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/codedeploy-ecs-deployment-with-no-test-listener-step-5.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
