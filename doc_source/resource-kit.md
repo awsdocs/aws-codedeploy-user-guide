@@ -25,6 +25,7 @@ This table lists the names of *bucket\-name * replacements required for some pro
 | US West \(N\. California\) | aws\-codedeploy\-us\-west\-1 | us\-west\-1 | 
 | US West \(Oregon\) | aws\-codedeploy\-us\-west\-2 | us\-west\-2 | 
 | Canada \(Central\) | aws\-codedeploy\-ca\-central\-1 | ca\-central\-1 | 
+| Europe \(Stockholm\) | aws\-codedeploy\-eu\-north\-1 | eu\-north\-1 | 
 | Europe \(Ireland\) | aws\-codedeploy\-eu\-west\-1 | eu\-west\-1 | 
 | Europe \(London\) | aws\-codedeploy\-eu\-west\-2 | eu\-west\-2 | 
 | Europe \(Paris\) | aws\-codedeploy\-eu\-west\-3 | eu\-west\-3 | 
