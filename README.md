@@ -2,6 +2,10 @@
 
 The open source version of the AWS CodeDeploy User Guide. You can submit feedback & requests for changes by submitting issues in this repo or by making proposed changes & submitting a pull request.
 
+## Default branch
+The default branch for this repo has changed to `main`. 
+If you have cloned the previous default branch, please update your local repo to use the `main` branch. 
+
 ## License Summary
 
 The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the LICENSE file.
