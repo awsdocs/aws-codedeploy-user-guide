@@ -1,6 +1,6 @@
-# Specify Information About a Revision Stored in a GitHub Repository<a name="deployments-create-console-github"></a>
+# Specify information about a revision stored in a GitHub repository<a name="deployments-create-console-github"></a>
 
-If you are following the steps in [Create an EC2/On\-Premises Compute Platform Deployment \(Console\)](deployments-create-console.md), follow these steps to add details about an application revision stored in a GitHub repository\.
+If you are following the steps in [Create an EC2/On\-Premises Compute Platform deployment \(console\)](deployments-create-console.md), follow these steps to add details about an application revision stored in a GitHub repository\.
 
 1. In **Connect to GitHub**, do one of the following:
    + To create a connection for CodeDeploy applications to a GitHub account, in a different web browser tab, sign out of GitHub\. In **GitHub account**, enter a name to identify this connection, and then choose **Connect to GitHub**\. The webpage prompts you to authorize CodeDeploy to interact with GitHub for your application\. Continue to step 2\.

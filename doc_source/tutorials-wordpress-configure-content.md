@@ -1,13 +1,13 @@
-# Step 2: Configure Your Source Content to Be Deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance<a name="tutorials-wordpress-configure-content"></a>
+# Step 2: Configure your source content to be deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 instance<a name="tutorials-wordpress-configure-content"></a>
 
 Now it's time to configure your application's source content so you have something to deploy to the instance\.
 
 **Topics**
-+ [Get the Source Code](#tutorials-wordpress-configure-content-download-code)
-+ [Create Scripts to Run Your Application](#tutorials-wordpress-configure-content-create-scripts)
-+ [Add an Application Specification File](#tutorials-wordpress-configure-content-add-appspec-file)
++ [Get the source code](#tutorials-wordpress-configure-content-download-code)
++ [Create scripts to run your application](#tutorials-wordpress-configure-content-create-scripts)
++ [Add an application specification file](#tutorials-wordpress-configure-content-add-appspec-file)
 
-## Get the Source Code<a name="tutorials-wordpress-configure-content-download-code"></a>
+## Get the source code<a name="tutorials-wordpress-configure-content-download-code"></a>
 
 For this tutorial, you deploy the WordPress content publishing platform from your development machine to the target Amazon EC2 instance\. To get the WordPress source code, you can use built\-in command\-line calls\. Or, if you have Git installed on your development machine, you can use that instead\.
 
@@ -70,7 +70,7 @@ Choose one of the following two options to copy the WordPress source files to yo
 
    This leaves you with a clean set of WordPress source code files in the `/tmp/WordPress` folder\.
 
-## Create Scripts to Run Your Application<a name="tutorials-wordpress-configure-content-create-scripts"></a>
+## Create scripts to run your application<a name="tutorials-wordpress-configure-content-create-scripts"></a>
 
 Next, create a folder and scripts in the directory\. CodeDeploy uses these scripts to set up and deploy your application revision on the target Amazon EC2 instance\. You can use any text editor to create the scripts\.
 
@@ -120,7 +120,7 @@ Next, create a folder and scripts in the directory\. CodeDeploy uses these scrip
 
 1. Finally, create a `change_permissions.sh` script in `/tmp/WordPress/scripts`\. This is used to change the folder permissions in Apache\.
 **Important**  
- This script updated permissions on the `/tmp/WordPress` folder so that anyone can write to it\. This is required so that WordPress can write to its database during [Step 5: Update and Redeploy Your WordPress Application](tutorials-wordpress-update-and-redeploy-application.md)\. After the WordPress application is set up, run the following command to update permissions to a more secure setting:  
+ This script updated permissions on the `/tmp/WordPress` folder so that anyone can write to it\. This is required so that WordPress can write to its database during [Step 5: Update and redeploy your WordPress application](tutorials-wordpress-update-and-redeploy-application.md)\. After the WordPress application is set up, run the following command to update permissions to a more secure setting:  
 
    ```
    chmod -R 755 /var/www/html/WordPress
@@ -137,7 +137,7 @@ Next, create a folder and scripts in the directory\. CodeDeploy uses these scrip
    chmod +x /tmp/WordPress/scripts/*
    ```
 
-## Add an Application Specification File<a name="tutorials-wordpress-configure-content-add-appspec-file"></a>
+## Add an application specification file<a name="tutorials-wordpress-configure-content-add-appspec-file"></a>
 
 Next, add an application specification file \(AppSpec file\), a [YAML](http://www.yaml.org)\-formatted file used by CodeDeploy to:
 + Map the source files in your application revision to their destinations on the target Amazon EC2 instance\.
@@ -176,7 +176,7 @@ hooks:
 
 CodeDeploy uses this AppSpec file to copy all of the files in the `/tmp/WordPress` folder on the development machine to the `/var/www/html/WordPress` folder on the target Amazon EC2 instance\. During the deployment, CodeDeploy runs the specified scripts as `root` in the `/var/www/html/WordPress/scripts` folder on the target Amazon EC2 instance at specified events during the deployment lifecycle, such as **BeforeInstall** and **AfterInstall**\. If any of these scripts take longer than 300 seconds \(5 minutes\) to run, CodeDeploy stops the deployment and marks the deployment as failed\.
 
-For more information about these settings, see the [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+For more information about these settings, see the [CodeDeploy AppSpec File reference](reference-appspec-file.md)\.
 
 **Important**  
-The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, CodeDeploy raises an error that might be difficult to debug\. For more information, see [AppSpec File Spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.
+The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, CodeDeploy raises an error that might be difficult to debug\. For more information, see [AppSpec File spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.

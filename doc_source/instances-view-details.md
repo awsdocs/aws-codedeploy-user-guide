@@ -1,20 +1,20 @@
-# View Instance Details with CodeDeploy<a name="instances-view-details"></a>
+# View instance details with CodeDeploy<a name="instances-view-details"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about instances used in a deployment\.
 
 For information about using CodeDeploy API actions to view instances, see [GetDeploymentInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html), [ListDeploymentInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.html), and [ListOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.html)\.
 
 **Topics**
-+ [View Instance Details \(Console\)](#instances-view-details-console)
-+ [View Instance Details \(CLI\)](#instances-view-details-cli)
++ [View instance details \(console\)](#instances-view-details-console)
++ [View instance details \(CLI\)](#instances-view-details-cli)
 
-## View Instance Details \(Console\)<a name="instances-view-details-console"></a>
+## View instance details \(console\)<a name="instances-view-details-console"></a>
 
 To view instance details:
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 **Note**  
@@ -30,7 +30,7 @@ If **Failed** is displayed for any of the lifecycle events, on the instance deta
 
 1. If you want to see more information about an Amazon EC2 instance, choose the ID of the instance in the **Instance ID** column\.
 
-## View Instance Details \(CLI\)<a name="instances-view-details-cli"></a>
+## View instance details \(CLI\)<a name="instances-view-details-cli"></a>
 
 To use the AWS CLI to view instance details, call either the `get-deployment-instance` command or the `list-deployment-instances` command\.
 

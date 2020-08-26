@@ -1,4 +1,4 @@
-# Step 3: Create a Service Role for CodeDeploy<a name="getting-started-create-service-role"></a>
+# Step 3: Create a service role for CodeDeploy<a name="getting-started-create-service-role"></a>
 
 In AWS, service roles are used to grant permissions to an AWS service so it can access AWS resources\. The policies that you attach to the service role determine which AWS resources the service can access and what it can do with those resources\. 
 
@@ -15,7 +15,7 @@ For EC2/On\-Premises deployments, attach the **AWSCodeDeployRole** policy\. It p
  `ec2:RunInstances` 
  `ec2:CreateTags` 
  `iam:PassRole` 
- For more information, see [Step 3: Create a Service Role](#getting-started-create-service-role) and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
+ For more information, see [Step 3: Create a service role](#getting-started-create-service-role) and [Creating a Launch Template for an Auto Scaling Group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html)\. 
 
 For Amazon ECS deployments, if you want full access to support services, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
 +  Read, update, and delete Amazon ECS task sets\. 
@@ -41,12 +41,12 @@ As part of setting up the service role, you also update its trust relationship t
 You can create a service role with the IAM console, the AWS CLI, or the IAM APIs\.
 
 **Topics**
-+ [Create a Service Role \(Console\)](#getting-started-create-service-role-console)
-+ [Create a Service Role \(CLI\)](#getting-started-create-service-role-cli)
-+ [Get the Service Role ARN \(Console\)](#getting-started-get-service-role-console)
-+ [Get the Service Role ARN \(CLI\)](#getting-started-get-service-role-cli)
++ [Create a service role \(console\)](#getting-started-create-service-role-console)
++ [Create a service role \(CLI\)](#getting-started-create-service-role-cli)
++ [Get the service role ARN \(console\)](#getting-started-get-service-role-console)
++ [Get the service role ARN \(CLI\)](#getting-started-get-service-role-cli)
 
-## Create a Service Role \(Console\)<a name="getting-started-create-service-role-console"></a>
+## Create a service role \(console\)<a name="getting-started-create-service-role-console"></a>
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -128,9 +128,9 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
    }
    ```
 
-For more information about creating service roles, see [Creating a Role to Delegate Permissions to an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-creatingrole-service.html) in the *IAM User Guide*\.
+For more information about creating service roles, see [Creating a role to delegate permissions to an AWS service](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-creatingrole-service.html) in the *IAM User Guide*\.
 
-## Create a Service Role \(CLI\)<a name="getting-started-create-service-role-cli"></a>
+## Create a service role \(CLI\)<a name="getting-started-create-service-role-cli"></a>
 
 1. On your development machine, create a text file named, for example, `CodeDeployDemo-Trust.json`\. This file is used to allow CodeDeploy to work on your behalf\.
 
@@ -199,7 +199,7 @@ Do not use a comma after the last endpoint in the list\.
 **Important**  
 Be sure to include `file://` before the file name\. It is required in this command\.
 
-   In the command's output, make a note of the value of the `Arn` entry under the `Role` object\. You need it later when you create deployment groups\. If you forget the value, follow the instructions in [Get the Service Role ARN \(CLI\) ](#getting-started-get-service-role-cli)\. 
+   In the command's output, make a note of the value of the `Arn` entry under the `Role` object\. You need it later when you create deployment groups\. If you forget the value, follow the instructions in [Get the service role ARN \(CLI\) ](#getting-started-get-service-role-cli)\. 
 
 1. The managed policy you use depends on the compute platform\.
    + If your deployment is to an EC2/On\-Premises compute platform:
@@ -224,9 +224,9 @@ Be sure to include `file://` before the file name\. It is required in this comma
      aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/AWSCodeDeployRoleForECS
      ```
 
-For more information about creating service roles, see [Creating a Role for an AWS Service](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html) in the *IAM User Guide*\.
+For more information about creating service roles, see [Creating a role for an AWS service](https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-xacct.html) in the *IAM User Guide*\.
 
-## Get the Service Role ARN \(Console\)<a name="getting-started-get-service-role-console"></a>
+## Get the service role ARN \(console\)<a name="getting-started-get-service-role-console"></a>
 
 To use the IAM console to get the ARN of the service role:
 
@@ -240,7 +240,7 @@ To use the IAM console to get the ARN of the service role:
 
 1. Make a note of the value of the **Role ARN** field\.
 
-## Get the Service Role ARN \(CLI\)<a name="getting-started-get-service-role-cli"></a>
+## Get the service role ARN \(CLI\)<a name="getting-started-get-service-role-cli"></a>
 
 To use the AWS CLI to get the ARN of the service role, call the get\-role command against the service role named **CodeDeployServiceRole**:
 

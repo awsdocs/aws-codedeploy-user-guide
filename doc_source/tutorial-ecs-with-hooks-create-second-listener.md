@@ -1,4 +1,4 @@
-# Step 1: Create a Test Listener<a name="tutorial-ecs-with-hooks-create-second-listener"></a>
+# Step 1: Create a test listener<a name="tutorial-ecs-with-hooks-create-second-listener"></a>
 
  An Amazon ECS deployment with validation tests requires a second listener\. This listener is used to serve test traffic to your updated Amazon ECS application in a replacement task set\. Your validation tests run against the test traffic\. 
 

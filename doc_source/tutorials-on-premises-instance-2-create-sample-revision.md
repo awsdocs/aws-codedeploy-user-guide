@@ -1,4 +1,4 @@
-# Step 2: Create a Sample Application Revision<a name="tutorials-on-premises-instance-2-create-sample-revision"></a>
+# Step 2: Create a sample application revision<a name="tutorials-on-premises-instance-2-create-sample-revision"></a>
 
 In this step, you create a sample application revision to deploy to your on\-premises instance\. 
 
@@ -11,8 +11,8 @@ The user account does not have permission to create or delete folders in the loc
 The user account does not have permission to create text files in the locations listed in the scripts\.
 
 **Note**  
-If you configured a Windows Server instance and want to deploy a different sample, you may want to use the one in [Step 2: Configure Your Source Content to Deploy to the Windows Server Amazon EC2 Instance](tutorials-windows-configure-content.md) in the [Tutorial: Deploy a "Hello, World\!" Application with CodeDeploy \(Windows Server\)](tutorials-windows.md) tutorial\.  
-If you configured a RHEL instance and want to deploy a different sample, you may want to use the one in [Step 2: Configure Your Source Content to Be Deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance](tutorials-wordpress-configure-content.md) in the [Tutorial: Deploy WordPress to an Amazon EC2 Instance \(Amazon Linux or Red Hat Enterprise Linux and Linux, macOS, or Unix\)](tutorials-wordpress.md) tutorial\.  
+If you configured a Windows Server instance and want to deploy a different sample, you may want to use the one in [Step 2: Configure your source content to deploy to the Windows Server Amazon EC2 instance](tutorials-windows-configure-content.md) in the [Tutorial: Deploy a "hello, world\!" application with CodeDeploy \(Windows Server\)](tutorials-windows.md) tutorial\.  
+If you configured a RHEL instance and want to deploy a different sample, you may want to use the one in [Step 2: Configure your source content to be deployed to the Amazon Linux or Red Hat Enterprise Linux Amazon EC2 instance](tutorials-wordpress-configure-content.md) in the [Tutorial: Deploy WordPress to an Amazon EC2 instance \(Amazon Linux or Red Hat Enterprise Linux and Linux, macOS, or Unix\)](tutorials-wordpress.md) tutorial\.  
 Currently, there is no alternative sample for Ubuntu Server\.
 
 1. On your development machine, create a subdirectory \(subfolder\) named `CodeDeployDemo-OnPrem` that will store the sample application revision's files, and then switch to the subfolder\. For this example, we assume you'll use the `c:\temp` folder as the root folder for Windows Server or the `/tmp` folder as the root folder for Ubuntu Server and RHEL\. If you use a different folder, be sure to substitute it for ours throughout this tutorial: 
@@ -79,7 +79,7 @@ Currently, there is no alternative sample for Ubuntu Server\.
          timeout: 900
    ```
 
-   For more information about AppSpec files, see [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md) and [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+   For more information about AppSpec files, see [Add an application specification file to a revision for CodeDeploy](application-revisions-appspec-file.md) and [CodeDeploy AppSpec File reference](reference-appspec-file.md)\.
 
    `install.txt`:
 

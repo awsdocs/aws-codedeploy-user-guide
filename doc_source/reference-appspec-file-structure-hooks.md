@@ -1,21 +1,21 @@
-# AppSpec 'hooks' Section<a name="reference-appspec-file-structure-hooks"></a>
+# AppSpec 'hooks' section<a name="reference-appspec-file-structure-hooks"></a>
 
 The content in the `'hooks'` section of the AppSpec file varies, depending on the compute platform for your deployment\. The `'hooks'` section for an EC2/On\-Premises deployment contains mappings that link deployment lifecycle event hooks to one or more scripts\. The `'hooks'` section for a Lambda or an Amazon ECS deployment specifies Lambda validation functions to run during a deployment lifecycle event\. If an event hook is not present, no operation is executed for that event\. This section is required only if you are running scripts or Lambda validation functions as part of the deployment\.
 
 **Topics**
-+ [AppSpec 'hooks' Section for an Amazon ECS Deployment](#appspec-hooks-ecs)
-+ [AppSpec 'hooks' Section for an AWS Lambda Deployment](#appspec-hooks-lambda)
-+ [AppSpec 'hooks' Section for an EC2/On\-Premises Deployment](#appspec-hooks-server)
++ [AppSpec 'hooks' section for an Amazon ECS deployment](#appspec-hooks-ecs)
++ [AppSpec 'hooks' section for an AWS Lambda deployment](#appspec-hooks-lambda)
++ [AppSpec 'hooks' section for an EC2/On\-Premises deployment](#appspec-hooks-server)
 
-## AppSpec 'hooks' Section for an Amazon ECS Deployment<a name="appspec-hooks-ecs"></a>
+## AppSpec 'hooks' section for an Amazon ECS deployment<a name="appspec-hooks-ecs"></a>
 
 **Topics**
-+ [List of Lifecycle Event Hooks for an Amazon ECS Deployment](#reference-appspec-file-structure-hooks-list-ecs)
-+ [Run Order of Hooks in an Amazon ECS Deployment](#reference-appspec-file-structure-hooks-run-order-ecs)
-+ [Structure of 'hooks' Section](#reference-appspec-file-structure-hooks-section-structure-ecs)
-+ [Sample Lambda 'hooks' Function](#reference-appspec-file-structure-hooks-section-structure-ecs-sample-function)
++ [List of lifecycle event hooks for an Amazon ECS deployment](#reference-appspec-file-structure-hooks-list-ecs)
++ [Run order of hooks in an Amazon ECS deployment](#reference-appspec-file-structure-hooks-run-order-ecs)
++ [Structure of 'hooks' section](#reference-appspec-file-structure-hooks-section-structure-ecs)
++ [Sample Lambda 'hooks' function](#reference-appspec-file-structure-hooks-section-structure-ecs-sample-function)
 
-### List of Lifecycle Event Hooks for an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-list-ecs"></a>
+### List of lifecycle event hooks for an Amazon ECS deployment<a name="reference-appspec-file-structure-hooks-list-ecs"></a>
 
 An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event\. Each hook is executed once per deployment\. Following are descriptions of the lifecycle events where you can run a hook during an Amazon ECS deployment\. 
 +  `BeforeInstall` – Use to run tasks before the replacement task set is created\. One target group is associated with the original task set\. If an optional test listener is specified, it is associated with the original task set\. A rollback is not possible at this point\. 
@@ -24,9 +24,9 @@ An AWS Lambda hook is one Lambda function specified with a string on a new line 
 +  `BeforeAllowTraffic` – Use to run tasks after the second target group is associated with the replacement task set, but before traffic is shifted to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
 +  `AfterAllowTraffic` – Use to run tasks after the second target group serves traffic to the replacement task set\. The results of a hook function at this lifecycle event can trigger a rollback\. 
 
-For more information, see [What Happens During an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-what-happens) and [Tutorial: Deploy an Amazon ECS Service with a Validation Test](tutorial-ecs-deployment-with-hooks.md)\.
+For more information, see [What happens during an Amazon ECS deployment](deployment-steps-ecs.md#deployment-steps-what-happens) and [Tutorial: Deploy an Amazon ECS service with a validation test](tutorial-ecs-deployment-with-hooks.md)\.
 
-### Run Order of Hooks in an Amazon ECS Deployment<a name="reference-appspec-file-structure-hooks-run-order-ecs"></a>
+### Run order of hooks in an Amazon ECS deployment<a name="reference-appspec-file-structure-hooks-run-order-ecs"></a>
 
 In an Amazon ECS deployment, event hooks run in the following order:
 
@@ -35,7 +35,7 @@ In an Amazon ECS deployment, event hooks run in the following order:
 **Note**  
 The **Start**, **Install**, **TestTraffic**, **AllowTraffic**, and **End** events in the deployment cannot be scripted, which is why they appear in gray in this diagram\.
 
-### Structure of 'hooks' Section<a name="reference-appspec-file-structure-hooks-section-structure-ecs"></a>
+### Structure of 'hooks' section<a name="reference-appspec-file-structure-hooks-section-structure-ecs"></a>
 
 The following are examples of the structure of the `'hooks'` section\.
 
@@ -73,9 +73,9 @@ Using JSON:
 }
 ```
 
-### Sample Lambda 'hooks' Function<a name="reference-appspec-file-structure-hooks-section-structure-ecs-sample-function"></a>
+### Sample Lambda 'hooks' function<a name="reference-appspec-file-structure-hooks-section-structure-ecs-sample-function"></a>
 
-Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeInstall`, `AfterInstall`, `AllowTestTraffic`, `BeforeAllowTraffic`, and `AllowTestTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
+Use the `'hooks'` section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeInstall`, `AfterInstall`, `AfterAllowTestTraffic`, `BeforeAllowTraffic`, and `AfterAllowTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda `AfterAllowTraffic` function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
 
 **Important**  
 The deployment is considered to have failed if CodeDeploy is not notified by the Lambda validation function within one hour\.
@@ -122,21 +122,21 @@ exports.handler = (event, context, callback) => {
 };
 ```
 
-## AppSpec 'hooks' Section for an AWS Lambda Deployment<a name="appspec-hooks-lambda"></a>
+## AppSpec 'hooks' section for an AWS Lambda deployment<a name="appspec-hooks-lambda"></a>
 
 **Topics**
-+ [List of Lifecycle Event Hooks for an AWS Lambda Deployment](#reference-appspec-file-structure-hooks-list-lambda)
-+ [Run Order of Hooks in a Lambda Function Version Deployment](#reference-appspec-file-structure-hooks-run-order-lambda)
-+ [Structure of 'hooks' Section](#reference-appspec-file-structure-hooks-section-structure-lambda)
-+ [Sample Lambda 'hooks' Function](#reference-appspec-file-structure-hooks-section-structure-lambda-sample-function)
++ [List of lifecycle event hooks for an AWS Lambda deployment](#reference-appspec-file-structure-hooks-list-lambda)
++ [Run order of hooks in a Lambda function version deployment](#reference-appspec-file-structure-hooks-run-order-lambda)
++ [Structure of 'hooks' section](#reference-appspec-file-structure-hooks-section-structure-lambda)
++ [Sample Lambda 'hooks' function](#reference-appspec-file-structure-hooks-section-structure-lambda-sample-function)
 
-### List of Lifecycle Event Hooks for an AWS Lambda Deployment<a name="reference-appspec-file-structure-hooks-list-lambda"></a>
+### List of lifecycle event hooks for an AWS Lambda deployment<a name="reference-appspec-file-structure-hooks-list-lambda"></a>
 
 An AWS Lambda hook is one Lambda function specified with a string on a new line after the name of the lifecycle event\. Each hook is executed once per deployment\. Here are descriptions of the hooks available for use in your AppSpec file\. 
 + **BeforeAllowTraffic** – Use to run tasks before traffic is shifted to the deployed Lambda function version\.
 + **AfterAllowTraffic** – Use to run tasks after all traffic is shifted to the deployed Lambda function version\.
 
-### Run Order of Hooks in a Lambda Function Version Deployment<a name="reference-appspec-file-structure-hooks-run-order-lambda"></a>
+### Run order of hooks in a Lambda function version deployment<a name="reference-appspec-file-structure-hooks-run-order-lambda"></a>
 
 In a serverless Lambda function version deployment, event hooks run in the following order:
 
@@ -145,7 +145,7 @@ In a serverless Lambda function version deployment, event hooks run in the follo
 **Note**  
 The **Start**, **AllowTraffic**, and **End** events in the deployment cannot be scripted, which is why they appear in gray in this diagram\.
 
-### Structure of 'hooks' Section<a name="reference-appspec-file-structure-hooks-section-structure-lambda"></a>
+### Structure of 'hooks' section<a name="reference-appspec-file-structure-hooks-section-structure-lambda"></a>
 
 The following are examples of the structure of the 'hooks' section\.
 
@@ -168,7 +168,7 @@ Using JSON:
 }]
 ```
 
-### Sample Lambda 'hooks' Function<a name="reference-appspec-file-structure-hooks-section-structure-lambda-sample-function"></a>
+### Sample Lambda 'hooks' function<a name="reference-appspec-file-structure-hooks-section-structure-lambda-sample-function"></a>
 
 Use the 'hooks' section to specify a Lambda function that CodeDeploy can call to validate a Lambda deployment\. You can use the same function or a different one for the `BeforeAllowTraffic` and `AfterAllowTraffic` deployment lifecyle events\. Following completion of the validation tests, the Lambda validation function calls back CodeDeploy and delivers a result of `Succeeded` or `Failed`\. 
 
@@ -217,21 +217,21 @@ exports.handler = (event, context, callback) => {
 };
 ```
 
-## AppSpec 'hooks' Section for an EC2/On\-Premises Deployment<a name="appspec-hooks-server"></a>
+## AppSpec 'hooks' section for an EC2/On\-Premises deployment<a name="appspec-hooks-server"></a>
 
 **Topics**
-+ [List of Lifecycle Event Hooks](#reference-appspec-file-structure-hooks-list)
-+ [Lifecycle Event Hook Availability](#reference-appspec-file-structure-hooks-availability)
-+ [Run Order of Hooks in a Deployment](#reference-appspec-file-structure-hooks-run-order)
-+ [Structure of 'hooks' Section](#reference-appspec-file-structure-hooks-section-structure)
-+ [Environment Variable Availability for Hooks](#reference-appspec-file-structure-environment-variable-availability)
-+ [Hooks Example](#reference-appspec-file-structure-hooks-example)
++ [List of lifecycle event hooks](#reference-appspec-file-structure-hooks-list)
++ [Lifecycle event hook availability](#reference-appspec-file-structure-hooks-availability)
++ [Run order of hooks in a deployment](#reference-appspec-file-structure-hooks-run-order)
++ [Structure of 'hooks' section](#reference-appspec-file-structure-hooks-section-structure)
++ [Environment variable availability for hooks](#reference-appspec-file-structure-environment-variable-availability)
++ [Hooks example](#reference-appspec-file-structure-hooks-example)
 
-### List of Lifecycle Event Hooks<a name="reference-appspec-file-structure-hooks-list"></a>
+### List of lifecycle event hooks<a name="reference-appspec-file-structure-hooks-list"></a>
 
 An EC2/On\-Premises deployment hook is executed once per deployment to an instance\. You can specify one or more scripts to run in a hook\. Each hook for a lifecycle event is specified with a string on a separate line\. Here are descriptions of the hooks available for use in your AppSpec file\. 
 
-For information about which lifecycle event hooks are valid for which deployment and rollback types, see [Lifecycle Event Hook Availability](#reference-appspec-file-structure-hooks-availability)\.
+For information about which lifecycle event hooks are valid for which deployment and rollback types, see [Lifecycle event hook availability](#reference-appspec-file-structure-hooks-availability)\.
 + `ApplicationStop` – This deployment lifecycle event occurs even before the application revision is downloaded\. You can specify scripts for this event to gracefully stop the application or remove currently installed packages in preparation for a deployment\. The AppSpec file and scripts used for this deployment lifecycle event are from the previous successfully deployed application revision\.
 **Note**  
 An AppSpec file does not exist on an instance before you deploy to it\. For this reason, the `ApplicationStop` hook does not run the first time you deploy to the instance\. You can use the `ApplicationStop` hook the second time you deploy to an instance\.
@@ -268,7 +268,7 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 + `AllowTraffic` – During this deployment lifecycle event, internet traffic is allowed to access instances after a deployment\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 + `AfterAllowTraffic` – You can use this deployment lifecycle event to run tasks on instances after they are registered with a load balancer\.
 
-### Lifecycle Event Hook Availability<a name="reference-appspec-file-structure-hooks-availability"></a>
+### Lifecycle event hook availability<a name="reference-appspec-file-structure-hooks-availability"></a>
 
 The following table lists the lifecycle event hooks available for each deployment and rollback scenario\.
 
@@ -290,7 +290,7 @@ The following table lists the lifecycle event hooks available for each deploymen
 | AfterAllowTraffic | ✓ |  | ✓ | ✓ |  | 
 |  ¹Also applies to the rollback of an in\-place deployment\. ² Reserved for CodeDeploy operations\. Cannot be used to run scripts\.  | 
 
-### Run Order of Hooks in a Deployment<a name="reference-appspec-file-structure-hooks-run-order"></a>
+### Run order of hooks in a deployment<a name="reference-appspec-file-structure-hooks-run-order"></a>
 
 **In\-place deployments**
 
@@ -313,7 +313,7 @@ In a blue/green deployment, event hooks are run in the following order:
 **Note**  
 The **Start**, **DownloadBundle**, **Install**, **BlockTraffic**, **AllowTraffic**, and **End** events in the deployment cannot be scripted, which is why they appear in gray in this diagram\. However, you can edit the 'files' section of the AppSpec file to specify what's installed during the **Install** event\.
 
-### Structure of 'hooks' Section<a name="reference-appspec-file-structure-hooks-section-structure"></a>
+### Structure of 'hooks' section<a name="reference-appspec-file-structure-hooks-section-structure"></a>
 
 The `'hooks'` section has the following structure:
 
@@ -337,7 +337,7 @@ Optional\. The number of seconds to allow the script to execute before it is con
 ** runas **  
 Optional\. The user to impersonate when running the script\. By default, this is the CodeDeploy agent running on the instance\. CodeDeploy does not store passwords, so the user cannot be impersonated if the **runas** user needs a password\. This element applies to Amazon Linux and Ubuntu Server instances only\.
 
-### Environment Variable Availability for Hooks<a name="reference-appspec-file-structure-environment-variable-availability"></a>
+### Environment variable availability for hooks<a name="reference-appspec-file-structure-environment-variable-availability"></a>
 
 During each deployment lifecycle event, hook scripts can access the following environment variables:
 
@@ -395,7 +395,7 @@ fp.write(buffer.replace(strToSearch,strToReplace))
 fp.close()
 ```
 
-### Hooks Example<a name="reference-appspec-file-structure-hooks-example"></a>
+### Hooks example<a name="reference-appspec-file-structure-hooks-example"></a>
 
 Here is an example of a **hooks** entry that specifies two hooks for the `AfterInstall` lifecycle event:
 
@@ -410,4 +410,4 @@ hooks:
 
 The `Scripts/RunResourceTests.sh` script runs during the `AfterInstall` stage of the deployment process\. The deployment is unsuccessful if it takes the script more than 180 seconds \(3 minutes\) to run\.
 
-The location of scripts you specify in the 'hooks' section is relative to the root of the application revision bundle\. In the preceding example, a file named `RunResourceTests.sh` is in a directory named `Scripts`\. The `Scripts` directory is at the root level of the bundle\. For more information, see [Plan a Revision for CodeDeploy](application-revisions-plan.md)\.
+The location of scripts you specify in the 'hooks' section is relative to the root of the application revision bundle\. In the preceding example, a file named `RunResourceTests.sh` is in a directory named `Scripts`\. The `Scripts` directory is at the root level of the bundle\. For more information, see [Plan a revision for CodeDeploy](application-revisions-plan.md)\.

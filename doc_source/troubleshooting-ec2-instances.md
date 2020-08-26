@@ -10,16 +10,16 @@
 
 ## Tags must be set correctly<a name="troubleshooting-ec2-tags"></a>
 
-Use the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command to confirm the instances used for a deployment are tagged correctly\. If an Amazon EC2 instance is missing in the output, use the Amazon EC2 console to confirm the tags have been set on the instance\. For more information, see [Working with Tags in the Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in the *Amazon EC2 User Guide for Linux Instances*\.
+Use the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command to confirm the instances used for a deployment are tagged correctly\. If an Amazon EC2 instance is missing in the output, use the Amazon EC2 console to confirm the tags have been set on the instance\. For more information, see [Working with tags in the console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 **Note**  
 If you tag an instance and immediately use CodeDeploy to deploy an application to it, the instance might not be included in the deployment\. This is because it can take several minutes before CodeDeploy can read the tags\. We recommend that you wait at least five minutes between the time you tag an instance and attempt to deploy to it\.
 
 ## AWS CodeDeploy agent must be installed and running on instances<a name="troubleshooting-sds-agent"></a>
 
-To verify the CodeDeploy agent is installed and running on an instance, see [Verify the CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md)\.
+To verify the CodeDeploy agent is installed and running on an instance, see [Verify the CodeDeploy agent is running](codedeploy-agent-operations-verify.md)\.
 
-To install, uninstall, or reinstall the CodeDeploy agent, see [Install or Reinstall the CodeDeploy Agent](codedeploy-agent-operations-install.md)\.
+To install, uninstall, or reinstall the CodeDeploy agent, see [Install the CodeDeploy agent](codedeploy-agent-operations-install.md)\.
 
 ## Deployments do not fail for up to an hour when an instance is terminated during a deployment<a name="troubleshooting-one-hour-timeout"></a>
 
@@ -31,7 +31,7 @@ If an instance is terminated between lifecycle events or before the first lifecy
 
 ## Analyzing log files to investigate deployment failures on instances<a name="troubleshooting-deploy-failures"></a>
 
-If the status of an instance in the deployment is anything other than `Succeeded`, you can review the deployment log file data to help identify the problem\. For information about accessing deployment log data, see [View Log Data for CodeDeploy EC2/On\-Premises Deployments](deployments-view-logs.md)\.
+If the status of an instance in the deployment is anything other than `Succeeded`, you can review the deployment log file data to help identify the problem\. For information about accessing deployment log data, see [View log data for CodeDeploy EC2/On\-Premises deployments](deployments-view-logs.md)\.
 
 ## Create a new CodeDeploy log file if it was accidentally deleted<a name="troubleshooting-create-new-log-file"></a>
 

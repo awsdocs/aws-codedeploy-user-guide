@@ -1,4 +1,4 @@
-# Rename a CodeDeploy Application<a name="applications-rename"></a>
+# Rename a CodeDeploy application<a name="applications-rename"></a>
 
 You can use the AWS CLI or the CodeDeploy APIs to change the name of an application\.
 

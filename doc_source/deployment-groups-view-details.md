@@ -1,18 +1,18 @@
-# View Deployment Group Details with CodeDeploy<a name="deployment-groups-view-details"></a>
+# View deployment group details with CodeDeploy<a name="deployment-groups-view-details"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about all deployment groups associated with an application\.
 
 **Topics**
-+ [View Deployment Group Details \(Console\)](#deployment-groups-view-details-console)
-+ [View Deployment Group Details \(CLI\)](#deployment-groups-view-details-cli)
++ [View deployment group details \(console\)](#deployment-groups-view-details-console)
++ [View deployment group details \(CLI\)](#deployment-groups-view-details-cli)
 
-## View Deployment Group Details \(Console\)<a name="deployment-groups-view-details-console"></a>
+## View deployment group details \(console\)<a name="deployment-groups-view-details-console"></a>
 
 To use the CodeDeploy console to view deployment group details:
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -22,7 +22,7 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 1. To view details about an individual deployment group, on the **Deployment groups** tab, choose the name of the deployment group\.
 
-## View Deployment Group Details \(CLI\)<a name="deployment-groups-view-details-cli"></a>
+## View deployment group details \(CLI\)<a name="deployment-groups-view-details-cli"></a>
 
 To use the AWS CLI to view deployment group details, call either the `get-deployment-group` command or the `list-deployment-groups` command\.
 

@@ -1,4 +1,7 @@
-# Install or reinstall the CodeDeploy agent for Ubuntu Server<a name="codedeploy-agent-operations-install-ubuntu"></a>
+# Install the CodeDeploy agent for Ubuntu Server<a name="codedeploy-agent-operations-install-ubuntu"></a>
+
+**Note**  
+We recommend installing the CodeDeploy agent with AWS Systems Manager to be able to configure scheduled updates of the agent\. For more information, see [Install the CodeDeploy agent using AWS Systems Manager](codedeploy-agent-operations-install-ssm.md)\.
 
 Sign in to the instance, and run the following commands, one at a time\. 
 
@@ -35,15 +38,25 @@ cd /home/ubuntu
 wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
 ```
 
+*bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. *region\-identifier* is the identifier for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2` and replace *region\-identifier* with `us-east-2`\. For a list of bucket names and region identifiers, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
+
 ```
 chmod +x ./install
 ```
 
-```
-sudo ./install auto
-```
+To install the latest version of the CodeDeploy agent:
++ 
 
-*bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. *region\-identifier* is the identifier for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2` and replace *region\-identifier* with `us-east-2`\. For a list of bucket names and region identifiers, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+  ```
+  sudo ./install auto
+  ```
+
+To install a specific version of the CodeDeploy agent:
++ 
+
+  ```
+  sudo ./install auto -v releases/codedeploy-agent-###.deb
+  ```
 
 To check that the service is running, run the following command:
 

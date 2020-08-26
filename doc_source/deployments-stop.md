@@ -1,9 +1,9 @@
-# Stop a Deployment with CodeDeploy<a name="deployments-stop"></a>
+# Stop a deployment with CodeDeploy<a name="deployments-stop"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to stop deployments associated with your AWS account\.
 
 **Warning**  
-Stopping an EC2/On\-Premises deployment can leave some or all of the instances in your deployment groups in an indeterminate deployment state\. For more information, see [Stopped and Failed Deployments](deployment-steps-server.md#deployment-stop-fail)\. 
+Stopping an EC2/On\-Premises deployment can leave some or all of the instances in your deployment groups in an indeterminate deployment state\. For more information, see [Stopped and failed deployments](deployment-steps-server.md#deployment-stop-fail)\. 
 
 **Topics**
 + [Stop a deployment \(console\)](#deployments-stop-console)
@@ -16,7 +16,7 @@ If your deployment is a blue/green deployment through AWS CloudFormation, you ca
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 **Note**  
@@ -28,7 +28,7 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
    1. Choose **Stop and roll back deployment** to stop and roll back the deployment
 
-   For more information, see [Redeploy and Roll Back a Deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
+   For more information, see [Redeploy and roll back a deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
 **Note**  
 If **Stop deployment** and **Stop and roll back deployment** are unavailable, the deployment has progressed to a point where it cannot be stopped\.
 

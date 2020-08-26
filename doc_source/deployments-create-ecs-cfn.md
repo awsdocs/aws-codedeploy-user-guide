@@ -1,13 +1,13 @@
-# Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation<a name="deployments-create-ecs-cfn"></a>
+# Create an Amazon ECS blue/green deployment through AWS CloudFormation<a name="deployments-create-ecs-cfn"></a>
 
 You can use AWS CloudFormation to manage Amazon ECS blue/green deployments through CodeDeploy\. You generate your deployment by defining your green and blue resources and specifying the traffic routing and stabilization settings to use in AWS CloudFormation\. This topic covers the differences between Amazon ECS blue/green deployments that are managed by CodeDeploy and deployments that are managed by AWS CloudFormation\.
 
-For step\-by\-step instructions on using AWS CloudFormation to manage your Amazon ECS blue/green deployments, see [Automate ECS Blue/Green Deployments Through CodeDeploy Using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\.
+For step\-by\-step instructions on using AWS CloudFormation to manage your Amazon ECS blue/green deployments, see [Automate ECS blue/green deployments through CodeDeploy using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\.
 
 **Note**  
-Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the MXP, CPT, KIX, or BJS/ZHY regions\.
+Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the MXP, CPT, or KIX region\.
 
-## Differences Between Amazon ECS Blue/Green Deployments Through CodeDeploy and AWS CloudFormation<a name="differences-ecs-bg-cfn"></a>
+## Differences between Amazon ECS blue/green deployments through CodeDeploy and AWS CloudFormation<a name="differences-ecs-bg-cfn"></a>
 
 The AWS CloudFormation stack template models Amazon ECS task\-related resources and infrastructure, and also the conﬁguration options for deployments\. So there are differences between the standard Amazon ECS blue/green deployments and blue/green deployments that are created through AWS CloudFormation\.
 
@@ -30,7 +30,7 @@ Unlike standard Amazon ECS blue/green deployments, you don't model or manually c
 |  CloudWatch alarms\.  |  Create a CloudWatch alarm that triggers a rollback\.  |  Configure a CloudWatch alarm at the AWS CloudFormation stack level that triggers a rollback\.  | 
 | Rollback/redeployment\. | Specify rollback and redeployment options\. | Cancel the stack update in AWS CloudFormation\. | 
 
-## Monitoring Amazon ECS Blue/Green Deployments Through AWS CloudFormation<a name="monitoring-ecs-bg-cfn"></a>
+## Monitoring Amazon ECS blue/green deployments through AWS CloudFormation<a name="monitoring-ecs-bg-cfn"></a>
 
 You can monitor blue/green deployments through AWS CloudFormation and CodeDeploy\. For information about monitoring through AWS CloudFormation, see [Monitoring blue/green events in AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html#blue-green-events) in the *AWS CloudFormation User Guide*\.
 
@@ -38,7 +38,7 @@ You can monitor blue/green deployments through AWS CloudFormation and CodeDeploy
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In **Deployments**, the deployment that was triggered by the AWS CloudFormation stack update appears\. Choose the deployment to view the **Deployment history**\.  
 ![\[Console screenshot showing the Deployments section and deployment history.\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/cfn-cd-bg-deplhist.png)![\[Console screenshot showing the Deployments section and deployment history.\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Console screenshot showing the Deployments section and deployment history.\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)

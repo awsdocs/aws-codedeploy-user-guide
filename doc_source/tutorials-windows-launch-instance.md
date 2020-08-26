@@ -1,17 +1,17 @@
-# Step 1: Launch a Windows Server Amazon EC2 Instance<a name="tutorials-windows-launch-instance"></a>
+# Step 1: Launch a Windows Server Amazon EC2 instance<a name="tutorials-windows-launch-instance"></a>
 
 To deploy the Hello World application with CodeDeploy, you need an Amazon EC2 instance running Windows Server\.
 
-Follow the instructions in [Create an Amazon EC2 Instance for CodeDeploy](instances-ec2-create.md)\. When you are ready to assign an Amazon EC2 instance tag to the instance, be sure to specify the tag key of **Name** and the tag value of **CodeDeployDemo**\. \(If you specify a different tag key or tag value, then the instructions in [Step 4: Deploy Your Hello World Application](tutorials-windows-deploy-application.md) might produce unexpected results\.\)
+Follow the instructions in [Create an Amazon EC2 instance for CodeDeploy](instances-ec2-create.md)\. When you are ready to assign an Amazon EC2 instance tag to the instance, be sure to specify the tag key of **Name** and the tag value of **CodeDeployDemo**\. \(If you specify a different tag key or tag value, then the instructions in [Step 4: Deploy your Hello World application](tutorials-windows-deploy-application.md) might produce unexpected results\.\)
 
-After you've launched the Amazon EC2 instance, return to this page, and continue to the next section\. Do not continue on to [Create an Application with CodeDeploy](applications-create.md) as a next step\.
+After you've launched the Amazon EC2 instance, return to this page, and continue to the next section\. Do not continue on to [Create an application with CodeDeploy](applications-create.md) as a next step\.
 
-## Connect to Your Amazon EC2 Instance<a name="tutorials-windows-launch-instance-connect"></a>
+## Connect to your Amazon EC2 instance<a name="tutorials-windows-launch-instance-connect"></a>
 
 After your Amazon EC2 instance is launched, follow these instructions to practice connecting to it\. 
 
 **Note**  
-In these instructions, we assume you are running Windows and the Windows Desktop Connection client application\. For information, see [Connecting to Your Windows Instance Using RDP](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html)\. You might need to adapt these instructions for other operating systems or other RDP connection client applications\.
+In these instructions, we assume you are running Windows and the Windows Desktop Connection client application\. For information, see [Connecting to your Windows instance using RDP](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html)\. You might need to adapt these instructions for other operating systems or other RDP connection client applications\.
 
 1. Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
@@ -41,7 +41,7 @@ In these instructions, we assume you are running Windows and the Windows Desktop
 **Warning**  
 Do not stop or terminate the instance\. Otherwise, CodeDeploy can't deploy to it\.
 
-## Add an Inbound Rule That Allows HTTP Traffic to Your Windows Server Amazon EC2 Instance<a name="tutorials-windows-launch-instance-add-inbound-rule"></a>
+## Add an inbound rule that allows HTTP traffic to your Windows Server Amazon EC2 instance<a name="tutorials-windows-launch-instance-add-inbound-rule"></a>
 
 The next step confirms your Amazon EC2 instance has an open HTTP port so you can see the deployed webpage on your Windows Server Amazon EC2 instance in a browser\. 
 

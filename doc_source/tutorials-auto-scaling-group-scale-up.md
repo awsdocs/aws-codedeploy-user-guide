@@ -1,4 +1,4 @@
-# Step 4: Increase the Number of Amazon EC2 Instances in the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-scale-up"></a>
+# Step 4: Increase the number of Amazon EC2 instances in the Amazon EC2 Auto Scaling group<a name="tutorials-auto-scaling-group-scale-up"></a>
 
 In this step, you instruct the Amazon EC2 Auto Scaling group to create an additional Amazon EC2 instance\. After Amazon EC2 Auto Scaling creates the instance, CodeDeploy deploys your revision to it\.
 

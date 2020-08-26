@@ -1,4 +1,4 @@
-# Step 8: Clean Up<a name="tutorials-github-clean-up"></a>
+# Step 8: Clean up<a name="tutorials-github-clean-up"></a>
 
 To avoid further charges for resources you used during this tutorial, you must terminate the Amazon EC2 instance and its associated resources\. Optionally, you can delete the CodeDeploy deployment component records associated with this tutorial\. If you were using a GitHub repository just for this tutorial, you can delete it now, too\.
 
@@ -40,7 +40,7 @@ To avoid further charges for resources you used during this tutorial, you must t
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -52,4 +52,4 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 ## To delete your GitHub repository<a name="tutorials-github-clean-up-github-repository"></a>
 
-See [Deleting a repository](https://help.github.com/articles/deleting-a-repository/) in [GitHub Help](https://help.github.com)\.
+See [Deleting a repository](https://help.github.com/articles/deleting-a-repository/) in [GitHub help](https://help.github.com)\.

@@ -1,4 +1,4 @@
-# AppSpec 'permissions' Section \(EC2/On\-Premises Deployments Only\)<a name="reference-appspec-file-structure-permissions"></a>
+# AppSpec 'permissions' section \(EC2/On\-Premises deployments only\)<a name="reference-appspec-file-structure-permissions"></a>
 
 The `'permissions'` section specifies how special permissions, if any, should be applied to the files and directories/folders in the `'files'` section after they are copied to the instance\. You can specify multiple `object` instructions\. This section is optional\. It applies to Amazon Linux, Ubuntu Server, and RHEL instances only\.
 
@@ -59,7 +59,7 @@ Setting unnamed users, unnamed groups, or other similar ACL entries causes the A
 
   Specify `type` with a dash \(\-\), followed by a space, and then a string \(for example, `- file`\)\.
 
-## 'permissions' Section Example<a name="reference-appspec-file-structure-permissions-example"></a>
+## 'Permissions' section example<a name="reference-appspec-file-structure-permissions-example"></a>
 
 The following example shows how to specify the `'permissions'` section with the `object`, `pattern`, `except`, `owner`, `mode`, and `type` instructions\. This example applies to Amazon Linux, Ubuntu Server, and RHEL instances only\. In this example, assume the following files and folders are copied to the instance in this hierarchy:
 

@@ -1,4 +1,4 @@
-# CodeDeploy Deployments<a name="deployment-steps"></a>
+# CodeDeploy deployments<a name="deployment-steps"></a>
 
 This topic provides information about the components and workflow of deployments in CodeDeploy\. The deployment process varies, depending on the compute platform or deployment method \(Lambda, Amazon ECS, EC2/On\-Premises, or through AWS CloudFormation\) that you use for your deployments\.
 

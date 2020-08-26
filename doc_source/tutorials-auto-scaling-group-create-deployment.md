@@ -1,4 +1,4 @@
-# Step 2: Deploy the Application to the Amazon EC2 Auto Scaling Group<a name="tutorials-auto-scaling-group-create-deployment"></a>
+# Step 2: Deploy the application to the Amazon EC2 Auto Scaling group<a name="tutorials-auto-scaling-group-create-deployment"></a>
 
 In this step, you'll deploy the revision to the single Amazon EC2 instance in the Amazon EC2 Auto Scaling group\.
 
@@ -14,7 +14,7 @@ In this step, you'll deploy the revision to the single Amazon EC2 instance in th
    aws deploy create-application --application-name SimpleDemoApp
    ```
 
-1. You should have already created a service role by following the instructions in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their tags\. You will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
+1. You should have already created a service role by following the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their tags\. You will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
 
 1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Amazon EC2 Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
 **Note**  
@@ -49,7 +49,7 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
      --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Linux.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Amazon Linux and RHEL Amazon EC2 instances, calling from local Windows machines**
 
@@ -57,7 +57,7 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
    aws deploy create-deployment --application-name SimpleDemoApp --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name SimpleDemoDG --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Linux.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances, calling from local Linux, macOS, or Unix machines**
 
@@ -69,7 +69,7 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
      --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Windows.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances, calling from local Windows machines**
 
@@ -77,9 +77,9 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
    aws deploy create-deployment --application-name SimpleDemoApp --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name SimpleDemoDG --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Windows.zip
    ```
 
-   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource Kit Bucket Names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
 **Note**  
-Currently, CodeDeploy does not provide a sample revision to deploy to Ubuntu Server Amazon EC2 instances\. To create a revision on your own, see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
+Currently, CodeDeploy does not provide a sample revision to deploy to Ubuntu Server Amazon EC2 instances\. To create a revision on your own, see [Working with application revisions for CodeDeploy](application-revisions.md)\.
 
 1. Call the get\-deployment command to make sure the deployment was successful\.
 
@@ -99,13 +99,13 @@ Currently, CodeDeploy does not provide a sample revision to deploy to Ubuntu Ser
 
 ## To create the deployment \(console\)<a name="tutorials-auto-scaling-group-create-deployment-console"></a>
 
-1. You should have already created a service role by following the instructions in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your instances to expand \(read\) their tags\. Before you use the CodeDeploy console to deploy your application revision, you will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the Service Role ARN \(Console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\. 
+1. You should have already created a service role by following the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your instances to expand \(read\) their tags\. Before you use the CodeDeploy console to deploy your application revision, you will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\. 
 
 1. Now that you have the service role ARN, you can use the CodeDeploy console to deploy your application revision\.
 
    Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -159,4 +159,4 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. Choose **Create deployment**\. 
 **Note**  
-If **Failed** appears instead of **Succeeded**, you may want to try some of the techniques in [Monitor and Troubleshoot Your Deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor) \(using the application name of **SimpleDemoApp** and the deployment group name of **SimpleDemoDG**\)\.
+If **Failed** appears instead of **Succeeded**, you may want to try some of the techniques in [Monitor and troubleshoot your deployment](tutorials-wordpress-deploy-application.md#tutorials-wordpress-deploy-application-monitor) \(using the application name of **SimpleDemoApp** and the deployment group name of **SimpleDemoDG**\)\.

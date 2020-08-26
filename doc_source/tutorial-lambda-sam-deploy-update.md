@@ -1,10 +1,10 @@
-# Step 3: Deploy the Updated Lambda Function<a name="tutorial-lambda-sam-deploy-update"></a>
+# Step 3: Deploy the updated Lambda function<a name="tutorial-lambda-sam-deploy-update"></a>
 
  In this step, you use your updated `myDateTimeFunction.js` to update and initiate the deployment of your Lambda function\. You can monitor the deployment progress in the CodeDeploy or AWS Lambda console\. 
 
  The `AutoPublishAlias: live` line in your AWS SAM template causes your infrastructure to detect updates to functions that use the `live` alias\. An update to your function triggers a deployment by CodeDeploy that shifts production traffic from the original version of the function to the updated version\. 
 
- The sam package and sam deploy commands are used to update and trigger the deployment of your Lambda function\. You executed these commands in [ Package the AWS SAM Application ](tutorial-lambda-sam-package.md) and [Deploy the AWS SAM Application](tutorial-lambda-sam-deploy.md)\. 
+ The sam package and sam deploy commands are used to update and trigger the deployment of your Lambda function\. You executed these commands in [ Package the AWS SAM application ](tutorial-lambda-sam-package.md) and [Deploy the AWS SAM application](tutorial-lambda-sam-deploy.md)\. 
 
 **To deploy your updated Lambda function**
 
@@ -30,7 +30,7 @@
 
    Because the stack name is still `my-date-time-app`, AWS CloudFormation recognizes that this is a stack update\. To view your updated stack, return the AWS CloudFormation console, and from the navigation pane, choose **Stacks**\.
 
-**\(Optional\) To view traffic during a deployment \(CodeDeploy console\)**
+**\(Optional\) to view traffic during a deployment \(CodeDeploy console\)**
 
 1. Open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy/](https://console.aws.amazon.com/codedeploy/)\.
 
@@ -43,7 +43,7 @@
    The **Traffic shifting** progress bar and the percentages in the **Original** and **Replacement** boxes on this page display its progress\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/lambda-tutorial-codedeploy-console-20-percent-deployed.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
-**\(Optional\) To view traffic during a deployment \(Lambda console\)**
+**\(Optional\) to view traffic during a deployment \(Lambda console\)**
 
 1. Open the AWS Lambda console at [https://console\.aws\.amazon\.com/lambda/](https://console.aws.amazon.com/lambda/)\.
 

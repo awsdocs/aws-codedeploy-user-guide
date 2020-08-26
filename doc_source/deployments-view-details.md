@@ -1,4 +1,4 @@
-# View CodeDeployDeployment Details<a name="deployments-view-details"></a>
+# View CodeDeploydeployment details<a name="deployments-view-details"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about deployments associated with your AWS account\.
 
@@ -9,16 +9,16 @@ Windows Server: C:\\ProgramData\\Amazon\\CodeDeploy<DEPLOYMENT\-GROUP\-ID><DEPLO
 For more information, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
 
 **Topics**
-+ [View Deployment Details \(Console\)](#deployments-view-details-console)
-+ [View Deployment Details \(CLI\)](#deployments-view-details-cli)
++ [View deployment details \(console\)](#deployments-view-details-console)
++ [View deployment details \(CLI\)](#deployments-view-details-cli)
 
-## View Deployment Details \(Console\)<a name="deployments-view-details-console"></a>
+## View deployment details \(console\)<a name="deployments-view-details-console"></a>
 
 To use the CodeDeploy console to view deployment details:
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 **Note**  
@@ -26,7 +26,7 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 1. To see more details for a single deployment, in **Deployment history**, choose the deployment ID or choose the button next to the deployment ID, and then choose **View**\.
 
-## View Deployment Details \(CLI\)<a name="deployments-view-details-cli"></a>
+## View deployment details \(CLI\)<a name="deployments-view-details-cli"></a>
 
 To use the AWS CLI to view deployment details, call the `get-deployment` command or the `batch-get-deployments` command\. You can call the `list-deployments` command to get a list of unique deployment IDs to use as inputs to the `get-deployment` command and the `batch-get-deployments` command\.
 

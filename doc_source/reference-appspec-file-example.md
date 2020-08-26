@@ -1,13 +1,13 @@
-# AppSpec File Example<a name="reference-appspec-file-example"></a>
+# AppSpec File example<a name="reference-appspec-file-example"></a>
 
 This topic provides example AppSpec files for an AWS Lambda and an EC2/On\-Premises deployment\.
 
 **Topics**
-+ [AppSpec File Example for an Amazon ECS Deployment](#appspec-file-example-ecs)
-+ [AppSpec File Example for an AWS Lambda Deployment](#appspec-file-example-lambda)
-+ [AppSpec File Example for an EC2/On\-Premises Deployment](#appspec-file-example-server)
++ [AppSpec File example for an Amazon ECS deployment](#appspec-file-example-ecs)
++ [AppSpec File example for an AWS Lambda deployment](#appspec-file-example-lambda)
++ [AppSpec File example for an EC2/On\-Premises deployment](#appspec-file-example-server)
 
-## AppSpec File Example for an Amazon ECS Deployment<a name="appspec-file-example-ecs"></a>
+## AppSpec File example for an Amazon ECS deployment<a name="appspec-file-example-ecs"></a>
 
  Here is an example of an AppSpec file written in YAML for deploying an Amazon ECS service\. 
 
@@ -102,7 +102,7 @@ Here is the sequence of events during deployment:
 
  The Lambda functions that run during any hook can perform validation tests or gather traffic metrics\. 
 
-## AppSpec File Example for an AWS Lambda Deployment<a name="appspec-file-example-lambda"></a>
+## AppSpec File example for an AWS Lambda deployment<a name="appspec-file-example-lambda"></a>
 
  Here is an example of an AppSpec file written in YAML for deploying a Lambda function version\. 
 
@@ -155,7 +155,7 @@ Here is the sequence of events during deployment:
 
 1. After the shifting of traffic from version 1 of a Lambda function called `myLambdaFunction` to version 2 is complete, run a Lambda function called `LambdaFunctionToValidateAfterTrafficShift` that validates the deployment was completed successfully\.
 
-## AppSpec File Example for an EC2/On\-Premises Deployment<a name="appspec-file-example-server"></a>
+## AppSpec File example for an EC2/On\-Premises deployment<a name="appspec-file-example-server"></a>
 
 Here is an example of an AppSpec file for an in\-place deployment to an Amazon Linux, Ubuntu Server, or RHEL instance\. 
 

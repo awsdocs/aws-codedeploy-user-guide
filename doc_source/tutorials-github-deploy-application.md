@@ -1,4 +1,4 @@
-# Step 6: Deploy the Application to the Instance<a name="tutorials-github-deploy-application"></a>
+# Step 6: Deploy the application to the instance<a name="tutorials-github-deploy-application"></a>
 
 In this step, you use the CodeDeploy console or the AWS CLI to deploy the sample revision from your GitHub repository to your instance\. 
 
@@ -49,7 +49,7 @@ Before you can call any AWS CLI commands that interact with GitHub \(such as the
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 

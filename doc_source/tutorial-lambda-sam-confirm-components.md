@@ -1,4 +1,4 @@
-# \(Optional\) Inspect and Test Your Infrastructure<a name="tutorial-lambda-sam-confirm-components"></a>
+# \(Optional\) inspect and test your infrastructure<a name="tutorial-lambda-sam-confirm-components"></a>
 
  This topic shows how to view your infrastructure components and test your Lambda function\. 
 
@@ -24,7 +24,7 @@
 
     Under **Deployment configuration**, you should see **CodeDeployDefault\.LambdaLinear10PercentEvery1Minute**\. 
 
-**\(Optional\) To test your function \(console\)**
+**\(Optional\) to test your function \(console\)**
 
 1. Open the AWS Lambda console at [https://console\.aws\.amazon\.com/lambda/](https://console.aws.amazon.com/lambda/)\.
 
@@ -49,7 +49,7 @@
 
 1.  Under **Execution result**, expand **Details** to see the results\. You should see the current month, day, and year\. 
 
-**\(Optional\) To test your function \(AWS CLI\)**
+**\(Optional\) to test your function \(AWS CLI\)**
 
 1.  Locate the ARN of your Lambda function\. It appears at the top of the Lambda console when you are viewing your function\. 
 

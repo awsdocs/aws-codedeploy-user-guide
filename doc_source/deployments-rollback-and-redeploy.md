@@ -1,34 +1,34 @@
-# Redeploy and Roll Back a Deployment with CodeDeploy<a name="deployments-rollback-and-redeploy"></a>
+# Redeploy and roll back a deployment with CodeDeploy<a name="deployments-rollback-and-redeploy"></a>
 
 CodeDeploy rolls back deployments by redeploying a previously deployed revision of an application as a new deployment\. These rolled\-back deployments are technically new deployments, with new deployment IDs, rather than restored versions of a previous deployment\.
 
 Deployments can be rolled back automatically or manually\.
 
 **Topics**
-+ [Automatic Rollbacks](#deployments-rollback-and-redeploy-automatic-rollbacks)
-+ [Manual Rollbacks](#deployments-rollback-and-redeploy-manual-rollbacks)
-+ [Rollback and Redeployment Workflow](#deployments-rollback-and-redeploy-workflow)
-+ [Rollback Behavior with Existing Content](#deployments-rollback-and-redeploy-content-options)
++ [Automatic rollbacks](#deployments-rollback-and-redeploy-automatic-rollbacks)
++ [Manual rollbacks](#deployments-rollback-and-redeploy-manual-rollbacks)
++ [Rollback and redeployment workflow](#deployments-rollback-and-redeploy-workflow)
++ [Rollback behavior with existing content](#deployments-rollback-and-redeploy-content-options)
 
-## Automatic Rollbacks<a name="deployments-rollback-and-redeploy-automatic-rollbacks"></a>
+## Automatic rollbacks<a name="deployments-rollback-and-redeploy-automatic-rollbacks"></a>
 
 You can configure a deployment group or deployment to automatically roll back when a deployment fails or when a monitoring threshold you specify is met\. In this case, the last known good version of an application revision is deployed\. You configure automatic rollbacks when you create an application or create or update a deployment group\.
 
 When you create a new deployment, you can also choose to override the automatic rollback configuration that were specified for the deployment group\.
 
 **Note**  
-You can use Amazon Simple Notification Service to receive a notification whenever a deployment is rolled back automatically\. For information, see [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)\.
+You can use Amazon Simple Notification Service to receive a notification whenever a deployment is rolled back automatically\. For information, see [Monitoring deployments with Amazon SNS event notifications](monitoring-sns-event-notifications.md)\.
 
-For more information about configuring automatic rollbacks, see [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)\. 
+For more information about configuring automatic rollbacks, see [Configure advanced options for a deployment group](deployment-groups-configure-advanced-options.md)\. 
 
-## Manual Rollbacks<a name="deployments-rollback-and-redeploy-manual-rollbacks"></a>
+## Manual rollbacks<a name="deployments-rollback-and-redeploy-manual-rollbacks"></a>
 
-If you have not set up automatic rollbacks, you can manually roll back a deployment by creating a new deployment that uses any previously deployed application revision and following the steps to redeploy a revision\. You might do this if an application has gotten into an unknown state\. Rather than spending a lot of time troubleshooting, you can redeploy the application to a known working state\. For more information, see [Create a Deployment with CodeDeploy](deployments-create.md)\. 
+If you have not set up automatic rollbacks, you can manually roll back a deployment by creating a new deployment that uses any previously deployed application revision and following the steps to redeploy a revision\. You might do this if an application has gotten into an unknown state\. Rather than spending a lot of time troubleshooting, you can redeploy the application to a known working state\. For more information, see [Create a deployment with CodeDeploy](deployments-create.md)\. 
 
 **Note**  
 If you remove an instance from a deployment group, CodeDeploy does not uninstall anything that might have already been installed on that instance\.
 
-## Rollback and Redeployment Workflow<a name="deployments-rollback-and-redeploy-workflow"></a>
+## Rollback and redeployment workflow<a name="deployments-rollback-and-redeploy-workflow"></a>
 
 When automatic rollback is initiated, or when you manually initiate a redeployment or manual rollback, CodeDeploy first tries to remove from each participating instance all files that were last successfully installed\. CodeDeploy does this by checking the cleanup file:
 
@@ -71,7 +71,7 @@ c:\temp\f.txt will remain
 
 As part of this process, CodeDeploy will not try to revert or otherwise reconcile any actions taken by any scripts in previous deployments during subsequent redeployments, whether manual or automatic rollbacks\. For example, if the `c.bat` and `d.bat` files contain logic to not re\-create the `e.txt` and `f.txt` files if they already exist, then the old versions of `e.txt` and `f.txt` will remain untouched whenever CodeDeploy runs `c.bat` and `d.bat` in subsequent deployments\. You can add logic to `c.bat` and `d.bat` to always check for and delete old versions of `e.txt` and `f.txt` before creating new ones\. 
 
-## Rollback Behavior with Existing Content<a name="deployments-rollback-and-redeploy-content-options"></a>
+## Rollback behavior with existing content<a name="deployments-rollback-and-redeploy-content-options"></a>
 
 As part of the deployment process, the CodeDeploy agent removes from each instance all the files installed by the most recent deployment\. If files that weren’t part of a previous deployment appear in target deployment locations, you can choose what CodeDeploy does with them during the next deployment:
 + **Fail the deployment** — An error is reported and the deployment status is changed to Failed\.

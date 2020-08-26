@@ -1,4 +1,4 @@
-# Create a Notification Rule<a name="notification-rule-create"></a>
+# Create a notification rule<a name="notification-rule-create"></a>
 
 You can use notification rules to notify users when there are changes to deployment applications, such as deployment successes and failures\. Notification rules specify both the events and the Amazon SNS topic that is used to send notifications\. For more information, see [What are notifications?](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/welcome.html)
 
@@ -16,7 +16,7 @@ You can use the console or the AWS CLI to create notification rules for AWS Code
 
 1. In **Detail type**, choose **Basic** if you want only the information provided to Amazon EventBridge included in the notification\. Choose **Full** if you want to include information provided to Amazon EventBridge and information that might be supplied by the CodeDeploy or the notification manager\.
 
-   For more information, see [Understanding Notification Contents and Security](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html#security-notifications)\.
+   For more information, see [Understanding notification contents and security](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html#security-notifications)\.
 
 1.  In **Events that trigger notifications**, select the events for which you want to send notifications\.     
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/notification-rule-create.html)
@@ -27,11 +27,11 @@ When you create the topic, the policy that allows CodeDeploy to publish events t
 
    After the **codestar\-notifications\-** prefix,enter a name for the topic, and then choose **Submit**\.
 **Note**  
-If you want to use an existing Amazon SNS topic instead of creating a new one, in **Targets**, choose its ARN\. Make sure the topic has the appropriate access policy and that the subscriber list contains only those users who are allowed to see information about the deployment application\. For more information, see [Configure Existing Amazon SNS Topics for Notifications](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/set-up-sns.html) and [Understanding Notification Contents and Security](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html#security-notifications)\. 
+If you want to use an existing Amazon SNS topic instead of creating a new one, in **Targets**, choose its ARN\. Make sure the topic has the appropriate access policy and that the subscriber list contains only those users who are allowed to see information about the deployment application\. For more information, see [Configure existing Amazon SNS topics for notifications](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/set-up-sns.html) and [Understanding notification contents and security](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html#security-notifications)\. 
 
 1. To finish creating the rule, choose **Submit**\.
 
-1. You must subscribe users to the Amazon SNS topic for the rule before they can receive notifications\. For more information, see [Subscribe Users to Amazon SNS Topics That Are Targets](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/subscribe-users-sns.html)\. You can also set up integration between notifications and AWS Chatbot to send notifications to Amazon Chime chatrooms or Slack channels\. For more information, see [Configure Integration Between Notifications and AWS Chatbot](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/notifications-chatbot.html)\.<a name="notification-rule-create-cli"></a>
+1. You must subscribe users to the Amazon SNS topic for the rule before they can receive notifications\. For more information, see [Subscribe users to Amazon SNS topics that are targets](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/subscribe-users-sns.html)\. You can also set up integration between notifications and AWS Chatbot to send notifications to Amazon Chime chatrooms or Slack channels\. For more information, see [Configure integration between notifications and AWS Chatbot](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/notifications-chatbot.html)\.<a name="notification-rule-create-cli"></a>
 
 # To create a notification rule \(AWS CLI\)<a name="notification-rule-create-cli"></a>
 

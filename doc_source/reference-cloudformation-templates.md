@@ -1,6 +1,6 @@
-# AWS CloudFormation Templates for CodeDeploy Reference<a name="reference-cloudformation-templates"></a>
+# AWS CloudFormation templates for CodeDeploy reference<a name="reference-cloudformation-templates"></a>
 
-This section introduces the AWS CloudFormation resources, transform, and hook designed to work with CodeDeploy deployments\. For a walkthrough of creating a stack update managed by the AWS CloudFormation hook for CodeDeploy, see [Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation](deployments-create-ecs-cfn.md)
+This section introduces the AWS CloudFormation resources, transform, and hook designed to work with CodeDeploy deployments\. For a walkthrough of creating a stack update managed by the AWS CloudFormation hook for CodeDeploy, see [Create an Amazon ECS blue/green deployment through AWS CloudFormation](deployments-create-ecs-cfn.md)
 
 **Note**  
 AWS CloudFormation hooks are part of the AWS CloudFormation components for AWS and are different from CodeDeploy lifecycle event hooks\.
@@ -13,7 +13,7 @@ In addition to the other methods available to you in CodeDeploy, you can use AWS
 
 AWS CloudFormation is a service that helps you model and set up your AWS resources using templates\. An AWS CloudFormation template is a text file whose format complies with the JSON standard\. You create a template that describes all of the AWS resources you want, and AWS CloudFormation takes care of provisioning and configuring those resources for you\.
 
-For more information, see [What Is AWS CloudFormation?](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) and [Working with AWS CloudFormation Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) in *AWS CloudFormation User Guide*\. 
+For more information, see [What is AWS CloudFormation?](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html) and [Working with AWS CloudFormation templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html) in *AWS CloudFormation User Guide*\. 
 
 If you plan to use AWS CloudFormation templates that are compatible with CodeDeploy in your organization, as an administrator, you must grant access to AWS CloudFormation and to the AWS services and actions on which AWS CloudFormation depends\. To grant permissions to create applications, deployment groups, and deployment configurations, attach the following policy to the IAM users who will work with AWS CloudFormation: 
 
@@ -33,9 +33,9 @@ If you plan to use AWS CloudFormation templates that are compatible with CodeDep
 ```
 
 For more information about managed policies, see the following topics:
-+ To view the policy that must be attached to IAM users who will create Amazon EC2 instances, see [Create an Amazon EC2 Instance for CodeDeploy \(AWS CloudFormation Template\)](instances-ec2-create-cloudformation-template.md)\.
-+ For information about attaching policies to IAM users, see [Working with Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-using.html) in *IAM User Guide*\. 
-+ To learn how to restrict users to a limited set of CodeDeploy actions and resources, see [AWS Managed \(Predefined\) Policies for CodeDeploy](security_iam_id-based-policy-examples.md#managed-policies)\.
++ To view the policy that must be attached to IAM users who will create Amazon EC2 instances, see [Create an Amazon EC2 instance for CodeDeploy \(AWS CloudFormation template\)](instances-ec2-create-cloudformation-template.md)\.
++ For information about attaching policies to IAM users, see [Working with managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-using.html) in *IAM User Guide*\. 
++ To learn how to restrict users to a limited set of CodeDeploy actions and resources, see [AWS managed \(predefined\) policies for CodeDeploy](security_iam_id-based-policy-examples.md#managed-policies)\.
 
 The following table shows the actions an AWS CloudFormation template can perform on your behalf and includes links to more information about the AWS resource types and their property types you can add to an AWS CloudFormation template\. 
 

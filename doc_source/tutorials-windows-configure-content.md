@@ -1,13 +1,13 @@
-# Step 2: Configure Your Source Content to Deploy to the Windows Server Amazon EC2 Instance<a name="tutorials-windows-configure-content"></a>
+# Step 2: Configure your source content to deploy to the Windows Server Amazon EC2 instance<a name="tutorials-windows-configure-content"></a>
 
 Now it's time to configure your application's source content so you have something you can deploy to the Amazon EC2 instance\. For this tutorial, you'll deploy a single web page to the Amazon EC2 instance running Windows Server, which will run Internet Information Services \(IIS\) as its web server\. This web page will display a simple "Hello, World\!" message\.
 
 **Topics**
-+ [Create the Web Page](#tutorials-windows-configure-content-download-code)
-+ [Create a Script to Run Your Application](#tutorials-windows-configure-content-create-scripts)
-+ [Add an Application Specification File](#tutorials-windows-configure-content-add-appspec-file)
++ [Create the web page](#tutorials-windows-configure-content-download-code)
++ [Create a script to run your application](#tutorials-windows-configure-content-create-scripts)
++ [Add an application specification file](#tutorials-windows-configure-content-add-appspec-file)
 
-## Create the Web Page<a name="tutorials-windows-configure-content-download-code"></a>
+## Create the web page<a name="tutorials-windows-configure-content-download-code"></a>
 
 1. Create a subdirectory \(subfolder\) named `HelloWorldApp` in your `c:\temp` folder, and then switch to that folder\.
 
@@ -50,7 +50,7 @@ You don't have to use the location of `c:\temp` or the subfolder name of `HelloW
    </html>
    ```
 
-## Create a Script to Run Your Application<a name="tutorials-windows-configure-content-create-scripts"></a>
+## Create a script to run your application<a name="tutorials-windows-configure-content-create-scripts"></a>
 
 Next, you will create a script that CodeDeploy will use to set up the web server on the target Amazon EC2 instance\.
 
@@ -68,7 +68,7 @@ Next, you will create a script that CodeDeploy will use to set up the web server
    c:\Windows\Sysnative\WindowsPowerShell\v1.0\powershell.exe -Command Install-WindowsFeature Web-Server
    ```
 
-## Add an Application Specification File<a name="tutorials-windows-configure-content-add-appspec-file"></a>
+## Add an application specification file<a name="tutorials-windows-configure-content-add-appspec-file"></a>
 
 Next, you will add an application specification file \(AppSpec file\) in addition to the web page and batch script file\. The AppSpec file is a [YAML](http://www.yaml.org)\-formatted file used by CodeDeploy to: 
 + Map the source files in your application revision to their destinations on the instance\.
@@ -98,7 +98,7 @@ The AppSpec file must be named `appspec.yml`\. It must be placed in the applicat
 
 CodeDeploy will use this AppSpec file to copy the `index.html` file in the application source code's root folder to the `c:\inetpub\wwwroot` folder on the target Amazon EC2 instance\. During the deployment, CodeDeploy will run the `before-install.bat` batch script on the target Amazon EC2 instance during the **BeforeInstall** deployment lifecycle event\. If this script takes longer than 900 seconds \(15 minutes\) to run, CodeDeploy will stop the deployment and mark the deployment to the Amazon EC2 instance as failed\.
 
-For more information about these settings, see the [CodeDeploy AppSpec File Reference](reference-appspec-file.md)\.
+For more information about these settings, see the [CodeDeploy AppSpec File reference](reference-appspec-file.md)\.
 
 **Important**  
-The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, CodeDeploy will raise an error that may be difficult to debug\. For more information, see [AppSpec File Spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.
+The locations and numbers of spaces between each of the items in this file are important\. If the spacing is incorrect, CodeDeploy will raise an error that may be difficult to debug\. For more information, see [AppSpec File spacing](reference-appspec-file.md#reference-appspec-file-spacing)\.

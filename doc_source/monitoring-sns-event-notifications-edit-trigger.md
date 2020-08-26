@@ -1,8 +1,8 @@
-# Edit a Trigger in a CodeDeploy Deployment Group<a name="monitoring-sns-event-notifications-edit-trigger"></a>
+# Edit a trigger in a CodeDeploy deployment group<a name="monitoring-sns-event-notifications-edit-trigger"></a>
 
 If your notification requirements change, you can modify your trigger rather than create a new one\.
 
-## Modify a CodeDeploy Trigger \(CLI\)<a name="monitoring-sns-event-notifications-edit-trigger-cli"></a>
+## Modify a CodeDeploy trigger \(CLI\)<a name="monitoring-sns-event-notifications-edit-trigger-cli"></a>
 
  To use the AWS CLI to change trigger details for CodeDeploy events when you update a deployment group, create a JSON file to define changes to the deployment group's properties, and then run the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command with the `--cli-input-json` option\. 
 

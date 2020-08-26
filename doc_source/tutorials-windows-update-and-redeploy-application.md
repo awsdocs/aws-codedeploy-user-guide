@@ -1,12 +1,12 @@
-# Step 5: Update and Redeploy Your "Hello, World\!" Application<a name="tutorials-windows-update-and-redeploy-application"></a>
+# Step 5: Update and redeploy your "hello, world\!" application<a name="tutorials-windows-update-and-redeploy-application"></a>
 
 Now that you've successfully deployed your application revision, on the development machine, make an update to the webpage's code, and then use CodeDeploy to redeploy the site\. After redeployment, you should be able to see the changes on the Amazon EC2 instance\.
 
 **Topics**
-+ [Modify the Webpage](#tutorials-windows-update-and-redeploy-application-modify-code)
-+ [Redeploy the Site](#tutorials-windows-update-and-redeploy-application-deploy-updates)
++ [Modify the webpage](#tutorials-windows-update-and-redeploy-application-modify-code)
++ [Redeploy the site](#tutorials-windows-update-and-redeploy-application-deploy-updates)
 
-## Modify the Webpage<a name="tutorials-windows-update-and-redeploy-application-modify-code"></a>
+## Modify the webpage<a name="tutorials-windows-update-and-redeploy-application-modify-code"></a>
 
 1. Go to your `c:\temp\HelloWorldApp` subfolder and use a text editor to modify the `index.html` file:
 
@@ -41,11 +41,11 @@ Now that you've successfully deployed your application revision, on the developm
    </html>
    ```
 
-## Redeploy the Site<a name="tutorials-windows-update-and-redeploy-application-deploy-updates"></a>
+## Redeploy the site<a name="tutorials-windows-update-and-redeploy-application-deploy-updates"></a>
 
 Now that you've modified the code, use Amazon S3 and CodeDeploy to redeploy the webpage\.
 
-Bundle and upload the changes to Amazon S3 as described in [Bundle the Application's Files into a Single Archive File and Push the Archive File](tutorials-windows-upload-application.md#tutorials-windows-upload-application-bundle-and-push-archive)\. \(As you follow those instructions, you do not need to create a new application\.\) Give the revision the same key as before \(**HelloWorld\_App\.zip**\)\. Upload it to the same Amazon S3 bucket you created earlier \(for example, **codedeploydemobucket**\)\.
+Bundle and upload the changes to Amazon S3 as described in [Bundle the application's files into a single archive file and push the archive file](tutorials-windows-upload-application.md#tutorials-windows-upload-application-bundle-and-push-archive)\. \(As you follow those instructions, you do not need to create a new application\.\) Give the revision the same key as before \(**HelloWorld\_App\.zip**\)\. Upload it to the same Amazon S3 bucket you created earlier \(for example, **codedeploydemobucket**\)\.
 
 Use the AWS CLI or the CodeDeploy console to redeploy the site\.
 
@@ -61,7 +61,7 @@ Call the create\-deployment command to create a deployment based on the uploaded
  aws deploy create-deployment --application-name HelloWorld_App --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name HelloWorld_DepGroup --s3-location bucket=codedeploydemobucket,bundleType=zip,key=HelloWorld_App.zip
 ```
 
-You can check the status of the new deployment, as described in [Monitor and Troubleshoot Your Deployment](tutorials-windows-deploy-application.md#tutorials-windows-deploy-application-monitor)\.
+You can check the status of the new deployment, as described in [Monitor and troubleshoot your deployment](tutorials-windows-deploy-application.md#tutorials-windows-deploy-application-monitor)\.
 
 When CodeDeploy has redeployed the site, revisit the site in your web browser to verify that the background color and text on the webpage have been changed\. \(You may need to refresh your browser\.\) If the background color and text has been changed, then congratulations\! You've modified and redeployed your site\!
 
@@ -69,7 +69,7 @@ When CodeDeploy has redeployed the site, revisit the site in your web browser to
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. On the navigation pane, choose **Applications**\.
 
@@ -99,6 +99,6 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
    1. Expand **Deployment group overrides**In the **Deployment configuration** list, choose **CodeDeployDefault\.OneAtATime**, and then choose **Create deployment**\. 
 
-      You can check the status of the deployment as described in [Monitor and Troubleshoot Your Deployment](tutorials-windows-deploy-application.md#tutorials-windows-deploy-application-monitor)\.
+      You can check the status of the deployment as described in [Monitor and troubleshoot your deployment](tutorials-windows-deploy-application.md#tutorials-windows-deploy-application-monitor)\.
 
       When CodeDeploy has redeployed the site, revisit the site in your web browser to verify that the background color and text on the webpage have been changed\. \(You may need to refresh your browser\.\) If the background color and text has been changed, congratulations\! You've modified and redeployed your site\!

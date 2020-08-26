@@ -1,8 +1,10 @@
-# Validate Your AppSpec File and File Location<a name="reference-appspec-file-validate"></a>
+# Validate your AppSpec File and file location<a name="reference-appspec-file-validate"></a>
 
  **File syntax** 
 
-CodeDeploy does not provide a tool for validating the contents of an AppSpec File\. Instead, consider using a browser\-based tool such as [YAML Lint](http://www.yamllint.com/) or [Online YAML Parser](http://yaml-online-parser.appspot.com/) to help you check your YAML syntax\.
+You can use the AWS\-provided AppSpec Assistant script to validate the contents of an AppSpec file\. You can find the script along with AppSpec file templates on [GitHub](https://github.com/aws-samples/aws-codedeploy-appspec-assistant)\.
+
+You can also use a browser\-based tool such as [YAML lint](http://www.yamllint.com/) or [Online YAML parser](http://yaml-online-parser.appspot.com/) to help you check your YAML syntax\.
 
  **File location** 
 

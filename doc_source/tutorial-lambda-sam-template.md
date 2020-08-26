@@ -1,4 +1,4 @@
-# Create Your AWS SAM Template<a name="tutorial-lambda-sam-template"></a>
+# Create your AWS SAM template<a name="tutorial-lambda-sam-template"></a>
 
 Create an AWS SAM template file that specifies the components in your infrastructure\.
 
@@ -103,7 +103,7 @@ Create an AWS SAM template file that specifies the components in your infrastruc
              NewVersion: !Ref myDateTimeFunction.Version
    ```
 
-This template specifies the following\. For more information, see [AWS SAM Template Concepts](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html)\.
+This template specifies the following\. For more information, see [AWS SAM template concepts](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html)\.
 
 **A Lambda function called `myDateTimeFunction`**  
  When this Lambda function is published, the `AutoPublishAlias` line in the template links it to an alias named `live`\. Later in this tutorial, an update to this function triggers a deployment by AWS CodeDeploy that incrementally shifts production traffic from the original version to the updated version\. 
@@ -112,14 +112,14 @@ This template specifies the following\. For more information, see [AWS SAM Templ
  The following Lambda functions are executed during CodeDeploy lifecycle hooks\. The functions contain code that validate the deployment of the updated `myDateTimeFunction`\. The result of the validation tests are passed to CodeDeploy using its `PutLifecycleEventHookExecutionStatus` API method\. If a validation test fails, the deployment fails and is rolled back\.   
 +  `CodeDeployHook_beforeAllowTraffic` runs during the `BeforeAllowTraffic` hook\. 
 +  `CodeDeployHook_afterAllowTraffic` runs during the `AfterAllowTraffic` hook\. 
-The name of both functions start with `CodeDeployHook_`\. The `CodeDeployRoleForLambda` role allows calls to the Lambda `invoke` method only in Lambda functions with names that start with this prefix\. For more information, see [AppSpec 'hooks' Section for an AWS Lambda Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-lambda) and [PutLifecycleEventHookExecutionStatus](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.html) in the *CodeDeploy API Reference*\. 
+The name of both functions start with `CodeDeployHook_`\. The `CodeDeployRoleForLambda` role allows calls to the Lambda `invoke` method only in Lambda functions with names that start with this prefix\. For more information, see [AppSpec 'hooks' section for an AWS Lambda deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-lambda) and [PutLifecycleEventHookExecutionStatus](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.html) in the *CodeDeploy API Reference*\. 
 
 **Automatic detection of an updated Lambda function**  
  The `AutoPublishAlias` term tells the framework to detect when the `myDateTimeFunction` function changes, and then deploy it using the `live` alias\. 
 
 **A deployment configuration**  
  The deployment configuration determines the rate at which your CodeDeploy application shifts traffic from the original version of the Lambda function to the new version\. This template specifies the predefined deployment configuration `Linear10PercentEvery1Minute`\.   
- You cannot specify a custom deployment configuration in an AWS SAM template\. For more information, see [Create a Deployment Configuration with CodeDeploy](deployment-configurations-create.md)\.
+ You cannot specify a custom deployment configuration in an AWS SAM template\. For more information, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\.
 
 **Deployment lifecycle hook functions**  
  The `Hooks` section specifies the functions to run during lifecycle event hooks\. `PreTraffic` specifies the function that runs during the `BeforeAllowTraffic` hook\. `PostTraffic` specifies the function that runs during the `AfterAllowTraffic` hook\. 

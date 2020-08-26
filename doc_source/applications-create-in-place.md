@@ -1,19 +1,19 @@
-# Create an Application for an In\-Place Deployment \(Console\)<a name="applications-create-in-place"></a>
+# Create an application for an in\-place deployment \(console\)<a name="applications-create-in-place"></a>
 
 To use the CodeDeploy console to create an application for an in\-place deployment:
 
 **Warning**  
 Do not follow these steps if:  
-You have not prepared your instances to be used in CodeDeploy deployments\. To set up your instances, follow the instructions in [Working with Instances for CodeDeploy](instances.md), and then follow the steps in this topic\.
-You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a Deployment Configuration with CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
-You do not have a service role that trusts CodeDeploy with the minimum required trust and permissions\. To create and configure a service role with the required permissions, follow the instructions in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md), and then return to the steps in this topic\.
+You have not prepared your instances to be used in CodeDeploy deployments\. To set up your instances, follow the instructions in [Working with instances for CodeDeploy](instances.md), and then follow the steps in this topic\.
+You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
+You do not have a service role that trusts CodeDeploy with the minimum required trust and permissions\. To create and configure a service role with the required permissions, follow the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md), and then return to the steps in this topic\.
 You want to select a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing for the in\-place deployment, but have not yet created it\.
 
 To create an application for an in\-place deployment using the CodeDeploy console:
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Getting started**\.
 
@@ -51,9 +51,9 @@ If you want to use the same settings used in another deployment group \(includin
 
       If you want to refine the criteria for the deployed\-to instances, choose **Add tag group** to create an tag group\. You can create up to three tag groups with up to ten key\-value pairs each\. When you use multiple tag groups in a deployment group, only instances that are identified by all the tag groups are included in the deployment group\. That means an instance must match at least one of the tags in each of the groups to be included in the deployment group\.
 
-      For information about using tag groups to refine your deployment group, see [Tagging Instances for Deployment Groups in CodeDeploy](instances-tagging.md)\.
+      For information about using tag groups to refine your deployment group, see [Tagging instances for deployment groups in CodeDeploy](instances-tagging.md)\.
 
-1. In **Deployment settings**, choose a deployment configuration to control the rate your application is deployed to instances, such as one at a time or all at once\. For more information about deployment configurations, see [Working with Deployment Configurations in CodeDeploy](deployment-configurations.md)\.
+1. In **Deployment settings**, choose a deployment configuration to control the rate your application is deployed to instances, such as one at a time or all at once\. For more information about deployment configurations, see [Working with deployment configurations in CodeDeploy](deployment-configurations.md)\.
 
 1. \(Optional\) In **Load balancer**, select **Enable load balancing**, and then choose an existing Classic Load Balancer, Application Load Balancer, or Network Load Balancer to manage traffic to the instances during the deployment processes\.
 
@@ -63,8 +63,8 @@ If you want to use the same settings used in another deployment group \(includin
 
 1. \(Optional\) Expand **Advanced**, and configure any options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.
 
-   For more information, see [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)\. 
+   For more information, see [Configure advanced options for a deployment group](deployment-groups-configure-advanced-options.md)\. 
 
 1. Choose **Create deployment group**\. 
 
-The next step is to prepare a revision to deploy to the application and deployment group\. For instructions, see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
+The next step is to prepare a revision to deploy to the application and deployment group\. For instructions, see [Working with application revisions for CodeDeploy](application-revisions.md)\.

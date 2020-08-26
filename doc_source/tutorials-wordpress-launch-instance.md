@@ -1,12 +1,12 @@
-# Step 1: Launch and Configure an Amazon Linux or Red Hat Enterprise Linux Amazon EC2 Instance<a name="tutorials-wordpress-launch-instance"></a>
+# Step 1: Launch and configure an Amazon Linux or Red Hat Enterprise Linux Amazon EC2 instance<a name="tutorials-wordpress-launch-instance"></a>
 
 To deploy the WordPress application with CodeDeploy, you'll need an Amazon EC2 instance running Amazon Linux or Red Hat Enterprise Linux \(RHEL\)\. The Amazon EC2 instance requires a new inbound security rule that allows HTTP connections\. This rule is needed in order to view the WordPress page in a browser after it is successfully deployed\.
 
-Follow the instructions in [Create an Amazon EC2 Instance for CodeDeploy](instances-ec2-create.md)\. When you get to the part in those instructions about assigning an Amazon EC2 instance tag to the instance, be sure to specify the tag key of **Name** and the tag value of **CodeDeployDemo**\. \(If you specify a different tag key or tag value, then the instructions in [Step 4: Deploy Your WordPress Application](tutorials-wordpress-deploy-application.md) may produce unexpected results\.\)
+Follow the instructions in [Create an Amazon EC2 instance for CodeDeploy](instances-ec2-create.md)\. When you get to the part in those instructions about assigning an Amazon EC2 instance tag to the instance, be sure to specify the tag key of **Name** and the tag value of **CodeDeployDemo**\. \(If you specify a different tag key or tag value, then the instructions in [Step 4: Deploy your WordPress application](tutorials-wordpress-deploy-application.md) may produce unexpected results\.\)
 
-After you've followed the instructions to launch the Amazon EC2 instance, return to this page, and continue to the next section\. Do not continue on to [Create an Application with CodeDeploy](applications-create.md) as a next step\.
+After you've followed the instructions to launch the Amazon EC2 instance, return to this page, and continue to the next section\. Do not continue on to [Create an application with CodeDeploy](applications-create.md) as a next step\.
 
-## Connect to Your Amazon Linux or RHEL Amazon EC2 Instance<a name="tutorials-wordpress-launch-instance-connect"></a>
+## Connect to your Amazon Linux or RHEL Amazon EC2 instance<a name="tutorials-wordpress-launch-instance-connect"></a>
 
 After your new Amazon EC2 instance is launched, follow these instructions to practice connecting to it\.
 
@@ -34,21 +34,11 @@ If you receive an error about your key file's permissions being too open, you wi
          ___|\___|___|
    ```
 
-1.  Confirm the CodeDeploy agent installed properly when you setup your Amazon EC2 instance by typing the following: 
-
-   ```
-   sudo service codedeploy-agent status
-   ```
-
-   For more information about determining the status of the CodeDeploy agent, see [Verify the CodeDeploy Agent Is Running](codedeploy-agent-operations-verify.md)\.
-
-   If the CodeDeploy agent is not installed, follow the instructions in [Install or reinstall the CodeDeploy agent for Amazon Linux or RHEL](codedeploy-agent-operations-install-linux.md)\.
-
 1. You can now sign out of the running Amazon EC2 instance\.
 **Warning**  
 Do not stop or terminate the Amazon EC2 instance\. Otherwise, CodeDeploy won't be able to deploy to it\.
 
-## Add an Inbound Rule That Allows HTTP Traffic to Your Amazon Linux or RHEL Amazon EC2 Instance<a name="tutorials-wordpress-launch-instance-add-inbound-rule"></a>
+## Add an inbound rule that allows HTTP traffic to your Amazon Linux or RHEL Amazon EC2 instance<a name="tutorials-wordpress-launch-instance-add-inbound-rule"></a>
 
 The next step confirms your Amazon EC2 instance has an open HTTP port so you can see the deployed WordPress application's home page in a browser\. 
 

@@ -1,4 +1,4 @@
-# Troubleshooting AWS CodeDeploy Identity and Access<a name="security_iam_troubleshoot"></a>
+# Troubleshooting AWS CodeDeploy identity and access<a name="security_iam_troubleshoot"></a>
 
 Use the following information to help you diagnose and fix common issues that you might encounter when working with CodeDeploy and IAM\.
 
@@ -44,7 +44,7 @@ To get started right away, see [Creating Your First IAM Delegated User and Group
 You can create a role that users in other accounts or people outside of your organization can use to access your resources\. You can specify who is trusted to assume the role\. For services that support resource\-based policies or access control lists \(ACLs\), you can use those policies to grant people access to your resources\.
 
 To learn more, consult the following:
-+ To learn whether CodeDeploy supports these features, see [How AWS CodeDeploy Works with IAM](security_iam_service-with-iam.md)\.
++ To learn whether CodeDeploy supports these features, see [How AWS CodeDeploy works with IAM](security_iam_service-with-iam.md)\.
 + To learn how to provide access to your resources across AWS accounts that you own, see [Providing Access to an IAM User in Another AWS Account That You Own](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html) in the *IAM User Guide*\.
 + To learn how to provide access to your resources to third\-party AWS accounts, see [Providing Access to AWS Accounts Owned by Third Parties](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html) in the *IAM User Guide*\.
 + To learn how to provide access through identity federation, see [Providing Access to Externally Authenticated Users \(Identity Federation\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_federated-users.html) in the *IAM User Guide*\.

@@ -1,4 +1,4 @@
-# Step 3: Upload Your "Hello, World\!" Application to Amazon S3<a name="tutorials-windows-upload-application"></a>
+# Step 3: Upload your "hello, world\!" application to Amazon S3<a name="tutorials-windows-upload-application"></a>
 
 Now you will prepare and upload your source content to a location from which CodeDeploy can deploy it\. The following instructions show you how to provision an Amazon S3 bucket, prepare the application revision's files for the bucket, bundle the revision's files, and then push the revision to the bucket\.
 
@@ -6,11 +6,11 @@ Now you will prepare and upload your source content to a location from which Cod
 Although it's not covered in this tutorial, you can use CodeDeploy to deploy applications from GitHub repositories to instances\. For more information, see [Integrating CodeDeploy with GitHub](integrations-partners-github.md)\.
 
 **Topics**
-+ [Provision an Amazon S3 Bucket](#tutorials-windows-upload-application-create-s3-bucket)
-+ [Prepare the Application's Files for the Bucket](#tutorials-windows-upload-application-prepare-application-files)
-+ [Bundle the Application's Files into a Single Archive File and Push the Archive File](#tutorials-windows-upload-application-bundle-and-push-archive)
++ [Provision an Amazon S3 bucket](#tutorials-windows-upload-application-create-s3-bucket)
++ [Prepare the application's files for the bucket](#tutorials-windows-upload-application-prepare-application-files)
++ [Bundle the application's files into a single archive file and push the archive file](#tutorials-windows-upload-application-bundle-and-push-archive)
 
-## Provision an Amazon S3 Bucket<a name="tutorials-windows-upload-application-create-s3-bucket"></a>
+## Provision an Amazon S3 bucket<a name="tutorials-windows-upload-application-create-s3-bucket"></a>
 
 Create a storage container or *bucket* in Amazon S3—or use an existing bucket\. Make sure you can upload the revision to the bucket and that Amazon EC2 instances used in deployments can download the revision from the bucket\.
 
@@ -23,7 +23,7 @@ The Amazon S3 bucket must be created in the same AWS region in which your target
 **Topics**
 + [To create an Amazon S3 bucket \(CLI\)](#tutorials-windows-upload-application-create-s3-bucket-cli)
 + [To create an Amazon S3 bucket \(console\)](#tutorials-windows-upload-application-create-s3-bucket-console)
-+ [Give Permissions to the Amazon S3 Bucket and Your IAM User](#tutorials-windows-upload-application-create-s3-bucket-grant-permission)
++ [Give permissions to the Amazon S3 bucket and your IAM user](#tutorials-windows-upload-application-create-s3-bucket-grant-permission)
 
 ### To create an Amazon S3 bucket \(CLI\)<a name="tutorials-windows-upload-application-create-s3-bucket-cli"></a>
 
@@ -43,7 +43,7 @@ aws s3 mb s3://codedeploydemobucket
 
 1. In the **Region** list, choose the target region, and then choose **Create**\.
 
-### Give Permissions to the Amazon S3 Bucket and Your IAM User<a name="tutorials-windows-upload-application-create-s3-bucket-grant-permission"></a>
+### Give permissions to the Amazon S3 bucket and your IAM user<a name="tutorials-windows-upload-application-create-s3-bucket-grant-permission"></a>
 
 You must have permissions to upload to the Amazon S3 bucket\. You can specify these permissions through an Amazon S3 bucket policy\. For example, in the following Amazon S3 bucket policy, using the wildcard character \(\*\) allows AWS account `111122223333` to upload files to any directory in the Amazon S3 bucket named `codedeploydemobucket`:
 
@@ -90,7 +90,7 @@ Now is a good time to verify the Amazon S3 bucket will allow download requests f
 }
 ```
 
-For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
 Your account must have permission to upload the revision to the Amazon S3 bucket\. One way to specify this is through an IAM policy\. The following IAM policy allows your IAM user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
@@ -107,9 +107,9 @@ Your account must have permission to upload the revision to the Amazon S3 bucket
 }
 ```
 
-For information about how to create and attach an IAM policy, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
+For information about how to create and attach an IAM policy, see [Working with policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
-## Prepare the Application's Files for the Bucket<a name="tutorials-windows-upload-application-prepare-application-files"></a>
+## Prepare the application's files for the bucket<a name="tutorials-windows-upload-application-prepare-application-files"></a>
 
 Make sure the web page, the AppSpec file, and the script are organized on your development machine like this:
 
@@ -122,12 +122,12 @@ c:\
              |-- index.html
 ```
 
-## Bundle the Application's Files into a Single Archive File and Push the Archive File<a name="tutorials-windows-upload-application-bundle-and-push-archive"></a>
+## Bundle the application's files into a single archive file and push the archive file<a name="tutorials-windows-upload-application-bundle-and-push-archive"></a>
 
 Bundle the files into an archive file \(known as an application *revision*\)\.
 
 **Note**  
-You may be charged for storing objects in a bucket and for transferring application revisions into and out of a bucket\. For more information, see [Amazon S3 Pricing](https://aws.amazon.com/s3/pricing/)\. 
+You may be charged for storing objects in a bucket and for transferring application revisions into and out of a bucket\. For more information, see [Amazon S3 pricing](https://aws.amazon.com/s3/pricing/)\. 
 
 1. On the development machine, switch to the folder where the files are stored: 
 

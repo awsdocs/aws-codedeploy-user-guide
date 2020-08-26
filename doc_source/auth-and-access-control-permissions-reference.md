@@ -1,8 +1,8 @@
-# CodeDeploy Permissions Reference<a name="auth-and-access-control-permissions-reference"></a>
+# CodeDeploy permissions reference<a name="auth-and-access-control-permissions-reference"></a>
 
 Use the following table when you are setting up access and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\)\. The table lists each CodeDeploy API operation, the actions for which you can grant permissions to perform the action, and the format of the resource ARN to use for granting permissions\. You specify the actions in the policy's `Action` field\. You specify an ARN, with or without a wildcard character \(\*\), as the resource value in the policy's `Resource` field\.
 
-You can use AWS\-wide condition keys in your CodeDeploy policies to express conditions\. For a complete list of AWS\-wide keys, see [Available Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
+You can use AWS\-wide condition keys in your CodeDeploy policies to express conditions\. For a complete list of AWS\-wide keys, see [Available keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
 
 To specify an action, use the `codedeploy:` prefix followed by the API operation name \(for example, `codedeploy:GetApplication` and `codedeploy:CreateApplication`\)\. To specify multiple actions in a single statement, separate them with commas \(for example, `"Action": ["codedeploy:action1", "codedeploy:action2"]`\)\.
 
@@ -20,17 +20,17 @@ You can use wildcards with the following resources listed in the table:
 + *deployment\-configuration\-name*
 + *instance\-ID*
 
-Wildcards can't be used with *region* or *account\-id*\. For more information about wildcards, see [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) in *IAM User Guide*\. 
+Wildcards can't be used with *region* or *account\-id*\. For more information about wildcards, see [IAM identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html) in *IAM User Guide*\. 
 
 **Note**  
- In the ARN for each action, a colon \(:\) follows the resource\. You can also follow the resource with a forward slash \(/\)\. For more information, see [CodeDeploy Example ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-codedeploy)\. 
+ In the ARN for each action, a colon \(:\) follows the resource\. You can also follow the resource with a forward slash \(/\)\. For more information, see [CodeDeploy example ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-codedeploy)\. 
 
 Use the scroll bars to see the rest of the table\.
 
 
-**CodeDeploy API Operations and Required Permissions for Actions**  
+**CodeDeploy API operations and required permissions for actions**  
 
-| CodeDeploy API Operations | Required Permissions \(API Actions\) | Resources | 
+| CodeDeploy API operations | Required permissions \(API actions\) | Resources | 
 | --- | --- | --- | 
 |  [AddTagsToOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.html)  |  `codedeploy:AddTagsToOnPremisesInstances` Required to add tags to one or more on\-premises instances\.  |  arn:aws:codedeploy:*region*:*account\-id*:instance:*instance\-ID*  | 
 |  [BatchGetApplicationRevisions](https://docs.aws.amazon.com/codedeploy/latest/APIReference/BatchGetApplicationRevisions.html)  |  `codedeploy:BatchGetApplicationRevisions` Required to get information about multiple application revisions associated with the IAM user\.  |  arn:aws:codedeploy:*region*:*account\-id*:application:*application\-name*  | 

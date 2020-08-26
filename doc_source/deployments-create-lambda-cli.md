@@ -1,4 +1,4 @@
-# Create an AWS Lambda Compute Platform Deployment \(CLI\)<a name="deployments-create-lambda-cli"></a>
+# Create an AWS Lambda Compute Platform deployment \(CLI\)<a name="deployments-create-lambda-cli"></a>
 
 After you have created the application and revision \(in AWS Lambda deployments, this is the AppSpec file\):
 
@@ -32,8 +32,8 @@ The revision file can be specified as a file uploaded to an Amazon S3 bucket or 
   ```
 
 **Note**  
-The create\-deployment command can load a revision from a file\. For more information, see [Loading Parameters from a File](https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-file)\. 
+The create\-deployment command can load a revision from a file\. For more information, see [Loading parameters from a file](https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-file)\. 
 
-For AWS Lambda deployment revision templates, see [Add an AppSpec File for an AWS Lambda Deployment](application-revisions-appspec-file.md#add-appspec-file-lambda)\. For an example revision, see [ AppSpec File Example for an AWS Lambda Deployment ](reference-appspec-file-example.md#appspec-file-example-lambda)\.
+For AWS Lambda deployment revision templates, see [Add an AppSpec file for an AWS Lambda deployment](application-revisions-appspec-file.md#add-appspec-file-lambda)\. For an example revision, see [ AppSpec File example for an AWS Lambda deployment ](reference-appspec-file-example.md#appspec-file-example-lambda)\.
 
-To track the status of your deployment, see [View CodeDeployDeployment Details ](deployments-view-details.md)\.
+To track the status of your deployment, see [View CodeDeploydeployment details ](deployments-view-details.md)\.

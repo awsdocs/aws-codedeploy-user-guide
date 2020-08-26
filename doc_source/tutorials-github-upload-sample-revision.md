@@ -1,14 +1,14 @@
-# Step 3: Upload a Sample Application to Your GitHub Repository<a name="tutorials-github-upload-sample-revision"></a>
+# Step 3: Upload a sample application to your GitHub repository<a name="tutorials-github-upload-sample-revision"></a>
 
 In this step, you will copy a sample revision from a public Amazon S3 bucket to your GitHub repository\. \(For simplicity, the sample revisions provided for this tutorial are single web pages\.\)
 
 **Note**  
 If you use one of your revisions instead of our sample revision, your revision must:   
-Follow the guidelines in [Plan a Revision for CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md)\.
+Follow the guidelines in [Plan a revision for CodeDeploy](application-revisions-plan.md) and [Add an application specification file to a revision for CodeDeploy](application-revisions-appspec-file.md)\.
 Work with the corresponding instance type\.
 Be accessible from your GitHub dashboard\.
-If your revision meets these requirements, skip ahead to [Step 5: Create an Application and Deployment Group](tutorials-github-create-application.md)\.  
-If you're deploying to an Ubuntu Server instance, you'll need to upload to your GitHub repository a revision compatible with an Ubuntu Server instance and CodeDeploy\. For more information, see [Plan a Revision for CodeDeploy](application-revisions-plan.md) and [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md)\.
+If your revision meets these requirements, skip ahead to [Step 5: Create an application and deployment group](tutorials-github-create-application.md)\.  
+If you're deploying to an Ubuntu Server instance, you'll need to upload to your GitHub repository a revision compatible with an Ubuntu Server instance and CodeDeploy\. For more information, see [Plan a revision for CodeDeploy](application-revisions-plan.md) and [Add an application specification file to a revision for CodeDeploy](application-revisions-appspec-file.md)\.
 
 **Topics**
 + [Push a sample revision from a local Linux, macOS, or Unix machine](#tutorials-github-upload-sample-revision-unixes)

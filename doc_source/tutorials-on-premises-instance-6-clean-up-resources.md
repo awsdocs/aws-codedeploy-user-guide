@@ -1,10 +1,10 @@
-# Step 6: Clean Up Resources<a name="tutorials-on-premises-instance-6-clean-up-resources"></a>
+# Step 6: Clean up resources<a name="tutorials-on-premises-instance-6-clean-up-resources"></a>
 
 To avoid ongoing charges for resources you created for this tutorial, delete the Amazon S3 bucket if you'll no longer be using it\. You can also clean up associated resources, such as the application and deployment group records in CodeDeploy and the on\-premises instance\.
 
 You can use the AWS CLI or a combination of the CodeDeploy and Amazon S3 consoles and the AWS CLI to clean up resources\. 
 
-## Clean Up Resources \(CLI\)<a name="tutorials-on-premises-instance-6-clean-up-resources-cli"></a>
+## Clean up resources \(CLI\)<a name="tutorials-on-premises-instance-6-clean-up-resources-cli"></a>
 
 **To delete the Amazon S3 bucket**
 + Call the [rm](https://docs.aws.amazon.com/cli/latest/reference/s3/rm.html) command along with the `--recursive` switch against the bucket \(for example, `codedeploydemobucket`\)\. The bucket and all objects in the bucket will be deleted\. 
@@ -38,7 +38,7 @@ If you do not want to delete the IAM user associated with this on\-premises inst
 
 You have now completed all of the steps to clean up the resources used for this tutorial\.
 
-## Clean Up Resources \(Console\)<a name="tutorials-on-premises-instance-6-clean-up-resources-console"></a>
+## Clean up resources \(console\)<a name="tutorials-on-premises-instance-6-clean-up-resources-console"></a>
 
 **To delete the Amazon S3 bucket**
 
@@ -54,7 +54,7 @@ You have now completed all of the steps to clean up the resources used for this 
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane choose **Applications**\.
 

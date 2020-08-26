@@ -1,11 +1,11 @@
-# Configure Advanced Options for a Deployment Group<a name="deployment-groups-configure-advanced-options"></a>
+# Configure advanced options for a deployment group<a name="deployment-groups-configure-advanced-options"></a>
 
 When you create or update a deployment group, you can configure a number of options to provide more control and oversight over the deployments for that deployment group\.
 
 Use the information on this page to help you configure advanced options when you work with deployment groups in the following topics: 
-+ [Create an Application with CodeDeploy](applications-create.md)
-+ [Create a Deployment Group with CodeDeploy](deployment-groups-create.md)
-+ [Change Deployment Group Settings with CodeDeploy](deployment-groups-edit.md)
++ [Create an application with CodeDeploy](applications-create.md)
++ [Create a deployment group with CodeDeploy](deployment-groups-create.md)
++ [Change deployment group settings with CodeDeploy](deployment-groups-edit.md)
 
 **Amazon SNS notification triggers**: You can add triggers to a CodeDeploy deployment group to receive notifications about events related to deployments in that deployment group\. These notifications are sent to recipients who are subscribed to an Amazon SNS topic you have made part of the trigger's action\. 
 
@@ -15,7 +15,7 @@ If you want to create a trigger now to receive notifications about deployment ev
 
 If your deployment is to an Amazon EC2 instance, you can create notifications for and receive notifications about instances\.
 
-For more information, see [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)\.
+For more information, see [Monitoring deployments with Amazon SNS event notifications](monitoring-sns-event-notifications.md)\.
 
 **Amazon CloudWatch alarms**: You can create a CloudWatch alarm that watches a single metric over a time period you specify and performs one or more actions based on the value of the metric relative to a given threshold over a number of time periods\. For an Amazon EC2 deployment, you can create an alarm for an instance or Amazon EC2 Auto Scaling group that you are using in your CodeDeploy operations\. For an AWS Lambda and an Amazon ECS deployment, you can create an alarm for errors in a Lambda function\.
 
@@ -37,7 +37,7 @@ Additional options:
 **Note**  
 This option corresponds to ignorePollAlarmFailure in the [AlarmConfiguration](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AlarmConfiguration.html) object in the CodeDeploy API\. 
 
-For more information, see [Monitoring Deployments with CloudWatch Alarms in CodeDeploy](monitoring-create-alarms.md)\.
+For more information, see [Monitoring deployments with CloudWatch alarms in CodeDeploy](monitoring-create-alarms.md)\.
 
 **Automatic rollbacks**: You can configure a deployment group or deployment to automatically roll back when a deployment fails or when a monitoring threshold you specify is met\. In this case, the last known good version of an application revision is deployed\. You can configure optional settings for a deployment group when you use the console to create an application, create a deployment group, or update a deployment group\. When you create a new deployment, you can also choose to override the automatic rollback configuration that were specified for the deployment group\. 
 + You can enable deployments to roll back to the most recent known good revision when something goes wrong by choosing one or both of the following:
@@ -46,4 +46,4 @@ For more information, see [Monitoring Deployments with CloudWatch Alarms in Code
 **Note**  
 To temporarily ignore a rollback configuration, choose **Disable rollbacks**\. This choice is useful when you want to temporarily disable automatic rollbacks without having to set up the same configuration again later\.
 
-  For more information, see [Redeploy and Roll Back a Deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
+  For more information, see [Redeploy and roll back a deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.

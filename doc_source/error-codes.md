@@ -1,4 +1,4 @@
-# Error Codes for AWS CodeDeploy<a name="error-codes"></a>
+# Error codes for AWS CodeDeploy<a name="error-codes"></a>
 
 This topic provides reference information about CodeDeploy errors\.
 
@@ -18,6 +18,6 @@ This topic provides reference information about CodeDeploy errors\.
 | `THROTTLED` |  The deployment failed because more requests were made than are permitted for AWS CodeDeploy by an IAM role\. Try reducing the number of requests\. Learn more:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
 | `UNABLE_TO_SEND_ASG` |  The deployment failed because the deployment group isn’t configured correctly with its Amazon EC2 Auto Scaling group\. In the CodeDeploy console, delete the Amazon EC2 Auto Scaling group from the deployment group, and then add it again\. Learn more: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html)  | 
 
-## Related Topics<a name="error-codes-related-topics"></a>
+## Related topics<a name="error-codes-related-topics"></a>
 
 [Troubleshooting CodeDeploy](troubleshooting.md)

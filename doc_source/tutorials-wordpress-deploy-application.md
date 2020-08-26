@@ -1,13 +1,13 @@
-# Step 4: Deploy Your WordPress Application<a name="tutorials-wordpress-deploy-application"></a>
+# Step 4: Deploy your WordPress application<a name="tutorials-wordpress-deploy-application"></a>
 
 Now you deploy the sample WordPress application revision you uploaded to Amazon S3\. You can use the AWS CLI or the CodeDeploy console to deploy the revision and monitor the deployment's progress\. After the application revision is successfully deployed, you check the results\.
 
 **Topics**
-+ [Deploy Your Application Revision with CodeDeploy](#tutorials-wordpress-deploy-application-create-deployment)
-+ [Monitor and Troubleshoot Your Deployment](#tutorials-wordpress-deploy-application-monitor)
-+ [Verify Your Deployment](#tutorials-wordpress-deploy-application-verify-deployment)
++ [Deploy your application revision with CodeDeploy](#tutorials-wordpress-deploy-application-create-deployment)
++ [Monitor and troubleshoot your deployment](#tutorials-wordpress-deploy-application-monitor)
++ [Verify your deployment](#tutorials-wordpress-deploy-application-verify-deployment)
 
-## Deploy Your Application Revision with CodeDeploy<a name="tutorials-wordpress-deploy-application-create-deployment"></a>
+## Deploy your application revision with CodeDeploy<a name="tutorials-wordpress-deploy-application-create-deployment"></a>
 
 Use the AWS CLI or the console to deploy your application revision\.
 
@@ -19,7 +19,7 @@ Use the AWS CLI or the console to deploy your application revision\.
 
 1. The deployment needs a deployment group\. However, before you create the deployment group, you need a service role ARN\. A service role is an IAM role that gives a service permission to act on your behalf\. In this case, the service role gives CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their Amazon EC2 instance tags\.
 
-   You should have already followed the instructions in [Create a Service Role \(CLI\) ](getting-started-create-service-role.md#getting-started-create-service-role-cli) to create a service role\. To get the ARN of the service role, see [Get the Service Role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
+   You should have already followed the instructions in [Create a service role \(CLI\) ](getting-started-create-service-role.md#getting-started-create-service-role-cli) to create a service role\. To get the ARN of the service role, see [Get the service role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
 
 1. Now that you have the service role ARN, call the create\-deployment\-group command to create a deployment group named **WordPress\_DepGroup**, associated with the application named **WordPress\_App**, using the Amazon EC2 tag named **CodeDeployDemo** and deployment configuration named **CodeDeployDefault\.OneAtATime**:
 
@@ -33,6 +33,18 @@ Use the AWS CLI or the console to deploy your application revision\.
    ```
 **Note**  
 The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch alarms are met\. Commands for these actions are not included in this tutorial\.
+
+1. Before you create a deployment, the instances in your deployment group must have the CodeDeploy agent installed\. You can install the agent from the command line with AWS Systems Manager with the following command:
+
+   ```
+   aws ssm create-association \
+     --name AWS-ConfigureAWSPackage \
+     --targets Key=tag:Name,Values=CodeDeployDemo \
+      --parameters action=Install, name=AWSCodeDeployAgent \
+     --schedule-expression "cron(0 2 ? * SUN *)"
+   ```
+
+   This command creates an association in Systems Manager State Manager that will install the CodeDeploy agent and then attempt to update it at 2:00 every Sunday morning\. For more information about the CodeDeploy agent, see [ Working with the CodeDeploy agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html)\. For more information about Systems Manager, see [What is AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)\.
 
 1. Now call the create\-deployment command to create a deployment associated with the application named **WordPress\_App**, the deployment configuration named **CodeDeployDefault\.OneAtATime**, and the deployment group named **WordPress\_DepGroup**, using the application revision named **WordPressApp\.zip** in the bucket named **codedeploydemobucket**:
 
@@ -48,13 +60,13 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
 
 1. Before you use the CodeDeploy console to deploy your application revision, you need a service role ARN\. A service role is an IAM role that gives a service permission to act on your behalf\. In this case, the service role gives CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their Amazon EC2 instance tags\.
 
-   You should have already followed the instructions in [Create a Service Role \(Console\) ](getting-started-create-service-role.md#getting-started-create-service-role-console) to create a service role\. To get the ARN of the service role, see [Get the Service Role ARN \(Console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\.
+   You should have already followed the instructions in [Create a service role \(console\) ](getting-started-create-service-role.md#getting-started-create-service-role-console) to create a service role\. To get the ARN of the service role, see [Get the service role ARN \(console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\.
 
 1. Now that you have the ARN, use the CodeDeploy console to deploy your application revision:
 
    Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -67,6 +79,8 @@ Sign in with the same account or IAM user information that you used in [Getting 
 1. Under **Deployment type**, choose **In\-place deployment**\.
 
 1. In **Environment configuration**, select **Amazon EC2 instances**\.
+
+1. In **Agent configuration with AWS Systems Manager**, keep the defaults\.
 
 1. In **Key**, enter **Name**\.
 
@@ -106,7 +120,7 @@ After you type **CodeDeployDemo**, a **1** should appear under **Matching instan
 
 1. Choose **Start deployment**\. Information about your newly created deployment appears on the **Deployments** page\.
 
-## Monitor and Troubleshoot Your Deployment<a name="tutorials-wordpress-deploy-application-monitor"></a>
+## Monitor and troubleshoot your deployment<a name="tutorials-wordpress-deploy-application-monitor"></a>
 
 Use the AWS CLI or the console to monitor and troubleshoot your deployment\.
 
@@ -142,9 +156,9 @@ To get more information about your deployment, especially if the **Status** colu
 
 1. In **Instance activity**, more information about the deployment is displayed\. After a deployment fails, you might be able to determine on which Amazon EC2 instances and at which step the deployment failed\.
 
-1. If you want to do more troubleshooting, you can use a technique like the one described in [View Instance Details with CodeDeploy](instances-view-details.md)\. You can also analyze the deployment log files on an Amazon EC2 instance\. For more information, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
+1. If you want to do more troubleshooting, you can use a technique like the one described in [View instance details with CodeDeploy](instances-view-details.md)\. You can also analyze the deployment log files on an Amazon EC2 instance\. For more information, see [Analyzing log files to investigate deployment failures on instances](troubleshooting-ec2-instances.md#troubleshooting-deploy-failures)\.
 
-## Verify Your Deployment<a name="tutorials-wordpress-deploy-application-verify-deployment"></a>
+## Verify your deployment<a name="tutorials-wordpress-deploy-application-verify-deployment"></a>
 
 After your deployment is successful, verify your WordPress installation is working\. Use the public DNS address of the Amazon EC2 instance, followed by `/WordPress`, to view your site in a web browser\. \(To get the public DNS value, in the Amazon EC2 console, choose the Amazon EC2 instance, and on the **Description** tab, look for the value of **Public DNS**\.\)
 
@@ -158,4 +172,4 @@ When you view the site in your browser, you should see a WordPress welcome page 
 
 ![\[WordPress welcome page\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/WordPress-Welcome-Page-013118.png)
 
- If your Amazon EC2 instance does not have an HTTP inbound rule added to its security group, then the WordPress welcome page does not appear\. If you see a message that says the remote server is not responding, make sure the security group for your Amazon EC2 instance has the inbound rule\. For more information, see [ Add an Inbound Rule That Allows HTTP Traffic to Your Amazon Linux or RHEL Amazon EC2 Instance Add an Inbound Rule That Allows HTTP Traffic to Your Windows Server Amazon EC2 Instance](tutorials-wordpress-launch-instance.md#tutorials-wordpress-launch-instance-add-inbound-rule)\. 
+ If your Amazon EC2 instance does not have an HTTP inbound rule added to its security group, then the WordPress welcome page does not appear\. If you see a message that says the remote server is not responding, make sure the security group for your Amazon EC2 instance has the inbound rule\. For more information, see [ Add an inbound rule that allows HTTP traffic to your Amazon Linux or RHEL Amazon EC2 instance Add an inbound rule that allows HTTP traffic to your Windows Server Amazon EC2 instance](tutorials-wordpress-launch-instance.md#tutorials-wordpress-launch-instance-add-inbound-rule)\. 

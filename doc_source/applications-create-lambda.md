@@ -1,10 +1,10 @@
-# Create an Application for an AWS Lambda Function Deployment \(Console\)<a name="applications-create-lambda"></a>
+# Create an application for an AWS Lambda function deployment \(console\)<a name="applications-create-lambda"></a>
 
 You can use the CodeDeploy console to create an application for an AWS Lambda function deployment\.
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and choose **Getting started**\.
 
@@ -22,11 +22,11 @@ Sign in with the same account or IAM user information that you used in [Getting 
 **Note**  
 If you want to use the same settings used in another deployment group \(including the deployment group name and the deployment configuration\), choose those settings on this page\. Although this new deployment group and the existing deployment group might have the same name, CodeDeploy treats them as separate deployment groups, because each is associated with a separate application\.
 
-1. In **Service role**, choose a service role that grants CodeDeploy access to AWS Lambda\. For more information, see [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\.
+1. In **Service role**, choose a service role that grants CodeDeploy access to AWS Lambda\. For more information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 1.  If you want to use a predefined deployment configuration, choose one from **Deployment configuration**, and then skip to step 12\. To create a custom configuration, continue to the next step\.
 
-   For more information about deployment configurations, see [ Deployment Configurations on an AWS Lambda Compute Platform ](deployment-configurations.md#deployment-configuration-lambda)\.
+   For more information about deployment configurations, see [ Deployment configurations on an AWS Lambda compute platform ](deployment-configurations.md#deployment-configuration-lambda)\.
 
 1. To create a custom configuration, choose **Create deployment configuration**, and then do the following:
 
@@ -44,6 +44,6 @@ The maximum length of an AWS Lambda deployment is two days, or 2,880 minutes\. T
 
 1. \(Optional\) In **Advanced**, configure any options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.
 
-   For more information, see [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)\. 
+   For more information, see [Configure advanced options for a deployment group](deployment-groups-configure-advanced-options.md)\. 
 
 1. Choose **Create deployment group**\. 

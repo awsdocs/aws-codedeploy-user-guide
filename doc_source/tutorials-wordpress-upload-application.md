@@ -1,4 +1,4 @@
-# Step 3: Upload Your WordPress Application to Amazon S3<a name="tutorials-wordpress-upload-application"></a>
+# Step 3: Upload your WordPress application to Amazon S3<a name="tutorials-wordpress-upload-application"></a>
 
 Now you will prepare and upload your source content to a location from which CodeDeploy can deploy it\. The following instructions show you how to provision an Amazon S3 bucket, prepare the application revision's files for the bucket, bundle the revision's files, and then push the revision to the bucket\.
 
@@ -6,11 +6,11 @@ Now you will prepare and upload your source content to a location from which Cod
 Although it's not covered in this tutorial, you can use CodeDeploy to deploy applications from GitHub repositories to instances\. For more information, see [Integrating CodeDeploy with GitHub](integrations-partners-github.md)\.
 
 **Topics**
-+ [Provision an Amazon S3 Bucket](#tutorials-wordpress-upload-application-create-s3-bucket)
-+ [Prepare the Application's Files for the Bucket](#tutorials-wordpress-upload-application-prepare-application-files)
-+ [Bundle the Application's Files into a Single Archive File and Push the Archive File](#tutorials-wordpress-upload-application-bundle-and-push-archive)
++ [Provision an Amazon S3 bucket](#tutorials-wordpress-upload-application-create-s3-bucket)
++ [Prepare the application's files for the bucket](#tutorials-wordpress-upload-application-prepare-application-files)
++ [Bundle the application's files into a single archive file and push the archive file](#tutorials-wordpress-upload-application-bundle-and-push-archive)
 
-## Provision an Amazon S3 Bucket<a name="tutorials-wordpress-upload-application-create-s3-bucket"></a>
+## Provision an Amazon S3 bucket<a name="tutorials-wordpress-upload-application-create-s3-bucket"></a>
 
 Create a storage container or *bucket* in Amazon S3—or use an existing bucket\. Make sure you can upload the revision to the bucket and that Amazon EC2 instances used in deployments can download the revision from the bucket\.
 
@@ -90,11 +90,11 @@ Now is a good time to verify the Amazon S3 bucket will allow download requests f
 }
 ```
 
- For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+ For information about how to generate and attach an Amazon S3 bucket policy, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
-For information about how to create and attach an IAM policy, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
+For information about how to create and attach an IAM policy, see [Working with policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
-## Prepare the Application's Files for the Bucket<a name="tutorials-wordpress-upload-application-prepare-application-files"></a>
+## Prepare the application's files for the bucket<a name="tutorials-wordpress-upload-application-prepare-application-files"></a>
 
 Make sure the WordPress application files, the AppSpec file, and the scripts are organized on your development machine similar to the following:
 
@@ -120,12 +120,12 @@ Make sure the WordPress application files, the AppSpec file, and the scripts are
       |-- (various files ending with .php...)
 ```
 
-## Bundle the Application's Files into a Single Archive File and Push the Archive File<a name="tutorials-wordpress-upload-application-bundle-and-push-archive"></a>
+## Bundle the application's files into a single archive file and push the archive file<a name="tutorials-wordpress-upload-application-bundle-and-push-archive"></a>
 
 Bundle the WordPress application files and the AppSpec file into an archive file \(known as an application *revision*\)\.
 
 **Note**  
-You may be charged for storing objects in a bucket and for transferring application revisions into and out of a bucket\. For more information, see [Amazon S3 Pricing](https://aws.amazon.com/s3/pricing/)\. 
+You may be charged for storing objects in a bucket and for transferring application revisions into and out of a bucket\. For more information, see [Amazon S3 pricing](https://aws.amazon.com/s3/pricing/)\. 
 
 1. On the development machine, switch to the folder where the files are stored: 
 

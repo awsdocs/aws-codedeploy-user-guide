@@ -1,16 +1,17 @@
-# Step 6: Clean Up Your WordPress Application and Related Resources<a name="tutorials-wordpress-clean-up"></a>
+# Step 6: Clean up your WordPress application and related resources<a name="tutorials-wordpress-clean-up"></a>
 
 You've now successfully made an update to the WordPress code and redeployed the site\. To avoid ongoing charges for resources you created for this tutorial, you should delete:
 + Any AWS CloudFormation stacks \(or terminate any Amazon EC2 instances, if you created them outside of AWS CloudFormation\)\.
 + Any Amazon S3 buckets\.
 + The `WordPress_App` application in CodeDeploy\.
++ The AWS Systems Manager State Manager association for the CodeDeploy agent\.
 
 You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and CodeDeploy consoles, or the AWS APIs to perform the cleanup\.
 
 **Topics**
 + [To clean up resources \(CLI\)](#tutorials-wordpress-clean-up-cli)
 + [To clean up resources \(console\)](#tutorials-wordpress-clean-up-console)
-+ [What's Next?](#tutorials-wordpress-clean-up-whats-next)
++ [What's next?](#tutorials-wordpress-clean-up-whats-next)
 
 ## To clean up resources \(CLI\)<a name="tutorials-wordpress-clean-up-cli"></a>
 
@@ -30,6 +31,18 @@ You can use the AWS CLI, the AWS CloudFormation, Amazon S3, Amazon EC2, and Code
 
    ```
    aws deploy delete-application --application-name WordPress_App
+   ```
+
+1. To delete the Systems Manager State Manager association, call the delete\-association command\.
+
+   ```
+   aws ssm delete-association --assocation-id association-id
+   ```
+
+   You can get the *association\-id* by calling the describe\-association command\.
+
+   ```
+   aws ssm describe-association --name AWS-ConfigureAWSPackage --targets Key=tag:Name,Values=CodeDeployDemo
    ```
 
 If you did not use the AWS CloudFormation stack for this tutorial, call the terminate\-instances command to terminate any Amazon EC2 instances you manually created\. Supply the ID of the Amazon EC2 instance to terminate:
@@ -78,7 +91,7 @@ To delete the `WordPress_App` application from CodeDeploy:
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
@@ -88,6 +101,14 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. When prompted, enter the name of the application to confirm you want to delete it, and then choose **Delete**\. 
 
-## What's Next?<a name="tutorials-wordpress-clean-up-whats-next"></a>
+To delete the Systems Manager State Manager association:
+
+1. Open the AWS Systems Manager console at https://console\.aws\.amazon\.com/systems\-manager\.
+
+1. In the navigation pane, choose **State Manager**\.
+
+1. Choose the association you created and choose **Delete**\.
+
+## What's next?<a name="tutorials-wordpress-clean-up-whats-next"></a>
 
 If you've arrived here, congratulations\! You have successfully completed a CodeDeploy deployment, and then updated your site's code and redeployed it\. 

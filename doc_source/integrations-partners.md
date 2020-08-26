@@ -1,4 +1,4 @@
-# Integration with Partner Products and Services<a name="integrations-partners"></a>
+# Integration with partner products and services<a name="integrations-partners"></a>
 
 CodeDeploy has built\-in integration for the following partner products and services:
 

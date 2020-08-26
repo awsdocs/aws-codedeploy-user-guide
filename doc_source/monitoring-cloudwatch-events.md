@@ -1,4 +1,4 @@
-# Monitoring Deployments with Amazon CloudWatch Events<a name="monitoring-cloudwatch-events"></a>
+# Monitoring deployments with Amazon CloudWatch Events<a name="monitoring-cloudwatch-events"></a>
 
 You can use Amazon CloudWatch Events to detect and react to changes in the state of an instance or a deployment \(an "event"\) in your CodeDeploy operations\. Then, based on rules you create, CloudWatch Events will invoke one or more target actions when a deployment or instance enters the state you specify in a rule\. Depending on the type of state change, you might want to send notifications, capture state information, take corrective action, initiate events, or take other actions\. You can select the following types of targets when using CloudWatch Events as part of your CodeDeploy operations:
 + AWS Lambda functions
@@ -14,7 +14,7 @@ The following are some use cases:
 
 The remainder of this topic describes the basic procedure for creating a CloudWatch Events rule for CodeDeploy\. Before you create event rules for use in your CodeDeploy operations, however, you should do the following:
 + Complete the CloudWatch Events prerequisites\. For information, see [Amazon CloudWatch Events Prerequisites](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CWE_Prerequisites.html)\.
-+ Familiarize yourself with events, rules, and targets in CloudWatch Events\. For more information, see [What Is Amazon CloudWatch Events?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html) and [New CloudWatch Events – Track and Respond to Changes to Your AWS Resources](http://aws.amazon.com/blogs/aws/new-cloudwatch-events-track-and-respond-to-changes-to-your-aws-resources/)\.
++ Familiarize yourself with events, rules, and targets in CloudWatch Events\. For more information, see [What is Amazon CloudWatch Events?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html) and [New CloudWatch Events – Track and respond to changes to your AWS resources](http://aws.amazon.com/blogs/aws/new-cloudwatch-events-track-and-respond-to-changes-to-your-aws-resources/)\.
 + Create the target or targets you will use in your event rules\. 
 
 **To create a CloudWatch Events rule for CodeDeploy:**

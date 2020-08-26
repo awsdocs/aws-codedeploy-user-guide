@@ -1,4 +1,4 @@
-# What Is CodeDeploy?<a name="welcome"></a>
+# What is CodeDeploy?<a name="welcome"></a>
 
 CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on\-premises instances, serverless Lambda functions, or Amazon ECS services\.
 
@@ -21,21 +21,21 @@ CodeDeploy makes it easier for you to:
 
 The service scales with your infrastructure so you can easily deploy to one instance or thousands\.
 
-CodeDeploy works with various systems for configuration management, source control, [continuous integration](https://aws.amazon.com/devops/continuous-integration/), [continuous delivery](https://aws.amazon.com/devops/continuous-delivery/), and continuous deployment\. For more information, see [Product Integrations](https://aws.amazon.com/codedeploy/product-integrations/)\.
+CodeDeploy works with various systems for configuration management, source control, [continuous integration](https://aws.amazon.com/devops/continuous-integration/), [continuous delivery](https://aws.amazon.com/devops/continuous-delivery/), and continuous deployment\. For more information, see [Product integrations](https://aws.amazon.com/codedeploy/product-integrations/)\.
 
- The CodeDeploy console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines\. Choose **Go to resource** or press the `/` key, and then type the name of the resource\. Any matches appear in the list\. Searches are case insensitive\. You only see resources that you have permissions to view\. For more information, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\. 
+ The CodeDeploy console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines\. Choose **Go to resource** or press the `/` key, and then type the name of the resource\. Any matches appear in the list\. Searches are case insensitive\. You only see resources that you have permissions to view\. For more information, see [Identity and access management for AWS CodeDeploy](security-iam.md)\. 
 
 **Topics**
-+ [Video Introduction to AWS CodeDeploy](#intro-video-welcome)
++ [Video introduction to AWS CodeDeploy](#intro-video-welcome)
 + [Benefits of AWS CodeDeploy](#benefits)
-+ [Overview of CodeDeploy Compute Platforms](#compute-platform)
-+ [Overview of CodeDeploy Deployment Types](#welcome-deployment-overview)
-+ [We Want to Hear from You](#welcome-contact-us)
++ [Overview of CodeDeploy compute platforms](#compute-platform)
++ [Overview of CodeDeploy deployment types](#welcome-deployment-overview)
++ [We want to hear from you](#welcome-contact-us)
 + [Primary Components](primary-components.md)
 + [Deployments](deployment-steps.md)
 + [Application Specification Files](application-specification-files.md)
 
-## Video Introduction to AWS CodeDeploy<a name="intro-video-welcome"></a>
+## Video introduction to AWS CodeDeploy<a name="intro-video-welcome"></a>
 
 This short video \(2:10\) describes how CodeDeploy automates code deployments to Amazon EC2 instances\.
 
@@ -52,12 +52,12 @@ CodeDeploy offers these benefits:
 + **Easy to adopt**\. CodeDeploy is platform\-agnostic and works with any application\. You can easily reuse your setup code\. CodeDeploy can also integrate with your software release process or continuous delivery toolchain\.
 + **Concurrent deployments**\. If you have more than one application that uses the EC2/On\-Premises compute platform, CodeDeploy can deploy them concurrently to the same set of instances\.
 
-## Overview of CodeDeploy Compute Platforms<a name="compute-platform"></a>
+## Overview of CodeDeploy compute platforms<a name="compute-platform"></a>
 
 CodeDeploy is able to deploy applications to three compute platforms:
 + **EC2/On\-Premises**: Describes instances of physical servers that can be Amazon EC2 cloud instances, on\-premises servers, or both\. Applications created using the EC2/On\-Premises compute platform can be composed of executable files, configuration files, images, and more\.
 
-  Deployments that use the EC2/On\-Premises compute platform manage the way in which traffic is directed to instances by using an in\-place or blue/green deployment type\. For more information, see [Overview of CodeDeploy Deployment Types](#welcome-deployment-overview)\.
+  Deployments that use the EC2/On\-Premises compute platform manage the way in which traffic is directed to instances by using an in\-place or blue/green deployment type\. For more information, see [Overview of CodeDeploy deployment types](#welcome-deployment-overview)\.
 + **AWS Lambda**: Used to deploy applications that consist of an updated version of a Lambda function\. AWS Lambda manages the Lambda function in a serverless compute environment made up of a high\-availability compute structure\. All administration of the compute resources is performed by AWS Lambda\. For more information, see [Serverless Computing and Applications](https://aws.amazon.com/serverless/)\. For more information about AWS Lambda and Lambda functions, see [AWS Lambda](https://aws.amazon.com/lambda/)\.
 
   You can manage the way in which traffic is shifted to the updated Lambda function versions during a deployment by choosing a canary, linear, or all\-at\-once configuration\. 
@@ -68,14 +68,14 @@ CodeDeploy is able to deploy applications to three compute platforms:
 Amazon ECS blue/green deployments are supported using both CodeDeploy and AWS CloudFormation\. Details for these deployments are described in subsequent sections\.
 
 The following table describes how CodeDeploy components are used with each compute platform\. For more information, see: 
-+  [Working with Deployment Groups in CodeDeploy](deployment-groups.md) 
-+  [Working with Deployments in CodeDeploy](deployments.md) 
-+  [Working with Deployment Configurations in CodeDeploy](deployment-configurations.md) 
-+  [Working with Application Revisions for CodeDeploy](application-revisions.md) 
-+  [Working with Applications in CodeDeploy](applications.md) 
++  [Working with deployment groups in CodeDeploy](deployment-groups.md) 
++  [Working with deployments in CodeDeploy](deployments.md) 
++  [Working with deployment configurations in CodeDeploy](deployment-configurations.md) 
++  [Working with application revisions for CodeDeploy](application-revisions.md) 
++  [Working with applications in CodeDeploy](applications.md) 
 
 
-| CodeDeploy Component | EC2/On\-Premises | AWS Lambda | Amazon ECS | 
+| CodeDeploy component | EC2/On\-Premises | AWS Lambda | Amazon ECS | 
 | --- | --- | --- | --- | 
 | Deployment group | Deploys a revision to a set of instances\. | Deploys a new version of a serverless Lambda function on a high\-availability compute infrastructure\. | Specifies the Amazon ECS service with the containerized application to deploy as a task set, a production and optional test listener used to serve traffic to the deployed application, when to reroute traffic and terminate the deployed application's original task set, and optional trigger, alarm, and rollback settings\. | 
 | Deployment | Deploys a new revision that consists of an application and AppSpec file\. The AppSpec specifies how to deploy the application to the instances in a deployment group\. | Shifts production traffic from one version of a Lambda function to a new version of the same function\. The AppSpec file specifies which Lambda function version to deploy\. | Deploys an updated version of an Amazon ECS containerized application as a new, replacement task set\. CodeDeploy reroutes production traffic from the task set with the original version to the new replacement task set with the updated version\. When the deployment completes, the original task set is terminated\. | 
@@ -83,10 +83,10 @@ The following table describes how CodeDeploy components are used with each compu
 | Revision | A combination of an AppSpec file and application files, such as executables, configuration files, and so on\. | An AppSpec file that specifies which Lambda function to deploy and Lambda functions that can run validation tests during deployment lifecycle event hooks\. |  An AppSpec file that specifies: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html)  | 
 | Application | A collection of deployment groups and revisions\. An EC2/On\-Premises application uses the EC2/On\-Premises compute platform\. | A collection of deployment groups and revisions\. An application used for an AWS Lambda deployment uses the serverless AWS Lambda compute platform\. | A collection of deployment groups and revisions\. An application used for an Amazon ECS deployment uses the Amazon ECS compute platform\. | 
 
-## Overview of CodeDeploy Deployment Types<a name="welcome-deployment-overview"></a>
+## Overview of CodeDeploy deployment types<a name="welcome-deployment-overview"></a>
 
 CodeDeploy provides two deployment type options:
-+ **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an In\-Place Deployment](#welcome-deployment-overview-in-place)\.
++ **In\-place deployment**: The application on each instance in the deployment group is stopped, the latest application revision is installed, and the new version of the application is started and validated\. You can use a load balancer so that each instance is deregistered during its deployment and then restored to service after the deployment is complete\. Only deployments that use the EC2/On\-Premises compute platform can use in\-place deployments\. For more information about in\-place deployments, see [Overview of an in\-place deployment](#welcome-deployment-overview-in-place)\.
 **Note**  
 AWS Lambda and Amazon ECS deployments cannot use an in\-place deployment type\.
 + **Blue/green deployment**: The behavior of your deployment depends on which compute platform you use:
@@ -101,16 +101,16 @@ If you use an EC2/On\-Premises compute platform, be aware that blue/green deploy
   + **Blue/green on an Amazon ECS compute platform**: Traffic is shifted from the task set with the original version of an application in an Amazon ECS service to a replacement task set in the same service\. You can set the traffic shifting to linear or canary through the deployment configuration\. The protocol and port of a specified load balancer listener is used to reroute production traffic\. During a deployment, a test listener can be used to serve traffic to the replacement task set while validation tests are run\. 
   + **Blue/green deployments through AWS CloudFormation**: Traffic is shifted from your current resources to your updated resources as part of an AWS CloudFormation stack update\. Currently, only ECS blue/green deployments are supported\. 
 
-  For more information about blue/green deployments, see [Overview of a Blue/Green Deployment](#welcome-deployment-overview-blue-green)\.
+  For more information about blue/green deployments, see [Overview of a blue/green deployment](#welcome-deployment-overview-blue-green)\.
 
 **Note**  
-Using the CodeDeploy agent, you can perform a deployment on an instance you are signed in to without the need for an application, deployment group, or even an AWS account\. For information, see [Use the CodeDeploy Agent to Validate a Deployment Package on a Local Machine](deployments-local.md)\.
+Using the CodeDeploy agent, you can perform a deployment on an instance you are signed in to without the need for an application, deployment group, or even an AWS account\. For information, see [Use the CodeDeploy agent to validate a deployment package on a local machine](deployments-local.md)\.
 
 **Topics**
-+ [Overview of an In\-Place Deployment](#welcome-deployment-overview-in-place)
-+ [Overview of a Blue/Green Deployment](#welcome-deployment-overview-blue-green)
++ [Overview of an in\-place deployment](#welcome-deployment-overview-in-place)
++ [Overview of a blue/green deployment](#welcome-deployment-overview-blue-green)
 
-### Overview of an In\-Place Deployment<a name="welcome-deployment-overview-in-place"></a>
+### Overview of an in\-place deployment<a name="welcome-deployment-overview-in-place"></a>
 
 The following diagram shows the flow of a typical CodeDeploy in\-place deployment\.
 
@@ -133,7 +133,7 @@ Here's how it works:
 
  CodeDeploy keeps a record of your deployments so that you can get deployment status, deployment configuration parameters, instance health, and so on\.
 
-### Overview of a Blue/Green Deployment<a name="welcome-deployment-overview-blue-green"></a>
+### Overview of a blue/green deployment<a name="welcome-deployment-overview-blue-green"></a>
 
 A blue/green deployment is used to update your applications while minimizing interruptions caused by the changes of a new application version\. CodeDeploy provisions your new application version alongside the old version before rerouting your production traffic\. 
 +  **AWS Lambda**: Traffic is shifted from one version of a Lambda function to a new version of the same Lambda function\. 
@@ -148,32 +148,32 @@ All AWS Lambda and Amazon ECS deployments are blue/green\. An EC2/On\-Premises d
 + If you're using the Amazon ECS compute platform, you control how traffic is shifted from your original task set to your new task set\.
 
 A blue/green deployment with AWS CloudFormation can use one of the following methods:
-+ **AWS CloudFormation templates for deployments**: When you configure deployments with AWS CloudFormation templates, your deployments are triggered by AWS CloudFormation updates\. When you change a resource and upload a template change, a stack update in AWS CloudFormation initiates the new deployment\. For a list of resources you can use in AWS CloudFormation templates, see [AWS CloudFormation Templates for CodeDeploy Reference](reference-cloudformation-templates.md)\.
-+ **Blue/green deployments through AWS CloudFormation**: You can use AWS CloudFormation to manage your blue/green deployments through stack updates\. You define both your blue and green resources, in addition to specifying the traffic routing and stabilization settings, within the stack template\. Then, if you update selected resources during a stack update, AWS CloudFormation generates all the necessary green resources, shifts the traffic based on the specified traffic routing parameters, and deletes the blue resources\. For more information, see [Automate Amazon ECS Blue/Green Deployments Through CodeDeploy Using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\.
++ **AWS CloudFormation templates for deployments**: When you configure deployments with AWS CloudFormation templates, your deployments are triggered by AWS CloudFormation updates\. When you change a resource and upload a template change, a stack update in AWS CloudFormation initiates the new deployment\. For a list of resources you can use in AWS CloudFormation templates, see [AWS CloudFormation templates for CodeDeploy reference](reference-cloudformation-templates.md)\.
++ **Blue/green deployments through AWS CloudFormation**: You can use AWS CloudFormation to manage your blue/green deployments through stack updates\. You define both your blue and green resources, in addition to specifying the traffic routing and stabilization settings, within the stack template\. Then, if you update selected resources during a stack update, AWS CloudFormation generates all the necessary green resources, shifts the traffic based on the specified traffic routing parameters, and deletes the blue resources\. For more information, see [Automate Amazon ECS blue/green deployments through CodeDeploy using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\.
 **Note**  
 Supported for Amazon ECS blue/green deployments only\.
 
 How you configure a blue/green deployment depends on which compute platform your deployment is using\.
 
-#### Blue/Green Deployment on an AWS Lambda Compute Platform<a name="blue-green-lambda-compute-type"></a>
+#### Blue/Green deployment on an AWS Lambda compute platform<a name="blue-green-lambda-compute-type"></a>
 
 If you're using the AWS Lambda compute platform, you must choose one of the following deployment configuration types to specify how traffic is shifted from the original AWS Lambda function version to the new AWS Lambda function version:
 + **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
 + **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
 + **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version all at once\.
 
-For more information about AWS Lambda deployment configurations, see [Predefined Deployment Configurations for an AWS Lambda Compute Platform ](deployment-configurations.md#deployment-configurations-predefined-lambda)\.
+For more information about AWS Lambda deployment configurations, see [Predefined deployment configurations for an AWS Lambda compute platform ](deployment-configurations.md#deployment-configurations-predefined-lambda)\.
 
-#### Blue/Green Deployment on an Amazon ECS Compute Platform<a name="blue-green-ecs-compute-type"></a>
+#### Blue/Green deployment on an Amazon ECS compute platform<a name="blue-green-ecs-compute-type"></a>
 
 If you're using the Amazon ECS compute platform, you must choose one of the following deployment configuration types to specify how traffic is shifted from the original Amazon ECS task set to the new Amazon ECS task set:
 + **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Amazon ECS task set in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
 + **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
 + **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
 
-For more information about the Amazon ECS deployment configuration, see [ Deployment Configurations on an Amazon ECS Compute Platform ](deployment-configurations.md#deployment-configuration-ecs)\.
+For more information about the Amazon ECS deployment configuration, see [ Deployment configurations on an Amazon ECS compute platform ](deployment-configurations.md#deployment-configuration-ecs)\.
 
-#### Blue/Green Deployment on an EC2/On\-Premises Compute Platform<a name="blue-green-server-compute-type"></a>
+#### Blue/Green deployment on an EC2/on\-premises compute platform<a name="blue-green-server-compute-type"></a>
 
 **Note**  
 You must use Amazon EC2 instances for blue/green deployments on the EC2/On\-Premises compute platform\. On\-premises instances are not supported for the blue/green deployment type\.
@@ -215,7 +215,7 @@ Here's how it works:
 
    1. Instances in the original environment are deregistered and handled according to your specification in the deployment group, either terminated or kept running\.
 
-#### Blue/Green Deployment Through AWS CloudFormation<a name="blue-green-cfn-config-type"></a>
+#### Blue/Green deployment through AWS CloudFormation<a name="blue-green-cfn-config-type"></a>
 
 You can manage CodeDeploy blue/green deployments by modeling your resources with an AWS CloudFormation template\.
 
@@ -224,9 +224,9 @@ When you model your blue/green resources using an AWS CloudFormation template, y
 **Note**  
 For blue/green deployments through AWS CloudFormation, you don't create a CodeDeploy application or deployment group\.
 
-This method supports Amazon ECS blue/green deployments only\. For more information about blue/green deployments through AWS CloudFormation, see [Create an Amazon ECS Blue/Green Deployment Through AWS CloudFormation](deployments-create-ecs-cfn.md)\.
+This method supports Amazon ECS blue/green deployments only\. For more information about blue/green deployments through AWS CloudFormation, see [Create an Amazon ECS blue/green deployment through AWS CloudFormation](deployments-create-ecs-cfn.md)\.
 
-## We Want to Hear from You<a name="welcome-contact-us"></a>
+## We want to hear from you<a name="welcome-contact-us"></a>
 
 We welcome your feedback\. To contact us, visit [the CodeDeploy forum](https://forums.aws.amazon.com/forum.jspa?forumID=179)\.
 

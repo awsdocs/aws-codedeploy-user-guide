@@ -1,6 +1,6 @@
-# Infrastructure Security in AWS CodeDeploy<a name="infrastructure-security"></a>
+# Infrastructure security in AWS CodeDeploy<a name="infrastructure-security"></a>
 
-As a managed service, AWS CodeDeploy is protected by the AWS global network security procedures that are described in the [Amazon Web Services: Overview of Security Processes](https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Whitepaper.pdf) whitepaper\.
+As a managed service, AWS CodeDeploy is protected by the AWS global network security procedures that are described in the [Amazon Web Services: Overview of security processes](https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Whitepaper.pdf) whitepaper\.
 
 You use AWS published API calls to access CodeDeploy through the network\. Clients must support Transport Layer Security \(TLS\) 1\.0 or later\. We recommend TLS 1\.2 or later\. Clients must also support cipher suites with perfect forward secrecy \(PFS\), such as Ephemeral Diffie\-Hellman \(DHE\) or Elliptic Curve Ephemeral Diffie\-Hellman \(ECDHE\)\. Most modern systems such as Java 7 and later support these modes\.
 

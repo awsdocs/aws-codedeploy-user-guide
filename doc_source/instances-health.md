@@ -1,4 +1,4 @@
-# CodeDeploy Instance Health<a name="instances-health"></a>
+# CodeDeploy instance health<a name="instances-health"></a>
 
 CodeDeploy monitors the health status of the instances in a deployment group\. It fails deployments if the number of healthy instances falls below the minimum number of healthy instances that have been specified for the deployment group during a deployment\. For example, if 85% of instances must remain healthy during a deployment, and the deployment group contains 10 instances, the overall deployment will fail if deployment to even a single instance fails\. This is because when an instance is taken offline so the latest application revision can be installed, the available healthy instance counts already drops to 90%\. A failed instance plus another offline instance would mean that only 80% of instances are healthy and available\. CodeDeploy will fail the overall deployment\.
 
@@ -20,7 +20,7 @@ CodeDeploy provides three default deployment configurations that have commonly u
 | CodeDeployDefault\.HalfAtATime | 50% | 
 | CodeDeployDefault\.AllAtOnce | 0 | 
 
-You'll find more information about default deployment configurations in [Working with Deployment Configurations in CodeDeploy](deployment-configurations.md)\.
+You'll find more information about default deployment configurations in [Working with deployment configurations in CodeDeploy](deployment-configurations.md)\.
 
 You can create custom deployment configurations in CodeDeploy to define your own minimum healthy host values\. You can define these values as whole numbers or percentages when using the following operations:
 + As `minimum-healthy-hosts` when you use the [create\-deployment\-config](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-config.html) command in the AWS CLI\.
@@ -28,10 +28,10 @@ You can create custom deployment configurations in CodeDeploy to define your own
 + As `MinimumHealthyHosts` when you use [AWS::CodeDeploy::DeploymentConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html) in an AWS CloudFormation template\.
 
 **Topics**
-+ [Health Status](#instances-health-status)
-+ [Minimum Healthy Instances and Deployments](#minimum-healthy-hosts)
++ [Health status](#instances-health-status)
++ [Minimum healthy instances and deployments](#minimum-healthy-hosts)
 
-## Health Status<a name="instances-health-status"></a>
+## Health status<a name="instances-health-status"></a>
 
 CodeDeploy assigns two health status values to each instance: *revision health* and *instance health*\.
 
@@ -67,7 +67,7 @@ If the overall deployment fails or is stopped:
 + Each instance to which CodeDeploy did not attempt to deploy the application revision retains its current instance health value\.
 + The deployment group's revision remains the same\.
 
-## Minimum Healthy Instances and Deployments<a name="minimum-healthy-hosts"></a>
+## Minimum healthy instances and deployments<a name="minimum-healthy-hosts"></a>
 
 CodeDeploy allows you to specify a minimum number of healthy instances for the deployment for two main purposes:
 + To determine whether the overall deployment succeeds or fails\. Deployment succeeds if the application revision was successfully deployed to at least the minimum number of healthy instances\.

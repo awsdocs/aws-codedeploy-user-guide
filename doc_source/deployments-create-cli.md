@@ -1,10 +1,10 @@
-# Create an EC2/On\-Premises Compute Platform Deployment \(CLI\)<a name="deployments-create-cli"></a>
+# Create an EC2/On\-Premises Compute Platform deployment \(CLI\)<a name="deployments-create-cli"></a>
 
 To use the AWS CLI to deploy a revision to the EC2/On\-Premises compute platform:
 
 1. After you have prepared the instances, created the application, and pushed the revision, do one of the following: 
    + If you want to deploy a revision from an Amazon S3 bucket, continue to step 2 now\.
-   + If you want to deploy a revision from a GitHub repository, first complete the steps in [Connect a CodeDeploy Application to a GitHub Repository](deployments-create-cli-github.md), and then continue to step 2\. 
+   + If you want to deploy a revision from a GitHub repository, first complete the steps in [Connect a CodeDeploy application to a GitHub repository](deployments-create-cli-github.md), and then continue to step 2\. 
 
 1. Call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command, specifying:
    + An application name\. To view a list of application names, call the [list\-applications](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-applications.html) command\.
@@ -40,7 +40,7 @@ Use this syntax as part of the create\-deployment call to specify information ab
 ```
 To get information about revisions that have been pushed already, call the [list\-application\-revisions](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command\.
 
-To track the status of your deployment, see [View CodeDeployDeployment Details ](deployments-view-details.md)\.
+To track the status of your deployment, see [View CodeDeploydeployment details ](deployments-view-details.md)\.
 
 **Topics**
-+ [Connect a CodeDeploy Application to a GitHub Repository](deployments-create-cli-github.md)
++ [Connect a CodeDeploy application to a GitHub repository](deployments-create-cli-github.md)

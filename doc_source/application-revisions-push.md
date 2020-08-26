@@ -1,13 +1,13 @@
-# Push a Revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises Deployments Only\)<a name="application-revisions-push"></a>
+# Push a revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises deployments only\)<a name="application-revisions-push"></a>
 
-After you plan your revision as described in [Plan a Revision for CodeDeploy](application-revisions-plan.md) and add an AppSpec file to the revision as described in [Add an Application Specification File to a Revision for CodeDeploy](application-revisions-appspec-file.md), you are ready to bundle the component files and push the revision to Amazon S3\. For deployments to Amazon EC2 instances, after you push the revision, you can use CodeDeploy to deploy the revision from Amazon S3 to the instances\.
+After you plan your revision as described in [Plan a revision for CodeDeploy](application-revisions-plan.md) and add an AppSpec file to the revision as described in [Add an application specification file to a revision for CodeDeploy](application-revisions-appspec-file.md), you are ready to bundle the component files and push the revision to Amazon S3\. For deployments to Amazon EC2 instances, after you push the revision, you can use CodeDeploy to deploy the revision from Amazon S3 to the instances\.
 
 **Note**  
 CodeDeploy can also be used to deploy revisions that have been pushed to GitHub\. For more information, see your GitHub documentation\.
 
-We assume you have already followed the instructions in [Getting Started with CodeDeploy](getting-started-codedeploy.md) to set up the AWS CLI\. This is especially important for calling the push command described later\.
+We assume you have already followed the instructions in [Getting started with CodeDeploy](getting-started-codedeploy.md) to set up the AWS CLI\. This is especially important for calling the push command described later\.
 
-Be sure you have an Amazon S3 bucket\. Follow the instructions in [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)\.
+Be sure you have an Amazon S3 bucket\. Follow the instructions in [Create a bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)\.
 
 If your deployment is to Amazon EC2 instances, then the target Amazon S3 bucket must be created or exist in the same region as the target instances\. For example, if you want to deploy a revision to some instances in the US East \(N\. Virginia\) Region and other instances in the US West \(Oregon\) Region, then you must have one bucket in the US East \(N\. Virginia\) Region with one copy of the revision and another bucket in the US West \(Oregon\) Region with another copy of the same revision\. In this scenario, you would then need to create two separate deployments, one in the US East \(N\. Virginia\) Region and another in the US West \(Oregon\) Region, even though the revision is the same in both regions and buckets\.
 
@@ -34,7 +34,7 @@ You must have permissions to upload to the Amazon S3 bucket\. You can specify th
 
 To view your AWS account ID, see [Finding Your AWS Account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
 
-To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
+To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
 The IAM user who is calling the push command must have, at minimum, permissions to upload the revision to each target Amazon S3 bucket\. For example, the following policy allows the IAM user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
@@ -53,9 +53,9 @@ The IAM user who is calling the push command must have, at minimum, permissions 
 }
 ```
 
-To learn how to create and attach an IAM policy, see [Working with Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
+To learn how to create and attach an IAM policy, see [Working with policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html#AddingPermissions_Console)\.
 
-## Push a Revision Using the AWS CLI<a name="push-with-cli"></a>
+## Push a revision using the AWS CLI<a name="push-with-cli"></a>
 
 **Note**  
  The `push` command bundles application artifacts and an AppSpec file into a revision\. The file format of this revision is a compressed ZIP file\. The command cannot be used with an AWS Lambda or an Amazon ECS deployment because each expects a revision that is a JSON\-formatted or YAML\-formatted AppSpec file\. 
@@ -111,4 +111,4 @@ aws deploy create-deployment \
 aws deploy create-deployment --application-name WordPress_App --deployment-config-name your-deployment-config-name --your-deployment-group-name your-deployment-group-name --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
 ```
 
- For more information, see [Create a Deployment with CodeDeploy](deployments-create.md)\. 
+ For more information, see [Create a deployment with CodeDeploy](deployments-create.md)\. 

@@ -1,4 +1,4 @@
-# Create an Application for a Blue/Green Deployment \(Console\)<a name="applications-create-blue-green"></a>
+# Create an application for a blue/green deployment \(console\)<a name="applications-create-blue-green"></a>
 
 To use the CodeDeploy console to create an application for a blue/green deployment:
 
@@ -7,14 +7,14 @@ A deployment to the AWS Lambda compute platform is always a blue/green deploymen
 
 **Warning**  
 Do not follow these steps if:  
-You do not have instances with the CodeDeploy agent installed that you want to replace during the blue/green deployment process\. To set up your instances, follow the instructions in [Working with Instances for CodeDeploy](instances.md), and then follow the steps in this topic\.
-You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a Deployment Configuration with CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
-You do not have a service role that trusts CodeDeploy with, at minimum, the trust and permissions described in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role, follow the instructions in [Step 3: Create a Service Role for CodeDeploy](getting-started-create-service-role.md), and then follow the steps in this topic\.
-You have not created a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing for the registration of the instances in your replacement environment\. For more information, see [Set Up a Load Balancer in Elastic Load Balancing for CodeDeploy Amazon EC2 Deployments](deployment-groups-create-load-balancer.md)\.
+You do not have instances with the CodeDeploy agent installed that you want to replace during the blue/green deployment process\. To set up your instances, follow the instructions in [Working with instances for CodeDeploy](instances.md), and then follow the steps in this topic\.
+You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
+You do not have a service role that trusts CodeDeploy with, at minimum, the trust and permissions described in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role, follow the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md), and then follow the steps in this topic\.
+You have not created a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing for the registration of the instances in your replacement environment\. For more information, see [Set up a load balancer in Elastic Load Balancing for CodeDeploy Amazon EC2 deployments](deployment-groups-create-load-balancer.md)\.
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Getting started**\.
 
@@ -59,8 +59,8 @@ If you want to use the same settings used in another deployment group \(includin
 
 1. \(Optional\) In **Advanced**, configure options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.
 
-   For information about specifying advanced options in deployment groups, see [Configure Advanced Options for a Deployment Group](deployment-groups-configure-advanced-options.md)\. 
+   For information about specifying advanced options in deployment groups, see [Configure advanced options for a deployment group](deployment-groups-configure-advanced-options.md)\. 
 
 1. Choose **Create deployment group**\. 
 
-The next step is to prepare a revision to deploy to the application and deployment group\. For instructions, see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
+The next step is to prepare a revision to deploy to the application and deployment group\. For instructions, see [Working with application revisions for CodeDeploy](application-revisions.md)\.

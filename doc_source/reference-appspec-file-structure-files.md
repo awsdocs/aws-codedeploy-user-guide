@@ -1,4 +1,4 @@
-# AppSpec 'files' Section \(EC2/On\-Premises Deployments Only\)<a name="reference-appspec-file-structure-files"></a>
+# AppSpec 'files' section \(EC2/On\-Premises deployments only\)<a name="reference-appspec-file-structure-files"></a>
 
 Provides information to CodeDeploy about which files from your application revision should be installed on the instance during the deployment's **Install** event\. This section is required only if you are copying files from your revision to locations on the instance during deployment\. 
 
@@ -39,7 +39,7 @@ In this example, the following two operations are performed during the **Install
 
 1. Recursively copy all of the files in your revision's `source` directory to the `/webapps/myApp` directory on the instance\.
 
-## 'files' Section Examples<a name="reference-appspec-file-structure-files-examples"></a>
+## 'Files' section examples<a name="reference-appspec-file-structure-files-examples"></a>
 
 The following examples show how to specify the `files` section\. Although these examples describe Windows Server file and directory \(folder\) structures, they can easily be adapted for Amazon Linux, Ubuntu Server, and RHEL instances\.
 

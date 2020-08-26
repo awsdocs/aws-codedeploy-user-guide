@@ -1,9 +1,9 @@
-# Create a File for Your Lambda Function<a name="tutorial-lambda-sam-create-lambda-function"></a>
+# Create a file for your Lambda function<a name="tutorial-lambda-sam-create-lambda-function"></a>
 
 Create the file for the function you update and deploy later in this tutorial\.
 
 **Note**  
- A Lambda function can use any runtime supported by AWS Lambda\. For more information, see [AWS Lambda Runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\. 
+ A Lambda function can use any runtime supported by AWS Lambda\. For more information, see [AWS Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\. 
 
 **To create your Lambda function**
 
@@ -117,4 +117,4 @@ Create the file for the function you update and deploy later in this tutorial\.
 The Lambda function returns the day, month, and year for yesterday, today, or tomorrow\. Later in this tutorial, you uncomment code that updates the function to return information about the day or time you specify \(for example, the day, month, and year, or the current hour, minute, and second\)\. The framework created by AWS SAM detects and deploys the updated version of the function\. 
 
 **Note**  
- This Lambda function is also used in an AWS Cloud9 tutorial\. AWS Cloud9 is a cloud\-based integrated development environment\. For information about how to create, execute, update, and debug this function in AWS Cloud9, see [AWS Lambda Tutorial for AWS Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial-lambda.html)\. 
+ This Lambda function is also used in an AWS Cloud9 tutorial\. AWS Cloud9 is a cloud\-based integrated development environment\. For information about how to create, execute, update, and debug this function in AWS Cloud9, see [AWS Lambda tutorial for AWS Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/tutorial-lambda.html)\. 

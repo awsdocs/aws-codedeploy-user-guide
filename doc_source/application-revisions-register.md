@@ -1,4 +1,4 @@
-# Register an Application Revision in Amazon S3 with CodeDeploy<a name="application-revisions-register"></a>
+# Register an application revision in Amazon S3 with CodeDeploy<a name="application-revisions-register"></a>
 
 If you've already called the [push](https://docs.aws.amazon.com/cli/latest/reference/deploy/push.html) command to push an application revision to Amazon S3, you don't need to register the revision\. However, if you upload a revision to Amazon S3 through other means and want the revision to appear in the CodeDeploy console or through the AWS CLI, follow these steps to register the revision first\.
 

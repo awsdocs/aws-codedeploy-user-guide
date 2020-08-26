@@ -9,9 +9,9 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using CodeDeploy\. The following topics show you how to configure CodeDeploy to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your CodeDeploy resources\. 
 
 **Topics**
-+ [Data Protection in AWS CodeDeploy](data-protection.md)
-+ [Identity and Access Management for AWS CodeDeploy](security-iam.md)
-+ [Logging and Monitoring in CodeDeploy](incident-response.md)
-+ [Compliance Validation for AWS CodeDeploy](SERVICENAME-compliance.md)
++ [Data protection in AWS CodeDeploy](data-protection.md)
++ [Identity and access management for AWS CodeDeploy](security-iam.md)
++ [Logging and monitoring in CodeDeploy](incident-response.md)
++ [Compliance validation for AWS CodeDeploy](SERVICENAME-compliance.md)
 + [Resilience in AWS CodeDeploy](disaster-recovery-resiliency.md)
-+ [Infrastructure Security in AWS CodeDeploy](infrastructure-security.md)
++ [Infrastructure security in AWS CodeDeploy](infrastructure-security.md)

@@ -1,4 +1,4 @@
-# CodeDeploy Agent Configuration Reference<a name="reference-agent-configuration"></a>
+# CodeDeploy agent configuration reference<a name="reference-agent-configuration"></a>
 
 When the CodeDeploy agent is installed, a configuration file is placed on the instance\. This configuration file specifies directory paths and other settings for CodeDeploy to use as it interacts with the instance\. You can change some of the configuration options in the file\.
 
@@ -23,9 +23,10 @@ The configuration settings include:
 |  **:on\_premises\_config\_file:**  | For on\-premises instances, the path to an alternate location for the configuration file named `codedeploy.onpremises.yml` \(for Ubuntu Server and RHEL\) or `conf.onpremises.yml` \(for Windows Server\)\. By default, these files are stored in `/etc/codedeploy-agent/conf`/`codedeploy.onpremises.yml` for Ubuntu Server and RHEL and `C:\ProgramData\Amazon\CodeDeploy`\\`conf.onpremises.yml` for Windows Server\. Available in version 1\.0\.1\.686 and later versions of the CodeDeploy agent\.  | 
 |  **:proxy\_uri:**  |  \(Optional\) The HTTP proxy through which you want the CodeDeploy agent to connect to AWS for your CodeDeploy operations\. Use a format similar to `https://user:password@my.proxy:443/path?query`\. Available in version 1\.0\.1\.824 and later versions of the CodeDeploy agent\.  | 
 |  **:max\_revisions:**  |  \(Optional\) The number of application revisions for a deployment group that you want the CodeDeploy agent to archive\. Any revisions that exceed the number specified are deleted\.  Enter any positive integer\. If no value is specified, CodeDeploy will retain the five most recent revisions in addition to the currently deployed revision\.  Supported in version 1\.0\.1\.966 and later versions of the CodeDeploy agent\.  | 
+|  **:enable\_auth\_policy:**  |  \(Optional\) Set to `true` if you want to use [ IAM authorization](https://docs.aws.amazon.com/IAM/latest/UserGuide/intro-structure.html#intro-structure-authorization) to configure access control and limit permission of the IAM role or user that the CodeDeploy Agent is using\. To [Use CodeDeploy with Amazon Virtual Private Cloud](vpc-endpoints.md), this value must be `true`\.  The default setting is `false`\.  | 
 
-## Related Topics<a name="reference-agent-configuration-related-topics"></a>
+## Related topics<a name="reference-agent-configuration-related-topics"></a>
 
-[Working with the CodeDeploy Agent](codedeploy-agent.md)
+[Working with the CodeDeploy agent](codedeploy-agent.md)
 
-[Managing CodeDeploy Agent Operations](codedeploy-agent-operations.md)
+[Managing CodeDeploy agent operations](codedeploy-agent-operations.md)

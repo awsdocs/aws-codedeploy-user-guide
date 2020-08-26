@@ -1,6 +1,6 @@
-# Step 5: Use the CodeDeploy Console to Deploy Your Amazon ECS Service<a name="tutorial-ecs-with-hooks-deployment"></a>
+# Step 5: Use the CodeDeploy console to deploy your Amazon ECS service<a name="tutorial-ecs-with-hooks-deployment"></a>
 
- In this section, you update your deployment group by specifying the port for your test listener\. This is the listener you created in [ Step 1: Create a Test Listener ](tutorial-ecs-with-hooks-create-second-listener.md)\. During deployment, CodeDeploy runs your validation test during the `AfterAllowTestTraffic` deployment lifecycle hook using test traffic served to your replacement task set using the test listener\. Your validation test returns the result `Succeeded`, so the deployment proceeds with the next deployment lifecycle event\. In a real world scenario, your test function returns `Succeeded` or `Failed`\. 
+ In this section, you update your deployment group by specifying the port for your test listener\. This is the listener you created in [ Step 1: Create a test listener ](tutorial-ecs-with-hooks-create-second-listener.md)\. During deployment, CodeDeploy runs your validation test during the `AfterAllowTestTraffic` deployment lifecycle hook using test traffic served to your replacement task set using the test listener\. Your validation test returns the result `Succeeded`, so the deployment proceeds with the next deployment lifecycle event\. In a real world scenario, your test function returns `Succeeded` or `Failed`\. 
 
 **To add a test listener to your deployment group**
 
@@ -8,9 +8,9 @@
 
 1. From the navigation pane, choose **Applications**\. 
 
-1. Choose the application you created in [Tutorial: Deploy an Amazon ECS Service](tutorial-ecs-deployment.md)\. If you used the suggested name, it is **ecs\-demo\-codedeploy\-app**\.
+1. Choose the application you created in [Tutorial: Deploy an Amazon ECS service](tutorial-ecs-deployment.md)\. If you used the suggested name, it is **ecs\-demo\-codedeploy\-app**\.
 
-1. In **Deployment groups**, choose the deployment group you created in [Tutorial: Deploy an Amazon ECS Service](tutorial-ecs-deployment.md)\. If you used the suggested name, it is **ecs\-demo\-dg**\.
+1. In **Deployment groups**, choose the deployment group you created in [Tutorial: Deploy an Amazon ECS service](tutorial-ecs-deployment.md)\. If you used the suggested name, it is **ecs\-demo\-dg**\.
 
 1.  Choose **Edit**\. 
 

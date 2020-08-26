@@ -1,4 +1,4 @@
-# Step 7: Clean Up<a name="tutoria-ecs-with-hooks-clean-up"></a>
+# Step 7: Clean up<a name="tutoria-ecs-with-hooks-clean-up"></a>
 
  When you have finished this tutorial, clean up the resources associated with it to avoid incurring charges for resources that you aren't using\. The resource names in this step are the names suggested in this tutorial \(for example, **ecs\-demo\-codedeploy\-app** for the name of your CodeDeploy application\)\. If you used different names, then be sure to use those in your cleanup\. 
 

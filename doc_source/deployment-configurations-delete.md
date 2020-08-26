@@ -1,4 +1,4 @@
-# Delete a Deployment Configuration with CodeDeploy<a name="deployment-configurations-delete"></a>
+# Delete a deployment configuration with CodeDeploy<a name="deployment-configurations-delete"></a>
 
 You can use the AWS CLI or the CodeDeploy APIs to delete custom deployment configurations associated with your AWS account\. You cannot delete built\-in deployment configurations, such as `CodeDeployDefault.AllAtOnce`, `CodeDeployDefault.HalfAtATime`, and `CodeDeployDefault.OneAtATime`\.
 

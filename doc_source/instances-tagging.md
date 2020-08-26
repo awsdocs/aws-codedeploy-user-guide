@@ -1,6 +1,6 @@
-# Tagging Instances for Deployment Groups in CodeDeploy<a name="instances-tagging"></a>
+# Tagging instances for deployment groups in CodeDeploy<a name="instances-tagging"></a>
 
-To help manage your Amazon EC2 instances and on\-premises instances, you can use tags to assign your own metadata to each resource\. Tags enable you to categorize your instances in different ways \(for example, by purpose, owner, or environment\)\. This is useful when you have many instances\. You can quickly identify an instance or group of instances based on the tags you've assigned to them\. Each tag consists of a key and an optional value, both of which you define\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
+To help manage your Amazon EC2 instances and on\-premises instances, you can use tags to assign your own metadata to each resource\. Tags enable you to categorize your instances in different ways \(for example, by purpose, owner, or environment\)\. This is useful when you have many instances\. You can quickly identify an instance or group of instances based on the tags you've assigned to them\. Each tag consists of a key and an optional value, both of which you define\. For more information, see [Tagging your Amazon EC2 resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 To specify which instances are included in a CodeDeploy deployment group, you specify tags in one or more *tag groups*\. Instances that meet your tag criteria are the ones that the latest application revision is installed on when a deployment to that deployment group is created\.
 
@@ -14,17 +14,17 @@ If you use a single tag group, any instance identified by at least one tag in th
 The following examples illustrate how tags and tag groups can be used to select the instances for a deployment group\.
 
 **Topics**
-+ [Example 1: Single Tag Group, Single Tag](#instances-tagging-example-1)
-+ [Example 2: Single Tag Group, Multiple Tags](#instances-tagging-example-2)
-+ [Example 3: Multiple Tag Groups, Single Tags](#instances-tagging-example-3)
-+ [Example 4: Multiple Tag Groups, Multiple Tags](#instances-tagging-example-4)
++ [Example 1: Single tag group, single tag](#instances-tagging-example-1)
++ [Example 2: Single tag group, multiple tags](#instances-tagging-example-2)
++ [Example 3: Multiple tag groups, single tags](#instances-tagging-example-3)
++ [Example 4: Multiple tag groups, multiple tags](#instances-tagging-example-4)
 
-## Example 1: Single Tag Group, Single Tag<a name="instances-tagging-example-1"></a>
+## Example 1: Single tag group, single tag<a name="instances-tagging-example-1"></a>
 
 You can specify a single tag in a single tag group: 
 
 
-**Tag Group 1**  
+**Tag group 1**  
 
 | Key | Value | 
 | --- | --- | 
@@ -39,21 +39,25 @@ CodeDeploy console setup view:
 JSON structure:
 
 ```
- "ec2TagFilters": [
-        {
-            "Type": "KEY_AND_VALUE",
-            "Key": "Name",
-            "Value": "AppVersion-ABC"
-        }
-    ],
+"ec2TagSet": { 
+         "ec2TagSetList": [ 
+            [ 
+               { 
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Name",
+                  "Value": "AppVersion-ABC"
+               }
+            ]
+         ]
+      },
 ```
 
-## Example 2: Single Tag Group, Multiple Tags<a name="instances-tagging-example-2"></a>
+## Example 2: Single tag group, multiple tags<a name="instances-tagging-example-2"></a>
 
 You can also specify multiple tags in a single tag group:
 
 
-**Tag Group 1**  
+**Tag group 1**  
 
 | Key | Value | 
 | --- | --- | 
@@ -70,45 +74,49 @@ CodeDeploy console setup view:
 JSON structure:
 
 ```
-"ec2TagFilters": [
-       {
-            "Type": "KEY_AND_VALUE",
-            "Key": "Region",
-            "Value": "North"                
-        },
-        {
-            "Type": "KEY_AND_VALUE",
-            "Key": "Region",
-            "Value": "South"                
-        },
-        {
-            "Type": "KEY_AND_VALUE",
-            "Key": "Region",
-            "Value": "East"                
-        }
-    ],
+"ec2TagSet": { 
+         "ec2TagSetList": [ 
+            [ 
+               { 
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
+                  "Value": "North"
+               },
+                              { 
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
+                  "Value": "South"
+               },
+                              { 
+                  "Type": "KEY_AND_VALUE",
+                  "Key": "Region",
+                  "Value": "East"
+               }
+            ]
+         ]
+      },
 ```
 
-## Example 3: Multiple Tag Groups, Single Tags<a name="instances-tagging-example-3"></a>
+## Example 3: Multiple tag groups, single tags<a name="instances-tagging-example-3"></a>
 
 You can also use multiple sets of tag groups with a single key\-value pair in each to specify the criteria for instances in a deployment group\. When you use multiple tag groups in a deployment group, only instances that are identified by all the tag groups are included in the deployment group\. 
 
 
-**Tag Group 1**  
+**Tag group 1**  
 
 | Key | Value | 
 | --- | --- | 
 | Name | AppVersion\-ABC | 
 
 
-**Tag Group 2**  
+**Tag group 2**  
 
 | Key | Value | 
 | --- | --- | 
 | Region | North | 
 
 
-**Tag Group 3**  
+**Tag group 3**  
 
 | Key | Value | 
 | --- | --- | 
@@ -150,12 +158,12 @@ JSON structure:
       },
 ```
 
-## Example 4: Multiple Tag Groups, Multiple Tags<a name="instances-tagging-example-4"></a>
+## Example 4: Multiple tag groups, multiple tags<a name="instances-tagging-example-4"></a>
 
 When you use multiple tag groups with multiple tags in one or more group, an instance must match at least one of the tags in each of the groups\.
 
 
-**Tag Group 1**  
+**Tag group 1**  
 
 | Key | Value | 
 | --- | --- | 
@@ -163,7 +171,7 @@ When you use multiple tag groups with multiple tags in one or more group, an ins
 | Environment | Staging | 
 
 
-**Tag Group 2**  
+**Tag group 2**  
 
 | Key | Value | 
 | --- | --- | 
@@ -172,7 +180,7 @@ When you use multiple tag groups with multiple tags in one or more group, an ins
 | Region | East | 
 
 
-**Tag Group 3**  
+**Tag group 3**  
 
 | Key | Value | 
 | --- | --- | 

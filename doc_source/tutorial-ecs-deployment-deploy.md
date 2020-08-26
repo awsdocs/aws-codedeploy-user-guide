@@ -1,4 +1,4 @@
-# Step 3: Use the CodeDeploy Console to Deploy Your Amazon ECS Service<a name="tutorial-ecs-deployment-deploy"></a>
+# Step 3: Use the CodeDeploy console to deploy your Amazon ECS service<a name="tutorial-ecs-deployment-deploy"></a>
 
  In this section, you create a CodeDeploy application and deployment group to deploy your updated Amazon ECS application\. During deployment, CodeDeploy shifts the production traffic for your Amazon ECS application to its new version in a new, replacement task set\. To complete this step, you need the following items: 
 +  Your Amazon ECS cluster name\. 
@@ -26,7 +26,7 @@
 
 1. In **Deployment group name**, enter **ecs\-demo\-dg**\.
 
-1. In **Service role**, choose a service role that grants CodeDeploy access to Amazon ECS\. For more information, see [Identity and Access Management for AWS CodeDeploy](security-iam.md)\.
+1. In **Service role**, choose a service role that grants CodeDeploy access to Amazon ECS\. For more information, see [Identity and access management for AWS CodeDeploy](security-iam.md)\.
 
 1. In **Environment configuration**, choose your Amazon ECS cluster name and service name\.
 

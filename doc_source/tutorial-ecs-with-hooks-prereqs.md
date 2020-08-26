@@ -1,8 +1,8 @@
 # Prerequisites<a name="tutorial-ecs-with-hooks-prereqs"></a>
 
 To successfully complete this tutorial, you must first:
-+  Complete the prerequisites in [Prerequisites](tutorial-ecs-prereqs.md) for [Tutorial: Deploy an Amazon ECS Service](tutorial-ecs-deployment.md)\. 
-+  Complete the steps in [Tutorial: Deploy an Amazon ECS Service](tutorial-ecs-deployment.md)\. Make a note of the following: 
++  Complete the prerequisites in [Prerequisites](tutorial-ecs-prereqs.md) for [Tutorial: Deploy an Amazon ECS service](tutorial-ecs-deployment.md)\. 
++  Complete the steps in [Tutorial: Deploy an Amazon ECS service](tutorial-ecs-deployment.md)\. Make a note of the following: 
   +  The name of your load balancer\. 
   +  The names of your target groups\. 
   +  The port used by your load balancer's listener\. 

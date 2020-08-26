@@ -1,20 +1,20 @@
-# View Application Revision Details with CodeDeploy<a name="application-revisions-view-details"></a>
+# View application revision details with CodeDeploy<a name="application-revisions-view-details"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about all application revisions that are registered to your AWS account for a specified application\.
 
-For information about registering a revision, see [Register an Application Revision in Amazon S3 with CodeDeploy](application-revisions-register.md)\.
+For information about registering a revision, see [Register an application revision in Amazon S3 with CodeDeploy](application-revisions-register.md)\.
 
 **Topics**
-+ [View Application Revision Details \(Console\)](#application-revisions-view-details-console)
-+ [View Application Revision Details \(CLI\)](#application-revisions-view-details-cli)
++ [View application revision details \(console\)](#application-revisions-view-details-console)
++ [View application revision details \(CLI\)](#application-revisions-view-details-cli)
 
-## View Application Revision Details \(Console\)<a name="application-revisions-view-details-console"></a>
+## View application revision details \(console\)<a name="application-revisions-view-details-console"></a>
 
 To view application revision details:
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy** and choose **Applications**\.
 **Note**  
@@ -24,7 +24,7 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 1. On the **Application details** page, choose the **Revisions** tab, and review the list of revisions that are registered for the application\. Choose a revision, then choose **View details**\.
 
-## View Application Revision Details \(CLI\)<a name="application-revisions-view-details-cli"></a>
+## View application revision details \(CLI\)<a name="application-revisions-view-details-cli"></a>
 
 To use the AWS CLI to view an application revision, call either the **get\-application\-revision** command or the **list\-application\-revisions** command\.
 

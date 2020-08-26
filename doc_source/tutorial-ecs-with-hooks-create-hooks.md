@@ -1,6 +1,6 @@
-# Step 3: Create a Lifecycle Hook Lambda Function<a name="tutorial-ecs-with-hooks-create-hooks"></a>
+# Step 3: Create a lifecycle hook Lambda function<a name="tutorial-ecs-with-hooks-create-hooks"></a>
 
-In this section, you implement one Lambda function for your Amazon ECS deployment's `AfterAllowTestTraffic` hook\. The Lambda function runs a validation test before the updated Amazon ECS application is installed\. For this tutorial, the Lambda function returns `Succeeded`\. During a real world deployment, validation tests return `Succeeded` or `Failed`, depending on the result of the validation test\. Also during a real world deployment, you might implement a Lambda test function for one or more of the other Amazon ECS deployment lifecycle event hooks \(`BeforeInstall`, `AfterInstall`, `BeforeAllowTraffic`, and `AfterAllowTraffic`\)\. For more information, see [List of Lifecycle Event Hooks for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#reference-appspec-file-structure-hooks-list-ecs)\.
+In this section, you implement one Lambda function for your Amazon ECS deployment's `AfterAllowTestTraffic` hook\. The Lambda function runs a validation test before the updated Amazon ECS application is installed\. For this tutorial, the Lambda function returns `Succeeded`\. During a real world deployment, validation tests return `Succeeded` or `Failed`, depending on the result of the validation test\. Also during a real world deployment, you might implement a Lambda test function for one or more of the other Amazon ECS deployment lifecycle event hooks \(`BeforeInstall`, `AfterInstall`, `BeforeAllowTraffic`, and `AfterAllowTraffic`\)\. For more information, see [List of lifecycle event hooks for an Amazon ECS deployment](reference-appspec-file-structure-hooks.md#reference-appspec-file-structure-hooks-list-ecs)\.
 
  An IAM role is required to create your Lambda function\. The role grants the Lambda function permission to write to CloudWatch Logs and set the status of a CodeDeploy lifecycle hook\. 
 
@@ -15,9 +15,9 @@ In this section, you implement one Lambda function for your Amazon ECS deploymen
    +  **Permissions**: **AWSLambdaBasicExecutionRole**\. This grants your Lambda function permission to write to CloudWatch Logs\. 
    +  **Role name**: **`lambda-cli-hook-role`**\. 
 
-   For more information, see [ Create an AWS Lambda Execution Role](https://docs.aws.amazon.com/lambda/latest/dg/with-userapp.html#with-userapp-walkthrough-custom-events-create-iam-role)\. 
+   For more information, see [ Create an AWS Lambda execution role](https://docs.aws.amazon.com/lambda/latest/dg/with-userapp.html#with-userapp-walkthrough-custom-events-create-iam-role)\. 
 
-1.  Attach the permission `codedeploy:PutLifecycleEventHookExecutionStatus` to the role you created\. This grants your Lambda functions permission to set the status of a CodeDeploy lifecycle hook during a deployment\. For more information, see [Adding IAM Identity Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) in the *AWS Identity and Access Management User Guide* and [PutLifecycleEventHookExecutionStatus](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.html) in the *CodeDeploy API Reference*\. 
+1.  Attach the permission `codedeploy:PutLifecycleEventHookExecutionStatus` to the role you created\. This grants your Lambda functions permission to set the status of a CodeDeploy lifecycle hook during a deployment\. For more information, see [Adding IAM identity permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html#add-policies-console) in the *AWS Identity and Access Management User Guide* and [PutLifecycleEventHookExecutionStatus](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.html) in the *CodeDeploy API Reference*\. 
 
 **To create an `AfterAllowTestTraffic` hook Lambda function**
 

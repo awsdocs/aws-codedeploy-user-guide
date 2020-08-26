@@ -1,38 +1,38 @@
-# CodeDeploy AppSpec File Reference<a name="reference-appspec-file"></a>
+# CodeDeploy AppSpec File reference<a name="reference-appspec-file"></a>
 
-This section is a reference only\. For a conceptual overview of the AppSpec file, see [CodeDeploy Application Specification Files](application-specification-files.md)\.
+This section is a reference only\. For a conceptual overview of the AppSpec file, see [CodeDeploy application specification \(AppSpec\) files](application-specification-files.md)\.
 
 The application specification file \(AppSpec file\) is a [YAML](http://www.yaml.org)\-formatted or JSON\-formatted file used by CodeDeploy to manage a deployment\.
 
 **Note**  
- The name of the AppSpec file for an EC2/On\-Premises deployment must be `appspec.yml` or `appspec.json`\. The name of the AppSpec file for an Amazon ECS or AWS Lambda deployment must be `appspec.yaml` or `appspec.json`\. 
+ The name of the AppSpec file for an EC2/On\-Premises deployment must be `appspec.yml` or `appspec.json`\.
 
 **Topics**
-+ [AppSpec Files on an Amazon ECS Compute Platform](#appspec-reference-ecs)
-+ [AppSpec Files on an AWS Lambda Compute Platform](#appspec-reference-lambda)
-+ [AppSpec Files on an EC2/On\-Premises Compute Platform](#appspec-reference-server)
-+ [AppSpec File Structure](reference-appspec-file-structure.md)
-+ [AppSpec File Example](reference-appspec-file-example.md)
-+ [AppSpec File Spacing](#reference-appspec-file-spacing)
-+ [Validate Your AppSpec File and File Location](reference-appspec-file-validate.md)
++ [AppSpec files on an Amazon ECS compute platform](#appspec-reference-ecs)
++ [AppSpec files on an AWS Lambda compute platform](#appspec-reference-lambda)
++ [AppSpec files on an EC2/on\-premises compute platform](#appspec-reference-server)
++ [AppSpec File structure](reference-appspec-file-structure.md)
++ [AppSpec File example](reference-appspec-file-example.md)
++ [AppSpec File spacing](#reference-appspec-file-spacing)
++ [Validate your AppSpec File and file location](reference-appspec-file-validate.md)
 
-## AppSpec Files on an Amazon ECS Compute Platform<a name="appspec-reference-ecs"></a>
+## AppSpec files on an Amazon ECS compute platform<a name="appspec-reference-ecs"></a>
 
- If your application uses the Amazon ECS compute platform, the AppSpec file is named appspec\.yaml\. It is used by CodeDeploy to determine: 
+For Amazon ECS compute platform applications, the AppSpec file is used by CodeDeploy to determine: 
 +  Your Amazon ECS task definition file\. This is specified with its ARN in the `TaskDefinition` instruction in the AppSpec file\. 
 +  The container and port in your replacement task set where your Application Load Balancer or Network Load Balancer reroutes traffic during a deployment\. This is specified with the `LoadBalancerInfo` instruction in the AppSpec file\. 
 +  Optional information about your Amazon ECS service, such the platform version on which it runs, its subnets, and its security groups\. 
-+  Optional Lambda functions to run during hooks that correspond with lifecycle events during an Amazon ECS deployment\. For more information, see [AppSpec 'hooks' Section for an Amazon ECS Deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\. 
++  Optional Lambda functions to run during hooks that correspond with lifecycle events during an Amazon ECS deployment\. For more information, see [AppSpec 'hooks' section for an Amazon ECS deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\. 
 
-## AppSpec Files on an AWS Lambda Compute Platform<a name="appspec-reference-lambda"></a>
+## AppSpec files on an AWS Lambda compute platform<a name="appspec-reference-lambda"></a>
 
-If your application uses the AWS Lambda compute platform, the AppSpec file is named appspec\.yaml\. It is used by CodeDeploy to determine: 
+For AWS Lambda compute platform applications, the AppSpec file is used by CodeDeploy to determine: 
 + Which Lambda function version to deploy\.
 + Which Lambda functions to use as validation tests\.
 
 An AppSpec file can be YAML\-formatted or JSON\-formatted\. You can also enter the contents of an AppSpec file directly into CodeDeploy console when you create a deployment\.
 
-## AppSpec Files on an EC2/On\-Premises Compute Platform<a name="appspec-reference-server"></a>
+## AppSpec files on an EC2/on\-premises compute platform<a name="appspec-reference-server"></a>
 
  If your application uses the EC2/On\-Premises compute platform, the AppSpec file is named appspec\.yml\. It is used by CodeDeploy to determine:
 + What it should install onto your instances from your application revision in Amazon S3 or GitHub\.
@@ -40,16 +40,16 @@ An AppSpec file can be YAML\-formatted or JSON\-formatted\. You can also enter t
 
 An AppSpec file must be a YAML\-formatted file named `appspec.yml` and it must be placed in the root of the directory structure of an application's source code\. Otherwise, deployments fail\.
 
-After you have a completed AppSpec file, you bundle it, along with the content to deploy, into an archive file \(zip, tar, or compressed tar\)\. For more information, see [Working with Application Revisions for CodeDeploy](application-revisions.md)\.
+After you have a completed AppSpec file, you bundle it, along with the content to deploy, into an archive file \(zip, tar, or compressed tar\)\. For more information, see [Working with application revisions for CodeDeploy](application-revisions.md)\.
 
 **Note**  
 The tar and compressed tar archive file formats \(\.tar and \.tar\.gz\) are not supported for Windows Server instances\.
 
-After you have a bundled archive file \(known in CodeDeploy as a *revision*\), you upload it to an Amazon S3 bucket or Git repository\. Then you use CodeDeploy to deploy the revision\. For instructions, see [Create a Deployment with CodeDeploy](deployments-create.md)\.
+After you have a bundled archive file \(known in CodeDeploy as a *revision*\), you upload it to an Amazon S3 bucket or Git repository\. Then you use CodeDeploy to deploy the revision\. For instructions, see [Create a deployment with CodeDeploy](deployments-create.md)\.
 
-The appspec\.yml for an EC2/On\-Premises compute platform deployment is saved in the root directory of your revision\. For more information, see [Add an AppSpec File for an EC2/On\-Premises Deployment](application-revisions-appspec-file.md#add-appspec-file-server) and [Plan a Revision for CodeDeploy](application-revisions-plan.md)\. 
+The appspec\.yml for an EC2/On\-Premises compute platform deployment is saved in the root directory of your revision\. For more information, see [Add an AppSpec file for an EC2/On\-Premises deployment](application-revisions-appspec-file.md#add-appspec-file-server) and [Plan a revision for CodeDeploy](application-revisions-plan.md)\. 
 
-## AppSpec File Spacing<a name="reference-appspec-file-spacing"></a>
+## AppSpec File spacing<a name="reference-appspec-file-spacing"></a>
 
 The following is the correct format for AppSpec file spacing\. The numbers in square brackets indicate the number of spaces that must occur between items\. For example, `[4]` means to insert four spaces between the items\. CodeDeploy raises an error that might be difficult to debug if the locations and number of spaces in an AppSpec file are not correct\.
 

@@ -1,6 +1,6 @@
-# Update the CodeDeploy Agent on Ubuntu Server<a name="codedeploy-agent-operations-update-ubuntu"></a>
+# Update the CodeDeploy agent on Ubuntu Server<a name="codedeploy-agent-operations-update-ubuntu"></a>
 
-After the CodeDeploy agent \(`codedeploy-agent_all.deb`\) is installed on an instance, it is updated within 24 hours of the release of a new version\. The update time cannot be easily cancelled or rescheduled\. If a deployment is in progress during the update, the current deployment lifecycle event finishes first\. After the update is complete, the deployment resumes with the next deployment lifecycle event\.
+To configure automatic, scheduled updates of the CodeDeploy agent using AWS Systems Manager, follow the steps in [Install the CodeDeploy agent with AWS Systems Manager](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ssm.html)\.
 
 If you want to force an update of the CodeDeploy agent, sign in to the instance, and run the following command:
 

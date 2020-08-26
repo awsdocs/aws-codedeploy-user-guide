@@ -1,8 +1,8 @@
-# Step 2: Create a GitHub Repository<a name="tutorials-github-create-github-repository"></a>
+# Step 2: Create a GitHub repository<a name="tutorials-github-create-github-repository"></a>
 
 You will need a GitHub repository to store the revision\.
 
-If you already have a GitHub repository, be sure to substitute its name for **CodeDeployGitHubDemo** throughout this tutorial, and then skip ahead to [Step 3: Upload a Sample Application to Your GitHub Repository](tutorials-github-upload-sample-revision.md)\. 
+If you already have a GitHub repository, be sure to substitute its name for **CodeDeployGitHubDemo** throughout this tutorial, and then skip ahead to [Step 3: Upload a sample application to your GitHub repository](tutorials-github-upload-sample-revision.md)\. 
 
 1. On the [GitHub home page](https://github.com/dashboard), do one of the following:
    + In **Your repositories**, choose **New repository**\.
@@ -18,7 +18,7 @@ Selecting the default **Public** option means that anyone can see this repositor
 
 1. Follow the instructions for your local machine type to use the command line to create the repository\.
 **Note**  
-If you have enabled two\-factor authentication on GitHub, make sure you enter your personal access token instead of your GitHub login password if prompted for a password\. For information, see [Providing Your 2FA Authentication Code](https://help.github.com/articles/providing-your-2fa-authentication-code/)\.
+If you have enabled two\-factor authentication on GitHub, make sure you enter your personal access token instead of your GitHub login password if prompted for a password\. For information, see [Providing your 2FA authentication code](https://help.github.com/articles/providing-your-2fa-authentication-code/)\.
 
    **On local Linux, macOS, or Unix machines:**
 

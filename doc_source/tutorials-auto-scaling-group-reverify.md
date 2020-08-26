@@ -1,4 +1,4 @@
-# Step 5: Check Your Results Again<a name="tutorials-auto-scaling-group-reverify"></a>
+# Step 5: Check your results again<a name="tutorials-auto-scaling-group-reverify"></a>
 
 In this step, you'll check to see if CodeDeploy installed the SimpleDemoApp revision on the new instance in the Amazon EC2 Auto Scaling group\.
 
@@ -50,7 +50,7 @@ In this step, you'll check to see if CodeDeploy installed the SimpleDemoApp revi
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting Started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 

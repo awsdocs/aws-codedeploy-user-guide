@@ -1,12 +1,12 @@
-# Create a Deployment Configuration with CodeDeploy<a name="deployment-configurations-create"></a>
+# Create a deployment configuration with CodeDeploy<a name="deployment-configurations-create"></a>
 
 You can use the CodeDeploy console, AWS CLI, the CodeDeploy APIs, or an AWS CloudFormation template to create custom deployment configurations\. 
 
-For information about using an AWS CloudFormation template to create a deployment configuration, see [AWS CloudFormation Templates for CodeDeploy Reference](reference-cloudformation-templates.md)\.
+For information about using an AWS CloudFormation template to create a deployment configuration, see [AWS CloudFormation templates for CodeDeploy reference](reference-cloudformation-templates.md)\.
 
 To use the AWS CLI to create a deployment configuration, call the [create\-deployment\-config](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-config.html) command, specifying:
 + A name that uniquely identifies the deployment configuration\. This name must be unique across all of the deployment configurations you create with CodeDeploy associated with your AWS account\.
-+ The minimum number or percentage of healthy instances that should be available at any time during the deployment\. For more information, see [CodeDeploy Instance Health](instances-health.md)\.
++ The minimum number or percentage of healthy instances that should be available at any time during the deployment\. For more information, see [CodeDeploy instance health](instances-health.md)\.
 
 The following example creates an EC2/On\-Premises deployment configuration named ThreeQuartersHealthy that requires 75% of target instances to remain healthy during a deployment:
 

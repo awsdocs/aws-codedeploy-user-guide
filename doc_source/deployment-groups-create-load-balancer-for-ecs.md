@@ -1,14 +1,14 @@
-# Set Up a Load Balancer, Target Groups, and Listeners for CodeDeploy Amazon ECS Deployments<a name="deployment-groups-create-load-balancer-for-ecs"></a>
+# Set up a load balancer, target groups, and listeners for CodeDeploy Amazon ECS deployments<a name="deployment-groups-create-load-balancer-for-ecs"></a>
 
- Before you run a deployment using the Amazon ECS compute platform, you must create an Application Load Balancer or a Network Load Balancer, two target groups, and one or two listeners\. This topic shows you how to create an Application Load Balancer\. For more information, see [Before You Begin an Amazon ECS Deployment](deployment-steps-ecs.md#deployment-steps-prerequisites-ecs)\. 
+ Before you run a deployment using the Amazon ECS compute platform, you must create an Application Load Balancer or a Network Load Balancer, two target groups, and one or two listeners\. This topic shows you how to create an Application Load Balancer\. For more information, see [Before you begin an Amazon ECS deployment](deployment-steps-ecs.md#deployment-steps-prerequisites-ecs)\. 
 
  One of the target groups directs traffic to your Amazon ECS application's original task set\. The other target group directs traffic to its replacement task set\. During deployment, CodeDeploy creates a replacement task set and reroutes traffic from the original task set to the new one\. CodeDeploy determines which target group is used for each task set\. 
 
  A listener is used by your load balancer to direct traffic to your target groups\. One production listener is required\. You can specify an optional test listener that directs traffic to your replacement task set while you run validation tests\. 
 
- The load balancer must use a VPC with two public subnets in different Availability Zones\. The following steps show you how to confirm your default VPC, create an Amazon EC2 Application Load Balancer, and then create two target groups for your load balancer\. For more information, see [Target Groups for Your Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html)\. 
+ The load balancer must use a VPC with two public subnets in different Availability Zones\. The following steps show you how to confirm your default VPC, create an Amazon EC2 Application Load Balancer, and then create two target groups for your load balancer\. For more information, see [Target groups for your network load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html)\. 
 
-## Verify Your Default VPC, Public Subnets, and Security Group<a name="deployment-groups-create-load-balancer-for-ecs-verify-vpc"></a>
+## Verify your default VPC, public subnets, and security group<a name="deployment-groups-create-load-balancer-for-ecs-verify-vpc"></a>
 
  This topic shows how to create an Amazon EC2 Application Load Balancer, two target groups, and two ports that can be used during an Amazon ECS deloyment\. One of the ports is optional and needed only if you direct traffic to a test port for validation tests during your deployment\. 
 
@@ -28,7 +28,7 @@
 
 1. Verify the security group you want to use is available and make a note of its group ID \(for example, **sg\-abcd1234**\)\. You use this when you create your load balancer\.
 
-## Create an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(Console\)<a name="deployment-groups-create-load-balancer-for-ecs-console"></a>
+## Create an Amazon EC2 Application Load Balancer, two target groups, and listeners \(console\)<a name="deployment-groups-create-load-balancer-for-ecs-console"></a>
 
 To use the Amazon EC2 console to create an Amazon EC2 Application Load Balancer:
 
@@ -92,9 +92,9 @@ To use the Amazon EC2 console to create an Amazon EC2 Application Load Balancer:
 
 1. Choose **Create**\.
 **Note**  
-You must have two target groups created for your load balancer in order for your Amazon ECS deployment to run\. You use the ARN of one of your target groups when you create your Amazon ECS service\. For more information, see [Step 4: Create an Amazon ECS Service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-blue-green.html#create-blue-green-taskdef) in the *Amazon ECS User Guide*\.
+You must have two target groups created for your load balancer in order for your Amazon ECS deployment to run\. You use the ARN of one of your target groups when you create your Amazon ECS service\. For more information, see [Step 4: Create an Amazon ECS service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-blue-green.html#create-blue-green-taskdef) in the *Amazon ECS User Guide*\.
 
-## Create an Amazon EC2 Application Load Balancer, Two Target Groups, and Listeners \(CLI\)<a name="deployment-groups-create-load-balancer-for-ecs-cli"></a>
+## Create an Amazon EC2 Application Load Balancer, two target groups, and listeners \(CLI\)<a name="deployment-groups-create-load-balancer-for-ecs-cli"></a>
 
 To create an Application Load Balancer using the AWS CLI:
 

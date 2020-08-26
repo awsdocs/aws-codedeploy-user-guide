@@ -1,14 +1,14 @@
-# CodeDeploy Resource Kit Reference<a name="resource-kit"></a>
+# CodeDeploy resource kit reference<a name="resource-kit"></a>
 
 Many of the files CodeDeploy relies on are stored in publicly available, AWS region\-specific Amazon S3 buckets\. These files include installation files for the CodeDeploy agent, templates, and sample application files\. We call this collection of files the CodeDeploy Resource Kit\. 
 
 **Topics**
-+ [Resource Kit Bucket Names by Region](#resource-kit-bucket-names)
-+ [Resource Kit Contents](#resource-kit-file-list)
-+ [Display a List of the Resource Kit Files](#resource-kit-list-files)
-+ [Download the Resource Kit Files](#resource-kit-download-file)
++ [Resource kit bucket names by Region](#resource-kit-bucket-names)
++ [Resource kit contents](#resource-kit-file-list)
++ [Display a list of the resource kit files](#resource-kit-list-files)
++ [Download the resource kit files](#resource-kit-download-file)
 
-## Resource Kit Bucket Names by Region<a name="resource-kit-bucket-names"></a>
+## Resource kit bucket names by Region<a name="resource-kit-bucket-names"></a>
 
 This table lists the names of *bucket\-name * replacements required for some procedures in the guide\. These are the names of the Amazon S3 buckets that contain the CodeDeploy Resource Kit files\.
 
@@ -18,18 +18,19 @@ This table lists the names of *bucket\-name * replacements required for some pro
 
 ****  
 
-| Region name | *bucket\-name* replacement | Region identifier | 
+| Region name | *Bucket\-name* replacement | Region identifier | 
 | --- | --- | --- | 
 | US East \(Ohio\) | aws\-codedeploy\-us\-east\-2 | us\-east\-2 | 
 | US East \(N\. Virginia\) | aws\-codedeploy\-us\-east\-1 | us\-east\-1 | 
 | US West \(N\. California\) | aws\-codedeploy\-us\-west\-1 | us\-west\-1 | 
 | US West \(Oregon\) | aws\-codedeploy\-us\-west\-2 | us\-west\-2 | 
 | Canada \(Central\) | aws\-codedeploy\-ca\-central\-1 | ca\-central\-1 | 
-| Europe \(Stockholm\) | aws\-codedeploy\-eu\-north\-1 | eu\-north\-1 | 
 | Europe \(Ireland\) | aws\-codedeploy\-eu\-west\-1 | eu\-west\-1 | 
 | Europe \(London\) | aws\-codedeploy\-eu\-west\-2 | eu\-west\-2 | 
 | Europe \(Paris\) | aws\-codedeploy\-eu\-west\-3 | eu\-west\-3 | 
 | Europe \(Frankfurt\) | aws\-codedeploy\-eu\-central\-1 | eu\-central\-1 | 
+| Europe \(Stockholm\) | aws\-codedeploy\-eu\-north\-1 | eu\-north\-1 | 
+| Europe \(Milan\) | aws\-codedeploy\-eu\-south\-1 | eu\-south\-1 | 
 | Asia Pacific \(Hong Kong\) | aws\-codedeploy\-ap\-east\-1 | ap\-east\-1 | 
 | Asia Pacific \(Tokyo\) | aws\-codedeploy\-ap\-northeast\-1 | ap\-northeast\-1 | 
 | Asia Pacific \(Seoul\) | aws\-codedeploy\-ap\-northeast\-2 | ap\-northeast\-2 | 
@@ -37,15 +38,20 @@ This table lists the names of *bucket\-name * replacements required for some pro
 | Asia Pacific \(Sydney\) | aws\-codedeploy\-ap\-southeast\-2 | ap\-southeast\-2 | 
 | Asia Pacific \(Mumbai\) | aws\-codedeploy\-ap\-south\-1 | ap\-south\-1 | 
 | South America \(São Paulo\) | aws\-codedeploy\-sa\-east\-1 | sa\-east\-1 | 
+| Middle East \(Bahrain\) | aws\-codedeploy\-me\-south\-1 | me\-south\-1 | 
+| Africa \(Cape Town\) | aws\-codedeploy\-af\-south\-1 | af\-south\-1 | 
+| AWS GovCloud \(US\-East\) | aws\-codedeploy\-us\-gov\-east\-1 | us\-gov\-east\-1 | 
+| AWS GovCloud \(US\-West\) | aws\-codedeploy\-us\-gov\-west\-1 | us\-gov\-west\-1 | 
 
-## Resource Kit Contents<a name="resource-kit-file-list"></a>
+## Resource kit contents<a name="resource-kit-file-list"></a>
 
 The following table lists the files in the CodeDeploy Resource Kit\.
 
 
 | File | Description | 
 | --- | --- | 
-| VERSION | A file used by CodeDeploy agents to update themselves as they are running on instances\. | 
+| LATEST\_VERSION | A file used by update mechanisms like Amazon EC2 Systems Manager to determine the latest version of the CodeDeploy agent\. | 
+| VERSION | The auto\-update mechanism was removed in CodeDeploy agent version 1\.1\.0 and this file is no longer used\. A file used by CodeDeploy agents to update themselves as they are running on instances\. | 
 | codedeploy\-agent\.noarch\.rpm | The CodeDeploy agent for Amazon Linux and Red Hat Enterprise Linux \(RHEL\)\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
 | codedeploy\-agent\_all\.deb | The CodeDeploy agent for Ubuntu Server\. There may be several files with the same base file name, but different versions \(such as \_1\.0\-0\)\. | 
 | codedeploy\-agent\.msi | The CodeDeploy agent for Windows Server\. There may be several files with the same base file name, but different versions \(such as \-1\.0\-0\)\. | 
@@ -56,7 +62,7 @@ The following table lists the files in the CodeDeploy Resource Kit\.
 | SampleApp\_Linux\.zip |  A sample application revision you can deploy to an Amazon EC2 instance running Amazon Linux or to a Ubuntu Server or RHEL instance\. There may be several files with the same base file name, but different versions \(such as `-1.0`\)\.  | 
 | SampleApp\_Windows\.zip | A sample application revision you can deploy to a Windows Server instance\. There may be several files with the same base file name, but different versions \(such as \-1\.0\)\. | 
 
-## Display a List of the Resource Kit Files<a name="resource-kit-list-files"></a>
+## Display a list of the resource kit files<a name="resource-kit-list-files"></a>
 
 To view a list of files, use the aws s3 ls command for your region\.
 
@@ -143,7 +149,7 @@ The files in each bucket are designed to work with resources in the correspondin
   aws s3 ls --recursive s3://aws-codedeploy-sa-east-1 --region sa-east-1
   ```
 
-## Download the Resource Kit Files<a name="resource-kit-download-file"></a>
+## Download the resource kit files<a name="resource-kit-download-file"></a>
 
 To download a file, use the aws s3 cp command for your region\. 
 
