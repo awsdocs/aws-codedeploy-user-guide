@@ -229,6 +229,7 @@ Amazon's trademarks and trade dress may not be used in
    + [AWS CloudFormation templates for CodeDeploy reference](reference-cloudformation-templates.md)
    + [Use CodeDeploy with Amazon Virtual Private Cloud](vpc-endpoints.md)
    + [CodeDeploy resource kit reference](resource-kit.md)
+   + [CodeDeploy limits](limits.md)
 + [Troubleshooting CodeDeploy](troubleshooting.md)
    + [General troubleshooting issues](troubleshooting-general.md)
    + [Troubleshoot EC2/On-Premises Deployment Issues](troubleshooting-deployments.md)

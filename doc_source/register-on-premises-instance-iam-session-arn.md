@@ -185,7 +185,7 @@ arn:sts:iam::123456789012:assumed-role/CodeDeployInstanceRole/AssetTag12010298EX
 Call the [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command, specifying:
 +  A name that uniquely identifies the on\-premises instance \(with the `--instance-name` option\)\.
 **Important**  
-To help identify the on\-premises instance, especially for debugging purposes, we strongly recommend that you specify a name that maps to some unique characteristic of the on\-premises instance \(for example, the session\-name of the STS credentials and the serial number or an internal asset identifier, if applicable\)\. If you specify a MAC address as a name, be aware that MAC addresses contain characters that CodeDeploy does not allow, such as colon \(:\)\. For a list of allowed characters, see [CodeDeploy limits](reference.md#limits)\.
+To help identify the on\-premises instance, especially for debugging purposes, we strongly recommend that you specify a name that maps to some unique characteristic of the on\-premises instance \(for example, the session\-name of the STS credentials and the serial number or an internal asset identifier, if applicable\)\. If you specify a MAC address as a name, be aware that MAC addresses contain characters that CodeDeploy does not allow, such as colon \(:\)\. For a list of allowed characters, see [CodeDeploy limits](limits.md)\.
 + The IAM session ARN that you set up to authenticate multiple on\-premises instances in [Step 1: Create the IAM role that on\-premises instances will assume](#register-on-premises-instance-iam-session-arn-1)\.
 
 For example:

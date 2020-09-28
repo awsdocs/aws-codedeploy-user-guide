@@ -86,7 +86,7 @@ An Amazon EC2 Auto Scaling group might fail to launch new Amazon EC2 instances, 
 `Launching a new Amazon EC2 instance <instance-Id>. Status Reason: Instance failed to complete user's Lifecycle Action: Lifecycle Action with token<token-Id> was abandoned: Heartbeat Timeout`\. 
 
 This message usually indicates one of the following: 
-+ The maximum number of concurrent deployments associated with an AWS account was reached\. For more information about deployment limits, see [CodeDeploy limits](reference.md#limits)\. 
++ The maximum number of concurrent deployments associated with an AWS account was reached\. For more information about deployment limits, see [CodeDeploy limits](limits.md)\. 
 + An application in CodeDeploy was deleted before its associated deployment groups were updated or deleted\. 
 
 When you delete an application or deployment group, CodeDeploy attempts to clean up any Amazon EC2 Auto Scaling hooks associated with it, but some hooks might remain\. If you run a command to delete a deployment group, the leftover hooks are returned in the output\. However, if you run a command to delete an application, the leftover hooks do not appear in the output\.

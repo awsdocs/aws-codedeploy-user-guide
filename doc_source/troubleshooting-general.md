@@ -18,7 +18,7 @@ You can use the following checklist to troubleshoot a failed deployment\.
    + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
    + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 instance to work with CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM instance profile for your Amazon EC2 instances](getting-started-create-iam-instance-profile.md)\.
    + Was the instance tagged? For more information, see [Working with tags in the console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
-   + Is the CodeDeploy agent installed and running on the instance? For more information, see [Managing CodeDeploy agent operations](codedeploy-agent-operations.md)\.
+   + Is the CodeDeploy agent installed, updated, and running on the instance? For more information, see [Managing CodeDeploy agent operations](codedeploy-agent-operations.md)\. To check which version of the agent is installed, see [Determine the version of the CodeDeploy agent](codedeploy-agent-operations-version.md)\.
 
 1. Check the application and deployment group settings:
    + To check your application settings, see [View application details with CodeDeploy](applications-view-details.md)\.

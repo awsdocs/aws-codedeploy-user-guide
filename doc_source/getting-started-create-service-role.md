@@ -30,7 +30,7 @@ For Amazon ECS deployments, if you want limited access to support services, atta
 +  Retrieve information about CloudWatch alarms\. 
 + Publish information to Amazon SNS topics\.
 
-For AWS Lambda deployments, attach the **AWSCodeDeployRoleForLambda** policy\. It provides the permissions for your service role to:
+For AWS Lambda deployments, attach the **AWSCodeDeployRoleForLambdaLimited** policy\. It provides the permissions for your service role to:
 +  Read, update, and invoke AWS Lambda functions and aliases\. 
 +  Access revision files in Amazon S3 buckets\. 
 +  Publish information to Amazon SNS topics\. 
@@ -214,7 +214,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
      Call the attach\-role\-policy command to give the service role named **CodeDeployServiceRole** the permissions based on the IAM managed policy named **AWSCodeDeployRoleForLambda**\. For example:
 
      ```
-     aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRoleForLambda
+     aws iam attach-role-policy --role-name CodeDeployServiceRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSCodeDeployRoleForLambdaLimited
      ```
    + If your deployment is to an Amazon ECS compute platform:
 

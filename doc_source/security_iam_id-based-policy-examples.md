@@ -67,7 +67,7 @@ AWSCodeDeployFullAccess does not provide permissions to operations in other serv
 + `AWSCodeDeployRole`: Allows CodeDeploy to identify EC2 instances by their Amazon EC2 tags or Amazon EC2 Auto Scaling group names, and on\-premises instances by their on\-premises instance tags, and to deploy application revisions to them accordingly\. Provides permissions required to publish notifications to an Amazon SNS topic and retrieve information about alarms from CloudWatch\.
 
    
-+ `AWSCodeDeployRoleForLambda`: Grants CodeDeploy permission to access AWS Lambda and any other resource required for a deployment\.
++ `AWSCodeDeployRoleForLambdaLimited`: Grants CodeDeploy permission to access AWS Lambda and any other resource required for a deployment\.
 
    
 +  `AWSCodeDeployRoleForECS`: Grants CodeDeploy permission to access Amazon ECS and any other resource required for a deployment\. 
