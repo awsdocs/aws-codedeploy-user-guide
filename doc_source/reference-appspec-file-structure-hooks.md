@@ -328,7 +328,7 @@ hooks:
 You can include the following elements in a **hook** entry after the deployment lifecycle event name:
 
 ** location **  
-Required\. The location in the bundle of the script file for the revision\.
+Required\. The location in the bundle of the script file for the revision\. The location of scripts you specify in the 'hooks' section is relative to the root of the application revision bundle\. For more information, see [Plan a revision for CodeDeploy](application-revisions-plan.md)\.
 
 ** timeout **  
 Optional\. The number of seconds to allow the script to execute before it is considered to have failed\. The default is 3600 seconds \(1 hour\)\.  
@@ -410,4 +410,4 @@ hooks:
 
 The `Scripts/RunResourceTests.sh` script runs during the `AfterInstall` stage of the deployment process\. The deployment is unsuccessful if it takes the script more than 180 seconds \(3 minutes\) to run\.
 
-The location of scripts you specify in the 'hooks' section is relative to the root of the application revision bundle\. In the preceding example, a file named `RunResourceTests.sh` is in a directory named `Scripts`\. The `Scripts` directory is at the root level of the bundle\. For more information, see [Plan a revision for CodeDeploy](application-revisions-plan.md)\.
+Reminder: The location of scripts you specify in the 'hooks' section is relative to the root of the application revision bundle\. In the preceding example, a file named `RunResourceTests.sh` is in a directory named `Scripts`\. The `Scripts` directory is at the root level of the bundle\. For more information, see [Plan a revision for CodeDeploy](application-revisions-plan.md)\.
