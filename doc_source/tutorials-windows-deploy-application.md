@@ -32,7 +32,7 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
 1. Before you create a deployment, the instances in your deployment group must have the CodeDeploy agent installed\. You can install the agent from the command line with AWS Systems Manager with the following command:
 
    ```
-   aws ssm create-association --name AWS-ConfigureAWSPackage --targets Key=tag:Name,Values=CodeDeployDemo --parameters action=Install, name=AWSCodeDeployAgent --schedule-expression "cron(0 2 ? * SUN *)" 
+   aws ssm create-association --name AWS-ConfigureAWSPackage --targets Key=tag:Name,Values=CodeDeployDemo --parameters action=Install,name=AWSCodeDeployAgent --schedule-expression "cron(0 2 ? * SUN *)" 
    ```
 
    This command creates an association in Systems Manager State Manager that will install the CodeDeploy agent and then attempt to update it at 2:00 every Sunday morning\. For more information about the CodeDeploy agent, see [ Working with the CodeDeploy agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html)\. For more information about Systems Manager, see [What is AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)\.

@@ -106,50 +106,58 @@ For a list of region name identifiers, see [Resource kit bucket names by Region]
 
 1. In the global navigation bar, make sure one of the regions listed in [Region and endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference* is selected\. Amazon EC2 Auto Scaling resources are tied to the region you specify, and CodeDeploy is supported in select regions only\.
 
-1. In the navigation bar, under **Auto Scaling**, choose **Launch Configurations**\.
+1. In the navigation bar, under **Instances**, choose **Launch Templates**\.
 
-1. Choose **Create launch configuration**\.
+1. Choose **Create launch template**\.
 
-1. On the **Quick Start** tab of the **Choose AMI** page, next to **Amazon Linux AMI**, **Red Hat Enterprise Linux 7\.2**, **Ubuntu Server 14\.04 LTS**, or **Microsoft Windows Server 2012 R2 Base**, choose **Select**\.
+1. In the **Launch template name and description** dialog, for **Launch template name**, enter **CodeDeployDemo\-AS\-Launch\-Template**\. Leave the defaults for the other fields\.
+
+1. In the **Amazon machine image \(AMI\)** dialog, click the dropdown under **AMI**, choose an AMI that works with this tutorial:
+
+   1. On the **Quick Start** tab of the **AMI** dropdown, choose one of the following: **Amazon Linux AMI**, **Red Hat Enterprise Linux 7\.1**, **Ubuntu Server 14\.04 LTS**, or **Microsoft Windows Server 2012 R2**\. 
 **Note**  
-If you have a custom version of an AMI that already has the CodeDeploy agent installed, choose it here instead\. For information about using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling, see [Using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
+If you have a custom version of an AMI that is compatible with CodeDeploy, choose it here instead of browsing through the **Quick Start** tab\. For information about using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling, see [Using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md#integrations-aws-auto-scaling-custom-ami)\.
 
-1. On the **Choose Instance Type** page, leave the defaults, and choose **Next: Configure details**\.
+1. In **Instance type**, select the dropdown and choose **t1\.micro**\. You can use the search bar to find it more quickly\.
 
-1. On the **Configure details** page, in **Name**, type **CodeDeployDemo\-AS\-Configuration**\. In **IAM role**, choose the IAM instance profile you created earlier \(**CodeDeployDemo\-EC2\-Instance\-Profile**\)\.
+1. In the **Key pair \(login\)** dialog box, select **Choose an existing key pair**\. In the **Select a key pair** drop\-down list, choose the Amazon EC2 instance key pair you created or used in previous steps\.
 
-   Leave the rest of the defaults, and choose **Skip to review**\.
+1. In the **Network settings** dialog box, choose **Virtual Public Cloud \(VPC\)**\.
 
-1. On the **Review** page, choose **Create launch configuration**\.
-**Note**  
-In a production environment, we recommend that you restrict access to Amazon EC2 instances\. For more information, see [Tips for securing your EC2 instance](https://aws.amazon.com/articles/1233)\.
+   In the **Security groups** dropdown, choose the security group you created in the [tutorial's prerequisites section](https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-auto-scaling-group-prerequisites.html) \(**CodeDeployDemo\-AS\-SG**\)\.
 
-1. In the **Select an existing key pair or create a new key pair** dialog box, select **Choose an existing key pair**\. In the **Select a key pair** drop\-down list, choose the Amazon EC2 instance key pair you created or used in previous steps\. Select **I acknowledge that I have access to the selected private key file \(*key\-file\-name*\.pem\), and that without this file, I won't be able to log into my instance**, and then choose **Create launch configuration**\. 
+1. Expand the **Advanced details** dialog box\. In the **IAM instance profile** dropdown, select the IAM role you created earlier \(**CodeDeployDemo\-EC2\-Instance\-Profile**\) under **IAM instance profile**\.
 
-1. Choose **Create an Auto Scaling group using this launch configuration**\.
+   Leave the rest of the defaults\.
 
-1. On the **Configure Auto Scaling group details** page, do the following:
+1. Choose **Create launch template**\.
 
-   1. For **Group name**, type **CodeDeployDemo\-AS\-Group**\.
+1. In the **Next steps** dialog box, choose **Create Auto Scaling group**\.
 
-   1.  Keep **Group size** set to the default value of 1 for this tutorial\. 
+1. On the **Choose launch template or configuration** page, for **Auto Scaling group name**, type **CodeDeployDemo\-AS\-Group**\.
 
-   1.  In **Network**, choose **Launch into EC2\-Classic**\. If it does not appear and you are not able to select a default virtual private cloud \(VPC\), choose or create a VPC and subnet\. For more information, see [Your VPC and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\. 
+1. In the **Launch template** dialog box, your launch configuration \(**CodeDeployDemo\-AS\-Launch\-Template**\) should be filled in, if not, select it from the dropdown menu\. Leave the defaults and choose **Next**\. 
 
-   1.  For **Subnet**, choose a subnet for the VPC\. 
-**Note**  
- You can choose the Availability Zone for your instance by choosing its corresponding default subnet\. 
+1. On the **Configure settings** page, in the **Network** dialog box, choose the default VPC and a default Subnet\. You must create a VPC if you cannot choose the default\. For more information, see [Getting started with Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-getting-started.html)\.
 
-   1. Choose **Next: Configure scaling policies**\.
+1. Choose **Next** to go to the **Configure advanced options** page\.
 
-1. On the **Configure scaling policies** page, leave **Keep this group at its initial size** selected, and choose **Next: Configure Notifications**\.
+1. Keep the default values and choose **Next**\.
 
-1. Skip the step for configuring notifications, and choose **Next: Configure Tags**\.
+1. On the **Configure group size and scaling policies** page, keep the default **Group size** values of 1\. Choose **Next**\.
 
-1. In **Key**, enter **Name**\. In **Value**, enter **CodeDeployDemo**\. The tag will be used when installing the CodeDeploy agent later\.
+1. Skip the step for configuring notifications, and choose **Next**\.
 
-1. Choose **Create Auto Scaling group**, and then choose **Close**\.
+1. On the **Add tags** page, add a tag to be used when installing the CodeDeploy agent later\. Choose **Add tag**\.
 
-1. In the navigation bar, with **Auto Scaling Groups** selected, choose **CodeDeployDemo\-AS\-Group**, and then choose the **Instances** tab\. Do not proceed until the value of **InService** appears in the **Lifecycle** column and the value of **Healthy** appears in the **Health Status** column\.
+   1. In **Key**, enter **Name**\.
+
+   1. In **Value**, enter **CodeDeployDemo**\.
+
+   Choose **Next**\.
+
+1. Review your Auto Scaling group information on the **Review** page, then choose **Create Auto Scaling group**\.
+
+1. In the navigation bar, with **Auto Scaling Groups** selected, choose **CodeDeployDemo\-AS\-Group**, and then choose the **Instance Management** tab\. Do not proceed until the value of **InService** appears in the **Lifecycle** column and the value of **Healthy** appears in the **Health Status** column\.
 
 1. Install the CodeDeploy agent by following the steps in [ Install the CodeDeploy agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install.html) and using the `Name=CodeDeployDemo` instance tags\.

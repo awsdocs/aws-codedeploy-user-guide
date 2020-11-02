@@ -44,18 +44,38 @@ wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
 chmod +x ./install
 ```
 
-To install the latest version of the CodeDeploy agent:
+To install the latest version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
 + 
 
   ```
   sudo ./install auto
   ```
 
-To install a specific version of the CodeDeploy agent:
+To install the latest version of the CodeDeploy agent on Ubuntu 20\.04:
+
+**Note**  
+Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
++ 
+
+  ```
+  sudo ./install auto > /tmp/logfile
+  ```
+
+To install a specific version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
 + 
 
   ```
   sudo ./install auto -v releases/codedeploy-agent-###.deb
+  ```
+
+To install a specific version of the CodeDeploy agent on Ubuntu 20\.04:
+
+**Note**  
+Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
++ 
+
+  ```
+  sudo ./install auto -v releases/codedeploy-agent-###.deb > /tmp/logfile
   ```
 
 To check that the service is running, run the following command:

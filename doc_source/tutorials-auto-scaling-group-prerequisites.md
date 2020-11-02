@@ -11,3 +11,8 @@ To follow along in this tutorial:
 +  Create and use a revision that is compatible with an Ubuntu Server instance and CodeDeploy\. For your revision, you can do one of the following:
   + Create and use the sample revision in [Step 2: Create a sample application revision](tutorials-on-premises-instance-2-create-sample-revision.md) in the [Tutorial: Deploy an application to an on\-premises instance with CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md) tutorial\. 
   + Create a revision on your own, see [Working with application revisions for CodeDeploy](application-revisions.md)\.
++ Create a Security Group named **CodeDeployDemo\-AS\-SG** with the following **Inbound rule**:
+  + Type: HTTP
+  + Source: Anywhere
+
+  This is required to view your application and verify deployment success\. For information on how to create a Security Group, see [Creating a security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) in the *Amazon EC2 user guide*\.
