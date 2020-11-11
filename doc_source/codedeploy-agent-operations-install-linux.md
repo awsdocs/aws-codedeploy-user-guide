@@ -17,6 +17,15 @@ sudo yum install ruby
 sudo yum install wget
 ```
 
+To clean the AMI of any previous agent caching information, run the following script:
+
+```
+#!/bin/bash
+CODEDEPLOY_BIN="/opt/codedeploy-agent/bin/codedeploy-agent"
+$CODEDEPLOY_BIN stop
+yum erase codedeploy-agent -y
+```
+
 ```
 cd /home/ec2-user
 ```

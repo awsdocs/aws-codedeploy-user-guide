@@ -14,7 +14,7 @@ Routes and load balances either at the transport layer \(TCP/SSL\) or the applic
 
 Application Load Balancer  
 Routes and load balances at the application layer \(HTTP/HTTPS\) and supports path\-based routing\. It can route requests to ports on each EC2 instance or container instance in your virtual private cloud \(VPC\)\.  
- The Application Load Balancer target groups must have a target type of `instance`\. For more information, see [Target type](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-type)\. 
+ The Application Load Balancer target groups must have a target type of `instance` for deployments on EC2 instances, and `IP` for Fargate deployments\. For more information, see [Target type](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-type)\. 
 
 Network Load Balancer  
 Routes and load balances at the transport layer \(TCP/UDP Layer\-4\) based on address information extracted from the TCP packet header, not from packet content\. Network Load Balancers can handle traffic bursts, retain the source IP of the client, and use a fixed IP for the life of the load balancer\. 

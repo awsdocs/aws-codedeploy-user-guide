@@ -84,28 +84,35 @@ Next, create a folder and scripts in the directory\. CodeDeploy uses these scrip
 
    ```
    #!/bin/bash
-   sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
+   sudo amazon-linux-extras install php7.4
+   sudo yum install -y httpd mariadb-server php
    ```
 
 1. Create a `start_server.sh` file in `/tmp/WordPress/scripts`\. Add the following lines to the file\. This `start_server.sh` script starts Apache and MySQL\.
 
    ```
    #!/bin/bash
-   service mysqld start
-   service httpd start
+   systemctl start mariadb.service
+   systemctl start httpd.service
+   systemctl start php-fpm.service
    ```
 
 1. Create a `stop_server.sh` file in `/tmp/WordPress/scripts`\. Add the following lines to the file\. This `stop_server.sh` script stops Apache and MySQL\.
 
    ```
    #!/bin/bash
-   isExistApp=`pgrep httpd`
-   if [[ -n  $isExistApp ]]; then
-      service httpd stop
+   isExistApp=pgrep httpd
+   if [[ -n $isExistApp ]]; then
+   systemctl stop httpd.service
    fi
-   isExistApp=`pgrep mysqld`
-   if [[ -n  $isExistApp ]]; then
-       service mysqld stop
+   isExistApp=pgrep mysqld
+   if [[ -n $isExistApp ]]; then
+   systemctl stop mariadb.service
+   fi
+   isExistApp=pgrep php-fpm
+   if [[ -n $isExistApp ]]; then
+   systemctl stop php-fpm.service
+   
    fi
    ```
 

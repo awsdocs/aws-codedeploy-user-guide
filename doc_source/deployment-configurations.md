@@ -6,7 +6,7 @@ A deployment configuration is a set of rules and success and failure conditions 
 
 When you deploy to an EC2/On\-Premises compute platform, the deployment configuration specifies, through the use of a minimum healthy hosts value, the number or percentage of instances that must remain available at any time during a deployment\.
 
-You can use one of the three predefined deployment configurations provided by AWS or create a custom deployment configuration\. If you don't specify a deployment configuration, CodeDeploy uses the CodeDeployDefault\.OneAtATime deployment configuration\.
+You can use one of the three predefined deployment configurations provided by AWS or create a custom deployment configuration\. For more information about creating custom deployment configurations, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\. If you don't specify a deployment configuration, CodeDeploy uses the CodeDeployDefault\.OneAtATime deployment configuration\.
 
 For more information about how CodeDeploy monitors and evaluates instance health during a deployment, see [CodeDeploy instance health](instances-health.md)\. To view a list of deployment configurations already registered to your AWS account, see [View deployment configuration details with CodeDeploy](deployment-configurations-view-details.md)\. 
 
@@ -32,7 +32,7 @@ There are three ways traffic can be shifted during a deployment:
 + **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
 + **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
 
-You can also create your own custom canary or linear deployment configuration\.
+You can also create your own custom canary or linear deployment configuration\. For more information, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\.
 
 ### Predefined deployment configurations for an Amazon ECS compute platform<a name="deployment-configurations-predefined-ecs"></a>
 
@@ -72,7 +72,7 @@ There are three ways traffic can shift during a deployment:
 + **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
 + **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version all at once\.
 
-You can also create your own custom canary or linear deployment configuration\. 
+You can also create your own custom canary or linear deployment configuration\. For more information, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\.
 
 ### Predefined deployment configurations for an AWS Lambda compute platform<a name="deployment-configurations-predefined-lambda"></a>
 
