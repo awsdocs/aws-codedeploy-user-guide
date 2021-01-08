@@ -34,6 +34,8 @@ To view a list of applications already registered to your AWS account, see [View
 | Serverless AWS Lambda functions | No | Yes | 
 | Amazon ECS applications | No | Yes | 
 
+
+
 **Topics**
 + [Create an application for an in\-place deployment \(console\)](applications-create-in-place.md)
 + [Create an application for a blue/green deployment \(console\)](applications-create-blue-green.md)

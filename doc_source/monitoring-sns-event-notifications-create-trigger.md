@@ -8,6 +8,8 @@ You must also grant Amazon SNS permissions to a CodeDeploy service role before n
 
 After you have created the topic, you can add subscribers\. For information about creating, managing, and subscribing to topics, see [What is Amazon Simple Notification Service](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
 
+
+
 ## Create a trigger to send notifications for CodeDeploy events \(console\)<a name="monitoring-sns-event-notifications-create-trigger-console"></a>
 
 You can use the CodeDeploy console to create triggers for a CodeDeploy event\. At the end of the setup process, a test notification message is sent to ensure that both permissions and trigger details are set up correctly\.

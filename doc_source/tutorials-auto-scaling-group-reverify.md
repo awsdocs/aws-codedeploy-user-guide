@@ -54,6 +54,8 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 
+   
+
 1. Choose the deployment ID of the deployment that Amazon EC2 Auto Scaling created\.
 
    \.

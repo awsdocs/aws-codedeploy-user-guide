@@ -110,6 +110,8 @@ When the deployment starts, the deployment lifecycle events start to execute one
 | AllowTraffic | Route traffic from the production listener to target group 2\. | 
 | AfterAllowTraffic | Run Lambda functions\. | 
 
+
+
 **Note**  
 Lambda functions in a hook are optional\.
 

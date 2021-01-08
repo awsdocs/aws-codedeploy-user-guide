@@ -24,6 +24,8 @@ You can use the following automated monitoring tools to watch CodeDeploy and rep
 + **Amazon CloudWatch Alarms** – Watch a single metric over a time period that you specify, and perform one or more actions based on the value of the metric relative to a given threshold over a number of time periods\. The action is a notification sent to an Amazon Simple Notification Service \(Amazon SNS\) topic or Amazon EC2 Auto Scaling policy\. CloudWatch alarms do not invoke actions simply because they are in a particular state; the state must have changed and been maintained for a specified number of periods\. For more information, see [Monitoring deployments with Amazon CloudWatch tools](monitoring-cloudwatch.md)\.
 
   For information about updating your service role to work with CloudWatch alarm monitoring, see [Grant CloudWatch permissions to a CodeDeploy service role](monitoring-create-alarms-grant-permissions.md)\. For information about adding CloudWatch alarm monitoring to your CodeDeploy operations, see [Create an application with CodeDeploy](applications-create.md), [Create a deployment group with CodeDeploy](deployment-groups-create.md), or [Change deployment group settings with CodeDeploy](deployment-groups-edit.md)\.
+
+  
 + **Amazon CloudWatch Logs** – Monitor, store, and access your log files from AWS CloudTrail or other sources\. For more information, see [Monitoring Log Files](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html) in the *Amazon CloudWatch User Guide*\.
 
   For information about using the CloudWatch console to view CodeDeploy logs, see [View CodeDeploy logs in CloudWatch Logs console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.

@@ -5,7 +5,7 @@ You can use AWS CloudFormation to manage Amazon ECS blue/green deployments throu
 For step\-by\-step instructions on using AWS CloudFormation to manage your Amazon ECS blue/green deployments, see [Automate ECS blue/green deployments through CodeDeploy using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\.
 
 **Note**  
-Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the MXP, CPT, or KIX region\.
+Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the EU \(Milano\), Africa \(Cape Town\), or Asia Pacific \(Osaka\) region\.
 
 ## Differences between Amazon ECS blue/green deployments through CodeDeploy and AWS CloudFormation<a name="differences-ecs-bg-cfn"></a>
 

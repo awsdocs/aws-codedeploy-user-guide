@@ -56,6 +56,8 @@ AWS addresses many common use cases by providing standalone IAM policies that ar
 
 The following AWS managed policies, which you can attach to users in your account, are specific to CodeDeploy:
 + `AWSCodeDeployFullAccess`: Grants full access to CodeDeploy\.
+
+   
 **Note**  
 AWSCodeDeployFullAccess does not provide permissions to operations in other services required to deploy your applications, such as Amazon EC2 and Amazon S3, only to operations specific to CodeDeploy\.
 + `AWSCodeDeployDeployerAccess`: Grants access to an IAM user to register and deploy revisions\.
@@ -174,6 +176,8 @@ For more information, see [Identity and access management for AWS CodeStar Notif
 ## Customer\-managed policy examples<a name="customer-managed-policies"></a>
 
 In this section, you can find example user policies that grant permissions for various CodeDeploy actions\. These policies work when you are using the CodeDeploy API, AWS SDKs, or the AWS CLI\. You must grant additional permissions for actions you perform in the console\. To learn more about granting console permissions, see [Using the CodeDeploy console](#security_iam_id-based-policy-examples-console) \.
+
+
 
 **Note**  
 All examples use the US West \(Oregon\) Region \(`us-west-2`\) and contain fictitious account IDs\.

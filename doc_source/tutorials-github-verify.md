@@ -9,6 +9,8 @@ If you're deploying to an Ubuntu Server instance, use your own testing strategy 
 
 1. In the navigation pane, expand **Deploy**, and then choose **Deployments**\.
 
+   
+
 1. In the list of deployments, look for the row with an **Application** value of **CodeDeployGitHubDemo\-App** and a **Deployment Group** value of **CodeDeployGitHubDemo\-DepGrp**\. If **Succeeded** or **Failed** do not appear in the **Status** column, choose the **Refresh** button periodically\.
 
 1. If **Failed** appears in the **Status** column, follow the instructions in [View instance details \(console\)](instances-view-details.md#instances-view-details-console) to troubleshoot the deployment\.

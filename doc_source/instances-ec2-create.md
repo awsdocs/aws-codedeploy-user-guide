@@ -18,7 +18,7 @@ If you have not done so already, follow the instructions in [Getting started wit
 
 1. In the navigation pane, choose **Instances**, and then choose **Launch Instance**\.
 
-1. On the **Step 1: Choose an Amazon Machine Image \(AMI\)** page, from the **Quick Start** tab, locate the operating system and version you want to use, and then choose **Select**\. You must choose an Amazon EC2 AMI operating systems supported by CodeDeploy\. For more informaction, see [Operating systems supported by the CodeDeploy agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\.
+1. On the **Step 1: Choose an Amazon Machine Image \(AMI\)** page, from the **Quick Start** tab, locate the operating system and version you want to use, and then choose **Select**\. You must choose an Amazon EC2 AMI operating systems supported by CodeDeploy\. For more information, see [Operating systems supported by the CodeDeploy agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\.
 
 1. On the **Step 2: Choose an Instance Type** page, choose any available Amazon EC2 instance type, and then choose **Next: Configure Instance Details**\.
 

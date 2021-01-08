@@ -11,6 +11,8 @@ Create the file for the function you update and deploy later in this tutorial\.
 
 1.  Copy the following Node\.js code into `myDateTimeFunction.js`\. 
 
+   
+
    ```
    'use strict';
        

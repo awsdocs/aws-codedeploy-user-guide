@@ -42,7 +42,9 @@ In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing c
 
 To delete the Amazon EC2 Auto Scaling group, which also terminates the Amazon EC2 instances:
 
-1. Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
+1. 
+
+   Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
 1. In the Amazon EC2 navigation pane, under **Auto Scaling**, choose **Auto Scaling Groups**, and then choose the **CodeDeployDemo\-AS\-Group** entry\.
 
@@ -61,6 +63,8 @@ To delete the Amazon EC2 Auto Scaling group, which also terminates the Amazon EC
 Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
    In the navigation pane, expand **Deploy**, and then choose **Applications**\.
+
+   
 
 1. In the list of applications, choose **SimpleDemoApp**\.
 

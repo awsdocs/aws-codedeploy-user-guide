@@ -34,6 +34,8 @@ For more information, see [Tutorial: Use CodeDeploy to deploy an application to 
 
 ### How CodeDeploy names Amazon EC2 Auto Scaling groups<a name="integrations-aws-auto-scaling-behaviors-naming"></a>
 
+ 
+
 During blue/green deployments on an EC2/On\-Premises compute platform, you have two options for adding instances to your replacement \(green\) environment:
 +  Use instances that already exist or that you create manually\. 
 +  Use settings from an Amazon EC2 Auto Scaling group that you specify to define and create instances in a new Amazon EC2 Auto Scaling group\. 

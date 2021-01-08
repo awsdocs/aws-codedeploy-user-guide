@@ -33,6 +33,8 @@ If no entries are displayed, make sure the correct region is selected\. On the n
 
 1. Choose **Save changes**\.
 
+   
+
 ## Change deployment group settings \(CLI\)<a name="deployment-groups-edit-cli"></a>
 
 To use the AWS CLI to change deployment group settings, call the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command, specifying:

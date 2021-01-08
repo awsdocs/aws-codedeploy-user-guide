@@ -20,6 +20,7 @@ Follow these instructions to prepare an IAM user to use CodeDeploy:
            "ecs:*",
            "elasticloadbalancing:*",
            "iam:AddRoleToInstanceProfile",
+           "iam:AttachRolePolicy",
            "iam:CreateInstanceProfile",
            "iam:CreateRole",
            "iam:DeleteInstanceProfile",

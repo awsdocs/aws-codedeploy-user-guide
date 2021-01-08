@@ -2,6 +2,8 @@
 
 In this step, you will use the CodeDeploy console or the AWS CLI to create an application and deployment group to use to deploy the sample revision from your GitHub repository\.
 
+
+
 ## Create an application and deployment group \(console\)<a name="tutorials-github-create-application-console"></a>
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
@@ -9,6 +11,8 @@ In this step, you will use the CodeDeploy console or the AWS CLI to create an ap
 Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
+
+   
 
 1. Choose **Create application**, and then select **Custom application**\.
 

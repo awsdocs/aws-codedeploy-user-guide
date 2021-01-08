@@ -140,6 +140,8 @@ To create an AppSpec file:
 
 1. If you use a text editor, save the file\. If you use the AWS CLI to create your deployment, reference the AppSpec file if it's on your hard drive or in an Amazon S3 bucket\. If you use the console, you must push your AppSpec file to Amazon S3\.
 
+
+
 ### YAML AppSpec file template for an AWS Lambda deployment with instructions<a name="app-spec-template-yaml-lambda"></a>
 
 For information about lifecycle events to use in the hooks section, see [AppSpec 'hooks' section for an AWS Lambda deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-lambda)\.

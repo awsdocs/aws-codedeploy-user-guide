@@ -18,6 +18,8 @@ To manually delete the associated IAM user, see [Deleting an IAM user from your 
 
 **To remove on\-premises instance tags from an on\-premises instance \(CLI\)**
 + Call the [remove\-tags\-from\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/remove-tags-from-on-premises-instances.html), specifying:
+
+   
   + The names that uniquely identify the on\-premises instance \(with the `--instance-names` option\)\. 
   + The names and values of the tags you want to remove \(with the `--tags` option\)\.
 

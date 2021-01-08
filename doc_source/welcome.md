@@ -52,6 +52,8 @@ CodeDeploy offers these benefits:
 + **Easy to adopt**\. CodeDeploy is platform\-agnostic and works with any application\. You can easily reuse your setup code\. CodeDeploy can also integrate with your software release process or continuous delivery toolchain\.
 + **Concurrent deployments**\. If you have more than one application that uses the EC2/On\-Premises compute platform, CodeDeploy can deploy them concurrently to the same set of instances\.
 
+
+
 ## Overview of CodeDeploy compute platforms<a name="compute-platform"></a>
 
 CodeDeploy is able to deploy applications to three compute platforms:
@@ -154,6 +156,8 @@ A blue/green deployment with AWS CloudFormation can use one of the following met
 Supported for Amazon ECS blue/green deployments only\.
 
 How you configure a blue/green deployment depends on which compute platform your deployment is using\.
+
+
 
 #### Blue/Green deployment on an AWS Lambda compute platform<a name="blue-green-lambda-compute-type"></a>
 

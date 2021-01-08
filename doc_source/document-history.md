@@ -2,10 +2,12 @@
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.
 + **API version: **2014\-10\-06
-+ **Latest documentation update: **September 23, 2020
++ **Latest documentation update: **December 22, 2020
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [CodeDeploy agent v1\.3\.1 release](#document-history) | The AWS CodeDeploy agent was updated to version 1\.3\.1\. For more information, see [ Version History of the CodeDeploy Agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | December 22, 2020 | 
+| [CodeDeploy agent v1\.3\.0 release](#document-history) | The AWS CodeDeploy agent was updated to version 1\.3\.0\. For more information, see [ Version History of the CodeDeploy Agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | November 10, 2020 | 
 | [CodeDeploy agent v1\.2\.1 release](#document-history) | The AWS CodeDeploy agent was updated to version 1\.2\.1\. For more information, see [ Version History of the CodeDeploy Agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | September 23, 2020 | 
 | [CodeDeploy supports Amazon VPC endpoints powered by AWS PrivateLink](#document-history) | If you use Amazon Virtual Private Cloud \(Amazon VPC\) to host your AWS resources, you can establish a private connection between your VPC and CodeDeploy\. You can use this connection to enable CodeDeploy to communicate with your resources on your VPC without going through the public internet\. For more information, see [Use CodeDeploy with Amazon Virtual Private Cloud](https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints)\. | August 11, 2020 | 
 | [Updated CodeDeploy service limits](#document-history) | Updated the limit for both number of applications per account and number of deployment groups per application to 1000\. For more information on CodeDeploy service limits, see [CodeDeploy limits](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html)\. | August 6, 2020 | 

@@ -39,6 +39,8 @@ This option corresponds to ignorePollAlarmFailure in the [AlarmConfiguration](ht
 
 For more information, see [Monitoring deployments with CloudWatch alarms in CodeDeploy](monitoring-create-alarms.md)\.
 
+
+
 **Automatic rollbacks**: You can configure a deployment group or deployment to automatically roll back when a deployment fails or when a monitoring threshold you specify is met\. In this case, the last known good version of an application revision is deployed\. You can configure optional settings for a deployment group when you use the console to create an application, create a deployment group, or update a deployment group\. When you create a new deployment, you can also choose to override the automatic rollback configuration that were specified for the deployment group\. 
 + You can enable deployments to roll back to the most recent known good revision when something goes wrong by choosing one or both of the following:
   + **Roll back when a deployment fails**\. CodeDeploy will redeploy the last known good revision as a new deployment\.

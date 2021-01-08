@@ -4,6 +4,8 @@ A deployment configuration is a set of rules and success and failure conditions 
 
 ## Deployment configurations on an EC2/on\-premises compute platform<a name="deployment-configuration-server"></a>
 
+
+
 When you deploy to an EC2/On\-Premises compute platform, the deployment configuration specifies, through the use of a minimum healthy hosts value, the number or percentage of instances that must remain available at any time during a deployment\.
 
 You can use one of the three predefined deployment configurations provided by AWS or create a custom deployment configuration\. For more information about creating custom deployment configurations, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\. If you don't specify a deployment configuration, CodeDeploy uses the CodeDeployDefault\.OneAtATime deployment configuration\.

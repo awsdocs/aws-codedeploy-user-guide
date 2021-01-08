@@ -2,6 +2,8 @@
 
 In this step, you use the CodeDeploy console or the AWS CLI to deploy the sample revision from your GitHub repository to your instance\. 
 
+
+
 ## To deploy the revision \(console\)<a name="tutorials-github-deploy-application-console"></a>
 
 1. On the **Deployment group details** page, choose **Create deployment**\.
@@ -52,6 +54,8 @@ Before you can call any AWS CLI commands that interact with GitHub \(such as the
 Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
+
+   
 
 1. Choose **CodeDeployGitHubDemo\-App**\.
 

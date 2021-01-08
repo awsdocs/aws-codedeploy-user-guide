@@ -217,6 +217,8 @@ Add a configuration file to the on\-premises instance, using root or administrat
    + *secret\-access\-key* is the corresponding IAM user's secret access key you noted in [Step 1: Create an IAM user for the on\-premises instance](#register-on-premises-instance-iam-user-arn-1) or [Step 3: Get the IAM user credentials](#register-on-premises-instance-iam-user-arn-3)\.
    + *iam\-user\-arn* is the IAM user's ARN you noted earlier in [Step 1: Create an IAM user for the on\-premises instance](#register-on-premises-instance-iam-user-arn-1)\. 
    + *supported\-region* is the identifier of a region supported by CodeDeploy where your CodeDeploy applications, deployment groups, and application revisions are located \(for example, `us-west-2`\)\. For a list of regions, see [Region and endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in the *AWS General Reference*\.
+
+    
 **Important**  
 If you chose **Delete** next to one of the access keys in [Step 3: Get the IAM user credentials](#register-on-premises-instance-iam-user-arn-3), and your on\-premises instance is already using the associated access key ID and secret access key, you will need to follow the instructions in [Step 4: Add a configuration file to the on\-premises instance](#register-on-premises-instance-iam-user-arn-4) to specify a different access key ID and secret access key associated with this IAM user\. Otherwise, any deployments to your on\-premises instance might be stuck in a perpetual pending state or fail altogether\.
 
@@ -231,6 +233,7 @@ CodeDeploy commands for working with on\-premises instances became available in 
 1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS command line interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
 **Important**  
 As you configure the AWS CLI \(for example, by calling the aws configure command\), be sure to specify the secret key ID and secret access key of an IAM user that has, at minimum, the following AWS access permissions in addition to the access permissions specified in the [Prerequisites for configuring an on\-premises instance](instances-on-premises-prerequisites.md)\. This makes it possible for you to download and install the CodeDeploy agent on the on\-premises instance:  
+   
 
    ```
    {
@@ -324,6 +327,8 @@ You can use either the AWS CLI or the CodeDeploy console to tag the on\-premises
 
 **To tag the on\-premises instance \(CLI\)**
 + Call the [add\-tags\-to\-on\-premises\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/add-tags-to-on-premises-instances.html) command, specifying:
+
+   
   + The name that uniquely identifies the on\-premises instance \(with the `--instance-names` option\)\. 
   + The name of the on\-premises instance tag key and tag value you want to use \(with the `--tags` option\)\. You must specify both a name and value\. CodeDeploy does not allow on\-premises instance tags that have values only\.
 

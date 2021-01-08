@@ -1,5 +1,7 @@
 # Create an AWS Lambda Compute Platform deployment \(CLI\)<a name="deployments-create-lambda-cli"></a>
 
+
+
 After you have created the application and revision \(in AWS Lambda deployments, this is the AppSpec file\):
 
 Call the [create\-deployment](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment.html) command, specifying:

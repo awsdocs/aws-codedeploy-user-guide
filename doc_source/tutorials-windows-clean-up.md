@@ -93,6 +93,8 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
+   
+
 1. Choose **`HelloWorld_App`**\.
 
 1. Choose **Delete application**\.

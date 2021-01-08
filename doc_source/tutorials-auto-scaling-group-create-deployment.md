@@ -41,6 +41,8 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
 
    **For Amazon Linux and RHEL Amazon EC2 instances, calling from local Linux, macOS, or Unix machines**
 
+    
+
    ```
    aws deploy create-deployment \
      --application-name SimpleDemoApp \
@@ -53,6 +55,8 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
 
    **For Amazon Linux and RHEL Amazon EC2 instances, calling from local Windows machines**
 
+    
+
    ```
    aws deploy create-deployment --application-name SimpleDemoApp --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name SimpleDemoDG --s3-location bucket=bucket-name,bundleType=zip,key=samples/latest/SampleApp_Linux.zip
    ```
@@ -60,6 +64,8 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
    *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2`\. For a list of bucket names, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
    **For Windows Server Amazon EC2 instances, calling from local Linux, macOS, or Unix machines**
+
+    
 
    ```
    aws deploy create-deployment \

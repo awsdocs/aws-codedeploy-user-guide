@@ -2,6 +2,8 @@
 
 To use the CodeDeploy console to create an application for an in\-place deployment:
 
+ 
+
 **Warning**  
 Do not follow these steps if:  
 You have not prepared your instances to be used in CodeDeploy deployments\. To set up your instances, follow the instructions in [Working with instances for CodeDeploy](instances.md), and then follow the steps in this topic\.

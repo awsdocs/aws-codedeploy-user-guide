@@ -16,3 +16,5 @@ To follow along in this tutorial:
   + Source: Anywhere
 
   This is required to view your application and verify deployment success\. For information on how to create a Security Group, see [Creating a security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) in the *Amazon EC2 user guide*\.
+
+ 
