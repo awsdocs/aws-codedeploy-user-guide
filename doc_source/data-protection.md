@@ -20,14 +20,14 @@ Currently, communication from the agent to the service requires an outbound inte
 
 The CodeDeploy agent supports HTTP proxies\.
 
-AWS PrivateLink for CodeDeploy is not currently available\. If this is a feature you are interested in, ask your account team to open a product feature request on your behalf\.
+Amazon VPC endpoints, powered by AWS PrivateLink, are available for CodeDeploy in certain regions\. For details, see [Use CodeDeploy with Amazon Virtual Private Cloud](vpc-endpoints.md)\.
 
 **Note**  
 The CodeDeploy agent is required only if you deploy to an Amazon EC2/On\-premises compute platform\. The agent is not required for deployments that use the Amazon ECS or AWS Lambda compute platform\.
 
 ## Encryption at rest<a name="encryption-at-rest"></a>
 
-Customer code is not stored in CodeDeploy\. As a deployment service, CodeDeploy is dispatching commands to the CodeDeploy agent running on EC2 instances or on\-premises servers\. The CodeDeploy agent then executes the commands using TLS\. Service model data for deployments, deployment configuration, deployment groups, applications, and application revisions are stored in Amazon DynamoDB and encrypted at rest using an AWS KMS key managed by Amazon DynamoDB\. For more information, see [Amazon DynamoDB encryption at rest](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/EncryptionAtRest.html)\.
+Customer code is not stored in CodeDeploy\. As a deployment service, CodeDeploy is dispatching commands to the CodeDeploy agent running on EC2 instances or on\-premises servers\. The CodeDeploy agent then executes the commands using TLS\. Service model data for deployments, deployment configuration, deployment groups, applications, and application revisions are stored in Amazon DynamoDB and encrypted at rest using an AWS owned CMK, owned and managed by CodeDeploy\. For more information, see [AWS owned CMKs](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)\.
 
 ## Encryption in transit<a name="encryption-in-transit"></a>
 
@@ -35,4 +35,4 @@ The CodeDeploy agent initiates all communication with CodeDeploy over port 443\.
 
 ## Encryption key management<a name="key-management"></a>
 
-There are no encryption keys for customers to manage\. The CodeDeploy service model data is encrypted using an AWS KMS key managed by Amazon DynamoDB\.
+There are no encryption keys for you to manage\. The CodeDeploy service model data is encrypted using an AWS owned CMK, owned and managed by CodeDeploy\. For more information, see [AWS owned CMKs](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)\.

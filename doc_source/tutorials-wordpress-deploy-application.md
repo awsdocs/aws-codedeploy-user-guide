@@ -42,7 +42,7 @@ The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference
    aws ssm create-association \
      --name AWS-ConfigureAWSPackage \
      --targets Key=tag:Name,Values=CodeDeployDemo \
-      --parameters action=Install, name=AWSCodeDeployAgent \
+     --parameters action=Install,name=AWSCodeDeployAgent \
      --schedule-expression "cron(0 2 ? * SUN *)"
    ```
 

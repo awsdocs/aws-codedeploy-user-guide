@@ -12,25 +12,33 @@ The following steps are for users of Amazon VPC\. For more information, see [Get
 
 ## Availability<a name="codecommit-interface-VPC-availability"></a>
 
-CodeDeploy currently supports VPC endpoints in the following AWS Regions:
+**Note**  
+Currently, VPC endpoints are not supported by CodeDeploy agents on Windows\.
+
+CodeDeploy supports VPC endpoints in the following AWS Regions:
 + US East \(Ohio\) 
 + US East \(N\. Virginia\)
 + US West \(N\. California\)
 + US West \(Oregon\)
-+ Europe \(Ireland\)
-+ Europe \(London\)
-+ Europe \(Paris\)
-+ Europe \(Frankfurt\)
-+ Asia Pacific \(Tokyo\)
++ Africa \(Cape Town\)
++ Asia Pacific \(Hong Kong\)
++ Asia Pacific \(Mumbai\)
++ Asia Pacific \(Osaka\-Local\)
 + Asia Pacific \(Seoul\)
 + Asia Pacific \(Singapore\)
 + Asia Pacific \(Sydney\)
-+ Asia Pacific \(Mumbai\)
-+ South America \(São Paulo\)
++ Asia Pacific \(Tokyo\)
 + Canada \(Central\)
++ China \(Beijing\)
++ China \(Ningxia\)
++ Europe \(Frankfurt\)
++ Europe \(Ireland\)
++ Europe \(London\)
++ Europe \(Milan\)
++ Europe \(Paris\)
 + Europe \(Stockholm\)
 + Middle East \(Bahrain\)
-+ Asia Pacific \(Hong Kong\)
++ South America \(São Paulo\)
 
 ## Create VPC endpoints for CodeDeploy<a name="create-vpc-endpoint-for-codedeploy"></a>
 

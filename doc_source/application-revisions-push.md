@@ -108,7 +108,7 @@ aws deploy create-deployment \
  In Windows: 
 
 ```
-aws deploy create-deployment --application-name WordPress_App --deployment-config-name your-deployment-config-name --your-deployment-group-name your-deployment-group-name --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
+aws deploy create-deployment --application-name WordPress_App --deployment-config-name your-deployment-config-name --deployment-group-name your-deployment-group-name --s3-location bucket=codedeploydemobucket,key=WordPressApp.zip,bundleType=zip
 ```
 
  For more information, see [Create a deployment with CodeDeploy](deployments-create.md)\. 

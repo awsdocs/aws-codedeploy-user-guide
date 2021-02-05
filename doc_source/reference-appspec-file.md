@@ -5,7 +5,7 @@ This section is a reference only\. For a conceptual overview of the AppSpec file
 The application specification file \(AppSpec file\) is a [YAML](http://www.yaml.org)\-formatted or JSON\-formatted file used by CodeDeploy to manage a deployment\.
 
 **Note**  
- The name of the AppSpec file for an EC2/On\-Premises deployment must be `appspec.yml` or `appspec.json`\.
+ The name of the AppSpec file for an EC2/On\-Premises deployment must be `appspec.yml`\.
 
 **Topics**
 + [AppSpec files on an Amazon ECS compute platform](#appspec-reference-ecs)
@@ -34,11 +34,9 @@ An AppSpec file can be YAML\-formatted or JSON\-formatted\. You can also enter t
 
 ## AppSpec files on an EC2/on\-premises compute platform<a name="appspec-reference-server"></a>
 
- If your application uses the EC2/On\-Premises compute platform, the AppSpec file is named appspec\.yml\. It is used by CodeDeploy to determine:
+ If your application uses the EC2/On\-Premises compute platform, the AppSpec file must be a YAML\-formatted file named `appspec.yml` and it must be placed in the root of the directory structure of an application's source code\. Otherwise, deployments fail\. It is used by CodeDeploy to determine:
 + What it should install onto your instances from your application revision in Amazon S3 or GitHub\.
 + Which lifecycle event hooks to run in response to deployment lifecycle events\.
-
-An AppSpec file must be a YAML\-formatted file named `appspec.yml` and it must be placed in the root of the directory structure of an application's source code\. Otherwise, deployments fail\.
 
 After you have a completed AppSpec file, you bundle it, along with the content to deploy, into an archive file \(zip, tar, or compressed tar\)\. For more information, see [Working with application revisions for CodeDeploy](application-revisions.md)\.
 

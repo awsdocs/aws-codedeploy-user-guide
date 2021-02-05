@@ -17,9 +17,9 @@ The `source` instruction identifies a file or directory from your revision to co
 + If `source` refers to a directory, then all files in the directory are copied to the instance\.
 + If `source` is a single slash \("/" for Amazon Linux, RHEL, and Ubuntu Server instances, or "\\" for Windows Server instances\), then all of the files from your revision are copied to the instance\.
 
-The paths used in `source` are relative paths, starting from the root of your revision\.
+The paths used in `source` are relative to the `appspec.yml` file, which should be at the root of your revision\. For details on the file structure of a revision, see [Plan a revision for CodeDeploy](application-revisions-plan.md)\.
 
-The `destination` instruction identifies the location on the instance where the files should be copied\. This must be a fully qualified path\.
+The `destination` instruction identifies the location on the instance where the files should be copied\. This must be a fully qualified path such as `/root/destination/directory` \(on Linux, RHEL, and Ubuntu\) or `c:\destination\folder` \(on Windows\)\.
 
 `source` and `destination` are each specified with a string\.
 

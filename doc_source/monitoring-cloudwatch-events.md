@@ -4,7 +4,7 @@ You can use Amazon CloudWatch Events to detect and react to changes in the state
 + AWS Lambda functions
 +  Kinesis streams
 + Amazon SQS queues
-+ Built\-in targets \(CloudWatch alarm actions\)
++ Built\-in targets \(`EC2 CreateSnapshot API call`, `EC2 RebootInstances API call`, `EC2 StopInstances API call` , and `EC2 TerminateInstances API call`\)
 + Amazon SNS topics
 
 The following are some use cases:

@@ -8,7 +8,19 @@
 
 **To fix an invalid GitHub OAuth token**
 
-1.  Use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html) to remove the old token\. 
+1.  Remove the old token using one of the following methods:
+   + To remove the old token using the API, use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\.
+   + To remove the old token using the AWS Command Line Interface:
+
+     1. Go to the computer where the token resides\.
+
+     1. Make sure the AWS CLI is installed on this computer\. For installation instructions, see [Installing, updating, and uninstalling the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) in the *AWS Command Line Interface User Guide*
+
+     1. Enter the following command on the computer where the token resides:
+
+        **aws delete\-git\-hub\-account\-token**
+
+        For details on the command syntax, see [delete\-git\-hub\-account\-token](https://docs.aws.amazon.com/cli/latest/reference/deploy/delete-git-hub-account-token.html)\.
 
 1.  Add a new OAuth token\. For more information, see [Integrating CodeDeploy with GitHub](integrations-partners-github.md)\. 
 
