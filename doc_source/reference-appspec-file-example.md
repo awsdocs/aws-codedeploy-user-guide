@@ -30,7 +30,7 @@ Resources:
             AssignPublicIp: "ENABLED"
 Hooks:
   - BeforeInstall: "LambdaFunctionToValidateBeforeInstall"
-  - AfterInstall: "LambdaFunctionToValidateAfterTraffic"
+  - AfterInstall: "LambdaFunctionToValidateAfterInstall"
   - AfterAllowTestTraffic: "LambdaFunctionToValidateAfterTestTrafficStarts"
   - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeAllowingProductionTraffic"
   - AfterAllowTraffic: "LambdaFunctionToValidateAfterAllowingProductionTraffic"
@@ -73,7 +73,7 @@ Hooks:
 			"BeforeInstall": "LambdaFunctionToValidateBeforeInstall"
 		},
 		{
-			"AfterInstall": "LambdaFunctionToValidateAfterTraffic"
+			"AfterInstall": "LambdaFunctionToValidateAfterInstall"
 		},
 		{
 			"AfterAllowTestTraffic": "LambdaFunctionToValidateAfterTestTrafficStarts"
@@ -92,7 +92,7 @@ Here is the sequence of events during deployment:
 
 1.  Before the updated Amazon ECS application is installed on the replacement task set, the Lambda function called `LambdaFunctionToValidateBeforeInstall` runs\. 
 
-1.  After the updated Amazon ECS application is installed on the replacement task set, but before it receives any traffic, the Lambda function called `LambdaFunctionToValidateAfterTraffic` runs\. 
+1.  After the updated Amazon ECS application is installed on the replacement task set, but before it receives any traffic, the Lambda function called `LambdaFunctionToValidateAfterInstall` runs\. 
 
 1.  After the Amazon ECS application on the replacement task set starts receiving traffic from the test listener, the Lambda function called `LambdaFunctionToValidateAfterTestTrafficStarts` runs\. This function likely runs validation tests to determine if the deployment continues\. If you do not specify a test listener in your deployment group, this hook is ignored\. 
 
