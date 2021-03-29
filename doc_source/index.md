@@ -1,7 +1,7 @@
 # AWS CodeDeploy User Guide
 
 -----
-*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -232,7 +232,7 @@ Amazon's trademarks and trade dress may not be used in
    + [CodeDeploy limits](limits.md)
 + [Troubleshooting CodeDeploy](troubleshooting.md)
    + [General troubleshooting issues](troubleshooting-general.md)
-   + [Troubleshoot EC2/On-Premises Deployment Issues](troubleshooting-deployments.md)
+   + [Troubleshoot EC2/On-Premises deployment issues](troubleshooting-deployments.md)
    + [Troubleshoot AWS Lambda deployment issues](troubleshooting-deployments-lambda.md)
    + [Troubleshoot deployment group issues](troubleshooting-deployment-groups.md)
    + [Troubleshoot instance issues](troubleshooting-ec2-instances.md)

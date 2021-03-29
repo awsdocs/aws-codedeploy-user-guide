@@ -42,7 +42,7 @@ If you want to use the same settings used in another deployment group \(includin
 
 1. Depending on your choice in step 10, do one of the following:
    + If you chose **Automatically copy Amazon EC2 Auto Scaling group**: In **Amazon EC2 Auto Scaling group**, choose or enter the name of the Amazon EC2 Auto Scaling group you want to use as a template for the Amazon EC2 Auto Scaling group for the instances in your replacement environment\. The number of currently healthy instances in the Amazon EC2 Auto Scaling group you choose is created in your replacement environment\.
-   + If you chose **Manually provision instances**: Enable **Amazon EC2 Auto Scaling groups**, **Amazon EC2 intances**, or both to specify instances to add to this deployment group\. Enter Amazon EC2 tag values or Amazon EC2 Auto Scaling group names to identify the instances in your original environment \(that is, the instances you want to replace or that are running the current application revision\)\. 
+   + If you chose **Manually provision instances**: Enable **Amazon EC2 Auto Scaling groups**, **Amazon EC2 instances**, or both to specify instances to add to this deployment group\. Enter Amazon EC2 tag values or Amazon EC2 Auto Scaling group names to identify the instances in your original environment \(that is, the instances you want to replace or that are running the current application revision\)\. 
 
 1. \(Optional\) In **Load balancer**, enable **Enable load balancing**, and then choose an existing Classic Load Balancer, Application Load Balancer, or Network Load Balancer to manage traffic to the instances during the deployment processes\.
 

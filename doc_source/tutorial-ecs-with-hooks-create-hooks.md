@@ -50,7 +50,7 @@ In this section, you implement one Lambda function for your Amazon ECS deploymen
     		status: validationTestResult // status can be 'Succeeded' or 'Failed'
     	};
     	
-    	// Pass AWS CodeDeploy the prepared validation test results.
+    	// Pass CodeDeploy the prepared validation test results.
     	codedeploy.putLifecycleEventHookExecutionStatus(params, function(err, data) {
     		if (err) {
     			// Validation failed.

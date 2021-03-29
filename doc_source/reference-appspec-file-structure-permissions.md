@@ -41,9 +41,20 @@ The instructions are as follows:
 + `group` – Optional\. The name of the group for `object`\. If not specified, all existing groups applied to the original file or directory/folder structure remain unchanged after the copy operation\.
 
   Specify `group` with a string\.
-+ `mode` – Optional\. An integer specifying the octal mode for the permissions to be applied to `object`\. For example, **644** represents read and write permissions for the owner, read\-only permissions for the group, and read\-only permissions for all other users\. **4755** represents the setuid attribute is set, full control permissions for the owner, read and execute permissions for the group, and read and execute permissions for all other users\. \(For more examples, see the Linux `chmod` command documentation\.\) If `mode` is not specified, all existing modes applied to the original file or directory/folder structure remain unchanged after the copy operation\.
++ `mode` – Optional\. A numeric value specifying the permissions to be applied to `object`\. The mode setting follows the [Linux chmod command](https://linuxize.com/post/chmod-command-in-linux) syntax\.
+**Important**  
+If the value includes a leading zero, you must surround it with double\-quotes, or remove the leading zero so that only three digits remain\.
+**Note**  
+Symbolic notation such as **u\+x** is not supported for the `mode` setting\.
 
-  Specify `mode` with a string\.
+  Examples:
+  + `mode: "0644"` gives read and write permissions to the owner of the object \(6\), read\-only permissions to the group \(4\), and read\-only permissions to all other users \(4\)\.
+  + `mode: 644` grants the same permissions as `mode: "0644"`\.
+  + `mode: 4755` sets the setuid attribute \(4\), gives full control permissions to the owner \(7\), gives read and execute permissions to the group \(5\), and gives read and execute permissions to all other users \(5\)\.
+
+    For more examples, see the Linux chmod command documentation\.
+
+    If mode is not specified, all existing modes applied to the original file or folder structure remain unchanged after the copy operation\.
 + `acls` – Optional\. A list of character strings representing one or more access control list \(ACL\) entries applied to `object`\. For example, **u:bob:rw** represents read and write permissions for user **bob**\. \(For more examples, see ACL entry format examples in the Linux `setfacl` command documentation\.\) You can specify multiple ACL entries\. If `acls` is not specified, any existing ACLs applied to the original file or directory/folder structure remain unchanged after the copy operation\. These replace any existing ACLs\.
 
   Specify an `acls` with a dash \(\-\), followed by a space, and then a string \(for example, `- u:jane:rw`\)\. If you have more than one ACL, each is specified on a separate line\.

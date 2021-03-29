@@ -19,9 +19,13 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
 
-1. In the list of applications, choose the button next to the application you want to delete, and then choose **Delete**\.
+1. In the list of applications, choose the the application you want to delete\.
 
-1. When prompted, enter the name of the application to confirm you want to delete it, and then choose **Delete**\. 
+   A page appears containing details about the application\.
+
+1. Choose **Delete application** on the top\-right\.
+
+1. When prompted, enter **delete** to confirm you want to delete the application, and then choose **Delete**\. 
 
 ## Delete an application \(AWS CLI\)<a name="applications-delete-cli"></a>
 

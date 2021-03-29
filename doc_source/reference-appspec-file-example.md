@@ -28,9 +28,16 @@ Resources:
             Subnets: ["subnet-1234abcd","subnet-5678abcd"]
             SecurityGroups: ["sg-12345678"]
             AssignPublicIp: "ENABLED"
+        CapacityProviderStrategy:
+          - Base: 1
+            CapacityProvider: "FARGATE_SPOT"
+            Weight: 2
+          - Base: 0
+            CapacityProvider: "FARGATE"
+            Weight: 1
 Hooks:
   - BeforeInstall: "LambdaFunctionToValidateBeforeInstall"
-  - AfterInstall: "LambdaFunctionToValidateAfterTraffic"
+  - AfterInstall: "LambdaFunctionToValidateAfterInstall"
   - AfterAllowTestTraffic: "LambdaFunctionToValidateAfterTestTrafficStarts"
   - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeAllowingProductionTraffic"
   - AfterAllowTraffic: "LambdaFunctionToValidateAfterAllowingProductionTraffic"
@@ -40,51 +47,63 @@ Hooks:
 
 ```
 {
-	"version": 0.0,
-	"Resources": [
-		{
-			"TargetService": {
-				"Type": "AWS::ECS::Service",
-				"Properties": {
-					"TaskDefinition": "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1",
-					"LoadBalancerInfo": {
-						"ContainerName": "SampleApplicationName",
-						"ContainerPort": 80
-					},
-					"PlatformVersion": "LATEST",
-					"NetworkConfiguration": {
-						"AwsvpcConfiguration": {
-							"Subnets": [
-								"subnet-1234abcd",
-								"subnet-5678abcd"
-							],
-							"SecurityGroups": [
-								"sg-12345678"
-							],
-							"AssignPublicIp": "ENABLED"
-						}
-					}
-				}				
-			}
-		}
-	],
-	"Hooks": [
-		{
-			"BeforeInstall": "LambdaFunctionToValidateBeforeInstall"
-		},
-		{
-			"AfterInstall": "LambdaFunctionToValidateAfterTraffic"
-		},
-		{
-			"AfterAllowTestTraffic": "LambdaFunctionToValidateAfterTestTrafficStarts"
-		},
-		{
-			"BeforeAllowTraffic": "LambdaFunctionToValidateBeforeAllowingProductionTraffic"
-		},
-		{
-			"AfterAllowTraffic": "LambdaFunctionToValidateAfterAllowingProductionTraffic"
-		}
-	]
+    "version": 0.0,
+    "Resources": [
+        {
+            "TargetService": {
+                "Type": "AWS::ECS::Service",
+                "Properties": {
+                    "TaskDefinition": "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1",
+                    "LoadBalancerInfo": {
+                        "ContainerName": "SampleApplicationName",
+                        "ContainerPort": 80
+                    },
+                    "PlatformVersion": "LATEST",
+                    "NetworkConfiguration": {
+                        "AwsvpcConfiguration": {
+                            "Subnets": [
+                                "subnet-1234abcd",
+                                "subnet-5678abcd"
+                            ],
+                            "SecurityGroups": [
+                                "sg-12345678"
+                            ],
+                            "AssignPublicIp": "ENABLED"
+                        }
+                    },
+                    "CapacityProviderStrategy": [
+                        {
+                            "Base" : 1,
+                            "CapacityProvider" : "FARGATE_SPOT",
+                            "Weight" : 2
+                        },
+                        {
+                            "Base" : 0,
+                            "CapacityProvider" : "FARGATE",
+                            "Weight" : 1
+                        }
+                    ]
+                }               
+            }
+        }
+    ],
+    "Hooks": [
+        {
+            "BeforeInstall": "LambdaFunctionToValidateBeforeInstall"
+        },
+        {
+            "AfterInstall": "LambdaFunctionToValidateAfterInstall"
+        },
+        {
+            "AfterAllowTestTraffic": "LambdaFunctionToValidateAfterTestTrafficStarts"
+        },
+        {
+            "BeforeAllowTraffic": "LambdaFunctionToValidateBeforeAllowingProductionTraffic"
+        },
+        {
+            "AfterAllowTraffic": "LambdaFunctionToValidateAfterAllowingProductionTraffic"
+        }
+    ]
 }
 ```
 
@@ -92,7 +111,7 @@ Here is the sequence of events during deployment:
 
 1.  Before the updated Amazon ECS application is installed on the replacement task set, the Lambda function called `LambdaFunctionToValidateBeforeInstall` runs\. 
 
-1.  After the updated Amazon ECS application is installed on the replacement task set, but before it receives any traffic, the Lambda function called `LambdaFunctionToValidateAfterTraffic` runs\. 
+1.  After the updated Amazon ECS application is installed on the replacement task set, but before it receives any traffic, the Lambda function called `LambdaFunctionToValidateAfterInstall` runs\. 
 
 1.  After the Amazon ECS application on the replacement task set starts receiving traffic from the test listener, the Lambda function called `LambdaFunctionToValidateAfterTestTrafficStarts` runs\. This function likely runs validation tests to determine if the deployment continues\. If you do not specify a test listener in your deployment group, this hook is ignored\. 
 

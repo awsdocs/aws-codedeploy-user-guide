@@ -66,7 +66,7 @@ Create the file for your `afterAllowTraffic` hook Lambda function\.
        				status: lambdaResult // status can be 'Succeeded' or 'Failed'
        			};
        			
-       			// Pass AWS CodeDeploy the prepared validation test results.
+       			// Pass CodeDeploy the prepared validation test results.
        			codedeploy.putLifecycleEventHookExecutionStatus(params, function(err, data) {
        				if (err) {
        					// Validation failed.

@@ -3,95 +3,102 @@
 **Note**  
 We recommend installing the CodeDeploy agent with AWS Systems Manager to be able to configure scheduled updates of the agent\. For more information, see [Install the CodeDeploy agent using AWS Systems Manager](codedeploy-agent-operations-install-ssm.md)\.
 
-Sign in to the instance, and run the following commands, one at a time\. 
+**To install the CodeDeploy agent on Ubuntu Server**
 
-**Note**  
-In the fifth command, `/home/ubuntu` represents the default user name for an Ubuntu Server instance\. If your instance was created using a custom AMI, the AMI owner might have specified a different default user name\. 
+1. Sign in to the instance\.
 
-```
-sudo apt-get update
-```
+1. Do one of the following, depending on the version of Ubuntu Server:
+   + On Ubuntu Server 14\.04, enter the following commands, one after the other:
 
-On Ubuntu Server 14\.04:
-+ 
+     ```
+     sudo apt-get update
+     ```
 
-  ```
-  sudo apt-get install ruby2.0
-  ```
+     ```
+     sudo apt-get install ruby2.0
+     ```
 
-On Ubuntu Server 16\.04 or 18\.04:
-+ 
+     ```
+     sudo apt-get install wget
+     ```
+   + On Ubuntu Server 16\.04 and later, enter the following commands, one after the other:
 
-  ```
-  sudo apt-get install ruby
-  ```
+     ```
+     sudo apt update
+     ```
 
-```
-sudo apt-get install wget
-```
+     ```
+     sudo apt install ruby-full
+     ```
 
-```
-cd /home/ubuntu
-```
+     ```
+     sudo apt install wget
+     ```
 
-```
-wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
-```
+1. Enter the following command:
 
-*bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. *region\-identifier* is the identifier for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2` and replace *region\-identifier* with `us-east-2`\. For a list of bucket names and region identifiers, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
+   ```
+   cd /home/ubuntu
+   ```
 
-```
-chmod +x ./install
-```
+   */home/ubuntu* represents the default user name for an Ubuntu Server instance\. If your instance was created using a custom AMI, the AMI owner might have specified a different default user name\. 
 
-To install the latest version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
-+ 
+1. Enter the following command:
 
-  ```
-  sudo ./install auto
-  ```
+   ```
+   wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
+   ```
 
-To install the latest version of the CodeDeploy agent on Ubuntu 20\.04:
+   *bucket\-name* is the name of the Amazon S3 bucket that contains the CodeDeploy Resource Kit files for your region\. *region\-identifier* is the identifier for your region\. For example, for the US East \(Ohio\) Region, replace *bucket\-name* with `aws-codedeploy-us-east-2` and replace *region\-identifier* with `us-east-2`\. For a list of bucket names and region identifiers, see [Resource kit bucket names by Region](resource-kit.md#resource-kit-bucket-names)\.
 
-**Note**  
-Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
-+ 
+1. Enter the following command:
 
-  ```
-  sudo ./install auto > /tmp/logfile
-  ```
+   ```
+   chmod +x ./install
+   ```
 
-To install a specific version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
-+ 
+1. Do one of the following:
+   + To install the latest version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
 
-  ```
-  sudo ./install auto -v releases/codedeploy-agent-###.deb
-  ```
-
-To install a specific version of the CodeDeploy agent on Ubuntu 20\.04:
-
+     ```
+     sudo ./install auto
+     ```
+   + To install the latest version of the CodeDeploy agent on Ubuntu 20\.04:
 **Note**  
 Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
-+ 
 
-  ```
-  sudo ./install auto -v releases/codedeploy-agent-###.deb > /tmp/logfile
-  ```
+     ```
+     sudo ./install auto > /tmp/logfile
+     ```
+   + To install a specific version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
 
-To check that the service is running, run the following command:
+     ```
+     sudo ./install auto -v releases/codedeploy-agent-###.deb
+     ```
+   + To install a specific version of the CodeDeploy agent on Ubuntu 20\.04:
+**Note**  
+Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
 
-```
-sudo service codedeploy-agent status
-```
+     ```
+     sudo ./install auto -v releases/codedeploy-agent-###.deb > /tmp/logfile
+     ```
 
-If the CodeDeploy agent is installed and running, you should see a message like `The AWS CodeDeploy agent is running`\.
+**To check that the service is running**
 
-If you see a message like `error: No AWS CodeDeploy agent running`, start the service and run the following two commands, one at a time:
+1. Enter the following command:
 
-```
-sudo service codedeploy-agent start
-```
+   ```
+   sudo service codedeploy-agent status
+   ```
 
-```
-sudo service codedeploy-agent status
-```
+   If the CodeDeploy agent is installed and running, you should see a message like `The AWS CodeDeploy agent is running`\.
+
+1. If you see a message like `error: No AWS CodeDeploy agent running`, start the service and run the following two commands, one at a time:
+
+   ```
+   sudo service codedeploy-agent start
+   ```
+
+   ```
+   sudo service codedeploy-agent status
+   ```

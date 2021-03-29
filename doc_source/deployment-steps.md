@@ -3,7 +3,7 @@
 This topic provides information about the components and workflow of deployments in CodeDeploy\. The deployment process varies, depending on the compute platform or deployment method \(Lambda, Amazon ECS, EC2/On\-Premises, or through AWS CloudFormation\) that you use for your deployments\.
 
 **Note**  
- Deployments on an Amazon ECS or an AWS Lambda compute platform are not supported in the following AWS Regions: Asia Pacific \(Osaka\-Local\), AWS GovCloud \(US\-East\), AWS GovCloud \(US\-West\), China \(Beijing\), and China \(Ningxia\)\. 
+ Deployments on an Amazon ECS compute platform are not supported in the Asia Pacific \(Osaka\) region\. 
 
 **Topics**
 + [Deployments on an AWS Lambda Compute Platform](deployment-steps-lambda.md)

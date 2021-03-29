@@ -61,5 +61,5 @@ Another important part of monitoring CodeDeploy involves manually monitoring tho
 
 **Topics**
 + [Monitoring Deployments with Amazon CloudWatch Tools](monitoring-cloudwatch.md)
-+ [Monitoring Deployments with AWS CloudTrail](monitoring-cloudtrail.md)
++ [Monitoring Deployments](monitoring-cloudtrail.md)
 + [Monitoring Deployments with Amazon SNS Event Notifications](monitoring-sns-event-notifications.md)

@@ -2,11 +2,13 @@
 
 In this step, you will create or configure the instance that you will deploy the sample application to\. You can deploy to an Amazon EC2 instance or an on\-premises instance that is running one of the operating systems supported by CodeDeploy\. For information see [Operating systems supported by the CodeDeploy agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\. \(If you already have an instance configured for use in CodeDeploy deployments, skip to the next step\.\)
 
-To create or configure an instance, see [Working with instances for CodeDeploy](instances-ec2-create.md), and then return to this page\. 
+**To provision an instance**
 
-**Note**  
-To quickly create a new instance for this tutorial, we recommend using the Amazon EC2 console\. See [Launch an Amazon EC2 instance \(console\)](instances-ec2-create.md#instances-ec2-create-console)\.
+1. Follow the instructions in [Launch an Amazon EC2 instance \(console\)](instances-ec2-create.md#instances-ec2-create-console) to provision an instance\.
 
-To verify that the CodeDeploy agent is running on the instance, see [Verify the CodeDeploy agent is running](codedeploy-agent-operations-verify.md)\.
+1. When launching the instance, remember to specify a tag on the **Add tags** page\. For details on how to specify the tag, see [Launch an Amazon EC2 instance \(console\)](instances-ec2-create.md#instances-ec2-create-console)\.
 
-After you have successfully launched or configured the instance and verified the CodeDeploy agent is running, go to the next step\.
+**To verify that the CodeDeploy agent is running on the instance**
++ Follow the instructions in [Verify the CodeDeploy agent is running](codedeploy-agent-operations-verify.md) to verify that the agent is running\.
+
+After you have successfully provisioned the instance and verified the CodeDeploy agent is running, go to the next step\.

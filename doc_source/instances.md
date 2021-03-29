@@ -38,7 +38,7 @@ To launch or configure instances for use in deployments, choose from the followi
 To prepare Amazon EC2 instances in Amazon EC2 Auto Scaling groups, you must follow some additional steps\. For more information, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
 
 **Topics**
-+ [Tagging Instances for AWS CodeDeploy Deployments](instances-tagging.md)
++ [Tagging Instances for Deployments](instances-tagging.md)
 + [Working with Amazon EC2 Instances](instances-ec2.md)
 + [Working with On-Premises Instances](instances-on-premises.md)
 + [View Instance Details](instances-view-details.md)

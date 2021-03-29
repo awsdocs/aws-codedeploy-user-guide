@@ -7,7 +7,7 @@ You can identify the causes of many deployment failures by reviewing the log fil
 
 **Topics**
 + [General troubleshooting issues](troubleshooting-general.md)
-+ [Troubleshoot EC2/On\-Premises Deployment Issues](troubleshooting-deployments.md)
++ [Troubleshoot EC2/On\-Premises deployment issues](troubleshooting-deployments.md)
 + [Troubleshoot AWS Lambda deployment issues](troubleshooting-deployments-lambda.md)
 + [Troubleshoot deployment group issues](troubleshooting-deployment-groups.md)
 + [Troubleshoot instance issues](troubleshooting-ec2-instances.md)

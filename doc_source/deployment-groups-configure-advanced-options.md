@@ -49,3 +49,23 @@ For more information, see [Monitoring deployments with CloudWatch alarms in Code
 To temporarily ignore a rollback configuration, choose **Disable rollbacks**\. This choice is useful when you want to temporarily disable automatic rollbacks without having to set up the same configuration again later\.
 
   For more information, see [Redeploy and roll back a deployment with CodeDeploy](deployments-rollback-and-redeploy.md)\.
+
+**Automatic updates to outdated instances**: Under certain circumstances, CodeDeploy may deploy an outdated revision of your application to your Amazon EC2 instances\. For example, if your EC2 instances are launched into an Auto Scaling group \(ASG\) while a CodeDeploy deployment is underway, those instances receive the older revision of your application instead of the latest one\. To bring those instances up to date, CodeDeploy automatically starts a follow\-on deployment \(immediatedly after the first\) to update any outdated instances\. If you'd like to change this default behavior so that outdated EC2 instances are left at the older revision, you can do so through the CodeDeploy API or the AWS Command Line Interface \(CLI\)\.
+
+To configure automatic updates of outdated instances through the API, include the `outdatedInstancesStrategy` request parameter in the `UpdateDeploymentGroup` or `CreateDeploymentGroup` action\. For details, see the *AWS CodeDeploy API Reference*\.
+
+To configure the automatic updates through the AWS CLI, use one of the following commands:
+
+`aws deploy update-deployment-group arguments --outdated-instances-strategy UPDATE|IGNORE`
+
+Or\.\.\.
+
+`aws deploy create-deployment-group arguments --outdated-instances-strategy UPDATE|IGNORE`
+
+\.\.\.where *arguments* is replaced with the arguments required for your deployment, and *UPDATE\|IGNORE* is replaced with either `UPDATE` to enable auto\-updates, or `IGNORE` to disable them\.
+
+Example:
+
+`aws deploy update-deployment-group --application-name "MyApp" --current-deployment-group-name "MyDG" --region us-east-1 --outdated-instances-strategy IGNORE`
+
+For details on these AWS CLI commands, see the *AWS CLI Command Reference*\.

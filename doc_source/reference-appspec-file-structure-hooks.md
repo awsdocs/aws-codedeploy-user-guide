@@ -102,14 +102,14 @@ exports.handler = (event, context, callback) => {
     */
 
     // Prepare the validation test results with the deploymentId and
-    // the lifecycleEventHookExecutionId for AWS CodeDeploy.
+    // the lifecycleEventHookExecutionId for CodeDeploy.
     var params = {
         deploymentId: deploymentId,
         lifecycleEventHookExecutionId: lifecycleEventHookExecutionId,
         status: 'Succeeded' // status can be 'Succeeded' or 'Failed'
     };
     
-    // Pass AWS CodeDeploy the prepared validation test results.
+    // Pass CodeDeploy the prepared validation test results.
     codedeploy.putLifecycleEventHookExecutionStatus(params, function(err, data) {
         if (err) {
             // Validation failed.
@@ -197,14 +197,14 @@ exports.handler = (event, context, callback) => {
     */
 
     // Prepare the validation test results with the deploymentId and
-    // the lifecycleEventHookExecutionId for AWS CodeDeploy.
+    // the lifecycleEventHookExecutionId for CodeDeploy.
     var params = {
         deploymentId: deploymentId,
         lifecycleEventHookExecutionId: lifecycleEventHookExecutionId,
         status: 'Succeeded' // status can be 'Succeeded' or 'Failed'
     };
     
-    // Pass AWS CodeDeploy the prepared validation test results.
+    // Pass CodeDeploy the prepared validation test results.
     codedeploy.putLifecycleEventHookExecutionStatus(params, function(err, data) {
         if (err) {
             // Validation failed.
@@ -242,7 +242,7 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 
   `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions` folder on Windows Server Amazon EC2 instances\.
 
-  To troubleshoot a deployment that fails during the `ApplicationStop` deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
+  To troubleshoot a deployment that fails during the `ApplicationStop` deployment lifecycle event, see [Troubleshooting a failed ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
 + `DownloadBundle` – During this deployment lifecycle event, the CodeDeploy agent copies the application revision files to a temporary location: 
 
   `/opt/codedeploy-agent/deployment-root/deployment-group-id/deployment-id/deployment-archive` folder on Amazon Linux, Ubuntu Server, and RHEL Amazon EC2 instances\. 
@@ -259,11 +259,11 @@ An AppSpec file does not exist on an instance before you deploy to it\. For this
 + `ValidateService` – This is the last deployment lifecycle event\. It is used to verify the deployment was completed successfully\.
 + `BeforeBlockTraffic` – You can use this deployment lifecycle event to run tasks on instances before they are deregistered from a load balancer\.
 
-  To troubleshoot a deployment that fails during the `BeforeBlockTraffic` deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
+  To troubleshoot a deployment that fails during the `BeforeBlockTraffic` deployment lifecycle event, see [Troubleshooting a failed ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
 + `BlockTraffic` – During this deployment lifecycle event, internet traffic is blocked from accessing instances that are currently serving traffic\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\. 
 + `AfterBlockTraffic` – You can use this deployment lifecycle event to run tasks on instances after they are deregistered from a load balancer\. 
 
-  To troubleshoot a deployment that fails during the `AfterBlockTraffic` deployment lifecycle event, see [Troubleshooting failed ApplicationStop, BeforeBlockTraffic, and AfterBlockTraffic deployment lifecycle events](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
+  To troubleshoot a deployment that fails during the `AfterBlockTraffic` deployment lifecycle event, see [Troubleshooting a failed ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event](troubleshooting-deployments.md#troubleshooting-deployments-lifecycle-event-failures)\.
 + `BeforeAllowTraffic` – You can use this deployment lifecycle event to run tasks on instances before they are registered with a load balancer\.
 + `AllowTraffic` – During this deployment lifecycle event, internet traffic is allowed to access instances after a deployment\. This event is reserved for the CodeDeploy agent and cannot be used to run scripts\.
 + `AfterAllowTraffic` – You can use this deployment lifecycle event to run tasks on instances after they are registered with a load balancer\.

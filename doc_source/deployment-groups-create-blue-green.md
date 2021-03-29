@@ -33,13 +33,13 @@ If you want to use the same settings used in another deployment group \(includin
 
    1. **Manually provision instances**: You won't specify the instances for your replacement environment until you create a deployment\. You must create the instances before you start the deployment\. Instead, here you specify the instances you want to replace\.
 
-1. In **Agent configuration with AWS Systems Manager**, specify how you would like to install and update the CodeDeploy agent on the instances in your deployment group\. For more information on the CodeDeploy agent, see [Working with the CodeDeploy agent](https://docs.aws.amazon.com/en_us/codedeploy/latest/userguide/codedeploy-agent.html)\. For more information about AWS Systems Manager, see [What is AWS Systems Manager?](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)
+1. In **Agent configuration with Systems Manager**, specify how you would like to install and update the CodeDeploy agent on the instances in your deployment group\. For more information on the CodeDeploy agent, see [Working with the CodeDeploy agent](https://docs.aws.amazon.com/en_us/codedeploy/latest/userguide/codedeploy-agent.html)\. For more information about Systems Manager, see [What is Systems Manager?](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)
 
-   1. **Never**: Skip configuring the CodeDeploy installation with AWS Systems Manager\. Instances must have the agent installed to be used in deployments, so only choose this option if you will install the CodeDeploy agent another way\.
+   1. **Never**: Skip configuring the CodeDeploy installation with Systems Manager\. Instances must have the agent installed to be used in deployments, so only choose this option if you will install the CodeDeploy agent another way\.
 
-   1. **Only once**: AWS Systems Manager will install the CodeDeploy agent once on every instance in your deployment group\.
+   1. **Only once**: Systems Manager will install the CodeDeploy agent once on every instance in your deployment group\.
 
-   1. **Now and schedule updates**: AWS Systems Manager will create an association with State Manager that installs the CodeDeploy agent on the schedule you configure\. For more information about State Manager and associations, see [About State Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-about.html)\.
+   1. **Now and schedule updates**: Systems Manager will create an association with State Manager that installs the CodeDeploy agent on the schedule you configure\. For more information about State Manager and associations, see [About State Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-about.html)\.
 
 1. Depending on your choice in step 8, do one of the following:
    + If you chose **Automatically copy Amazon EC2 Auto Scaling group**: In **Amazon EC2 Auto Scaling group**, choose or enter the name of the Amazon EC2 Auto Scaling group you want to use as a template for the Amazon EC2 Auto Scaling group that is created for the instances in your replacement environment\. The number of currently healthy instances in the Amazon EC2 Auto Scaling group you select is created in your replacement environment\.

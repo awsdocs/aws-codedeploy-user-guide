@@ -143,11 +143,11 @@ Add a configuration file to the on\-premises instance, using root or administrat
 
 Install and configure the AWS CLI on the on\-premises instance\. \(The AWS CLI will be used to download and install the CodeDeploy agent on the on\-premises instance\.\) 
 
-1. To install the AWS CLI on the on\-premises instance, follow the instructions in [Getting set up with the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) in the *AWS Command Line Interface User Guide*\.
+1. To install the AWS CLI on the on\-premises instance, follow the instructions in [Getting set up with the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html) in the *AWS Command Line Interface User Guide*\.
 **Note**  
 CodeDeploy commands for working with on\-premises instances became available in version 1\.7\.19 of the AWS CLI\. If you have a version of the AWS CLI already installed, you can check its version by calling aws \-\-version\.
 
-1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
+1. To configure the AWS CLI on the on\-premises instance, follow the instructions in [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in the *AWS Command Line Interface User Guide*\.
 **Important**  
 As you configure the AWS CLI \(for example, by calling the aws configure command\), be sure to specify the secret key ID and secret access key of an IAM user that has, at minimum, the permissions described in [IAM session ARN registration prerequisites](#register-on-premises-instance-iam-session-arn-prerequisites)\.
 

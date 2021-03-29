@@ -230,4 +230,4 @@ For more information, see [Redeploy and roll back a deployment with CodeDeploy](
 You can use AWS CloudFormation to manage Amazon ECS blue/green deployments through CodeDeploy\. For more information, see [Create an Amazon ECS blue/green deployment through AWS CloudFormation](deployments-create-ecs-cfn.md)\.
 
 **Note**  
-Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the Africa \(Cape Town\), Asia Pacific \(Osaka\-Local\), China \(Beijing/Ningxia\), or Europe \(Milan\) regions\.
+Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the Asia Pacific \(Osaka\) region\.
