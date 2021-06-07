@@ -14,7 +14,7 @@ This topic provides information about the components and workflow of CodeDeploy 
 
 ## Deployment components on an AWS Lambda compute platform<a name="deployment-steps-workflow-lambda"></a>
 
-The following diagram shows the components in a CodeDeploy deployment on an AWS Lambda compute platform\.
+There are several components in a CodeDeploy deployment on an AWS Lambda compute platform\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/deployment-components-workflow-lambda.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 

@@ -121,7 +121,7 @@ AWS Lambda and Amazon ECS deployments cannot use an in\-place deployment type\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/sds_architecture.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
-Here's how it works:
+Here's how an in\-place deployment works:
 
 1. First, you create deployable content on your local development machine or similar environment, and then you add an *application specification file* \(AppSpec file\)\. The AppSpec file is unique to CodeDeploy\. It defines the deployment actions you want CodeDeploy to execute\. You bundle your deployable content and the AppSpec file into an archive file, and then upload it to an Amazon S3 bucket or a GitHub repository\. This archive file is called an *application revision* \(or simply a *revision*\)\.
 

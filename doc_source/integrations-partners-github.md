@@ -55,7 +55,7 @@ After you give CodeDeploy permission to interact with GitHub, the association be
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, then choose **Applications**\.
 
 1. Choose the application you want to link to a different GitHub account\.
 

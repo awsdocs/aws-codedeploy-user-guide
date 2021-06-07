@@ -5,7 +5,7 @@ This section is a reference only\. For a conceptual overview of the AppSpec file
 The application specification file \(AppSpec file\) is a [YAML](http://www.yaml.org)\-formatted or JSON\-formatted file used by CodeDeploy to manage a deployment\.
 
 **Note**  
- The name of the AppSpec file for an EC2/On\-Premises deployment must be `appspec.yml`\.
+The AppSpec file for an EC2/On\-Premises deployment must be named `appspec.yml` or `appspec.yaml`, unless you are performing a local deployment\. For more information, see [Create a local deployment](deployments-local.md#deployments-local-deploy)\.
 
 **Topics**
 + [AppSpec files on an Amazon ECS compute platform](#appspec-reference-ecs)

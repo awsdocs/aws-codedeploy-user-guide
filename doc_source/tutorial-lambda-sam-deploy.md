@@ -3,7 +3,7 @@
  Use the AWS SAM sam deploy command with the `package.yml` file to create your Lambda functions and CodeDeploy application and deployment group using AWS CloudFormation\. 
 
 **Note**  
- The sam deploy command is an alias for the aws cloudformation deploy AWS CLI command\. For more information, see [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) in the *AWS CloudFormation CLI Reference*\. 
+For more information on the sam deploy command, see [AWS SAM CLI command reference](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-command-reference.html) in the *AWS Serverless Application Model Developer Guide*\. 
 
  In the `SAM-Tutorial` directory, run the following command\. 
 

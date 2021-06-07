@@ -15,7 +15,7 @@ Make sure the following steps are complete before you start a deployment\.
 + If you are deploying your application revision from an Amazon S3 bucket, the bucket is in the same AWS Region as the instances in your deployment group\. 
 + If you are deploying your application revision from an Amazon S3 bucket, an Amazon S3 bucket policy has been applied to the bucket\. This policy grants your instances the permissions required to download the application revision\.
 
-  For example, the following Amazon S3 bucket policy allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::80398EXAMPLE:role/CodeDeployDemo` to download from anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
+  For example, the following Amazon S3 bucket policy allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::444455556666:role/CodeDeployDemo` to download from anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
   ```
   {
@@ -29,7 +29,7 @@ Make sure the following steps are complete before you start a deployment\.
               "Resource": "arn:aws:s3:::codedeploydemobucket/*",
               "Principal": {
                   "AWS": [
-                      "arn:aws:iam::80398EXAMPLE:role/CodeDeployDemo"
+                      "arn:aws:iam::444455556666:role/CodeDeployDemo"
                   ]
               }
           }
@@ -37,7 +37,7 @@ Make sure the following steps are complete before you start a deployment\.
   }
   ```
 
-  The following Amazon S3 bucket policy allows any on\-premises instance with an associated IAM user containing the ARN `arn:aws:iam::80398EXAMPLE:user/CodeDeployUser` to download from anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
+  The following Amazon S3 bucket policy allows any on\-premises instance with an associated IAM user containing the ARN `arn:aws:iam::444455556666:user/CodeDeployUser` to download from anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
   ```
   {
@@ -51,7 +51,7 @@ Make sure the following steps are complete before you start a deployment\.
               "Resource": "arn:aws:s3:::codedeploydemobucket/*",
               "Principal": {
                   "AWS": [
-                      "arn:aws:iam::80398EXAMPLE:user/CodeDeployUser"
+                      "arn:aws:iam::444455556666:user/CodeDeployUser"
                   ]
               }
           }

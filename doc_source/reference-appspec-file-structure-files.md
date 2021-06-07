@@ -6,8 +6,9 @@ This section has the following structure:
 
 ```
 files:
-  - source: source-file-location
-    destination: destination-file-location
+  - source: source-file-location-1
+    destination: destination-file-location-1
+file_exists_behavior: DISALLOW|OVERWRITE|RETAIN
 ```
 
 Multiple `source` and `destination` pairs can be set\.
@@ -22,6 +23,15 @@ The paths used in `source` are relative to the `appspec.yml` file, which should 
 The `destination` instruction identifies the location on the instance where the files should be copied\. This must be a fully qualified path such as `/root/destination/directory` \(on Linux, RHEL, and Ubuntu\) or `c:\destination\folder` \(on Windows\)\.
 
 `source` and `destination` are each specified with a string\.
+
+The `file_exists_behavior` instruction is optional, and specifies how CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment\. This setting can take any of the following values:
++ DISALLOW: The deployment fails\. This is also the default behavior if no option is specified\. 
++ OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance\. 
++ RETAIN: The version of the file already on the instance is kept and used as part of the new deployment\.
+
+When using the `file_exists_behavior` setting, understand that this setting:
++ can only be specified once, and applies to all files and directories listed under `files:`\.
++ takes precedence over the `--file-exists-behavior` AWS CLI option and the `fileExistsBehavior` API option \(both of which are also optional\)\.
 
 Here's an example `files` section for an Amazon Linux, Ubuntu Server, or RHEL instance\.
 
@@ -165,11 +175,12 @@ files:
 #
 # ---------------------
 #
-# 9) Copy my-folder and its 3 files (along with the appspec.yml file) to the destination folder c:\temp.
+# 9) Copy my-folder and its 3 files (along with the appspec.yml file) to the destination folder c:\temp. If any of the files already exist on the instance, overwrite them.
 #
 files:
   - source: \
     destination: c:\temp
+file_exists_behavior: OVERWRITE
 #
 # Result:
 #   c:\temp\appspec.yml

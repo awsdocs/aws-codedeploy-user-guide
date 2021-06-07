@@ -11,7 +11,7 @@ To specify an action, use the `codedeploy:` prefix followed by the API operation
 You can use a wildcard character \(\*\) in your ARN to specify multiple actions or resources\. For example, `codedeploy:*` specifies all CodeDeploy actions and `codedeploy:Get*` specifies all CodeDeploy actions that begin with the word `Get`\. The following example grants access to all deployment groups with names that begin with `West` and are associated with applications that have names beginning with `Test`\. 
 
 ```
-arn:aws:codedeploy:us-west-2:80398EXAMPLE:deploymentgroup:Test*/West*
+arn:aws:codedeploy:us-west-2:444455556666:deploymentgroup:Test*/West*
 ```
 
 You can use wildcards with the following resources listed in the table:

@@ -27,7 +27,7 @@ For more information about working with the CodeDeploy agent, such as steps for 
 The CodeDeploy agent has been tested on the following Amazon EC2 AMI operating systems:
 + Amazon Linux 2018\.03\.x, 2017\.03\.x, 2016\.09\.x, 2016\.03\.x, and 2014\.09\.x
 + Amazon Linux 2 \(ARM, x86\)
-+ Ubuntu Server 20\.04 LTS, 18\.04 LTS, 16\.04 LTS, and 14\.04 LTS
++ Ubuntu Server 20\.10, 20\.04 LTS, 18\.04 LTS, 16\.04 LTS, and 14\.04 LTS
 + Microsoft Windows Server 2019, 2016, 2012 R2, and 2008 R2
 + Red Hat Enterprise Linux \(RHEL\) 7\.x
 
@@ -36,7 +36,7 @@ The CodeDeploy agent is available as open source for you to adapt to your needs\
 ### Supported on\-premises operating systems<a name="codedeploy-agent-supported-operating-systems-on-premises"></a>
 
 The CodeDeploy agent has been tested on the following on\-premises operating systems:
-+ Ubuntu Server 20\.04 LTS, 18\.04 LTS, 16\.04 LTS, and 14\.04 LTS
++ Ubuntu Server 20\.10, 20\.04 LTS, 18\.04 LTS, 16\.04 LTS, and 14\.04 LTS
 + Microsoft Windows Server 2019, 2016, 2012 R2, and 2008 R2 
 + Red Hat Enterprise Linux \(RHEL\) 7\.x
 
@@ -57,8 +57,9 @@ The following table lists all releases of the CodeDeploy agent and the features 
 
 | Version | Release date | Details | 
 | --- | --- | --- | 
+|  1\.3\.2  |  May 6, 2021  |   CodeDeploy agent 1\.3\.2 addresses [CVE\-2018\-1000201](https://nvd.nist.gov/vuln/detail/CVE-2018-1000201) which affects Windows hosts running the agent\. The CVE cites ruby\-ffi, which is a dependency of the CodeDeploy agent\. If your agent was installed with Amazon EC2 Systems Manager \(SSM\) and is set to update automatically, no action is required\. Otherwise, action is required to manually update the agent\. To upgrade the agent follow the instructions in [Update the CodeDeploy agent on Windows Server](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-update-windows.html)\.   **Fixed**: An issue when installing the CodeDeploy agent on Ubuntu 20\.04 and later\. **Fixed**: An intermittent issue that occurred when extracting compressed files because relative paths weren't being handled correctly\. **Added**: Support for [AWS PrivateLink and VPC endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html) for Windows instances\. **Added**: Support for Ubuntu 20\.10\. **Added**: AppSpec file improvements, as described below\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html) **Upgraded**: CodeDeploy now uses the AWS SDK for Ruby 3\.0\.  | 
 |  1\.3\.1  |  December 22, 2020  |  **Fixed**: 1\.3\.0 issue that prevented on\-premises instances from starting\.  | 
-|  1\.3\.0  |  November 10, 2020  |  This version is deprecated\. **Fixed**: Removed an expired certificate that was no longer used\. **Fixed**: Removed the prompt message from the agent uninstall script used by AWS Systems Manager, making it easier to downgrade a host or fleet to a previous version of the agent\.  | 
+|  1\.3\.0  |  November 10, 2020  |   This version is deprecated\.  **Fixed**: Removed an expired certificate that was no longer used\. **Fixed**: Removed the prompt message from the agent uninstall script used by AWS Systems Manager, making it easier to downgrade a host or fleet to a previous version of the agent\.  | 
 |  1\.2\.1  |  September 23, 2020  |  **Changed**: Upgraded AWS SDK for Ruby dependency from v2 to v3\. **Added**: Support for IMDSv2\. Includes a silent fallback to IMDSv1 if IMDSv2 http requests fail\. **Changed**: Updated Rake and Rubyzip dependencies for security patches\. **Fixed**: Ensure that an empty PID file will return a status of `No CodeDeploy Agent Running` and clean up the PID file on agent start\.  | 
 |  1\.1\.2  |  August 4, 2020  |  **Added**: Support for Ubuntu Server 19\.10 and 20\.04\. **Note**: : Version 19\.10 reached its end\-of\-life date and is no longer supported by Ubuntu or CodeDeploy\. **Added**: Memory efficiency improvements for Linux and Ubuntu to release reserved memory more timely\. **Added**: Compatibility with Windows Server "silent\-cleanup" which was causing the agent to be unresponsive in some cases\. **Added**: Ignore non\-empty directories during cleanup to avoid failures on deployment\. **Added**: Support for AWS Local Zone in Los Angeles \(LA\)\. **Added**: Extract AZ from instance metadata to provide compatibility for AWS Local Zones\. **Added**: Users can now provide their archive in subdirectories and aren't required to store it in the root directory\. **Added**: Detected an issue with Rubyzip that could result in memory leaks\. Updated the unzip command to first attempt to use a system\-installed unzip utility before using Rubyzip\. **Added**: `:enable_auth_policy:` as an agent configuration setting\. **Changed**: Unzip warnings are now ignored so deployments will continue\.  | 
 |  1\.1\.0  |  June 30, 2020  |  **Changed**: Versioning of the CodeDeploy agent now follows the Ruby standard versioning convention\. **Added**: New parameter to the install and update command to allow installation of specific agent version from the command line\. **Removed**: Removed the CodeDeploy agent Auto Updater for Linux and Ubuntu\. To configure automatic updates of the CodeDeploy agent, see [Install the CodeDeploy agent using AWS Systems Manager](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ssm.html)\.  | 

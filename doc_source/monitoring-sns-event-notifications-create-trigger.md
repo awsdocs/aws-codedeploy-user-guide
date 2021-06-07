@@ -22,7 +22,7 @@ You can use the CodeDeploy console to create triggers for a CodeDeploy event\. A
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, then choose **Applications**\.
 
 1. On the **Applications** page, choose the name of the application associated with the deployment group where you want to add a trigger\.
 
@@ -108,7 +108,7 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
 
    In the `triggerConfigurations` section, provide values for the following parameters: 
    + `triggerName`: The name you want to give the trigger so you can easily identify it\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.
-   + `triggerTargetArn`: The ARN of the Amazon SNS topic you created to associate with your trigger, in this format: `arn:aws:sns:us-east-2:80398EXAMPLE:NewTestTopic`\.
+   + `triggerTargetArn`: The ARN of the Amazon SNS topic you created to associate with your trigger, in this format: `arn:aws:sns:us-east-2:444455556666:NewTestTopic`\.
    + `triggerEvents`: The type of event or events for which you want to trigger notifications\. You can specify one or more event types, separating multiple event type names with commas \(for example, `"triggerEvents":["DeploymentSuccess","DeploymentFailure","InstanceFailure"]`\)\. When you add more than one event type, notifications for all those types are sent to the topic you specified, rather than to a different topic for each one\. You can choose from the following event types:
      + DeploymentStart
      + DeploymentSuccess
@@ -139,7 +139,7 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
        "triggerConfigurations": [
            {
                "triggerName": "Trigger-group-us-east-2",
-               "triggerTargetArn": "arn:aws:sns:us-east-2:80398EXAMPLE:us-east-deployments",
+               "triggerTargetArn": "arn:aws:sns:us-east-2:444455556666:us-east-deployments",
                "triggerEvents": [
                    "DeploymentStart",
                    "DeploymentSuccess",
@@ -221,7 +221,7 @@ The simplest way to create the JSON file is to run the get\-deployment\-group co
                    "DeploymentSuccess",
                    "DeploymentFailure"
                ],
-               "triggerTargetArn": "arn:aws:sns:us-east-2:80398EXAMPLE:us-east-deployments",
+               "triggerTargetArn": "arn:aws:sns:us-east-2:444455556666:us-east-deployments",
                "triggerName": "Trigger-group-us-east-2"
            }
        ],

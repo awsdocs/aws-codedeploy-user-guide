@@ -42,7 +42,7 @@ To avoid further charges for resources you used during this tutorial, you must t
 **Note**  
 Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
-1. In the navigation pane, expand **Deploy**, and then choose **Applications**\.
+1. In the navigation pane, expand **Deploy**, then choose **Applications**\.
 
    
 

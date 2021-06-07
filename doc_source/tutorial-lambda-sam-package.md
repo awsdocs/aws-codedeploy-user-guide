@@ -9,7 +9,7 @@
  You are now ready to use the AWS SAM sam package command to create and package artifacts for your Lambda functions and CodeDeploy application\. The artifacts are uploaded to an S3 bucket\. The output of the command is a new file called `package.yml`\. This file is used by the AWS SAM sam deploy command in the next step\. 
 
 **Note**  
- The sam package command is an alias for the aws cloudformation package AWS CLI command\. For more information, see [package](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) in the *AWS CloudFormation CLI Reference*\. 
+ For more information on the sam package command, see [AWS SAM CLI command reference](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-command-reference.html) in the *AWS Serverless Application Model Developer Guide*\. 
 
  In the `SAM-Tutorial` directory, run the following\. 
 

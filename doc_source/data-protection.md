@@ -31,7 +31,7 @@ Customer code is not stored in CodeDeploy\. As a deployment service, CodeDeploy 
 
 ## Encryption in transit<a name="encryption-in-transit"></a>
 
-The CodeDeploy agent initiates all communication with CodeDeploy over port 443\. The agent polls CodeDeploy and listens for a command\. The CodeDeploy agent is open source\. All service\-to\-service and client\-to\-service communication is encrypted in transit using TLS\. This protects customer data in transit between CodeDeploy and other services such as Amazon S3\.
+The CodeDeploy agent initiates all communication with CodeDeploy over port 443\. The agent polls CodeDeploy and listens for a command\. The CodeDeploy agent is open source\. All service\-to\-service and client\-to\-service communication is encrypted in transit using TLS\. This protects customer data in transit between CodeDeploy and other services like Amazon S3\.
 
 ## Encryption key management<a name="key-management"></a>
 

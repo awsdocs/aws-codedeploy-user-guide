@@ -32,7 +32,7 @@ You must have permissions to upload to the Amazon S3 bucket\. You can specify th
 }
 ```
 
-To view your AWS account ID, see [Finding Your AWS Account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
+To view your AWS account ID, see [Finding Your AWS account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
 
 To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 

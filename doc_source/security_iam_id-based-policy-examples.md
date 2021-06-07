@@ -36,7 +36,7 @@ The following example shows a permissions policy that allows a user to delete th
         "codedeploy:DeleteDeploymentGroup"
       ],
       "Resource" : [
-        "arn:aws:codedeploy:us-west-2:80398EXAMPLE:deploymentgroup:WordPress_App/WordPress_DepGroup"
+        "arn:aws:codedeploy:us-west-2:444455556666:deploymentgroup:WordPress_App/WordPress_DepGroup"
       ]
     }
   ]
@@ -62,19 +62,19 @@ The following AWS managed policies, which you can attach to users in your accoun
 AWSCodeDeployFullAccess does not provide permissions to operations in other services required to deploy your applications, such as Amazon EC2 and Amazon S3, only to operations specific to CodeDeploy\.
 + `AWSCodeDeployDeployerAccess`: Grants access to an IAM user to register and deploy revisions\.
 
-   
+   
 + `AWSCodeDeployReadOnlyAccess`: Grants read\-only access to CodeDeploy\.
 
-   
+   
 + `AWSCodeDeployRole`: Allows CodeDeploy to identify EC2 instances by their Amazon EC2 tags or Amazon EC2 Auto Scaling group names, and on\-premises instances by their on\-premises instance tags, and to deploy application revisions to them accordingly\. Provides permissions required to publish notifications to an Amazon SNS topic and retrieve information about alarms from CloudWatch\.
 
-   
-+ `AWSCodeDeployRoleForLambdaLimited`: Grants CodeDeploy permission to access AWS Lambda and any other resource required for a deployment\.
+   
++ `AWSCodeDeployRoleForLambda`: Grants CodeDeploy permission to access AWS Lambda and any other resource required for a deployment\.
 
-   
+   
 +  `AWSCodeDeployRoleForECS`: Grants CodeDeploy permission to access Amazon ECS and any other resource required for a deployment\. 
 
-   
+   
 +  `AWSCodeDeployRoleForECSLimited`: Grants CodeDeploy permission to access Amazon ECS and any other resource required for a deployment with the following exceptions: 
   +  In the `hooks` section of the AppSpec file, only Lambda functions with names that begin with `CodeDeployHook_` can be used\. For more information, see [AppSpec 'hooks' section for an Amazon ECS deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\. 
   +  S3 bucket access is limited to S3 buckets with a registration tag, `UseWithCodeDeploy`, that has a value of `true`\. For more information, see [Object tagging](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html)\. 
@@ -201,7 +201,7 @@ The following example grants permissions to perform CodeDeploy operations in the
         "codedeploy:*"
       ],
       "Resource" : [
-        "arn:aws:codedeploy:us-west-2:80398EXAMPLE:*"
+        "arn:aws:codedeploy:us-west-2:444455556666:*"
       ]
     }
   ]
@@ -222,7 +222,7 @@ The following example grants permissions to register application revisions for a
         "codedeploy:RegisterApplicationRevision"
       ],
       "Resource" : [
-        "arn:aws:codedeploy:us-west-2:80398EXAMPLE:application:Test*"
+        "arn:aws:codedeploy:us-west-2:444455556666:application:Test*"
       ]
     }
   ]
@@ -243,7 +243,7 @@ The following example allows the specified user to create deployments for the de
         "codedeploy:CreateDeployment"
       ],
       "Resource" : [
-        "arn:aws:codedeploy:us-west-2:80398EXAMPLE:deploymentgroup:WordPress_App/WordPress_DepGroup"
+        "arn:aws:codedeploy:us-west-2:444455556666:deploymentgroup:WordPress_App/WordPress_DepGroup"
       ]
     },
     {
@@ -252,7 +252,7 @@ The following example allows the specified user to create deployments for the de
         "codedeploy:GetDeploymentConfig"
       ],
       "Resource" : [
-        "arn:aws:codedeploy:us-west-2:80398EXAMPLE:deploymentconfig:ThreeQuartersHealthy"
+        "arn:aws:codedeploy:us-west-2:444455556666:deploymentconfig:ThreeQuartersHealthy"
       ]
     },
     {
@@ -261,7 +261,7 @@ The following example allows the specified user to create deployments for the de
         "codedeploy:GetApplicationRevision"
       ],
       "Resource" : [
-        "arn:aws:codedeploy:us-west-2:80398EXAMPLE:application:WordPress_App"
+        "arn:aws:codedeploy:us-west-2:444455556666:application:WordPress_App"
       ]
     }
   ]

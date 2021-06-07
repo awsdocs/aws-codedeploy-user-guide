@@ -318,7 +318,7 @@ To help identify the on\-premises instance, especially for debugging purposes, w
      For example:
 
      ```
-     aws deploy register-on-premises-instance --instance-name AssetTag12010298EX --iam-user-arn arn:aws:iam::80398EXAMPLE:user/CodeDeployUser-OnPrem
+     aws deploy register-on-premises-instance --instance-name AssetTag12010298EX --iam-user-arn arn:aws:iam::444455556666:user/CodeDeployUser-OnPrem
      ```
 
 ## Step 9: Tag the on\-premises instance<a name="register-on-premises-instance-iam-user-arn-9"></a>

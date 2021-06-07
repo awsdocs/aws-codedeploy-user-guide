@@ -97,7 +97,7 @@ If you specify the `--iam-user-arn` option, you must also manually create the on
 For example:
 
 ```
-aws deploy register --instance-name AssetTag12010298EX --iam-user-arn arn:aws:iam::80398EXAMPLE:user/CodeDeployUser-OnPrem --tags Key=Name,Value=CodeDeployDemo-OnPrem --region us-west-2
+aws deploy register --instance-name AssetTag12010298EX --iam-user-arn arn:aws:iam::444455556666:user/CodeDeployUser-OnPrem --tags Key=Name,Value=CodeDeployDemo-OnPrem --region us-west-2
 ```
 
 The register command does the following:

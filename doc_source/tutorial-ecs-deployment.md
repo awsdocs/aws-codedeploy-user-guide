@@ -2,9 +2,6 @@
 
  In this tutorial, you learn how to deploy an Amazon ECS application\. You start with an Amazon ECS application you already created\. The first step is to update your application by modifying its task definition file with a new tag\. Next, you use CodeDeploy to deploy the update\. During deployment, CodeDeploy installs your update into a new, replacement task set\. Then, it shifts production traffic from the original version of your Amazon ECS service, which is in its original task set, to the updated version in the replacement task set\.
 
-**Note**  
-CodeDeploy does not currently support Amazon ECS Capacity Provider\.
-
  During an Amazon ECS deployment, CodeDeploy uses a load balancer that is configured with two target groups and one production traffic listener\. The following diagram shows how the load balancer, production listener, target groups, and your Amazon ECS application are related before the deployment starts\. This tutorial uses an Application Load Balancer\. You can also use a Network Load Balancer\. 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/codedeploy-ecs-deployment-with-no-test-listener-step-1.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)

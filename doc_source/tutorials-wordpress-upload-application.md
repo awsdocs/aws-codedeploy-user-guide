@@ -66,9 +66,9 @@ You must have permissions to upload to the Amazon S3 bucket\. You can specify th
 }
 ```
 
-To view your AWS account ID, see [Finding Your AWS Account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
+To view your AWS account ID, see [Finding Your AWS account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#FindingYourAWSId)\.
 
-Now is a good time to verify the Amazon S3 bucket will allow download requests from each participating Amazon EC2 instance\. You can specify this through an Amazon S3 bucket policy\. For example, in the following Amazon S3 bucket policy, using the wildcard character \(\*\) allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::80398EXAMPLE:role/CodeDeployDemo` to download files from any directory in the Amazon S3 bucket named `codedeploydemobucket`:
+Now is a good time to verify the Amazon S3 bucket will allow download requests from each participating Amazon EC2 instance\. You can specify this through an Amazon S3 bucket policy\. For example, in the following Amazon S3 bucket policy, using the wildcard character \(\*\) allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::444455556666:role/CodeDeployDemo` to download files from any directory in the Amazon S3 bucket named `codedeploydemobucket`:
 
 ```
 {
@@ -82,7 +82,7 @@ Now is a good time to verify the Amazon S3 bucket will allow download requests f
             "Resource": "arn:aws:s3:::codedeploydemobucket/*",
             "Principal": {
                 "AWS": [
-                    "arn:aws:iam::80398EXAMPLE:role/CodeDeployDemo"
+                    "arn:aws:iam::444455556666:role/CodeDeployDemo"
                 ]
             }
         }
