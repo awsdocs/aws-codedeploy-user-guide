@@ -1,4 +1,4 @@
-# View CodeDeploydeployment details<a name="deployments-view-details"></a>
+# View CodeDeploy deployment details<a name="deployments-view-details"></a>
 
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about deployments associated with your AWS account\.
 

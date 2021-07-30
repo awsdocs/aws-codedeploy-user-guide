@@ -42,7 +42,7 @@ Use this syntax as part of the create\-deployment call to specify information ab
 ```
 To get information about revisions that have been pushed already, call the [list\-application\-revisions](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-application-revisions.html) command\.
 
-To track the status of your deployment, see [View CodeDeploydeployment details ](deployments-view-details.md)\.
+To track the status of your deployment, see [View CodeDeploy deployment details ](deployments-view-details.md)\.
 
 ## create\-deployment command reference<a name="deployments-create-cli-reference"></a>
 

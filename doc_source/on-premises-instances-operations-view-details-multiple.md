@@ -1,6 +1,6 @@
 # Get information about multiple on\-premises instances<a name="on-premises-instances-operations-view-details-multiple"></a>
 
-You can get information about on\-premises instances by following the instructions in [View CodeDeploydeployment details ](deployments-view-details.md)\. You can use the AWS CLI or the CodeDeploy console to get more information about on\-premises instances\.
+You can get information about on\-premises instances by following the instructions in [View CodeDeploy deployment details ](deployments-view-details.md)\. You can use the AWS CLI or the CodeDeploy console to get more information about on\-premises instances\.
 
 **To get information about multiple on\-premises instances \(CLI\)**
 

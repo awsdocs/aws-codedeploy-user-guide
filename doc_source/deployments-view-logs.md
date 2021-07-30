@@ -38,14 +38,14 @@ Type the following commands to browse the log file for error messages:
 
 | Command | Result | 
 | --- | --- | 
-| & ERROR  | Show just the error messages in the log file\. Use a single space before and after the word ERROR\. | 
-| / ERROR  | Search for the next error message\.¹  | 
-| ? ERROR  | Search for the previous error message\.² Use a single space before and after the word ERROR\. | 
+| & ERROR  | Show just the error messages in the log file\. Use a single space before and after the word ERROR\. | 
+| / ERROR  | Search for the next error message\.¹  | 
+| ? ERROR  | Search for the previous error message\.² Use a single space before and after the word ERROR\. | 
 | G | Go to the end of the log file\. | 
 | g | Go to the start of the log file\. | 
 | q | Exit the log file\. | 
 | h | Learn about additional commands\. | 
-|  ¹ After you type **/ ERROR **, type **n** for the next error message\. Type **N** for the previous error message\.  ² After you type **? ERROR **, type **n** for the next error message, or type **N** for the previous error message\.  | 
+|  ¹ After you type **/ ERROR **, type **n** for the next error message\. Type **N** for the previous error message\.  ² After you type **? ERROR **, type **n** for the next error message, or type **N** for the previous error message\.  | 
 
 You can also type the following command to open a CodeDeploy scripts log file:
 

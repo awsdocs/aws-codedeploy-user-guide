@@ -168,7 +168,7 @@ The following is an example of the file and directory structure under the root d
   +  **deployment\-archive**, a directory that contains the contents of the deployment's revision\. 
   +  **logs**, a directory that contains a `scripts.log` file\. This file lists the output of all scripts specified in the deployment's AppSpec file\. 
 
-   If you want to find the folder for a deployment but don't know its deployment ID or deployment group ID, you can use the [AWS CodeDeploy console](https://console.aws.amazon.com/codedeploy) or the AWS CLI to find them\. For more information, see [View CodeDeploydeployment details ](deployments-view-details.md)\. 
+   If you want to find the folder for a deployment but don't know its deployment ID or deployment group ID, you can use the [AWS CodeDeploy console](https://console.aws.amazon.com/codedeploy) or the AWS CLI to find them\. For more information, see [View CodeDeploy deployment details ](deployments-view-details.md)\. 
 
    The default maximum number of deployments that can be archived in a deployment group is five\. When that number is reached, future deployments are archived and the oldest archive is deleted\. You can use the **max\_revisions** setting in the CodeDeploy agent configuration file to change the default\. For more information, see [CodeDeploy agent configuration reference](reference-agent-configuration.md)\. 
 **Note**  

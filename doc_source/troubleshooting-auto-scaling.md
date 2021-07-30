@@ -22,8 +22,6 @@ Deployments to Amazon EC2 instances in an Amazon EC2 Auto Scaling group can fail
   + **CodeDeploy agent is not included in your AMI **: If you use the cfn\-init command to install the CodeDeploy agent while launching a new instance, place the agent installation script at the end of the `cfn-init` section of your AWS CloudFormation template\. 
   + **CodeDeploy agent is included in your AMI **: Configure the AMI so that the agent is in a `Stopped` state when the instance is created, and then include a script for starting the agent as the final step in your `cfn-init` script library\. 
 
-  \.
-
 ## "CodeDeployRole does not give you permission to perform operations in the following AWS service: AmazonAutoScaling" error<a name="troubleshooting-auto-scaling-permissions-error"></a>
 
  Deployments that use an Auto Scaling group created with a launch template require the following permissions\. These are in addition to the permissions granted by the `AWSCodeDeployRole` AWS managed policy\. 
@@ -87,21 +85,40 @@ An Amazon EC2 Auto Scaling group might fail to launch new Amazon EC2 instances, 
 
 This message usually indicates one of the following: 
 + The maximum number of concurrent deployments associated with an AWS account was reached\. For more information about deployment limits, see [CodeDeploy limits](limits.md)\. 
-+ An application in CodeDeploy was deleted before its associated deployment groups were updated or deleted\. 
++ The Auto Scaling group tried to launch too many EC2 instances too quickly\. The API calls to [RecordLifecycleActionHeartbeat](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RecordLifecycleActionHeartbeat.html) or [CompleteLifecycleAction](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html) for each new instance were throttled\.
++ An application in CodeDeploy was deleted before its associated deployment groups were updated or deleted\.
 
-When you delete an application or deployment group, CodeDeploy attempts to clean up any Amazon EC2 Auto Scaling hooks associated with it, but some hooks might remain\. If you run a command to delete a deployment group, the leftover hooks are returned in the output\. However, if you run a command to delete an application, the leftover hooks do not appear in the output\.
+  When you delete an application or deployment group, CodeDeploy attempts to clean up any Amazon EC2 Auto Scaling hooks associated with it, but some hooks might remain\. If you run a command to delete a deployment group, the leftover hooks are returned in the output\. However, if you run a command to delete an application, the leftover hooks do not appear in the output\.
 
-Therefore, as a best practice, you should delete all deployment groups associated with an application before you delete the application\. You can use the command output to identify the lifecycle hooks that must be deleted manually\. 
+  Therefore, as a best practice, you should delete all deployment groups associated with an application before you delete the application\. You can use the command output to identify the lifecycle hooks that must be deleted manually\. 
 
 If you receive a “Heartbeat Timeout” error message, you can determine if leftover lifecycle hooks are the cause and resolve the problem by doing the following:
 
-1. Run either the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command or [delete\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/delete-deployment-group.html) command\. Examine the output of the call\. If the output contains a `hooksNotCleanedUp` structure with a list of Amazon EC2 Auto Scaling lifecycle hooks, leftover lifecycle hooks are most likely the cause of the error\. 
+1. Do one of the following:
+   + Call the [delete\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/delete-deployment-group.html) command to delete the deployment group associated with the Auto Scaling group that is causing the heartbeat timeout\.
+   + Call the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) command with a non\-null empty list of Auto Scaling group names to detach all CodeDeploy\-managed Auto Scaling lifecycle hooks\.
 
-1. Call the [describe\-lifecycle\-hooks](https://docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-lifecycle-hooks.html) command, specifying the name of the Amazon EC2 Auto Scaling group associated with the Amazon EC2 instances that fail to launch\. In the output, look for any Amazon EC2 Auto Scaling lifecycle hook names that correspond to the `hooksNotCleanedUp` structure you identified in step 1\. Or look for Amazon EC2 Auto Scaling lifecycle hook names that contain the name of the deployment group\.
+     For example, enter the following AWS CLI command:
 
-1. Call the [delete\-lifecycle\-hook](https://docs.aws.amazon.com/cli/latest/reference/autoscaling/delete-lifecycle-hook.html) command for each Amazon EC2 Auto Scaling lifecycle hook\. Specify the Amazon EC2 Auto Scaling group and lifecycle hook\.
+     `aws deploy update-deployment-group --application-name my-example-app --current-deployment-group-name my-deployment-group --auto-scaling-groups`
 
-If you delete \(from an Amazon EC2 Auto Scaling group\) all of the Amazon EC2 Auto Scaling lifecycle hooks that were created by CodeDeploy, then CodeDeploy no longer deploys to Amazon EC2 instances that are scaled up as part of that Amazon EC2 Auto Scaling group\.
+     As another example, if you are using the CodeDeploy API with Java, call `UpdateDeploymentGroup` and set `autoScalingGroups` to `new ArrayList<String>()`\. This sets `autoScalingGroups` to an empty list and removes the existing list\. Do not use `null`, which is the default, because this leaves `autoScalingGroups` as\-is, which is not what you want\.
+
+   Examine the output of the call\. If the output contains a `hooksNotCleanedUp` structure with a list of Amazon EC2 Auto Scaling lifecycle hooks, there are leftover lifecycle hooks\. 
+
+1. Call the [describe\-lifecycle\-hooks](https://docs.aws.amazon.com/cli/latest/reference/autoscaling/describe-lifecycle-hooks.html) command, specifying the name of the Amazon EC2 Auto Scaling group associated with the Amazon EC2 instances that failed to launch\. In the output, look for any of the following:
+   + Amazon EC2 Auto Scaling lifecycle hook names that correspond to the `hooksNotCleanedUp` structure you identified in step 1\.
+   + Amazon EC2 Auto Scaling lifecycle hook names that contain the name of the deployment group associated with the Auto Scaling group that's failing\.
+   + Amazon EC2 Auto Scaling lifecycle hook names that may have caused the heartbeat timeout for the CodeDeploy deployment\.
+
+1. If a hook falls into one of the categories listed in step 2, call the [delete\-lifecycle\-hook](https://docs.aws.amazon.com/cli/latest/reference/autoscaling/delete-lifecycle-hook.html) command to delete it\. Specify the Amazon EC2 Auto Scaling group and lifecycle hook in the call\.
+**Important**  
+Only delete hooks that are causing problems, as outlined in step 2\. If you delete viable hooks, your deployments might fail, or CodeDeploy might not be able to deploy your application revisions to scaled out Amazon EC2 instances\.
+
+1. Call either the [update\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/update-deployment-group.html) or [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command with the desired Auto Scaling group names\. CodeDeploy re\-installs the Auto Scaling hooks with new UUIDs\.
+
+**Note**  
+If you detach an Auto Scaling group from a CodeDeploy deployment group, any in\-progress deployments to the Auto Scaling group may fail, and new Amazon EC2 instances that are scaled out by the Auto Scaling group will not receive your application revisions from CodeDeploy\. To get Auto Scaling working again with CodeDeploy, you'll need to re\-attach the Auto Scaling group to the deployment group and call a new `CreateDeployment` to start a fleet\-wide deployment\.
 
 ## Mismatched Amazon EC2 Auto Scaling lifecycle hooks might cause automatic deployments to Amazon EC2 Auto Scaling groups to stop or fail<a name="troubleshooting-auto-scaling-hooks"></a>
 

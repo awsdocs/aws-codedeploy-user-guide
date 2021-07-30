@@ -33,4 +33,4 @@ Your application must have a deployment group before it can be deployed\. If you
 
 1. Choose **Create deployment**\. 
 
-   To track the status of your deployment, see [View CodeDeploydeployment details ](deployments-view-details.md)\.
+   To track the status of your deployment, see [View CodeDeploy deployment details ](deployments-view-details.md)\.

@@ -54,6 +54,13 @@ The following example shows a permissions policy that allows a user to delete th
 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. These AWS\-managed policies grant permissions for common use cases so you can avoid having to investigate which permissions are required\. For more information, see [AWS managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
+**Topics**
++ [List of AWS managed policies for CodeDeploy](#managed-policies-list)
++ [CodeDeploy updates to AWS managed policies](#managed-policies-updates)
++ [CodeDeploy managed policies and notifications](#notifications-permissions)
+
+### List of AWS managed policies for CodeDeploy<a name="managed-policies-list"></a>
+
 The following AWS managed policies, which you can attach to users in your account, are specific to CodeDeploy:
 + `AWSCodeDeployFullAccess`: Grants full access to CodeDeploy\.
 
@@ -62,19 +69,77 @@ The following AWS managed policies, which you can attach to users in your accoun
 AWSCodeDeployFullAccess does not provide permissions to operations in other services required to deploy your applications, such as Amazon EC2 and Amazon S3, only to operations specific to CodeDeploy\.
 + `AWSCodeDeployDeployerAccess`: Grants access to an IAM user to register and deploy revisions\.
 
-   
+   
 + `AWSCodeDeployReadOnlyAccess`: Grants read\-only access to CodeDeploy\.
 
-   
-+ `AWSCodeDeployRole`: Allows CodeDeploy to identify EC2 instances by their Amazon EC2 tags or Amazon EC2 Auto Scaling group names, and on\-premises instances by their on\-premises instance tags, and to deploy application revisions to them accordingly\. Provides permissions required to publish notifications to an Amazon SNS topic and retrieve information about alarms from CloudWatch\.
+   
++ `AWSCodeDeployRole`: Allows CodeDeploy to:
+  + read the tags on your instances or identify your Amazon EC2 instances by Amazon EC2 Auto Scaling group names
+  + read, create, update, and delete Amazon EC2 Auto Scaling groups, lifecycle hooks, scaling policies, and warm pool features
+  + publish information to Amazon SNS topics
+  + retrieve information about Amazon CloudWatch alarms
+  + read and update resources in the Elastic Load Balancing service
 
-   
+  The policy contains the following code:
+
+  ```
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "autoscaling:CompleteLifecycleAction",
+          "autoscaling:DeleteLifecycleHook",
+          "autoscaling:DescribeAutoScalingGroups",
+          "autoscaling:DescribeLifecycleHooks",
+          "autoscaling:PutLifecycleHook",
+          "autoscaling:RecordLifecycleActionHeartbeat",
+          "autoscaling:CreateAutoScalingGroup",
+          "autoscaling:UpdateAutoScalingGroup",
+          "autoscaling:EnableMetricsCollection",
+          "autoscaling:DescribePolicies",
+          "autoscaling:DescribeScheduledActions",
+          "autoscaling:DescribeNotificationConfigurations",
+          "autoscaling:SuspendProcesses",
+          "autoscaling:ResumeProcesses",
+          "autoscaling:AttachLoadBalancers",
+          "autoscaling:AttachLoadBalancerTargetGroups",
+          "autoscaling:PutScalingPolicy",
+          "autoscaling:PutScheduledUpdateGroupAction",
+          "autoscaling:PutNotificationConfiguration",
+          "autoscaling:DescribeScalingActivities",
+          "autoscaling:DeleteAutoScalingGroup",
+          "autoscaling:PutWarmPool",
+          "ec2:DescribeInstances",
+          "ec2:DescribeInstanceStatus",
+          "ec2:TerminateInstances",
+          "tag:GetResources",
+          "sns:Publish",
+          "cloudwatch:DescribeAlarms",
+          "cloudwatch:PutMetricAlarm",
+          "elasticloadbalancing:DescribeLoadBalancers",
+          "elasticloadbalancing:DescribeInstanceHealth",
+          "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+          "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
+          "elasticloadbalancing:DescribeTargetGroups",
+          "elasticloadbalancing:DescribeTargetHealth",
+          "elasticloadbalancing:RegisterTargets",
+          "elasticloadbalancing:DeregisterTargets"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }
+  ```
+
+   
 + `AWSCodeDeployRoleForLambda`: Grants CodeDeploy permission to access AWS Lambda and any other resource required for a deployment\.
 
-   
+   
 +  `AWSCodeDeployRoleForECS`: Grants CodeDeploy permission to access Amazon ECS and any other resource required for a deployment\. 
 
-   
+   
 +  `AWSCodeDeployRoleForECSLimited`: Grants CodeDeploy permission to access Amazon ECS and any other resource required for a deployment with the following exceptions: 
   +  In the `hooks` section of the AppSpec file, only Lambda functions with names that begin with `CodeDeployHook_` can be used\. For more information, see [AppSpec 'hooks' section for an Amazon ECS deployment](reference-appspec-file-structure-hooks.md#appspec-hooks-ecs)\. 
   +  S3 bucket access is limited to S3 buckets with a registration tag, `UseWithCodeDeploy`, that has a value of `true`\. For more information, see [Object tagging](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html)\. 
@@ -90,6 +155,16 @@ Permissions for some aspects of the deployment process are granted to two other 
   For more information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 You can also create custom IAM policies to grant permissions for CodeDeploy actions and resources\. You can attach these custom policies to the IAM users or groups who require those permissions\.
+
+### CodeDeploy updates to AWS managed policies<a name="managed-policies-updates"></a>
+
+View details about updates to AWS managed policies for CodeDeploy since this service began tracking these changes\. For automatic alerts about changes to this page, subscribe to the RSS feed on the CodeDeploy [Document history](document-history.md)\. 
+
+
+| Change | Description | Date | 
+| --- | --- | --- | 
+|  `AWSCodeDeployRole` managed policy – Updates to existing policy  |  Added the `autoscaling:PutWarmPool` action to support [adding warm pools to Amazon EC2 Auto Scaling groups](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html#add-warm-pool-console/ec2/userguide/ec2-auto-scaling-warm-pools.html#add-warm-pool-console) for blue/green deployments\. Removed needless duplicate actions\.  |  May 18, 2021  | 
+|  CodeDeploy started tracking changes  |  CodeDeploy started tracking changes for its AWS managed policies\.  |  May 18, 2021  | 
 
 ### CodeDeploy managed policies and notifications<a name="notifications-permissions"></a>
 

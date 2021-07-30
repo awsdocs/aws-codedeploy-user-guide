@@ -157,6 +157,6 @@ If you reuse an existing CodeDeploy service role as part of creating a deploymen
 
 After you deploy an application revision to registered and tagged on\-premises instances, you can track the deployment's progress\.
 
-You track deployments to on\-premises instances in a way that's similar to tracking deployments to Amazon EC2 instances\. For instructions, see [View CodeDeploydeployment details ](deployments-view-details.md)\.
+You track deployments to on\-premises instances in a way that's similar to tracking deployments to Amazon EC2 instances\. For instructions, see [View CodeDeploy deployment details ](deployments-view-details.md)\.
 
 For more options, see [Managing on\-premises instances operations in CodeDeploy](on-premises-instances-operations.md)\.

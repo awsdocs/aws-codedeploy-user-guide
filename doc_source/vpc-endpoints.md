@@ -12,9 +12,6 @@ The following steps are for users of Amazon VPC\. For more information, see [Get
 
 ## Availability<a name="codecommit-interface-VPC-availability"></a>
 
-**Note**  
-Currently, VPC endpoints are not supported by CodeDeploy agents on Windows\.
-
 CodeDeploy supports VPC endpoints in the following AWS Regions:
 + US East \(Ohio\) 
 + US East \(N\. Virginia\)

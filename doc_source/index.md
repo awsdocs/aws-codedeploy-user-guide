@@ -187,7 +187,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Create an EC2/On-Premises Compute Platform deployment (CLI)](deployments-create-cli.md)
          + [Connect a CodeDeploy application to a GitHub repository](deployments-create-cli-github.md)
       + [Create an Amazon ECS blue/green deployment through AWS CloudFormation](deployments-create-ecs-cfn.md)
-   + [View CodeDeploydeployment details](deployments-view-details.md)
+   + [View CodeDeploy deployment details](deployments-view-details.md)
    + [View log data for CodeDeploy EC2/On-Premises deployments](deployments-view-logs.md)
    + [Stop a deployment with CodeDeploy](deployments-stop.md)
    + [Redeploy and roll back a deployment with CodeDeploy](deployments-rollback-and-redeploy.md)

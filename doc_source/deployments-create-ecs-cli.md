@@ -35,4 +35,4 @@ The create\-deployment command can load a revision from a file\. For more inform
 
 For AWS Lambda deployment revision templates, see [Add an AppSpec file for an AWS Lambda deployment](application-revisions-appspec-file.md#add-appspec-file-lambda)\. For an example revision, see [ AppSpec File example for an AWS Lambda deployment ](reference-appspec-file-example.md#appspec-file-example-lambda)\.
 
-To track the status of your deployment, see [View CodeDeploydeployment details ](deployments-view-details.md)\.
+To track the status of your deployment, see [View CodeDeploy deployment details ](deployments-view-details.md)\.

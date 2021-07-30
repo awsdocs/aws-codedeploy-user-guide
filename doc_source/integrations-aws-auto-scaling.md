@@ -56,18 +56,16 @@ To learn how to add custom lifecycle hooks to an Amazon EC2 Auto Scaling group, 
 
 ### Scale\-out events during a deployment<a name="integrations-aws-auto-scaling-behaviors-mixed-environment"></a>
 
-If an Amazon EC2 Auto Scaling scale\-out event occurs while a deployment is underway, the new instances will be updated with the application revision that was most recently deployed, not the application revision that is currently being deployed\. If the deployment succeeds, the old instances and the newly scaled\-out instances will be hosting different application revisions\.
+If an Amazon EC2 Auto Scaling scale\-out event occurs while a deployment is underway, the new instances will be updated with the application revision that was most recently deployed, not the application revision that is currently being deployed\. If the deployment succeeds, the old instances and the newly scaled\-out instances will be hosting different application revisions\. To bring those instances up to date, CodeDeploy automatically starts a follow\-on deployment \(immediatedly after the first\) to update any outdated instances\. If you'd like to change this default behavior so that outdated EC2 instances are left at the older revision, see [Automatic updates to outdated instances](deployment-groups-configure-advanced-options.md#auto-updates-outdated-instances)\.
 
-To resolve this problem after it occurs, you can redeploy the newer application revision to the affected deployment groups\.
-
-To avoid this problem, we recommend suspending the Amazon EC2 Auto Scaling scale\-out processes while deployments are taking place\. You can do this through a setting in the common\_functions\.sh script that is used for load balancing with CodeDeploy\. If `HANDLE_PROCS=true`, the following Amazon EC2 Auto Scaling events are suspended automatically during the deployment process:
+If you want to suspend Amazon EC2 Auto Scaling scale\-out processes while deployments are taking place, you can do this through a setting in the `common_functions.sh` script that is used for load balancing with CodeDeploy\. If `HANDLE_PROCS=true`, the following Auto Scaling events are suspended automatically during the deployment process: 
 + AZRebalance
 + AlarmNotification
 + ScheduledActions
 + ReplaceUnhealthy
 
 **Important**  
-Only the CodeDeployDefault\.OneAtATime deployment configuration supports this functionality\. If you are using other deployment configurations, the deployment group might still have different application revisions applied to its instances\.
+Only the CodeDeployDefault\.OneAtATime deployment configuration supports this functionality\.
 
 For more information about using `HANDLE_PROCS=true` to avoid deployment problems when using Amazon EC2 Auto Scaling, see [Important notice about handling AutoScaling processes](https://github.com/awslabs/aws-codedeploy-samples/tree/master/load-balancing/elb#important-notice-about-handling-autoscaling-processes) in [aws\-codedeploy\-samples](https://github.com/awslabs/aws-codedeploy-samples) on GitHub\.
 

@@ -50,7 +50,7 @@ Your application must have a deployment group before it can be deployed\. If you
 
 1. Choose **Start deployment**\. 
 
-   To track the status of your deployment, see [View CodeDeploydeployment details ](deployments-view-details.md)\.
+   To track the status of your deployment, see [View CodeDeploy deployment details ](deployments-view-details.md)\.
 
 **Topics**
 + [Specify information about a revision stored in an Amazon S3 bucket](deployments-create-console-s3.md)
