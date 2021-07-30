@@ -20,80 +20,80 @@ Selecting the default **Public** option means that anyone can see this repositor
 **Note**  
 If you have enabled two\-factor authentication on GitHub, make sure you enter your personal access token instead of your GitHub login password if prompted for a password\. For information, see [Providing your 2FA authentication code](https://help.github.com/articles/providing-your-2fa-authentication-code/)\.
 
-   **On local Linux, macOS, or Unix machines:**
+**On local Linux, macOS, or Unix machines:**
 
-   1. From the terminal, run the following commands, one at a time, where *user\-name* is your GitHub user name:
+1. From the terminal, run the following commands, one at a time, where *user\-name* is your GitHub user name:
 
-      ```
-      mkdir /tmp/CodeDeployGitHubDemo
-      ```
+   ```
+   mkdir /tmp/CodeDeployGitHubDemo
+   ```
 
-      ```
-      cd /tmp/CodeDeployGitHubDemo
-      ```
+   ```
+   cd /tmp/CodeDeployGitHubDemo
+   ```
 
-      ```
-      touch README.md
-      ```
+   ```
+   touch README.md
+   ```
 
-      ```
-      git init
-      ```
+   ```
+   git init
+   ```
 
-      ```
-      git add README.md
-      ```
+   ```
+   git add README.md
+   ```
 
-      ```
-      git commit -m "My first commit"
-      ```
+   ```
+   git commit -m "My first commit"
+   ```
 
-      ```
-      git remote add origin https://github.com/user-name/CodeDeployGitHubDemo.git
-      ```
+   ```
+   git remote add origin https://github.com/user-name/CodeDeployGitHubDemo.git
+   ```
 
-      ```
-      git push -u origin master
-      ```
+   ```
+   git push -u origin master
+   ```
 
-   1. Leave the terminal open in the `/tmp/CodeDeployGitHubDemo` location\.
+1. Leave the terminal open in the `/tmp/CodeDeployGitHubDemo` location\.
 
-   **On local Windows machines:**
+**On local Windows machines:**
 
-   1. From a command prompt running as an administrator, run the following commands, one at a time:
+1. From a command prompt running as an administrator, run the following commands, one at a time:
 
-      ```
-      mkdir c:\temp\CodeDeployGitHubDemo
-      ```
+   ```
+   mkdir c:\temp\CodeDeployGitHubDemo
+   ```
 
-      ```
-      cd c:\temp\CodeDeployGitHubDemo
-      ```
+   ```
+   cd c:\temp\CodeDeployGitHubDemo
+   ```
 
-      ```
-      notepad README.md
-      ```
+   ```
+   notepad README.md
+   ```
 
-   1. In Notepad, save the `README.md` file\. Close Notepad\. Run the following commands, one at a time, where *user\-name* is your GitHub user name:
+1. In Notepad, save the `README.md` file\. Close Notepad\. Run the following commands, one at a time, where *user\-name* is your GitHub user name:
 
-      ```
-      git init
-      ```
+   ```
+   git init
+   ```
 
-      ```
-      git add README.md
-      ```
+   ```
+   git add README.md
+   ```
 
-      ```
-      git commit -m "My first commit"
-      ```
+   ```
+   git commit -m "My first commit"
+   ```
 
-      ```
-      git remote add origin https://github.com/user-name/CodeDeployGitHubDemo.git
-      ```
+   ```
+   git remote add origin https://github.com/user-name/CodeDeployGitHubDemo.git
+   ```
 
-      ```
-      git push -u origin master
-      ```
+   ```
+   git push -u origin master
+   ```
 
-   1. Leave the command prompt open in the `c:\temp\CodeDeployGitHubDemo` location\.
+1. Leave the command prompt open in the `c:\temp\CodeDeployGitHubDemo` location\.

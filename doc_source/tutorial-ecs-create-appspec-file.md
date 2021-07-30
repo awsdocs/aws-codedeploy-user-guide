@@ -19,7 +19,7 @@
          "TargetService": {
            "Type": "AWS::ECS::Service",
            "Properties": {
-             "TaskDefinition": "arn:aws:ecs:aws-region-id:aws-account-id::task-definition/ecs-demo-task-definition:revision-number",
+             "TaskDefinition": "arn:aws:ecs:aws-region-id:aws-account-id:task-definition/ecs-demo-task-definition:revision-number",
              "LoadBalancerInfo": {
                "ContainerName": "your-container-name",
                "ContainerPort": your-container-port
@@ -40,7 +40,7 @@
      - TargetService:
          Type: AWS::ECS::Service
          Properties:
-           TaskDefinition: "arn:aws:ecs:aws-region-id:aws-account-id::task-definition/ecs-demo-task-definition:revision-number"
+           TaskDefinition: "arn:aws:ecs:aws-region-id:aws-account-id:task-definition/ecs-demo-task-definition:revision-number"
            LoadBalancerInfo:
              ContainerName: "your-container-name"
              ContainerPort: your-container-port

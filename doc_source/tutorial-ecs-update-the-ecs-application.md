@@ -17,6 +17,6 @@
 1.  Choose **Create**\. You should see your task definition's revision number has been incremented by one\. 
 
 1.  Choose the **JSON** tab\. Make a note of the following because you need this information in the next step\. 
-   +  The value for `taskDefinitionArn`\. Its format is `arn:aws:ecs:aws-region: account-id:task-definition/task-definition-family: task-definition-revision`\. This is the ARN of your updated task definition\. 
+   +  The value for `taskDefinitionArn`\. Its format is `arn:aws:ecs:aws-region:account-id:task-definition/task-definition-family:task-definition-revision`\. This is the ARN of your updated task definition\. 
    +  In the `containerDefinitions` element, the value for `name`\. This is the name of your container\. 
    +  In the `portMappings` element, the value for `containerPort`\. This is the port for your container\. 

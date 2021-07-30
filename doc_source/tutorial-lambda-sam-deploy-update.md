@@ -49,7 +49,7 @@
 
 1.  From the navigation pane, choose your `my-date-time-app-myDateTimeFunction` function\. In the console, its name contains an identifier, so it looks like `my-date-time-app-myDateTimeFunction-123456ABCDEF`\. 
 
-1.  Choose **Qualifiers**, choose **Aliases**, and then choose **live**\. 
+1.  Choose **Aliases**, and then choose **live**\. 
 
 The weights next to your original function version \(version 1\) and your updated function version \(version 2\) show how much traffic is served to each version at the time this AWS Lambda console page was loaded\. The page does not update the weights over time\. If you refresh the page once a minute, the weight for version 1 decreases by 10 percent and the weight for version 2 increases by 10 percent until the weight for version 2 is 100\. 
 

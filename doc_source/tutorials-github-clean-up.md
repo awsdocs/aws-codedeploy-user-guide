@@ -17,7 +17,7 @@ To avoid further charges for resources you used during this tutorial, you must t
 1. Use the AWS CLI to call the [deregister](https://docs.aws.amazon.com/cli/latest/reference/deploy/deregister.html) command against the on\-premises instance represented here by *your\-instance\-name* and the associated region by *your\-region*:
 
    ```
-   aws deploy deregister --instance-name your-instance-name --delete-iam-user --region your-region
+   aws deploy deregister --instance-name your-instance-name --no-delete-iam-user --region your-region
    ```
 
 1. From the on\-premises instance, call the [uninstall](https://docs.aws.amazon.com/cli/latest/reference/deploy/uninstall.html) command:
