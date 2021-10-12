@@ -58,6 +58,7 @@
    ```
    aws lambda invoke \
    --function your-function-arn \
+   --cli-binary-format raw-in-base64-out \
    --payload "{\"option\": \"date\", \"period\": \"today\"}" out.txt
    ```
 
