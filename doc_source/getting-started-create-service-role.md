@@ -1,4 +1,4 @@
-# Step 3: Create a service role for CodeDeploy<a name="getting-started-create-service-role"></a>
+# Step 2: Create a service role for CodeDeploy<a name="getting-started-create-service-role"></a>
 
 In AWS, service roles are used to grant permissions to an AWS service so it can access AWS resources\. The policies that you attach to the service role determine which resources the service can access and what it can do with those resources\. 
 
@@ -15,7 +15,7 @@ For EC2/On\-Premises deployments, attach the **AWSCodeDeployRole** policy\. It p
  `ec2:RunInstances` 
  `ec2:CreateTags` 
  `iam:PassRole` 
-For more information, see [Step 3: Create a service role](#getting-started-create-service-role), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\. 
+For more information, see [Step 2: Create a service role](#getting-started-create-service-role), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\. 
 
 For Amazon ECS deployments, if you want full access to support services, attach the **AWSCodeDeployRoleForECS** policy\. It provides the permissions for your service role to:
 +  Read, update, and delete Amazon ECS task sets\. 

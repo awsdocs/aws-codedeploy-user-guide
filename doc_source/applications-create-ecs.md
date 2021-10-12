@@ -22,7 +22,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 **Note**  
 If you want to use the same settings used in another deployment group \(including the deployment group name and the deployment configuration\), choose those settings on this page\. Although this new group and the existing group might have the same name, CodeDeploy treats them as separate deployment groups, because each is associated with a separate application\.
 
-1. In **Service role**, choose a service role that grants CodeDeploy access to Amazon ECS\. For more information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
+1. In **Service role**, choose a service role that grants CodeDeploy access to Amazon ECS\. For more information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 1.  From **Load balancer name**, choose the name of the load balancer that serves traffic to your Amazon ECS service\. 
 

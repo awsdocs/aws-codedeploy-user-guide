@@ -27,7 +27,7 @@ The CodeDeploy agent is required only if you deploy to an Amazon EC2/On\-premise
 
 ## Encryption at rest<a name="encryption-at-rest"></a>
 
-Customer code is not stored in CodeDeploy\. As a deployment service, CodeDeploy is dispatching commands to the CodeDeploy agent running on EC2 instances or on\-premises servers\. The CodeDeploy agent then executes the commands using TLS\. Service model data for deployments, deployment configuration, deployment groups, applications, and application revisions are stored in Amazon DynamoDB and encrypted at rest using an AWS owned CMK, owned and managed by CodeDeploy\. For more information, see [AWS owned CMKs](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)\.
+Customer code is not stored in CodeDeploy\. As a deployment service, CodeDeploy is dispatching commands to the CodeDeploy agent running on EC2 instances or on\-premises servers\. The CodeDeploy agent then executes the commands using TLS\. Service model data for deployments, deployment configuration, deployment groups, applications, and application revisions are stored in Amazon DynamoDB and encrypted at rest using an AWS owned key, owned and managed by CodeDeploy\. For more information, see [AWS owned keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)\.
 
 ## Encryption in transit<a name="encryption-in-transit"></a>
 
@@ -35,4 +35,4 @@ The CodeDeploy agent initiates all communication with CodeDeploy over port 443\.
 
 ## Encryption key management<a name="key-management"></a>
 
-There are no encryption keys for you to manage\. The CodeDeploy service model data is encrypted using an AWS owned CMK, owned and managed by CodeDeploy\. For more information, see [AWS owned CMKs](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)\.
+There are no encryption keys for you to manage\. The CodeDeploy service model data is encrypted using an AWS owned key, owned and managed by CodeDeploy\. For more information, see [AWS owned keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)\.

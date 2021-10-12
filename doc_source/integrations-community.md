@@ -25,21 +25,3 @@ These links are provided for informational purposes only, and should not be cons
   Learn how automatic deployments from GitHub to CodeDeploy can be used to create an end\-to\-end pipeline — from source control to your testing or production environments\. 
 
   *Published December 2014*
-
-## Videos<a name="integrations-community-videos"></a>
-+ **Hosting ASP\.NET 5 Apps in AWS with Docker and CodeDeploy**
-
-  Learn how CodeDeploy can be used to deploy ASP\.NET 5 applications to an Internet Information Services \(IIS\) server on Microsoft Windows operating systems\.   
-[![AWS Videos](http://img.youtube.com/vi/VWk9UjDmLZw/0.jpg)](http://www.youtube.com/watch?v=VWk9UjDmLZw)
-
-  *Published October 2015*
-
-  *Duration: 47:37*
-+ **Mastering CodeDeploy with Jenkins and Puppet**
-
-  Learn how to use the open\-source tools Jenkins and Puppet with CodeDeploy\.  
-[![AWS Videos](http://img.youtube.com/vi/ugpfW-avo-c/0.jpg)](http://www.youtube.com/watch?v=ugpfW-avo-c)
-
-  *Published May 2015*
-
-  *Duration: 49:31*

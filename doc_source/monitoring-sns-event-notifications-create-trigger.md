@@ -104,7 +104,7 @@ The simplest way to create the JSON file is to use the `--generate-cli-skeleton`
    When you use the [create\-deployment\-group](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.html) command, you must provide, at a minimum, values for the following parameters:
    + `applicationName`: The name of an application already created in your account\. 
    + `deploymentGroupName`: A name for the deployment group you are creating\.
-   + `serviceRoleArn`: The ARN of an existing service role set up for CodeDeploy in your account\. For information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
+   + `serviceRoleArn`: The ARN of an existing service role set up for CodeDeploy in your account\. For information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
    In the `triggerConfigurations` section, provide values for the following parameters: 
    + `triggerName`: The name you want to give the trigger so you can easily identify it\. We recommend formats such as `Trigger-group-us-west-3-deploy-fail` or `Trigger-group-eu-central-instance-stop`\.

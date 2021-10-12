@@ -4,4 +4,4 @@
 
 CodeDeploy does not automatically deploy your application to a newly tagged instance\. You must create a new deployment in the deployment group\.
 
-You can use CodeDeploy to enable automatic deployments to new Amazon EC2 instances in Amazon EC2 Auto Scaling groups\. For more information, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.
+You can use CodeDeploy to enable automatic deployments to new EC2 instances in Amazon EC2 Auto Scaling groups\. For more information, see [Integrating CodeDeploy with Amazon EC2 Auto Scaling](integrations-aws-auto-scaling.md)\.

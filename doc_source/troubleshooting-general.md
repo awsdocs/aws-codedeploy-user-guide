@@ -15,7 +15,7 @@ You can use the following checklist to troubleshoot a failed deployment\.
 1. See [View CodeDeploy deployment details ](deployments-view-details.md) and [View instance details with CodeDeploy](instances-view-details.md) to determine why the deployment failed\. If you cannot determine the cause, review the items in this checklist\.
 
 1. Check that you have correctly configured the instances:
-   + Was the instance launched with an Amazon EC2 key pair specified? For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
+   + Was the instance launched with an EC2 key pair specified? For more information, see [EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2-key-pairs.html) in *Amazon EC2 User Guide for Linux Instances*\.
    + Is the correct IAM instance profile attached to the instance? For more information, see [Configure an Amazon EC2 instance to work with CodeDeploy](instances-ec2-configure.md) and [Step 4: Create an IAM instance profile for your Amazon EC2 instances](getting-started-create-iam-instance-profile.md)\.
    + Was the instance tagged? For more information, see [Working with tags in the console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in *Amazon EC2 User Guide for Linux Instances*\.
    + Is the CodeDeploy agent installed, updated, and running on the instance? For more information, see [Managing CodeDeploy agent operations](codedeploy-agent-operations.md)\. To check which version of the agent is installed, see [Determine the version of the CodeDeploy agent](codedeploy-agent-operations-version.md)\.
@@ -31,7 +31,7 @@ You can use the following checklist to troubleshoot a failed deployment\.
    + If you're deploying from Amazon S3, check your Amazon S3 bucket to verify CodeDeploy has been granted permissions to download the application revision\. For information about bucket policies, see [Deployment prerequisites](deployments-create-prerequisites.md)\.
    + If you're deploying from GitHub, check your GitHub repository to verify CodeDeploy has been granted permissions to download the application revision\. For more information, see [Create a deployment with CodeDeploy](deployments-create.md) and [GitHub authentication with applications in CodeDeploy](integrations-partners-github.md#behaviors-authentication)\.
 
-1. Check that the service role is correctly configured\. For information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
+1. Check that the service role is correctly configured\. For information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 1. Confirm you followed the steps in [Getting started with CodeDeploy](getting-started-codedeploy.md) to: 
    + Attach policies to the IAM user\.
@@ -48,7 +48,7 @@ If you are still unable to troubleshoot your failed deployment, review the other
 
 If you do not see or cannot access applications, deployment groups, instances, or other deployment resources from the AWS CLI or the CodeDeploy console, make sure you're referencing one of the AWS Regions listed in [Region and endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region) in *AWS General Reference*\.
 
-Amazon EC2 instances and Amazon EC2 Auto Scaling groups that are used in CodeDeploy deployments must be launched and created in one of these AWS Regions\.
+EC2 instances and Amazon EC2 Auto Scaling groups that are used in CodeDeploy deployments must be launched and created in one of these AWS Regions\.
 
 If you're using the AWS CLI, run the aws configure command from the AWS CLI\. Then you can view and set your default AWS Region\.
 

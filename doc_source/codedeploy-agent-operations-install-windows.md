@@ -35,6 +35,8 @@ Sign in to the instance, and run the following commands in Windows PowerShell:
    New-Item -Path "c:\temp" -ItemType "directory" -Force
    ```
 
+1. Configure AWS credentials using the `Set-AWSCredential` and `Initialize-AWSDefaultConfiguration` commands\. For more information, see [Using AWS credentials](https://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html) in the *AWS tools for PowerShell User Guide*\.
+
 1.  Download the CodeDeploy agent installation file\. 
 
    To install the latest version of the CodeDeploy agent:

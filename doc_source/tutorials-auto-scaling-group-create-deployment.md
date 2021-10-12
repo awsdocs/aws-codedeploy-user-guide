@@ -14,7 +14,7 @@ In this step, you'll deploy the revision to the single Amazon EC2 instance in th
    aws deploy create-application --application-name SimpleDemoApp
    ```
 
-1. You should have already created a service role by following the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their tags\. You will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
+1. You should have already created a service role by following the instructions in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their tags\. You will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
 
 1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Amazon EC2 Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
 **Note**  
@@ -105,7 +105,7 @@ Currently, CodeDeploy does not provide a sample revision to deploy to Ubuntu Ser
 
 ## To create the deployment \(console\)<a name="tutorials-auto-scaling-group-create-deployment-console"></a>
 
-1. You should have already created a service role by following the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your instances to expand \(read\) their tags\. Before you use the CodeDeploy console to deploy your application revision, you will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\. 
+1. You should have already created a service role by following the instructions in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your instances to expand \(read\) their tags\. Before you use the CodeDeploy console to deploy your application revision, you will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(console\) ](getting-started-create-service-role.md#getting-started-get-service-role-console)\. 
 
 1. Now that you have the service role ARN, you can use the CodeDeploy console to deploy your application revision\.
 

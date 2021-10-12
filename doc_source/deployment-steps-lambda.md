@@ -3,7 +3,6 @@
 This topic provides information about the components and workflow of CodeDeploy deployments that use the AWS Lambda compute platform\. 
 
 **Topics**
-+ [Deployment components on an AWS Lambda compute platform](#deployment-steps-workflow-lambda)
 + [Deployment workflow on an AWS Lambda compute platform](#deployment-process-workflow-lambda)
 + [Uploading your application revision](#deployment-steps-uploading-your-app-lambda)
 + [Creating your application and deployment groups](#deployment-steps-registering-app-deployment-groups-lambda)
@@ -11,12 +10,6 @@ This topic provides information about the components and workflow of CodeDeploy 
 + [Updating your application](#deployment-steps-updating-your-app-lambda)
 + [Stopped and failed deployments](#deployment-stop-fail-lambda)
 + [Redeployments and deployment rollbacks](#deployment-rollback-lambda)
-
-## Deployment components on an AWS Lambda compute platform<a name="deployment-steps-workflow-lambda"></a>
-
-There are several components in a CodeDeploy deployment on an AWS Lambda compute platform\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/deployment-components-workflow-lambda.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
 ## Deployment workflow on an AWS Lambda compute platform<a name="deployment-process-workflow-lambda"></a>
 

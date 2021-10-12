@@ -3,15 +3,8 @@
 CodeDeploy supports [GitHub](https://github.com/about), a web\-based code hosting and sharing service\. CodeDeploy can deploy application revisions stored in GitHub repositories or Amazon S3 buckets to instances\. CodeDeploy supports GitHub for EC2/On\-Premises deployments only\.
 
 **Topics**
-+ [Video introduction to CodeDeploy integration with GitHub](#video-introduction)
 + [Deploying CodeDeploy revisions from GitHub](#github-deployment-steps)
 + [GitHub behaviors with CodeDeploy](#github-behaviors)
-
-## Video introduction to CodeDeploy integration with GitHub<a name="video-introduction"></a>
-
-This short video \(5:20\) demonstrates how to automate application deployments with CodeDeploy from your existing GitHub workflows\.
-
-[![AWS Videos](http://img.youtube.com/vi/N3saR9D7hq8/0.jpg)](http://www.youtube.com/watch?v=N3saR9D7hq8)
 
 ## Deploying CodeDeploy revisions from GitHub<a name="github-deployment-steps"></a>
 

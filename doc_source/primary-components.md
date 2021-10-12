@@ -63,7 +63,7 @@ Amazon ECS blue/green deployments are supported using both CodeDeploy and AWS Cl
 + To publish information to Amazon SNS topics so that notifications can be sent when specified deployment or instance events occur\.
 + To retrieve information about CloudWatch alarms to set up alarm monitoring for deployments\.
 
-For more information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
+For more information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 **Target revision**: The most recent version of the application revision that you have uploaded to your repository and want to deploy to the instances in a deployment group\. In other words, the application revision currently targeted for deployment\. This is also the revision that is pulled for automatic deployments\.
 

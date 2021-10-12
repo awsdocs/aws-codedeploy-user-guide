@@ -46,9 +46,6 @@ The remainder of this topic describes the basic procedure for creating a CloudWa
 
 1. Review your rule setup to make sure it meets your event\-monitoring requirements\.
 
-   The following shows the setup for an event rule that will be processed whenever a deployment fails to any instance in the `MyDeploymentFleet` deployment group for the application named `MyCodeDeployApp`:  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/CWE-Event-selector.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
-
 1. In the **Targets** area, choose **Add target\***\.
 
 1. In the **Select target type** list, choose the type of target you have prepared to use with this rule, and then configure any additional options required by that type\. 

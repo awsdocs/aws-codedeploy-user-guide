@@ -152,7 +152,7 @@ Permissions for some aspects of the deployment process are granted to two other 
   + To publish information to Amazon SNS topics so that notifications can be sent when specified deployment or instance events occur\.
   + To retrieve information about CloudWatch alarms to set up alarm monitoring for deployments\.
 
-  For more information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
+  For more information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 You can also create custom IAM policies to grant permissions for CodeDeploy actions and resources\. You can attach these custom policies to the IAM users or groups who require those permissions\.
 

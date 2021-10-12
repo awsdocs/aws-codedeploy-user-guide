@@ -152,7 +152,7 @@ You are now ready to deploy application revisions to the registered and tagged o
 You deploy application revisions to on\-premises instances in a way that's similar to deploying application revisions to Amazon EC2 instances\. For instructions, see [Create a deployment with CodeDeploy](deployments-create.md)\. These instructions link to prerequisites, including creating an application, creating a deployment group, and preparing an application revision\. If you need a simple sample application revision to deploy, you can create the one described in [Step 2: Create a sample application revision](tutorials-on-premises-instance-2-create-sample-revision.md) in the [Tutorial: Deploy an application to an on\-premises instance with CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md)\.
 
 **Important**  
-If you reuse an existing CodeDeploy service role as part of creating a deployment group that targets on\-premises instances, you must include `Tag:get*` to the `Action` portion of the service role's policy statement\. For more information, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
+If you reuse an existing CodeDeploy service role as part of creating a deployment group that targets on\-premises instances, you must include `Tag:get*` to the `Action` portion of the service role's policy statement\. For more information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 ## Step 5: Track deployments to the on\-premises instance<a name="instances-on-premises-register-instance-5-track-deployment"></a>
 

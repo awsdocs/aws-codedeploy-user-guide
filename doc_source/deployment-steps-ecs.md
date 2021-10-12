@@ -4,7 +4,6 @@ This topic provides information about the components and workflow of CodeDeploy 
 
 **Topics**
 + [Before you begin an Amazon ECS deployment](#deployment-steps-prerequisites-ecs)
-+ [Deployment components on an Amazon ECS compute platform](#deployment-steps-components-ecs)
 + [Deployment workflow \(high level\) on an Amazon ECS compute platform](#deployment-process-workflow-ecs)
 + [What happens during an Amazon ECS deployment](#deployment-steps-what-happens)
 + [Uploading your application revision](#deployment-steps-uploading-your-app-ecs)
@@ -58,12 +57,6 @@ A *listener* is used by your load balancer to direct traffic to your target grou
 
 **A port for your replacement task set**  
  During your Amazon ECS deployment, your load balancer directs traffic to this *port* on the container specified in your CodeDeploy application's AppSpec file\. You specify the port in your CodeDeploy application's AppSpec file\. For more information, see [ AppSpec 'resources' section for Amazon ECS deployments ](reference-appspec-file-structure-resources.md#reference-appspec-file-structure-resources-ecs)\. 
-
-## Deployment components on an Amazon ECS compute platform<a name="deployment-steps-components-ecs"></a>
-
-The following diagram shows the components in a CodeDeploy deployment on an Amazon ECS compute platform\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/deployment-components-workflow-ecs.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
 ## Deployment workflow \(high level\) on an Amazon ECS compute platform<a name="deployment-process-workflow-ecs"></a>
 

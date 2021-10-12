@@ -8,7 +8,7 @@ To use the CodeDeploy console to create an application for an in\-place deployme
 Do not follow these steps if:  
 You have not prepared your instances to be used in CodeDeploy deployments\. To set up your instances, follow the instructions in [Working with instances for CodeDeploy](instances.md), and then follow the steps in this topic\.
 You want to create an application that uses a custom deployment configuration, but you have not yet created the deployment configuration\. Follow the instructions in [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md), and then follow the steps in this topic\. 
-You do not have a service role that trusts CodeDeploy with the minimum required trust and permissions\. To create and configure a service role with the required permissions, follow the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md), and then return to the steps in this topic\.
+You do not have a service role that trusts CodeDeploy with the minimum required trust and permissions\. To create and configure a service role with the required permissions, follow the instructions in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md), and then return to the steps in this topic\.
 You want to select a Classic Load Balancer, Application Load Balancer, or Network Load Balancer in Elastic Load Balancing for the in\-place deployment, but have not yet created it\.
 
 To create an application for an in\-place deployment using the CodeDeploy console:

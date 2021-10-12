@@ -1,16 +1,16 @@
 # Troubleshoot instance issues<a name="troubleshooting-ec2-instances"></a>
 
 **Topics**
-+ [Tags must be set correctly](#troubleshooting-ec2-tags)
++ [Tags must be set correctly](#troubleshooting-EC2-tags)
 + [AWS CodeDeploy agent must be installed and running on instances](#troubleshooting-sds-agent)
 + [Deployments do not fail for up to an hour when an instance is terminated during a deployment](#troubleshooting-one-hour-timeout)
 + [Analyzing log files to investigate deployment failures on instances](#troubleshooting-deploy-failures)
 + [Create a new CodeDeploy log file if it was accidentally deleted](#troubleshooting-create-new-log-file)
 + [Troubleshooting “InvalidSignatureException – Signature expired: \[time\] is now earlier than \[time\]” deployment errors](#troubleshooting-instance-time-failures)
 
-## Tags must be set correctly<a name="troubleshooting-ec2-tags"></a>
+## Tags must be set correctly<a name="troubleshooting-EC2-tags"></a>
 
-Use the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command to confirm the instances used for a deployment are tagged correctly\. If an Amazon EC2 instance is missing in the output, use the Amazon EC2 console to confirm the tags have been set on the instance\. For more information, see [Working with tags in the console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in the *Amazon EC2 User Guide for Linux Instances*\.
+Use the [list\-deployment\-instances](https://docs.aws.amazon.com/cli/latest/reference/deploy/list-deployment-instances.html) command to confirm the instances used for a deployment are tagged correctly\. If an EC2 instance is missing in the output, use the EC2 console to confirm the tags have been set on the instance\. For more information, see [Working with tags in the console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#Using_Tags_Console) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 **Note**  
 If you tag an instance and immediately use CodeDeploy to deploy an application to it, the instance might not be included in the deployment\. This is because it can take several minutes before CodeDeploy can read the tags\. We recommend that you wait at least five minutes between the time you tag an instance and attempt to deploy to it\.

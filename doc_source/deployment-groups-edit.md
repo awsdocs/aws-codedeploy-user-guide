@@ -3,7 +3,7 @@
 You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to change the settings of a deployment group\.
 
 **Warning**  
-Do not use these steps if you want the deployment group to use a not\-yet\-created custom deployment group\. Instead, follow the instructions in [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md), and then return to this topic\. Do not use these steps if you want the deployment group to use a different, not\-yet\-created service role\. The service role must trust CodeDeploy with, at minimum, the permissions described in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role with the correct permissions, follow the instructions in [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md), and then return to this topic\.
+Do not use these steps if you want the deployment group to use a not\-yet\-created custom deployment group\. Instead, follow the instructions in [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md), and then return to this topic\. Do not use these steps if you want the deployment group to use a different, not\-yet\-created service role\. The service role must trust CodeDeploy with, at minimum, the permissions described in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. To create and configure a service role with the correct permissions, follow the instructions in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md), and then return to this topic\.
 
 **Topics**
 + [Change deployment group settings \(console\)](#deployment-groups-edit-console)

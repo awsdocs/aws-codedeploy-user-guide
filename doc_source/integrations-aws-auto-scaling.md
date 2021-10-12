@@ -9,7 +9,7 @@ Be aware that you might encounter issues if you associate multiple deployment gr
 
 **Topics**
 + [Deploying CodeDeploy applications to Amazon EC2 Auto Scaling groups](#integrations-aws-auto-scaling-deploy)
-+ [Amazon EC2 Auto Scaling behaviors with CodeDeploy](#integrations-aws-auto-scaling-behaviors)
++ [How Amazon EC2 Auto Scaling works with CodeDeploy](#integrations-aws-auto-scaling-behaviors)
 + [Using a custom AMI with CodeDeploy and Amazon EC2 Auto Scaling](#integrations-aws-auto-scaling-custom-ami)
 
 ## Deploying CodeDeploy applications to Amazon EC2 Auto Scaling groups<a name="integrations-aws-auto-scaling-deploy"></a>
@@ -30,7 +30,46 @@ You can also use CodeDeploy to deploy revisions from GitHub repositories to Amaz
 
 For more information, see [Tutorial: Use CodeDeploy to deploy an application to an Amazon EC2 Auto Scaling group](tutorials-auto-scaling-group.md)\.
 
-## Amazon EC2 Auto Scaling behaviors with CodeDeploy<a name="integrations-aws-auto-scaling-behaviors"></a>
+## How Amazon EC2 Auto Scaling works with CodeDeploy<a name="integrations-aws-auto-scaling-behaviors"></a>
+
+In order for CodeDeploy to deploy your application revision to new EC2 instances during an Auto Scaling scale out event, CodeDeploy uses an Auto Scaling lifecycle hook\. The lifecycle hook notifies CodeDeploy that an Auto Scaling scale out event is in progress and that CodeDeploy needs to deploy a revision to the scaled out instances\.
+
+**Note**  
+In this section, the terms ‘lifecycle hook’ and ‘hook’ refer to the hook used to integrate CodeDeploy with Auto Scaling\. This hook is different from the hooks described in the [AppSpec 'hooks' section](reference-appspec-file-structure-hooks.md)\.
+
+**Topics**
++ [How is the lifecycle hook created and installed?](#integrations-aws-auto-scaling-behaviors-hook-creation)
++ [After CodeDeploy adds the lifecycle hook, how is it used?](#integrations-aws-auto-scaling-behaviors-hook-usage)
++ [How CodeDeploy names Amazon EC2 Auto Scaling groups](#integrations-aws-auto-scaling-behaviors-naming)
++ [Execution order of custom lifecycle hook events](#integrations-aws-auto-scaling-behaviors-hook-order)
++ [Scale\-out events during a deployment](#integrations-aws-auto-scaling-behaviors-mixed-environment)
++ [Order of events in AWS CloudFormation cfn\-init scripts](#integrations-aws-auto-scaling-behaviors-event-order)
+
+### How is the lifecycle hook created and installed?<a name="integrations-aws-auto-scaling-behaviors-hook-creation"></a>
+
+When you create or update a deployment group to include an Auto Scaling group, CodeDeploy accesses the Auto Scaling group using the CodeDeploy service role, and then installs a lifecycle hook in the Auto Scaling group\.
+
+### After CodeDeploy adds the lifecycle hook, how is it used?<a name="integrations-aws-auto-scaling-behaviors-hook-usage"></a>
+
+After the lifecycle hook is installed, it is used during scale out events\. A scale out event unfolds as follows:
+
+1. The Auto Scaling service \(or simply, Auto Scaling\) determines that a scale out event needs to occur, and contacts the EC2 service to launch a new EC2 instance\.
+
+1. The EC2 service launches a new EC2 instance\. The instance moves into the `Pending` state, and then into the `Pending:Wait` state\. 
+
+1. During `Pending:Wait`, Auto Scaling runs all the lifecycle hooks attached to the Auto Scaling group, including the lifecycle hook created by CodeDeploy\.
+
+1. The lifecycle hook sends a notification to the [Amazon SQS queue](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html) that is polled by CodeDeploy\.
+
+1. Upon receiving the notification, CodeDeploy parses the message, performs some validation, and starts to deploy your application to the new EC2 instance using the last successful revision\.
+
+1. While the deployment is running, CodeDeploy sends heartbeats every five minutes to Auto Scaling to let it know that the instance is still being worked on\.
+
+1. So far, the EC2 instance is still in the `Pending:Wait` state\.
+
+1. When the deployment completes, CodeDeploy indicates to Auto Scaling to either `CONTINUE` or `ABANDON` the EC2 launch process, depending on whether the deployment succeeded or failed\.
+   + If CodeDeploy indicates `CONTINUE`, Auto Scaling continues the launch process, either waiting for other hooks to complete, or putting the instance into the `Pending:Proceed` and then the `InService` state\.
+   + If CodeDeploy indicates ABANDON, Auto Scaling terminates the EC2 instance, and restarts the launch procedure if needed to meet the desired number of instances, as defined in the Auto Scaling **Desired Capacity** setting\.
 
 ### How CodeDeploy names Amazon EC2 Auto Scaling groups<a name="integrations-aws-auto-scaling-behaviors-naming"></a>
 

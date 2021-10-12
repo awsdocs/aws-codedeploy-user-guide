@@ -7,7 +7,7 @@ To follow along in this tutorial:
   +  `ec2:CreateTags` 
   +  `iam:PassRole` 
 
-  For more information, see [Step 3: Create a service role](getting-started-create-service-role.md), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\. 
+  For more information, see [Step 2: Create a service role](getting-started-create-service-role.md), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\. 
 +  Create and use a revision that is compatible with an Ubuntu Server instance and CodeDeploy\. For your revision, you can do one of the following:
   + Create and use the sample revision in [Step 2: Create a sample application revision](tutorials-on-premises-instance-2-create-sample-revision.md) in the [Tutorial: Deploy an application to an on\-premises instance with CodeDeploy \(Windows Server, Ubuntu Server, or Red Hat Enterprise Linux\)](tutorials-on-premises-instance.md) tutorial\. 
   + Create a revision on your own, see [Working with application revisions for CodeDeploy](application-revisions.md)\.

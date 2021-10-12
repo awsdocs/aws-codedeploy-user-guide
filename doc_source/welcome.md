@@ -26,7 +26,6 @@ CodeDeploy works with various systems for configuration management, source contr
  The CodeDeploy console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines\. Choose **Go to resource** or press the `/` key, and then type the name of the resource\. Any matches appear in the list\. Searches are case insensitive\. You only see resources that you have permissions to view\. For more information, see [Identity and access management for AWS CodeDeploy](security-iam.md)\. 
 
 **Topics**
-+ [Video introduction to AWS CodeDeploy](#intro-video-welcome)
 + [Benefits of AWS CodeDeploy](#benefits)
 + [Overview of CodeDeploy compute platforms](#compute-platform)
 + [Overview of CodeDeploy deployment types](#welcome-deployment-overview)
@@ -34,12 +33,6 @@ CodeDeploy works with various systems for configuration management, source contr
 + [Primary Components](primary-components.md)
 + [Deployments](deployment-steps.md)
 + [Application Specification Files](application-specification-files.md)
-
-## Video introduction to AWS CodeDeploy<a name="intro-video-welcome"></a>
-
-This short video \(2:10\) describes how CodeDeploy automates code deployments to Amazon EC2 instances\.
-
-[![AWS Videos](http://img.youtube.com/vi/Wx-ain8UryM/0.jpg)](http://www.youtube.com/watch?v=Wx-ain8UryM)
 
 ## Benefits of AWS CodeDeploy<a name="benefits"></a>
 
@@ -114,12 +107,8 @@ Using the CodeDeploy agent, you can perform a deployment on an instance you are 
 
 ### Overview of an in\-place deployment<a name="welcome-deployment-overview-in-place"></a>
 
-The following diagram shows the flow of a typical CodeDeploy in\-place deployment\.
-
 **Note**  
 AWS Lambda and Amazon ECS deployments cannot use an in\-place deployment type\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/images/sds_architecture.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/)
 
 Here's how an in\-place deployment works:
 

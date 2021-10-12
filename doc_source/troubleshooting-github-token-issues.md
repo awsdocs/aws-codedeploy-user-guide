@@ -9,7 +9,7 @@
 **To fix an invalid GitHub OAuth token**
 
 1.  Remove the old token using one of the following methods:
-   + To remove the old token using the API, use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\.
+   + To remove the old token using the API, use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/CodeDeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\.
    + To remove the old token using the AWS Command Line Interface:
 
      1. Go to the computer where the token resides\.
@@ -26,4 +26,4 @@
 
 ## Maximum number of GitHub OAuth tokens exceeded<a name="troubleshooting-too-many-github-tokens"></a>
 
-When you create a CodeDeploy deployment, the maximum number of allowed GitHub tokens is 10\. If you receive an error about GitHub OAuth tokens, make sure you have 10 or fewer tokens\. If you have more than 10 tokens, the first tokens that were created are invalid\. For example, if you have 11 tokens, the first token you created is invalid\. If you have 12 tokens, the first two tokens you created are invalid\. For information about using the CodeDeploy API to remove old tokens, see [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\. 
+When you create a CodeDeploy deployment, the maximum number of allowed GitHub tokens is 10\. If you receive an error about GitHub OAuth tokens, make sure you have 10 or fewer tokens\. If you have more than 10 tokens, the first tokens that were created are invalid\. For example, if you have 11 tokens, the first token you created is invalid\. If you have 12 tokens, the first two tokens you created are invalid\. For information about using the CodeDeploy API to remove old tokens, see [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/CodeDeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\. 

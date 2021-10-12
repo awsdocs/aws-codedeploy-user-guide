@@ -17,11 +17,11 @@ The causes of many deployment failures can be identified by reviewing the log fi
 
 ## CodeDeploy agent fails to start on Windows 2016<a name="troubleshooting-error-1920-service-codedeploy-host-agent-service"></a>
 
-When running the CodeDeploy agent installer file \(`codedeploy-agent.msi`\) on Windows 2016, the \.msi file fails to start and you see the following error in `C:\Windows\TEMP\codedeploy-agent.msi_installer.log`:
+When running the CodeDeploy agent installer file \(`CodeDeploy-agent.msi`\) on Windows 2016, the \.msi file fails to start and you see the following error in `C:\Windows\TEMP\CodeDeploy-agent.msi_installer.log`:
 
-`Error 1920 Service 'CodeDeploy Host Agent Service' (codedeployagent) failed to start. Verify that you have sufficient privileges to start system services.`
+`Error 1920 Service 'CodeDeploy Host Agent Service' (CodeDeployagent) failed to start. Verify that you have sufficient privileges to start system services.`
 
-This error occurs because the Windows Defender anti\-virus software is blocking the `codedeploy-agent.msi` file from running\.
+This error occurs because the Windows Defender anti\-virus software is blocking the `CodeDeploy-agent.msi` file from running\.
 
 To resolve this issue, you must add Windows Defender exclusions before running the agent installer\.
 
@@ -36,7 +36,7 @@ To resolve this issue, you must add Windows Defender exclusions before running t
 
 1. Add the exclusions before the agent installation, as part of your custom AMI, or with Systems Manager\. If you are installing the agent as part of user data, add the exclusions one step before the agent installation script\.
 
-   For more information, see [Install the CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md), [Running commands using Systems Manager Run Command](https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html), and [Run commands on your WIndows instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-windows-user-data.html)\. 
+   For more information, see [Install the CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md), [Running commands using Systems Manager Run Command](https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html), and [Run commands on your WIndows instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2-windows-user-data.html)\. 
 
 ## CodeDeploy plugin CommandPoller missing credentials error<a name="troubleshooting-agent-commandpoller-error"></a>
 
@@ -44,7 +44,7 @@ To resolve this issue, you must add Windows Defender exclusions before running t
 +  The instance you are deploying to does not have an IAM instance profile associated with it\. 
 +  Your IAM instance profile does not have the correct permissions configured\. 
 
- An IAM instance profile grants the CodeDeploy agent permission to communicate with CodeDeploy and to download your revision from Amazon S3\. For Amazon EC2 instances, see [Identity and access management for AWS CodeDeploy](security-iam.md)\. For on\-premises instances, see [Working with on\-premises instances for CodeDeploy](instances-on-premises.md)\. 
+ An IAM instance profile grants the CodeDeploy agent permission to communicate with CodeDeploy and to download your revision from Amazon S3\. For EC2 instances, see [Identity and access management for AWS CodeDeploy](security-iam.md)\. For on\-premises instances, see [Working with on\-premises instances for CodeDeploy](instances-on-premises.md)\. 
 
 ## Deployment fails with the message “Validation of PKCS7 signed message failed”<a name="troubleshooting-deployments-agent-SHA-256"></a>
 
@@ -55,7 +55,7 @@ This error message indicates the instance is running a version of the CodeDeploy
 When CodeDeploy tries to deploy a file to an instance but a file with the same name already exists in the specified target location, the deployment to that instance may fail\. You may receive the error message "The deployment failed because a specified file already exists at this location: *location\-name*\." This is because, during each deployment, CodeDeploy first deletes all files from the previous deployment, which are listed in a cleanup log file\. If there are files in the target installation folders that aren’t listed in this cleanup file, the CodeDeploy agent by default interprets this as an error and fails the deployment\.
 
 **Note**  
-On Amazon Linux, RHEL, and Ubuntu Server instances, the cleanup file is located in `/opt/codedeploy-agent/deployment-root/deployment-instructions/`\. On Windows Server instances, the location is `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions\`\.
+On Amazon Linux, RHEL, and Ubuntu Server instances, the cleanup file is located in `/opt/CodeDeploy-agent/deployment-root/deployment-instructions/`\. On Windows Server instances, the location is `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions\`\.
 
 The easiest way to avoid this error is to specify an option other than the default behavior to fail the deployment\. For each deployment, you can choose whether to fail the deployment, to overwrite the files not listed in the cleanup file, or to retain the files already on the instance\.
 
@@ -179,7 +179,7 @@ When you deploy the application revision again, the deployment continues even if
 
 If you are trying to deploy an application revision from Amazon S3, and the deployment fails during the DownloadBundle deployment lifecycle event with the `UnknownError: not opened for reading` error:
 + There was internal Amazon S3 service error\. Deploy the application revision again\.
-+ The IAM instance profile on your Amazon EC2 instance does not have permissions to access the application revision in Amazon S3\. For information about Amazon S3 bucket policies, see [Push a revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises deployments only\)](application-revisions-push.md) and [Deployment prerequisites](deployments-create-prerequisites.md)\.
++ The IAM instance profile on your EC2 instance does not have permissions to access the application revision in Amazon S3\. For information about Amazon S3 bucket policies, see [Push a revision for CodeDeploy to Amazon S3 \(EC2/On\-Premises deployments only\)](application-revisions-push.md) and [Deployment prerequisites](deployments-create-prerequisites.md)\.
 + The instances you deploy to are associated with one AWS Region \(for example, US West \(Oregon\)\), but the Amazon S3 bucket that contains the application revision is associated with another AWS Region \(for example, US East \(N\. Virginia\)\)\. Make sure the application revision is in an Amazon S3 bucket associated with the same AWS Region as the instances\.
 
 On the event details page for the deployment, in the **Download bundle** row, choose **View logs**\. Or use the AWS CLI to call the [get\-deployment\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-instance.html) command\. If this error occurred, there should be an error in the output with the error code `UnknownError` and the error message `not opened for reading`\.
@@ -196,33 +196,33 @@ For information about how to find the wire logging file and enable and disable w
 
 ## Troubleshooting all lifecycle events skipped errors<a name="troubleshooting-skipped-lifecycle-events"></a>
 
- If all lifecycle events of an Amazon EC2 or on\-premises deployment are skipped, you might receive an error similar to `The overall deployment failed because too many individual instances failed deployment, too few healthy instances are available for deployment, or some instances in your deployment group are experiencing problems. (Error code: HEALTH_CONSTRAINTS)`\. Here are some possible causes and solutions: 
+ If all lifecycle events of an EC2 or on\-premises deployment are skipped, you might receive an error similar to `The overall deployment failed because too many individual instances failed deployment, too few healthy instances are available for deployment, or some instances in your deployment group are experiencing problems. (Error code: HEALTH_CONSTRAINTS)`\. Here are some possible causes and solutions: 
 + The CodeDeploy agent might not be installed or running on the instance\. To determine if the CodeDeploy agent is running:
   + For Amazon Linux RHEL or Ubuntu server, run the following:
 
     ```
-    sudo service codedeploy-agent status
+    sudo service CodeDeploy-agent status
     ```
   + For Windows, run the following:
 
     ```
-    powershell.exe -Command Get-Service -Name codedeployagent
+    powershell.exe -Command Get-Service -Name CodeDeployagent
     ```
 
   If the CodeDeploy agent is not installed or running, see [Verify the CodeDeploy agent is running](codedeploy-agent-operations-verify.md)\. 
 
-  Your instance might not be able to reach the CodeDeploy or S3 public endpoint using port 443\. Try one of the following: 
+  Your instance might not be able to reach the CodeDeploy or Amazon S3 public endpoint using port 443\. Try one of the following: 
   + Assign a public IP address to the instance and use its route table to allow internet access\. Make sure the security group associated with the instance allows outbound access over port 443 \(HTTPS\)\. For more information, see [Communication protocol and port for the CodeDeploy agent](codedeploy-agent.md#codedeploy-agent-outbound-port)\. 
   + If an instance is provisioned in a private subnet, use a NAT gateway instead of an internet gateway in the route table\. For more information, see [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)\. 
-+ The service role for CodeDeploy might not have required permissions\. To configure a CodeDeploy service role, see [Step 3: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. 
++ The service role for CodeDeploy might not have required permissions\. To configure a CodeDeploy service role, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. 
 + If you use an HTTP proxy, make sure it is specified in the `:proxy_uri:` setting in the CodeDeploy agent configuration file\. For more information, see [CodeDeploy agent configuration reference](reference-agent-configuration.md)\. 
 + The date and time signature of your deployment instance might not match the date and time signature of your deployment request\. Look for an error similar to `Cannot reach InstanceService: Aws::CodeDeployCommand::Errors::InvalidSignatureException - Signature expired` in your CodeDeploy agent log file\. If you see this error, follow the steps in [Troubleshooting “InvalidSignatureException – Signature expired: \[time\] is now earlier than \[time\]” deployment errors](troubleshooting-ec2-instances.md#troubleshooting-instance-time-failures)\. For more information, see [View log data for CodeDeploy EC2/On\-Premises deployments](deployments-view-logs.md)\. 
-+ The CodeDeploy agent might stop running because an instance is running low on memory or hard disk space\. Try to lower the number of archived deployments on your instance by updating the `max_revisions` setting in the CodeDeploy agent configuration\. If you do this for an Amazon EC2 instance and the issue persists, consider using a larger instance\. For example, if your instance type is `t2.small`, try using a `t2.medium`\. For more information, see [Files installed by the CodeDeploy agent ](codedeploy-agent.md#codedeploy-agent-install-files), [CodeDeploy agent configuration reference](reference-agent-configuration.md), and [Amazon EC2 Instance Types](https://aws.amazon.com/ec2/instance-types/)\. 
++ The CodeDeploy agent might stop running because an instance is running low on memory or hard disk space\. Try to lower the number of archived deployments on your instance by updating the `max_revisions` setting in the CodeDeploy agent configuration\. If you do this for an EC2 instance and the issue persists, consider using a larger instance\. For example, if your instance type is `t2.small`, try using a `t2.medium`\. For more information, see [Files installed by the CodeDeploy agent ](codedeploy-agent.md#codedeploy-agent-install-files), [CodeDeploy agent configuration reference](reference-agent-configuration.md), and [Amazon EC2 Instance Types](https://aws.amazon.com/EC2/instance-types/)\. 
 +  The instance you're deploying to might not have an IAM instance profile attached, or it might have an IAM instance profile attached that does not have the required permissions\. 
   +  If an IAM instance profile is not attached to your instance, create one with the required permissions and then attach it\. 
   +  If an IAM instance profile is already attached to your instance, make sure it has the required permissions\. 
 
-  After you confirm your attached instance profile is configured with the required permissions, restart your instance\. For more information, see [Step 4: Create an IAM instance profile for your Amazon EC2 instances](getting-started-create-iam-instance-profile.md) and [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) in the *Amazon EC2 User Guide*\. 
+  After you confirm your attached instance profile is configured with the required permissions, restart your instance\. For more information, see [Step 4: Create an IAM instance profile for your Amazon EC2 instances](getting-started-create-iam-instance-profile.md) and [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-EC2.html) in the *Amazon EC2 User Guide*\. 
 
 ## Windows PowerShell scripts fail to use the 64\-bit version of Windows PowerShell by default<a name="troubleshooting-deployments-powershell"></a>
 

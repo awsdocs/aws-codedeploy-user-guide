@@ -1,4 +1,4 @@
-# Step 1: Provision an IAM user<a name="getting-started-provision-user"></a>
+# Step 3: Provision an IAM user<a name="getting-started-provision-user"></a>
 
 Follow these instructions to prepare an IAM user to use CodeDeploy:
 
@@ -9,10 +9,11 @@ Follow these instructions to prepare an IAM user to use CodeDeploy:
    ```
    {
      "Version": "2012-10-17",
-     "Statement" : [
+     "Statement": [
        {
-         "Effect" : "Allow",
-         "Action" : [
+         "Sid": "CodeDeployAccessPolicy",
+         "Effect": "Allow",
+         "Action": [
            "autoscaling:*",
            "codedeploy:*",
            "ec2:*",
@@ -32,17 +33,26 @@ Follow these instructions to prepare an IAM user to use CodeDeploy:
            "iam:ListInstanceProfilesForRole",
            "iam:ListRolePolicies",
            "iam:ListRoles",
-           "iam:PassRole",
            "iam:PutRolePolicy",
-           "iam:RemoveRoleFromInstanceProfile", 
+           "iam:RemoveRoleFromInstanceProfile",
            "s3:*",
            "ssm:*"
          ],
-         "Resource" : "*"
-       }    
+         "Resource": "*"
+       },
+       {
+         "Sid": "CodeDeployRolePolicy",
+         "Effect": "Allow",
+         "Action": [
+           "iam:PassRole"
+         ],
+         "Resource": "arn:aws:iam::account-ID:role/CodeDeployServiceRole"
+       }
      ]
    }
    ```
+
+   In the preceding policy, replace *arn:aws:iam::account\-ID:role/CodeDeployServiceRole* with the ARN value of the CodeDeploy service role that you created in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. You can find the ARN value in the details page of the service role in the IAM console\.
 
    The preceding policy grants the IAM user the access required to deploy an AWS Lambda compute platform, an EC2/On\-Premises compute platform, and an Amazon ECS compute platform\.
 
