@@ -45,7 +45,8 @@ As you configure the AWS CLI \(for example, by calling the aws configure command
            "iam:ListUserPolicies",
            "iam:PutUserPolicy",
            "iam:GetUser",
-           "tag:GetTags",
+           "tag:getTagKeys",
+           "tag:getTagValues",
            "tag:GetResources"
          ],
          "Resource" : "*"
