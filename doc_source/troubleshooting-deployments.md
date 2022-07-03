@@ -55,7 +55,7 @@ This error message indicates the instance is running a version of the CodeDeploy
 When CodeDeploy tries to deploy a file to an instance but a file with the same name already exists in the specified target location, the deployment to that instance may fail\. You may receive the error message "The deployment failed because a specified file already exists at this location: *location\-name*\." This is because, during each deployment, CodeDeploy first deletes all files from the previous deployment, which are listed in a cleanup log file\. If there are files in the target installation folders that aren’t listed in this cleanup file, the CodeDeploy agent by default interprets this as an error and fails the deployment\.
 
 **Note**  
-On Amazon Linux, RHEL, and Ubuntu Server instances, the cleanup file is located in `/opt/CodeDeploy-agent/deployment-root/deployment-instructions/`\. On Windows Server instances, the location is `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions\`\.
+On Amazon Linux, RHEL, and Ubuntu Server instances, the cleanup file is located in `/opt/codedeploy-agent/deployment-root/deployment-instructions/`\. On Windows Server instances, the location is `C:\ProgramData\Amazon\CodeDeploy\deployment-instructions\`\.
 
 The easiest way to avoid this error is to specify an option other than the default behavior to fail the deployment\. For each deployment, you can choose whether to fail the deployment, to overwrite the files not listed in the cleanup file, or to retain the files already on the instance\.
 
