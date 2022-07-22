@@ -65,7 +65,7 @@ In your production account:
   + `AmazonS3FullAccess`: Required only if the S3 bucket is in the development account\. Provides the assumed production account role with full access to the Amazon S3 services and resources in the development account, where the revision is stored\. 
   + `AWSCodeDeployDeployerAccess`: Enables an IAM user to register and deploy revisions\. 
 
-  If you want to create and manage deployment groups and not just initiate deployments, add the `AWSCodeDeployFullAccess` policy instead of the `AWSCodeDeployDeployerAccess` policy\. For more information about using IAM managed policies to grant permissions for CodeDeploy tasks, see [AWS managed \(predefined\) policies for CodeDeploy](security_iam_id-based-policy-examples.md#managed-policies)\. 
+  If you want to create and manage deployment groups and not just initiate deployments, add the `AWSCodeDeployFullAccess` policy instead of the `AWSCodeDeployDeployerAccess` policy\. For more information about using IAM managed policies to grant permissions for CodeDeploy tasks, see [AWS managed \(predefined\) policies for CodeDeploy](managed-policies.md)\. 
 
   You can attach additional policies if you want to perform tasks in other AWS services while using this cross\-account role\.
 

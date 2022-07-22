@@ -1,17 +1,23 @@
 # Install the CodeDeploy agent for Windows Server<a name="codedeploy-agent-operations-install-windows"></a>
 
 On Windows Server instances, you can use one of these methods to download and install the CodeDeploy agent:
++ Use AWS Systems Manager \(recommended\)
 + Run a series of Windows PowerShell commands\.
 + Choose a direct download link\.
 + Run an Amazon S3 copy command\.
 
 **Note**  
-We recommend installing the CodeDeploy agent with AWS Systems Manager to be able to configure scheduled updates of the agent\. For more information, see [Install the CodeDeploy agent using AWS Systems Manager](codedeploy-agent-operations-install-ssm.md)\.
+The folder that the CodeDeploy agent is installed to is `C:\Program Data\Amazon\CodeDeploy`\. Make sure there are no directory junctions or symlinks on this path\.
 
 **Topics**
++ [Use Systems Manager](#codedeploy-agent-operations-install-system-manager)
 + [Use Windows PowerShell](#codedeploy-agent-operations-install-windows-powershell)
 + [Use a direct link](#codedeploy-agent-operations-install-windows-direct-link)
 + [Use an Amazon S3 copy command](#codedeploy-agent-operations-install-windows-s3-copy)
+
+## Use Systems Manager<a name="codedeploy-agent-operations-install-system-manager"></a>
+
+Follow the instructions in [Install the CodeDeploy agent using AWS Systems Manager](codedeploy-agent-operations-install-ssm.md) to install the CodeDeploy agent\.
 
 ## Use Windows PowerShell<a name="codedeploy-agent-operations-install-windows-powershell"></a>
 

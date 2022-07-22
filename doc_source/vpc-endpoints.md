@@ -12,34 +12,39 @@ The following steps are for users of Amazon VPC\. For more information, see [Get
 
 ## Availability<a name="codecommit-interface-VPC-availability"></a>
 
-CodeDeploy supports VPC endpoints in the following AWS Regions:
-+ US East \(Ohio\) 
-+ US East \(N\. Virginia\)
-+ US West \(N\. California\)
-+ US West \(Oregon\)
-+ Africa \(Cape Town\)
-+ Asia Pacific \(Hong Kong\)
-+ Asia Pacific \(Mumbai\)
-+ Asia Pacific \(Osaka\)
-+ Asia Pacific \(Seoul\)
-+ Asia Pacific \(Singapore\)
-+ Asia Pacific \(Sydney\)
-+ Asia Pacific \(Tokyo\)
-+ Canada \(Central\)
-+ China \(Beijing\)
-+ China \(Ningxia\)
-+ Europe \(Frankfurt\)
-+ Europe \(Ireland\)
-+ Europe \(London\)
-+ Europe \(Milan\)
-+ Europe \(Paris\)
-+ Europe \(Stockholm\)
-+ Middle East \(Bahrain\)
-+ South America \(São Paulo\)
+CodeDeploy has two VPC endpoints: one for CodeDeploy agent operations, and one for CodeDeploy API operations\. The table below shows the supported AWS Regions for each endpoint\.
+
+
+| Region code | Region name | Agent endpoint | API endpoint | 
+| --- | --- | --- | --- | 
+|  us\-east\-1  |  US East \(N\. Virginia\)  |  Yes  |  Yes  | 
+|  us\-east\-2  |  US East \(Ohio\)  |  Yes  |  Yes  | 
+|  us\-gov\-east\-1  |  AWS GovCloud \(US\-East\)  |  No  |  No  | 
+|  us\-gov\-west\-1  |  AWS GovCloud \(US\-West\)  |  No  |  No  | 
+|  us\-west\-1  |  US West \(N\. California\)  |  Yes  |  Yes  | 
+|  us\-west\-2  |  US West \(Oregon\)  |  Yes  |  Yes  | 
+|  af\-south\-1  |  Africa \(Cape Town\)  |  Yes  |  No  | 
+|  ap\-east\-1  |  Asia Pacific \(Hong Kong\)  |  Yes  |  Yes  | 
+|  ap\-northeast\-1  |  Asia Pacific \(Tokyo\)  |  Yes  |  Yes  | 
+|  ap\-northeast\-2  |  Asia Pacific \(Seoul\)  |  Yes  |  Yes  | 
+|  ap\-northeast\-3  |  Asia Pacific \(Osaka\)  |  Yes  |  No  | 
+|  ap\-south\-1  |  Asia Pacific \(Mumbai\)  |  Yes  |  Yes  | 
+|  ap\-southeast\-1  |  Asia Pacific \(Singapore\)  |  Yes  |  Yes  | 
+|  ap\-southeast\-2  |  Asia Pacific \(Sydney\)  |  Yes  |  Yes  | 
+|  ap\-southeast\-3  |  Asia Pacific \(Jakarta\)  |  No  |  No  | 
+|  ca\-central\-1  |  Canada \(Central\)  |  Yes  |  Yes  | 
+|  eu\-central\-1  |  Europe \(Frankfurt\)  |  Yes  |  Yes  | 
+|  eu\-north\-1  |  Europe \(Stockholm\)  |  Yes  |  Yes  | 
+|  eu\-west\-1  |  Europe \(Ireland\)  |  Yes  |  Yes  | 
+|  eu\-west\-2  |  Europe \(London\)  |  Yes  |  Yes  | 
+|  eu\-west\-3  |  Europe \(Paris\)  |  Yes  |  Yes  | 
+|  eu\-south\-1  |  Europe \(Milan\)  |  Yes  |  No  | 
+|  me\-south\-1  |  Middle East \(Bahrain\)  |  Yes  |  Yes  | 
+|  sa\-east\-1  |  South America \(São Paulo\)  |  Yes  |  Yes  | 
 
 ## Create VPC endpoints for CodeDeploy<a name="create-vpc-endpoint-for-codedeploy"></a>
 
-To start using CodeDeploy with your VPC, create an interface VPC endpoint for CodeDeploy\. CodeDeploy requires separate endpoints for Git operations and for CodeDeploy API operations\. Depending on your business needs, you might need to create more than one VPC endpoint\. When you create a VPC endpoint for CodeDeploy, choose **AWS Services**, and in **Service Name**, choose from the following options:
+To start using CodeDeploy with your VPC, create an interface VPC endpoint for CodeDeploy\. CodeDeploy requires separate endpoints for agent Git operations and for CodeDeploy API operations\. Depending on your business needs, you might need to create more than one VPC endpoint\. When you create a VPC endpoint for CodeDeploy, choose **AWS Services**, and in **Service Name**, choose from the following options:
 +  **com\.amazonaws\.*region*\.codedeploy**: Choose this option if you want to create a VPC endpoint for CodeDeploy API operations\. For example, choose this option if your users use the AWS CLI, the CodeDeploy API, or the AWS SDKs to interact with CodeDeploy for operations such as `CreateApplication`, `GetDeployment`, and `ListDeploymentGroups`\. 
 +  **com\.amazonaws\.*region*\.codedeploy\-commands\-secure**: Choose this option if you want to create a VPC endpoint for CodeDeploy agent operations\. You will also need to set `:enable_auth_policy:` to `true` in your agent configuration file and attach the required permissions\. For more information, see [Configure the CodeDeploy agent and IAM permissions](#vpc-codedeploy-agent-configuration)\. 
 

@@ -1,6 +1,6 @@
 # Step 5: Check your results again<a name="tutorials-auto-scaling-group-reverify"></a>
 
-In this step, you'll check to see if CodeDeploy installed the SimpleDemoApp revision on the new instance in the Amazon EC2 Auto Scaling group\.
+In this step, you'll check to see if CodeDeploy installed the SimpleDemoApp revision on the new instance in the Auto Scaling group\.
 
 **Topics**
 + [To check automatic deployment results \(CLI\)](#tutorials-auto-scaling-group-reverify-cli)
@@ -44,7 +44,7 @@ In this step, you'll check to see if CodeDeploy installed the SimpleDemoApp revi
    http://ec2-01-234-567-890.compute-1.amazonaws.com
    ```
 
-   If the congratulations page appears, you've used CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
+   If the congratulations page appears, you've used CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Auto Scaling group\!
 
 ## To check automatic deployment results \(console\)<a name="tutorials-auto-scaling-group-reverify-console"></a>
 
@@ -76,4 +76,4 @@ Show the `SimpleDemoApp` revision deployed to the instance using a URL like the 
 http://ec2-01-234-567-890.compute-1.amazonaws.com
 ```
 
-If the congratulations page appears, you've used CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Amazon EC2 Auto Scaling group\!
+If the congratulations page appears, you've used CodeDeploy to deploy a revision to a scaled\-up Amazon EC2 instance in an Auto Scaling group\!

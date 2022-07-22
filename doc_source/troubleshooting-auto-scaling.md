@@ -30,7 +30,7 @@ Deployments to EC2 instances in an Amazon EC2 Auto Scaling group can fail for th
 +  `EC2:CreateTags` 
 +  `iam:PassRole` 
 
- You might received this error if you are missing these permissions\. For more information, see [Tutorial: Use CodeDeploy to deploy an application to an Amazon EC2 Auto Scaling group](tutorials-auto-scaling-group.md), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/EC2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/EC2/userguide/EC2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\.
+ You might received this error if you are missing these permissions\. For more information, see [Tutorial: Use CodeDeploy to deploy an application to an Auto Scaling group](tutorials-auto-scaling-group.md), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/EC2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/EC2/userguide/EC2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\.
 
 ## Instances in an Amazon EC2 Auto Scaling group are continuously provisioned and terminated before a revision can be deployed<a name="troubleshooting-auto-scaling-provision-termination-loop"></a>
 
@@ -159,22 +159,22 @@ Read this section if you see the following CodeDeploy error:
 
 Possible causes for this error are:
 
-1. Your deployment group settings include tags for EC2 instances, on\-premises instances, or Auto Scaling groups that are not correct\. To fix this problem, check that your tags are correct and redeploy your application\.
+1. Your deployment group settings include tags for EC2 instances, on\-premises instances, or Auto Scaling groups that are not correct\. To fix this problem, check that your tags are correct, and then redeploy your application\.
 
-1. Your fleet scaled out after the deployment started\. In this scenario, you’ll see healthy instances in the `InService` state in your fleet, but you’ll also see the error above\. To fix this problem, redeploy your application\.
+1. Your fleet scaled out after the deployment started\. In this scenario, you see healthy instances in the `InService` state in your fleet, but you also see the error above\. To fix this problem, redeploy your application\.
 
-1. Your Auto Scaling group does not include any instances that are in the `InService` state\. In this scenario, when you try to do a fleet\-wide deployment, the deployment will fail with the error message above because CodeDeploy needs at least one instance to be in the `InService` state\. There are many reasons why you might have no instances in the `InService` state\. A few of them include:
+1. Your Auto Scaling group does not include any instances that are in the `InService` state\. In this scenario, when you try to do a fleet\-wide deployment, the deployment fails with the error message above because CodeDeploy needs at least one instance to be in the `InService` state\. There are many reasons why you might have no instances in the `InService` state\. A few of them include:
    + You scheduled \(or manually configured\) the Auto Scaling group size to be `0`\.
    + Auto Scaling detected bad EC2 instances \(for example, the EC2 instances had hardware failures\), so canceled them all, leaving none in the `InService` state\.
-   + During a scale out event from `0` to `1`, CodeDeploy deployed a previously\-successful revision \(called a *last successful revision*\) that had become unhealthy since the last deployment\. This caused the deployment on the scaled\-out instance to fail, which in turn caused Auto Scaling to cancel the instance, leaving no instances in the `InService` state\.
+   + During a scale out event from `0` to `1`, CodeDeploy deployed a previously successful revision \(called a *last successful revision*\) that had become unhealthy since the last deployment\. This caused the deployment on the scaled\-out instance to fail, which in turn caused Auto Scaling to cancel the instance, leaving no instances in the `InService` state\.
 
      If you find that you have no instances in the `InService` state, troubleshoot the problem as described in the following procedure, [To troubleshoot the error if there are no instances in the InService state](#ToTroubleshootIfNoInServiceInstances)\.
 
 **To troubleshoot the error if there are no instances in the InService state**
 
-1. In the Amazon EC2 Console, verify the **Desired Capacity** setting\. If it is zero, set it to a positive number\. Wait for the instance to be `InService`, which means the deployment succeeded\. You have fixed the problem and can skip the remaining steps of this troubleshooting procedure\. For information on setting the **Desired Capacity** setting, see [Setting capacity limits on your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html) in the *Amazon EC2 Auto Scaling User Guide*\.
+1. In the Amazon EC2 console, verify the **Desired Capacity** setting\. If it is zero, set it to a positive number\. Wait for the instance to be `InService`, which means the deployment succeeded\. You have fixed the problem and can skip the remaining steps of this troubleshooting procedure\. For information on setting the **Desired Capacity** setting, see [Setting capacity limits on your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html) in the *Amazon EC2 Auto Scaling User Guide*\.
 
-1. If Auto Scaling keeps attempting to launch new EC2 instances to meet the desired capacity, but can never fulfill the scale out, it is usually due to a failing Auto Scaling lifecycle hook\. Troubleshoot this problem as follows:
+1. If Auto Scaling keeps attempting to launch new EC2 instances to meet the desired capacity but can never fulfill the scale out, it is usually due to a failing Auto Scaling lifecycle hook\. Troubleshoot this problem as follows:
 
    1. To check which Auto Scaling lifecycle hook event is failing, see [Verifying a scaling activity for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html) in the Amazon EC2 Auto Scaling User Guide\.
 
@@ -182,7 +182,7 @@ Possible causes for this error are:
 
    1. If you understand why the deployment failed \(for example, CloudWatch alarms were occurring\) and you can fix the problem without changing the revision, then do so now\.
 
-   1. If after investigation, you determine that CodeDeploy’s *last successful revision* is no longer healthy, and there are zero healthy instances in your Auto Scaling group, you are in a deployment deadlock scenario\. To solve this issue, you must fix the \(bad\) CodeDeploy revision by temporarily removing CodeDeploy’s lifecycle hook from the Auto Scaling group, and then reinstalling the hook and redeploying a new \(good\) revision\. For instructions, see:
+   1. If, after investigation, you determine that CodeDeploy’s *last successful revision* is no longer healthy, and there are zero healthy instances in your Auto Scaling group, you are in a deployment deadlock scenario\. To solve this issue, you must fix the bad CodeDeploy revision by temporarily removing CodeDeploy’s lifecycle hook from the Auto Scaling group, and then reinstalling the hook and redeploying a new \(good\) revision\. For instructions, see:
       + [To fix the deployment deadlock issue (CLI)](#ToFixDeployDeadlockCLI)
       + [To fix the deployment deadlock issue (console)](#ToFixDeployDeadlockConsole)
 
@@ -202,9 +202,9 @@ Possible causes for this error are:
 **Note**  
 The remaining steps of this procedure assume you have set your **DesiredCapacity** to `1`\.
 
-   At this point, Auto Scaling attempts to scale to one instance\. Then, because the hook that CodeDeploy added is still present, CodeDeploy tries to deploy, the deployment fails, Auto Scaling cancels the instance, and Auto Scaling tries to re\-launch an instance to reach desired capacity of one, which again fails\. You are in a cancel\-relaunch loop\.
+   At this point, Auto Scaling attempts to scale to one instance\. Then, because the hook that CodeDeploy added is still present, CodeDeploy tries to deploy; the deployment fails; Auto Scaling cancels the instance; and Auto Scaling tries to re\-launch an instance to reach desired capacity of one, which again fails\. You are in a cancel\-relaunch loop\.
 
-1. Deregister the Auto Scaling group from the deployment group:
+1. De\-register the Auto Scaling group from the deployment group:
 **Warning**  
 The following command will launch a new EC2 instance with no software on it\. Before running the command, make sure that an Auto Scaling `InService` instance running no software is acceptable\. For example, make sure your load balancer is not sending traffic to this host without software\.
 **Important**  
@@ -214,7 +214,7 @@ Use the CodeDeploy command shown below to remove the hook\. Do not remove the ho
 
    After running this command, the following occurs:
 
-   1. CodeDeploy deregisters the Auto Scaling group from the deployment group\.
+   1. CodeDeploy de\-registers the Auto Scaling group from the deployment group\.
 
    1. CodeDeploy removes the Auto Scaling lifecycle hook from the Auto Scaling group\.
 
@@ -252,7 +252,7 @@ Use the CodeDeploy command shown below to add the hook\. Do not use the Auto Sca
 
 1. \(Optional\) Block your CI/CD pipelines that are causing the CodeDeploy error so that unexpected deployments do not occur while you’re fixing this problem\.
 
-1. Go to the Amazon EC2 Console, and take note of your Auto Scaling **Desired capacity** setting\. You may need to scale back to this number at the end of this procedure\. For information on finding this setting, see [Setting capacity limits on your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html)\.
+1. Go to the Amazon EC2 console, and take note of your Auto Scaling **Desired capacity** setting\. You may need to scale back to this number at the end of this procedure\. For information on finding this setting, see [Setting capacity limits on your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html)\.
 
 1. Set the desired number of EC2 instances to `1`:
 
@@ -272,7 +272,7 @@ The remaining steps of this procedure assume you have set your **Desired capacit
 
    1. Choose **Update**\.
 
-1. Deregister the Auto Scaling group from the deployment group:
+1. De\-register the Auto Scaling group from the deployment group:
 **Warning**  
 The following sub\-steps will launch a new EC2 instance with no software on it\. Before running the command, make sure that an Auto Scaling `InService` instance running no software is acceptable\. For example, make sure your load balancer is not sending traffic to this host without software\.
 
@@ -296,7 +296,7 @@ The console does not allow you to save the configuration if there is no environm
 
       After completing these sub\-steps, the following occurs:
 
-      1. CodeDeploy deregisters the Auto Scaling group from the deployment group\.
+      1. CodeDeploy de\-registers the Auto Scaling group from the deployment group\.
 
       1. CodeDeploy removes the Auto Scaling lifecycle hook from the Auto Scaling group\.
 
@@ -314,7 +314,7 @@ The console does not allow you to save the configuration if there is no environm
 
    1. Under **Instances**, make sure that the **Lifecycle** column indicates **InService** next to the instance\.
 
-1. Reregister the Auto Scaling group with the CodeDeploy deployment group using the same method you used to remove it:
+1. Re\-register the Auto Scaling group with the CodeDeploy deployment group using the same method you used to remove it:
 
    1. Open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy/](https://console.aws.amazon.com/codedeploy/)\.
 
@@ -338,7 +338,7 @@ The console does not allow you to save the configuration if there is no environm
 
    This configuration re\-installs the lifecycle hook into the Auto Scaling group\.
 
-1. Create a fleet\-wide deployment with the Amazon S3or GitHub revision that you know is healthy and want to use\. 
+1. Create a fleet\-wide deployment with the Amazon S3 or GitHub revision that you know is healthy and want to use\. 
 
    For example, if the revision is a \.zip file in an Amazon S3 bucket called `my-revision-bucket` with an object key of `httpd_app.zip`, do the following:
 

@@ -2,10 +2,14 @@
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.
 + **API version: **2014\-10\-06
-+ **Latest documentation update: **May 18, 2021
++ **Latest documentation update: **April 8, 2022
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Added a table that shows the CodeDeploy endpoints supported in each Region\.](#document-history) | For more information, see [Use CodeDeploy with Amazon Virtual Private Cloud](https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints.html)\. | April 20, 2022 | 
+| [Added a new limit for Amazon ECS blue/green deployments\.](#document-history) |  The maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an Amazon ECS blue/green deployment is now 120\. For more information, see [Deployments](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html#limits-deployments) in the [Limits](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html) topic\. | April 12, 2022 | 
+| [Added a topic on how to prevent the confused deputy problem](#document-history) | For more information, see [AWS Identity and Access Management for AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/security_iam.html)\. | March 14, 2022 | 
+| [CodeDeploy updated an existing AWS managed policy](#document-history) | The `AmazonEC2RoleforAWSCodeDeployLimited` role was updated\. For more information, see [AWS managed policy updates](https://docs.aws.amazon.com/codedeploy/latest/userguide/security_iam_id-based-policy-examples.html#managed-policies-updates)\. | November 22, 2021 | 
 | [CodeDeploy updated an existing AWS managed policy](#document-history) | The `AWSCodeDeployRole` was updated\. For more information, see [AWS managed policy updates](https://docs.aws.amazon.com/codedeploy/latest/userguide/security_iam_id-based-policy-examples.html#managed-policies-updates)\. | May 18, 2021 | 
 | [CodeDeploy agent v1\.3\.2 release](#document-history) | The AWS CodeDeploy agent was updated to version 1\.3\.2\. For more information, see [ Version History of the CodeDeploy Agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | May 6, 2021 | 
 | [CodeDeploy supports updating outdated Amazon EC2 instances](#document-history) | CodeDeploy now supports updating outdated Amazon EC2 instances automatically\. For more information, see [Configure advanced options for a deployment group](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups-configure-advanced-options.html#deployment-groups-configure-advanced-options)\. | February 23, 2021 | 

@@ -11,3 +11,4 @@ The instructions in this section show you how to install, uninstall, reinstall, 
 + [Install the CodeDeploy agent](codedeploy-agent-operations-install.md)
 + [Update the CodeDeploy agent](codedeploy-agent-operations-update.md)
 + [Uninstall the CodeDeploy agent](codedeploy-agent-operations-uninstall.md)
++ [Send CodeDeploy agent logs to CloudWatch](codedeploy-agent-operations-cloudwatch-agent.md)

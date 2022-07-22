@@ -24,7 +24,7 @@ Your application must have a deployment group before it can be deployed\. If you
 
 1. \(Optional\) Expand **Deployment group overrides** to choose a deployment configuration to control how traffic is shifted to the Lambda function version that is different from the one specified in the deployment group\.
 
-   For more information, see [ Deployment configurations on an AWS Lambda compute platform ](deployment-configurations.md#deployment-configuration-lambda)\.
+   For more information, see [ Deployment configurations on an AWS Lambda compute platform](deployment-configurations.md#deployment-configuration-lambda)\.
 
 1. \(Optional\) In **Rollback configuration overrides**, you can specify different automatic rollback options for this deployment than were specified for the deployment group, if any\.
 

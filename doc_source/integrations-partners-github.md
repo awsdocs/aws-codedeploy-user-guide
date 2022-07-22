@@ -52,7 +52,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. Choose the application you want to link to a different GitHub account\.
 
-1. If your application does not have a deloyment group, choose **Create deployment group** to create one\. For more information, see [Create a deployment group with CodeDeploy](deployment-groups-create.md)\. A deployment group is required to choose **Create deployment** in the next step\.
+1. If your application does not have a deployment group, choose **Create deployment group** to create one\. For more information, see [Create a deployment group with CodeDeploy](deployment-groups-create.md)\. A deployment group is required to choose **Create deployment** in the next step\.
 
 1.  From **Deployments**, choose **Create deployment**\. 
 **Note**  

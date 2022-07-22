@@ -12,6 +12,6 @@ This documentation helps you understand how to apply the shared responsibility m
 + [Data protection in AWS CodeDeploy](data-protection.md)
 + [Identity and access management for AWS CodeDeploy](security-iam.md)
 + [Logging and monitoring in CodeDeploy](incident-response.md)
-+ [Compliance validation for AWS CodeDeploy](SERVICENAME-compliance.md)
++ [Compliance validation for AWS CodeDeploy](CodeDeploy-compliance.md)
 + [Resilience in AWS CodeDeploy](disaster-recovery-resiliency.md)
 + [Infrastructure security in AWS CodeDeploy](infrastructure-security.md)

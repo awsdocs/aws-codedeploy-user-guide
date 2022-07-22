@@ -1,6 +1,6 @@
 # View deployment configuration details with CodeDeploy<a name="deployment-configurations-view-details"></a>
 
-You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about deployment configurations associated with your AWS account\. For descriptions of the predefined CodeDeploy deployment configurations, see [Predefined deployment configurations for an EC2/on\-premises compute platform ](deployment-configurations.md#deployment-configurations-predefined)\.
+You can use the CodeDeploy console, the AWS CLI, or the CodeDeploy APIs to view details about deployment configurations associated with your AWS account\. For descriptions of the predefined CodeDeploy deployment configurations, see [Predefined deployment configurations for an EC2/on\-premises compute platform](deployment-configurations.md#deployment-configurations-predefined)\.
 
 **Topics**
 + [View deployment configuration details \(console\)](#deployment-configurations-view-details-console)

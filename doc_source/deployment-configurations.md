@@ -27,12 +27,7 @@ The following table lists the predefined deployment configurations\.
 
 ## Deployment configurations on an Amazon ECS compute platform<a name="deployment-configuration-ecs"></a>
 
- When you deploy to an Amazon ECS compute platform, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS task set\. 
-
-There are three ways traffic can be shifted during a deployment:
-+ **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Amazon ECS task set in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
-+ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
-+ **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
+When you deploy to an Amazon ECS compute platform, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS task set\. You can shift traffic using a **canary**, **linear**, or **all\-at\-once** deployment configuration\. For more information, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
 
 You can also create your own custom canary or linear deployment configuration\. For more information, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\.
 
@@ -53,26 +48,16 @@ The following table lists the predefined configurations available for Amazon ECS
 
 ## Deployment configurations for AWS CloudFormation blue/green deployments \(Amazon ECS\)<a name="deployment-configuration-cfn-bg"></a>
 
- When you deploy to an Amazon ECS compute platform through AWS CloudFormation blue/green deployments, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS container\.
+ When you deploy to an Amazon ECS compute platform through AWS CloudFormation blue/green deployments, the deployment configuration specifies how traffic is shifted to the updated Amazon ECS container\. You can shift traffic using a **canary**, **linear**, or **all\-at\-once** deployment configuration\. For more information, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
 
-There are three ways that traffic can shift during an Amazon ECS blue/green deployment through AWS CloudFormation:
-+ **Canary**: Traffic is shifted in two increments\. You can choose a predefined canary option that specifies the percentage of traffic shifted to your updated Amazon ECS task set in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\.
-+ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
-+ **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
-
-For this deployment configuration, you cannot create your own custom canary or linear deployment configuration\. For step\-by\-step instructions on using AWS CloudFormation to manage your Amazon ECS blue/green deployments, see [Automate ECS blue/green deployments through CodeDeploy using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\. 
+With AWS CloudFormation blue/green deployments, you cannot create your own custom canary or linear deployment configuration\. For step\-by\-step instructions on using AWS CloudFormation to manage your Amazon ECS blue/green deployments, see [Automate ECS blue/green deployments through CodeDeploy using AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/blue-green.html) in the *AWS CloudFormation User Guide*\. 
 
 **Note**  
-Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the MXP, CPT, KIX, or BJS/ZHY regions\.
+Managing Amazon ECS blue/green deployments with AWS CloudFormation is not available in the Europe \(Milan\), Africa \(Cape Town\), and Asia Pacific \(Osaka\) regions\.
 
 ## Deployment configurations on an AWS Lambda compute platform<a name="deployment-configuration-lambda"></a>
 
-When you deploy to an AWS Lambda compute platform, the deployment configuration specifies the way traffic is shifted to the new Lambda function versions in your application\.
-
-There are three ways traffic can shift during a deployment:
-+ **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
-+ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
-+ **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version all at once\.
+When you deploy to an AWS Lambda compute platform, the deployment configuration specifies the way traffic is shifted to the new Lambda function versions in your application\. You can shift traffic using a **canary**, **linear**, or **all\-at\-once** deployment configuration\. For more information, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
 
 You can also create your own custom canary or linear deployment configuration\. For more information, see [Create a deployment configuration with CodeDeploy](deployment-configurations-create.md)\.
 

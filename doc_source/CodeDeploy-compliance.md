@@ -1,4 +1,4 @@
-# Compliance validation for AWS CodeDeploy<a name="SERVICENAME-compliance"></a>
+# Compliance validation for AWS CodeDeploy<a name="CodeDeploy-compliance"></a>
 
 Third\-party auditors assess the security and compliance of AWS CodeDeploy as part of multiple AWS compliance programs\. These include SOC, PCI, FedRAMP, HIPAA, and others\.
 

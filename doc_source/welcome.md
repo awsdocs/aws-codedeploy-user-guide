@@ -92,8 +92,7 @@ AWS Lambda and Amazon ECS deployments cannot use an in\-place deployment type\.
     + Instances in the replacement environment are registered with an Elastic Load Balancing load balancer, causing traffic to be rerouted to them\. Instances in the original environment are deregistered and can be terminated or kept running for other uses\.
 **Note**  
 If you use an EC2/On\-Premises compute platform, be aware that blue/green deployments work with Amazon EC2 instances only\.
-  + **Blue/green on an AWS Lambda compute platform**: Traffic is shifted from your current serverless environment to one with your updated Lambda function versions\. You can specify Lambda functions that perform validation tests and choose the way in which the traffic shifting occurs\. All AWS Lambda compute platform deployments are blue/green deployments\. For this reason, you do not need to specify a deployment type\. 
-  + **Blue/green on an Amazon ECS compute platform**: Traffic is shifted from the task set with the original version of an application in an Amazon ECS service to a replacement task set in the same service\. You can set the traffic shifting to linear or canary through the deployment configuration\. The protocol and port of a specified load balancer listener is used to reroute production traffic\. During a deployment, a test listener can be used to serve traffic to the replacement task set while validation tests are run\. 
+  + **Blue/green on an AWS Lambda or Amazon ECS compute platform**: Traffic is shifted in increments accorinding to a **canary**, **linear**, or **all\-at\-once** deployment configuration\. For more information, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
   + **Blue/green deployments through AWS CloudFormation**: Traffic is shifted from your current resources to your updated resources as part of an AWS CloudFormation stack update\. Currently, only ECS blue/green deployments are supported\. 
 
   For more information about blue/green deployments, see [Overview of a blue/green deployment](#welcome-deployment-overview-blue-green)\.
@@ -148,23 +147,18 @@ How you configure a blue/green deployment depends on which compute platform your
 
 
 
-#### Blue/Green deployment on an AWS Lambda compute platform<a name="blue-green-lambda-compute-type"></a>
+#### Blue/Green deployment on an AWS Lambda or Amazon ECS compute platform<a name="blue-green-lambda-compute-type"></a>
 
-If you're using the AWS Lambda compute platform, you must choose one of the following deployment configuration types to specify how traffic is shifted from the original AWS Lambda function version to the new AWS Lambda function version:
-+ **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
-+ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
-+ **All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version all at once\.
+If you're using the AWS Lambda or Amazon ECS compute platform, you must indicate how traffic is shifted from the original AWS Lambda function or Amazon ECS task set to the new function or task set\. To indicate how traffic is shifted, you must specify one of the following deployment configurations:
++ **canary**
++ **linear**
++ **all\-at\-once**
 
-For more information about AWS Lambda deployment configurations, see [Predefined deployment configurations for an AWS Lambda compute platform ](deployment-configurations.md#deployment-configurations-predefined-lambda)\.
+For information on how traffic is shifted in a canary, linear, or all\-at\-once deployment configurations, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
 
-#### Blue/Green deployment on an Amazon ECS compute platform<a name="blue-green-ecs-compute-type"></a>
+For details on the Lambda deployment configuration, see [ Deployment configurations on an AWS Lambda compute platform](deployment-configurations.md#deployment-configuration-lambda)\.
 
-If you're using the Amazon ECS compute platform, you must choose one of the following deployment configuration types to specify how traffic is shifted from the original Amazon ECS task set to the new Amazon ECS task set:
-+ **Canary**: Traffic is shifted in two increments\. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Amazon ECS task set in the first increment and the interval, in minutes, before the remaining traffic is shifted in the second increment\. 
-+ **Linear**: Traffic is shifted in equal increments with an equal number of minutes between each increment\. You can choose from predefined linear options that specify the percentage of traffic shifted in each increment and the number of minutes between each increment\.
-+ **All\-at\-once**: All traffic is shifted from the original Amazon ECS task set to the updated Amazon ECS task set all at once\.
-
-For more information about the Amazon ECS deployment configuration, see [ Deployment configurations on an Amazon ECS compute platform ](deployment-configurations.md#deployment-configuration-ecs)\.
+For details on the Amazon ECS deployment configuration, see [Deployment configurations on an Amazon ECS compute platform](deployment-configurations.md#deployment-configuration-ecs)\.
 
 #### Blue/Green deployment on an EC2/on\-premises compute platform<a name="blue-green-server-compute-type"></a>
 

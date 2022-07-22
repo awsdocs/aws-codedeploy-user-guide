@@ -1,6 +1,6 @@
 # Step 6: Clean up<a name="tutorials-auto-scaling-group-clean-up"></a>
 
-In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing charges for resources you used during this tutorial\. Optionally, you can delete the Amazon EC2 Auto Scaling configuration and CodeDeploy deployment component records\.
+In this step, you'll delete the Auto Scaling group to avoid ongoing charges for resources you used during this tutorial\. Optionally, you can delete the Auto Scaling configuration and CodeDeploy deployment component records\.
 
 **Topics**
 + [To clean up resources \(CLI\)](#tutorials-auto-scaling-group-clean-up-cli)
@@ -8,16 +8,16 @@ In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing c
 
 ## To clean up resources \(CLI\)<a name="tutorials-auto-scaling-group-clean-up-cli"></a>
 
-1. Delete the Amazon EC2 Auto Scaling group by calling the delete\-auto\-scaling\-group command against **CodeDeployDemo\-AS\-Group**\. This will also terminate the Amazon EC2 instances\. 
+1. Delete the Auto Scaling group by calling the delete\-auto\-scaling\-group command against **CodeDeployDemo\-AS\-Group**\. This will also terminate the Amazon EC2 instances\. 
 
    ```
    aws autoscaling delete-auto-scaling-group --auto-scaling-group-name CodeDeployDemo-AS-Group --force-delete
    ```
 
-1. Optionally, delete the Amazon EC2 Auto Scaling launch configuration by calling the delete\-launch\-configuration command against the launch configuration named **CodeDeployDemo\-AS\-Configuration**:
+1. Optionally, delete the Auto Scaling launch template by calling the delete\-launch\-template command against the launch configuration named **CodeDeployDemo\-AS\-Launch\-Template**:
 
    ```
-   aws autoscaling delete-launch-configuration --launch-configuration-name CodeDeployDemo-AS-Configuration
+   aws ec2 delete-launch-template --launch-template-name CodeDeployDemo-AS-Launch-Template
    ```
 
 1. Optionally, delete the application from CodeDeploy by calling the delete\-application command against the application named **SimpleDemoApp**\. This will also delete all associated deployment, deployment group, and revision records\. 
@@ -40,7 +40,7 @@ In this step, you'll delete the Amazon EC2 Auto Scaling group to avoid ongoing c
 
 ## To clean up resources \(console\)<a name="tutorials-auto-scaling-group-clean-up-console"></a>
 
-To delete the Amazon EC2 Auto Scaling group, which also terminates the Amazon EC2 instances:
+To delete the Auto Scaling group, which also terminates the Amazon EC2 instances:
 
 1. 
 
@@ -50,9 +50,9 @@ To delete the Amazon EC2 Auto Scaling group, which also terminates the Amazon EC
 
 1. Choose **Actions**, choose **Delete**, and then choose **Yes, Delete**\.
 
-\(Optional\) To delete the launch configuration:
+\(Optional\) To delete the launch template:
 
-1.  In the navigation bar, under **Auto Scaling**, choose **Launch Configurations**, and then choose **CodeDeployDemo\-AS\-Configuration**\.
+1.  In the navigation bar, under **Auto Scaling**, choose **Launch Configurations**, and then choose **CodeDeployDemo\-AS\-Launch\-Template**\.
 
 1. Choose **Actions**, choose **Delete launch configuration**, and then choose **Yes, Delete**\.
 

@@ -1,6 +1,6 @@
-# Step 2: Deploy the application to the Amazon EC2 Auto Scaling group<a name="tutorials-auto-scaling-group-create-deployment"></a>
+# Step 2: Deploy the application to the Auto Scaling group<a name="tutorials-auto-scaling-group-create-deployment"></a>
 
-In this step, you'll deploy the revision to the single Amazon EC2 instance in the Amazon EC2 Auto Scaling group\.
+In this step, you'll deploy the revision to the single Amazon EC2 instance in the Auto Scaling group\.
 
 **Topics**
 + [To create the deployment \(CLI\)](#tutorials-auto-scaling-group-create-deployment-cli)
@@ -16,7 +16,7 @@ In this step, you'll deploy the revision to the single Amazon EC2 instance in th
 
 1. You should have already created a service role by following the instructions in [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. The service role will give CodeDeploy permission to access your Amazon EC2 instances to expand \(read\) their tags\. You will need the service role ARN\. To get the service role ARN, follow the instructions in [Get the service role ARN \(CLI\) ](getting-started-create-service-role.md#getting-started-get-service-role-cli)\.
 
-1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Amazon EC2 Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
+1. Now that you have a service role ARN, call the create\-deployment\-group command to create a deployment group named **SimpleDemoDG**, associated with the application named **SimpleDemoApp**, using the Auto Scaling group named **CodeDeployDemo\-AS\-Group** and deployment configuration named **CodeDeployDefault\.OneAtATime**, with the specified service role ARN\.
 **Note**  
 The [create\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/create-deployment-group.html) command provides support for creating triggers that result in the sending of Amazon SNS notifications to topic subscribers about specified events in deployments and instances\. The command also supports options for automatically rolling back deployments and setting up alarms to stop deployments when monitoring thresholds in Amazon CloudWatch alarms are met\. Commands for these actions are not included in this tutorial\.
 
@@ -133,7 +133,7 @@ Sign in with the same account or IAM user information that you used in [Getting 
 
 1. In **Deployment type**, choose **In\-place**\.
 
-1. In **Environment configuration** select **Amazon EC2 Auto Scaling groups**, and then choose **CodeDeployDemo\-AS\-Group**\.
+1. In **Environment configuration** select **Auto Scaling groups**, and then choose **CodeDeployDemo\-AS\-Group**\.
 
 1. In **Deployment configuration**, choose **CodeDeployDefault\.OneAtATime**\.
 

@@ -59,13 +59,13 @@ For actions that don't support resource\-level permissions, such as listing oper
 For example, you can indicate a deployment group \(*myDeploymentGroup*\) in your statement using its ARN as follows:
 
 ```
-"Resource": "arn:aws:codedeploy:us-west-2:123456789012:deploymentgroup/myDeploymentGroup"
+"Resource": "arn:aws:codedeploy:us-west-2:123456789012:deploymentgroup:myApplication/myDeploymentGroup"
 ```
 
 You can also specify all deployment groups that belong to an account by using the wildcard character \(\*\) as follows:
 
 ```
-"Resource": "arn:aws:codedeploy:us-west-2:123456789012:deploymentgroup/*"
+"Resource": "arn:aws:codedeploy:us-west-2:123456789012:deploymentgroup:*"
 ```
 
 To specify all resources, or if an API action does not support ARNs, use the wildcard character \(\*\) in the `Resource` element as follows:
@@ -91,9 +91,9 @@ In CodeDeploy, the primary resource is a deployment group\. In a policy, you use
 
 | Resource type | ARN format | 
 | --- | --- | 
-| Deployment group |  `arn:aws:codedeploy:region:account-id:deploymentgroup/deployment-group-name`  | 
-| Application |  `arn:aws:codedeploy:region:account-id:application/application-name`  | 
-| Deployment configuration |  `arn:aws:codedeploy:region:account-id:deploymentconfig/deployment-configuration-name`   | 
+| Deployment group |  `arn:aws:codedeploy:region:account-id:deploymentgroup:application-name/deployment-group-name`  | 
+| Application |  `arn:aws:codedeploy:region:account-id:application:application-name`  | 
+| Deployment configuration |  `arn:aws:codedeploy:region:account-id:deploymentconfig:deployment-configuration-name`   | 
 | Instance |  `arn:aws:codedeploy:region:account-id:instance/instance-ID`  | 
 |  All CodeDeploy resources  |  `arn:aws:codedeploy:*`  | 
 |  All CodeDeploy resources owned by the specified account in the specified Region  |  `arn:aws:codedeploy:region:account-id:*`  | 

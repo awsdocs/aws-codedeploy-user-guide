@@ -7,9 +7,12 @@ AWS Identity and Access Management \(IAM\) is an AWS service that helps an admin
 + [Authenticating with identities](#security_iam_authentication)
 + [Managing access using policies](#security_iam_access-manage)
 + [How AWS CodeDeploy works with IAM](security_iam_service-with-iam.md)
++ [AWS managed \(predefined\) policies for CodeDeploy](managed-policies.md)
++ [CodeDeploy updates to AWS managed policies](managed-policies-updates.md)
 + [AWS CodeDeploy identity\-based policy examples](security_iam_id-based-policy-examples.md)
 + [Troubleshooting AWS CodeDeploy identity and access](security_iam_troubleshoot.md)
 + [CodeDeploy permissions reference](auth-and-access-control-permissions-reference.md)
++ [Cross\-service confused deputy prevention](security_confused_deputy.md)
 
 ## Audience<a name="security_iam_audience"></a>
 

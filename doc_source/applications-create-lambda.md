@@ -26,7 +26,7 @@ If you want to use the same settings used in another deployment group \(includin
 
 1.  If you want to use a predefined deployment configuration, choose one from **Deployment configuration**, and then skip to step 12\. To create a custom configuration, continue to the next step\.
 
-   For more information about deployment configurations, see [ Deployment configurations on an AWS Lambda compute platform ](deployment-configurations.md#deployment-configuration-lambda)\.
+   For more information about deployment configurations, see [ Deployment configurations on an AWS Lambda compute platform](deployment-configurations.md#deployment-configuration-lambda)\.
 
 1. To create a custom configuration, choose **Create deployment configuration**, and then do the following:
 
