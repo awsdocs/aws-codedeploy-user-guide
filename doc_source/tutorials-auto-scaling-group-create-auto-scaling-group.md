@@ -98,7 +98,7 @@ For a list of region name identifiers, see [Resource kit bucket names by Region]
    On local Windows machines:
 
    ```
-   aws autoscaling create-auto-scaling-group --auto-scaling-group-name CodeDeployDemo-AS-Group --launch-template CodeDeployDemo-AS-Launch-Template,Version="$Latest" --min-size 1 --max-size 1 --desired-capacity 1 --availability-zones availability-zone --tags Key=Name,Value=CodeDeployDemo,PropagateAtLaunch=true
+   aws autoscaling create-auto-scaling-group --auto-scaling-group-name CodeDeployDemo-AS-Group --launch-template LaunchTemplateName=CodeDeployDemo-AS-Launch-Template,Version="$Latest" --min-size 1 --max-size 1 --desired-capacity 1 --availability-zones availability-zone --tags Key=Name,Value=CodeDeployDemo,PropagateAtLaunch=true
    ```
 
    These commands create an Auto Scaling group named **CodeDeployDemo\-AS\-Group** based on the Amazon EC2 launch template named **CodeDeployDemo\-AS\-Launch\-Template**\. This Auto Scaling group has only one Amazon EC2 instance, and it is created in the specified Availability Zone\. Each instance in this Auto Scaling group will have the tag `Name=CodeDeployDemo`\. The tag will be used when installing the CodeDeploy agent later\.
