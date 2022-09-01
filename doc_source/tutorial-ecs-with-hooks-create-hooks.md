@@ -8,7 +8,7 @@ In this section, you implement one Lambda function for your Amazon ECS deploymen
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. From the naviation pane, choose **Roles**, and then choose **Create role**\.
+1. From the naviation panel, choose **Roles**, and then choose **Create role**\.
 
 1.  Create a role with the following properties: 
    +  **Trusted entity**: **AWS Lambda**\. 
