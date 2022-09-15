@@ -39,7 +39,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 |  |  | 
 | --- |--- |
 |  Maximum number of concurrent deployments to a deployment group¹  |  1  | 
-| Maximum number of concurrent deployments associated with an AWS account²  | 100 | 
+| Maximum number of concurrent deployments associated with an AWS account²  | 1000 | 
 |  Maximum number of hours an EC2/On\-Premises in\-place deployment can run  |  8  | 
 | Maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an EC2/On\-Premises deployment | 48 | 
 | Maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an Amazon ECS blue/green deployment | 120 | 
@@ -59,7 +59,7 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 
 |  |  | 
 | --- |--- |
-|  Maximum number of custom deployment configurations associated with an AWS account  |  50  | 
+|  Maximum number of custom deployment configurations associated with an AWS account  |  200  | 
 | Allowed values for a minimum healthy instances setting of HOST\_COUNT | Any positive integer or 0 \(zero\)\. Zero \(0\) results in deployment to all instances at once\. | 
 | Allowed values for a minimum healthy instances setting of FLEET\_PERCENT | Any positive integer less than 100 or 0 \(zero\)\. Zero \(0\) results in deployment to all instances at once\. | 
 |  Maximum number of characters in a custom deployment configuration name  |  100  | 
@@ -86,9 +86,9 @@ You can [request a limit increase](https://console.aws.amazon.com/support/home#/
 
 |  |  | 
 | --- |--- |
-|  Maximum number of instances in a single deployment  |  500  | 
+|  Maximum number of instances in a single deployment  |  1000  | 
 | Maximum number of characters in a tag key | 128 | 
 |  Maximum number of characters in a tag value  |  256  | 
 | Maximum number of instances that can be passed to the [BatchGetOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.html) API action | 100 | 
-| Maximum number of instances that can be used by concurrent deployments that are in progress and associated with one account  | 500 | 
+| Maximum number of instances that can be used by concurrent deployments that are in progress and associated with one account  | 1000 | 
 |  Required version of AWS SDK for Ruby\.  |  **2\.1\.2 **or earlier for CodeDeploy agent versions earlier than 1\.0\.1\.880\. **2\.2** or earlier for CodeDeploy agent version 1\.0\.1\.880 and later\.  | 

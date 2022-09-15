@@ -71,17 +71,33 @@ Writing the output to a temporary log file is a workaround that should be used w
      sudo ./install auto > /tmp/logfile
      ```
    + To install a specific version of the CodeDeploy agent on Ubuntu 14\.04, 16\.04, and 18\.04:
+     + List the available versions in your region:
 
-     ```
-     sudo ./install auto -v releases/codedeploy-agent-###.deb
-     ```
+       ```
+       aws s3 ls s3://aws-codedeploy-region-identifier/releases/ | grep '\.deb$'
+       ```
+     + Install one of the versions:
+
+       ```
+       sudo ./install auto -v releases/codedeploy-agent-###.deb
+       ```
+**Note**  
+The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.
    + To install a specific version of the CodeDeploy agent on Ubuntu 20\.04:
+     + List the available versions in your region:
+
+       ```
+       aws s3 ls s3://aws-codedeploy-region-identifier/releases/ | grep '\.deb$'
+       ```
+     + Install one of the versions:
+
+       ```
+       sudo ./install auto -v releases/codedeploy-agent-###.deb > /tmp/logfile
+       ```
 **Note**  
 Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
-
-     ```
-     sudo ./install auto -v releases/codedeploy-agent-###.deb > /tmp/logfile
-     ```
+**Note**  
+The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.
 
 **To check that the service is running**
 

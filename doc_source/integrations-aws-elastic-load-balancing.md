@@ -10,7 +10,7 @@ The use of Elastic Load Balancing load balancers is mandatory in blue/green depl
 Elastic Load Balancing provides three types of load balancers that can be used in CodeDeploy deployments: Classic Load Balancers, Application Load Balancers, and Network Load Balancers\.
 
 Classic Load Balancer  
-Routes and load balances either at the transport layer \(TCP/SSL\) or the application layer \(HTTP/HTTPS\)\. It supports either EC2\-Classic or a VPC\.
+Routes and load balances either at the transport layer \(TCP/SSL\) or the application layer \(HTTP/HTTPS\)\. It supports a VPC\.
 
 Application Load Balancer  
 Routes and load balances at the application layer \(HTTP/HTTPS\) and supports path\-based routing\. It can route requests to ports on each EC2 instance or container instance in your virtual private cloud \(VPC\)\.  

@@ -60,6 +60,8 @@ If you want to use the same settings used in another deployment group \(includin
    Each instance is deregistered from the load balancer \(Classic Load Balancers\) or target group \(Application Load Balancers and Network Load Balancers\) to prevent traffic from being routed to it during the deployment\. It is re\-registered when the deployment is complete\.
 
    For more information about load balancers for CodeDeploy deployments, see [Integrating CodeDeploy with Elastic Load Balancing](integrations-aws-elastic-load-balancing.md)\.
+**Warning**  
+If you are configuring both an Auto Scaling group and an Elastic Load Balancing load balancer in this deployment group, and you want to [attach the load balancer to the Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html), we recommend completing this attachment *before* creating the CodeDeploy deployment from this deployment group\. Attempting to complete the attachment after creating the deployment may cause all the instances to become deregistered from the load balancer unexpectedly\.
 
 1. \(Optional\) Expand **Advanced** and configure any options you want to include in the deployment, such as Amazon SNS notification triggers, Amazon CloudWatch alarms, or automatic rollbacks\.
 

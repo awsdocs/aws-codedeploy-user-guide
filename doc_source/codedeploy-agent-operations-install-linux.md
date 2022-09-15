@@ -48,11 +48,18 @@ To install the latest version of the CodeDeploy agent:
   ```
 
 To install a specific version of the CodeDeploy agent:
-+ 
++ List the available versions in your region:
+
+  ```
+  aws s3 ls s3://aws-codedeploy-region-identifier/releases/ | grep '\.rpm$'
+  ```
++ Install one of the versions:
 
   ```
   sudo ./install auto -v releases/codedeploy-agent-###.rpm
   ```
+**Note**  
+The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.
 
 To check that the service is running, run the following command:
 

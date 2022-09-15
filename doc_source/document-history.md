@@ -2,10 +2,13 @@
 
 The following table describes the major changes made to this user guide to support new and enhanced functionality since the last release of the *CodeDeploy User Guide*\.
 + **API version: **2014\-10\-06
-+ **Latest documentation update: **April 8, 2022
++ **Latest documentation update: **September 7, 2022
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Changed a limit\.](#document-history) | The following limit was changed: '*Maximum number of custom deployment configurations associated with an AWS account*' is now 200\. For more information on limits, see the [Limits](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html) topic\. | September 7, 2022 | 
+| [CodeDeploy agent v1\.4\.0 release](#document-history) | The AWS CodeDeploy agent was updated to version 1\.4\.0\. For more information, see [ Version history of the CodeDeploy agent](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html#codedeploy-agent-version-history)\. | August 31, 2022 | 
+| [Fixed a few limits\.](#document-history) | The following limits were fixed: '*Maximum number of concurrent deployments associated with an AWS account*' is now 1000\. '*Maximum number of instances in a single deployment*' is now 1000\. '*Maximum number of instances that can be used by concurrent deployments that are in progress and associated with one account*' is now 1000\. '*Maximum number of custom deployment configurations associated with an AWS account*' is now 100\. For more information on limits, see the [Limits](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html) topic\. | August 8, 2022 | 
 | [Added a table that shows the CodeDeploy endpoints supported in each Region\.](#document-history) | For more information, see [Use CodeDeploy with Amazon Virtual Private Cloud](https://docs.aws.amazon.com/codedeploy/latest/userguide/vpc-endpoints.html)\. | April 20, 2022 | 
 | [Added a new limit for Amazon ECS blue/green deployments\.](#document-history) |  The maximum number of hours between the deployment of a revision and the shifting of traffic to the replacement environment during an Amazon ECS blue/green deployment is now 120\. For more information, see [Deployments](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html#limits-deployments) in the [Limits](https://docs.aws.amazon.com/codedeploy/latest/userguide/limits.html) topic\. | April 12, 2022 | 
 | [Added a topic on how to prevent the confused deputy problem](#document-history) | For more information, see [AWS Identity and Access Management for AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/security_iam.html)\. | March 14, 2022 | 

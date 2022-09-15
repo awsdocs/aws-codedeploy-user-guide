@@ -24,7 +24,7 @@ If you have not done so already, follow the instructions in [Getting started wit
 
 1. On the **Step 3: Configure Instance Details** page, in the **IAM role** list, choose the IAM instance role you created in [Step 4: Create an IAM instance profile for your Amazon EC2 instances](getting-started-create-iam-instance-profile.md)\. If you used the suggested role name, then choose **CodeDeployDemo\-EC2\-Instance\-Profile**\. If you created your own role name, choose that\.
 **Note**  
-If **Launch into EC2\-Classic** or a default virtual private cloud \(VPC\) are not displayed in the **Network** list, and you cannot choose a different Amazon EC2 instance type that supports launching into EC2\-Classic, you must choose or create an Amazon VPC and subnet\. Choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
+If a default virtual private cloud \(VPC\) is not displayed in the **Network** list, you must choose or create an Amazon VPC and subnet\. Choose **Create new VPC** or **Create new subnet** or both\. For more information, see [Your VPC and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\.
 
 1. Choose **Next: Add Storage**\.
 

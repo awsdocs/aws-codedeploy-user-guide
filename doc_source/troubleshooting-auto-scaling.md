@@ -260,7 +260,7 @@ Use the CodeDeploy command shown below to add the hook\. Do not use the Auto Sca
 **Note**  
 The remaining steps of this procedure assume you have set your **Desired capacity** to `1`\.
 
-   1. Open the Amazon EC2 Auto Scaling console at [https://console\.aws\.amazon\.com/ec2autoscaling/](https://console.aws.amazon.com/ec2autoscaling/)\.
+   1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/), and choose **Auto Scaling Groups** from the navigation pane\.
 
    1. Choose the appropriate Region\.
 
@@ -356,7 +356,7 @@ The console does not allow you to save the configuration if there is no environm
 
 1. After the deployment succeeds, scale your Auto Scaling group back out to the original capacity, if you previously scaled it in:
 
-   1. Open the Amazon EC2 Auto Scaling console at [https://console\.aws\.amazon\.com/ec2autoscaling/](https://console.aws.amazon.com/ec2autoscaling/)\.
+   1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/), and choose **Auto Scaling Groups** from the navigation pane\.
 
    1. Choose the appropriate Region\.
 

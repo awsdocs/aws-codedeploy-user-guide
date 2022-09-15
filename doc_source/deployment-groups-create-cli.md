@@ -18,3 +18,5 @@ To use the AWS CLI to create a deployment group, call the [create\-deployment\-g
     + Whether to reroute traffic to the replacement environment immediately or wait a specified period for traffic to be rerouted manually\.
     + Whether instances in the original environment should be terminated\. 
   + The name of the Classic Load Balancer or Application Load Balancer in Elastic Load Balancing to be used for instances registered in the replacement environment\.
+**Warning**  
+If you are configuring both an Auto Scaling group and an Elastic Load Balancing load balancer in your deployment group, and you want to [attach the load balancer to the Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html), we recommend completing this attachment *before* creating the CodeDeploy deployment from this deployment group\. Attempting to complete the attachment after creating the deployment may cause all the instances to become deregistered from the load balancer unexpectedly\.
