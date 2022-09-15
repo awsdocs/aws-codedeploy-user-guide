@@ -198,10 +198,10 @@ For information about how to find the wire logging file and enable and disable w
 
  If all lifecycle events of an EC2 or on\-premises deployment are skipped, you might receive an error similar to `The overall deployment failed because too many individual instances failed deployment, too few healthy instances are available for deployment, or some instances in your deployment group are experiencing problems. (Error code: HEALTH_CONSTRAINTS)`\. Here are some possible causes and solutions: 
 + The CodeDeploy agent might not be installed or running on the instance\. To determine if the CodeDeploy agent is running:
-  + For Amazon Linux RHEL or Ubuntu server, run the following:
+  + For Amazon Linux, RHEL or Ubuntu server, run the following:
 
     ```
-    sudo service CodeDeploy-agent status
+    sudo service codedeploy-agent status
     ```
   + For Windows, run the following:
 
