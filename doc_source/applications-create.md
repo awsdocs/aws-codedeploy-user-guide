@@ -12,7 +12,7 @@ Your code, or application revision, is installed to instances through a process 
     + Instances in the replacement environment are registered with an Elastic Load Balancing load balancer, causing traffic to be rerouted to them\. Instances in the original environment are deregistered and can be terminated or kept running for other uses\.
 **Note**  
 If you use an EC2/On\-Premises compute platform, be aware that blue/green deployments work with Amazon EC2 instances only\.
-  + **Blue/green on an AWS Lambda or Amazon ECS compute platform**: Traffic is shifted in increments accorinding to a **canary**, **linear**, or **all\-at\-once** deployment configuration\. For more information, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
+  + **Blue/green on an AWS Lambda or Amazon ECS compute platform**: Traffic is shifted in increments according to a **canary**, **linear**, or **all\-at\-once** deployment configuration\. For more information, see [Deployment configuration](primary-components.md#primary-components-deployment-configuration)\.
   + **Blue/green deployments through AWS CloudFormation**: Traffic is shifted from your current resources to your updated resources as part of an AWS CloudFormation stack update\. Currently, only ECS blue/green deployments are supported\. 
 
   For more information about blue/green deployments, see [Overview of a blue/green deployment](welcome.md#welcome-deployment-overview-blue-green)\.

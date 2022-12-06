@@ -13,9 +13,9 @@ In some cases, the alias of a Lambda function specified in a deployment might re
 
 1. Select the name of the Lambda function that is in your CodeDeploy deployment\.
 
-1. From **Aliases**, select the alias used in your CodeDeploy deployment, choose **Edit**\.
+1. From **Aliases**, choose the alias used in your CodeDeploy deployment, and then choose **Edit**\.
 
-1. From **Weighted alias**, choose **\<none\>**\. This ensures the alias is not configured to shift a percentage, or weight, of traffic to more than one version\. Make a note of the version selected in **Version**\.
+1. From **Weighted alias**, choose **none**\. This ensures the alias is not configured to shift a percentage, or weight, of traffic to more than one version\. Make a note of the version selected in **Version**\.
 
 1. Choose **Save**\.
 

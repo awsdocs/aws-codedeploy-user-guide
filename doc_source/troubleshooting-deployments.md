@@ -5,6 +5,7 @@
 + [CodeDeploy plugin CommandPoller missing credentials error](#troubleshooting-agent-commandpoller-error)
 + [Deployment fails with the message “Validation of PKCS7 signed message failed”](#troubleshooting-deployments-agent-SHA-256)
 + [Deployment or redeployment of the same files to the same instance locations fail with the error "The deployment failed because a specified file already exists at this location"](#troubleshooting-same-files-different-app-name)
++ [Long file paths cause "No such file or directory" errors](#troubleshooting-long-file-paths)
 + [Long\-running processes can cause deployments to fail](#troubleshooting-long-running-processes)
 + [Troubleshooting a failed AllowTraffic lifecycle event with no error reported in the deployment logs](#troubleshooting-deployments-allowtraffic-no-logs)
 + [Troubleshooting a failed ApplicationStop, BeforeBlockTraffic, or AfterBlockTraffic deployment lifecycle event](#troubleshooting-deployments-lifecycle-event-failures)
@@ -84,6 +85,42 @@ To address these situations, do one of the following:
 + In your revision's AppSpec file, in either the ApplicationStop or BeforeInstall deployment lifecycle events, specify a custom script to delete files in any locations that match the files your revision is about to install\.
 + Deploy or redeploy the files to locations or instances that were not part of previous deployments\.
 + Before you delete an application or a deployment group, deploy a revision that contains an AppSpec file that specifies no files to copy to the instances\. For the deployment, specify the application name and deployment group name that use the same underlying application and deployment group IDs as those you are about to delete\. \(You can use the [get\-deployment\-group](https://docs.aws.amazon.com/cli/latest/reference/deploy/get-deployment-group.html) command to retrieve the deployment group ID\.\) CodeDeploy uses the underlying deployment group ID and AppSpec file to remove all of the files it installed in the previous successful deployment\. 
+
+## Long file paths cause "No such file or directory" errors<a name="troubleshooting-long-file-paths"></a>
+
+For deployments to Windows instances, if you have a file path greater than 260 characters in the files section of your appspec\.yml file, you may see deployments fail with an error similar to the following:
+
+`No such file or directory @ dir_s_mkdir - C:\your-long-file-path`
+
+This error occurs because Windows by default does not allow file paths greater than 260 characters, as detailed in [Microsoft’s documentation](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=powershell#enable-long-paths-in-windows-10-version-1607-and-later)\. 
+
+For CodeDeploy agent versions 1\.4\.0 or later, you can enable long file paths in two ways, depending on the agent installation process:
+
+If the CodeDeploy agent has not yet been installed:
+
+1. On the machine where you plan to install the CodeDeploy agent, enable the `LongPathsEnabled` Windows registry key using this command:
+
+   ```
+   New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem"
+             -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+   ```
+
+1. Install the CodeDeploy agent\. For more information, see [Install the CodeDeploy agent](codedeploy-agent-operations-install.md)\.
+
+If the CodeDeploy agent has already been installed:
+
+1. On the CodeDeploy agent machine, enable the `LongPathsEnabled` Windows registry key using this command:
+
+   ```
+   New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" 
+   -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+   ```
+
+1.  Restart the CodeDeploy agent for the registry key change to take effect\. To restart the agent, use this command:
+
+   ```
+   powershell.exe -Command Restart-Service -Name codedeployagent
+   ```
 
 ## Long\-running processes can cause deployments to fail<a name="troubleshooting-long-running-processes"></a>
 
