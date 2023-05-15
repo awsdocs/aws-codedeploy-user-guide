@@ -1,7 +1,6 @@
 # Troubleshoot EC2/On\-Premises deployment issues<a name="troubleshooting-deployments"></a>
 
 **Topics**
-+ [CodeDeploy agent fails to start on Windows 2016](#troubleshooting-error-1920-service-codedeploy-host-agent-service)
 + [CodeDeploy plugin CommandPoller missing credentials error](#troubleshooting-agent-commandpoller-error)
 + [Deployment fails with the message “Validation of PKCS7 signed message failed”](#troubleshooting-deployments-agent-SHA-256)
 + [Deployment or redeployment of the same files to the same instance locations fail with the error "The deployment failed because a specified file already exists at this location"](#troubleshooting-same-files-different-app-name)
@@ -15,29 +14,6 @@
 
 **Note**  
 The causes of many deployment failures can be identified by reviewing the log files created during the deployment process\. For simplicity, we recommend using Amazon CloudWatch Logs to centrally monitor log files instead of viewing them instance by instance\. For information, see [View CodeDeploy Logs in CloudWatch Logs Console](http://aws.amazon.com/blogs/devops/view-aws-codedeploy-logs-in-amazon-cloudwatch-console/)\.
-
-## CodeDeploy agent fails to start on Windows 2016<a name="troubleshooting-error-1920-service-codedeploy-host-agent-service"></a>
-
-When running the CodeDeploy agent installer file \(`CodeDeploy-agent.msi`\) on Windows 2016, the \.msi file fails to start and you see the following error in `C:\Windows\TEMP\CodeDeploy-agent.msi_installer.log`:
-
-`Error 1920 Service 'CodeDeploy Host Agent Service' (CodeDeployagent) failed to start. Verify that you have sufficient privileges to start system services.`
-
-This error occurs because the Windows Defender anti\-virus software is blocking the `CodeDeploy-agent.msi` file from running\.
-
-To resolve this issue, you must add Windows Defender exclusions before running the agent installer\.
-
-**To add Windows Defender exclusions**
-
-1. Use the following Powershell statements to add the exclusions\. Make sure to run them as administrator\.
-
-   ```
-   Write-Host ("Adding Windows Defender exclude for CodeDeploy...")
-   Add-MpPreference -ExclusionPath ("C:\ProgramData\Amazon\CodeDeploy","$env:windir\Temp")
-   ```
-
-1. Add the exclusions before the agent installation, as part of your custom AMI, or with Systems Manager\. If you are installing the agent as part of user data, add the exclusions one step before the agent installation script\.
-
-   For more information, see [Install the CodeDeploy agent for Windows Server](codedeploy-agent-operations-install-windows.md), [Running commands using Systems Manager Run Command](https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html), and [Run commands on your WIndows instance at launch](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2-windows-user-data.html)\. 
 
 ## CodeDeploy plugin CommandPoller missing credentials error<a name="troubleshooting-agent-commandpoller-error"></a>
 
@@ -254,7 +230,7 @@ For information about how to find the wire logging file and enable and disable w
 + The service role for CodeDeploy might not have required permissions\. To configure a CodeDeploy service role, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\. 
 + If you use an HTTP proxy, make sure it is specified in the `:proxy_uri:` setting in the CodeDeploy agent configuration file\. For more information, see [CodeDeploy agent configuration reference](reference-agent-configuration.md)\. 
 + The date and time signature of your deployment instance might not match the date and time signature of your deployment request\. Look for an error similar to `Cannot reach InstanceService: Aws::CodeDeployCommand::Errors::InvalidSignatureException - Signature expired` in your CodeDeploy agent log file\. If you see this error, follow the steps in [Troubleshooting “InvalidSignatureException – Signature expired: \[time\] is now earlier than \[time\]” deployment errors](troubleshooting-ec2-instances.md#troubleshooting-instance-time-failures)\. For more information, see [View log data for CodeDeploy EC2/On\-Premises deployments](deployments-view-logs.md)\. 
-+ The CodeDeploy agent might stop running because an instance is running low on memory or hard disk space\. Try to lower the number of archived deployments on your instance by updating the `max_revisions` setting in the CodeDeploy agent configuration\. If you do this for an EC2 instance and the issue persists, consider using a larger instance\. For example, if your instance type is `t2.small`, try using a `t2.medium`\. For more information, see [Files installed by the CodeDeploy agent ](codedeploy-agent.md#codedeploy-agent-install-files), [CodeDeploy agent configuration reference](reference-agent-configuration.md), and [Amazon EC2 Instance Types](https://aws.amazon.com/EC2/instance-types/)\. 
++ The CodeDeploy agent might stop running because an instance is running low on memory or hard disk space\. Try to lower the number of archived deployments on your instance by updating the `max_revisions` setting in the CodeDeploy agent configuration\. If you do this for an EC2 instance and the issue persists, consider using a larger instance\. For example, if your instance type is `t2.small`, try using a `t2.medium`\. For more information, see [Files installed by the CodeDeploy agent ](codedeploy-agent.md#codedeploy-agent-install-files), [CodeDeploy agent configuration reference](reference-agent-configuration.md), and [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html)\. 
 +  The instance you're deploying to might not have an IAM instance profile attached, or it might have an IAM instance profile attached that does not have the required permissions\. 
   +  If an IAM instance profile is not attached to your instance, create one with the required permissions and then attach it\. 
   +  If an IAM instance profile is already attached to your instance, make sure it has the required permissions\. 

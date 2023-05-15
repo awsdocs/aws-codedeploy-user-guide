@@ -41,7 +41,7 @@ The instructions are as follows:
 + `group` – Optional\. The name of the group for `object`\. If not specified, all existing groups applied to the original file or directory/folder structure remain unchanged after the copy operation\.
 
   Specify `group` with a string\.
-+ `mode` – Optional\. A numeric value specifying the permissions to be applied to `object`\. The mode setting follows the [Linux chmod command](https://linuxize.com/post/chmod-command-in-linux) syntax\.
++ `mode` – Optional\. A numeric value specifying the permissions to be applied to `object`\. The mode setting follows the Linux chmod command syntax\.
 **Important**  
 If the value includes a leading zero, you must surround it with double\-quotes, or remove the leading zero so that only three digits remain\.
 **Note**  

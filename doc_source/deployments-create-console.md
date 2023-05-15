@@ -4,7 +4,7 @@ This topic shows you how to deploy an application to an Amazon EC2 or on\-premis
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same user that you set up in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. Do one of the following:
    +  If you want to deploy an application, in the navigation pane, expand **Deploy**, and then choose **Applications**\. Choose the name of the application you want to deploy\. Make sure the **Compute platform** column for your application is **EC2/On\-Premises**\.

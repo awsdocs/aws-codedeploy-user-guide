@@ -8,7 +8,7 @@ When CloudTrail logging is enabled in your AWS account, API calls made to CodeDe
 
 All of the CodeDeploy actions are logged and documented in the [AWS CodeDeploy Command Line Reference](https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html) and the [AWS CodeDeploy API Reference](https://docs.aws.amazon.com/codedeploy/latest/APIReference/)\. For example, calls to create deployments, delete applications, and register application revisions generate entries in CloudTrail log files\. 
 
-Every log entry contains information about who generated the request\. The user identity information in the log helps you determine whether the request was made with root or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. For more information, see the **userIdentity** field in the [CloudTrail event reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html)\.
+Every log entry contains information about who generated the request\. The user identity information in the log helps you determine whether the request was made with root or user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. For more information, see the **userIdentity** field in the [CloudTrail event reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html)\.
 
 You can store your log files in your bucket for as long as you want, but you can also define Amazon S3 lifecycle rules to archive or delete log files automatically\. By default, Amazon S3 server\-side encryption \(SSE\) is used to encrypt your log files\.
 

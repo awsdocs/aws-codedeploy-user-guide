@@ -60,7 +60,7 @@ To delete the Auto Scaling group, which also terminates the Amazon EC2 instances
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same user that you set up in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
    In the navigation pane, expand **Deploy**, then choose **Applications**\.
 

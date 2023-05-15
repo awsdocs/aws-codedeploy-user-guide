@@ -34,7 +34,7 @@ You can use the following checklist to troubleshoot a failed deployment\.
 1. Check that the service role is correctly configured\. For information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
 1. Confirm you followed the steps in [Getting started with CodeDeploy](getting-started-codedeploy.md) to: 
-   + Attach policies to the IAM user\.
+   + Provisioned a user with the appropriate permissions\.
    + Install or upgrade and configure the AWS CLI\.
    + Create an IAM instance profile and a service role\.
 

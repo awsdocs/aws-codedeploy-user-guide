@@ -1,5 +1,11 @@
 # Use the register\-on\-premises\-instance command \(IAM user ARN\) to register an on\-premises instance<a name="register-on-premises-instance-iam-user-arn"></a>
 
+**Important**  
+Registering an instance using an IAM user is not recommended because it uses static \(permanent\) credentials for authentication\. For improved security, we recommend registering an instance using temporary credentials for authentication\. For more information, see [Use the register\-on\-premises\-instance command \(IAM Session ARN\) to register an on\-premises instance](register-on-premises-instance-iam-session-arn.md)\.
+
+**Important**  
+Make sure you have a plan in place to rotate the IAM user's access keys \(permanent credentials\)\. For more information, see [Rotating access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_RotateAccessKey)\.
+
 Follow these instructions to configure an on\-premises instance and register and tag it with CodeDeploy mostly on your own, using static IAM user credentials for authentication\.
 
 **Topics**
@@ -22,7 +28,7 @@ Create an IAM user that the on\-premises instance will use to authenticate and i
 **Important**  
 You must create a separate IAM user for each participating on\-premises instance\. If you try to reuse an individual IAM user for multiple on\-premises instances, you might not be able to successfully register or tag those on\-premises instances with CodeDeploy\. Deployments to those on\-premises instances might be stuck in a perpetual pending state or fail altogether\.
 
-We recommed that you assign the IAM user a name that identifies its purpose, such as CodeDeployUser\-OnPrem\.
+We recommend that you assign the IAM user a name that identifies its purpose, such as CodeDeployUser\-OnPrem\.
 
 You can use the AWS CLI or the IAM console to create an IAM user\. For information, see [Creating an IAM user in your AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)\. 
 
@@ -85,6 +91,7 @@ For example:
            "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",        
            "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
+           "arn:aws:s3:::aws-codedeploy-ap-southeast-4/*",
            "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
            "arn:aws:s3:::aws-codedeploy-sa-east-1/*"
          ]
@@ -111,7 +118,7 @@ Be sure to include `file://` before the file name\. It is required in this comma
 
 1. In the **Policy Name** box, type a name for this policy \(for example, **CodeDeploy\-OnPrem\-Permissions**\)\.
 
-1. In the **Policy Document** box, type or paste the following permissions expression, which allows AWS CodeDeploy to deploy application revisions from any Amazon S3 bucket specified in the policy to the on\-premises instance on behalf of the IAM user account:
+1. In the **Policy Document** box, type or paste the following permissions expression, which allows AWS CodeDeploy to deploy application revisions from any Amazon S3 bucket specified in the policy to the on\-premises instance on behalf of the IAM user:
 
    ```
    {
@@ -144,7 +151,18 @@ Be sure to include `file://` before the file name\. It is required in this comma
 Get the secret key ID and the secret access key for the IAM user\. You will need them for [Step 4: Add a configuration file to the on\-premises instance](#register-on-premises-instance-iam-user-arn-4)\. You can use the AWS CLI or the IAM console to get the secret key ID and the secret access key\.
 
 **Note**  
-If you already have the secret key ID and the secret access key, skip this step and go directly to [Step 4: Add a configuration file to the on\-premises instance](#register-on-premises-instance-iam-user-arn-4)\.
+If you already have the secret key ID and the secret access key, skip this step and go directly to [Step 4: Add a configuration file to the on\-premises instance](#register-on-premises-instance-iam-user-arn-4)\.  
+Users need programmatic access if they want to interact with AWS outside of the AWS Management Console\. The way to grant programmatic access depends on the type of user that's accessing AWS\.  
+To grant users programmatic access, choose one of the following options\.  
+
+
+****  
+
+| Which user needs programmatic access? | To | By | 
+| --- | --- | --- | 
+|  Workforce identity \(Users managed in IAM Identity Center\)  | Use temporary credentials to sign programmatic requests to the AWS CLI, AWS SDKs, or AWS APIs\. |  Following the instructions for the interface that you want to use\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/register-on-premises-instance-iam-user-arn.html)  | 
+| IAM | Use temporary credentials to sign programmatic requests to the AWS CLI, AWS SDKs, or AWS APIs\. | Following the instructions in [Using temporary credentials with AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html) in the IAM User Guide\. | 
+| IAM | \(Not recommended\)Use long\-term credentials to sign programmatic requests to the AWS CLI, AWS SDKs, or AWS APIs\. |  Following the instructions for the interface that you want to use\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/register-on-premises-instance-iam-user-arn.html)  | 
 
 **To get the credentials \(CLI\)**
 
@@ -202,7 +220,7 @@ Add a configuration file to the on\-premises instance, using root or administrat
    + For Ubuntu Server: `/etc/codedeploy-agent/conf`
    + For Windows Server: `C:\ProgramData\Amazon\CodeDeploy`
 
-1. Use a text editor to add the following information to the newly created `codedeploy.onpremises.yml` (Linux) or `conf.onpremises.yml` (Windows) file:
+1. Use a text editor to add the following information to the newly created `codedeploy.onpremises.yml` or `conf.onpremises.yml` file:
 
    ```
    ---
@@ -267,6 +285,7 @@ As you configure the AWS CLI \(for example, by calling the aws configure command
            "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
+           "arn:aws:s3:::aws-codedeploy-ap-southeast-4/*",
            "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
            "arn:aws:s3:::aws-codedeploy-sa-east-1/*"
          ]
@@ -342,7 +361,7 @@ You can use either the AWS CLI or the CodeDeploy console to tag the on\-premises
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same user that you set up in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. From the CodeDeploy menu, choose **On\-premises instances**\.
 

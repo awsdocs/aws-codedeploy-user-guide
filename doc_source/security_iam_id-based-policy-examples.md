@@ -1,6 +1,6 @@
 # AWS CodeDeploy identity\-based policy examples<a name="security_iam_id-based-policy-examples"></a>
 
-By default, IAM users and roles don't have permission to create or modify CodeDeploy resources\. They also can't perform tasks using the AWS Management Console, AWS CLI, or AWS API\. An IAM administrator must create IAM policies that grant users and roles permission to perform API operations on the specified resources they need\. The administrator must then attach those policies to the IAM users or groups who require those permissions\.
+By default, users don't have permission to create or modify CodeDeploy resources\. They also can't perform tasks using the AWS Management Console, AWS CLI, or AWS API\. You must create IAM policies that grant IAM roles permission to perform API operations on the specified resources they need\. You must then attach those IAM roles to users or groups who require those permissions\.
 
 To learn how to create an IAM identity\-based policy using these example JSON policy documents, see [Creating policies on the JSON tab](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-json-editor) in the *IAM User Guide*\.
 
@@ -51,7 +51,7 @@ The following example shows a permissions policy that allows a user to delete th
 
 ## Customer\-managed policy examples<a name="customer-managed-policies"></a>
 
-In this section, you can find example user policies that grant permissions for various CodeDeploy actions\. These policies work when you are using the CodeDeploy API, AWS SDKs, or the AWS CLI\. You must grant additional permissions for actions you perform in the console\. To learn more about granting console permissions, see [Using the CodeDeploy console](#security_iam_id-based-policy-examples-console) \.
+In this section, you can find example policies that grant permissions for various CodeDeploy actions\. These policies work when you are using the CodeDeploy API, AWS SDKs, or the AWS CLI\. You must grant additional permissions for actions you perform in the console\. To learn more about granting console permissions, see [Using the CodeDeploy console](#security_iam_id-based-policy-examples-console) \.
 
 
 
@@ -59,11 +59,11 @@ In this section, you can find example user policies that grant permissions for v
 All examples use the US West \(Oregon\) Region \(`us-west-2`\) and contain fictitious account IDs\.
 
  **Examples**
-+ [Example 1: Allow a user to perform CodeDeploy operations in a single Region](#identity-based-policies-example-1)
-+ [Example 2: Allow a user to register revisions for a single application](#identity-based-policies-example-2)
-+ [Example 3: Allow a user to create deployments for a single deployment group](#identity-based-policies-example-3)
++ [Example 1: Allow permission to perform CodeDeploy operations in a single Region](#identity-based-policies-example-1)
++ [Example 2: Allow permission to register revisions for a single application](#identity-based-policies-example-2)
++ [Example 3: Allow permission to create deployments for a single deployment group](#identity-based-policies-example-3)
 
-### Example 1: Allow a user to perform CodeDeploy operations in a single Region<a name="identity-based-policies-example-1"></a>
+### Example 1: Allow permission to perform CodeDeploy operations in a single Region<a name="identity-based-policies-example-1"></a>
 
 The following example grants permissions to perform CodeDeploy operations in the **us\-west\-2** Region only:
 
@@ -84,7 +84,7 @@ The following example grants permissions to perform CodeDeploy operations in the
 }
 ```
 
-### Example 2: Allow a user to register revisions for a single application<a name="identity-based-policies-example-2"></a>
+### Example 2: Allow permission to register revisions for a single application<a name="identity-based-policies-example-2"></a>
 
 The following example grants permissions to register application revisions for all applications that begin with **Test** in the **us\-west\-2** Region:
 
@@ -105,9 +105,9 @@ The following example grants permissions to register application revisions for a
 }
 ```
 
-### Example 3: Allow a user to create deployments for a single deployment group<a name="identity-based-policies-example-3"></a>
+### Example 3: Allow permission to create deployments for a single deployment group<a name="identity-based-policies-example-3"></a>
 
-The following example allows the specified user to create deployments for the deployment group named **WordPress\_DepGroup** associated with the application named **WordPress\_App**, the custom deployment configuration named **ThreeQuartersHealthy**, and any application revisions associated with the application named **WordPress\_App**\. All of these resources are in the **us\-west\-2** Region\.
+The following example allows permission to create deployments for the deployment group named **WordPress\_DepGroup** associated with the application named **WordPress\_App**, the custom deployment configuration named **ThreeQuartersHealthy**, and any application revisions associated with the application named **WordPress\_App**\. All of these resources are in the **us\-west\-2** Region\.
 
 ```
 {
@@ -151,7 +151,7 @@ Identity\-based policies determine whether someone can create, access, or delete
 + **Apply least\-privilege permissions** – When you set permissions with IAM policies, grant only the permissions required to perform a task\. You do this by defining the actions that can be taken on specific resources under specific conditions, also known as *least\-privilege permissions*\. For more information about using IAM to apply permissions, see [ Policies and permissions in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the *IAM User Guide*\.
 + **Use conditions in IAM policies to further restrict access** – You can add a condition to your policies to limit access to actions and resources\. For example, you can write a policy condition to specify that all requests must be sent using SSL\. You can also use conditions to grant access to service actions if they are used through a specific AWS service, such as AWS CloudFormation\. For more information, see [ IAM JSON policy elements: Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) in the *IAM User Guide*\.
 + **Use IAM Access Analyzer to validate your IAM policies to ensure secure and functional permissions** – IAM Access Analyzer validates new and existing policies so that the policies adhere to the IAM policy language \(JSON\) and IAM best practices\. IAM Access Analyzer provides more than 100 policy checks and actionable recommendations to help you author secure and functional policies\. For more information, see [IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html) in the *IAM User Guide*\.
-+ **Require multi\-factor authentication \(MFA\)** – If you have a scenario that requires IAM users or root users in your account, turn on MFA for additional security\. To require MFA when API operations are called, add MFA conditions to your policies\. For more information, see [ Configuring MFA\-protected API access](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html) in the *IAM User Guide*\.
++ **Require multi\-factor authentication \(MFA\)** – If you have a scenario that requires IAM users or a root user in your AWS account, turn on MFA for additional security\. To require MFA when API operations are called, add MFA conditions to your policies\. For more information, see [ Configuring MFA\-protected API access](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html) in the *IAM User Guide*\.
 
 For more information about best practices in IAM, see [Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
 
@@ -167,7 +167,7 @@ If you use the CodeDeploy console, you must have a minimum set of permissions th
 + Amazon Simple Notification Service
 + Amazon CloudWatch
 
-If you create an IAM policy that is more restrictive than the minimum required permissions, the console won't function as intended for users with that IAM policy\. To ensure that those users can still use the CodeDeploy console, also attach the `AWSCodeDeployReadOnlyAccess` managed policy to the user, as described in [AWS managed \(predefined\) policies for CodeDeploy](managed-policies.md)\.
+If you create an IAM policy that is more restrictive than the minimum required permissions, the console won't function as intended for users who have a role with that IAM policy\. To ensure that those users can still use the CodeDeploy console, also attach the `AWSCodeDeployReadOnlyAccess` managed policy to the role assigned to the user, as described in [AWS managed \(predefined\) policies for CodeDeploy](managed-policies.md)\.
 
 You don't need to allow minimum console permissions for users who are making calls only to the AWS CLI or the CodeDeploy API\.
 

@@ -36,7 +36,7 @@ To view your AWS account ID, see [Finding Your AWS account ID](https://docs.aws.
 
 To learn how to generate and attach an Amazon S3 bucket policy, see [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 
-The IAM user who is calling the push command must have, at minimum, permissions to upload the revision to each target Amazon S3 bucket\. For example, the following policy allows the IAM user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
+The user who is calling the push command must have, at minimum, permissions to upload the revision to each target Amazon S3 bucket\. For example, the following policy allows the user to upload revisions anywhere in the Amazon S3 bucket named `codedeploydemobucket`:
 
 ```
 {

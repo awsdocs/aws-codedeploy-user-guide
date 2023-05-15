@@ -17,7 +17,7 @@ You can use deploy content that is stored on the local instance or in a supporte
 Before you start a local deployment, complete the following steps: 
 + Create or use an instance type supported by the CodeDeploy agent\. For information, see [Operating systems supported by the CodeDeploy agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\. 
 + Install version 1\.0\.1\.1352 or later of the CodeDeploy agent\. For information, see [Install the CodeDeploy agent](codedeploy-agent-operations-install.md)\.
-+ If you are deploying your content from an Amazon S3 bucket or GitHub repository, provision an IAM user to use with CodeDeploy\. For information, see [Step 3: Provision an IAM user](getting-started-provision-user.md)\.
++ If you are deploying your content from an Amazon S3 bucket or GitHub repository, provision a user to use with CodeDeploy\. For information, see [Step 1: Setting up](getting-started-setting-up.md)\.
 + If you are deploying your application revision from an Amazon S3 bucket, create an Amazon S3 bucket in the region you are working in and apply an Amazon S3 bucket policy to the bucket\. This policy grants your instances the permissions required to download the application revision\.
 
   For example, the following Amazon S3 bucket policy allows any Amazon EC2 instance with an attached IAM instance profile containing the ARN `arn:aws:iam::444455556666:role/CodeDeployDemo` to download from anywhere in the Amazon S3 bucket named `codedeploydemobucket`:

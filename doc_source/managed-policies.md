@@ -14,13 +14,13 @@ The following AWS managed policies, which you can attach to users in your accoun
    
 **Note**  
 AWSCodeDeployFullAccess does not provide permissions to operations in other services required to deploy your applications, such as Amazon EC2 and Amazon S3, only to operations specific to CodeDeploy\.
-+ `AWSCodeDeployDeployerAccess`: Grants access to an IAM user to register and deploy revisions\.
++ `AWSCodeDeployDeployerAccess`: Grants permission to register and deploy revisions\.
 
    
 + `AWSCodeDeployReadOnlyAccess`: Grants read\-only access to CodeDeploy\.
 
    
-+ `AWSCodeDeployRole`: Allows CodeDeploy to:
++ <a name="ACD-policy"></a>`AWSCodeDeployRole`: Allows CodeDeploy to:
   + read the tags on your instances or identify your Amazon EC2 instances by Amazon EC2 Auto Scaling group names
   + read, create, update, and delete Amazon EC2 Auto Scaling groups, lifecycle hooks, scaling policies, and warm pool features
   + publish information to Amazon SNS topics
@@ -43,6 +43,7 @@ AWSCodeDeployFullAccess does not provide permissions to operations in other serv
           "autoscaling:PutLifecycleHook",
           "autoscaling:RecordLifecycleActionHeartbeat",
           "autoscaling:CreateAutoScalingGroup",
+          "autoscaling:CreateOrUpdateTags",
           "autoscaling:UpdateAutoScalingGroup",
           "autoscaling:EnableMetricsCollection",
           "autoscaling:DescribePolicies",
@@ -122,7 +123,7 @@ AWSCodeDeployFullAccess does not provide permissions to operations in other serv
   }
   ```
 
-Permissions for some aspects of the deployment process are granted to two other role types that act on behalf of CodeDeploy, rather than to IAM users:
+Permissions for some aspects of the deployment process are granted to two other role types that act on behalf of CodeDeploy:
 + An *IAM instance profile* is an IAM role that you attach to your Amazon EC2 instances\. This profile includes the permissions required to access the Amazon S3 buckets or GitHub repositories where the applications are stored\. For more information, see [Step 4: Create an IAM instance profile for your Amazon EC2 instances](getting-started-create-iam-instance-profile.md)\.
 + A *service role* is an IAM role that grants permissions to an AWS service so it can access AWS resources\. The policies you attach to the service role determine which AWS resources the service can access and the actions it can perform with those resources\. For CodeDeploy, a service role is used for the following:
   + To read either the tags applied to the instances or the Amazon EC2 Auto Scaling group names associated with the instances\. This enables CodeDeploy to identify instances to which it can deploy applications\.
@@ -132,7 +133,7 @@ Permissions for some aspects of the deployment process are granted to two other 
 
   For more information, see [Step 2: Create a service role for CodeDeploy](getting-started-create-service-role.md)\.
 
-You can also create custom IAM policies to grant permissions for CodeDeploy actions and resources\. You can attach these custom policies to the IAM users or groups who require those permissions\.
+You can also create custom IAM policies to grant permissions for CodeDeploy actions and resources\. You attach these custom policies to IAM roles, and then you assign the roles to users or groups who require the permissions\.
 
 ## CodeDeploy managed policies and notifications<a name="notifications-permissions"></a>
 

@@ -6,9 +6,9 @@ Because it is difficult to know which software and features are already installe
 
 **Note**  
 This sample application revision may fail to be deployed if any of the following are true:  
-The user account that starts the CodeDeploy agent on the on\-premises instance does not have permission to execute scripts\.
-The user account does not have permission to create or delete folders in the locations listed in the scripts\.
-The user account does not have permission to create text files in the locations listed in the scripts\.
+The user that starts the CodeDeploy agent on the on\-premises instance does not have permission to execute scripts\.
+The user does not have permission to create or delete folders in the locations listed in the scripts\.
+The user does not have permission to create text files in the locations listed in the scripts\.
 
 **Note**  
 If you configured a Windows Server instance and want to deploy a different sample, you may want to use the one in [Step 2: Configure your source content to deploy to the Windows Server Amazon EC2 instance](tutorials-windows-configure-content.md) in the [Tutorial: Deploy a "hello, world\!" application with CodeDeploy \(Windows Server\)](tutorials-windows.md) tutorial\.  

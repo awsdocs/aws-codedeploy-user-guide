@@ -123,7 +123,7 @@ Add a configuration file to the on\-premises instance, using root or administrat
    + For Ubuntu Server: `/etc/codedeploy-agent/conf`
    + For Windows Server: `C:\ProgramData\Amazon\CodeDeploy`
 
-1. Use a text editor to add the following information to the newly created `codedeploy.onpremises.yml` or `conf.onpremises.yml` file: 
+1. Use a text editor to add the following information to the newly created `codedeploy.onpremises.yml` file \(Linux\) or `conf.onpremises.yml` file \(Windows\): 
 
    ```
    ---
@@ -219,7 +219,7 @@ You can use either the AWS CLI or the CodeDeploy console to tag the on\-premises
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same user that you set up in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. In the navigation pane, expand **Deploy**, and choose **On\-premises instances**\.
 

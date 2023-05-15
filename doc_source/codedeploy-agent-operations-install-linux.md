@@ -59,7 +59,7 @@ To install a specific version of the CodeDeploy agent:
   sudo ./install auto -v releases/codedeploy-agent-###.rpm
   ```
 **Note**  
-The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.
+The minimum supported version of the CodeDeploy agent is 1\.5\.0\.
 
 To check that the service is running, run the following command:
 

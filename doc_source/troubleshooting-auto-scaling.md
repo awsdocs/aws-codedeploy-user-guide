@@ -30,7 +30,7 @@ Deployments to EC2 instances in an Amazon EC2 Auto Scaling group can fail for th
 +  `EC2:CreateTags` 
 +  `iam:PassRole` 
 
- You might received this error if you are missing these permissions\. For more information, see [Tutorial: Use CodeDeploy to deploy an application to an Auto Scaling group](tutorials-auto-scaling-group.md), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/EC2/userguide/create-launch-template.html), and [Launch template support](https://docs.aws.amazon.com/autoscaling/EC2/userguide/EC2-auto-scaling-launch-template-permissions.html) in the *Amazon EC2 Auto Scaling User Guide*\.
+ You might received this error if you are missing these permissions\. For more information, see [Tutorial: Use CodeDeploy to deploy an application to an Auto Scaling group](tutorials-auto-scaling-group.md), [Creating a launch template for an Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html), and [Permissions](https://docs.aws.amazon.com/autoscaling/ec2/userguide/launch-templates.html#launch-templates-permissions) in the *Amazon EC2 Auto Scaling User Guide*\.
 
 ## Instances in an Amazon EC2 Auto Scaling group are continuously provisioned and terminated before a revision can be deployed<a name="troubleshooting-auto-scaling-provision-termination-loop"></a>
 
@@ -86,7 +86,7 @@ An Amazon EC2 Auto Scaling group might fail to launch new EC2 instances, generat
 
 This message usually indicates one of the following: 
 + The maximum number of concurrent deployments associated with an AWS account was reached\. For more information about deployment limits, see [CodeDeploy limits](limits.md)\. 
-+ The Auto Scaling group tried to launch too many EC2 instances too quickly\. The API calls to [RecordLifecycleActionHeartbeat](https://docs.aws.amazon.com/autoscaling/EC2/APIReference/API_RecordLifecycleActionHeartbeat.html) or [CompleteLifecycleAction](https://docs.aws.amazon.com/autoscaling/EC2/APIReference/API_CompleteLifecycleAction.html) for each new instance were throttled\.
++ The Auto Scaling group tried to launch too many EC2 instances too quickly\. The API calls to [RecordLifecycleActionHeartbeat](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RecordLifecycleActionHeartbeat.html) or [CompleteLifecycleAction](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html) for each new instance were throttled\.
 + An application in CodeDeploy was deleted before its associated deployment groups were updated or deleted\.
 
   When you delete an application or deployment group, CodeDeploy attempts to clean up any Amazon EC2 Auto Scaling hooks associated with it, but some hooks might remain\. If you run a command to delete a deployment group, the leftover hooks are returned in the output\. However, if you run a command to delete an application, the leftover hooks do not appear in the output\.

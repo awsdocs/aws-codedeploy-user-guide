@@ -42,8 +42,8 @@ JSON:
 Each property is specified with a string\. 
 + `name` – Required\. This is the name of the Lambda function to deploy\.
 + `alias` – Required\. This is the name of the alias to the Lambda function\.
-+ `currentversion` – Required\. This is the version of the Lambda function traffic currently points to\.
-+ `targetversion` – Required\. This is the version of the Lambda function traffic is shifted to\.
++ `currentversion` – Required\. This is the version of the Lambda function traffic currently points to\. This value must be a valid positive integer\.
++ `targetversion` – Required\. This is the version of the Lambda function traffic is shifted to\. This value must be a valid positive integer\.
 
 ## AppSpec 'resources' section for Amazon ECS deployments<a name="reference-appspec-file-structure-resources-ecs"></a>
 

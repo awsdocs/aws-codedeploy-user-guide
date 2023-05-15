@@ -22,12 +22,10 @@ Before you can use Systems Manager to install the CodeDeploy agent, you must mak
 
 On an Amazon EC2 instance, the CodeDeploy agent requires that the instance is running version 2\.3\.274\.0 or later\. Before you install the CodeDeploy agent, update or install SSM agent on the instance if you haven't already done so\. 
 
-The following Amazon EC2 AMIs come with the SSM agent pre\-installed:
-+ Windows Server 2008\-2012 R2 AMIs published in November 2016 or later
-+ Windows Server 2016 and 2019
-+ Amazon Linux and Amazon Linux 2
-+ Ubuntu Server 16\.04 and 18\.04
-+ Amazon ECS\-Optimized
+The SSM agent comes preinstalled on some Amazon EC2 AMIs provided by AWS\. For more information, see [Amazon Machine Images \(AMIs\) with SSM agent preinstalled](https://docs.aws.amazon.com/systems-manager/latest/userguide/ami-preinstalled-agent.html)\.
+
+**Note**  
+Make sure that the instance's operating system is also supported by the CodeDeploy agent\. For more information, see [Operating systems supported by the CodeDeploy agent](codedeploy-agent.md#codedeploy-agent-supported-operating-systems)\.
 
 For information about installing or updating SSM agent on an instance running Linux, see [Installing and configuring the SSM agent on Linux instances](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html) in the *AWS Systems Manager User Guide*\.
 

@@ -36,6 +36,7 @@ This table lists the names of *bucket\-name * replacements required for some pro
 | Asia Pacific \(Seoul\) | aws\-codedeploy\-ap\-northeast\-2 | ap\-northeast\-2 | 
 | Asia Pacific \(Singapore\) | aws\-codedeploy\-ap\-southeast\-1 | ap\-southeast\-1 | 
 | Asia Pacific \(Sydney\) | aws\-codedeploy\-ap\-southeast\-2 | ap\-southeast\-2 | 
+| Asia Pacific \(Melbourne\) | aws\-codedeploy\-ap\-southeast\-4 | ap\-southeast\-4 | 
 | Asia Pacific \(Mumbai\) | aws\-codedeploy\-ap\-south\-1 | ap\-south\-1 | 
 | South America \(São Paulo\) | aws\-codedeploy\-sa\-east\-1 | sa\-east\-1 | 
 | Middle East \(Bahrain\) | aws\-codedeploy\-me\-south\-1 | me\-south\-1 | 
@@ -141,6 +142,11 @@ The files in each bucket are designed to work with resources in the correspondin
 + 
 
   ```
+  aws s3 ls --recursive s3://aws-codedeploy-ap-southeast-4 --region ap-southeast-4
+  ```
++ 
+
+  ```
   aws s3 ls --recursive s3://aws-codedeploy-ap-south-1 --region ap-south-1
   ```
 + 
@@ -230,6 +236,11 @@ For example, the following commands download a single file named `SampleApp_Linu
 + 
 
   ```
+  aws s3 cp s3://aws-codedeploy-ap-southeast-4/samples/latest/SampleApp_Linux.zip . --region ap-southeast-4
+  ```
++ 
+
+  ```
   aws s3 cp s3://aws-codedeploy-ap-south-1/samples/latest/SampleApp_Linux.zip . --region ap-south-1
   ```
 + 
@@ -308,6 +319,11 @@ To download all of the files, use one of the following commands for your region:
 
   ```
   aws s3 cp --recursive s3://aws-codedeploy-ap-southeast-2 . --region ap-southeast-2
+  ```
++ 
+
+  ```
+  aws s3 cp --recursive s3://aws-codedeploy-ap-southeast-4 . --region ap-southeast-4
   ```
 + 
 

@@ -63,7 +63,7 @@ In your production account:
 
   Use the [Walkthrough: Delegate access across AWS accounts using IAM roles ](https://docs.aws.amazon.com/IAM/latest/UserGuide/walkthru_cross-account-with-roles.html) as a guide to help you create the cross\-account role\. Instead of adding the sample permissions in the walkthrough to your policy document, you should attach, at minimum, the following two AWS supplied policies to the role: 
   + `AmazonS3FullAccess`: Required only if the S3 bucket is in the development account\. Provides the assumed production account role with full access to the Amazon S3 services and resources in the development account, where the revision is stored\. 
-  + `AWSCodeDeployDeployerAccess`: Enables an IAM user to register and deploy revisions\. 
+  + `AWSCodeDeployDeployerAccess`: Enables a user to register and deploy revisions\. 
 
   If you want to create and manage deployment groups and not just initiate deployments, add the `AWSCodeDeployFullAccess` policy instead of the `AWSCodeDeployDeployerAccess` policy\. For more information about using IAM managed policies to grant permissions for CodeDeploy tasks, see [AWS managed \(predefined\) policies for CodeDeploy](managed-policies.md)\. 
 

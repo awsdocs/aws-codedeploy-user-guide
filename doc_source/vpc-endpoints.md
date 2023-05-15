@@ -15,32 +15,39 @@ The following steps are for users of Amazon VPC\. For more information, see [Get
 CodeDeploy has two VPC endpoints: one for CodeDeploy agent operations, and one for CodeDeploy API operations\. The table below shows the supported AWS Regions for each endpoint\.
 
 
-| Region code | Region name | Agent endpoint | API endpoint | 
+| Region name | Region code | Agent endpoint | API endpoint | 
 | --- | --- | --- | --- | 
-|  us\-east\-1  |  US East \(N\. Virginia\)  |  Yes  |  Yes  | 
-|  us\-east\-2  |  US East \(Ohio\)  |  Yes  |  Yes  | 
-|  us\-gov\-east\-1  |  AWS GovCloud \(US\-East\)  |  No  |  No  | 
-|  us\-gov\-west\-1  |  AWS GovCloud \(US\-West\)  |  No  |  No  | 
-|  us\-west\-1  |  US West \(N\. California\)  |  Yes  |  Yes  | 
-|  us\-west\-2  |  US West \(Oregon\)  |  Yes  |  Yes  | 
-|  af\-south\-1  |  Africa \(Cape Town\)  |  Yes  |  No  | 
-|  ap\-east\-1  |  Asia Pacific \(Hong Kong\)  |  Yes  |  Yes  | 
-|  ap\-northeast\-1  |  Asia Pacific \(Tokyo\)  |  Yes  |  Yes  | 
-|  ap\-northeast\-2  |  Asia Pacific \(Seoul\)  |  Yes  |  Yes  | 
-|  ap\-northeast\-3  |  Asia Pacific \(Osaka\)  |  Yes  |  No  | 
-|  ap\-south\-1  |  Asia Pacific \(Mumbai\)  |  Yes  |  Yes  | 
-|  ap\-southeast\-1  |  Asia Pacific \(Singapore\)  |  Yes  |  Yes  | 
-|  ap\-southeast\-2  |  Asia Pacific \(Sydney\)  |  Yes  |  Yes  | 
-|  ap\-southeast\-3  |  Asia Pacific \(Jakarta\)  |  No  |  No  | 
-|  ca\-central\-1  |  Canada \(Central\)  |  Yes  |  Yes  | 
-|  eu\-central\-1  |  Europe \(Frankfurt\)  |  Yes  |  Yes  | 
-|  eu\-north\-1  |  Europe \(Stockholm\)  |  Yes  |  Yes  | 
-|  eu\-west\-1  |  Europe \(Ireland\)  |  Yes  |  Yes  | 
-|  eu\-west\-2  |  Europe \(London\)  |  Yes  |  Yes  | 
-|  eu\-west\-3  |  Europe \(Paris\)  |  Yes  |  Yes  | 
-|  eu\-south\-1  |  Europe \(Milan\)  |  Yes  |  No  | 
-|  me\-south\-1  |  Middle East \(Bahrain\)  |  Yes  |  Yes  | 
-|  sa\-east\-1  |  South America \(São Paulo\)  |  Yes  |  Yes  | 
+|  US East \(Ohio\)  |  us\-east\-2  |  Yes  |  Yes  | 
+|  US East \(N\. Virginia\)  |  us\-east\-1  |  Yes  |  Yes  | 
+|  US West \(N\. California\)  |  us\-west\-1  |  Yes  |  Yes  | 
+|  US West \(Oregon\)  |  us\-west\-2  |  Yes  |  Yes  | 
+|  Africa \(Cape Town\)  |  af\-south\-1  |  Yes  |  No  | 
+|  Asia Pacific \(Hong Kong\)  |  ap\-east\-1  |  Yes  |  Yes  | 
+|  Asia Pacific \(Hyderabad\)  |  ap\-south\-2  |  No  |  No  | 
+|  Asia Pacific \(Jakarta\)  |  ap\-southeast\-3  |  Yes  |  No  | 
+|  Asia Pacific \(Melbourne\)  |  ap\-southeast\-4  |  No  |  No  | 
+|  Asia Pacific \(Mumbai\)  |  ap\-south\-1  |  Yes  |  Yes  | 
+|  Asia Pacific \(Osaka\)  |  ap\-northeast\-3  |  Yes  |  No  | 
+|  Asia Pacific \(Seoul\)  |  ap\-northeast\-2  |  Yes  |  Yes  | 
+|  Asia Pacific \(Singapore\)  |  ap\-southeast\-1  |  Yes  |  Yes  | 
+|  Asia Pacific \(Sydney\)  |  ap\-southeast\-2  |  Yes  |  Yes  | 
+|  Asia Pacific \(Tokyo\)  |  ap\-northeast\-1  |  Yes  |  Yes  | 
+|  Canada \(Central\)  |  ca\-central\-1  |  Yes  |  Yes  | 
+|  China \(Beijing\)  |  cn\-north\-1  |  Yes  |  No  | 
+|  China \(Ningxia\)  |  cn\-northwest\-1  |  No  |  No  | 
+|  Europe \(Frankfurt\)  |  eu\-central\-1  |  Yes  |  Yes  | 
+|  Europe \(Ireland\)  |  eu\-west\-1  |  Yes  |  Yes  | 
+|  Europe \(London\)  |  eu\-west\-2  |  Yes  |  Yes  | 
+|  Europe \(Milan\)  |  eu\-south\-1  |  No  |  No  | 
+|  Europe \(Paris\)  |  eu\-west\-3  |  Yes  |  Yes  | 
+|  Europe \(Spain\)  |  eu\-south\-2  |  No  |  No  | 
+|  Europe \(Stockholm\)  |  eu\-north\-1  |  Yes  |  Yes  | 
+|  Europe \(Zurich\)  |  eu\-central\-2  |  No  |  No  | 
+|  Middle East \(Bahrain\)  |  me\-south\-1  |  Yes  |  Yes  | 
+|  Middle East \(UAE\)  |  me\-central\-1  |  Yes  |  No  | 
+|  South America \(São Paulo\)  |  sa\-east\-1  |  Yes  |  Yes  | 
+|  AWS GovCloud \(US\-East\)  |  us\-gov\-east\-1  |  No  |  No  | 
+|  AWS GovCloud \(US\-West\)  |  us\-gov\-west\-1  |  No  |  No  | 
 
 ## Create VPC endpoints for CodeDeploy<a name="create-vpc-endpoint-for-codedeploy"></a>
 

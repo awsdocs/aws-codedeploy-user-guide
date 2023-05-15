@@ -1,9 +1,6 @@
 # Working with the CodeDeploy agent<a name="codedeploy-agent"></a>
 
- The CodeDeploy agent is a software package that, when installed and configured on an instance, makes it possible for that instance to be used in CodeDeploy deployments\.
-
-**Important**  
- The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\. 
+ The AWS CodeDeploy agent is a software package that, when installed and configured on an instance, makes it possible for that instance to be used in CodeDeploy deployments\.
 
 **Note**  
  The CodeDeploy agent is required only if you deploy to an EC2/On\-Premises compute platform\. The agent is not required for deployments that use the Amazon ECS or AWS Lambda compute platform\. 
@@ -25,10 +22,10 @@ For more information about working with the CodeDeploy agent, such as steps for 
 ### Supported Amazon EC2 AMI operating systems<a name="codedeploy-agent-supported-operating-systems-ec2"></a>
 
 The CodeDeploy agent has been tested on the following Amazon EC2 AMI operating systems:
-+ Amazon Linux 2018\.03\.x
++ Amazon Linux 2023 \(ARM, x86\)
 + Amazon Linux 2 \(ARM, x86\)
-+ Ubuntu Server 20\.04 LTS, 18\.04 LTS, 16\.04 LTS, and 14\.04 LTS
-+ Microsoft Windows Server 2019, 2016, 2012 R2, and 2008 R2
++ Ubuntu Server 22\.04 LTS, 20\.04 LTS, 18\.04 LTS, 16\.04 LTS
++ Microsoft Windows Server 2022, 2019
 + Red Hat Enterprise Linux \(RHEL\) 8\.x, 7\.x
 
 The CodeDeploy agent is available as open source for you to adapt to your needs\. It can be used with other Amazon EC2 AMI operating systems\. For more information, go to the [CodeDeploy agent](https://github.com/aws/aws-codedeploy-agent) repository in GitHub\.
@@ -36,8 +33,8 @@ The CodeDeploy agent is available as open source for you to adapt to your needs\
 ### Supported on\-premises operating systems<a name="codedeploy-agent-supported-operating-systems-on-premises"></a>
 
 The CodeDeploy agent has been tested on the following on\-premises operating systems:
-+ Ubuntu Server 20\.04 LTS, 18\.04 LTS, 16\.04 LTS, and 14\.04 LTS
-+ Microsoft Windows Server 2019, 2016, 2012 R2, and 2008 R2 
++ Ubuntu Server 22\.04 LTS, 20\.04 LTS, 18\.04 LTS, and 16\.04 LTS
++ Microsoft Windows Server 2022, 2019
 + Red Hat Enterprise Linux \(RHEL\) 7\.x
 
 The CodeDeploy agent is available as open source for you to adapt to your needs\. It can be used with other on\-premises instance operating systems\. For more information, go to the [CodeDeploy agent](https://github.com/aws/aws-codedeploy-agent) repository in GitHub\.
@@ -50,13 +47,18 @@ When the CodeDeploy agent runs on an EC2 instance, it will use the [EC2 metadata
 
 ## Version history of the CodeDeploy agent<a name="codedeploy-agent-version-history"></a>
 
-Your instances must be running a supported version of the CodeDeploy agent\. The current minimum supported version is 1\.1\.0\. If you are running an earlier version, deployments to your instances might fail\. 
+Your instances must be running a supported version of the CodeDeploy agent\. The current minimum supported version is 1\.5\.0\.
+
+**Note**  
+We recommend using the latest version of the CodeDeploy agent\. If you’re having issues, update to the latest version before contacting AWS Support\. For upgrade information, see [Update the CodeDeploy agent](codedeploy-agent-operations-update.md)\.
 
 The following table lists all releases of the CodeDeploy agent and the features and enhancements included with each version\.
 
 
 | Version | Release date | Details | 
 | --- | --- | --- | 
+|  1\.6\.0  |  March 30, 2023  |  **Added**: Support for Ruby 3\.1, 3\.2\. **Added**: Support for Amazon Linux 2023\. **Added**: Support for Windows Server 2022\. **Changed**: The default setting of `verbose` is now `false` for Windows Server instances\. To continue to print debug messages in log files on Windows, you must set `verbose` to `true`\. **Removed**: Support for Windows Server 2016 and Windows Server 2012 R2\. **Removed**: Support for Amazon Linux 2018\.03\.x\.  | 
+|  1\.5\.0  |  March 3, 2023  |  **Added**: Support for Ruby 3\. **Added**: Support for Ubuntu 22\.04\. **Fixed**: An issue where restarting the CodeDeploy agent soon after startup would lead to the agent hanging\. **Changed**: The CodeDeploy agent now fails a host deployment on agent startup if the agent service restarts unexpectedly while running a hook script\. This fix lets you avoid waiting for the 70\-minute timeout period before retrying a deployment\. **Deprecation notice**: CodeDeploy agent 1\.5\.0 is the last release to support Windows Server 2016 and Windows Server 2012 R2\. **Removed:** Support for the CodeDeploy agent on Ubuntu 14\.04 LTS, Windows Server 2008 R2, and Windows Server 2008 R2 32\-bit\.  | 
 |  1\.4\.1  |  December 6, 2022  |  **Fixed**: Security vulnerability related to logging\. **Enhancement**: Improved logging when polling for the host command\.  | 
 |  1\.4\.0  |  August 31, 2022  |  **Added**: Support for Red Hat Enterprise Linux 8\.  **Added**: Support for long file paths on the CodeDeploy agent for Windows\. To enable long file paths, you'll need to set the appropriate Windows registry key and then restart your agent\. For more information, see [Long file paths cause "No such file or directory" errors](troubleshooting-deployments.md#troubleshooting-long-file-paths)\. **Fixed**: An issue with the unzip operation when the disk was full\. The CodeDeploy agent now detects the unzip's [exit code 50](https://linux.die.net/man/1/unzip) indicating a full disk, removes partially extracted files, and raises an exception to post a failure to the CodeDeploy server\. The error message is visible as a lifecycle event error message, and the host\-level deployment will stop without being stuck or timing\-out\. **Fixed**: An issue that would cause the agent to fail\. **Fixed**: An issue where hooks would time out during an edge\-case race condition\. Hooks with no scripts will now continue and no longer cause failures or timeouts\.  **Changed**: The `update` script from the CodeDeploy agent's `bin` directory was removed because it is no longer used\. **Changed**: The CodeDeploy agent for Windows Server now bundles Ruby 2\.7\. **Changed**: New environment variables were added, to be used by hook scripts depending on the source of the deployment bundle \(Amazon S3 or GitHub\)\.  For more information, see [Environment variable availability for hooks](reference-appspec-file-structure-hooks.md#reference-appspec-file-structure-environment-variable-availability)\.  **Deprecation notice**: CodeDeploy agent 1\.4\.0 is the last release that will include installers for 32\-bit Windows Server\. **Deprecation notice**: CodeDeploy agent 1\.4\.0 is the last release that will support Windows Server 2008 R2\. **Removed**: Support for the CodeDeploy agent on the following Amazon EC2 AMIs: Amazon Linux 2014\.09, 2016\.03, 2016\.09, and 2017\.03\.   | 
 |  1\.3\.2  |  May 6, 2021  |   CodeDeploy agent 1\.3\.2 addresses [CVE\-2018\-1000201](https://nvd.nist.gov/vuln/detail/CVE-2018-1000201) which affects Windows hosts running the agent\. The CVE cites ruby\-ffi, which is a dependency of the CodeDeploy agent\. If your agent was installed with Amazon EC2 Systems Manager \(SSM\) and is set to update automatically, no action is required\. Otherwise, action is required to manually update the agent\. To upgrade the agent follow the instructions in [Update the CodeDeploy agent on Windows Server](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-update-windows.html)\.   **Fixed**: An issue when installing the CodeDeploy agent on Ubuntu 20\.04 and later\. **Fixed**: An intermittent issue that occurred when extracting compressed files because relative paths weren't being handled correctly\. **Added**: Support for [AWS PrivateLink and VPC endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-overview.html) for Windows instances\. **Added**: AppSpec file improvements, as described below\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent.html) **Upgraded**: CodeDeploy now uses the AWS SDK for Ruby 3\.0\.  | 
@@ -65,7 +67,7 @@ The following table lists all releases of the CodeDeploy agent and the features 
 |  1\.2\.1  |  September 23, 2020  |  **Changed**: Upgraded AWS SDK for Ruby dependency from v2 to v3\. **Added**: Support for IMDSv2\. Includes a silent fallback to IMDSv1 if IMDSv2 http requests fail\. **Changed**: Updated Rake and Rubyzip dependencies for security patches\. **Fixed**: Ensure that an empty PID file will return a status of `No CodeDeploy Agent Running` and clean up the PID file on agent start\.  | 
 |  1\.1\.2  |  August 4, 2020  |  **Added**: Support for Ubuntu Server 19\.10 and 20\.04\. **Note**: : Version 19\.10 reached its end\-of\-life date and is no longer supported by Ubuntu or CodeDeploy\. **Added**: Memory efficiency improvements for Linux and Ubuntu to release reserved memory more timely\. **Added**: Compatibility with Windows Server "silent\-cleanup" which was causing the agent to be unresponsive in some cases\. **Added**: Ignore non\-empty directories during cleanup to avoid failures on deployment\. **Added**: Support for AWS Local Zone in Los Angeles \(LA\)\. **Added**: Extract AZ from instance metadata to provide compatibility for AWS Local Zones\. **Added**: Users can now provide their archive in subdirectories and aren't required to store it in the root directory\. **Added**: Detected an issue with Rubyzip that could result in memory leaks\. Updated the unzip command to first attempt to use a system\-installed unzip utility before using Rubyzip\. **Added**: `:enable_auth_policy:` as an agent configuration setting\. **Changed**: Unzip warnings are now ignored so deployments will continue\.  | 
 |  1\.1\.0  |  June 30, 2020  |  **Changed**: Versioning of the CodeDeploy agent now follows the Ruby standard versioning convention\. **Added**: New parameter to the install and update command to allow installation of specific agent version from the command line\. **Removed**: Removed the CodeDeploy agent Auto Updater for Linux and Ubuntu\. To configure automatic updates of the CodeDeploy agent, see [Install the CodeDeploy agent using AWS Systems Manager](https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ssm.html)\.  | 
-|  1\.0\.1\.1597  |  November 15, 2018  |  The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.  **Enhancement**: CodeDeploy supports Ubuntu 18\.04\. **Enhancement**: CodeDeploy supports Ruby 2\.5\. **Enhancement**: CodeDeploy supports FIPS endpoints\. For more information about FIPS endpoints, see [FIPS 140\-2 overview](https://aws.amazon.com/compliance/fips/)\. For endpoints that can be used with CodeBuild, see [CodeDeploy regions and endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region)\.  | 
+|  1\.0\.1\.1597  |  November 15, 2018  |  **Enhancement**: CodeDeploy supports Ubuntu 18\.04\. **Enhancement**: CodeDeploy supports Ruby 2\.5\. **Enhancement**: CodeDeploy supports FIPS endpoints\. For more information about FIPS endpoints, see [FIPS 140\-2 overview](https://aws.amazon.com/compliance/fips/)\. For endpoints that can be used with CodeBuild, see [CodeDeploy regions and endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#codedeploy_region)\.  | 
 |  1\.0\.1\.1518  |  June 12, 2018  |  **Enhancement**: Fixed an issue that caused an error when the CodeDeploy agent is closed while it is accepting poll requests\. **Enhancement**: Added a deployment tracking feature that prevents the CodeDeploy agent from being closed when a deployment is in progress\. **Enhancement**: Improved performance when deleting files\.  | 
 |  1\.0\.1\.1458  |  March 6, 2018  |  **Note**: This version is no longer supported\. If you use this version, your deployments might fail\. **Enhancement**: Improved certificate validations to support more trusted authorities\. **Enhancement**: Fixed an issue that caused the local CLI to fail during a deployment that includes a BeforeInstall lifecycle event\. **Enhancement**: Fixed an issue that might cause an active deployment to fail when the CodeDeploy agent is updated\.  | 
 |  1\.0\.1\.1352  |  November 16, 2017  |  **Note**: This version is no longer supported\. If you use this version, your deployments might fail\. **Feature**: Introduced a new feature for testing and debugging an EC2/On\-Premises deployment on a local machine or instance where the CodeDeploy agent is installed\.  | 

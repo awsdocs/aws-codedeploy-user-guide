@@ -69,7 +69,7 @@ When CodeDeploy has redeployed the site, revisit the site in your web browser to
 
 1. Sign in to the AWS Management Console and open the CodeDeploy console at [https://console\.aws\.amazon\.com/codedeploy](https://console.aws.amazon.com/codedeploy)\.
 **Note**  
-Sign in with the same account or IAM user information that you used in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
+Sign in with the same user that you set up in [Getting started with CodeDeploy](getting-started-codedeploy.md)\.
 
 1. On the navigation pane, choose **Applications**\.
 

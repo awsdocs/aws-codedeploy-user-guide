@@ -14,7 +14,7 @@ Although it's not covered in this tutorial, you can use CodeDeploy to deploy app
 
 Create a storage container or *bucket* in Amazon S3—or use an existing bucket\. Make sure you can upload the revision to the bucket and that Amazon EC2 instances used in deployments can download the revision from the bucket\.
 
-You can use the AWS CLI, the Amazon S3 console, or the Amazon S3 APIs to create an Amazon S3 bucket\. After you create the bucket, make sure to give access permissions to the bucket and your IAM user\.
+You can use the AWS CLI, the Amazon S3 console, or the Amazon S3 APIs to create an Amazon S3 bucket\. After you create the bucket, make sure to give access permissions to the bucket and your AWS account\.
 
 **Note**  
 Bucket names must be unique across Amazon S3 for all AWS accounts\. If you aren't able to use **codedeploydemobucket**, try a different bucket name, such as **codedeploydemobucket** followed by a dash and your initials or some other unique identifier\. Then be sure to substitute your bucket name for **codedeploydemobucket** wherever you see it throughout this tutorial\.  
@@ -23,7 +23,7 @@ The Amazon S3 bucket must be created in the same AWS region where your target Am
 **Topics**
 + [To create an Amazon S3 bucket \(CLI\)](#tutorials-wordpress-upload-application-create-s3-bucket-cli)
 + [To create an Amazon S3 bucket \(console\)](#tutorials-wordpress-upload-application-create-s3-bucket-console)
-+ [Give permissions to the Amazon S3 bucket and your IAM user](#tutorials-wordpress-upload-application-create-s3-bucket-grant-permissions)
++ [Give permissions to the Amazon S3 bucket and AWS account](#tutorials-wordpress-upload-application-create-s3-bucket-grant-permissions)
 
 ### To create an Amazon S3 bucket \(CLI\)<a name="tutorials-wordpress-upload-application-create-s3-bucket-cli"></a>
 
@@ -43,7 +43,7 @@ aws s3 mb s3://codedeploydemobucket
 
 1. In the **Region** list, choose the target region, and then choose **Create**\.
 
-### Give permissions to the Amazon S3 bucket and your IAM user<a name="tutorials-wordpress-upload-application-create-s3-bucket-grant-permissions"></a>
+### Give permissions to the Amazon S3 bucket and AWS account<a name="tutorials-wordpress-upload-application-create-s3-bucket-grant-permissions"></a>
 
 You must have permissions to upload to the Amazon S3 bucket\. You can specify these permissions through an Amazon S3 bucket policy\. For example, in the following Amazon S3 bucket policy, using the wildcard character \(\*\) allows AWS account `111122223333` to upload files to any directory in the Amazon S3 bucket named `codedeploydemobucket`:
 

@@ -92,6 +92,7 @@ If the browser security settings on the Windows Server instance provide the requ
 |  Asia Pacific \(Seoul\)  |  `[https://aws\-codedeploy\-ap\-northeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  Asia Pacific \(Singapore\)  |  `[https://aws\-codedeploy\-ap\-southeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  Asia Pacific \(Sydney\)  |  `[https://aws\-codedeploy\-ap\-southeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-southeast-2.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
+|  Asia Pacific \(Melbourne\)  |  `[https://aws\-codedeploy\-ap\-southeast\-4\.s3\.ap\-southeast\-4\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-southeast-4.s3.ap-southeast-4.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  Asia Pacific \(Mumbai\)  |  `[https://aws\-codedeploy\-ap\-south\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 |  South America \(São Paulo\)  |  `[https://aws\-codedeploy\-sa\-east\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\-updater\.msi](https://aws-codedeploy-sa-east-1.s3.amazonaws.com/latest/codedeploy-agent-updater.msi)`  | 
 
@@ -116,5 +117,6 @@ If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](http
 |  Asia Pacific \(Seoul\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-2/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  Asia Pacific \(Singapore\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  Asia Pacific \(Sydney\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-2/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
+|  Asia Pacific \(Melbourne\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-4/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  Asia Pacific \(Mumbai\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-south-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 
 |  South America \(São Paulo\)  |  <pre>aws s3 cp s3://aws-codedeploy-sa-east-1/latest/codedeploy-agent-updater.msi codedeploy-agent-updater.msi</pre>  | 

@@ -1,5 +1,11 @@
 # Use the register command \(IAM user ARN\) to register an on\-premises instance<a name="instances-on-premises-register-instance"></a>
 
+**Important**  
+Registering an instance using an IAM user is not recommended because it uses static \(permanent\) credentials for authentication\. For improved security, we recommend registering an instance using temporary credentials for authentication\. For more information, see [Use the register\-on\-premises\-instance command \(IAM Session ARN\) to register an on\-premises instance](register-on-premises-instance-iam-session-arn.md)\.
+
+**Important**  
+Make sure you have a plan in place to rotate the IAM user's access keys \(permanent credentials\)\. For more information, see [Rotating access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_RotateAccessKey)\.
+
 This section describes how to configure an on\-premises instance and register and tag it with CodeDeploy with the least amount of effort\. The register command is most useful when you are working with single or small fleets of on\-premises instances\. You can use the register command only when you are using an IAM user ARN to authenticate an instance\. You cannot use the register command with an IAM session ARN for authentication\.
 
 When you use the register command, you can let CodeDeploy do the following:
@@ -9,7 +15,7 @@ When you use the register command, you can let CodeDeploy do the following:
 + Add tags to the on\-premises instance, if you specify them as part of the command\.
 
 **Note**  
-The [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command is an alternative to the [register](https://docs.aws.amazon.com/cli/latest/reference/deploy/register.html) command\. You use the register\-on\-premises\-instance command if you want to configure an on\-premises instance and register and tag it with CodeDeploy mostly on your own\. The register\-on\-premises\-instance command also gives you the option to use an IAM session ARN to register instances instead of an IAM user ARN\. This approach provides a major advantage if you have large fleets of on\-premises instances\. Specifically, you can use a single IAM session ARN to authenticate multiple instances instead of having to create an IAM user for each on\-premises instance one by one\. For more information, see [Use the register\-on\-premises\-instance command \(IAM user ARN\) to register an on\-premises instance](register-on-premises-instance-iam-user-arn.md) and [Use the register\-on\-premises\-instance command \(IAM Session ARN\) to register an on\-premises instance ](register-on-premises-instance-iam-session-arn.md)\.
+The [register\-on\-premises\-instance](https://docs.aws.amazon.com/cli/latest/reference/deploy/register-on-premises-instance.html) command is an alternative to the [register](https://docs.aws.amazon.com/cli/latest/reference/deploy/register.html) command\. You use the register\-on\-premises\-instance command if you want to configure an on\-premises instance and register and tag it with CodeDeploy mostly on your own\. The register\-on\-premises\-instance command also gives you the option to use an IAM session ARN to register instances instead of an IAM user ARN\. This approach provides a major advantage if you have large fleets of on\-premises instances\. Specifically, you can use a single IAM session ARN to authenticate multiple instances instead of having to create an IAM user for each on\-premises instance one by one\. For more information, see [Use the register\-on\-premises\-instance command \(IAM user ARN\) to register an on\-premises instance](register-on-premises-instance-iam-user-arn.md) and [Use the register\-on\-premises\-instance command \(IAM Session ARN\) to register an on\-premises instance](register-on-premises-instance-iam-session-arn.md)\.
 
 **Topics**
 + [Step 1: Install and configure the AWS CLI on the on\-premises instance](#instances-on-premises-register-instance-1-install-cli)
@@ -71,7 +77,8 @@ As you configure the AWS CLI \(for example, by calling the aws configure command
            "arn:aws:s3:::aws-codedeploy-ap-northeast-1/*",
            "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",
-           "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",  
+           "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
+           "arn:aws:s3:::aws-codedeploy-ap-southeast-4/*",
            "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
            "arn:aws:s3:::aws-codedeploy-sa-east-1/*"
          ]

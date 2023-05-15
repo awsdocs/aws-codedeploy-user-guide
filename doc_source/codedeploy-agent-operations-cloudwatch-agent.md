@@ -131,7 +131,7 @@ You can configure the CloudWatch agent by stepping through a wizard or by manual
                        {
                            "file_path": "C:\\ProgramData\\Amazon\\CodeDeploy\\deployment-logs\\codedeploy-agent-deployments.log",
                            "log_group_name": "codedeploy-agent-windows-deployment-log",
-                           "log_stream_name": "{instance_id}-codedeploy-agent-deployment-log"
+                           "log_stream_name": "{instance_id}-codedeploy-agent-windows-deployment-log"
                        }
                    ]
                },

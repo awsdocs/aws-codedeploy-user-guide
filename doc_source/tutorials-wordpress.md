@@ -8,7 +8,7 @@ Not what you're looking for?
 
 This tutorial's steps are presented from the perspective of a local development machine running Linux, macOS, or Unix\. Although you can complete most of these steps on a local machine running Windows, you must adapt the steps that cover commands such as chmod and wget, applications such as sed, and directory paths such as `/tmp`\.
 
-Before you start this tutorial, you must complete the prerequisites in [Getting started with CodeDeploy](getting-started-codedeploy.md)\. These include configuring your IAM user account, installing or upgrading the AWS CLI, and creating an IAM instance profile and a service role\.
+Before you start this tutorial, you must complete the prerequisites in [Getting started with CodeDeploy](getting-started-codedeploy.md)\. These include configuring a user, installing or upgrading the AWS CLI, and creating an IAM instance profile and a service role\.
 
 **Topics**
 + [Step 1: Launch and configure an Amazon Linux or Red Hat Enterprise Linux Amazon EC2 instance](tutorials-wordpress-launch-instance.md)

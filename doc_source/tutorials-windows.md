@@ -8,7 +8,7 @@ Not what you're looking for?
 
 This tutorial's steps are presented from a Windows perspective\. Although you can complete most of these steps on a local machine running Linux, macOS, or Unix, you must adapt those that cover Windows\-based directory paths such as `c:\temp`\. Also, if you want to connect to the Amazon EC2 instance, you need a client application that can connect through Remote Desktop Protocol \(RDP\) to the Amazon EC2 instance running Windows Server\. \(Windows includes an RDP connection client application by default\.\)
 
-Before you start this tutorial, you must complete the prerequisites in [Getting started with CodeDeploy](getting-started-codedeploy.md), including configuring your IAM user, installing or upgrading the AWS CLI, and creating an IAM instance profile and a service role\.
+Before you start this tutorial, you must complete the prerequisites in [Getting started with CodeDeploy](getting-started-codedeploy.md), including configuring your user, installing or upgrading the AWS CLI, and creating an IAM instance profile and a service role\.
 
 **Topics**
 + [Step 1: Launch a Windows Server Amazon EC2 instance](tutorials-windows-launch-instance.md)

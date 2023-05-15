@@ -123,6 +123,7 @@ You can create a service role with the IAM console, the AWS CLI, or the IAM APIs
                        "codedeploy.ap-northeast-2.amazonaws.com",
                        "codedeploy.ap-southeast-1.amazonaws.com",
                        "codedeploy.ap-southeast-2.amazonaws.com",
+                       "codedeploy.ap-southeast-4.amazonaws.com",
                        "codedeploy.ap-south-1.amazonaws.com",
                        "codedeploy.sa-east-1.amazonaws.com"
                    ]
@@ -184,6 +185,7 @@ For more information about creating service roles, see [Creating a role to deleg
                          "codedeploy.ap-northeast-2.amazonaws.com",
                          "codedeploy.ap-southeast-1.amazonaws.com",
                          "codedeploy.ap-southeast-2.amazonaws.com",
+                         "codedeploy.ap-southeast-4.amazonaws.com",
                          "codedeploy.ap-south-1.amazonaws.com",
                          "codedeploy.sa-east-1.amazonaws.com"
                      ]

@@ -94,7 +94,7 @@ Running    codedeployagent    CodeDeploy Host Agent Service
 If the browser security settings on the Windows Server instance provide the permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link for your Region to download the CodeDeploy agent and then run the installer manually\.
 
 **Important**  
-You must choose the .msi from a Region that is the same as your CodeDeploy application in the AWS Console. If you choose the incorrect Region, the CodeDeploy agent installation may fail with inconsistent regions in the codedeploy-agent-log file.
+Choose the `.msi` file that is in the same Region as your CodeDeploy application\. Choosing a different Region may cause `inconsistent region` failures in the `codedeploy-agent-log` file when you run the `.msi` file\.
 
 
 | Region name | Download link | 
@@ -113,6 +113,7 @@ You must choose the .msi from a Region that is the same as your CodeDeploy appli
 |  Asia Pacific \(Seoul\)  |  `[https://aws\-codedeploy\-ap\-northeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-northeast-2.s3.amazonaws.com/latest/codedeploy-agent.msi)`  | 
 |  Asia Pacific \(Singapore\)  |  `[https://aws\-codedeploy\-ap\-southeast\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-southeast-1.s3.amazonaws.com/latest/codedeploy-agent.msi)`  | 
 |  Asia Pacific \(Sydney\)  |  `[https://aws\-codedeploy\-ap\-southeast\-2\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-southeast-2.s3.amazonaws.com/latest/codedeploy-agent.msi)`  | 
+|  Asia Pacific \(Melbourne\)   |  `[https://aws\-codedeploy\-ap\-southeast\-4\.s3\.ap\-southeast\-4\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-southeast-4.s3.ap-southeast-4.amazonaws.com/latest/codedeploy-agent.msi)`  | 
 |  Asia Pacific \(Mumbai\)  |  `[https://aws\-codedeploy\-ap\-south\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-ap-south-1.s3.amazonaws.com/latest/codedeploy-agent.msi)`  | 
 |  South America \(São Paulo\)  |  `[https://aws\-codedeploy\-sa\-east\-1\.s3\.amazonaws\.com/latest/codedeploy\-agent\.msi](https://aws-codedeploy-sa-east-1.s3.amazonaws.com/latest/codedeploy-agent.msi)`  | 
 
@@ -137,5 +138,6 @@ If the AWS CLI is installed on the instance, you can use the Amazon S3 [cp](http
 |  Asia Pacific \(Seoul\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-northeast-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre>  | 
 |  Asia Pacific \(Singapore\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre>  | 
 |  Asia Pacific \(Sydney\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-2/latest/codedeploy-agent.msi codedeploy-agent.msi</pre>  | 
+|  Asia Pacific \(Melbourne\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-southeast-4/latest/codedeploy-agent.msi codedeploy-agent.msi</pre>  | 
 |  Asia Pacific \(Mumbai\)  |  <pre>aws s3 cp s3://aws-codedeploy-ap-south-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre>  | 
 |  South America \(São Paulo\)  |  <pre>aws s3 cp s3://aws-codedeploy-sa-east-1/latest/codedeploy-agent.msi codedeploy-agent.msi</pre>  | 

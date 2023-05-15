@@ -9,7 +9,7 @@
 **To fix an invalid GitHub OAuth token**
 
 1.  Remove the old token using one of the following methods:
-   + To remove the old token using the API, use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/CodeDeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\.
+   + To remove the old token using the API, use [ DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.html)\.
    + To remove the old token using the AWS Command Line Interface:
 
      1. Go to the computer where the token resides\.

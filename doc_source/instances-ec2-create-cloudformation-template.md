@@ -18,7 +18,7 @@ We do not provide an AWS CloudFormation template for Amazon EC2 instances runnin
 
 Before you can use the AWS CloudFormation template to launch Amazon EC2 instances, make sure you complete the following steps\.
 
-1. Make sure you have completed the steps in [Step 3: Provision an IAM user](getting-started-provision-user.md)\. Double\-check that the policy assigned to the IAM user has the following minimum permissions and add any that are not present:
+1. Make sure you have created an administrative user, as described in [Step 1: Setting up](getting-started-setting-up.md)\. Double\-check that the user has the following minimum permissions and add any that are not present:
    + cloudformation:\*
    + codedeploy:\*
    + ec2:\*

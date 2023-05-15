@@ -7,33 +7,19 @@ We recommend installing the CodeDeploy agent with AWS Systems Manager to be able
 
 1. Sign in to the instance\.
 
-1. Do one of the following, depending on the version of Ubuntu Server:
-   + On Ubuntu Server 14\.04, enter the following commands, one after the other:
+1. Enter the following commands, one after the other:
 
-     ```
-     sudo apt-get update
-     ```
+   ```
+   sudo apt update
+   ```
 
-     ```
-     sudo apt-get install ruby2.0
-     ```
+   ```
+   sudo apt install ruby-full
+   ```
 
-     ```
-     sudo apt-get install wget
-     ```
-   + On Ubuntu Server 16\.04 and later, enter the following commands, one after the other:
-
-     ```
-     sudo apt update
-     ```
-
-     ```
-     sudo apt install ruby-full
-     ```
-
-     ```
-     sudo apt install wget
-     ```
+   ```
+   sudo apt install wget
+   ```
 
 1. Enter the following command:
 
@@ -82,7 +68,7 @@ Writing the output to a temporary log file is a workaround that should be used w
        sudo ./install auto -v releases/codedeploy-agent-###.deb
        ```
 **Note**  
-The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.
+The minimum supported version of the CodeDeploy agent is 1\.5\.0\.
    + To install a specific version of the CodeDeploy agent on Ubuntu 20\.04:
      + List the available versions in your region:
 
@@ -97,7 +83,7 @@ The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an ear
 **Note**  
 Writing the output to a temporary log file is a workaround that should be used while we address a known bug with the `install` script on Ubuntu 20\.04\.
 **Note**  
-The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\.
+The minimum supported version of the CodeDeploy agent is 1\.5\.0\.
 
 **To check that the service is running**
 

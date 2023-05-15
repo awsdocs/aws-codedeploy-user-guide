@@ -2,9 +2,6 @@
 
 The instructions in this section show you how to install, uninstall, reinstall, or update the CodeDeploy agent and how to verify the CodeDeploy agent is running\.
 
-**Important**  
- The minimum supported version of the CodeDeploy agent is 1\.1\.0\. Use of an earlier CodeDeploy agent might cause deployments to fail\. 
-
 **Topics**
 + [Verify the CodeDeploy agent is running](codedeploy-agent-operations-verify.md)
 + [Determine the version of the CodeDeploy agent](codedeploy-agent-operations-version.md)

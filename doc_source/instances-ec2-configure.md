@@ -98,6 +98,7 @@ We recommend that you restrict this policy to only those Amazon S3 buckets your 
            "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
            "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",        
            "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
+           "arn:aws:s3:::aws-codedeploy-ap-southeast-4/*",
            "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
            "arn:aws:s3:::aws-codedeploy-sa-east-1/*"
          ]
