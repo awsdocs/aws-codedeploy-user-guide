@@ -91,7 +91,10 @@ Running    codedeployagent    CodeDeploy Host Agent Service
 
 ## Use a direct link<a name="codedeploy-agent-operations-install-windows-direct-link"></a>
 
-If the browser security settings on the Windows Server instance provide the permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link for your region to download the CodeDeploy agent and then run the installer manually\.
+If the browser security settings on the Windows Server instance provide the permissions \(for example, to `http://*.s3.amazonaws.com`\), you can use a direct link for your Region to download the CodeDeploy agent and then run the installer manually\.
+
+**Important**  
+You must choose the .msi from a Region that is the same as your CodeDeploy application in the AWS Console. If you choose the incorrect Region, the CodeDeploy agent installation may fail with inconsistent regions in the codedeploy-agent-log file.
 
 
 | Region name | Download link | 
