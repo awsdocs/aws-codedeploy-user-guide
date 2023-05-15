@@ -202,7 +202,7 @@ Add a configuration file to the on\-premises instance, using root or administrat
    + For Ubuntu Server: `/etc/codedeploy-agent/conf`
    + For Windows Server: `C:\ProgramData\Amazon\CodeDeploy`
 
-1. Use a text editor to add the following information to the newly created `codedeploy.onpremises.yml` (linux) or `conf.onpremises.yml` (windows) file:
+1. Use a text editor to add the following information to the newly created `codedeploy.onpremises.yml` (Linux) or `conf.onpremises.yml` (Windows) file:
 
    ```
    ---
